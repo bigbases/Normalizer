@@ -1,7 +1,8 @@
 import argparse
 import os
 import torch
-from exp.exp_main import Exp_Main
+# from exp.exp_main import Exp_Main
+from exp.exp_norm import Exp_Main
 import random
 import numpy as np
 
@@ -14,6 +15,8 @@ torch.set_num_threads(6)
 parser = argparse.ArgumentParser(description='Autoformer & Transformer family for Time Series Forecasting')
 
 # basic config
+parser.add_argument('--task_name', type=str, default='long_term_forecast',
+                    help='task name, options:[long_term_forecast, short_term_forecast, imputation, classification, anomaly_detection]')
 parser.add_argument('--is_training', type=int, default=1, help='status')
 parser.add_argument('--model_id', type=str, default='test', help='model id')
 parser.add_argument('--model', type=str, default='FEDformer',
@@ -31,17 +34,17 @@ parser.add_argument('--cross_activation', type=str, default='tanh',
                     help='mwt cross atention activation function tanh or softmax')
 
 # non-station module / statistics prediction module config
+parser.add_argument('--station_lr', type=float, default=0.0001)
+parser.add_argument('--use_norm', type=str, default='ddn')
+parser.add_argument('--station_type', type=str, default='adaptive')
+parser.add_argument('--twice_epoch', type=int, default=1)
+parser.add_argument('--pre_epoch', type=int, default=5)
 parser.add_argument('--j', type=int, default=0)
 parser.add_argument('--learnable', action='store_true', default=False)
 parser.add_argument('--wavelet', type=str, default='coif3')
 parser.add_argument('--dr', type=float, default=0.05)
-parser.add_argument('--pre_epoch', type=int, default=5)
-parser.add_argument('--twice_epoch', type=int, default=1)
-parser.add_argument('--use_norm', type=str, default='sliding')
 parser.add_argument('--kernel_len', type=int, default=7)
 parser.add_argument('--hkernel_len', type=int, default=5)
-parser.add_argument('--station_lr', type=float, default=0.0001)
-parser.add_argument('--station_type', type=str, default='adaptive')
 parser.add_argument('--pd_ff', type=int, default=1024, help='dimension of fcn')
 parser.add_argument('--pd_model', type=int, default=512, help='dimension of model')
 parser.add_argument('--pe_layers', type=int, default=2, help='num of encoder layers')
@@ -134,7 +137,6 @@ parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids o
 parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
 
 args = parser.parse_args()
-args.label_len = args.seq_len // 2
 if args.features == 'S':
     args.enc_in, args.dec_in, args.c_out = 1, 1, 1
 

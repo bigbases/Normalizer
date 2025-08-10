@@ -1,7 +1,7 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
 from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, FEDformer, iTransformer, MICN
-from models.DDN import DDN
+from normalizers import RevIN, SAN, DDN
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
 
@@ -22,12 +22,28 @@ warnings.filterwarnings('ignore')
 class Exp_Main(Exp_Basic):
     def __init__(self, args):
         super(Exp_Main, self).__init__(args)
-        self.station_pretrain_epoch = args.pre_epoch if self.args.station_type == 'adaptive' else 0
         self.station_type = args.station_type
 
     def _build_model(self):
-        self.station = DDN(self.args).to(self.device)
-        self.station_loss = self.sliding_loss
+        station_dict = {
+            'revin': RevIN,
+            'san': SAN,
+            'ddn': DDN,
+        }
+        self.station = station_dict[self.args.use_norm].Model(self.args).to(self.device)
+        station_loss_dict = {
+            'revin': None,
+            'san': self.san_loss,
+            'ddn': self.sliding_loss,
+        }
+        self.station_loss = station_loss_dict[self.args.use_norm]
+        # [pre train, pre epoch, joint train, join epoch]
+        station_setting_dict = {
+            'revin': [0, 0, 0, 0],
+            'san': [1, self.args.pre_epoch, 0, 0],
+            'ddn': [1, self.args.pre_epoch, 1, self.args.twice_epoch],
+        }
+        self.station_setting = station_setting_dict[self.args.use_norm]
         model_dict = {
             'FEDformer': FEDformer,
             'Autoformer': Autoformer,
@@ -57,15 +73,7 @@ class Exp_Main(Exp_Basic):
     def _select_criterion(self):
         self.criterion = nn.MSELoss()
 
-    def station_loss(self, y, statistics_pred):
-        bs, len, dim = y.shape
-        y = y.reshape(bs, -1, self.args.period_len, dim)
-        mean = torch.mean(y, dim=2)
-        std = torch.std(y, dim=2)
-        station_ture = torch.cat([mean, std], dim=-1)
-        loss = self.criterion(statistics_pred, station_ture)
-        return loss
-
+    # SAN
     def san_loss(self, y, statistics_pred):
         bs, len, dim = y.shape
         y = y.reshape(bs, -1, self.args.period_len, dim)
@@ -75,6 +83,7 @@ class Exp_Main(Exp_Basic):
         loss = self.criterion(statistics_pred, station_ture)
         return loss
 
+    # DDN
     def sliding_loss(self, y, statistics_pred):
         _, (mean, std) = self.station.norm(y.transpose(-1, -2), False)
         station_ture = torch.cat([mean, std], dim=1).transpose(-1, -2)
@@ -93,19 +102,24 @@ class Exp_Main(Exp_Basic):
                 batch_x_mark = batch_x_mark.float().to(self.device)
                 batch_y_mark = batch_y_mark.float().to(self.device)
 
-                if epoch + 1 <= self.station_pretrain_epoch and self.args.use_norm == 'sliding':
-                    batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x, p_value=False)
-                elif self.args.use_norm == 'sliding':
-                    batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x)
+                # normalize
+                if self.args.use_norm == 'ddn':
+                    if epoch + 1 <= self.station_setting[1]:
+                        batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x, p_value=False)
+                    else:
+                        batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x)
                 else:
                     batch_x, statistics_pred = self.station.normalize(batch_x)
 
-                if epoch + 1 <= self.station_pretrain_epoch:
+                # station pretrain
+                if epoch + 1 <= self.station_setting[1]:
                     f_dim = -1 if self.args.features == 'MS' else 0
                     batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
                     if self.args.features == 'MS':
                         statistics_pred = statistics_pred[:, :, [self.args.enc_in - 1, -1]]
                     loss = self.station_loss(batch_y, statistics_pred)
+                
+                # model train
                 else:
                     # decoder x
                     dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
@@ -128,15 +142,15 @@ class Exp_Main(Exp_Basic):
                             if self.args.output_attention:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)[0]
                             else:
-                                if self.args.use_norm == 'sliding':
-                                    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
-                                else:
-                                    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+                                outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                     f_dim = -1 if self.args.features == 'MS' else 0
                     if self.args.features == 'MS':
                         statistics_pred = statistics_pred[:, :, [self.args.enc_in - 1, -1]]
                     outputs = outputs[:, -self.args.pred_len:, f_dim:]
+                    
+                    # de-normalize
                     outputs = self.station.de_normalize(outputs, statistics_pred)
+                    
                     batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
 
                     pred = outputs.detach().cpu()
@@ -176,40 +190,49 @@ class Exp_Main(Exp_Basic):
         if self.args.use_amp:
             scaler = torch.cuda.amp.GradScaler()
 
-        for epoch in range(self.args.train_epochs + self.station_pretrain_epoch):
+        for epoch in range(self.args.train_epochs + self.station_setting[1]):
             iter_count = 0
             train_loss = []
-            if epoch == self.station_pretrain_epoch and self.args.station_type == 'adaptive':
+            
+            # Load best station model after pretraining
+            if self.station_setting[0] > 0 and epoch == self.station_setting[1]:
                 best_model_path = path_station + '/' + 'checkpoint.pth'
                 self.station.load_state_dict(torch.load(best_model_path))
                 print('loading pretrained adaptive station model')
-                if self.args.use_norm == 'sliding' and self.args.twice_epoch >= 0:
-                    print('reset station model optim for finetune')
-            if self.args.use_norm == 'sliding' and 0 <= self.args.twice_epoch == epoch - self.station_pretrain_epoch:
+            
+            # Add station parameters to model optim after pretraining and delay epochs for joint training
+            if self.station_setting[2] > 0 and self.station_setting[3] == epoch - self.station_setting[1]:
                 lr = model_optim.param_groups[0]['lr']
                 model_optim.add_param_group({'params': self.station.parameters(), 'lr': lr})
+            
             self.model.train()
             self.station.train()
             epoch_time = time.time()
             for i, (batch_x, batch_y, batch_x_mark, batch_y_mark) in enumerate(train_loader):
                 iter_count += 1
                 model_optim.zero_grad()
-                original_batch_x = batch_x.clone()
                 batch_x = batch_x.float().to(self.device)
                 batch_y = batch_y.float().to(self.device)
-                if epoch + 1 <= self.station_pretrain_epoch and self.args.use_norm == 'sliding':
-                    batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x, p_value=False)
-                elif self.args.use_norm == 'sliding':
-                    batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x)
+                
+                # normalize
+                if self.args.use_norm == 'ddn':
+                    if epoch + 1 <= self.station_setting[1]:
+                        batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x, p_value=False)
+                    else:
+                        batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x)
                 else:
                     batch_x, statistics_pred = self.station.normalize(batch_x)
-                if epoch + 1 <= self.station_pretrain_epoch:
+                
+                # station pretrain
+                if epoch + 1 <= self.station_setting[1]:
                     f_dim = -1 if self.args.features == 'MS' else 0
                     batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
                     if self.args.features == 'MS':
                         statistics_pred = statistics_pred[:, :, [self.args.enc_in - 1, -1]]
                     loss = self.station_loss(batch_y, statistics_pred)
                     train_loss.append(loss.item())
+                
+                # model train
                 else:
                     batch_x_mark = batch_x_mark.float().to(self.device)
                     batch_y_mark = batch_y_mark.float().to(self.device)
@@ -218,13 +241,6 @@ class Exp_Main(Exp_Basic):
                     dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                     dec_label = batch_x[:, -self.args.label_len:, :]
                     dec_inp = torch.cat([dec_label, dec_inp], dim=1).float().to(self.device)
-                    
-                    # if i % 200 == 0:
-                    #     plt.figure(figsize=(10, 6))
-                    #     plt.plot(original_batch_x[0, :, -1].detach().cpu().numpy(), label='Original')
-                    #     plt.plot(batch_x[0, :, -1].detach().cpu().numpy(), label='Normalized')
-                    #     plt.title(f'Epoch {epoch+1}, Step {i}')
-                    #     plt.savefig("./normalization_plots/epoch{}_step{}.png".format(epoch+1, i))
 
                     # encoder - decoder
                     if self.args.use_amp:
@@ -248,25 +264,16 @@ class Exp_Main(Exp_Basic):
                             if self.args.output_attention:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)[0]
                             else:
-                                if self.args.use_norm == 'sliding':
-                                    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
-                                else:
-                                    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+                                outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                         f_dim = -1 if self.args.features == 'MS' else 0
                         outputs = outputs[:, -self.args.pred_len:, f_dim:]
                         if self.args.features == 'MS':
                             statistics_pred = statistics_pred[:, :, [self.args.enc_in - 1, -1]]
-                        original_outputs = outputs.clone()
+                            
+                        # de-normalize
                         outputs = self.station.de_normalize(outputs, statistics_pred)
+                        
                         batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
-                        if i % 200 == 0:
-                            plt.figure(figsize=(10, 6))
-                            plt.plot(original_outputs[0, :, -1].detach().cpu().numpy(), label='Original')
-                            plt.plot(outputs[0, :, -1].detach().cpu().numpy(), label='Outputs')
-                            plt.plot(batch_y[0, :, -1].detach().cpu().numpy(), label='Prediction')
-                            plt.legend()
-                            plt.title(f'Epoch {epoch+1}, Step {i}')
-                            plt.savefig("./normalization_plots/pred_epoch{}_step{}.png".format(epoch+1, i))
                         loss = self.criterion(outputs, batch_y)
                         train_loss.append(loss.item())
 
@@ -274,7 +281,7 @@ class Exp_Main(Exp_Basic):
                     print("\titers: {0}, epoch: {1} | loss: {2:.7f}".format(i + 1, epoch + 1, loss.item()))
                     speed = (time.time() - time_now) / iter_count
                     left_time = speed * (
-                            (self.args.train_epochs + self.station_pretrain_epoch - epoch) * train_steps - i)
+                            (self.args.train_epochs + self.station_setting[1] - epoch) * train_steps - i)
                     print('\tspeed: {:.4f}s/iter; left time: {:.4f}s'.format(speed, left_time))
                     iter_count = 0
                     time_now = time.time()
@@ -285,7 +292,7 @@ class Exp_Main(Exp_Basic):
                 else:
                     loss.backward()
                     # two-stage training schema
-                    if epoch + 1 <= self.station_pretrain_epoch:
+                    if epoch + 1 <= self.station_setting[1]:
                         self.station_optim.step()
                     else:
                         model_optim.step()
@@ -297,7 +304,7 @@ class Exp_Main(Exp_Basic):
             vali_loss = self.vali(vali_data, vali_loader, self.criterion, epoch)
             test_loss = self.vali(test_data, test_loader, self.criterion, epoch)
 
-            if epoch + 1 <= self.station_pretrain_epoch:
+            if epoch + 1 <= self.station_setting[1]:
                 print(
                     "Station Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
                         epoch + 1, train_steps, train_loss, vali_loss, test_loss))
@@ -306,23 +313,23 @@ class Exp_Main(Exp_Basic):
             else:
                 print(
                     "Backbone Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
-                        epoch + 1 - self.station_pretrain_epoch, train_steps, train_loss, vali_loss, test_loss))
-                # 若有更新之后stop,即保存
-                if self.args.use_norm == 'sliding' and 0 <= self.args.twice_epoch <= epoch - self.station_pretrain_epoch:
+                        epoch + 1 - self.station_setting[1], train_steps, train_loss, vali_loss, test_loss))
+                # if: joint training, else: only model training
+                if self.station_setting[2] > 0 and self.station_setting[3] <= epoch - self.station_setting[1]:
                     early_stopping(vali_loss, self.model, path, self.station, path_station)
                 else:
                     early_stopping(vali_loss, self.model, path)
                 if early_stopping.early_stop:
                     print("Early stopping")
                     break
-                adjust_learning_rate(model_optim, epoch + 1 - self.station_pretrain_epoch, self.args,
+                adjust_learning_rate(model_optim, epoch + 1 - self.station_setting[1], self.args,
                                      self.args.learning_rate)
-                adjust_learning_rate(self.station_optim, epoch + 1 - self.station_pretrain_epoch, self.args,
+                adjust_learning_rate(self.station_optim, epoch + 1 - self.station_setting[1], self.args,
                                      self.args.station_lr)
 
         best_model_path = path + '/' + 'checkpoint.pth'
         self.model.load_state_dict(torch.load(best_model_path))
-        if self.args.use_norm == 'sliding' and self.args.twice_epoch >= 0:
+        if self.station_setting[2] > 0:
             self.station.load_state_dict(torch.load(path_station + '/' + 'checkpoint.pth'))
         return self.model
 
@@ -348,7 +355,8 @@ class Exp_Main(Exp_Basic):
                 batch_y = batch_y.float().to(self.device)
                 input_x = batch_x
 
-                if self.args.use_norm == 'sliding':
+                # normalize
+                if self.args.use_norm == 'ddn':
                     batch_x, statistics_pred, statistics_seq = self.station.normalize(batch_x)
                 else:
                     batch_x, statistics_pred = self.station.normalize(batch_x)
@@ -369,8 +377,7 @@ class Exp_Main(Exp_Basic):
                             if self.args.output_attention:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)[0]
                             else:
-                                if self.args.use_norm == 'sliding':
-                                    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+                                outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                 else:
                     if 'Linear' in self.args.model:
                         outputs = self.model(batch_x)
@@ -378,17 +385,16 @@ class Exp_Main(Exp_Basic):
                         if self.args.output_attention:
                             outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)[0]
                         else:
-                            if self.args.use_norm == 'sliding':
-                                outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
-                            else:
-                                outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+                            outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
 
                 f_dim = -1 if self.args.features == 'MS' else 0
-                # print(outputs.shape,batch_y.shape)
                 outputs = outputs[:, -self.args.pred_len:, f_dim:]
                 if self.args.features == 'MS':
                     statistics_pred = statistics_pred[:, :, [self.args.enc_in - 1, -1]]
+                    
+                # de-normalize
                 outputs = self.station.de_normalize(outputs, statistics_pred)
+                
                 batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
                 outputs = outputs.detach().cpu().numpy()
                 batch_y = batch_y.detach().cpu().numpy()
@@ -399,11 +405,11 @@ class Exp_Main(Exp_Basic):
                 preds.append(pred)
                 trues.append(true)
                 inputx.append(batch_x.detach().cpu().numpy())
-                # if i % 5 == 0:
-                #     x = input_x.detach().cpu().numpy()
-                #     gt = np.concatenate((x[0, :, -1], true[0, :, -1]), axis=0)
-                #     pd = np.concatenate((x[0, :, -1], pred[0, :, -1]), axis=0)
-                #     visual(gt, pd, os.path.join(folder_path, str(i) + '.pdf'))
+                if i % 20 == 0:
+                    x = input_x.detach().cpu().numpy()
+                    gt = np.concatenate((x[0, :, -1], true[0, :, -1]), axis=0)
+                    pd = np.concatenate((x[0, :, -1], pred[0, :, -1]), axis=0)
+                    visual(gt, pd, os.path.join(folder_path, str(i) + '.pdf'))
 
         # if self.args.test_flop:
         #     test_params_flop((batch_x.shape[1], batch_x.shape[2]))

@@ -10,15 +10,44 @@ if [ ! -d "./logs/LongForecasting/iTransformer" ]; then
   mkdir ./logs/LongForecasting/iTransformer
 fi
 
-gpu=1
+gpu=0
 features=M
 model_name=iTransformer
+
+# for pred_len in 96 192 336 720; do
+#   python -u run_longExp.py \
+#     --is_training 1 \
+#     --root_path ./datasets \
+#     --data_path exchange.csv \
+#     --model_id exchange_720_$pred_len \
+#     --model $model_name \
+#     --data custom \
+#     --features $features \
+#     --seq_len 720 \
+#     --label_len 168 \
+#     --pred_len $pred_len \
+#     --e_layers 2 \
+#     --d_layers 1 \
+#     --factor 3 \
+#     --enc_in 8 \
+#     --dec_in 8 \
+#     --c_out 8 \
+#     --des 'Exp' \
+#     --gpu $gpu \
+#     --period_len 6 \
+#     --station_lr 0.001 \
+#     --j 1 \
+#     --pe_layers 0 \
+#     --pd_model 128 \
+#     --pd_ff 128 \
+#     --itr 1 >logs/LongForecasting/$model_name'_exchange_rate_'$pred_len.log
+#   done
 
 for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
-    --root_path ./datasets/electricity \
+    --root_path ./datasets \
     --data_path electricity.csv \
     --model_id electricity_336_$pred_len$model_name \
     --model $model_name \
@@ -49,7 +78,7 @@ for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
-    --root_path ./datasets/traffic \
+    --root_path ./datasets \
     --data_path traffic.csv \
     --model_id traffic_336_$pred_len$model_name \
     --model $model_name \
@@ -81,7 +110,7 @@ for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
-    --root_path ./datasets/weather \
+    --root_path ./datasets \
     --data_path weather.csv \
     --model_id weather_336_$pred_len$model_name \
     --model $model_name \

@@ -13,14 +13,14 @@ fi
 seq_len=96
 label_len=48
 features=M
-gpu=2
+gpu=0
 model_name=Autoformer
 
 for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
-    --root_path ./datasets/traffic \
+    --root_path ./datasets \
     --data_path traffic.csv \
     --model_id $norm_type_traffic_96_$pred_len \
     --model $model_name \
@@ -48,7 +48,7 @@ for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
-    --root_path ./datasets/electricity \
+    --root_path ./datasets \
     --data_path electricity.csv \
     --model_id $norm_type_electricity_96_$pred_len \
     --model $model_name \
@@ -74,7 +74,7 @@ for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
-    --root_path ./datasets/weather \
+    --root_path ./datasets \
     --data_path weather.csv \
     --model_id $norm_type_weather_96_$pred_len \
     --model $model_name \
