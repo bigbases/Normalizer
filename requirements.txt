@@ -1,8 +1,8 @@
 matplotlib
 pandas
 scikit-learn
-numpy<2.0
-torch==1.12.0
+# numpy<2.0
+# torch==1.12.0
 einops==0.4.0
 sympy==1.11.1
 statsmodels
