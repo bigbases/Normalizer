@@ -1,9 +1,10 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
 from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, FEDformer, iTransformer, MICN
-from normalizers import RevIN, SAN, DDN
+from normalizers import RevIN, SAN, DDN, TP, LightTrend
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
+from layers.Autoformer_EncDec import series_decomp
 
 import numpy as np
 import torch
@@ -23,18 +24,23 @@ class Exp_Main(Exp_Basic):
     def __init__(self, args):
         super(Exp_Main, self).__init__(args)
         self.station_type = args.station_type
+        self.decomp = series_decomp(args.kernel_size)
 
     def _build_model(self):
         station_dict = {
             'revin': RevIN,
             'san': SAN,
             'ddn': DDN,
+            'tp': TP,
+            'lt': LightTrend,
         }
         self.station = station_dict[self.args.use_norm].Model(self.args).to(self.device)
         station_loss_dict = {
             'revin': None,
             'san': self.san_loss,
             'ddn': self.sliding_loss,
+            'tp': self.trend_loss,
+            'lt': self.lt_loss,
         }
         self.station_loss = station_loss_dict[self.args.use_norm]
         # [pre train, pre epoch, joint train, join epoch]
@@ -42,6 +48,8 @@ class Exp_Main(Exp_Basic):
             'revin': [0, 0, 0, 0],
             'san': [1, self.args.pre_epoch, 0, 0],
             'ddn': [1, self.args.pre_epoch, 1, self.args.twice_epoch],
+            'tp': [1, self.args.pre_epoch, 1, self.args.twice_epoch],
+            'lt': [1, self.args.pre_epoch, 1, self.args.twice_epoch],
         }
         self.station_setting = station_setting_dict[self.args.use_norm]
         model_dict = {
@@ -67,7 +75,7 @@ class Exp_Main(Exp_Basic):
 
     def _select_optimizer(self):
         model_optim = optim.Adam(self.model.parameters(), lr=self.args.learning_rate)
-        self.station_optim = optim.Adam(self.station.parameters(), lr=self.args.station_lr)
+        self.station_optim = optim.Adam(self.station.parameters(), lr=self.args.station_pre_lr)
         return model_optim
 
     def _select_criterion(self):
@@ -88,6 +96,20 @@ class Exp_Main(Exp_Basic):
         _, (mean, std) = self.station.norm(y.transpose(-1, -2), False)
         station_ture = torch.cat([mean, std], dim=1).transpose(-1, -2)
         loss = self.criterion(statistics_pred, station_ture)
+        return loss
+    
+    # TP
+    def trend_loss(self, y, statistics_pred):
+        trend_pred = statistics_pred[-1]
+        _, trend_true = self.decomp(y)
+        loss = self.criterion(trend_pred, trend_true)
+        return loss
+    
+    # LightTrend
+    def lt_loss(self, y, statistics_pred):
+        trend_pred = statistics_pred
+        _, trend_true = self.decomp(y)
+        loss = self.criterion(trend_pred, trend_true)
         return loss
 
     def vali(self, vali_data, vali_loader, criterion, epoch):
@@ -202,7 +224,8 @@ class Exp_Main(Exp_Basic):
             
             # Add station parameters to model optim after pretraining and delay epochs for joint training
             if self.station_setting[2] > 0 and self.station_setting[3] == epoch - self.station_setting[1]:
-                lr = model_optim.param_groups[0]['lr']
+                # lr = model_optim.param_groups[0]['lr']
+                lr = self.args.station_joint_lr
                 model_optim.add_param_group({'params': self.station.parameters(), 'lr': lr})
             
             self.model.train()
@@ -309,7 +332,7 @@ class Exp_Main(Exp_Basic):
                     "Station Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
                         epoch + 1, train_steps, train_loss, vali_loss, test_loss))
                 early_stopping_station_model(vali_loss, self.station, path_station)
-                adjust_learning_rate(self.station_optim, epoch + 1, self.args, self.args.station_lr)
+                adjust_learning_rate(self.station_optim, epoch + 1, self.args, self.args.station_pre_lr)
             else:
                 print(
                     "Backbone Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
@@ -325,7 +348,7 @@ class Exp_Main(Exp_Basic):
                 adjust_learning_rate(model_optim, epoch + 1 - self.station_setting[1], self.args,
                                      self.args.learning_rate)
                 adjust_learning_rate(self.station_optim, epoch + 1 - self.station_setting[1], self.args,
-                                     self.args.station_lr)
+                                     self.args.station_pre_lr)
 
         best_model_path = path + '/' + 'checkpoint.pth'
         self.model.load_state_dict(torch.load(best_model_path))
@@ -431,10 +454,18 @@ class Exp_Main(Exp_Basic):
         print('mse:{}, mae:{}'.format(mse, mae))
         f = open("result.txt", 'a')
         f.write(setting + "  \n")
-        f.write('mse:{}, mae:{}, rse:{}, corr:{}'.format(mse, mae, rse, corr))
+        f.write('mse:{}, mae:{}, rse:{}'.format(mse, mae, rse))
         f.write('\n')
         f.write('\n')
         f.close()
+        
+        # result.csv save (if file is not exist, create it)
+        result_file = 'result.csv'
+        if not os.path.exists(result_file):
+            with open(result_file, 'w') as f:
+                f.write('Setting,MSE,MAE\n')
+        with open(result_file, 'a') as f:
+            f.write('{},{},{}\n'.format(setting, mse, mae))
 
         # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe,rse, corr]))
         # np.save(folder_path + 'pred.npy', preds)

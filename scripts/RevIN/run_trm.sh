@@ -2,23 +2,23 @@ if [ ! -d "./logs" ]; then
   mkdir ./logs
 fi
 
-if [ ! -d "./logs/SAN" ]; then
-  mkdir ./logs/SAN
+if [ ! -d "./logs/RevIN" ]; then
+  mkdir ./logs/RevIN
 fi
 
-if [ ! -d "./logs/SAN/Autoformer" ]; then
-  mkdir ./logs/SAN/Autoformer
+if [ ! -d "./logs/RevIN/Autoformer" ]; then
+  mkdir ./logs/RevIN/Autoformer
 fi
 
-if [ ! -d "./logs/SAN/FEDformer" ]; then
-  mkdir ./logs/SAN/FEDformer
+if [ ! -d "./logs/RevIN/FEDformer" ]; then
+  mkdir ./logs/RevIN/FEDformer
 fi
 
-if [ ! -d "./logs/SAN/iTransformer" ]; then
-  mkdir ./logs/SAN/iTransformer
+if [ ! -d "./logs/RevIN/iTransformer" ]; then
+  mkdir ./logs/RevIN/iTransformer
 fi
 
-use_norm=san
+use_norm=revin
 features=M
 gpu=0
 
@@ -38,7 +38,7 @@ for model_name in Autoformer FEDformer iTransformer; do
       --is_training 1 \
       --root_path ./datasets \
       --data_path exchange.csv \
-      --model_id $use_norm'_'exchange_96_$pred_len \
+      --model_id $use_norm'_'exchange'_'$seq_len'_'$pred_len \
       --model $model_name \
       --data custom \
       --features $features \
@@ -54,15 +54,14 @@ for model_name in Autoformer FEDformer iTransformer; do
       --des 'Exp' \
       --gpu $gpu \
       --use_norm $use_norm \
-      --period_len 6 \
       --station_lr 0.001 \
-      --itr 1 >logs/SAN/$model_name/exch_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/exch_$pred_len.log
 
     python -u run_longExp.py \
       --is_training 1 \
       --root_path ./datasets \
       --data_path electricity.csv \
-      --model_id $use_norm'_'electricity_96_$pred_len \
+      --model_id $use_norm'_'electricity'_'$seq_len'_'$pred_len \
       --model $model_name \
       --data custom \
       --features $features \
@@ -78,14 +77,13 @@ for model_name in Autoformer FEDformer iTransformer; do
       --des 'Exp' \
       --gpu $gpu \
       --use_norm $use_norm \
-      --period_len 24 \
-      --itr 1 >logs/SAN/$model_name/elec_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/elec_$pred_len.log
 
     python -u run_longExp.py \
       --is_training 1 \
       --root_path ./datasets \
       --data_path traffic.csv \
-      --model_id $use_norm'_'traffic_96_$pred_len \
+      --model_id $use_norm'_'traffic'_'$seq_len'_'$pred_len \
       --model $model_name \
       --data custom \
       --features $features \
@@ -101,14 +99,13 @@ for model_name in Autoformer FEDformer iTransformer; do
       --des 'Exp' \
       --gpu $gpu \
       --use_norm $use_norm \
-      --period_len 24 \
-      --itr 1 >logs/SAN/$model_name/traf_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/traf_$pred_len.log
 
     python -u run_longExp.py \
       --is_training 1 \
       --root_path ./datasets \
       --data_path weather.csv \
-      --model_id $use_norm'_'weather_96_$pred_len \
+      --model_id $use_norm'_'weather'_'$seq_len'_'$pred_len \
       --model $model_name \
       --data custom \
       --features $features \
@@ -124,14 +121,13 @@ for model_name in Autoformer FEDformer iTransformer; do
       --des 'Exp' \
       --gpu $gpu \
       --use_norm $use_norm \
-      --period_len 12 \
-      --itr 1 >logs/SAN/$model_name/wea_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/wea_$pred_len.log
 
     python -u run_longExp.py \
       --is_training 1 \
       --root_path ./datasets/ETT-small \
       --data_path ETTh1.csv \
-      --model_id $use_norm'_'ETTh1_96_$pred_len \
+      --model_id $use_norm'_'ETTh1'_'$seq_len'_'$pred_len \
       --model $model_name \
       --data ETTh1 \
       --features $features \
@@ -147,14 +143,13 @@ for model_name in Autoformer FEDformer iTransformer; do
       --des 'Exp' \
       --gpu $gpu \
       --use_norm $use_norm \
-      --period_len 24 \
-      --itr 1 >logs/SAN/$model_name/eh1_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/eh1_$pred_len.log
 
     python -u run_longExp.py \
       --is_training 1 \
       --root_path ./datasets/ETT-small \
       --data_path ETTh2.csv \
-      --model_id $use_norm'_'ETTh2_96_$pred_len \
+      --model_id $use_norm'_'ETTh2'_'$seq_len'_'$pred_len \
       --model $model_name \
       --data ETTh2 \
       --features $features \
@@ -170,14 +165,13 @@ for model_name in Autoformer FEDformer iTransformer; do
       --des 'Exp' \
       --gpu $gpu \
       --use_norm $use_norm \
-      --period_len 24 \
-      --itr 1 >logs/SAN/$model_name/eh2_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/eh2_$pred_len.log
 
     python -u run_longExp.py \
       --is_training 1 \
       --root_path ./datasets/ETT-small \
       --data_path ETTm1.csv \
-      --model_id $use_norm'_'ETTm1_96_$pred_len \
+      --model_id $use_norm'_'ETTm1'_'$seq_len'_'$pred_len \
       --model $model_name \
       --data ETTm1 \
       --features $features \
@@ -193,14 +187,13 @@ for model_name in Autoformer FEDformer iTransformer; do
       --des 'Exp' \
       --gpu $gpu \
       --use_norm $use_norm \
-      --period_len 12 \
-      --itr 1 >logs/SAN/$model_name/em1_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/em1_$pred_len.log
 
     python -u run_longExp.py \
       --is_training 1 \
       --root_path ./datasets/ETT-small \
       --data_path ETTm2.csv \
-      --model_id $use_norm'_'ETTm2_96_$pred_len \
+      --model_id $use_norm'_'ETTm2'_'$seq_len'_'$pred_len \
       --model $model_name \
       --data ETTm2 \
       --features $features \
@@ -216,8 +209,7 @@ for model_name in Autoformer FEDformer iTransformer; do
       --des 'Exp' \
       --gpu $gpu \
       --use_norm $use_norm \
-      --period_len 12 \
-      --itr 1 >logs/SAN/$model_name/em2_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/em2_$pred_len.log
   done
 done
 
@@ -241,9 +233,8 @@ for model_name in Autoformer FEDformer iTransformer; do
       --dec_in 7 \
       --c_out 7 \
       --des 'Exp' \
-      --period_len 6 \
       --gpu $gpu \
       --use_norm $use_norm \
-      --itr 1 >logs/SAN/$model_name/ili_$pred_len.log
+      --itr 1 >logs/RevIN/$model_name/ili_$pred_len.log
   done
 done

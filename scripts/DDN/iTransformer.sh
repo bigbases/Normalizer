@@ -22,7 +22,7 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets \
     --data_path electricity.csv \
-    --model_id $use_norm'_'electricity_336_$pred_len$model_name \
+    --model_id $use_norm'_'electricity_720_$pred_len$model_name \
     --model $model_name \
     --data custom \
     --features $features \
@@ -54,7 +54,7 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets \
     --data_path traffic.csv \
-    --model_id $use_norm'_'traffic_336_$pred_len$model_name \
+    --model_id $use_norm'_'traffic_720_$pred_len$model_name \
     --model $model_name \
     --data custom \
     --features $features \
@@ -87,7 +87,7 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets \
     --data_path weather.csv \
-    --model_id $use_norm'_'weather_336_$pred_len$model_name \
+    --model_id $use_norm'_'weather_720_$pred_len$model_name \
     --model $model_name \
     --data custom \
     --features $features \
@@ -116,7 +116,7 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets/ETT-small \
     --data_path ETTh1.csv \
-    --model_id $use_norm'_'ETTh1_336_$pred_len$model_name \
+    --model_id $use_norm'_'ETTh1_720_$pred_len$model_name \
     --model $model_name \
     --data ETTh1 \
     --features $features \
@@ -145,7 +145,7 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets/ETT-small \
     --data_path ETTh2.csv \
-    --model_id $use_norm'_'ETTh2_336_$pred_len$model_name \
+    --model_id $use_norm'_'ETTh2_720_$pred_len$model_name \
     --model $model_name \
     --data ETTh2 \
     --features $features \
@@ -173,7 +173,7 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets/ETT-small \
     --data_path ETTm1.csv \
-    --model_id $use_norm'_'ETTm1_336_$pred_len$model_name \
+    --model_id $use_norm'_'ETTm1_720_$pred_len$model_name \
     --model $model_name \
     --data ETTm1 \
     --features $features \
@@ -202,7 +202,7 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets/ETT-small \
     --data_path ETTm2.csv \
-    --model_id $use_norm'_'ETTm2_336_$pred_len$model_name \
+    --model_id $use_norm'_'ETTm2_720_$pred_len$model_name \
     --model $model_name \
     --data ETTm2 \
     --features $features \

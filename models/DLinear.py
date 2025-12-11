@@ -68,7 +68,11 @@ class Model(nn.Module):
                 # self.Linear_Trend[i].weight = nn.Parameter((1/self.seq_len)*torch.ones([self.pred_len,self.seq_len]))
         else:
             self.Linear_Seasonal = nn.Linear(self.seq_len, self.pred_len)
-            self.Linear_Trend = nn.Linear(self.seq_len, self.pred_len)
+            # self.Linear_Trend = nn.Linear(self.seq_len, self.pred_len)
+            self.Linear_Trend = nn.Sequential(
+                                    nn.Linear(configs.seq_len, 2048),
+                                    nn.Linear(2048, configs.pred_len)
+                                )
 
             # Use this two lines if you want to visualize the weights
             self.Linear_Seasonal.weight = nn.Parameter((1/self.seq_len)*torch.ones([self.pred_len,self.seq_len]))

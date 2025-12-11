@@ -2,20 +2,20 @@ if [ ! -d "./logs" ]; then
   mkdir ./logs
 fi
 
-if [ ! -d "./logs/DDN" ]; then
-  mkdir ./logs/DDN
+if [ ! -d "./logs/TP" ]; then
+  mkdir ./logs/TP
 fi
 
-if [ ! -d "./logs/DDN/Autoformer" ]; then
-  mkdir ./logs/DDN/Autoformer
+if [ ! -d "./logs/TP/FEDformer" ]; then
+  mkdir ./logs/TP/FEDformer
 fi
 
 seq_len=96
 label_len=48
 features=M
 gpu=0
-model_name=Autoformer
-use_norm=ddn
+model_name=FEDformer
+use_norm=tp
 
 for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
@@ -39,11 +39,7 @@ for pred_len in 96 192 336 720; do
     --c_out 862 \
     --des 'Exp' \
     --period_len 24 \
-    --pe_layers 0 \
-    --pd_ff 512 \
-    --pd_model 256 \
-    --j 1 \
-    --itr 1 >logs/DDN/$model_name/traf_$pred_len.log
+    --itr 1 >logs/TP/$model_name/traf_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -68,9 +64,7 @@ for pred_len in 96 192 336 720; do
     --c_out 321 \
     --des 'Exp' \
     --period_len 24 \
-    --j 1 \
-    --pe_layers 0 \
-    --itr 1 >logs/DDN/$model_name/elec_$pred_len.log
+    --itr 1 >logs/TP/$model_name/elec_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -95,8 +89,7 @@ for pred_len in 96 192 336 720; do
     --c_out 21 \
     --des 'Exp' \
     --period_len 12 \
-    --j 1 \
-    --itr 1 >logs/DDN/$model_name/wea_$pred_len.log
+    --itr 1 >logs/TP/$model_name/wea_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -121,12 +114,10 @@ for pred_len in 96 192 336 720; do
     --c_out 7 \
     --des 'Exp' \
     --period_len 24 \
-    --j 1 \
-    --twice_epoch 3 \
-    --itr 1 >logs/DDN/$model_name/ETTh1_$pred_len.log
+    --itr 1 >logs/TP/$model_name/ETTh1_$pred_len.log
   done
 
-for pred_len in 96 192 336 720; do
+for pred_len in 720 96 192 336; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
@@ -149,12 +140,7 @@ for pred_len in 96 192 336 720; do
     --des 'Exp' \
     --gpu 0 \
     --period_len 24 \
-    --kernel_len 32 \
-    --twice_epoch 0 \
-    --pd_ff 128 \
-    --pd_model 128 \
-    --pe_layers 0 \
-    --itr 1 >logs/DDN/$model_name/ETTh2_$pred_len.log
+    --itr 1 >logs/TP/$model_name/ETTh2_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -178,15 +164,12 @@ for pred_len in 96 192 336 720; do
     --dec_in 7 \
     --c_out 7 \
     --des 'Exp' \
+    --gpu 0 \
     --period_len 12 \
-    --kernel_len 12 \
-    --hkernel_len 7 \
-    --pd_ff 128 \
-    --j 1 \
-    --itr 1 >logs/DDN/$model_name/ETTm1_$pred_len.log
+    --itr 1 >logs/TP/$model_name/ETTm1_$pred_len.log
   done
 
-for pred_len in 336 720 96 192; do
+for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
@@ -208,9 +191,6 @@ for pred_len in 336 720 96 192; do
     --c_out 7 \
     --des 'Exp' \
     --period_len 12 \
-    --twice_epoch 0 \
-    --pe_layers 1 \
-    --pd_ff 512 \
-    --dr 0.2 \
-    --itr 1 >logs/DDN/$model_name/ETTm2_$pred_len.log
+    --dr 0.3 \
+    --itr 1 >logs/TP/$model_name/ETTm2_$pred_len.log
   done

@@ -6,3 +6,6 @@ station/
 test_results/
 nohup.out
 result.txt
+manual_exp/
+visualize/
+summary_results.csv

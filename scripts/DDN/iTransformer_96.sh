@@ -6,15 +6,13 @@ if [ ! -d "./logs/DDN" ]; then
   mkdir ./logs/DDN
 fi
 
-if [ ! -d "./logs/DDN/Autoformer" ]; then
-  mkdir ./logs/DDN/Autoformer
+if [ ! -d "./logs/DDN/iTransformer_96" ]; then
+  mkdir ./logs/DDN/iTransformer_96
 fi
 
-seq_len=96
-label_len=48
-features=M
 gpu=0
-model_name=Autoformer
+features=M
+model_name=iTransformer
 use_norm=ddn
 
 for pred_len in 96 192 336 720; do
@@ -23,27 +21,30 @@ for pred_len in 96 192 336 720; do
     --is_training 1 \
     --use_norm $use_norm \
     --root_path ./datasets \
-    --data_path traffic.csv \
-    --model_id $use_norm'_'traffic_96_$pred_len \
+    --data_path electricity.csv \
+    --model_id $use_norm'_'electricity_96_$pred_len$model_name \
     --model $model_name \
     --data custom \
     --features $features \
-    --seq_len $seq_len \
-    --label_len $label_len \
+    --seq_len 96 \
+    --label_len 48 \
     --pred_len $pred_len \
-    --e_layers 2 \
-    --d_layers 1 \
-    --factor 3 \
-    --enc_in 862 \
-    --dec_in 862 \
-    --c_out 862 \
+    --enc_in 321 \
+    --dec_in 321 \
+    --c_out 321 \
+    --d_ff 512 \
+    --d_model 512 \
+    --e_layers 3 \
     --des 'Exp' \
+    --learning_rate 0.0005 \
+    --batch_size 16 \
     --period_len 24 \
-    --pe_layers 0 \
-    --pd_ff 512 \
-    --pd_model 256 \
+    --kernel_len 32 \
+    --twice_epoch 2 \
     --j 1 \
-    --itr 1 >logs/DDN/$model_name/traf_$pred_len.log
+    --pd_ff 512 \
+    --pe_layers 1 \
+    --itr 1 >logs/DDN/iTransformer_96/elc_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -52,25 +53,31 @@ for pred_len in 96 192 336 720; do
     --is_training 1 \
     --use_norm $use_norm \
     --root_path ./datasets \
-    --data_path electricity.csv \
-    --model_id $use_norm'_'electricity_96_$pred_len \
+    --data_path traffic.csv \
+    --model_id $use_norm'_'traffic_96_$pred_len$model_name \
     --model $model_name \
     --data custom \
     --features $features \
-    --seq_len $seq_len \
-    --label_len $label_len \
+    --seq_len 96 \
+    --label_len 48 \
     --pred_len $pred_len \
-    --e_layers 2 \
-    --d_layers 1 \
-    --factor 3 \
-    --enc_in 321 \
-    --dec_in 321 \
-    --c_out 321 \
+    --enc_in 862 \
+    --dec_in 862 \
+    --c_out 862 \
+    --d_ff 512 \
+    --d_model 512 \
+    --e_layers 4 \
     --des 'Exp' \
+    --itr 1 \
     --period_len 24 \
+    --kernel_len 24 \
+    --hkernel_len 12 \
+    --learning_rate 0.001 \
+    --twice_epoch 2 \
+    --batch_size 16 \
     --j 1 \
-    --pe_layers 0 \
-    --itr 1 >logs/DDN/$model_name/elec_$pred_len.log
+    --pd_model 512 \
+    --pd_ff 512  >logs/DDN/iTransformer_96/tra_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -80,23 +87,26 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets \
     --data_path weather.csv \
-    --model_id $use_norm'_'weather_96_$pred_len \
+    --model_id $use_norm'_'weather_96_$pred_len$model_name \
     --model $model_name \
     --data custom \
     --features $features \
-    --seq_len $seq_len \
-    --label_len $label_len \
+    --seq_len 96 \
+    --label_len 48 \
     --pred_len $pred_len \
-    --e_layers 2 \
-    --d_layers 1 \
-    --factor 3 \
     --enc_in 21 \
     --dec_in 21 \
     --c_out 21 \
+    --d_ff 512 \
+    --d_model 512 \
+    --e_layers 3 \
     --des 'Exp' \
+    --itr 1 \
     --period_len 12 \
     --j 1 \
-    --itr 1 >logs/DDN/$model_name/wea_$pred_len.log
+    --twice_epoch 2 \
+    --pd_ff 128 \
+    --pd_model 128 >logs/DDN/iTransformer_96/wea_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -106,24 +116,26 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets/ETT-small \
     --data_path ETTh1.csv \
-    --model_id $use_norm'_'ETTh1_96_$pred_len \
+    --model_id $use_norm'_'ETTh1_96_$pred_len$model_name \
     --model $model_name \
     --data ETTh1 \
     --features $features \
-    --seq_len $seq_len \
-    --label_len $label_len \
+    --seq_len 96 \
+    --label_len 48 \
     --pred_len $pred_len \
-    --e_layers 2 \
-    --d_layers 1 \
-    --factor 3 \
     --enc_in 7 \
     --dec_in 7 \
     --c_out 7 \
+    --d_ff 128 \
+    --d_model 128 \
+    --e_layers 2 \
     --des 'Exp' \
     --period_len 24 \
     --j 1 \
-    --twice_epoch 3 \
-    --itr 1 >logs/DDN/$model_name/ETTh1_$pred_len.log
+    --pe_layers 0 \
+    --pd_model 128 \
+    --pd_ff 128 \
+    --itr 1 >logs/DDN/iTransformer_96/eh1_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -133,28 +145,25 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets/ETT-small \
     --data_path ETTh2.csv \
-    --model_id $use_norm'_'ETTh2_96_$pred_len \
+    --model_id $use_norm'_'ETTh2_96_$pred_len$model_name \
     --model $model_name \
     --data ETTh2 \
     --features $features \
-    --seq_len $seq_len \
-    --label_len $label_len \
+    --seq_len 96 \
+    --label_len 48 \
     --pred_len $pred_len \
-    --e_layers 2 \
-    --d_layers 1 \
-    --factor 3 \
     --enc_in 7 \
     --dec_in 7 \
     --c_out 7 \
+    --d_ff 128 \
+    --d_model 128 \
+    --e_layers 2 \
     --des 'Exp' \
-    --gpu 0 \
     --period_len 24 \
-    --kernel_len 32 \
-    --twice_epoch 0 \
-    --pd_ff 128 \
-    --pd_model 128 \
     --pe_layers 0 \
-    --itr 1 >logs/DDN/$model_name/ETTh2_$pred_len.log
+    --pd_model 128 \
+    --pd_ff 128 \
+    --itr 1 >logs/DDN/iTransformer_96/eh2_$pred_len.log
   done
 
 for pred_len in 96 192 336 720; do
@@ -164,53 +173,50 @@ for pred_len in 96 192 336 720; do
     --use_norm $use_norm \
     --root_path ./datasets/ETT-small \
     --data_path ETTm1.csv \
-    --model_id $use_norm'_'ETTm1_96_$pred_len \
+    --model_id $use_norm'_'ETTm1_96_$pred_len$model_name \
     --model $model_name \
     --data ETTm1 \
     --features $features \
-    --seq_len $seq_len \
-    --label_len $label_len \
+    --seq_len 96 \
+    --label_len 48 \
     --pred_len $pred_len \
-    --e_layers 2 \
-    --d_layers 1 \
-    --factor 3 \
     --enc_in 7 \
     --dec_in 7 \
     --c_out 7 \
+    --d_ff 128 \
+    --d_model 128 \
+    --e_layers 2 \
     --des 'Exp' \
     --period_len 12 \
     --kernel_len 12 \
-    --hkernel_len 7 \
-    --pd_ff 128 \
     --j 1 \
-    --itr 1 >logs/DDN/$model_name/ETTm1_$pred_len.log
+    --pe_layers 0 \
+    --twice_epoch 3 \
+    --itr 1 >logs/DDN/iTransformer_96/em1_$pred_len.log
   done
 
-for pred_len in 336 720 96 192; do
+for pred_len in 96 192 336 720; do
   CUDA_VISIBLE_DEVICES=$gpu \
   python -u run_longExp.py \
     --is_training 1 \
     --use_norm $use_norm \
     --root_path ./datasets/ETT-small \
     --data_path ETTm2.csv \
-    --model_id $use_norm'_'ETTm2_96_$pred_len \
+    --model_id $use_norm'_'ETTm2_96_$pred_len$model_name \
     --model $model_name \
     --data ETTm2 \
     --features $features \
-    --seq_len $seq_len \
-    --label_len $label_len \
+    --seq_len 96 \
+    --label_len 48 \
     --pred_len $pred_len \
-    --e_layers 2 \
-    --d_layers 1 \
-    --factor 3 \
     --enc_in 7 \
     --dec_in 7 \
     --c_out 7 \
+    --d_ff 128 \
+    --d_model 128 \
+    --e_layers 2 \
     --des 'Exp' \
     --period_len 12 \
-    --twice_epoch 0 \
-    --pe_layers 1 \
-    --pd_ff 512 \
-    --dr 0.2 \
-    --itr 1 >logs/DDN/$model_name/ETTm2_$pred_len.log
+    --pe_layers 0 \
+    --itr 1 >logs/DDN/iTransformer_96/em2_$pred_len.log
   done
