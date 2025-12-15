@@ -48,11 +48,11 @@ class Model(nn.Module):
         
         # FFT-based decomposition
         if configs.decomp_type == 'sma':
-            self.decomposer = series_decomp(configs.kernel_size)
+            self.decomposer = series_decomp(configs.kernel_len)
         elif configs.decomp_type == 'ema':
             self.decomposer = ema_decomp(configs.alpha)
         elif configs.decomp_type == 'envelope':
-            self.decomposer = envelope_decomp(configs.kernel_size)
+            self.decomposer = envelope_decomp(configs.kernel_len)
         self.s_norm = configs.s_norm
         self.t_norm = configs.t_norm
         
@@ -61,7 +61,8 @@ class Model(nn.Module):
             seq_len=configs.seq_len,
             pred_len=configs.pred_len,
             down_ratio=configs.down_ratio if hasattr(configs, 'down_ratio') else 4,
-            use_mlp=configs.use_mlp
+            use_mlp=configs.use_mlp,
+            hidden_dim=configs.t_ff
         )
 
     def normalize(self, batch_x):

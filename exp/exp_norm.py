@@ -1,7 +1,7 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
 from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, FEDformer, iTransformer, MICN
-from normalizers import RevIN, SAN, DDN, TP, LightTrend
+from normalizers import RevIN, SAN, DDN, LightTrend
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
 from layers.Autoformer_EncDec import series_decomp
@@ -25,13 +25,13 @@ class Exp_Main(Exp_Basic):
         super(Exp_Main, self).__init__(args)
         self.station_type = args.station_type
         self.decomp = series_decomp(args.kernel_size)
+        self.norm_setting = f"{args.use_norm}_prelr{args.station_pre_lr}_snorm{args.s_norm}_tff{args.t_ff}_kl{args.kernel_len}"
 
     def _build_model(self):
         station_dict = {
             'revin': RevIN,
             'san': SAN,
             'ddn': DDN,
-            'tp': TP,
             'lt': LightTrend,
         }
         self.station = station_dict[self.args.use_norm].Model(self.args).to(self.device)
@@ -195,8 +195,12 @@ class Exp_Main(Exp_Basic):
         if not os.path.exists(path):
             os.makedirs(path)
 
-        path_station = './station/' + '{}_s{}_p{}'.format(self.args.model_id, self.args.data,
-                                                          self.args.seq_len, self.args.pred_len)
+        path_station_pre = './station_pre/' + '{}_{}_s{}_p{}'.format(self.norm_setting, self.args.data_path[:-4],
+                                                                self.args.seq_len, self.args.pred_len)
+        path_station = './station/' + '{}_{}_s{}_p{}'.format(self.norm_setting, self.args.data_path[:-4],
+                                                        self.args.seq_len, self.args.pred_len)
+        if not os.path.exists(path_station_pre):
+            os.makedirs(path_station_pre)
         if not os.path.exists(path_station):
             os.makedirs(path_station)
 
@@ -212,18 +216,38 @@ class Exp_Main(Exp_Basic):
         if self.args.use_amp:
             scaler = torch.cuda.amp.GradScaler()
 
+        # If station checkpoint exists and skip_pretrain is True, load station checkpoint and skip pretraining
+        skip_pretrain = self.args.load_station
+        skip_pretrain_effective = False
+        if skip_pretrain and self.station_setting[0] > 0:
+            best_station_path = os.path.join(path_station_pre, "checkpoint.pth")
+            if os.path.exists(best_station_path):
+                self.station.load_state_dict(torch.load(best_station_path, map_location=self.device))
+                self.station_setting[1] = 0  # pre_epoch=0 => pretrain phase skip
+                skip_pretrain_effective = True
+                print(f"[station_training=False] loaded station ckpt and skip pretrain: {best_station_path}")
+            else:
+                print(f"[station_training=False] station ckpt not found -> run pretrain as usual: {best_station_path}")
+
         for epoch in range(self.args.train_epochs + self.station_setting[1]):
             iter_count = 0
             train_loss = []
             
             # Load best station model after pretraining
-            if self.station_setting[0] > 0 and epoch == self.station_setting[1]:
-                best_model_path = path_station + '/' + 'checkpoint.pth'
-                self.station.load_state_dict(torch.load(best_model_path))
-                print('loading pretrained adaptive station model')
-            
+            if (not skip_pretrain_effective) and self.station_setting[0] > 0 and epoch == self.station_setting[1]:
+                best_station_path = os.path.join(path_station_pre, "checkpoint.pth")
+                if os.path.exists(best_station_path):
+                    self.station.load_state_dict(torch.load(best_station_path, map_location=self.device))
+                    print("loading pretrained adaptive station model")
+                else:
+                    print(f"[warn] station ckpt not found after pretraining: {best_station_path} (continue with current weights)")
+
             # Add station parameters to model optim after pretraining and delay epochs for joint training
             if self.station_setting[2] > 0 and self.station_setting[3] == epoch - self.station_setting[1]:
+                joint_station_ckpt = os.path.join(path_station, "checkpoint.pth")
+                torch.save(self.station.state_dict(), joint_station_ckpt)
+                print(f"[save] station(pretrained) before joint training: {joint_station_ckpt}")
+                
                 # lr = model_optim.param_groups[0]['lr']
                 lr = self.args.station_joint_lr
                 model_optim.add_param_group({'params': self.station.parameters(), 'lr': lr})
@@ -331,7 +355,7 @@ class Exp_Main(Exp_Basic):
                 print(
                     "Station Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
                         epoch + 1, train_steps, train_loss, vali_loss, test_loss))
-                early_stopping_station_model(vali_loss, self.station, path_station)
+                early_stopping_station_model(vali_loss, self.station, path_station_pre)
                 adjust_learning_rate(self.station_optim, epoch + 1, self.args, self.args.station_pre_lr)
             else:
                 print(
@@ -362,6 +386,9 @@ class Exp_Main(Exp_Basic):
         if test:
             print('loading model')
             self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth')))
+            path_station = './station/' + '{}_{}_s{}_p{}'.format(self.norm_setting, self.args.data_path[:-4],
+                                                        self.args.seq_len, self.args.pred_len)
+            self.station.load_state_dict(torch.load(os.path.join(path_station, 'checkpoint.pth')))
 
         preds = []
         trues = []

@@ -3,6 +3,7 @@ datasets/
 figs/
 logs/
 station/
+station_pre/
 test_results/
 nohup.out
 result.txt

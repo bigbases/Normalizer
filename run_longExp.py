@@ -34,25 +34,28 @@ parser.add_argument('--cross_activation', type=str, default='tanh',
                     help='mwt cross atention activation function tanh or softmax')
 
 # non-station module / statistics prediction module config
-parser.add_argument('--station_joint_lr', type=float, default=0.0001)
-parser.add_argument('--station_pre_lr', type=float, default=0.0001)
-parser.add_argument('--use_norm', type=str, default='ddn')
+parser.add_argument('--load_station', type=int, default=1, help='whether to train the stationarity module')
 parser.add_argument('--station_type', type=str, default='adaptive')
-parser.add_argument('--twice_epoch', type=int, default=3)
+parser.add_argument('--use_norm', type=str, default='ddn')
 parser.add_argument('--pre_epoch', type=int, default=5)
+parser.add_argument('--station_pre_lr', type=float, default=0.0001)
+parser.add_argument('--s_norm', type=int, default=0, help='series normalization; True 1 False 0')
+parser.add_argument('--t_norm', type=int, default=1, help='trend normalization; True 1 False 0')
+parser.add_argument('--use_mlp', type=int, default=1)
+parser.add_argument('--decomp_type', type=str, default='sma', help='decomposition type, options: [sma, ema, envelope]')
+parser.add_argument('--kernel_len', type=int, default=25)
+parser.add_argument('--t_ff', type=int, default=64)
+# DDN
+parser.add_argument('--station_joint_lr', type=float, default=0.0001)
+parser.add_argument('--twice_epoch', type=int, default=3)
 parser.add_argument('--j', type=int, default=0)
 parser.add_argument('--learnable', action='store_true', default=False)
 parser.add_argument('--wavelet', type=str, default='coif3')
 parser.add_argument('--dr', type=float, default=0.05)
-parser.add_argument('--kernel_len', type=int, default=7)
 parser.add_argument('--hkernel_len', type=int, default=5)
 parser.add_argument('--pd_ff', type=int, default=1024, help='dimension of fcn')
 parser.add_argument('--pd_model', type=int, default=512, help='dimension of model')
 parser.add_argument('--pe_layers', type=int, default=2, help='num of encoder layers')
-parser.add_argument('--s_norm', type=int, default=0, help='series normalization; True 1 False 0')
-parser.add_argument('--t_norm', type=int, default=1, help='trend normalization; True 1 False 0')
-parser.add_argument('--use_mlp', type=int, default=0)
-parser.add_argument('--decomp_type', type=str, default='sma', help='decomposition type, options: [sma, ema, envelope]')
 
 
 # data loader
@@ -123,8 +126,8 @@ parser.add_argument('--output_attention', action='store_true', help='whether to 
 parser.add_argument('--do_predict', action='store_true', help='whether to predict unseen future data')
 
 # optimization
-parser.add_argument('--num_workers', type=int, default=0, help='data loader num workers')
-parser.add_argument('--itr', type=int, default=2, help='experiments times')
+parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
+parser.add_argument('--itr', type=int, default=3, help='experiments times')
 parser.add_argument('--train_epochs', type=int, default=10, help='train epochs')
 parser.add_argument('--batch_size', type=int, default=32, help='batch kernel of train x data')
 parser.add_argument('--patience', type=int, default=3, help='early stopping patience')
