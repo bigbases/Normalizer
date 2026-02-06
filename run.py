@@ -2,7 +2,9 @@ import argparse
 import os
 import torch
 # from exp.exp_main import Exp_Main
-from exp.exp_norm import Exp_Main
+from exp.exp_norm_long import Exp_Long_Term_Forecast
+from exp.exp_norm_short import Exp_Short_Term_Forecast
+from exp.exp_main import Exp_Main
 import random
 import numpy as np
 
@@ -12,15 +14,15 @@ torch.manual_seed(fix_seed)
 np.random.seed(fix_seed)
 torch.set_num_threads(6)
 
-parser = argparse.ArgumentParser(description='Autoformer & Transformer family for Time Series Forecasting')
+parser = argparse.ArgumentParser(description='Time Series Forecasting')
 
 # basic config
 parser.add_argument('--task_name', type=str, default='long_term_forecast',
-                    help='task name, options:[long_term_forecast, short_term_forecast, imputation, classification, anomaly_detection]')
+                    help='task name, options:[long_term_forecast, short_term_forecast]')
 parser.add_argument('--is_training', type=int, default=1, help='status')
 parser.add_argument('--model_id', type=str, default='test', help='model id')
 parser.add_argument('--model', type=str, default='FEDformer',
-                    help='model name, options: [Autoformer, Informer, Transformer]')
+                    help='model name, options: [Autoformer, FEDformer, DLinear, iTransformer]')
 
 # supplementary config for FEDformer model
 parser.add_argument('--version', type=str, default='Fourier',
@@ -34,20 +36,21 @@ parser.add_argument('--cross_activation', type=str, default='tanh',
                     help='mwt cross atention activation function tanh or softmax')
 
 # non-station module / statistics prediction module config
-parser.add_argument('--load_station', type=int, default=1, help='whether to train the stationarity module')
+parser.add_argument('--load_station', type=int, default=0, help='whether to train the stationarity module')
 parser.add_argument('--station_type', type=str, default='adaptive')
-parser.add_argument('--use_norm', type=str, default='ddn')
+parser.add_argument('--use_norm', type=str, default='none')
 parser.add_argument('--pre_epoch', type=int, default=5)
 parser.add_argument('--station_pre_lr', type=float, default=0.0001)
 parser.add_argument('--s_norm', type=int, default=0, help='series normalization; True 1 False 0')
 parser.add_argument('--t_norm', type=int, default=1, help='trend normalization; True 1 False 0')
-parser.add_argument('--use_mlp', type=int, default=1)
+parser.add_argument('--use_mlp', type=int, default=0)
 parser.add_argument('--decomp_type', type=str, default='sma', help='decomposition type, options: [sma, ema, envelope]')
 parser.add_argument('--kernel_len', type=int, default=25)
 parser.add_argument('--t_ff', type=int, default=64)
+parser.add_argument('--down_ratio', type=int, default=4)
 # DDN
 parser.add_argument('--station_joint_lr', type=float, default=0.0001)
-parser.add_argument('--twice_epoch', type=int, default=3)
+parser.add_argument('--twice_epoch', type=int, default=1)
 parser.add_argument('--j', type=int, default=0)
 parser.add_argument('--learnable', action='store_true', default=False)
 parser.add_argument('--wavelet', type=str, default='coif3')
@@ -68,6 +71,7 @@ parser.add_argument('--target', type=str, default='OT', help='target feature in 
 parser.add_argument('--freq', type=str, default='h',
                     help='freq for time features encoding, options:[s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly], you can also use more detailed freq like 15min or 3h')
 parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
+parser.add_argument('--augmentation_ratio', type=int, default=0, help="How many times to augment")
 
 # PatchTST
 parser.add_argument('--fc_dropout', type=float, default=0.05, help='fully connected dropout')
@@ -91,6 +95,7 @@ parser.add_argument('--seg_len', type=int, default=6, help='segment length (L_se
 parser.add_argument('--seq_len', type=int, default=96, help='x sequence length')
 parser.add_argument('--label_len', type=int, default=48, help='start token length')
 parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
+parser.add_argument('--seasonal_patterns', type=str, default='Monthly', help='subset for M4')
 
 # DLinear
 parser.add_argument('--individual', action='store_true', default=False,
@@ -126,7 +131,7 @@ parser.add_argument('--output_attention', action='store_true', help='whether to 
 parser.add_argument('--do_predict', action='store_true', help='whether to predict unseen future data')
 
 # optimization
-parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
+parser.add_argument('--num_workers', type=int, default=5, help='data loader num workers')
 parser.add_argument('--itr', type=int, default=3, help='experiments times')
 parser.add_argument('--train_epochs', type=int, default=10, help='train epochs')
 parser.add_argument('--batch_size', type=int, default=32, help='batch kernel of train x data')
@@ -159,9 +164,12 @@ if args.use_gpu and args.use_multi_gpu:
 print('Args in experiment:')
 print(args)
 
-Exp = Exp_Main
-mses = []
-maes = []
+if args.task_name == 'long_term_forecast':
+    Exp = Exp_Long_Term_Forecast
+elif args.task_name == 'short_term_forecast':
+    Exp = Exp_Short_Term_Forecast
+# Exp = Exp_Main
+
 
 if args.is_training:
     for ii in range(args.itr):
@@ -194,17 +202,13 @@ if args.is_training:
         exp.train(setting)
 
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
-        mse, mae = exp.test(setting)
-        mses.append(mse)
-        maes.append(mae)
+        exp.test(setting)
 
         if args.do_predict:
             print('>>>>>>>predicting : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
             exp.predict(setting, True)
 
         torch.cuda.empty_cache()
-    print('average mse:{0:.3f}±{1:.3f}, mae:{2:.3f}±{3:.3f}'.format(np.mean(mses), np.std(mses), np.mean(maes),
-                                                                    np.std(maes)))
 else:
     ii = 0
     setting = '{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_fc{}_eb{}_dt{}_{}_tn{}_stl{}-{}_um{}_{}'.format(args.model_id,

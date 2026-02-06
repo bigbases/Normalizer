@@ -165,7 +165,6 @@ class Model(nn.Module):
                 seq_mean=None, seq_std=None):
         # decomp init
         mean = torch.mean(x_enc, dim=1).unsqueeze(1).repeat(1, self.pred_len, 1)
-        zeros = torch.zeros([x_dec.shape[0], self.pred_len, x_dec.shape[2]]).to(device)  # cuda()
         seasonal_init, trend_init = self.decomp(x_enc)
         # decoder x
         trend_init = torch.cat([trend_init[:, -self.label_len:, :], mean], dim=1)

@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from layers.decomposition import series_decomp, ema_decomp, envelope_decomp
+from layers.decomposition import series_decomp
 
 class DownUpTrendPredictor(nn.Module):
     def __init__(self, seq_len, pred_len, down_ratio=4, hidden_dim=64, use_mlp=False):
@@ -16,8 +16,6 @@ class DownUpTrendPredictor(nn.Module):
             self.linear = nn.Sequential(
                 nn.Linear(self.down_len, hidden_dim),
                 nn.ReLU(),
-                # nn.Linear(hidden_dim, hidden_dim),
-                # nn.ReLU(),
                 nn.Linear(hidden_dim, max(1, pred_len // down_ratio))
             )
         else:
@@ -47,12 +45,7 @@ class Model(nn.Module):
             self.s_gamma, self.s_beta = 1, 0
         
         # FFT-based decomposition
-        if configs.decomp_type == 'sma':
-            self.decomposer = series_decomp(configs.kernel_len)
-        elif configs.decomp_type == 'ema':
-            self.decomposer = ema_decomp(configs.alpha)
-        elif configs.decomp_type == 'envelope':
-            self.decomposer = envelope_decomp(configs.kernel_len)
+        self.decomposer = series_decomp(configs.kernel_size)
         self.s_norm = configs.s_norm
         self.t_norm = configs.t_norm
         
@@ -60,32 +53,42 @@ class Model(nn.Module):
         self.trend_predictor = DownUpTrendPredictor(
             seq_len=configs.seq_len,
             pred_len=configs.pred_len,
-            down_ratio=configs.down_ratio if hasattr(configs, 'down_ratio') else 4,
+            down_ratio=configs.down_ratio,
             use_mlp=configs.use_mlp,
             hidden_dim=configs.t_ff
         )
 
     def normalize(self, batch_x):
         batch_x, trend = self.decomposer(batch_x)
+
+        dev = batch_x.device
+
         if self.s_norm:
-            self.avg = torch.mean(batch_x, axis=1, keepdim=True).detach()
-            self.var = torch.var(batch_x, axis=1, keepdim=True).detach()
+            avg = batch_x.mean(dim=1, keepdim=True).detach()
+            var = batch_x.var(dim=1, keepdim=True, unbiased=False).detach()
         else:
-            self.avg, self.var = torch.FloatTensor([0]).cuda(), torch.FloatTensor([1]).cuda()
-        batch_x = (batch_x - self.avg) / torch.sqrt(self.var + 1e-8)
+            avg = batch_x.new_zeros(1, 1, 1)
+            var = batch_x.new_ones(1, 1, 1)
+
+        self.avg, self.var = avg, var
+
+        batch_x = (batch_x - avg) / torch.sqrt(var + 1e-8)
         batch_x = batch_x.mul(self.s_gamma) + self.s_beta
 
         if self.t_norm:
-            trend_avg = torch.mean(trend, axis=1, keepdim=True).detach()
-            trend_var = torch.var(trend, axis=1, keepdim=True).detach()
+            trend_avg = trend.mean(dim=1, keepdim=True).detach()
+            trend_var = trend.var(dim=1, keepdim=True, unbiased=False).detach()
         else:
-            trend_avg, trend_var = torch.FloatTensor([0]).cuda(), torch.FloatTensor([1]).cuda()
+            trend_avg = trend.new_zeros(1, 1, 1)
+            trend_var = trend.new_ones(1, 1, 1)
 
         trend = (trend - trend_avg) / torch.sqrt(trend_var + 1e-8)
         trend = trend.mul(self.t_gamma) + self.t_beta
 
         trend_out = self.trend_predictor(trend)
-        trend_out = (trend_out - self.t_beta) / self.t_gamma
+
+        # affine inverse (gamma/beta가 Parameter면 device는 맞아있음)
+        trend_out = (trend_out - self.t_beta) / (self.t_gamma + 1e-12)
         trend_out = trend_out * torch.sqrt(trend_var + 1e-8) + trend_avg
 
         return batch_x, trend_out

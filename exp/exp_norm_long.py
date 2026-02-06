@@ -1,9 +1,10 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, FEDformer, iTransformer, MICN
-from normalizers import RevIN, SAN, DDN, LightTrend
+from models import Autoformer, DLinear, FEDformer, iTransformer
+from normalizers import NoNorm, RevIN, SAN, DDN, LightTrend
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
+from utils.norm_losses import NormLosses
 from layers.Autoformer_EncDec import series_decomp
 
 import numpy as np
@@ -20,31 +21,27 @@ import matplotlib.pyplot as plt
 warnings.filterwarnings('ignore')
 
 
-class Exp_Main(Exp_Basic):
+class Exp_Long_Term_Forecast(Exp_Basic):
     def __init__(self, args):
-        super(Exp_Main, self).__init__(args)
+        super(Exp_Long_Term_Forecast, self).__init__(args)
         self.station_type = args.station_type
         self.decomp = series_decomp(args.kernel_size)
         self.norm_setting = f"{args.use_norm}_prelr{args.station_pre_lr}_snorm{args.s_norm}_tff{args.t_ff}_kl{args.kernel_len}"
 
     def _build_model(self):
         station_dict = {
+            'none': NoNorm,
             'revin': RevIN,
             'san': SAN,
             'ddn': DDN,
             'lt': LightTrend,
         }
         self.station = station_dict[self.args.use_norm].Model(self.args).to(self.device)
-        station_loss_dict = {
-            'revin': None,
-            'san': self.san_loss,
-            'ddn': self.sliding_loss,
-            'tp': self.trend_loss,
-            'lt': self.lt_loss,
-        }
-        self.station_loss = station_loss_dict[self.args.use_norm]
+        self.station_loss = NormLosses(self.args, station=self.station).to(self.device)
+        
         # [pre train, pre epoch, joint train, join epoch]
         station_setting_dict = {
+            'none': [0, 0, 0, 0],
             'revin': [0, 0, 0, 0],
             'san': [1, self.args.pre_epoch, 0, 0],
             'ddn': [1, self.args.pre_epoch, 1, self.args.twice_epoch],
@@ -55,13 +52,8 @@ class Exp_Main(Exp_Basic):
         model_dict = {
             'FEDformer': FEDformer,
             'Autoformer': Autoformer,
-            'Transformer': Transformer,
-            'Informer': Informer,
             'DLinear': DLinear,
-            'NLinear': NLinear,
-            'Linear': Linear,
             'iTransformer': iTransformer,
-            'MICN': MICN,
         }
         model = model_dict[self.args.model].Model(self.args).float()
 
@@ -80,37 +72,6 @@ class Exp_Main(Exp_Basic):
 
     def _select_criterion(self):
         self.criterion = nn.MSELoss()
-
-    # SAN
-    def san_loss(self, y, statistics_pred):
-        bs, len, dim = y.shape
-        y = y.reshape(bs, -1, self.args.period_len, dim)
-        mean = torch.mean(y, dim=2)
-        std = torch.std(y, dim=2)
-        station_ture = torch.cat([mean, std], dim=-1)
-        loss = self.criterion(statistics_pred, station_ture)
-        return loss
-
-    # DDN
-    def sliding_loss(self, y, statistics_pred):
-        _, (mean, std) = self.station.norm(y.transpose(-1, -2), False)
-        station_ture = torch.cat([mean, std], dim=1).transpose(-1, -2)
-        loss = self.criterion(statistics_pred, station_ture)
-        return loss
-    
-    # TP
-    def trend_loss(self, y, statistics_pred):
-        trend_pred = statistics_pred[-1]
-        _, trend_true = self.decomp(y)
-        loss = self.criterion(trend_pred, trend_true)
-        return loss
-    
-    # LightTrend
-    def lt_loss(self, y, statistics_pred):
-        trend_pred = statistics_pred
-        _, trend_true = self.decomp(y)
-        loss = self.criterion(trend_pred, trend_true)
-        return loss
 
     def vali(self, vali_data, vali_loader, criterion, epoch):
         total_loss = []
@@ -197,7 +158,7 @@ class Exp_Main(Exp_Basic):
 
         path_station_pre = './station_pre/' + '{}_{}_s{}_p{}'.format(self.norm_setting, self.args.data_path[:-4],
                                                                 self.args.seq_len, self.args.pred_len)
-        path_station = './station/' + '{}_{}_s{}_p{}'.format(self.norm_setting, self.args.data_path[:-4],
+        path_station = './station/' + '{}_{}_s{}_p{}'.format(setting, self.args.data_path[:-4],
                                                         self.args.seq_len, self.args.pred_len)
         if not os.path.exists(path_station_pre):
             os.makedirs(path_station_pre)
@@ -248,8 +209,8 @@ class Exp_Main(Exp_Basic):
                 torch.save(self.station.state_dict(), joint_station_ckpt)
                 print(f"[save] station(pretrained) before joint training: {joint_station_ckpt}")
                 
-                # lr = model_optim.param_groups[0]['lr']
-                lr = self.args.station_joint_lr
+                lr = model_optim.param_groups[0]['lr']
+                # lr = self.args.station_joint_lr
                 model_optim.add_param_group({'params': self.station.parameters(), 'lr': lr})
             
             self.model.train()
@@ -386,7 +347,7 @@ class Exp_Main(Exp_Basic):
         if test:
             print('loading model')
             self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth')))
-            path_station = './station/' + '{}_{}_s{}_p{}'.format(self.norm_setting, self.args.data_path[:-4],
+            path_station = './station/' + '{}_{}_s{}_p{}'.format(setting, self.args.data_path[:-4],
                                                         self.args.seq_len, self.args.pred_len)
             self.station.load_state_dict(torch.load(os.path.join(path_station, 'checkpoint.pth')))
 
@@ -466,11 +427,9 @@ class Exp_Main(Exp_Basic):
         #     exit()
         preds = np.array(preds, dtype=object)
         trues = np.array(trues, dtype=object)
-        # inputx = np.array(inputx)
 
         preds = np.concatenate(preds, axis=0)
         trues = np.concatenate(trues, axis=0)
-        # inputx = inputx.reshape(-1, inputx.shape[-2], inputx.shape[-1])
 
         # result save
         folder_path = './test_results/' + setting + '/'
@@ -493,11 +452,6 @@ class Exp_Main(Exp_Basic):
                 f.write('Setting,MSE,MAE\n')
         with open(result_file, 'a') as f:
             f.write('{},{},{}\n'.format(setting, mse, mae))
-
-        # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe,rse, corr]))
-        # np.save(folder_path + 'pred.npy', preds)
-        # np.save(folder_path + 'true.npy', trues)
-        # np.save(folder_path + 'x.npy', inputx)
         return mse, mae
 
     def predict(self, setting, load=False):

@@ -399,22 +399,12 @@ class Exp_Main(Exp_Basic):
                 preds.append(pred)
                 trues.append(true)
                 inputx.append(batch_x.detach().cpu().numpy())
-                # if i % 5 == 0:
-                #     x = input_x.detach().cpu().numpy()
-                #     gt = np.concatenate((x[0, :, -1], true[0, :, -1]), axis=0)
-                #     pd = np.concatenate((x[0, :, -1], pred[0, :, -1]), axis=0)
-                #     visual(gt, pd, os.path.join(folder_path, str(i) + '.pdf'))
-
-        # if self.args.test_flop:
-        #     test_params_flop((batch_x.shape[1], batch_x.shape[2]))
-        #     exit()
+        
         preds = np.array(preds, dtype=object)
         trues = np.array(trues, dtype=object)
-        # inputx = np.array(inputx)
 
         preds = np.concatenate(preds, axis=0)
         trues = np.concatenate(trues, axis=0)
-        # inputx = inputx.reshape(-1, inputx.shape[-2], inputx.shape[-1])
 
         # result save
         folder_path = './test_results/' + setting + '/'
@@ -429,11 +419,6 @@ class Exp_Main(Exp_Basic):
         f.write('\n')
         f.write('\n')
         f.close()
-
-        # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe,rse, corr]))
-        # np.save(folder_path + 'pred.npy', preds)
-        # np.save(folder_path + 'true.npy', trues)
-        # np.save(folder_path + 'x.npy', inputx)
         return mse, mae
 
     def predict(self, setting, load=False):
