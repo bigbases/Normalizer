@@ -1,10 +1,10 @@
 # Experiment progress
 
-Generated 2026-10-06T22:51:05+00:00 from 284 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-06T23:01:25+00:00 from 287 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| exp1-lt | 11 | 2 | 1 | 0 | 0 |
+| exp1-lt | 12 | 1 | 1 | 0 | 0 |
 | exp2-search | 2 | 1 | 11 | 0 | 0 |
 | exp2-confirm | 0 | 0 | 2 | 12 | 0 |
 | exp3-none | 5 | 1 | 8 | 0 | 0 |
@@ -24,7 +24,7 @@ Generated 2026-10-06T22:51:05+00:00 from 284 packaged cells. Regenerate with `py
 | exp1-lt--Weather--iTransformer | done | 12/12 |  |
 | exp1-lt--Electricity--DLinear | done | 12/12 |  |
 | exp1-lt--Electricity--iTransformer | claimed | 1/12 | elice-a100 |
-| exp1-lt--Traffic--DLinear | claimed | 9/12 | elice-a100 |
+| exp1-lt--Traffic--DLinear | done | 12/12 |  |
 | exp1-lt--Traffic--iTransformer | ready | 0/12 |  |
 | exp2-search--ETTh1--DLinear | done | 40/40 |  |
 | exp2-search--ETTh1--iTransformer | ready | 0/40 |  |
