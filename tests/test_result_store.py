@@ -85,7 +85,8 @@ class GitTransactionTest(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
         self.remote = self.tmp / "remote.git"
-        git(self.tmp, "init", "-q", "--bare", "-b", "main", str(self.remote))
+        git(self.tmp, "init", "-q", "--bare", str(self.remote))       # no -b: git < 2.28
+        git(self.remote, "symbolic-ref", "HEAD", "refs/heads/main")
         seed = self.tmp / "seed"
         git(self.tmp, "clone", "-q", str(self.remote), str(seed))
         (seed / "code.py").write_text("x = 1\n")
