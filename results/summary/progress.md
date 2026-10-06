@@ -1,13 +1,13 @@
 # Experiment progress
 
-Generated 2026-10-06T21:54:19+00:00 from 141 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-06T21:56:34+00:00 from 148 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 6 | 0 | 8 | 0 | 0 |
 | exp2-search | 0 | 0 | 14 | 0 | 0 |
 | exp2-confirm | 0 | 0 | 0 | 14 | 0 |
-| exp3-none | 4 | 1 | 9 | 0 | 0 |
+| exp3-none | 5 | 1 | 8 | 0 | 0 |
 | exp3-tuned | 0 | 0 | 0 | 14 | 0 |
 
 | task | status | cells done | worker |
@@ -58,9 +58,9 @@ Generated 2026-10-06T21:54:19+00:00 from 141 packaged cells. Regenerate with `py
 | exp3-none--ETTh1--iTransformer | done | 12/12 |  |
 | exp3-none--ETTh2--DLinear | done | 12/12 |  |
 | exp3-none--ETTh2--iTransformer | done | 12/12 |  |
-| exp3-none--ETTm1--DLinear | ready | 0/12 |  |
+| exp3-none--ETTm1--DLinear | claimed | 0/12 | itm21-a4000 |
 | exp3-none--ETTm1--iTransformer | ready | 0/12 |  |
-| exp3-none--ETTm2--DLinear | claimed | 5/12 | itm21-a4000 |
+| exp3-none--ETTm2--DLinear | done | 12/12 |  |
 | exp3-none--ETTm2--iTransformer | ready | 0/12 |  |
 | exp3-none--Weather--DLinear | ready | 0/12 |  |
 | exp3-none--Weather--iTransformer | ready | 0/12 |  |
