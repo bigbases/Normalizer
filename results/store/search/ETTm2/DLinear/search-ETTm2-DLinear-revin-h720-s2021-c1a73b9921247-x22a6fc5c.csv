@@ -1,0 +1,2 @@
+RunID,CandidateID,ConfigHash,Phase,Split,Setting,Dataset,Backbone,Horizon,MSE,MAE,Seed,BestValMSE,BestEpoch,UseNorm,Host,Worker,GPU,Torch,CodeRev,ElapsedSeconds,FinishedAt
+search-ETTm2-DLinear-revin-h720-s2021-c1a73b9921247-x22a6fc5c,1a73b9921247,22a6fc5c60812d32,search,validation,ETTm2_DLinear_720_DLinear_ETTm2_ftM_sl336_ll168_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_journal-v1_unrevin_af0_sd2021_cfg22a6fc5c6081_r0,ETTm2,DLinear,720,,,2021,0.2648571217818373,9,revin,itm21-a4000,itm21-a4000,NVIDIA RTX A4000,2.1.0+cu118,5475437,150.7,2026-10-06T23:31:27+00:00

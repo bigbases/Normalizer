@@ -376,6 +376,26 @@
         },
         "screen_mean_val_mse": 0.40542764684314875
       }
+    ],
+    "ETTm2|DLinear|revin": [
+      {
+        "candidate_id": "1a73b9921247",
+        "n_cells": 2,
+        "params": {
+          "affine": 0,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.19070714910481926
+      },
+      {
+        "candidate_id": "a22b7bdd93cb",
+        "n_cells": 2,
+        "params": {
+          "affine": 1,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.19300651636101115
+      }
     ]
   }
 }
