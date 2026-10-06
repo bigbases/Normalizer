@@ -145,7 +145,7 @@ class Worker:
         self.capacity_mib = min(states[g].total_mib for g in self.gpu_ids)
         self.threads = rm.worker_threads(args, len(self.gpu_ids))
         self.slots = len(self.gpu_ids) * args.max_processes_per_gpu
-        self.host = rs.host_name()
+        self.host = args.host or rs.host_name()
         self.worker_id = args.worker_id or f"{self.host}-gpu{'.'.join(map(str, self.gpu_ids))}"
         self.torch = subprocess.run(
             [sys.executable, "-c", "import torch; print(torch.__version__)"],
@@ -465,6 +465,7 @@ def main():
     r.add_argument("--order", choices=["fastest-first", "largest-first"], default="fastest-first")
     r.add_argument("--keep-checkpoints", choices=["final", "all", "none"], default="final")
     r.add_argument("--max-retries", type=int, default=1)
+    r.add_argument("--host", help="server label stored with results (default: hostname)")
     r.add_argument("--worker-id", help="stable name; default <host>-gpu<ids>")
     r.add_argument("--lease-hours", type=float, help="override the plan's claim lease")
     r.add_argument("--push-minutes", type=float, default=3.0)
