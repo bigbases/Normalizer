@@ -1,11 +1,11 @@
 # Experiment progress
 
-Generated 2026-10-06T22:07:17+00:00 from 175 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-06T22:36:37+00:00 from 207 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| exp1-lt | 9 | 0 | 5 | 0 | 0 |
-| exp2-search | 0 | 0 | 14 | 0 | 0 |
+| exp1-lt | 10 | 2 | 2 | 0 | 0 |
+| exp2-search | 0 | 1 | 13 | 0 | 0 |
 | exp2-confirm | 0 | 0 | 0 | 14 | 0 |
 | exp3-none | 5 | 1 | 8 | 0 | 0 |
 | exp3-tuned | 0 | 0 | 0 | 14 | 0 |
@@ -21,14 +21,14 @@ Generated 2026-10-06T22:07:17+00:00 from 175 packaged cells. Regenerate with `py
 | exp1-lt--ETTm2--DLinear | done | 12/12 |  |
 | exp1-lt--ETTm2--iTransformer | done | 12/12 |  |
 | exp1-lt--Weather--DLinear | done | 12/12 |  |
-| exp1-lt--Weather--iTransformer | ready | 4/12 |  |
-| exp1-lt--Electricity--DLinear | ready | 3/12 |  |
+| exp1-lt--Weather--iTransformer | claimed | 10/12 | itm21-a4000 |
+| exp1-lt--Electricity--DLinear | done | 12/12 |  |
 | exp1-lt--Electricity--iTransformer | ready | 0/12 |  |
-| exp1-lt--Traffic--DLinear | ready | 0/12 |  |
+| exp1-lt--Traffic--DLinear | claimed | 3/12 | elice-a100 |
 | exp1-lt--Traffic--iTransformer | ready | 0/12 |  |
 | exp2-search--ETTh1--DLinear | ready | 0/40 |  |
 | exp2-search--ETTh1--iTransformer | ready | 0/40 |  |
-| exp2-search--ETTh2--DLinear | ready | 0/40 |  |
+| exp2-search--ETTh2--DLinear | claimed | 14/40 | itm21-a4000 |
 | exp2-search--ETTh2--iTransformer | ready | 0/40 |  |
 | exp2-search--ETTm1--DLinear | ready | 0/40 |  |
 | exp2-search--ETTm1--iTransformer | ready | 0/40 |  |
