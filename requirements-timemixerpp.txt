@@ -1,0 +1,7 @@
+# Optional fallback while the authors' TimeMixer++ archive is inaccessible.
+# PyPOTS 1.5, source commit inspected for this adapter on 2026-10-07.
+# Install WITHOUT dependencies: the adapter imports only
+# pypots.nn.modules.timemixerpp (torch + numpy), while the full dependency set
+# pulls transformers, optuna, tensorboard, tsdb, pygrinder and benchpots.
+#   pip install --no-deps -r requirements-timemixerpp.txt
+pypots @ https://github.com/WenjieDu/PyPOTS/archive/53b3eac34be9491ac3f28e65ee1993436e9318af.zip

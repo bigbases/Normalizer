@@ -1,0 +1,66 @@
+{
+  "description": "A100 80GB profile. Same priors as resource_profiles.json, but Traffic is not exclusive: its largest cell (iTransformer, batch 16) needs ~12 GiB, so memory and utilization admission are sufficient on 80 GB. Profiled activations (configs/cost_profile.json) raise the memory estimate where the priors are lower.",
+  "memory_headroom": 1.25,
+  "exclusive_datasets": [],
+  "exclusive_backbones": [
+    "FEDformer"
+  ],
+  "dataset_memory_multiplier": {
+    "ETTh1": 1.0,
+    "ETTh2": 1.0,
+    "ETTm1": 1.0,
+    "ETTm2": 1.0,
+    "Weather": 1.0,
+    "Electricity": 1.15,
+    "Traffic": 1.25
+  },
+  "backbones": {
+    "DLinear": {
+      "base_mib": 900,
+      "channel_seq_mib": 0.55,
+      "horizon_mib": 0.8,
+      "util_percent": 18
+    },
+    "iTransformer": {
+      "base_mib": 2600,
+      "channel_seq_mib": 1.4,
+      "horizon_mib": 1.5,
+      "util_percent": 42
+    },
+    "TimeMixerPP": {
+      "base_mib": 3500,
+      "channel_seq_mib": 2.0,
+      "horizon_mib": 2.0,
+      "util_percent": 55
+    },
+    "FEDformer": {
+      "base_mib": 7000,
+      "channel_seq_mib": 2.5,
+      "horizon_mib": 3.0,
+      "util_percent": 75,
+      "exclusive": true
+    },
+    "default": {
+      "base_mib": 4000,
+      "channel_seq_mib": 1.8,
+      "horizon_mib": 2.0,
+      "util_percent": 50
+    }
+  },
+  "normalizer_extra_mib": {
+    "none": 0,
+    "revin": 128,
+    "san": 700,
+    "ddn": 900,
+    "fan": 600,
+    "lt": 500
+  },
+  "normalizer_extra_util": {
+    "none": 0,
+    "revin": 1,
+    "san": 7,
+    "ddn": 9,
+    "fan": 6,
+    "lt": 5
+  }
+}

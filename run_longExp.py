@@ -1,4 +1,5 @@
 import argparse
+import os
 import random
 import numpy as np
 import torch
@@ -6,12 +7,28 @@ import torch
 from exp.exp_main import Exp_Main
 
 
-def set_seed(seed: int) -> None:
+def str2bool(value):
+    if isinstance(value, bool):
+        return value
+    value = value.lower()
+    if value in ('1', 'true', 'yes', 'y'):
+        return True
+    if value in ('0', 'false', 'no', 'n'):
+        return False
+    raise argparse.ArgumentTypeError('expected one of: true/false, 1/0, yes/no')
+
+
+def set_seed(seed: int, deterministic: bool = True) -> None:
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
+    if deterministic:
+        os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+        torch.backends.cudnn.benchmark = False
+        torch.backends.cudnn.deterministic = True
+        torch.use_deterministic_algorithms(True, warn_only=True)
 
 
 def _norm_suffix(args) -> str:
@@ -41,6 +58,12 @@ def _norm_suffix(args) -> str:
             'j' + str(args.j),
             'pe' + str(args.pre_epoch),
             'te' + str(args.twice_epoch),
+            'slr' + str(args.station_lr),
+        ]
+    elif un == 'fan':
+        tokens += [
+            'k' + str(args.freq_topk),
+            'aw' + str(args.fan_aux_weight),
             'slr' + str(args.station_lr),
         ]
     elif un == 'lt':
@@ -81,7 +104,10 @@ def build_setting(args, itr_idx: int) -> str:
             args.des,
         )
     )
-    return '{}_{}_{}'.format(base, _norm_suffix(args), itr_idx)
+    cfg = str(args.config_hash or 'manual')[:12]
+    return '{}_{}_sd{}_cfg{}_r{}'.format(
+        base, _norm_suffix(args), args.seed, cfg, itr_idx
+    )
 
 
 parser = argparse.ArgumentParser(description='Time Series Forecasting')
@@ -97,7 +123,7 @@ parser.add_argument('--task_name', type=str, default='long_term_forecast',
 parser.add_argument('--is_training', type=int, default=1, help='status')
 parser.add_argument('--model_id', type=str, default='test', help='model id')
 parser.add_argument('--model', type=str, default='FEDformer',
-                    help='model name, options: [Autoformer, FEDformer, DLinear, iTransformer]')
+                    help='model name (module in models/), e.g. DLinear, iTransformer, TimeMixerPP')
 
 # supplementary config for FEDformer model
 parser.add_argument('--version', type=str, default='Fourier',
@@ -113,8 +139,8 @@ parser.add_argument('--cross_activation', type=str, default='tanh',
 # non-station / normalization config
 parser.add_argument('--station_type', type=str, default='adaptive')
 parser.add_argument('--use_norm', type=str, default='none',
-                    choices=['none', 'revin', 'san', 'ddn', 'lt'],
-                    help='normalization mode: [none, revin, san, ddn, lt]')
+                    choices=['none', 'revin', 'san', 'ddn', 'fan', 'lt'],
+                    help='normalization mode: [none, revin, san, ddn, fan, lt]')
 parser.add_argument('--pre_epoch', type=int, default=5)
 parser.add_argument('--station_lr', type=float, default=0.0001,
                     help='learning rate for the station (normalizer) module; matches SAN/DDN original')
@@ -134,9 +160,22 @@ parser.add_argument('--hkernel_len', type=int, default=5)
 parser.add_argument('--pd_ff', type=int, default=1024, help='dimension of fcn')
 parser.add_argument('--pd_model', type=int, default=512, help='dimension of model')
 parser.add_argument('--pe_layers', type=int, default=2, help='num of encoder layers')
+parser.add_argument('--freq_topk', type=int, default=4,
+                    help='FAN: number of retained RFFT bins (dataset-specific)')
+parser.add_argument('--fan_aux_weight', type=float, default=1.0,
+                    help='FAN: coefficient on main-frequency MSE; 1.0 matches the reference code')
 
 # experiment plumbing
 parser.add_argument('--seed', type=int, default=2021, help='global random seed')
+parser.add_argument('--deterministic', type=str2bool, default=True,
+                    help='request deterministic PyTorch kernels (default: true)')
+parser.add_argument('--config_hash', type=str, default='',
+                    help='immutable config fingerprint supplied by the experiment planner')
+parser.add_argument('--run_id', type=str, default='',
+                    help='stable cell identifier supplied by the experiment planner')
+parser.add_argument('--candidate_id', type=str, default='',
+                    help='normalizer configuration identifier used across horizons/seeds')
+parser.add_argument('--phase', type=str, choices=['search', 'confirm', 'final'], default='final')
 parser.add_argument('--result_file', type=str, default='result.csv',
                     help='CSV file for appending final (setting, MSE, MAE, ...) rows; '
                          'relative to CWD. Use this to separate baseline runs across scripts '
@@ -152,6 +191,10 @@ parser.add_argument('--target', type=str, default='OT', help='target feature in 
 parser.add_argument('--freq', type=str, default='h',
                     help='freq for time features encoding')
 parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
+parser.add_argument('--station_root', type=str, default='.',
+                    help='parent of station_pre/ and station/ normalizer checkpoints')
+parser.add_argument('--save_test_plots', type=str2bool, default=False,
+                    help='write a PDF forecast plot every 20 test batches to ./test_results')
 parser.add_argument('--augmentation_ratio', type=int, default=0, help='How many times to augment')
 
 # PatchTST
@@ -176,12 +219,25 @@ parser.add_argument('--seg_len', type=int, default=6, help='segment length (L_se
 parser.add_argument('--seq_len', type=int, default=96, help='x sequence length')
 parser.add_argument('--label_len', type=int, default=48, help='start token length')
 parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
+parser.add_argument('--force_label_len_half', action='store_true', default=False,
+                    help='legacy compatibility only; override label_len with seq_len//2')
 
 # DLinear
 parser.add_argument('--individual', action='store_true', default=False,
                     help='DLinear: a linear layer for each variate(channel) individually')
 
 parser.add_argument('--period_len', type=int, default=24)
+
+# TimeMixer++ arguments.  External normalization comparisons must keep
+# tmpp_use_internal_norm=false so every method receives the same backbone.
+parser.add_argument('--top_k', type=int, default=5)
+parser.add_argument('--n_kernels', type=int, default=6)
+parser.add_argument('--channel_mixing', type=str2bool, default=True)
+parser.add_argument('--channel_independence', type=str2bool, default=False)
+parser.add_argument('--down_sampling_layers', type=int, default=3)
+parser.add_argument('--down_sampling_window', type=int, default=2)
+parser.add_argument('--down_sampling_method', type=str, default='avg')
+parser.add_argument('--tmpp_use_internal_norm', type=str2bool, default=False)
 
 # Formers
 parser.add_argument('--embed_type', type=int, default=0,
@@ -216,50 +272,73 @@ parser.add_argument('--des', type=str, default='test', help='exp description')
 parser.add_argument('--loss', type=str, default='mse', help='loss function')
 parser.add_argument('--lradj', type=str, default='type1', help='adjust learning rate')
 parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
+parser.add_argument('--skip_test', action='store_true', default=False,
+                    help='validation-only run for hyperparameter search; never open the test split')
+parser.add_argument('--monitor_test_during_training', action='store_true', default=False,
+                    help='legacy/debug only; report test loss each epoch (never used for selection)')
 
 # GPU
-parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
+parser.add_argument('--use_gpu', type=str2bool, default=True, help='use gpu')
 parser.add_argument('--gpu', type=int, default=0, help='gpu')
 parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
 parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multiple gpus')
 parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
 
-args = parser.parse_args()
-args.label_len = args.seq_len // 2  # follow original SAN/DDN: label_len is always seq_len//2
-if args.features == 'S':
-    args.enc_in, args.dec_in, args.c_out = 1, 1, 1
 
-set_seed(args.seed)
-torch.set_num_threads(6)
-args.use_gpu = True if torch.cuda.is_available() and args.use_gpu else False
 
-if args.use_gpu and args.use_multi_gpu:
-    args.devices = args.devices.replace(' ', '')
-    device_ids = args.devices.split(',')
-    args.device_ids = [int(id_) for id_ in device_ids]
-    args.gpu = args.device_ids[0]
+def main():
+    # Guarded so DataLoader workers started with 'spawn' (macOS, some
+    # containers) import this module without re-running training.
+    args = parser.parse_args()
+    if args.force_label_len_half:
+        args.label_len = args.seq_len // 2
+    if args.features == 'S':
+        args.enc_in, args.dec_in, args.c_out = 1, 1, 1
 
-print('Args in experiment:')
-print(args)
+    # Several workers share the host CPUs; the scheduler sets this per worker.
+    torch.set_num_threads(max(1, int(os.environ.get('LIGHTNORM_TORCH_THREADS', '6'))))
+    args.use_gpu = True if torch.cuda.is_available() and args.use_gpu else False
 
-Exp = Exp_Main
+    if args.use_gpu and args.use_multi_gpu:
+        args.devices = args.devices.replace(' ', '')
+        device_ids = args.devices.split(',')
+        args.device_ids = [int(id_) for id_ in device_ids]
+        args.gpu = args.device_ids[0]
 
-if args.is_training:
-    for ii in range(args.itr):
+    print('Args in experiment:')
+    print(args)
+
+    Exp = Exp_Main
+
+    if args.is_training:
+        for ii in range(args.itr):
+            # Repetitions must not silently reuse the same RNG stream.  Journal
+            # runs should normally use itr=1 and pass each declared seed explicitly.
+            args.seed = args.seed + (1 if ii > 0 else 0)
+            set_seed(args.seed, deterministic=args.deterministic)
+            setting = build_setting(args, ii)
+            exp = Exp(args)
+            print(f'>>>>>>>start training : {setting}>>>>>>>>>>>>>>>>>>>>>>>>>>')
+            exp.train(setting)
+            if args.skip_test:
+                print(f'>>>>>>>validation-only result : {setting}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
+                exp.record_validation_result(setting)
+            else:
+                print(f'>>>>>>>testing : {setting}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
+                exp.test(setting)
+            if args.do_predict:
+                print(f'>>>>>>>predicting : {setting}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
+                exp.predict(setting, True)
+            torch.cuda.empty_cache()
+    else:
+        set_seed(args.seed, deterministic=args.deterministic)
+        ii = 0
         setting = build_setting(args, ii)
         exp = Exp(args)
-        print(f'>>>>>>>start training : {setting}>>>>>>>>>>>>>>>>>>>>>>>>>>')
-        exp.train(setting)
         print(f'>>>>>>>testing : {setting}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
-        exp.test(setting)
-        if args.do_predict:
-            print(f'>>>>>>>predicting : {setting}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
-            exp.predict(setting, True)
+        exp.test(setting, test=1)
         torch.cuda.empty_cache()
-else:
-    ii = 0
-    setting = build_setting(args, ii)
-    exp = Exp(args)
-    print(f'>>>>>>>testing : {setting}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
-    exp.test(setting, test=1)
-    torch.cuda.empty_cache()
+
+
+if __name__ == '__main__':
+    main()

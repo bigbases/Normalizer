@@ -1,0 +1,67 @@
+{
+  "protocol_version": "journal-v1",
+  "seeds": [2021, 2022, 2023],
+  "horizons": [96, 192, 336, 720],
+  "screen_horizons": [96, 720],
+  "datasets": {
+    "ETTh1": {"relative_path": "ETT-small/ETTh1.csv", "channels": 7, "freq": "h", "fan_k": [4, 2, 8]},
+    "ETTh2": {"relative_path": "ETT-small/ETTh2.csv", "channels": 7, "freq": "h", "fan_k": [4, 2, 8]},
+    "ETTm1": {"relative_path": "ETT-small/ETTm1.csv", "channels": 7, "freq": "t", "fan_k": [11, 6, 16]},
+    "ETTm2": {"relative_path": "ETT-small/ETTm2.csv", "channels": 7, "freq": "t", "fan_k": [11, 6, 16]},
+    "Weather": {"relative_path": "weather/weather.csv", "channels": 21, "freq": "t", "fan_k": [2, 1, 4]},
+    "Electricity": {"relative_path": "electricity/electricity.csv", "channels": 321, "freq": "h", "fan_k": [3, 1, 6]},
+    "Traffic": {"relative_path": "traffic/traffic.csv", "channels": 862, "freq": "h", "fan_k": [30, 15, 45]}
+  },
+  "method_names": ["none", "revin", "san", "ddn", "fan", "lt"],
+  "experiments": {
+    "1_rebuttal_completion": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["lt"],
+      "phase": "final",
+      "description": "Run only missing LightNorm cells; exact completed run IDs are skipped."
+    },
+    "2_normalizer_search": {
+      "backbones": ["DLinear", "iTransformer", "TimeMixerPP"],
+      "methods": ["revin", "san", "ddn", "fan"],
+      "phase": "search",
+      "description": "Validation-only screen on horizons 96 and 720 with seed 2021."
+    },
+    "3_frozen_backbone_comparison": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["none", "revin", "san", "ddn", "fan", "lt"],
+      "phase": "final",
+      "description": "All methods share each dataset-backbone architecture and training setup; module settings are locked before test."
+    },
+    "4_timemixerpp_generalization": {
+      "backbones": ["TimeMixerPP"],
+      "methods": ["none", "fan", "lt"],
+      "phase": "final",
+      "description": "Generalization on TimeMixer++ with internal normalization disabled."
+    }
+  },
+  "search_grids": {
+    "revin": [{"affine": 0}, {"affine": 1}],
+    "san": [
+      {"period_len": 4, "station_lr_scale": 0.5},
+      {"period_len": 4, "station_lr_scale": 1.0},
+      {"period_len": 8, "station_lr_scale": 0.5},
+      {"period_len": 8, "station_lr_scale": 1.0},
+      {"period_len": 24, "station_lr_scale": 0.5},
+      {"period_len": 24, "station_lr_scale": 1.0}
+    ],
+    "ddn": [
+      {"kernel_len": 7, "j": 0, "hkernel_len": 5},
+      {"kernel_len": 7, "j": 1, "hkernel_len": 5},
+      {"kernel_len": 25, "j": 0, "hkernel_len": 5},
+      {"kernel_len": 25, "j": 1, "hkernel_len": 5},
+      {"kernel_len": 49, "j": 0, "hkernel_len": 5},
+      {"kernel_len": 49, "j": 1, "hkernel_len": 5}
+    ],
+    "fan": "dataset_fan_k_cross_[station_lr,backbone_learning_rate]"
+  },
+  "fan_lr_grid": "station_and_backbone",
+  "grid_revisions": [
+    "2026-10-07 DDN: hkernel_len only acts when the wavelet level j > 0, so the supplied j=0 x hkernel_len {3,5} grid held 3 distinct settings. Replaced by kernel_len {7,25,49} x j {0,1} with hkernel_len at the official default 5 (official DDN scripts use j=1 on ETTh1/ETTm1/Weather/Electricity/Traffic).",
+    "2026-10-07 FAN: the reference implementation optimizes the frequency predictor with the backbone optimizer and learning rate. Candidates are K x {station_lr, backbone learning_rate}; when both are equal, K x {0.5, 1.0} x station_lr."
+  ]
+}

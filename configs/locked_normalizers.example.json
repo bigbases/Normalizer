@@ -1,0 +1,7 @@
+{
+  "note": "Example schema only. Create the real file with experiments/select_hparams.py after validation-only search.",
+  "locks": {
+    "ETTh1|DLinear|fan": {"freq_topk": 4, "station_lr": 0.0001},
+    "ETTh1|DLinear|revin": {"affine": 1}
+  }
+}

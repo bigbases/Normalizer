@@ -32,6 +32,36 @@ def MSPE(pred, true):
     return np.mean(np.square((pred - true) / true))
 
 
+class StreamingMetrics:
+    """Batch-wise MSE/MAE/RSE accumulated in float64 (no full-array copies)."""
+
+    def __init__(self):
+        self.n = 0
+        self.sq = 0.0
+        self.abs = 0.0
+        self.true_sum = 0.0
+        self.true_sq = 0.0
+
+    def update(self, pred, true):
+        pred = np.asarray(pred, dtype=np.float64)
+        true = np.asarray(true, dtype=np.float64)
+        diff = pred - true
+        self.n += diff.size
+        self.sq += float(np.sum(diff * diff))
+        self.abs += float(np.sum(np.abs(diff)))
+        self.true_sum += float(np.sum(true))
+        self.true_sq += float(np.sum(true * true))
+
+    def compute(self):
+        if self.n == 0:
+            raise ValueError('no test samples were evaluated')
+        mse = self.sq / self.n
+        mae = self.abs / self.n
+        centered = self.true_sq - self.true_sum ** 2 / self.n
+        rse = float(np.sqrt(self.sq) / np.sqrt(centered)) if centered > 0 else float('nan')
+        return mse, mae, rse
+
+
 def metric(pred, true):
     mae = MAE(pred, true)
     mse = MSE(pred, true)
