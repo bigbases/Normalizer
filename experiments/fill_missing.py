@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Find unfinished experiment cells in the packaged results and run them.
 
+    # graceful stop of the workers in this checkout: touch .worker/STOP
+    # (they finish running cells, push, and exit; delete the file to restart)
+
     # what is left (reads results/store + results/claims after a git pull)
     python experiments/fill_missing.py list
     python experiments/fill_missing.py list --phases exp2-search --cells
@@ -400,9 +403,17 @@ class Worker:
             if due:
                 self.push("progress")
 
+            stop = [f for f in (ROOT / ".worker" / "STOP", self.local / "STOP") if f.exists()]
+            if stop and not self.draining:
+                self.draining = "stop"
+                self.queue.clear()
+                log(f"{stop[0]} found: finishing running cells, then exiting")
             if self.draining:
                 if not self.running:
                     self.push("drain")
+                    if self.draining == "stop":
+                        log("stopped; remove the STOP file before starting again")
+                        return 0
                     log("drained; exiting so the new code can be used")
                     return 3
             elif not self.queue and len(self.running) < self.slots and now >= self.next_claim_try:
@@ -430,6 +441,9 @@ class Worker:
 
 
 def command_run(args):
+    for stop in (ROOT / ".worker" / "STOP",):
+        if stop.exists():
+            raise SystemExit(f"{stop} exists: remove it to start a worker")
     if args.max_processes_per_gpu < 1:
         raise SystemExit("--max-processes-per-gpu must be >= 1")
     return Worker(args).run()

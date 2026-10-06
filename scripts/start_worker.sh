@@ -15,6 +15,7 @@ PYTHON=python3
 [[ -f .python-env ]] && source .python-env
 SESSION="${WORKER_SESSION:-lightnorm-worker}"
 mkdir -p .worker
+rm -f .worker/STOP          # a previous graceful stop must not stop this worker
 
 {
   echo '#!/usr/bin/env bash'

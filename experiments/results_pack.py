@@ -21,6 +21,7 @@ import argparse
 import csv
 import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -29,17 +30,32 @@ import result_store as rs  # noqa: E402
 import run_matrix as rm  # noqa: E402
 
 
+def complete(row):
+    """A worker writes its one-row CSV only after training and evaluation."""
+    metric = row.get("MSE") if row.get("Split") == "test" else row.get("BestValMSE")
+    return bool(row.get("RunID")) and bool(metric)
+
+
 def source_rows(directory):
+    """Rows merged by the scheduler, plus finished parts it never merged.
+
+    ``*.attempt*.csv`` parts exist when the scheduler stopped (or was stopped)
+    while a worker was still running; the worker still wrote a complete row.
+    Only pack such parts after the worker process has exited.
+    """
     directory = Path(directory)
     rows = {}
-    sources = [directory / "journal_results.csv", *sorted((directory / "result_parts").glob("*.success.csv"))]
+    parts = directory / "result_parts"
+    sources = [directory / "journal_results.csv", *sorted(parts.glob("*.success.csv")),
+               *sorted(parts.glob("*.attempt*.csv"))]
     for path in sources:
         if not path.exists():
             continue
         with path.open(newline="") as f:
             for row in csv.DictReader(f):
-                if row.get("RunID"):
-                    rows.setdefault(row["RunID"], row)
+                if complete(row):
+                    row.setdefault("FinishedAt", "")
+                    rows.setdefault(row["RunID"], (row, path))
     return rows
 
 
@@ -61,8 +77,11 @@ def pack(args, root):
     added = 0
     for directory in args.sources:
         manifest = manifest_info(directory)
-        for run_id, row in source_rows(directory).items():
+        for run_id, (row, path) in source_rows(directory).items():
             record = manifest.get(run_id, {})
+            if not record:   # unmerged part: no manifest "finished" event
+                record = {"at": datetime.fromtimestamp(path.stat().st_mtime, timezone.utc)
+                          .replace(microsecond=0).isoformat()}
             row = {
                 **row,
                 "Host": args.host, "Worker": args.worker or args.host, "GPU": args.gpu,
