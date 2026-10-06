@@ -1,0 +1,5 @@
+{
+  "locks": {},
+  "protocol_version": "journal-v1",
+  "selection_rule": "Minimum mean validation MSE across horizons 96/720 and seeds 2021/2022, among the two candidates shortlisted using seed 2021."
+}
