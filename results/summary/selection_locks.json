@@ -216,6 +216,16 @@
       "affine": 0,
       "station_lr": 0.0001
     },
+    "Traffic|DLinear|san": {
+      "period_len": 24,
+      "station_lr": 5e-05,
+      "station_type": "adaptive"
+    },
+    "Traffic|iTransformer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 45,
+      "station_lr": 0.001
+    },
     "Weather|DLinear|ddn": {
       "hkernel_len": 5,
       "j": 1,
