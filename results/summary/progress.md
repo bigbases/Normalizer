@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T17:10:41+00:00 from 1371 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T17:36:43+00:00 from 1378 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
-| exp2-confirm | 52 | 3 | 1 | 0 | 0 |
+| exp2-confirm | 53 | 3 | 0 | 0 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 26 | 0 | 26 | 4 | 0 |
+| exp3-tuned | 26 | 1 | 26 | 3 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -124,18 +124,18 @@ Generated 2026-10-07T17:10:41+00:00 from 1371 packaged cells. Regenerate with `p
 | exp2-confirm--Weather--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--san | done | 4/4 |  |
-| exp2-confirm--Electricity--DLinear--ddn | claimed | 1/4 | itm21-a4000 |
+| exp2-confirm--Electricity--DLinear--ddn | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--revin | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--san | done | 4/4 |  |
-| exp2-confirm--Electricity--iTransformer--ddn | claimed | 0/4 | itm24-pro6000 |
+| exp2-confirm--Electricity--iTransformer--ddn | claimed | 3/4 | itm24-pro6000 |
 | exp2-confirm--Electricity--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--san | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--ddn | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--fan | done | 4/4 |  |
-| exp2-confirm--Traffic--iTransformer--revin | ready | 0/4 |  |
-| exp2-confirm--Traffic--iTransformer--san | claimed | 1/4 | itm24-pro6000 |
+| exp2-confirm--Traffic--iTransformer--revin | claimed | 0/4 | itm24-pro6000 |
+| exp2-confirm--Traffic--iTransformer--san | claimed | 2/4 | itm24-pro6000 |
 | exp2-confirm--Traffic--iTransformer--ddn | done | 4/4 |  |
 | exp2-confirm--Traffic--iTransformer--fan | done | 4/4 |  |
 | exp3-none--ETTh1--DLinear | done | 12/12 |  |
@@ -185,7 +185,7 @@ Generated 2026-10-07T17:10:41+00:00 from 1371 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm2--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--revin | done | 12/12 |  |
-| exp3-tuned--Weather--DLinear--san | ready | 1/12 |  |
+| exp3-tuned--Weather--DLinear--san | claimed | 1/12 | itm21-a4000 |
 | exp3-tuned--Weather--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--Weather--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--Weather--iTransformer--revin | ready | 0/12 |  |
@@ -194,7 +194,7 @@ Generated 2026-10-07T17:10:41+00:00 from 1371 packaged cells. Regenerate with `p
 | exp3-tuned--Weather--iTransformer--fan | ready | 0/12 |  |
 | exp3-tuned--Electricity--DLinear--revin | ready | 0/12 |  |
 | exp3-tuned--Electricity--DLinear--san | ready | 0/12 |  |
-| exp3-tuned--Electricity--DLinear--ddn | blocked | 0/? |  |
+| exp3-tuned--Electricity--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--Electricity--DLinear--fan | ready | 0/12 |  |
 | exp3-tuned--Electricity--iTransformer--revin | ready | 0/12 |  |
 | exp3-tuned--Electricity--iTransformer--san | ready | 0/12 |  |
