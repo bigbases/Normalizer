@@ -23,9 +23,28 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "ETTh1|iTransformer|ddn": {
+      "hkernel_len": 5,
+      "j": 0,
+      "kernel_len": 7,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
+    "ETTh1|iTransformer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 8,
+      "station_lr": 0.0001
+    },
     "ETTh1|iTransformer|revin": {
       "affine": 1,
       "station_lr": 0.0001
+    },
+    "ETTh1|iTransformer|san": {
+      "period_len": 4,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
     },
     "ETTh2|DLinear|ddn": {
       "hkernel_len": 5,
