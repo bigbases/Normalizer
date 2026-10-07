@@ -3,6 +3,10 @@
 #
 #   bash scripts/setup_container.sh [--with-timemixerpp] [--data-root DIR] [--skip-data]
 #                                   [--skip-apt] [--use-system-python]
+#                                   [--torch VERSION --torch-cuda TAG]
+#
+# GPUs newer than torch 2.1.0 supports (e.g. Blackwell, sm_100/sm_120) need
+# --torch 2.8.0 --torch-cuda cu128; every packaged cell records its torch build.
 #
 # 1. apt tools (when apt-get and root/sudo are available)
 # 2. Python 3.10 + torch 2.1.0 (cu121, or cu118 on drivers < 525) in an isolated
@@ -20,6 +24,8 @@ WITH_TMPP=0
 SKIP_DATA=0
 SKIP_APT=0
 USE_SYSTEM=0
+TORCH_VERSION=2.1.0
+TORCH_CUDA_OVERRIDE=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --with-timemixerpp) WITH_TMPP=1 ;;
@@ -27,6 +33,8 @@ while [[ $# -gt 0 ]]; do
     --skip-data) SKIP_DATA=1 ;;
     --skip-apt) SKIP_APT=1 ;;
     --use-system-python) USE_SYSTEM=1 ;;
+    --torch) TORCH_VERSION="$2"; shift ;;
+    --torch-cuda) TORCH_CUDA_OVERRIDE="$2"; shift ;;
     *) echo "unknown option: $1" >&2; exit 2 ;;
   esac
   shift
@@ -47,7 +55,8 @@ else
   echo "NVIDIA driver $DRIVER_MAJOR is too old for torch 2.1.0 (need >= 450)." >&2
   exit 1
 fi
-echo "torch build: 2.1.0+$TORCH_CUDA"
+[[ -n "$TORCH_CUDA_OVERRIDE" ]] && TORCH_CUDA="$TORCH_CUDA_OVERRIDE"
+echo "torch build: $TORCH_VERSION+$TORCH_CUDA"
 
 log "apt packages"
 if (( SKIP_APT )); then
@@ -87,7 +96,7 @@ if [[ -z "$PYTHON" ]]; then
   fi
   [[ -x "$ROOT/.venv/bin/python" ]] || uv venv -p 3.10 "$ROOT/.venv"
   PYTHON="$ROOT/.venv/bin/python"
-  uv pip install -p "$PYTHON" "torch==2.1.0" --index-url "https://download.pytorch.org/whl/$TORCH_CUDA"
+  uv pip install -p "$PYTHON" "torch==$TORCH_VERSION" --index-url "https://download.pytorch.org/whl/$TORCH_CUDA"
   PIP=(uv pip install -p "$PYTHON")
 else
   PIP=("$PYTHON" -m pip install)
