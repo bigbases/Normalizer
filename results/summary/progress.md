@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-07T20:40:24+00:00 from 1495 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T20:47:03+00:00 from 1497 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-07T20:40:24+00:00 from 1495 packaged cells. Regenerate with `p
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
 | exp3-none | 11 | 0 | 3 | 0 | 0 |
-| exp3-tuned | 33 | 3 | 20 | 0 | 0 |
+| exp3-tuned | 34 | 2 | 20 | 0 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -205,6 +205,6 @@ Generated 2026-10-07T20:40:24+00:00 from 1495 packaged cells. Regenerate with `p
 | exp3-tuned--Traffic--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--Traffic--DLinear--fan | ready | 0/12 |  |
 | exp3-tuned--Traffic--iTransformer--revin | ready | 0/12 |  |
-| exp3-tuned--Traffic--iTransformer--san | claimed | 10/12 | itm24-pro6000 |
+| exp3-tuned--Traffic--iTransformer--san | done | 12/12 |  |
 | exp3-tuned--Traffic--iTransformer--ddn | ready | 5/12 |  |
 | exp3-tuned--Traffic--iTransformer--fan | ready | 0/12 |  |

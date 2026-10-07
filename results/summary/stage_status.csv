@@ -192,6 +192,6 @@ exp3-tuned,Traffic,DLinear,san,ready,0,12,
 exp3-tuned,Traffic,DLinear,ddn,ready,0,12,
 exp3-tuned,Traffic,DLinear,fan,ready,0,12,
 exp3-tuned,Traffic,iTransformer,revin,ready,0,12,
-exp3-tuned,Traffic,iTransformer,san,claimed,10,12,itm24-pro6000
+exp3-tuned,Traffic,iTransformer,san,done,12,12,
 exp3-tuned,Traffic,iTransformer,ddn,ready,5,12,
 exp3-tuned,Traffic,iTransformer,fan,ready,0,12,
