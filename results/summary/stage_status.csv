@@ -157,7 +157,7 @@ exp3-tuned,ETTh2,iTransformer,ddn,done,12,12,
 exp3-tuned,ETTh2,iTransformer,fan,done,12,12,
 exp3-tuned,ETTm1,DLinear,revin,done,12,12,
 exp3-tuned,ETTm1,DLinear,san,done,12,12,
-exp3-tuned,ETTm1,DLinear,ddn,claimed,11,12,itm21-a4000
+exp3-tuned,ETTm1,DLinear,ddn,done,12,12,
 exp3-tuned,ETTm1,DLinear,fan,done,12,12,
 exp3-tuned,ETTm1,iTransformer,revin,done,12,12,
 exp3-tuned,ETTm1,iTransformer,san,done,12,12,
