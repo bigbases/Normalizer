@@ -267,6 +267,10 @@
       "freq_topk": 45,
       "station_lr": 0.001
     },
+    "Traffic|iTransformer|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
     "Traffic|iTransformer|san": {
       "period_len": 24,
       "station_lr": 5e-05,
