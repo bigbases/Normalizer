@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-07T18:33:18+00:00 from 1420 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T18:45:19+00:00 from 1422 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -181,7 +181,7 @@ Generated 2026-10-07T18:33:18+00:00 from 1420 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm2--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm2--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--iTransformer--revin | done | 12/12 |  |
-| exp3-tuned--ETTm2--iTransformer--san | claimed | 0/12 | itm21-a4000 |
+| exp3-tuned--ETTm2--iTransformer--san | claimed | 2/12 | itm21-a4000 |
 | exp3-tuned--ETTm2--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--revin | done | 12/12 |  |
