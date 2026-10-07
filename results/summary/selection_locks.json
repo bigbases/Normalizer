@@ -207,9 +207,28 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "Weather|iTransformer|ddn": {
+      "hkernel_len": 5,
+      "j": 0,
+      "kernel_len": 49,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
+    "Weather|iTransformer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 4,
+      "station_lr": 0.0005
+    },
     "Weather|iTransformer|revin": {
-      "affine": 0,
+      "affine": 1,
       "station_lr": 0.0001
+    },
+    "Weather|iTransformer|san": {
+      "period_len": 8,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
     }
   },
   "protocol_version": "journal-v1",
