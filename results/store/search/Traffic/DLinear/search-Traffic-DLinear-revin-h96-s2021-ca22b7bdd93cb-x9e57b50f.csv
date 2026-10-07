@@ -1,0 +1,2 @@
+RunID,CandidateID,ConfigHash,Phase,Split,Setting,Dataset,Backbone,Horizon,MSE,MAE,Seed,BestValMSE,BestEpoch,UseNorm,Host,Worker,GPU,Torch,CodeRev,ElapsedSeconds,FinishedAt
+search-Traffic-DLinear-revin-h96-s2021-ca22b7bdd93cb-x9e57b50f,a22b7bdd93cb,9e57b50ff27fa319,search,validation,Traffic_DLinear_96_DLinear_Traffic_ftM_sl336_ll168_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_journal-v1_unrevin_af1_sd2021_cfg9e57b50ff27f_r0,Traffic,DLinear,96,,,2021,0.3365875703211014,10,revin,elice-a100,elice-a100,NVIDIA A100 80GB PCIe,2.1.0+cu121,5475437,309.8,2026-10-07T08:48:54+00:00
