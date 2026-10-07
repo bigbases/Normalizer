@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T12:38:59+00:00 from 1236 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T12:45:12+00:00 from 1248 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| exp2-search | 53 | 2 | 1 | 0 | 0 |
+| exp2-search | 53 | 3 | 0 | 0 | 0 |
 | exp2-confirm | 40 | 0 | 13 | 3 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 21 | 1 | 18 | 16 | 0 |
+| exp3-tuned | 22 | 1 | 17 | 16 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -80,8 +80,8 @@ Generated 2026-10-07T12:38:59+00:00 from 1236 packaged cells. Regenerate with `p
 | exp2-search--Traffic--DLinear--fan | done | 12/12 |  |
 | exp2-search--Traffic--iTransformer--revin | done | 4/4 |  |
 | exp2-search--Traffic--iTransformer--san | claimed | 3/12 | elice-a100 |
-| exp2-search--Traffic--iTransformer--ddn | ready | 0/12 |  |
-| exp2-search--Traffic--iTransformer--fan | claimed | 6/12 | itm24-pro6000 |
+| exp2-search--Traffic--iTransformer--ddn | claimed | 0/12 | itm24-pro6000 |
+| exp2-search--Traffic--iTransformer--fan | claimed | 9/12 | itm24-pro6000 |
 | exp2-confirm--ETTh1--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--ETTh1--DLinear--san | done | 4/4 |  |
 | exp2-confirm--ETTh1--DLinear--ddn | done | 4/4 |  |
@@ -171,7 +171,7 @@ Generated 2026-10-07T12:38:59+00:00 from 1236 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm1--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--ETTm1--DLinear--san | ready | 0/12 |  |
 | exp3-tuned--ETTm1--DLinear--ddn | ready | 0/12 |  |
-| exp3-tuned--ETTm1--DLinear--fan | claimed | 3/12 | itm21-a4000 |
+| exp3-tuned--ETTm1--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm1--iTransformer--revin | ready | 0/12 |  |
 | exp3-tuned--ETTm1--iTransformer--san | ready | 0/12 |  |
 | exp3-tuned--ETTm1--iTransformer--ddn | ready | 0/12 |  |
@@ -184,7 +184,7 @@ Generated 2026-10-07T12:38:59+00:00 from 1236 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm2--iTransformer--san | ready | 0/12 |  |
 | exp3-tuned--ETTm2--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
-| exp3-tuned--Weather--DLinear--revin | ready | 0/12 |  |
+| exp3-tuned--Weather--DLinear--revin | claimed | 0/12 | itm21-a4000 |
 | exp3-tuned--Weather--DLinear--san | ready | 0/12 |  |
 | exp3-tuned--Weather--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--Weather--DLinear--fan | ready | 0/12 |  |

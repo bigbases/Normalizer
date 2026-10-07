@@ -1035,6 +1035,28 @@
         "screen_mean_val_mse": 0.37894062573711074
       }
     ],
+    "Traffic|iTransformer|fan": [
+      {
+        "candidate_id": "73d0bad9d492",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 45,
+          "station_lr": 0.001
+        },
+        "screen_mean_val_mse": 0.35943460285377044
+      },
+      {
+        "candidate_id": "4f579ef507bf",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 30,
+          "station_lr": 0.001
+        },
+        "screen_mean_val_mse": 0.36950376490847425
+      }
+    ],
     "Traffic|iTransformer|revin": [
       {
         "candidate_id": "1a73b9921247",
