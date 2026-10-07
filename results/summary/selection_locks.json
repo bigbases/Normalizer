@@ -193,6 +193,10 @@
       "affine": 1,
       "station_lr": 0.0001
     },
+    "Traffic|DLinear|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
     "Weather|DLinear|ddn": {
       "hkernel_len": 5,
       "j": 1,
