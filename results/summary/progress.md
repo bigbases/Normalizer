@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T10:21:28+00:00 from 950 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T10:40:07+00:00 from 986 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 12 | 1 | 1 | 0 | 0 |
 | exp2-confirm | 10 | 0 | 2 | 2 | 0 |
-| exp3-none | 9 | 1 | 4 | 0 | 0 |
-| exp3-tuned | 0 | 0 | 10 | 4 | 0 |
+| exp3-none | 10 | 0 | 4 | 0 | 0 |
+| exp3-tuned | 0 | 1 | 9 | 4 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -63,14 +63,14 @@ Generated 2026-10-07T10:21:28+00:00 from 950 packaged cells. Regenerate with `py
 | exp3-none--ETTm2--DLinear | done | 12/12 |  |
 | exp3-none--ETTm2--iTransformer | done | 12/12 |  |
 | exp3-none--Weather--DLinear | done | 12/12 |  |
-| exp3-none--Weather--iTransformer | claimed | 0/12 | itm21-a4000 |
+| exp3-none--Weather--iTransformer | done | 12/12 |  |
 | exp3-none--Electricity--DLinear | ready | 0/12 |  |
 | exp3-none--Electricity--iTransformer | ready | 0/12 |  |
 | exp3-none--Traffic--DLinear | ready | 0/12 |  |
 | exp3-none--Traffic--iTransformer | ready | 0/12 |  |
 | exp3-tuned--ETTh1--DLinear | ready | 0/48 |  |
 | exp3-tuned--ETTh1--iTransformer | ready | 0/48 |  |
-| exp3-tuned--ETTh2--DLinear | ready | 0/48 |  |
+| exp3-tuned--ETTh2--DLinear | claimed | 24/48 | itm21-a4000 |
 | exp3-tuned--ETTh2--iTransformer | ready | 0/48 |  |
 | exp3-tuned--ETTm1--DLinear | ready | 0/48 |  |
 | exp3-tuned--ETTm1--iTransformer | ready | 0/48 |  |
