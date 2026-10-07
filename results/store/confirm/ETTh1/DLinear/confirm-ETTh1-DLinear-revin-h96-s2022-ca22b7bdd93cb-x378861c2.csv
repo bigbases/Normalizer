@@ -1,0 +1,2 @@
+RunID,CandidateID,ConfigHash,Phase,Split,Setting,Dataset,Backbone,Horizon,MSE,MAE,Seed,BestValMSE,BestEpoch,UseNorm,Host,Worker,GPU,Torch,CodeRev,ElapsedSeconds,FinishedAt
+confirm-ETTh1-DLinear-revin-h96-s2022-ca22b7bdd93cb-x378861c2,a22b7bdd93cb,378861c2ca15ecb9,confirm,validation,ETTh1_DLinear_96_DLinear_ETTh1_ftM_sl336_ll168_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_journal-v1_unrevin_af1_sd2022_cfg378861c2ca15_r0,ETTh1,DLinear,96,,,2022,0.6669227142225612,7,revin,itm21-a4000,itm21-a4000,NVIDIA RTX A4000,2.1.0+cu118,5475437,50.2,2026-10-07T07:03:04+00:00

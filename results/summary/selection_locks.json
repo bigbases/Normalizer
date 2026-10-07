@@ -1,5 +1,38 @@
 {
-  "locks": {},
+  "locks": {
+    "ETTh1|DLinear|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 8,
+      "station_lr": 0.0005
+    },
+    "ETTh1|DLinear|revin": {
+      "affine": 1,
+      "station_lr": 0.0001
+    },
+    "ETTh2|DLinear|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "kernel_len": 7,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
+    "ETTh2|DLinear|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 8,
+      "station_lr": 0.0001
+    },
+    "ETTh2|DLinear|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
+    "ETTh2|DLinear|san": {
+      "period_len": 4,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    }
+  },
   "protocol_version": "journal-v1",
   "selection_rule": "Minimum mean validation MSE across horizons 96/720 and seeds 2021/2022, among the two candidates shortlisted using seed 2021."
 }
