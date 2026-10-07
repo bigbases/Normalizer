@@ -235,6 +235,15 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "Traffic|iTransformer|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "kernel_len": 25,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "Traffic|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 45,

@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T16:53:26+00:00 from 1366 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T17:10:41+00:00 from 1371 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
-| exp2-confirm | 51 | 3 | 2 | 0 | 0 |
+| exp2-confirm | 52 | 3 | 1 | 0 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 26 | 0 | 25 | 5 | 0 |
+| exp3-tuned | 26 | 0 | 26 | 4 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -128,15 +128,15 @@ Generated 2026-10-07T16:53:26+00:00 from 1366 packaged cells. Regenerate with `p
 | exp2-confirm--Electricity--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--revin | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--san | done | 4/4 |  |
-| exp2-confirm--Electricity--iTransformer--ddn | ready | 0/4 |  |
+| exp2-confirm--Electricity--iTransformer--ddn | claimed | 0/4 | itm24-pro6000 |
 | exp2-confirm--Electricity--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--san | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--ddn | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--iTransformer--revin | ready | 0/4 |  |
-| exp2-confirm--Traffic--iTransformer--san | claimed | 0/4 | itm24-pro6000 |
-| exp2-confirm--Traffic--iTransformer--ddn | claimed | 0/4 | itm24-pro6000 |
+| exp2-confirm--Traffic--iTransformer--san | claimed | 1/4 | itm24-pro6000 |
+| exp2-confirm--Traffic--iTransformer--ddn | done | 4/4 |  |
 | exp2-confirm--Traffic--iTransformer--fan | done | 4/4 |  |
 | exp3-none--ETTh1--DLinear | done | 12/12 |  |
 | exp3-none--ETTh1--iTransformer | done | 12/12 |  |
@@ -206,5 +206,5 @@ Generated 2026-10-07T16:53:26+00:00 from 1366 packaged cells. Regenerate with `p
 | exp3-tuned--Traffic--DLinear--fan | ready | 0/12 |  |
 | exp3-tuned--Traffic--iTransformer--revin | blocked | 0/? |  |
 | exp3-tuned--Traffic--iTransformer--san | blocked | 0/? |  |
-| exp3-tuned--Traffic--iTransformer--ddn | blocked | 0/? |  |
+| exp3-tuned--Traffic--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--Traffic--iTransformer--fan | ready | 0/12 |  |
