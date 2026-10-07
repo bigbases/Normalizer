@@ -377,6 +377,58 @@
         "screen_mean_val_mse": 0.40542764684314875
       }
     ],
+    "ETTm1|DLinear|ddn": [
+      {
+        "candidate_id": "43cd745f71d8",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 7,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.6326359648071913
+      },
+      {
+        "candidate_id": "6f0b0683bbd0",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 25,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.6424544949368618
+      }
+    ],
+    "ETTm1|DLinear|fan": [
+      {
+        "candidate_id": "e0d362626473",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 16,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.6216096306000004
+      },
+      {
+        "candidate_id": "1b61650e14d1",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 11,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.6218691328565074
+      }
+    ],
     "ETTm1|DLinear|revin": [
       {
         "candidate_id": "1a73b9921247",
@@ -395,6 +447,48 @@
           "station_lr": 0.0001
         },
         "screen_mean_val_mse": 0.6749620009498769
+      }
+    ],
+    "ETTm1|DLinear|san": [
+      {
+        "candidate_id": "61e69def41a7",
+        "n_cells": 2,
+        "params": {
+          "period_len": 4,
+          "station_lr": 0.0001,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.6143317797860464
+      },
+      {
+        "candidate_id": "f6904fc69cd0",
+        "n_cells": 2,
+        "params": {
+          "period_len": 8,
+          "station_lr": 0.0001,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.6145659409212372
+      }
+    ],
+    "ETTm1|iTransformer|revin": [
+      {
+        "candidate_id": "1a73b9921247",
+        "n_cells": 2,
+        "params": {
+          "affine": 0,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.6740028029367449
+      },
+      {
+        "candidate_id": "a22b7bdd93cb",
+        "n_cells": 2,
+        "params": {
+          "affine": 1,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.6770854795850736
       }
     ],
     "ETTm2|DLinear|ddn": [
