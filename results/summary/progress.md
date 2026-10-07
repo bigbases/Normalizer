@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T16:11:24+00:00 from 1359 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T16:24:46+00:00 from 1362 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
-| exp2-confirm | 49 | 3 | 4 | 0 | 0 |
+| exp2-confirm | 50 | 3 | 3 | 0 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 26 | 0 | 23 | 7 | 0 |
+| exp3-tuned | 26 | 0 | 24 | 6 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -132,10 +132,10 @@ Generated 2026-10-07T16:11:24+00:00 from 1359 packaged cells. Regenerate with `p
 | exp2-confirm--Electricity--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--san | done | 4/4 |  |
-| exp2-confirm--Traffic--DLinear--ddn | claimed | 1/4 | itm24-pro6000 |
+| exp2-confirm--Traffic--DLinear--ddn | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--iTransformer--revin | ready | 0/4 |  |
-| exp2-confirm--Traffic--iTransformer--san | ready | 0/4 |  |
+| exp2-confirm--Traffic--iTransformer--san | claimed | 0/4 | itm24-pro6000 |
 | exp2-confirm--Traffic--iTransformer--ddn | claimed | 0/4 | itm24-pro6000 |
 | exp2-confirm--Traffic--iTransformer--fan | done | 4/4 |  |
 | exp3-none--ETTh1--DLinear | done | 12/12 |  |
@@ -202,7 +202,7 @@ Generated 2026-10-07T16:11:24+00:00 from 1359 packaged cells. Regenerate with `p
 | exp3-tuned--Electricity--iTransformer--fan | ready | 0/12 |  |
 | exp3-tuned--Traffic--DLinear--revin | ready | 0/12 |  |
 | exp3-tuned--Traffic--DLinear--san | ready | 0/12 |  |
-| exp3-tuned--Traffic--DLinear--ddn | blocked | 0/? |  |
+| exp3-tuned--Traffic--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--Traffic--DLinear--fan | ready | 0/12 |  |
 | exp3-tuned--Traffic--iTransformer--revin | blocked | 0/? |  |
 | exp3-tuned--Traffic--iTransformer--san | blocked | 0/? |  |
