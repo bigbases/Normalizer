@@ -207,6 +207,11 @@
       "affine": 0,
       "station_lr": 0.0001
     },
+    "Electricity|iTransformer|san": {
+      "period_len": 8,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "Traffic|DLinear|ddn": {
       "hkernel_len": 5,
       "j": 1,

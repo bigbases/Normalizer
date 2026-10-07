@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T16:24:46+00:00 from 1362 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T16:53:26+00:00 from 1366 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
-| exp2-confirm | 50 | 3 | 3 | 0 | 0 |
+| exp2-confirm | 51 | 3 | 2 | 0 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 26 | 0 | 24 | 6 | 0 |
+| exp3-tuned | 26 | 0 | 25 | 5 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -124,10 +124,10 @@ Generated 2026-10-07T16:24:46+00:00 from 1362 packaged cells. Regenerate with `p
 | exp2-confirm--Weather--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--san | done | 4/4 |  |
-| exp2-confirm--Electricity--DLinear--ddn | ready | 0/4 |  |
+| exp2-confirm--Electricity--DLinear--ddn | claimed | 1/4 | itm21-a4000 |
 | exp2-confirm--Electricity--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--revin | done | 4/4 |  |
-| exp2-confirm--Electricity--iTransformer--san | claimed | 1/4 | itm21-a4000 |
+| exp2-confirm--Electricity--iTransformer--san | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--ddn | ready | 0/4 |  |
 | exp2-confirm--Electricity--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--revin | done | 4/4 |  |
@@ -197,7 +197,7 @@ Generated 2026-10-07T16:24:46+00:00 from 1362 packaged cells. Regenerate with `p
 | exp3-tuned--Electricity--DLinear--ddn | blocked | 0/? |  |
 | exp3-tuned--Electricity--DLinear--fan | ready | 0/12 |  |
 | exp3-tuned--Electricity--iTransformer--revin | ready | 0/12 |  |
-| exp3-tuned--Electricity--iTransformer--san | blocked | 0/? |  |
+| exp3-tuned--Electricity--iTransformer--san | ready | 0/12 |  |
 | exp3-tuned--Electricity--iTransformer--ddn | blocked | 0/? |  |
 | exp3-tuned--Electricity--iTransformer--fan | ready | 0/12 |  |
 | exp3-tuned--Traffic--DLinear--revin | ready | 0/12 |  |
