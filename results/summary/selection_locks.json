@@ -91,6 +91,38 @@
       "period_len": 8,
       "station_lr": 0.00025,
       "station_type": "adaptive"
+    },
+    "ETTm1|DLinear|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 11,
+      "station_lr": 0.0001
+    },
+    "ETTm1|DLinear|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
+    "ETTm2|iTransformer|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "kernel_len": 49,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
+    "ETTm2|iTransformer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 6,
+      "station_lr": 0.0001
+    },
+    "ETTm2|iTransformer|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
+    "ETTm2|iTransformer|san": {
+      "period_len": 24,
+      "station_lr": 5e-05,
+      "station_type": "adaptive"
     }
   },
   "protocol_version": "journal-v1",
