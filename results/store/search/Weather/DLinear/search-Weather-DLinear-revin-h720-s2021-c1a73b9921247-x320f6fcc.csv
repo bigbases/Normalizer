@@ -1,0 +1,2 @@
+RunID,CandidateID,ConfigHash,Phase,Split,Setting,Dataset,Backbone,Horizon,MSE,MAE,Seed,BestValMSE,BestEpoch,UseNorm,Host,Worker,GPU,Torch,CodeRev,ElapsedSeconds,FinishedAt
+search-Weather-DLinear-revin-h720-s2021-c1a73b9921247-x320f6fcc,1a73b9921247,320f6fcc5efd487d,search,validation,Weather_DLinear_720_DLinear_Weather_ftM_sl336_ll168_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_journal-v1_unrevin_af0_sd2021_cfg320f6fcc5efd_r0,Weather,DLinear,720,,,2021,0.6806850365617059,5,revin,itm21-a4000,itm21-a4000,NVIDIA RTX A4000,2.1.0+cu118,5475437,140.8,2026-10-07T02:22:30+00:00
