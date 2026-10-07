@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T10:40:07+00:00 from 986 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T10:52:33+00:00 from 1029 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| exp2-search | 12 | 1 | 1 | 0 | 0 |
+| exp2-search | 12 | 2 | 0 | 0 | 0 |
 | exp2-confirm | 10 | 0 | 2 | 2 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 0 | 1 | 9 | 4 | 0 |
+| exp3-tuned | 1 | 1 | 8 | 4 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -38,8 +38,8 @@ Generated 2026-10-07T10:40:07+00:00 from 986 packaged cells. Regenerate with `py
 | exp2-search--Weather--iTransformer | done | 40/40 |  |
 | exp2-search--Electricity--DLinear | done | 40/40 |  |
 | exp2-search--Electricity--iTransformer | done | 40/40 |  |
-| exp2-search--Traffic--DLinear | claimed | 34/40 | elice-a100 |
-| exp2-search--Traffic--iTransformer | ready | 0/40 |  |
+| exp2-search--Traffic--DLinear | claimed | 37/40 | elice-a100 |
+| exp2-search--Traffic--iTransformer | claimed | 0/40 | elice-a100 |
 | exp2-confirm--ETTh1--DLinear | done | 16/16 |  |
 | exp2-confirm--ETTh1--iTransformer | done | 16/16 |  |
 | exp2-confirm--ETTh2--DLinear | done | 16/16 |  |
@@ -68,9 +68,9 @@ Generated 2026-10-07T10:40:07+00:00 from 986 packaged cells. Regenerate with `py
 | exp3-none--Electricity--iTransformer | ready | 0/12 |  |
 | exp3-none--Traffic--DLinear | ready | 0/12 |  |
 | exp3-none--Traffic--iTransformer | ready | 0/12 |  |
-| exp3-tuned--ETTh1--DLinear | ready | 0/48 |  |
+| exp3-tuned--ETTh1--DLinear | claimed | 16/48 | itm21-a4000 |
 | exp3-tuned--ETTh1--iTransformer | ready | 0/48 |  |
-| exp3-tuned--ETTh2--DLinear | claimed | 24/48 | itm21-a4000 |
+| exp3-tuned--ETTh2--DLinear | done | 48/48 |  |
 | exp3-tuned--ETTh2--iTransformer | ready | 0/48 |  |
 | exp3-tuned--ETTm1--DLinear | ready | 0/48 |  |
 | exp3-tuned--ETTm1--iTransformer | ready | 0/48 |  |
