@@ -108,10 +108,12 @@ class Task:
     done: list = field(default_factory=list)
     status: str = "pending"            # done | ready | blocked | claimed | failed
     claim: dict | None = None
+    split: str | None = None           # the method, for phases split per method
 
     @property
     def task_id(self):
-        return f"{self.phase}--{self.dataset}--{self.backbone}"
+        base = f"{self.phase}--{self.dataset}--{self.backbone}"
+        return f"{base}--{self.split}" if self.split else base
 
     @property
     def remaining(self):
@@ -140,27 +142,35 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
     lease_hours = float(lease_hours or plan.get("lease_hours", 3))
     now = now or time.time()
     tasks = []
-    by_key = {}
+    by_case = defaultdict(list)
     for phase in sorted(plan["phases"], key=lambda p: p["priority"]):
         if not phase.get("enabled", True):
             continue
+        # "split": "method" makes one task per normalizer so that several
+        # servers can share a heavy dataset-backbone case.
+        split = phase.get("split") == "method"
+        groups = [[m] for m in phase["methods"]] if split else [list(phase["methods"])]
         datasets = phase.get("datasets") or list(protocol["datasets"])
         for dataset in datasets:
             for backbone in phase["backbones"]:
-                task = Task(
-                    phase=phase["name"], priority=int(phase["priority"]),
-                    experiment=phase["experiment"], stage=phase["stage"],
-                    dataset=dataset, backbone=backbone, methods=list(phase["methods"]),
-                    requires=phase.get("requires"),
-                )
-                by_key[(task.phase, dataset, backbone)] = task
-                tasks.append(task)
+                for methods in groups:
+                    task = Task(
+                        phase=phase["name"], priority=int(phase["priority"]),
+                        experiment=phase["experiment"], stage=phase["stage"],
+                        dataset=dataset, backbone=backbone, methods=methods,
+                        requires=phase.get("requires"), split=methods[0] if split else None,
+                    )
+                    by_case[(task.phase, dataset, backbone)].append(task)
+                    tasks.append(task)
 
     for task in tasks:  # phases are sorted, so dependencies resolve first
-        dep = by_key.get((task.requires, task.dataset, task.backbone)) if task.requires else None
-        if task.requires and (dep is None or dep.status != "done"):
-            task.status = "blocked"
-            continue
+        if task.requires:
+            deps = by_case.get((task.requires, task.dataset, task.backbone), [])
+            same_method = [d for d in deps if task.split and d.split == task.split]
+            deps = same_method or deps     # per-method chain when both phases are split
+            if not deps or any(d.status != "done" for d in deps):
+                task.status = "blocked"
+                continue
         rows = sh.validation_rows(_case_rows(results, task.dataset, task.backbone))
         lock_doc = shortlist_doc = None
         if task.stage == "confirm":

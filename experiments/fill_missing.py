@@ -106,14 +106,14 @@ def command_list(args):
             "worker": (t.claim or {}).get("worker"),
         } for t in tasks], indent=1))
         return
-    print(f"{'task':42s} {'status':8s} {'cells':>9s} {'est_h':>7s}  worker")
+    print(f"{'task':48s} {'status':8s} {'cells':>9s} {'est_h':>7s}  worker")
     total_h = 0.0
     for t in tasks:
         cells = "?" if t.cells is None else f"{len(t.done)}/{len(t.cells)}"
         hours = sum(cost.seconds(c) for c in t.remaining) / 3600
         total_h += hours
         worker = (t.claim or {}).get("worker", "") if t.status in ("claimed", "failed") else ""
-        print(f"{t.task_id:42s} {t.status:8s} {cells:>9s} {hours:7.2f}  {worker}")
+        print(f"{t.task_id:48s} {t.status:8s} {cells:>9s} {hours:7.2f}  {worker}")
         if args.cells:
             for c in t.remaining:
                 print(f"    {c['run_id']}")

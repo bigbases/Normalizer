@@ -32,26 +32,29 @@ class TaskResolutionTest(unittest.TestCase):
         tasks = rs.build_tasks(self.plan, self.protocol, self.bases, results)
         return {t.task_id: t for t in tasks}
 
-    def test_dependencies_unblock_from_packaged_results(self):
+    def test_dependencies_unblock_per_method(self):
         t = self.tasks({})
         self.assertEqual(t["exp1-lt--ETTh1--DLinear"].status, "ready")
         self.assertEqual(len(t["exp1-lt--ETTh1--DLinear"].cells), 12)
-        self.assertEqual(len(t["exp2-search--ETTh1--DLinear"].cells), 40)
-        self.assertEqual(t["exp2-confirm--ETTh1--DLinear"].status, "blocked")
-        self.assertEqual(t["exp3-tuned--ETTh1--DLinear"].status, "blocked")
+        sizes = {m: len(t[f"exp2-search--ETTh1--DLinear--{m}"].cells) for m in ("revin", "san", "ddn", "fan")}
+        self.assertEqual(sizes, {"revin": 4, "san": 12, "ddn": 12, "fan": 12})
+        self.assertEqual(t["exp2-confirm--ETTh1--DLinear--ddn"].status, "blocked")
+        self.assertEqual(t["exp3-tuned--ETTh1--DLinear--ddn"].status, "blocked")
 
-        results = fake_rows(t["exp2-search--ETTh1--DLinear"].cells)
+        results = fake_rows(t["exp2-search--ETTh1--DLinear--ddn"].cells)
         t = self.tasks(results)
-        self.assertEqual(t["exp2-search--ETTh1--DLinear"].status, "done")
-        confirm = t["exp2-confirm--ETTh1--DLinear"]
-        self.assertEqual(confirm.status, "ready")
-        self.assertEqual(len(confirm.cells), 4 * 2 * 2)       # methods x top-2 x horizons
-        self.assertEqual(t["exp2-confirm--ETTh2--DLinear"].status, "blocked")
+        confirm = t["exp2-confirm--ETTh1--DLinear--ddn"]
+        self.assertEqual(confirm.status, "ready")                 # only DDN's search is needed
+        self.assertEqual(len(confirm.cells), 2 * 2)               # top-2 x horizons
+        self.assertEqual(t["exp2-confirm--ETTh1--DLinear--san"].status, "blocked")
+        self.assertEqual(t["exp2-confirm--ETTh2--DLinear--ddn"].status, "blocked")
 
         results.update(fake_rows(confirm.cells))
-        tuned = self.tasks(results)["exp3-tuned--ETTh1--DLinear"]
+        t = self.tasks(results)
+        tuned = t["exp3-tuned--ETTh1--DLinear--ddn"]
         self.assertEqual(tuned.status, "ready")
-        self.assertEqual(len(tuned.cells), 4 * 4 * 3)         # methods x horizons x seeds
+        self.assertEqual(len(tuned.cells), 4 * 3)                 # horizons x seeds
+        self.assertEqual(t["exp3-tuned--ETTh1--DLinear--fan"].status, "blocked")
 
     def test_claim_status_lease_and_failure(self):
         task_id = "exp1-lt--ETTh1--DLinear"
