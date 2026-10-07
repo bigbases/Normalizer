@@ -115,6 +115,11 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "ETTm1|iTransformer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 11,
+      "station_lr": 0.0001
+    },
     "ETTm1|iTransformer|revin": {
       "affine": 0,
       "station_lr": 0.0001

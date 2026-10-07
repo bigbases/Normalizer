@@ -849,6 +849,20 @@
     ],
     "Electricity|iTransformer|ddn": [
       {
+        "candidate_id": "e082b1250cbb",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 49,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.13611754927924782
+      },
+      {
         "candidate_id": "43cd745f71d8",
         "n_cells": 2,
         "params": {
@@ -861,20 +875,6 @@
           "wavelet": "coif3"
         },
         "screen_mean_val_mse": 0.1362246449896187
-      },
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.1368416605247829
       }
     ],
     "Electricity|iTransformer|fan": [
