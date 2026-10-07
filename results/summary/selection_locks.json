@@ -184,6 +184,11 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "Electricity|DLinear|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 3,
+      "station_lr": 0.001
+    },
     "Electricity|DLinear|revin": {
       "affine": 1,
       "station_lr": 0.0001
