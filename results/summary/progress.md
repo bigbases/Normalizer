@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T07:10:15+00:00 from 719 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T07:16:29+00:00 from 737 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 11 | 1 | 2 | 0 | 0 |
-| exp2-confirm | 2 | 1 | 8 | 3 | 0 |
+| exp2-confirm | 3 | 1 | 7 | 3 | 0 |
 | exp3-none | 5 | 0 | 9 | 0 | 0 |
-| exp3-tuned | 0 | 0 | 2 | 12 | 0 |
+| exp3-tuned | 0 | 0 | 3 | 11 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -37,13 +37,13 @@ Generated 2026-10-07T07:10:15+00:00 from 719 packaged cells. Regenerate with `py
 | exp2-search--Weather--DLinear | done | 40/40 |  |
 | exp2-search--Weather--iTransformer | done | 40/40 |  |
 | exp2-search--Electricity--DLinear | done | 40/40 |  |
-| exp2-search--Electricity--iTransformer | claimed | 9/40 | elice-a100 |
+| exp2-search--Electricity--iTransformer | claimed | 13/40 | elice-a100 |
 | exp2-search--Traffic--DLinear | ready | 0/40 |  |
 | exp2-search--Traffic--iTransformer | ready | 0/40 |  |
 | exp2-confirm--ETTh1--DLinear | done | 16/16 |  |
-| exp2-confirm--ETTh1--iTransformer | ready | 0/16 |  |
+| exp2-confirm--ETTh1--iTransformer | claimed | 8/16 | itm21-a4000 |
 | exp2-confirm--ETTh2--DLinear | done | 16/16 |  |
-| exp2-confirm--ETTh2--iTransformer | claimed | 10/16 | itm21-a4000 |
+| exp2-confirm--ETTh2--iTransformer | done | 16/16 |  |
 | exp2-confirm--ETTm1--DLinear | ready | 0/16 |  |
 | exp2-confirm--ETTm1--iTransformer | ready | 0/16 |  |
 | exp2-confirm--ETTm2--DLinear | ready | 0/16 |  |
@@ -71,7 +71,7 @@ Generated 2026-10-07T07:10:15+00:00 from 719 packaged cells. Regenerate with `py
 | exp3-tuned--ETTh1--DLinear | ready | 0/48 |  |
 | exp3-tuned--ETTh1--iTransformer | blocked | 0/? |  |
 | exp3-tuned--ETTh2--DLinear | ready | 0/48 |  |
-| exp3-tuned--ETTh2--iTransformer | blocked | 0/? |  |
+| exp3-tuned--ETTh2--iTransformer | ready | 0/48 |  |
 | exp3-tuned--ETTm1--DLinear | blocked | 0/? |  |
 | exp3-tuned--ETTm1--iTransformer | blocked | 0/? |  |
 | exp3-tuned--ETTm2--DLinear | blocked | 0/? |  |

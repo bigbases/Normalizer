@@ -847,6 +847,26 @@
         "screen_mean_val_mse": 0.14389023372593024
       }
     ],
+    "Electricity|iTransformer|revin": [
+      {
+        "candidate_id": "a22b7bdd93cb",
+        "n_cells": 2,
+        "params": {
+          "affine": 1,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.13899595077214
+      },
+      {
+        "candidate_id": "1a73b9921247",
+        "n_cells": 2,
+        "params": {
+          "affine": 0,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.13941153561778413
+      }
+    ],
     "Weather|DLinear|ddn": [
       {
         "candidate_id": "43cd745f71d8",
