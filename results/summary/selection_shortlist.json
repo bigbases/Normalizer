@@ -658,6 +658,100 @@
         },
         "screen_mean_val_mse": 0.1892915671487307
       }
+    ],
+    "Weather|DLinear|ddn": [
+      {
+        "candidate_id": "43cd745f71d8",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 7,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.48572044997817515
+      },
+      {
+        "candidate_id": "e082b1250cbb",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 49,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.48716608211271084
+      }
+    ],
+    "Weather|DLinear|fan": [
+      {
+        "candidate_id": "c5b5799bc7f6",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 4,
+          "station_lr": 0.0005
+        },
+        "screen_mean_val_mse": 0.48756935191752815
+      },
+      {
+        "candidate_id": "5980e8f9fd1d",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 2,
+          "station_lr": 0.0005
+        },
+        "screen_mean_val_mse": 0.4948763683216224
+      }
+    ],
+    "Weather|DLinear|revin": [
+      {
+        "candidate_id": "a22b7bdd93cb",
+        "n_cells": 2,
+        "params": {
+          "affine": 1,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.5527674270016929
+      },
+      {
+        "candidate_id": "1a73b9921247",
+        "n_cells": 2,
+        "params": {
+          "affine": 0,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.5585235466795956
+      }
+    ],
+    "Weather|DLinear|san": [
+      {
+        "candidate_id": "74fa903f9770",
+        "n_cells": 2,
+        "params": {
+          "period_len": 24,
+          "station_lr": 0.0001,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.4931398284090306
+      },
+      {
+        "candidate_id": "61e69def41a7",
+        "n_cells": 2,
+        "params": {
+          "period_len": 4,
+          "station_lr": 0.0001,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.4934456605354227
+      }
     ]
   }
 }
