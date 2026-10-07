@@ -753,6 +753,100 @@
         "screen_mean_val_mse": 0.2033031193711843
       }
     ],
+    "Electricity|DLinear|ddn": [
+      {
+        "candidate_id": "6f0b0683bbd0",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 25,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.13873544922098519
+      },
+      {
+        "candidate_id": "f841fa3c59bc",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 0,
+          "kernel_len": 25,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.13899936204155286
+      }
+    ],
+    "Electricity|DLinear|fan": [
+      {
+        "candidate_id": "59c5876c8eff",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 3,
+          "station_lr": 0.001
+        },
+        "screen_mean_val_mse": 0.14835116383619606
+      },
+      {
+        "candidate_id": "942f55772c3f",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 6,
+          "station_lr": 0.001
+        },
+        "screen_mean_val_mse": 0.14926559645682574
+      }
+    ],
+    "Electricity|DLinear|revin": [
+      {
+        "candidate_id": "a22b7bdd93cb",
+        "n_cells": 2,
+        "params": {
+          "affine": 1,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.14971916222323975
+      },
+      {
+        "candidate_id": "1a73b9921247",
+        "n_cells": 2,
+        "params": {
+          "affine": 0,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.14976631610964736
+      }
+    ],
+    "Electricity|DLinear|san": [
+      {
+        "candidate_id": "74fa903f9770",
+        "n_cells": 2,
+        "params": {
+          "period_len": 24,
+          "station_lr": 0.0001,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.14299871384476623
+      },
+      {
+        "candidate_id": "f6904fc69cd0",
+        "n_cells": 2,
+        "params": {
+          "period_len": 8,
+          "station_lr": 0.0001,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.14389023372593024
+      }
+    ],
     "Weather|DLinear|ddn": [
       {
         "candidate_id": "43cd745f71d8",
