@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-07T18:45:19+00:00 from 1422 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T18:59:28+00:00 from 1434 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-07T18:45:19+00:00 from 1422 packaged cells. Regenerate with `p
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 29 | 2 | 25 | 0 | 0 |
+| exp3-tuned | 30 | 2 | 24 | 0 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -177,11 +177,11 @@ Generated 2026-10-07T18:45:19+00:00 from 1422 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm1--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm1--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--DLinear--revin | done | 12/12 |  |
-| exp3-tuned--ETTm2--DLinear--san | ready | 0/12 |  |
+| exp3-tuned--ETTm2--DLinear--san | claimed | 1/12 | itm21-a4000 |
 | exp3-tuned--ETTm2--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm2--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--iTransformer--revin | done | 12/12 |  |
-| exp3-tuned--ETTm2--iTransformer--san | claimed | 2/12 | itm21-a4000 |
+| exp3-tuned--ETTm2--iTransformer--san | done | 12/12 |  |
 | exp3-tuned--ETTm2--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--revin | done | 12/12 |  |
@@ -206,5 +206,5 @@ Generated 2026-10-07T18:45:19+00:00 from 1422 packaged cells. Regenerate with `p
 | exp3-tuned--Traffic--DLinear--fan | ready | 0/12 |  |
 | exp3-tuned--Traffic--iTransformer--revin | ready | 0/12 |  |
 | exp3-tuned--Traffic--iTransformer--san | ready | 0/12 |  |
-| exp3-tuned--Traffic--iTransformer--ddn | claimed | 0/12 | itm24-pro6000 |
+| exp3-tuned--Traffic--iTransformer--ddn | claimed | 1/12 | itm24-pro6000 |
 | exp3-tuned--Traffic--iTransformer--fan | ready | 0/12 |  |
