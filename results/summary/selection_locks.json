@@ -184,6 +184,10 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "Electricity|DLinear|revin": {
+      "affine": 1,
+      "station_lr": 0.0001
+    },
     "Weather|DLinear|ddn": {
       "hkernel_len": 5,
       "j": 1,
