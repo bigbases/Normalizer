@@ -1119,14 +1119,14 @@
         "screen_mean_val_mse": 0.3661961463924784
       },
       {
-        "candidate_id": "48f6c1ced712",
+        "candidate_id": "74fa903f9770",
         "n_cells": 2,
         "params": {
-          "period_len": 8,
-          "station_lr": 5e-05,
+          "period_len": 24,
+          "station_lr": 0.0001,
           "station_type": "adaptive"
         },
-        "screen_mean_val_mse": 0.3804222303800858
+        "screen_mean_val_mse": 0.36835104129635365
       }
     ],
     "Weather|DLinear|ddn": [

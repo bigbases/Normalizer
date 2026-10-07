@@ -1,12 +1,12 @@
 # Experiment progress
 
-Generated 2026-10-07T15:11:39+00:00 from 1341 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T15:43:24+00:00 from 1346 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| exp2-search | 54 | 2 | 0 | 0 | 0 |
-| exp2-confirm | 46 | 2 | 6 | 2 | 0 |
+| exp2-search | 55 | 1 | 0 | 0 | 0 |
+| exp2-confirm | 46 | 4 | 5 | 1 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
 | exp3-tuned | 26 | 0 | 20 | 10 | 0 |
 
@@ -79,7 +79,7 @@ Generated 2026-10-07T15:11:39+00:00 from 1341 packaged cells. Regenerate with `p
 | exp2-search--Traffic--DLinear--ddn | done | 12/12 |  |
 | exp2-search--Traffic--DLinear--fan | done | 12/12 |  |
 | exp2-search--Traffic--iTransformer--revin | done | 4/4 |  |
-| exp2-search--Traffic--iTransformer--san | claimed | 9/12 | itm24-pro6000 |
+| exp2-search--Traffic--iTransformer--san | done | 12/12 |  |
 | exp2-search--Traffic--iTransformer--ddn | claimed | 11/12 | itm24-pro6000 |
 | exp2-search--Traffic--iTransformer--fan | done | 12/12 |  |
 | exp2-confirm--ETTh1--DLinear--revin | done | 4/4 |  |
@@ -129,13 +129,13 @@ Generated 2026-10-07T15:11:39+00:00 from 1341 packaged cells. Regenerate with `p
 | exp2-confirm--Electricity--iTransformer--revin | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--san | ready | 0/4 |  |
 | exp2-confirm--Electricity--iTransformer--ddn | ready | 0/4 |  |
-| exp2-confirm--Electricity--iTransformer--fan | claimed | 0/4 | itm21-a4000 |
+| exp2-confirm--Electricity--iTransformer--fan | claimed | 2/4 | itm21-a4000 |
 | exp2-confirm--Traffic--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--Traffic--DLinear--san | ready | 0/4 |  |
-| exp2-confirm--Traffic--DLinear--ddn | ready | 0/4 |  |
+| exp2-confirm--Traffic--DLinear--san | claimed | 0/4 | itm21-a4000 |
+| exp2-confirm--Traffic--DLinear--ddn | claimed | 0/4 | itm24-pro6000 |
 | exp2-confirm--Traffic--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--iTransformer--revin | ready | 0/4 |  |
-| exp2-confirm--Traffic--iTransformer--san | blocked | 0/? |  |
+| exp2-confirm--Traffic--iTransformer--san | ready | 0/4 |  |
 | exp2-confirm--Traffic--iTransformer--ddn | blocked | 0/? |  |
 | exp2-confirm--Traffic--iTransformer--fan | claimed | 0/4 | itm24-pro6000 |
 | exp3-none--ETTh1--DLinear | done | 12/12 |  |
