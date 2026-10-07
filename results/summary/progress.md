@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T12:10:37+00:00 from 1182 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T12:17:12+00:00 from 1200 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| exp2-search | 13 | 1 | 0 | 0 | 0 |
-| exp2-confirm | 10 | 0 | 3 | 1 | 0 |
+| exp2-search | 53 | 1 | 2 | 0 | 0 |
+| exp2-confirm | 40 | 0 | 13 | 3 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 4 | 1 | 5 | 4 | 0 |
+| exp3-tuned | 18 | 1 | 21 | 16 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -26,34 +26,118 @@ Generated 2026-10-07T12:10:37+00:00 from 1182 packaged cells. Regenerate with `p
 | exp1-lt--Electricity--iTransformer | done | 12/12 |  |
 | exp1-lt--Traffic--DLinear | done | 12/12 |  |
 | exp1-lt--Traffic--iTransformer | done | 12/12 |  |
-| exp2-search--ETTh1--DLinear | done | 40/40 |  |
-| exp2-search--ETTh1--iTransformer | done | 40/40 |  |
-| exp2-search--ETTh2--DLinear | done | 40/40 |  |
-| exp2-search--ETTh2--iTransformer | done | 40/40 |  |
-| exp2-search--ETTm1--DLinear | done | 40/40 |  |
-| exp2-search--ETTm1--iTransformer | done | 40/40 |  |
-| exp2-search--ETTm2--DLinear | done | 40/40 |  |
-| exp2-search--ETTm2--iTransformer | done | 40/40 |  |
-| exp2-search--Weather--DLinear | done | 40/40 |  |
-| exp2-search--Weather--iTransformer | done | 40/40 |  |
-| exp2-search--Electricity--DLinear | done | 40/40 |  |
-| exp2-search--Electricity--iTransformer | done | 40/40 |  |
-| exp2-search--Traffic--DLinear | done | 40/40 |  |
-| exp2-search--Traffic--iTransformer | claimed | 8/40 | elice-a100 |
-| exp2-confirm--ETTh1--DLinear | done | 16/16 |  |
-| exp2-confirm--ETTh1--iTransformer | done | 16/16 |  |
-| exp2-confirm--ETTh2--DLinear | done | 16/16 |  |
-| exp2-confirm--ETTh2--iTransformer | done | 16/16 |  |
-| exp2-confirm--ETTm1--DLinear | done | 16/16 |  |
-| exp2-confirm--ETTm1--iTransformer | done | 16/16 |  |
-| exp2-confirm--ETTm2--DLinear | done | 16/16 |  |
-| exp2-confirm--ETTm2--iTransformer | done | 16/16 |  |
-| exp2-confirm--Weather--DLinear | done | 16/16 |  |
-| exp2-confirm--Weather--iTransformer | done | 16/16 |  |
-| exp2-confirm--Electricity--DLinear | ready | 0/16 |  |
-| exp2-confirm--Electricity--iTransformer | ready | 0/16 |  |
-| exp2-confirm--Traffic--DLinear | ready | 0/16 |  |
-| exp2-confirm--Traffic--iTransformer | blocked | 0/? |  |
+| exp2-search--ETTh1--DLinear--revin | done | 4/4 |  |
+| exp2-search--ETTh1--DLinear--san | done | 12/12 |  |
+| exp2-search--ETTh1--DLinear--ddn | done | 12/12 |  |
+| exp2-search--ETTh1--DLinear--fan | done | 12/12 |  |
+| exp2-search--ETTh1--iTransformer--revin | done | 4/4 |  |
+| exp2-search--ETTh1--iTransformer--san | done | 12/12 |  |
+| exp2-search--ETTh1--iTransformer--ddn | done | 12/12 |  |
+| exp2-search--ETTh1--iTransformer--fan | done | 12/12 |  |
+| exp2-search--ETTh2--DLinear--revin | done | 4/4 |  |
+| exp2-search--ETTh2--DLinear--san | done | 12/12 |  |
+| exp2-search--ETTh2--DLinear--ddn | done | 12/12 |  |
+| exp2-search--ETTh2--DLinear--fan | done | 12/12 |  |
+| exp2-search--ETTh2--iTransformer--revin | done | 4/4 |  |
+| exp2-search--ETTh2--iTransformer--san | done | 12/12 |  |
+| exp2-search--ETTh2--iTransformer--ddn | done | 12/12 |  |
+| exp2-search--ETTh2--iTransformer--fan | done | 12/12 |  |
+| exp2-search--ETTm1--DLinear--revin | done | 4/4 |  |
+| exp2-search--ETTm1--DLinear--san | done | 12/12 |  |
+| exp2-search--ETTm1--DLinear--ddn | done | 12/12 |  |
+| exp2-search--ETTm1--DLinear--fan | done | 12/12 |  |
+| exp2-search--ETTm1--iTransformer--revin | done | 4/4 |  |
+| exp2-search--ETTm1--iTransformer--san | done | 12/12 |  |
+| exp2-search--ETTm1--iTransformer--ddn | done | 12/12 |  |
+| exp2-search--ETTm1--iTransformer--fan | done | 12/12 |  |
+| exp2-search--ETTm2--DLinear--revin | done | 4/4 |  |
+| exp2-search--ETTm2--DLinear--san | done | 12/12 |  |
+| exp2-search--ETTm2--DLinear--ddn | done | 12/12 |  |
+| exp2-search--ETTm2--DLinear--fan | done | 12/12 |  |
+| exp2-search--ETTm2--iTransformer--revin | done | 4/4 |  |
+| exp2-search--ETTm2--iTransformer--san | done | 12/12 |  |
+| exp2-search--ETTm2--iTransformer--ddn | done | 12/12 |  |
+| exp2-search--ETTm2--iTransformer--fan | done | 12/12 |  |
+| exp2-search--Weather--DLinear--revin | done | 4/4 |  |
+| exp2-search--Weather--DLinear--san | done | 12/12 |  |
+| exp2-search--Weather--DLinear--ddn | done | 12/12 |  |
+| exp2-search--Weather--DLinear--fan | done | 12/12 |  |
+| exp2-search--Weather--iTransformer--revin | done | 4/4 |  |
+| exp2-search--Weather--iTransformer--san | done | 12/12 |  |
+| exp2-search--Weather--iTransformer--ddn | done | 12/12 |  |
+| exp2-search--Weather--iTransformer--fan | done | 12/12 |  |
+| exp2-search--Electricity--DLinear--revin | done | 4/4 |  |
+| exp2-search--Electricity--DLinear--san | done | 12/12 |  |
+| exp2-search--Electricity--DLinear--ddn | done | 12/12 |  |
+| exp2-search--Electricity--DLinear--fan | done | 12/12 |  |
+| exp2-search--Electricity--iTransformer--revin | done | 4/4 |  |
+| exp2-search--Electricity--iTransformer--san | done | 12/12 |  |
+| exp2-search--Electricity--iTransformer--ddn | done | 12/12 |  |
+| exp2-search--Electricity--iTransformer--fan | done | 12/12 |  |
+| exp2-search--Traffic--DLinear--revin | done | 4/4 |  |
+| exp2-search--Traffic--DLinear--san | done | 12/12 |  |
+| exp2-search--Traffic--DLinear--ddn | done | 12/12 |  |
+| exp2-search--Traffic--DLinear--fan | done | 12/12 |  |
+| exp2-search--Traffic--iTransformer--revin | done | 4/4 |  |
+| exp2-search--Traffic--iTransformer--san | ready | 3/12 |  |
+| exp2-search--Traffic--iTransformer--ddn | ready | 0/12 |  |
+| exp2-search--Traffic--iTransformer--fan | claimed | 4/12 | itm24-pro6000 |
+| exp2-confirm--ETTh1--DLinear--revin | done | 4/4 |  |
+| exp2-confirm--ETTh1--DLinear--san | done | 4/4 |  |
+| exp2-confirm--ETTh1--DLinear--ddn | done | 4/4 |  |
+| exp2-confirm--ETTh1--DLinear--fan | done | 4/4 |  |
+| exp2-confirm--ETTh1--iTransformer--revin | done | 4/4 |  |
+| exp2-confirm--ETTh1--iTransformer--san | done | 4/4 |  |
+| exp2-confirm--ETTh1--iTransformer--ddn | done | 4/4 |  |
+| exp2-confirm--ETTh1--iTransformer--fan | done | 4/4 |  |
+| exp2-confirm--ETTh2--DLinear--revin | done | 4/4 |  |
+| exp2-confirm--ETTh2--DLinear--san | done | 4/4 |  |
+| exp2-confirm--ETTh2--DLinear--ddn | done | 4/4 |  |
+| exp2-confirm--ETTh2--DLinear--fan | done | 4/4 |  |
+| exp2-confirm--ETTh2--iTransformer--revin | done | 4/4 |  |
+| exp2-confirm--ETTh2--iTransformer--san | done | 4/4 |  |
+| exp2-confirm--ETTh2--iTransformer--ddn | done | 4/4 |  |
+| exp2-confirm--ETTh2--iTransformer--fan | done | 4/4 |  |
+| exp2-confirm--ETTm1--DLinear--revin | done | 4/4 |  |
+| exp2-confirm--ETTm1--DLinear--san | done | 4/4 |  |
+| exp2-confirm--ETTm1--DLinear--ddn | done | 4/4 |  |
+| exp2-confirm--ETTm1--DLinear--fan | done | 4/4 |  |
+| exp2-confirm--ETTm1--iTransformer--revin | done | 4/4 |  |
+| exp2-confirm--ETTm1--iTransformer--san | done | 4/4 |  |
+| exp2-confirm--ETTm1--iTransformer--ddn | done | 4/4 |  |
+| exp2-confirm--ETTm1--iTransformer--fan | done | 4/4 |  |
+| exp2-confirm--ETTm2--DLinear--revin | done | 4/4 |  |
+| exp2-confirm--ETTm2--DLinear--san | done | 4/4 |  |
+| exp2-confirm--ETTm2--DLinear--ddn | done | 4/4 |  |
+| exp2-confirm--ETTm2--DLinear--fan | done | 4/4 |  |
+| exp2-confirm--ETTm2--iTransformer--revin | done | 4/4 |  |
+| exp2-confirm--ETTm2--iTransformer--san | done | 4/4 |  |
+| exp2-confirm--ETTm2--iTransformer--ddn | done | 4/4 |  |
+| exp2-confirm--ETTm2--iTransformer--fan | done | 4/4 |  |
+| exp2-confirm--Weather--DLinear--revin | done | 4/4 |  |
+| exp2-confirm--Weather--DLinear--san | done | 4/4 |  |
+| exp2-confirm--Weather--DLinear--ddn | done | 4/4 |  |
+| exp2-confirm--Weather--DLinear--fan | done | 4/4 |  |
+| exp2-confirm--Weather--iTransformer--revin | done | 4/4 |  |
+| exp2-confirm--Weather--iTransformer--san | done | 4/4 |  |
+| exp2-confirm--Weather--iTransformer--ddn | done | 4/4 |  |
+| exp2-confirm--Weather--iTransformer--fan | done | 4/4 |  |
+| exp2-confirm--Electricity--DLinear--revin | ready | 0/4 |  |
+| exp2-confirm--Electricity--DLinear--san | ready | 0/4 |  |
+| exp2-confirm--Electricity--DLinear--ddn | ready | 0/4 |  |
+| exp2-confirm--Electricity--DLinear--fan | ready | 0/4 |  |
+| exp2-confirm--Electricity--iTransformer--revin | ready | 0/4 |  |
+| exp2-confirm--Electricity--iTransformer--san | ready | 0/4 |  |
+| exp2-confirm--Electricity--iTransformer--ddn | ready | 0/4 |  |
+| exp2-confirm--Electricity--iTransformer--fan | ready | 0/4 |  |
+| exp2-confirm--Traffic--DLinear--revin | ready | 0/4 |  |
+| exp2-confirm--Traffic--DLinear--san | ready | 0/4 |  |
+| exp2-confirm--Traffic--DLinear--ddn | ready | 0/4 |  |
+| exp2-confirm--Traffic--DLinear--fan | ready | 0/4 |  |
+| exp2-confirm--Traffic--iTransformer--revin | ready | 0/4 |  |
+| exp2-confirm--Traffic--iTransformer--san | blocked | 0/? |  |
+| exp2-confirm--Traffic--iTransformer--ddn | blocked | 0/? |  |
+| exp2-confirm--Traffic--iTransformer--fan | blocked | 0/? |  |
 | exp3-none--ETTh1--DLinear | done | 12/12 |  |
 | exp3-none--ETTh1--iTransformer | done | 12/12 |  |
 | exp3-none--ETTh2--DLinear | done | 12/12 |  |
@@ -68,17 +152,59 @@ Generated 2026-10-07T12:10:37+00:00 from 1182 packaged cells. Regenerate with `p
 | exp3-none--Electricity--iTransformer | ready | 0/12 |  |
 | exp3-none--Traffic--DLinear | ready | 0/12 |  |
 | exp3-none--Traffic--iTransformer | ready | 0/12 |  |
-| exp3-tuned--ETTh1--DLinear | done | 48/48 |  |
-| exp3-tuned--ETTh1--iTransformer | done | 48/48 |  |
-| exp3-tuned--ETTh2--DLinear | done | 48/48 |  |
-| exp3-tuned--ETTh2--iTransformer | done | 48/48 |  |
-| exp3-tuned--ETTm1--DLinear | ready | 0/48 |  |
-| exp3-tuned--ETTm1--iTransformer | ready | 0/48 |  |
-| exp3-tuned--ETTm2--DLinear | ready | 0/48 |  |
-| exp3-tuned--ETTm2--iTransformer | claimed | 14/48 | itm21-a4000 |
-| exp3-tuned--Weather--DLinear | ready | 0/48 |  |
-| exp3-tuned--Weather--iTransformer | ready | 0/48 |  |
-| exp3-tuned--Electricity--DLinear | blocked | 0/? |  |
-| exp3-tuned--Electricity--iTransformer | blocked | 0/? |  |
-| exp3-tuned--Traffic--DLinear | blocked | 0/? |  |
-| exp3-tuned--Traffic--iTransformer | blocked | 0/? |  |
+| exp3-tuned--ETTh1--DLinear--revin | done | 12/12 |  |
+| exp3-tuned--ETTh1--DLinear--san | done | 12/12 |  |
+| exp3-tuned--ETTh1--DLinear--ddn | done | 12/12 |  |
+| exp3-tuned--ETTh1--DLinear--fan | done | 12/12 |  |
+| exp3-tuned--ETTh1--iTransformer--revin | done | 12/12 |  |
+| exp3-tuned--ETTh1--iTransformer--san | done | 12/12 |  |
+| exp3-tuned--ETTh1--iTransformer--ddn | done | 12/12 |  |
+| exp3-tuned--ETTh1--iTransformer--fan | done | 12/12 |  |
+| exp3-tuned--ETTh2--DLinear--revin | done | 12/12 |  |
+| exp3-tuned--ETTh2--DLinear--san | done | 12/12 |  |
+| exp3-tuned--ETTh2--DLinear--ddn | done | 12/12 |  |
+| exp3-tuned--ETTh2--DLinear--fan | done | 12/12 |  |
+| exp3-tuned--ETTh2--iTransformer--revin | done | 12/12 |  |
+| exp3-tuned--ETTh2--iTransformer--san | done | 12/12 |  |
+| exp3-tuned--ETTh2--iTransformer--ddn | done | 12/12 |  |
+| exp3-tuned--ETTh2--iTransformer--fan | done | 12/12 |  |
+| exp3-tuned--ETTm1--DLinear--revin | claimed | 5/12 | itm21-a4000 |
+| exp3-tuned--ETTm1--DLinear--san | ready | 0/12 |  |
+| exp3-tuned--ETTm1--DLinear--ddn | ready | 0/12 |  |
+| exp3-tuned--ETTm1--DLinear--fan | ready | 0/12 |  |
+| exp3-tuned--ETTm1--iTransformer--revin | ready | 0/12 |  |
+| exp3-tuned--ETTm1--iTransformer--san | ready | 0/12 |  |
+| exp3-tuned--ETTm1--iTransformer--ddn | ready | 0/12 |  |
+| exp3-tuned--ETTm1--iTransformer--fan | ready | 0/12 |  |
+| exp3-tuned--ETTm2--DLinear--revin | ready | 0/12 |  |
+| exp3-tuned--ETTm2--DLinear--san | ready | 0/12 |  |
+| exp3-tuned--ETTm2--DLinear--ddn | ready | 0/12 |  |
+| exp3-tuned--ETTm2--DLinear--fan | ready | 0/12 |  |
+| exp3-tuned--ETTm2--iTransformer--revin | done | 12/12 |  |
+| exp3-tuned--ETTm2--iTransformer--san | ready | 0/12 |  |
+| exp3-tuned--ETTm2--iTransformer--ddn | ready | 0/12 |  |
+| exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
+| exp3-tuned--Weather--DLinear--revin | ready | 0/12 |  |
+| exp3-tuned--Weather--DLinear--san | ready | 0/12 |  |
+| exp3-tuned--Weather--DLinear--ddn | ready | 0/12 |  |
+| exp3-tuned--Weather--DLinear--fan | ready | 0/12 |  |
+| exp3-tuned--Weather--iTransformer--revin | ready | 0/12 |  |
+| exp3-tuned--Weather--iTransformer--san | ready | 0/12 |  |
+| exp3-tuned--Weather--iTransformer--ddn | ready | 0/12 |  |
+| exp3-tuned--Weather--iTransformer--fan | ready | 0/12 |  |
+| exp3-tuned--Electricity--DLinear--revin | blocked | 0/? |  |
+| exp3-tuned--Electricity--DLinear--san | blocked | 0/? |  |
+| exp3-tuned--Electricity--DLinear--ddn | blocked | 0/? |  |
+| exp3-tuned--Electricity--DLinear--fan | blocked | 0/? |  |
+| exp3-tuned--Electricity--iTransformer--revin | blocked | 0/? |  |
+| exp3-tuned--Electricity--iTransformer--san | blocked | 0/? |  |
+| exp3-tuned--Electricity--iTransformer--ddn | blocked | 0/? |  |
+| exp3-tuned--Electricity--iTransformer--fan | blocked | 0/? |  |
+| exp3-tuned--Traffic--DLinear--revin | blocked | 0/? |  |
+| exp3-tuned--Traffic--DLinear--san | blocked | 0/? |  |
+| exp3-tuned--Traffic--DLinear--ddn | blocked | 0/? |  |
+| exp3-tuned--Traffic--DLinear--fan | blocked | 0/? |  |
+| exp3-tuned--Traffic--iTransformer--revin | blocked | 0/? |  |
+| exp3-tuned--Traffic--iTransformer--san | blocked | 0/? |  |
+| exp3-tuned--Traffic--iTransformer--ddn | blocked | 0/? |  |
+| exp3-tuned--Traffic--iTransformer--fan | blocked | 0/? |  |
