@@ -847,6 +847,36 @@
         "screen_mean_val_mse": 0.4934456605354227
       }
     ],
+    "Weather|iTransformer|ddn": [
+      {
+        "candidate_id": "6f0b0683bbd0",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 25,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.4838407535326573
+      },
+      {
+        "candidate_id": "1c7b90df1d3b",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 0,
+          "kernel_len": 49,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.48487873922840186
+      }
+    ],
     "Weather|iTransformer|fan": [
       {
         "candidate_id": "c5b5799bc7f6",
