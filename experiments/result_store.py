@@ -294,6 +294,14 @@ def write_summary(root, results, tasks, protocol, bases):
         lines.append(f"| {t.task_id} | {t.status} | {len(t.done)}/{total} | {worker} |")
     (out / "progress.md").write_text("\n".join(lines) + "\n")
 
+    # Per-stage CSV tables are a convenience: a bug there must never block a
+    # worker from pushing finished cells.
+    try:
+        import summary_tables
+        summary_tables.write_all(out, rows, tasks, protocol, bases)
+    except Exception as exc:  # noqa: BLE001
+        print(f"warning: stage tables not written: {exc!r}")
+
 
 # ----------------------------------------------------------------------- git
 class UnsafeSync(Exception):
@@ -325,10 +333,21 @@ class GitRepo:
                 "(workers reset the checkout to the remote branch):\n" + dirty
             )
 
+    # Files that change what a worker runs; reporting code and docs are not
+    # listed, so updating them does not make running workers restart.
+    RUNTIME_PATHS = [
+        "run_longExp.py", "exp", "models", "normalizers", "layers", "utils", "data_provider",
+        "requirements.txt", "configs/protocol.json", "configs/base_configs.json",
+        "configs/distributed_plan.json", "configs/cost_profile.json",
+        "configs/resource_profiles.a100_80gb.json", "experiments/fill_missing.py",
+        "experiments/result_store.py", "experiments/run_matrix.py", "experiments/cost_model.py",
+        "experiments/gpu_scheduler.py", "experiments/select_hparams.py",
+    ]
+
     def code_rev(self):
-        """Last commit that touched anything outside results/."""
+        """Last commit that touched code a worker runs (see RUNTIME_PATHS)."""
         try:
-            out = self.git("log", "-1", "--format=%h", "--", ".", ":(exclude)results").stdout.strip()
+            out = self.git("log", "-1", "--format=%h", "--", *self.RUNTIME_PATHS).stdout.strip()
         except (RuntimeError, OSError):
             return "unknown"
         return out or "unknown"

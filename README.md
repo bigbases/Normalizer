@@ -22,8 +22,20 @@
 ```text
 results/store/<phase>/<dataset>/<backbone>/<run_id>.csv  완료된 cell 1개 = 파일 1개 (push 충돌 없음)
 results/claims/<task>.json                              실행 중인 작업의 임대(lease)와 heartbeat
-results/summary/                                        자동 생성: progress.md, final_test_mean_std.csv, selection_*.json
+results/summary/                                        자동 생성 (아래 표)
 ```
+
+| 파일 | 내용 |
+|---|---|
+| `progress.md`, `stage_status.csv` | 모든 task의 상태(done/claimed/ready/blocked/failed)와 완료 cell 수 |
+| `exp1_lightnorm.csv` | 실험 1: LightNorm test MSE/MAE (seed별 값, 평균·표준편차, `Complete`) |
+| `exp2_validation.csv` | 실험 2: 모든 후보의 validation MSE (search s2021·confirm s2022, horizon 96/720), shortlist·lock 여부 |
+| `exp2_selection.csv` | 실험 2: dataset–backbone–정규화 모듈별 최종 lock 설정 |
+| `exp3_comparison.csv` | 실험 3: NoNorm/RevIN/SAN/DDN/FAN/LightNorm test MSE/MAE를 나란히, `Complete`·`Best_MSE` |
+| `final_test_mean_std.csv` | 모든 final test 결과 (long format) |
+| `selection_shortlist.json`, `selection_locks.json` | 선택 결과 원본 |
+
+표는 worker가 task를 끝낼 때마다 다시 만들어지며, 수동으로는 `python3 experiments/results_pack.py summary --push`.
 
 - **작업 단위(task)**: `configs/distributed_plan.json`의 phase × dataset × backbone (예: `exp2-search--ETTh1--DLinear`).
   우선순위는 실험 1 → 실험 2 search → confirm → 실험 3이며, 같은 우선순위 안에서는 예상 시간이 짧은 case부터 실행한다.
