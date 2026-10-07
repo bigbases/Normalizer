@@ -1,12 +1,12 @@
 # Experiment progress
 
-Generated 2026-10-06T23:31:30+00:00 from 380 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T00:21:52+00:00 from 426 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 13 | 1 | 0 | 0 | 0 |
-| exp2-search | 4 | 1 | 9 | 0 | 0 |
-| exp2-confirm | 0 | 0 | 4 | 10 | 0 |
+| exp2-search | 5 | 1 | 8 | 0 | 0 |
+| exp2-confirm | 0 | 0 | 5 | 9 | 0 |
 | exp3-none | 5 | 1 | 8 | 0 | 0 |
 | exp3-tuned | 0 | 0 | 0 | 14 | 0 |
 
@@ -25,14 +25,14 @@ Generated 2026-10-06T23:31:30+00:00 from 380 packaged cells. Regenerate with `py
 | exp1-lt--Electricity--DLinear | done | 12/12 |  |
 | exp1-lt--Electricity--iTransformer | done | 12/12 |  |
 | exp1-lt--Traffic--DLinear | done | 12/12 |  |
-| exp1-lt--Traffic--iTransformer | claimed | 0/12 | elice-a100 |
+| exp1-lt--Traffic--iTransformer | claimed | 5/12 | elice-a100 |
 | exp2-search--ETTh1--DLinear | done | 40/40 |  |
 | exp2-search--ETTh1--iTransformer | done | 40/40 |  |
 | exp2-search--ETTh2--DLinear | done | 40/40 |  |
 | exp2-search--ETTh2--iTransformer | done | 40/40 |  |
-| exp2-search--ETTm1--DLinear | ready | 0/40 |  |
+| exp2-search--ETTm1--DLinear | claimed | 5/40 | itm21-a4000 |
 | exp2-search--ETTm1--iTransformer | ready | 0/40 |  |
-| exp2-search--ETTm2--DLinear | claimed | 4/40 | itm21-a4000 |
+| exp2-search--ETTm2--DLinear | done | 40/40 |  |
 | exp2-search--ETTm2--iTransformer | ready | 0/40 |  |
 | exp2-search--Weather--DLinear | ready | 0/40 |  |
 | exp2-search--Weather--iTransformer | ready | 0/40 |  |
@@ -46,7 +46,7 @@ Generated 2026-10-06T23:31:30+00:00 from 380 packaged cells. Regenerate with `py
 | exp2-confirm--ETTh2--iTransformer | ready | 0/16 |  |
 | exp2-confirm--ETTm1--DLinear | blocked | 0/? |  |
 | exp2-confirm--ETTm1--iTransformer | blocked | 0/? |  |
-| exp2-confirm--ETTm2--DLinear | blocked | 0/? |  |
+| exp2-confirm--ETTm2--DLinear | ready | 0/16 |  |
 | exp2-confirm--ETTm2--iTransformer | blocked | 0/? |  |
 | exp2-confirm--Weather--DLinear | blocked | 0/? |  |
 | exp2-confirm--Weather--iTransformer | blocked | 0/? |  |
