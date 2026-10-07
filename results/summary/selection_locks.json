@@ -115,6 +115,10 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "ETTm1|iTransformer|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
     "ETTm2|DLinear|ddn": {
       "hkernel_len": 5,
       "j": 1,
@@ -161,6 +165,15 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "Weather|DLinear|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "kernel_len": 7,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "Weather|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 4,
@@ -169,6 +182,11 @@
     "Weather|DLinear|revin": {
       "affine": 1,
       "station_lr": 0.0001
+    },
+    "Weather|DLinear|san": {
+      "period_len": 4,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
     }
   },
   "protocol_version": "journal-v1",

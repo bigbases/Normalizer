@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-07T08:28:21+00:00 from 822 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T08:52:48+00:00 from 845 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| exp2-search | 11 | 1 | 2 | 0 | 0 |
-| exp2-confirm | 7 | 1 | 3 | 3 | 0 |
+| exp2-search | 11 | 2 | 1 | 0 | 0 |
+| exp2-confirm | 8 | 1 | 2 | 3 | 0 |
 | exp3-none | 5 | 0 | 9 | 0 | 0 |
-| exp3-tuned | 0 | 0 | 7 | 7 | 0 |
+| exp3-tuned | 0 | 0 | 8 | 6 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -37,18 +37,18 @@ Generated 2026-10-07T08:28:21+00:00 from 822 packaged cells. Regenerate with `py
 | exp2-search--Weather--DLinear | done | 40/40 |  |
 | exp2-search--Weather--iTransformer | done | 40/40 |  |
 | exp2-search--Electricity--DLinear | done | 40/40 |  |
-| exp2-search--Electricity--iTransformer | claimed | 34/40 | elice-a100 |
-| exp2-search--Traffic--DLinear | ready | 0/40 |  |
+| exp2-search--Electricity--iTransformer | claimed | 38/40 | elice-a100 |
+| exp2-search--Traffic--DLinear | claimed | 5/40 | elice-a100 |
 | exp2-search--Traffic--iTransformer | ready | 0/40 |  |
 | exp2-confirm--ETTh1--DLinear | done | 16/16 |  |
 | exp2-confirm--ETTh1--iTransformer | done | 16/16 |  |
 | exp2-confirm--ETTh2--DLinear | done | 16/16 |  |
 | exp2-confirm--ETTh2--iTransformer | done | 16/16 |  |
 | exp2-confirm--ETTm1--DLinear | done | 16/16 |  |
-| exp2-confirm--ETTm1--iTransformer | ready | 0/16 |  |
+| exp2-confirm--ETTm1--iTransformer | claimed | 6/16 | itm21-a4000 |
 | exp2-confirm--ETTm2--DLinear | done | 16/16 |  |
 | exp2-confirm--ETTm2--iTransformer | done | 16/16 |  |
-| exp2-confirm--Weather--DLinear | claimed | 8/16 | itm21-a4000 |
+| exp2-confirm--Weather--DLinear | done | 16/16 |  |
 | exp2-confirm--Weather--iTransformer | ready | 0/16 |  |
 | exp2-confirm--Electricity--DLinear | ready | 0/16 |  |
 | exp2-confirm--Electricity--iTransformer | blocked | 0/? |  |
@@ -76,7 +76,7 @@ Generated 2026-10-07T08:28:21+00:00 from 822 packaged cells. Regenerate with `py
 | exp3-tuned--ETTm1--iTransformer | blocked | 0/? |  |
 | exp3-tuned--ETTm2--DLinear | ready | 0/48 |  |
 | exp3-tuned--ETTm2--iTransformer | ready | 0/48 |  |
-| exp3-tuned--Weather--DLinear | blocked | 0/? |  |
+| exp3-tuned--Weather--DLinear | ready | 0/48 |  |
 | exp3-tuned--Weather--iTransformer | blocked | 0/? |  |
 | exp3-tuned--Electricity--DLinear | blocked | 0/? |  |
 | exp3-tuned--Electricity--iTransformer | blocked | 0/? |  |
