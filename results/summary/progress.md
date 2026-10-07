@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-07T17:42:37+00:00 from 1380 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T17:46:02+00:00 from 1391 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-07T17:42:37+00:00 from 1380 packaged cells. Regenerate with `p
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 54 | 2 | 0 | 0 | 0 |
 | exp3-none | 10 | 0 | 4 | 0 | 0 |
-| exp3-tuned | 26 | 2 | 26 | 2 | 0 |
+| exp3-tuned | 27 | 2 | 25 | 2 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -185,10 +185,10 @@ Generated 2026-10-07T17:42:37+00:00 from 1380 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm2--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--revin | done | 12/12 |  |
-| exp3-tuned--Weather--DLinear--san | claimed | 1/12 | itm21-a4000 |
+| exp3-tuned--Weather--DLinear--san | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--Weather--DLinear--fan | done | 12/12 |  |
-| exp3-tuned--Weather--iTransformer--revin | ready | 0/12 |  |
+| exp3-tuned--Weather--iTransformer--revin | claimed | 0/12 | itm21-a4000 |
 | exp3-tuned--Weather--iTransformer--san | ready | 0/12 |  |
 | exp3-tuned--Weather--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--Weather--iTransformer--fan | ready | 0/12 |  |
