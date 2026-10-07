@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-07T22:34:36+00:00 from 1562 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-07T23:04:41+00:00 from 1580 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-07T22:34:36+00:00 from 1562 packaged cells. Regenerate with `p
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
 | exp3-none | 11 | 0 | 3 | 0 | 0 |
-| exp3-tuned | 39 | 2 | 15 | 0 | 0 |
+| exp3-tuned | 40 | 3 | 13 | 0 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -170,7 +170,7 @@ Generated 2026-10-07T22:34:36+00:00 from 1562 packaged cells. Regenerate with `p
 | exp3-tuned--ETTh2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--ETTm1--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--ETTm1--DLinear--san | done | 12/12 |  |
-| exp3-tuned--ETTm1--DLinear--ddn | claimed | 0/12 | itm21-a4000 |
+| exp3-tuned--ETTm1--DLinear--ddn | claimed | 11/12 | itm21-a4000 |
 | exp3-tuned--ETTm1--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm1--iTransformer--revin | done | 12/12 |  |
 | exp3-tuned--ETTm1--iTransformer--san | done | 12/12 |  |
@@ -182,7 +182,7 @@ Generated 2026-10-07T22:34:36+00:00 from 1562 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm2--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--iTransformer--revin | done | 12/12 |  |
 | exp3-tuned--ETTm2--iTransformer--san | done | 12/12 |  |
-| exp3-tuned--ETTm2--iTransformer--ddn | ready | 0/12 |  |
+| exp3-tuned--ETTm2--iTransformer--ddn | claimed | 0/12 | itm21-a4000 |
 | exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--san | done | 12/12 |  |
@@ -202,9 +202,9 @@ Generated 2026-10-07T22:34:36+00:00 from 1562 packaged cells. Regenerate with `p
 | exp3-tuned--Electricity--iTransformer--fan | ready | 0/12 |  |
 | exp3-tuned--Traffic--DLinear--revin | ready | 0/12 |  |
 | exp3-tuned--Traffic--DLinear--san | ready | 0/12 |  |
-| exp3-tuned--Traffic--DLinear--ddn | claimed | 5/12 | itm24-pro6000 |
+| exp3-tuned--Traffic--DLinear--ddn | done | 12/12 |  |
 | exp3-tuned--Traffic--DLinear--fan | ready | 0/12 |  |
 | exp3-tuned--Traffic--iTransformer--revin | ready | 0/12 |  |
 | exp3-tuned--Traffic--iTransformer--san | done | 12/12 |  |
 | exp3-tuned--Traffic--iTransformer--ddn | ready | 5/12 |  |
-| exp3-tuned--Traffic--iTransformer--fan | ready | 0/12 |  |
+| exp3-tuned--Traffic--iTransformer--fan | claimed | 0/12 | itm24-pro6000 |
