@@ -1,13 +1,13 @@
 # Experiment progress
 
-Generated 2026-10-08T22:11:02+00:00 from 2291 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-08T22:08:50+00:00 from 2298 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 13 | 1 | 0 | 0 | 0 |
-| lt-tuned | 10 | 3 | 0 | 1 | 0 |
+| lt-tuned | 11 | 2 | 0 | 1 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -43,12 +43,12 @@ Generated 2026-10-08T22:11:02+00:00 from 2291 packaged cells. Regenerate with `p
 | lt-tuned--Electricity--iTransformer | done | 12/12 |  |
 | lt-tuned--Traffic--iTransformer | blocked | 0/? |  |
 | lt-tuned--Weather--iTransformer | done | 12/12 |  |
-| lt-tuned--Traffic--DLinear | claimed | 6/12 | itm24-pro6000 |
+| lt-tuned--Traffic--DLinear | claimed | 7/12 | itm24-pro6000 |
 | lt-tuned--ETTh2--iTransformer | done | 12/12 |  |
 | lt-tuned--ETTh1--DLinear | done | 12/12 |  |
 | lt-tuned--ETTh1--iTransformer | done | 12/12 |  |
 | lt-tuned--ETTh2--DLinear | done | 12/12 |  |
-| lt-tuned--ETTm2--DLinear | claimed | 6/12 | itm21-a4000 |
+| lt-tuned--ETTm2--DLinear | done | 12/12 |  |
 | lt-tuned--ETTm2--iTransformer | claimed | 0/12 | itm24-gpu0-pro6000 |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
