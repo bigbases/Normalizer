@@ -13,3 +13,17 @@ ETTm1,DLinear,720,s_norm:kernel_size,+0.103,,0.076,True
 ETTm1,DLinear,720,s_norm:station_lr,+0.261,,0.076,True
 ETTm1,DLinear,720,kernel_size:station_lr,+0.203,,0.076,True
 ETTm1,DLinear,720,centre_vs_corners,+0.019,,0.076,False
+Weather,DLinear,96,s_norm,+0.137,0,0.228,False
+Weather,DLinear,96,kernel_size,-0.006,49,0.228,False
+Weather,DLinear,96,station_lr,-11.763,0.0005,0.228,True
+Weather,DLinear,96,s_norm:kernel_size,+0.031,,0.228,False
+Weather,DLinear,96,s_norm:station_lr,-0.216,,0.228,False
+Weather,DLinear,96,kernel_size:station_lr,+0.182,,0.228,False
+Weather,DLinear,96,centre_vs_corners,+1.680,,0.228,True
+Weather,DLinear,720,s_norm,+0.491,0,0.079,True
+Weather,DLinear,720,kernel_size,-0.009,49,0.079,False
+Weather,DLinear,720,station_lr,-4.815,0.0005,0.079,True
+Weather,DLinear,720,s_norm:kernel_size,-0.222,,0.079,True
+Weather,DLinear,720,s_norm:station_lr,+0.216,,0.079,True
+Weather,DLinear,720,kernel_size:station_lr,+0.181,,0.079,True
+Weather,DLinear,720,centre_vs_corners,+0.678,,0.079,True
