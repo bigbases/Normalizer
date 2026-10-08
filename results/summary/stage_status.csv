@@ -2,9 +2,9 @@ Phase,Dataset,Backbone,Method,Status,CellsDone,CellsTotal,Worker
 lt-pilot,ETTm1,iTransformer,lt,done,20,20,
 lt-pilot,ETTm1,DLinear,lt,done,20,20,
 lt-pilot,Weather,DLinear,lt,done,20,20,
-lt-explore,ETTm1,iTransformer,lt,ready,0,22,
+lt-explore,ETTm1,iTransformer,lt,claimed,0,22,itm21-a4000
 lt-explore,Weather,DLinear,lt,ready,0,26,
-lt-explore,ETTm1,DLinear,lt,ready,0,26,
+lt-explore,ETTm1,DLinear,lt,done,26,26,
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
 exp1-lt,ETTh1,iTransformer,lt,done,12,12,
 exp1-lt,ETTh2,DLinear,lt,done,12,12,
