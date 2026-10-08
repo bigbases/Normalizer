@@ -1,5 +1,5 @@
 {
- "description": "Exploratory LightNorm tuning on the TEST split (stage 'explore') for dev cases. Each entry overrides the supplied LightNorm settings of base_configs.json; backbone and training stay fixed. Purpose: find a tuning strategy and parameter baseline before the validation-based tuning plan. These cases are dev cases: their test split informed the search-space design, which must be disclosed. Round 1 = one-factor-at-a-time sweep around the supplied setting.",
+ "description": "Exploratory LightNorm tuning on the TEST split (stage 'explore') for dev cases. Each entry overrides the supplied LightNorm settings of base_configs.json; backbone and training stay fixed. Purpose: find a tuning strategy and parameter baseline before the validation-based tuning plan. These cases are dev cases: their test split informed the search-space design, which must be disclosed. Round 1 = one-factor-at-a-time sweep around the supplied setting. Round 2 = combinations of round-1 improvements, plus 4 horizons x 3 seeds for the best single change per case.",
  "default_horizons": [
   96,
   720
@@ -84,6 +84,86 @@
     "round": 1,
     "params": {
      "use_mlp": 1
+    }
+   },
+   {
+    "id": "r2-full-k49",
+    "round": 2,
+    "params": {
+     "kernel_size": 49
+    },
+    "horizons": [
+     96,
+     192,
+     336,
+     720
+    ],
+    "seeds": [
+     2021,
+     2022,
+     2023
+    ]
+   },
+   {
+    "id": "r2-k49-slr5e-4",
+    "round": 2,
+    "params": {
+     "kernel_size": 49,
+     "station_lr": 0.0005
+    }
+   },
+   {
+    "id": "r2-k49-mlp1",
+    "round": 2,
+    "params": {
+     "kernel_size": 49,
+     "use_mlp": 1
+    }
+   },
+   {
+    "id": "r2-k49-snorm1",
+    "round": 2,
+    "params": {
+     "kernel_size": 49,
+     "s_norm": 1
+    }
+   },
+   {
+    "id": "r2-k49-slr5e-4-mlp1",
+    "round": 2,
+    "params": {
+     "kernel_size": 49,
+     "station_lr": 0.0005,
+     "use_mlp": 1
+    }
+   },
+   {
+    "id": "r2-k49-slr5e-4-mlp1-snorm1",
+    "round": 2,
+    "params": {
+     "kernel_size": 49,
+     "station_lr": 0.0005,
+     "use_mlp": 1,
+     "s_norm": 1
+    }
+   },
+   {
+    "id": "r2-k97-slr5e-4-mlp1",
+    "round": 2,
+    "params": {
+     "kernel_size": 97,
+     "station_lr": 0.0005,
+     "use_mlp": 1
+    }
+   },
+   {
+    "id": "r2-k49-slr5e-4-mlp1-tff256",
+    "round": 2,
+    "params": {
+     "kernel_size": 49,
+     "station_lr": 0.0005,
+     "use_mlp": 1,
+     "t_ff": 256
     }
    }
   ],
@@ -178,6 +258,72 @@
     "params": {
      "t_ff": 256
     }
+   },
+   {
+    "id": "r2-full-slr1e-3",
+    "round": 2,
+    "params": {
+     "station_lr": 0.001
+    },
+    "horizons": [
+     96,
+     192,
+     336,
+     720
+    ],
+    "seeds": [
+     2021,
+     2022,
+     2023
+    ]
+   },
+   {
+    "id": "r2-slr1e-3-tff256",
+    "round": 2,
+    "params": {
+     "station_lr": 0.001,
+     "t_ff": 256
+    }
+   },
+   {
+    "id": "r2-slr5e-4-tff256",
+    "round": 2,
+    "params": {
+     "station_lr": 0.0005,
+     "t_ff": 256
+    }
+   },
+   {
+    "id": "r2-slr1e-3-tff256-dr2",
+    "round": 2,
+    "params": {
+     "station_lr": 0.001,
+     "t_ff": 256,
+     "down_ratio": 2
+    }
+   },
+   {
+    "id": "r2-slr1e-3-dr2",
+    "round": 2,
+    "params": {
+     "station_lr": 0.001,
+     "down_ratio": 2
+    }
+   },
+   {
+    "id": "r2-slr5e-3",
+    "round": 2,
+    "params": {
+     "station_lr": 0.005
+    }
+   },
+   {
+    "id": "r2-slr1e-3-tff512",
+    "round": 2,
+    "params": {
+     "station_lr": 0.001,
+     "t_ff": 512
+    }
    }
   ],
   "ETTm1|DLinear": [
@@ -270,6 +416,63 @@
     "round": 1,
     "params": {
      "t_ff": 256
+    }
+   },
+   {
+    "id": "r2-full-slr5e-4",
+    "round": 2,
+    "params": {
+     "station_lr": 0.0005
+    },
+    "horizons": [
+     96,
+     192,
+     336,
+     720
+    ],
+    "seeds": [
+     2021,
+     2022,
+     2023
+    ]
+   },
+   {
+    "id": "r2-slr5e-4-tff256",
+    "round": 2,
+    "params": {
+     "station_lr": 0.0005,
+     "t_ff": 256
+    }
+   },
+   {
+    "id": "r2-slr5e-4-tff512",
+    "round": 2,
+    "params": {
+     "station_lr": 0.0005,
+     "t_ff": 512
+    }
+   },
+   {
+    "id": "r2-tff512",
+    "round": 2,
+    "params": {
+     "t_ff": 512
+    }
+   },
+   {
+    "id": "r2-tff1024",
+    "round": 2,
+    "params": {
+     "t_ff": 1024
+    }
+   },
+   {
+    "id": "r2-slr5e-4-tff256-k7",
+    "round": 2,
+    "params": {
+     "station_lr": 0.0005,
+     "t_ff": 256,
+     "kernel_size": 7
     }
    }
   ]
