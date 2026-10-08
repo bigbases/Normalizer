@@ -1,0 +1,14 @@
+{
+ "cells_remaining": 16,
+ "cells_total": 66,
+ "claimed_at": "2026-10-08T18:48:29+00:00",
+ "code_rev": "047166f",
+ "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+ "gpus": [
+  0
+ ],
+ "heartbeat": "2026-10-08T18:48:29+00:00",
+ "host": "itm24-pro6000",
+ "took_over_from": "",
+ "worker": "itm24-pro6000"
+}
