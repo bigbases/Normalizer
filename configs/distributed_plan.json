@@ -1,5 +1,5 @@
 {
-  "description": "Phases for experiments/fill_missing.py. A task is one dataset-backbone case of a phase. Lower priority runs first; 'requires' names the phase that must be complete for the same case (confirm needs the search shortlist, tuned finals need the locks). Exp1 LightNorm cells are the Exp3 'lt' cells (same run IDs), so they are not repeated. 'split': 'method' makes one task per normalizer (task ID suffix --revin/--san/--ddn/--fan) so several servers can share a heavy case; a split phase that requires another split phase waits only for the same method.",
+  "description": "Phases for experiments/fill_missing.py. A task is one dataset-backbone case of a phase. Lower priority runs first; 'requires' names the phase that must be complete for the same case (confirm needs the search shortlist, tuned finals need the locks). Exp1 LightNorm cells are the Exp3 'lt' cells (same run IDs), so they are not repeated. 'split': 'method' makes one task per normalizer (task ID suffix --revin/--san/--ddn/--fan) so several servers can share a heavy case; a split phase that requires another split phase waits only for the same method. 'cases' lists explicit [dataset, backbone] pairs instead of datasets x backbones.",
   "lease_hours": 3,
   "phases": [
     {"name": "exp1-lt", "experiment": "1_rebuttal_completion", "stage": "final",
@@ -14,6 +14,9 @@
     {"name": "exp3-tuned", "split": "method", "experiment": "3_frozen_backbone_comparison", "stage": "final",
      "backbones": ["DLinear", "iTransformer"], "methods": ["revin", "san", "ddn", "fan"], "priority": 4,
      "requires": "exp2-confirm"},
+    {"name": "lt-pilot", "experiment": "5_lightnorm_tuning", "stage": "search",
+     "cases": [["ETTm1", "iTransformer"], ["ETTm1", "DLinear"], ["Weather", "DLinear"]],
+     "backbones": ["DLinear", "iTransformer"], "methods": ["lt"], "priority": 0},
     {"name": "tmpp-search", "experiment": "2_normalizer_search", "stage": "search", "enabled": false,
      "datasets": ["ETTh1", "ETTh2"], "backbones": ["TimeMixerPP"], "methods": ["fan"], "priority": 5},
     {"name": "tmpp-confirm", "experiment": "2_normalizer_search", "stage": "confirm", "enabled": false,

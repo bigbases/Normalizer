@@ -8,6 +8,9 @@
     exp2_selection.csv          the locked setting per dataset-backbone-normalizer
     exp3_comparison.csv         test MSE/MAE mean/std of NoNorm/RevIN/SAN/DDN/FAN/LightNorm
                                 side by side; Complete = all six methods have all seeds
+    exp5_lt_pilot.csv           LightNorm pilot candidates (validation, seed 2021) next to
+                                the supplied setting
+    exp5_lt_pilot_effects.csv   factorial main effects / interactions of the pilot vs seed noise
 """
 
 from __future__ import annotations
@@ -18,6 +21,7 @@ from collections import defaultdict
 from pathlib import Path
 from statistics import mean, stdev
 
+import run_matrix as rm
 import select_hparams as sh
 
 METHODS = ["none", "revin", "san", "ddn", "fan", "lt"]
@@ -85,7 +89,7 @@ def exp1_lightnorm(out, groups, protocol):
 
 
 def exp2_validation(out, rows, protocol, bases):
-    val = sh.validation_rows(rows)
+    val = [r for r in sh.validation_rows(rows) if r["UseNorm"] in sh.BASELINE_METHODS]
     shortlist = sh.select(val, "shortlist", protocol, bases)["shortlists"]
     locks = sh.select(val, "lock", protocol, bases)["locks"]
     catalog = sh.candidate_catalog(protocol, bases)
@@ -147,6 +151,90 @@ def exp3_comparison(out, groups, protocol):
     _write(out / "exp3_comparison.csv", header + ["Complete", "Best_MSE"], rows)
 
 
+def _lt_id(params):
+    return rm.canonical_hash({"method": "lt", "params": rm.complete_method_params("lt", params)})
+
+
+PILOT_FACTORS = ("s_norm", "kernel_size", "station_lr")
+PILOT_TERMS = [(f,) for f in PILOT_FACTORS] + [
+    (a, b) for i, a in enumerate(PILOT_FACTORS) for b in PILOT_FACTORS[i + 1:]]
+
+
+def exp5_lt_pilot(out, rows, protocol, bases):
+    """Pilot candidates and factorial effects, per pilot case and screen horizon."""
+    val = defaultdict(dict)      # (ds, bb, phase, candidate) -> {(horizon, seed): BestValMSE}
+    for r in sh.validation_rows(rows) + [
+            dict(r, BestValMSE=float(r["BestValMSE"]), Horizon=int(r["Horizon"]), Seed=int(r["Seed"]))
+            for r in rows if r.get("Phase") == "final" and r.get("UseNorm") == "lt" and r.get("BestValMSE")]:
+        if r["UseNorm"] == "lt":
+            val[(r["Dataset"], r["Backbone"], r["Phase"], r["CandidateID"])][(r["Horizon"], r["Seed"])] = r["BestValMSE"]
+    horizons = protocol["screen_horizons"]
+    table, effects = [], []
+    for ds, bb in protocol["lt_tuning"]["pilot"]["cases"]:
+        base = rm.selected_base_config(bases, ds, bb)
+        supplied = rm.complete_method_params("lt", rm.supplied_lt_params(base))
+        sup_vals = val.get((ds, bb, "final", _lt_id(supplied)), {})
+        sup = {h: sup_vals.get((h, 2021)) for h in horizons}
+        noise = {}
+        for h in horizons:
+            seeds = [v for (hh, _), v in sup_vals.items() if hh == h]
+            noise[h] = stdev(seeds) / mean(seeds) * 100 if len(seeds) > 1 else None
+        sup_mean = mean(sup.values()) if all(sup.values()) else None
+        centre_k = protocol["lt_tuning"]["pilot"]["centre_kernel_size"]
+        points = []
+        for params in rm.lt_pilot_candidates(protocol, ds, base):
+            full = rm.complete_method_params("lt", params)
+            got = val.get((ds, bb, "search", _lt_id(params)), {})
+            vals = {h: got.get((h, 2021)) for h in horizons}
+            points.append((full, vals))
+        means = {i: mean(v.values()) for i, (_, v) in enumerate(points) if all(v.values())}
+        ranks = {i: n + 1 for n, i in enumerate(sorted(means, key=means.get))}
+        lines = [["supplied", _lt_id(rm.supplied_lt_params(base)), supplied, sup, sup_mean, ""]]
+        for i, (full, vals) in enumerate(points):
+            kind = "centre" if full["kernel_size"] == centre_k else "corner"
+            lines.append([kind, _lt_id(full), full, vals, means.get(i), ranks.get(i, "")])
+        for kind, cid, full, vals, m, rank in lines:
+            delta = (m - sup_mean) / sup_mean * 100 if m is not None and sup_mean else None
+            table.append([ds, bb, kind, cid, full["s_norm"], full.get("kernel_size", ""), full["station_lr"],
+                          full.get("use_mlp", ""), full.get("down_ratio", ""),
+                          *[_num(vals.get(h)) for h in horizons], _num(m),
+                          "" if delta is None else f"{delta:+.3f}", rank])
+
+        corners = [(full, vals) for full, vals in points if full["kernel_size"] != centre_k]
+        centres = [(full, vals) for full, vals in points if full["kernel_size"] == centre_k]
+        highs = {f: max(full[f] for full, _ in corners) for f in PILOT_FACTORS}
+        for h in horizons:
+            if not all(vals.get(h) for _, vals in corners):
+                continue
+            corner_mean = mean(vals[h] for _, vals in corners)
+            for term in PILOT_TERMS:
+                sign = lambda full: 1 if all(full[f] == highs[f] for f in term) or (
+                    len(term) == 2 and all(full[f] != highs[f] for f in term)) else -1
+                plus = [vals[h] for full, vals in corners if sign(full) > 0]
+                minus = [vals[h] for full, vals in corners if sign(full) < 0]
+                effect = (mean(plus) - mean(minus)) / corner_mean * 100
+                better = ""
+                if len(term) == 1:
+                    f = term[0]
+                    low = min(full[f] for full, _ in corners)
+                    better = highs[f] if effect < 0 else low
+                effects.append([ds, bb, h, ":".join(term), f"{effect:+.3f}", better,
+                                "" if noise[h] is None else f"{noise[h]:.3f}",
+                                "" if noise[h] is None else abs(effect) > noise[h]])
+            if all(vals.get(h) for _, vals in centres):
+                curvature = (mean(vals[h] for _, vals in centres) - corner_mean) / corner_mean * 100
+                effects.append([ds, bb, h, "centre_vs_corners", f"{curvature:+.3f}", "",
+                                "" if noise[h] is None else f"{noise[h]:.3f}",
+                                "" if noise[h] is None else abs(curvature) > noise[h]])
+    _write(out / "exp5_lt_pilot.csv",
+           ["Dataset", "Backbone", "Point", "CandidateID", "s_norm", "kernel_size", "station_lr",
+            "use_mlp", "down_ratio", *[f"Val_h{h}_s2021" for h in horizons], "Val_mean",
+            "Delta_vs_supplied_pct", "Rank"], table)
+    _write(out / "exp5_lt_pilot_effects.csv",
+           ["Dataset", "Backbone", "Horizon", "Term", "Effect_pct", "Better_level", "Noise_pct",
+            "Exceeds_noise"], effects)
+
+
 def write_all(out, rows, tasks, protocol, bases):
     out = Path(out)
     groups = final_groups(rows)
@@ -154,3 +242,4 @@ def write_all(out, rows, tasks, protocol, bases):
     exp1_lightnorm(out, groups, protocol)
     exp2_validation(out, rows, protocol, bases)
     exp3_comparison(out, groups, protocol)
+    exp5_lt_pilot(out, rows, protocol, bases)

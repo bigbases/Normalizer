@@ -151,17 +151,18 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
         split = phase.get("split") == "method"
         groups = [[m] for m in phase["methods"]] if split else [list(phase["methods"])]
         datasets = phase.get("datasets") or list(protocol["datasets"])
-        for dataset in datasets:
-            for backbone in phase["backbones"]:
-                for methods in groups:
-                    task = Task(
-                        phase=phase["name"], priority=int(phase["priority"]),
-                        experiment=phase["experiment"], stage=phase["stage"],
-                        dataset=dataset, backbone=backbone, methods=methods,
-                        requires=phase.get("requires"), split=methods[0] if split else None,
-                    )
-                    by_case[(task.phase, dataset, backbone)].append(task)
-                    tasks.append(task)
+        # "cases" lists explicit [dataset, backbone] pairs instead of the product.
+        cases = phase.get("cases") or [(d, b) for d in datasets for b in phase["backbones"]]
+        for dataset, backbone in cases:
+            for methods in groups:
+                task = Task(
+                    phase=phase["name"], priority=int(phase["priority"]),
+                    experiment=phase["experiment"], stage=phase["stage"],
+                    dataset=dataset, backbone=backbone, methods=methods,
+                    requires=phase.get("requires"), split=methods[0] if split else None,
+                )
+                by_case[(task.phase, dataset, backbone)].append(task)
+                tasks.append(task)
 
     for task in tasks:  # phases are sorted, so dependencies resolve first
         if task.requires:

@@ -37,7 +37,37 @@
       "methods": ["none", "fan", "lt"],
       "phase": "final",
       "description": "Generalization on TimeMixer++ with internal normalization disabled."
+    },
+    "5_lightnorm_tuning": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["lt"],
+      "phase": "search",
+      "lt_grid": "pilot",
+      "description": "Validation-only LightNorm pilot (seed 2021, horizons 96/720) that decides which two tuning axes form the 6-point LightNorm grid."
     }
+  },
+  "lt_tuning": {
+    "use_mlp_datasets": ["Weather", "Electricity", "Traffic"],
+    "station_lr_ladder": [1e-05, 5e-05, 0.0001, 0.0005, 0.001, 0.005],
+    "fixed": "down_ratio and kernel_len as supplied, t_ff 64, affine 1, t_norm 1, sma decomposition; backbone and training unchanged",
+    "pilot": {
+      "cases": [["ETTm1", "iTransformer"], ["ETTm1", "DLinear"], ["Weather", "DLinear"]],
+      "s_norm": [0, 1],
+      "kernel_size": [13, 49],
+      "centre_kernel_size": 25,
+      "station_lr": "one ladder step below and above the supplied value; centre = supplied",
+      "decision_rule": "Main effect of a factor = mean validation MSE at its high level minus at its low level over the 8 corners, relative to the corner mean, per case and horizon. Keep factors whose |effect| exceeds the seed noise of the supplied setting (3-seed CV of its validation MSE) in a majority of case-horizon pairs, and pick the two with the largest mean |effect|. A factor whose better level is the same in every case-horizon pair is fixed at that level instead of searched. down_ratio {2, 8} is screened only if fewer than two of the three factors qualify. The 6-point grid is (2-level factor) x (3-level factor) and always contains the supplied setting; pilot cases are locked only within that grid."
+    },
+    "case_priority": [
+      "ETTm1|iTransformer", "Weather|DLinear", "Electricity|DLinear", "ETTm1|DLinear",
+      "Electricity|iTransformer", "Traffic|iTransformer", "Weather|iTransformer", "Traffic|DLinear",
+      "ETTh2|iTransformer", "ETTh1|DLinear", "ETTh1|iTransformer", "ETTh2|DLinear",
+      "ETTm2|DLinear", "ETTm2|iTransformer"
+    ],
+    "history": [
+      "2026-10-08 use_mlp: rule-based (1 on Weather/Electricity/Traffic, 0 elsewhere); differs from the supplied launchers only on ETTm1 x DLinear (1 -> 0). t_ff is excluded (it acts only when use_mlp = 1).",
+      "2026-10-08 station_lr levels restricted to the 1e-n / 5e-n ladder; down_ratio given the lowest priority among the four candidate axes."
+    ]
   },
   "search_grids": {
     "revin": [{"affine": 0}, {"affine": 1}],

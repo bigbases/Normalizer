@@ -41,12 +41,17 @@ def read_validation_rows(paths):
     return validation_rows(raw)
 
 
+# Baseline normalizers tuned by search/confirm/lock.  LightNorm search cells
+# (Exp5 pilot) are validation rows too but follow their own selection rule.
+BASELINE_METHODS = ("revin", "san", "ddn", "fan")
+
+
 def candidate_catalog(protocol, bases):
     catalog = {}
     for dataset in protocol["datasets"]:
         for backbone in ("DLinear", "iTransformer", "TimeMixerPP"):
             base = selected_base_config(bases, dataset, backbone)
-            for method in ("revin", "san", "ddn", "fan"):
+            for method in BASELINE_METHODS:
                 for params in search_candidates(protocol, dataset, method, base):
                     params = complete_method_params(method, params)
                     candidate_id = canonical_hash({"method": method, "params": params})
@@ -57,7 +62,7 @@ def candidate_catalog(protocol, bases):
 def aggregate(rows, stages):
     grouped = defaultdict(list)
     for row in rows:
-        if row.get("Phase") not in stages:
+        if row.get("Phase") not in stages or row.get("UseNorm") not in BASELINE_METHODS:
             continue
         key = (row["Dataset"], row["Backbone"], row["UseNorm"], row["CandidateID"])
         grouped[key].append(row)

@@ -155,7 +155,56 @@ def normalized_params(method, raw, base):
     return params
 
 
-def search_candidates(protocol, dataset, method, base):
+def supplied_lt_params(base):
+    """LightNorm settings of the supplied launcher (Exp1/Exp3 'lt' cells)."""
+    return {k: base[k] for k in LT_KEYS if nonempty(base.get(k))}
+
+
+def station_lr_neighbors(value, ladder):
+    """One step down/up the 1e-n / 5e-n ladder around the supplied station_lr."""
+    index = min(range(len(ladder)), key=lambda i: abs(ladder[i] - float(value)))
+    if not 0 < index < len(ladder) - 1:
+        raise ValueError(f"station_lr {value} has no ladder neighbours in {ladder}")
+    return ladder[index - 1], ladder[index], ladder[index + 1]
+
+
+def lt_tuning_base(protocol, dataset, base):
+    """Supplied LightNorm settings with the tuning-wide use_mlp rule applied.
+
+    down_ratio stays at the supplied value and t_ff at its default; use_mlp is
+    1 only on the large datasets named in lt_tuning.use_mlp_datasets.
+    """
+    params = supplied_lt_params(base)
+    params["use_mlp"] = int(dataset in protocol["lt_tuning"]["use_mlp_datasets"])
+    return params
+
+
+def lt_pilot_candidates(protocol, dataset, base):
+    """2^3 factorial (s_norm x kernel_size x station_lr) plus two centre points.
+
+    Factor levels are the low/high ends of the 3-level sets the final 6-point
+    grids draw from, so pilot cells are reused by the tuning search.
+    """
+    spec = protocol["lt_tuning"]["pilot"]
+    fixed = lt_tuning_base(protocol, dataset, base)
+    low, current, high = station_lr_neighbors(fixed.get("station_lr", 1e-4),
+                                              protocol["lt_tuning"]["station_lr_ladder"])
+    candidates = [
+        {**fixed, "s_norm": s, "kernel_size": k, "station_lr": lr}
+        for s in spec["s_norm"] for k in spec["kernel_size"] for lr in (low, high)
+    ]
+    candidates += [
+        {**fixed, "s_norm": s, "kernel_size": spec["centre_kernel_size"], "station_lr": current}
+        for s in spec["s_norm"]
+    ]
+    return candidates
+
+
+def search_candidates(protocol, dataset, method, base, lt_grid=None):
+    if method == "lt":
+        if lt_grid != "pilot":
+            raise ValueError("LightNorm search needs an experiment with lt_grid='pilot'")
+        return lt_pilot_candidates(protocol, dataset, base)
     if method == "fan":
         ks = protocol["datasets"][dataset]["fan_k"]
         if protocol.get("fan_lr_grid", "station_scale") == "station_and_backbone":
@@ -620,11 +669,12 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
             base = resolve_backbone_config(selected_base)
             for method in methods:
                 if stage == "search":
-                    candidates = search_candidates(protocol, dataset, method, selected_base)
+                    candidates = search_candidates(protocol, dataset, method, selected_base,
+                                                   lt_grid=exp.get("lt_grid"))
                 elif stage == "confirm":
                     candidates = shortlist_candidates(shortlist_doc, dataset, backbone, method)
                 elif method == "lt":
-                    candidates = [{k: selected_base[k] for k in LT_KEYS if nonempty(selected_base.get(k))}]
+                    candidates = [supplied_lt_params(selected_base)]
                 elif method == "none":
                     candidates = [{}]
                 else:
