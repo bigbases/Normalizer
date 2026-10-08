@@ -11,6 +11,8 @@
     exp5_lt_pilot.csv           LightNorm pilot candidates (validation, seed 2021) next to
                                 the supplied setting
     exp5_lt_pilot_effects.csv   factorial main effects / interactions of the pilot vs seed noise
+    exp6_lt_explore.csv         exploratory LightNorm settings on dev cases (TEST split) against the
+                                supplied LightNorm, SAN and DDN on the same seeds
 """
 
 from __future__ import annotations
@@ -235,6 +237,50 @@ def exp5_lt_pilot(out, rows, protocol, bases):
             "Exceeds_noise"], effects)
 
 
+def exp6_lt_explore(out, rows, protocol, bases):
+    """One row per exploratory setting and horizon (dev cases, test split)."""
+    doc = rm.load_explore()
+    final, explore = defaultdict(dict), defaultdict(dict)
+    for r in rows:
+        if r.get("Split") != "test" or not r.get("MSE"):
+            continue
+        if r.get("Phase") == "final":
+            final[(r["Dataset"], r["Backbone"], r["UseNorm"], int(r["Horizon"]))][int(r["Seed"])] = r
+        elif r.get("Phase") == "explore":
+            explore[(r["Dataset"], r["Backbone"], r["CandidateID"], int(r["Horizon"]))][int(r["Seed"])] = r
+
+    def pct(a, b):
+        return "" if a is None or b is None else f"{(a / b - 1) * 100:+.2f}"
+
+    table = []
+    for case, entries in doc.get("cases", {}).items():
+        ds, bb = case.split("|")
+        base = rm.selected_base_config(bases, ds, bb)
+        schedule = rm.explore_candidates(protocol, ds, bb, base, doc)
+        for entry, (params, horizons, seeds) in zip(entries, schedule):
+            cid = _lt_id(params)
+            for h in horizons:
+                got = explore.get((ds, bb, cid, h), {})
+                done = sorted(s for s in seeds if s in got)
+                metric = lambda src, key, on: (mean(float(src[s][key]) for s in on)
+                                               if on and all(s in src for s in on) else None)
+                mse, mae, val = (metric(got, k, done) for k in ("MSE", "MAE", "BestValMSE"))
+                # references on the same seeds (all requested seeds while pending)
+                ref = {m: metric(final.get((ds, bb, m, h), {}), "MSE", done or sorted(seeds))
+                       for m in ("lt", "san", "ddn")}
+                table.append([
+                    ds, bb, entry["id"], entry.get("round", ""), json.dumps(entry["params"], sort_keys=True),
+                    h, " ".join(map(str, done)), f"{len(done)}/{len(seeds)}",
+                    _num(mse), _num(mae), _num(val), *[_num(ref[m]) for m in ("lt", "san", "ddn")],
+                    pct(mse, ref["lt"]), pct(mse, ref["san"]), pct(mse, ref["ddn"]),
+                    "" if mse is None else mse < ref["san"], "" if mse is None else mse < ref["ddn"],
+                ])
+    _write(out / "exp6_lt_explore.csv",
+           ["Dataset", "Backbone", "Label", "Round", "Change", "Horizon", "Seeds", "Done",
+            "Test_MSE", "Test_MAE", "Val_MSE", "Supplied_MSE", "SAN_MSE", "DDN_MSE",
+            "vs_supplied_pct", "vs_SAN_pct", "vs_DDN_pct", "Beats_SAN", "Beats_DDN"], table)
+
+
 def write_all(out, rows, tasks, protocol, bases):
     out = Path(out)
     groups = final_groups(rows)
@@ -243,3 +289,4 @@ def write_all(out, rows, tasks, protocol, bases):
     exp2_validation(out, rows, protocol, bases)
     exp3_comparison(out, groups, protocol)
     exp5_lt_pilot(out, rows, protocol, bases)
+    exp6_lt_explore(out, rows, protocol, bases)

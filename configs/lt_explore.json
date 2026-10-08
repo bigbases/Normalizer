@@ -1,0 +1,277 @@
+{
+ "description": "Exploratory LightNorm tuning on the TEST split (stage 'explore') for dev cases. Each entry overrides the supplied LightNorm settings of base_configs.json; backbone and training stay fixed. Purpose: find a tuning strategy and parameter baseline before the validation-based tuning plan. These cases are dev cases: their test split informed the search-space design, which must be disclosed. Round 1 = one-factor-at-a-time sweep around the supplied setting.",
+ "default_horizons": [
+  96,
+  720
+ ],
+ "default_seeds": [
+  2021
+ ],
+ "cases": {
+  "ETTm1|iTransformer": [
+   {
+    "id": "r1-k7",
+    "round": 1,
+    "params": {
+     "kernel_size": 7
+    }
+   },
+   {
+    "id": "r1-k13",
+    "round": 1,
+    "params": {
+     "kernel_size": 13
+    }
+   },
+   {
+    "id": "r1-k49",
+    "round": 1,
+    "params": {
+     "kernel_size": 49
+    }
+   },
+   {
+    "id": "r1-k97",
+    "round": 1,
+    "params": {
+     "kernel_size": 97
+    }
+   },
+   {
+    "id": "r1-dr2",
+    "round": 1,
+    "params": {
+     "down_ratio": 2
+    }
+   },
+   {
+    "id": "r1-dr8",
+    "round": 1,
+    "params": {
+     "down_ratio": 8
+    }
+   },
+   {
+    "id": "r1-snorm1",
+    "round": 1,
+    "params": {
+     "s_norm": 1
+    }
+   },
+   {
+    "id": "r1-slr5e-05",
+    "round": 1,
+    "params": {
+     "station_lr": 5e-05
+    }
+   },
+   {
+    "id": "r1-slr0.0005",
+    "round": 1,
+    "params": {
+     "station_lr": 0.0005
+    }
+   },
+   {
+    "id": "r1-slr0.001",
+    "round": 1,
+    "params": {
+     "station_lr": 0.001
+    }
+   },
+   {
+    "id": "r1-mlp1",
+    "round": 1,
+    "params": {
+     "use_mlp": 1
+    }
+   }
+  ],
+  "Weather|DLinear": [
+   {
+    "id": "r1-k7",
+    "round": 1,
+    "params": {
+     "kernel_size": 7
+    }
+   },
+   {
+    "id": "r1-k25",
+    "round": 1,
+    "params": {
+     "kernel_size": 25
+    }
+   },
+   {
+    "id": "r1-k49",
+    "round": 1,
+    "params": {
+     "kernel_size": 49
+    }
+   },
+   {
+    "id": "r1-k97",
+    "round": 1,
+    "params": {
+     "kernel_size": 97
+    }
+   },
+   {
+    "id": "r1-dr2",
+    "round": 1,
+    "params": {
+     "down_ratio": 2
+    }
+   },
+   {
+    "id": "r1-dr8",
+    "round": 1,
+    "params": {
+     "down_ratio": 8
+    }
+   },
+   {
+    "id": "r1-snorm0",
+    "round": 1,
+    "params": {
+     "s_norm": 0
+    }
+   },
+   {
+    "id": "r1-slr5e-05",
+    "round": 1,
+    "params": {
+     "station_lr": 5e-05
+    }
+   },
+   {
+    "id": "r1-slr0.0005",
+    "round": 1,
+    "params": {
+     "station_lr": 0.0005
+    }
+   },
+   {
+    "id": "r1-slr0.001",
+    "round": 1,
+    "params": {
+     "station_lr": 0.001
+    }
+   },
+   {
+    "id": "r1-mlp0",
+    "round": 1,
+    "params": {
+     "use_mlp": 0
+    }
+   },
+   {
+    "id": "r1-tff128",
+    "round": 1,
+    "params": {
+     "t_ff": 128
+    }
+   },
+   {
+    "id": "r1-tff256",
+    "round": 1,
+    "params": {
+     "t_ff": 256
+    }
+   }
+  ],
+  "ETTm1|DLinear": [
+   {
+    "id": "r1-k7",
+    "round": 1,
+    "params": {
+     "kernel_size": 7
+    }
+   },
+   {
+    "id": "r1-k25",
+    "round": 1,
+    "params": {
+     "kernel_size": 25
+    }
+   },
+   {
+    "id": "r1-k49",
+    "round": 1,
+    "params": {
+     "kernel_size": 49
+    }
+   },
+   {
+    "id": "r1-k97",
+    "round": 1,
+    "params": {
+     "kernel_size": 97
+    }
+   },
+   {
+    "id": "r1-dr2",
+    "round": 1,
+    "params": {
+     "down_ratio": 2
+    }
+   },
+   {
+    "id": "r1-dr8",
+    "round": 1,
+    "params": {
+     "down_ratio": 8
+    }
+   },
+   {
+    "id": "r1-snorm0",
+    "round": 1,
+    "params": {
+     "s_norm": 0
+    }
+   },
+   {
+    "id": "r1-slr5e-05",
+    "round": 1,
+    "params": {
+     "station_lr": 5e-05
+    }
+   },
+   {
+    "id": "r1-slr0.0005",
+    "round": 1,
+    "params": {
+     "station_lr": 0.0005
+    }
+   },
+   {
+    "id": "r1-slr0.001",
+    "round": 1,
+    "params": {
+     "station_lr": 0.001
+    }
+   },
+   {
+    "id": "r1-mlp0",
+    "round": 1,
+    "params": {
+     "use_mlp": 0
+    }
+   },
+   {
+    "id": "r1-tff128",
+    "round": 1,
+    "params": {
+     "t_ff": 128
+    }
+   },
+   {
+    "id": "r1-tff256",
+    "round": 1,
+    "params": {
+     "t_ff": 256
+    }
+   }
+  ]
+ }
+}

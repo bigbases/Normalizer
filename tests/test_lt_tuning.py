@@ -12,7 +12,7 @@ from experiments import summary_tables as st
 def fake_rows(cells, value=0.5, step=1e-3):
     rows = {}
     for i, c in enumerate(cells):
-        final = c["stage"] == "final"
+        final = c["stage"] in ("final", "explore")
         rows[c["run_id"]] = dict(
             RunID=c["run_id"], CandidateID=c["candidate_id"], ConfigHash=c["config_hash"],
             Phase=c["stage"], Split="test" if final else "validation",
@@ -89,6 +89,46 @@ class LightNormPilotTest(unittest.TestCase):
         # 3 cases x 2 horizons x (3 main + 3 two-way + centre) terms
         self.assertEqual(len(effects), 3 * 2 * 7)
         self.assertTrue(all(r["Noise_pct"] for r in effects))
+
+
+class LightNormExploreTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.protocol = rm.load_json(rm.PROTOCOL_PATH)
+        cls.bases = rm.load_json(rm.BASE_CONFIGS_PATH)
+
+    def test_explore_cells_override_supplied_and_evaluate_test(self):
+        base = rm.selected_base_config(self.bases, "ETTm1", "DLinear")
+        doc = {"cases": {"ETTm1|DLinear": [
+            {"id": "a", "params": {"kernel_size": 49}},
+            {"id": "b", "params": {"station_lr": 0.0005}, "horizons": [96, 192, 336, 720],
+             "seeds": [2021, 2022, 2023]}]}}
+        schedule = rm.explore_candidates(self.protocol, "ETTm1", "DLinear", base, doc)
+        self.assertEqual(schedule[0][0], {**rm.supplied_lt_params(base), "kernel_size": 49})
+        self.assertEqual((schedule[0][1], schedule[0][2]), ([96, 720], [2021]))
+        self.assertEqual(len(schedule[1][1]) * len(schedule[1][2]), 12)
+        cells = rs._cells(self.protocol, self.bases, "6_lightnorm_explore", "explore", "ETTm1", "DLinear", ["lt"])
+        self.assertTrue(cells and all(c["run_id"].startswith("explore-") for c in cells))
+        cmd = rm.cell_command(cells[0], "/data", "/tmp/r.csv", "/tmp/ck")
+        self.assertIn("explore", cmd)
+        self.assertNotIn("--skip_test", cmd)
+
+    def test_explore_summary_compares_on_same_seeds(self):
+        rows = {}
+        for dataset, backbone in (("ETTm1", "DLinear"),):
+            rows.update(fake_rows(rs._cells(self.protocol, self.bases, "6_lightnorm_explore", "explore",
+                                            dataset, backbone, ["lt"])))
+            for method in ("lt", "san", "ddn"):
+                exp = "1_rebuttal_completion" if method == "lt" else "3_frozen_backbone_comparison"
+                doc = {"locks": {f"{dataset}|{backbone}|{m}": {} for m in ("san", "ddn")}}
+                rows.update(fake_rows(rs._cells(self.protocol, self.bases, exp, "final", dataset, backbone,
+                                                [method], lock_doc=doc)))
+        out = Path(tempfile.mkdtemp())
+        st.exp6_lt_explore(out, list(rows.values()), self.protocol, self.bases)
+        with (out / "exp6_lt_explore.csv").open() as f:
+            table = [r for r in csv.DictReader(f) if r["Dataset"] == "ETTm1" and r["Backbone"] == "DLinear"]
+        self.assertTrue(table)
+        self.assertTrue(all(r["Done"] == "1/1" and r["SAN_MSE"] and r["vs_DDN_pct"] for r in table))
 
 
 if __name__ == "__main__":

@@ -44,6 +44,12 @@
       "phase": "search",
       "lt_grid": "pilot",
       "description": "Validation-only LightNorm pilot (seed 2021, horizons 96/720) that decides which two tuning axes form the 6-point LightNorm grid."
+    },
+    "6_lightnorm_explore": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["lt"],
+      "phase": "explore",
+      "description": "Exploratory LightNorm tuning on the test split for a few dev cases (configs/lt_explore.json). Used only to design the tuning strategy and parameter baseline; never part of the validation protocol or the reported comparison."
     }
   },
   "lt_tuning": {

@@ -19,7 +19,8 @@ python experiments/results_pack.py summary
 | Exp1 | 제안 방법 LightNorm의 최종 test 성능 (주어진 고정 설정) | `exp1-lt` | 168 |
 | Exp2 | 비교 방법(RevIN·SAN·DDN·FAN)의 모듈 하이퍼파라미터를 **validation만으로** 선택 | `exp2-search`, `exp2-confirm` | 560 + 224 |
 | Exp3 | 동일 백본·동일 학습 조건에서 6개 방법(NoNorm 포함)의 test 비교 | `exp3-none`, `exp3-tuned` (+ Exp1 셀 공유) | 840 |
-| Exp5 (진행 중) | LightNorm 튜닝 축을 고르는 파일럿 (validation만 사용) | `lt-pilot` | 60 |
+| Exp5 | LightNorm 튜닝 축을 고르는 파일럿 (validation만 사용) | `lt-pilot` | 60 |
+| Exp6 (진행 중) | 개발용 케이스에서 test 기준 LightNorm 탐색. 튜닝 전략·파라미터 기준선 설계용 | `lt-explore` | 라운드마다 추가 |
 
 - Exp1의 LightNorm 셀은 Exp3의 `lt` 셀과 run ID가 같습니다. 따라서 따로 반복 실행하지 않았습니다.
 - Exp3 비교에서 바뀌는 것은 정규화 모듈과 그 설정뿐입니다. 백본 구조, 백본 학습률, 데이터 분할, 학습 예산은 모든 방법이 동일합니다.
@@ -251,6 +252,30 @@ ETTm1 × iTransformer의 `centre`(s_norm 0)는 주어진 설정과 같은 설정
 | `Better_level` | 주효과에서 validation MSE가 더 낮은 수준 |
 | `Noise_pct` | 주어진 설정의 3 seed validation MSE 변동계수(%). Exp1 final 셀에서 계산 |
 | `Exceeds_noise` | \|`Effect_pct`\| > `Noise_pct` |
+
+### Exp6 LightNorm 탐색 (`lt-explore`, test split 사용)
+
+**목적.** 우선순위가 높고 빠른 세 케이스(ETTm1 × iTransformer, Weather × DLinear, ETTm1 × DLinear)에서 SAN·DDN보다 test 성능이 좋아질 때까지 설정을 탐색합니다. 여기서 얻은 결과로 튜닝 전략과 파라미터 기준선을 정합니다.
+
+**설계.**
+- 후보는 `configs/lt_explore.json`에 라운드 단위로 추가합니다. 각 후보는 주어진 LightNorm 설정에서 일부 값만 바꾼 것이고, 백본·학습 설정은 그대로입니다.
+- 기본 조건은 seed 2021, H = 96, 720입니다. 유망한 후보는 4개 H × 3 seed로 확인합니다.
+- 라운드 1은 한 번에 한 축만 바꾸는 탐색입니다. kernel_size {7, 13, 25, 49, 97}, down_ratio {2, 8}, s_norm 반전, station_lr {5e-5, 5e-4, 1e-3}, use_mlp 반전, t_ff {128, 256}(use_mlp = 1일 때)를 시험합니다.
+
+**해석 시 주의.**
+- 이 세 케이스는 test로 탐색 공간을 설계한 개발용(dev) 케이스입니다. 이후 본 튜닝에서도 이 케이스들의 결과는 독립적인 평가가 아니며, 논문에 밝혀야 합니다.
+- Exp6 셀은 `results/store/explore/`에 따로 저장되어 Exp1–3·5 표에 섞이지 않습니다.
+
+**`exp6_lt_explore.csv`** (후보 × H마다 1행)
+
+| 열 | 의미 |
+|---|---|
+| `Label`, `Round`, `Change` | 후보 이름, 라운드, 주어진 설정 대비 바꾼 값 (JSON) |
+| `Seeds`, `Done` | 완료된 seed와 완료 수 / 요청 수 |
+| `Test_MSE`, `Test_MAE`, `Val_MSE` | 완료 seed 평균 |
+| `Supplied_MSE`, `SAN_MSE`, `DDN_MSE` | 같은 seed에서의 Exp3 test MSE (기존 LightNorm 설정, 확정된 SAN·DDN) |
+| `vs_supplied_pct`, `vs_SAN_pct`, `vs_DDN_pct` | `Test_MSE` 대비 상대 차이. 음수면 LightNorm 후보가 더 좋음 |
+| `Beats_SAN`, `Beats_DDN` | `Test_MSE`가 더 낮은지 |
 
 ---
 

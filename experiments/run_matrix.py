@@ -54,6 +54,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_PATH = ROOT / "configs" / "protocol.json"
 BASE_CONFIGS_PATH = ROOT / "configs" / "base_configs.json"
 RESOURCE_PROFILES_PATH = ROOT / "configs" / "resource_profiles.json"
+EXPLORE_PATH = ROOT / "configs" / "lt_explore.json"
 
 BACKBONE_KEYS = (
     "seq_len", "label_len", "learning_rate", "batch_size", "d_model", "d_ff",
@@ -198,6 +199,31 @@ def lt_pilot_candidates(protocol, dataset, base):
         for s in spec["s_norm"]
     ]
     return candidates
+
+
+def load_explore(path=None):
+    path = Path(path or EXPLORE_PATH)
+    return load_json(path) if path.exists() else {"cases": {}}
+
+
+def explore_candidates(protocol, dataset, backbone, base, doc=None):
+    """Exploratory LightNorm settings (configs/lt_explore.json) for one case.
+
+    Each entry overrides the supplied LightNorm settings and evaluates the
+    test split; horizons/seeds default to the screen horizons and seed 2021.
+    These dev-case cells are kept out of the validation protocol (stage
+    'explore', results/store/explore/).
+    """
+    doc = doc or load_explore()
+    supplied = supplied_lt_params(base)
+    schedule = []
+    for entry in doc.get("cases", {}).get(f"{dataset}|{backbone}", []):
+        schedule.append((
+            {**supplied, **entry["params"]},
+            entry.get("horizons", doc.get("default_horizons", protocol["screen_horizons"])),
+            entry.get("seeds", doc.get("default_seeds", [2021])),
+        ))
+    return schedule
 
 
 def search_candidates(protocol, dataset, method, base, lt_grid=None):
@@ -668,7 +694,9 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
             selected_base = selected_base_config(base_document, dataset, backbone)
             base = resolve_backbone_config(selected_base)
             for method in methods:
-                if stage == "search":
+                if stage == "explore":
+                    candidates = None
+                elif stage == "search":
                     candidates = search_candidates(protocol, dataset, method, selected_base,
                                                    lt_grid=exp.get("lt_grid"))
                 elif stage == "confirm":
@@ -679,12 +707,14 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                     candidates = [{}]
                 else:
                     candidates = locked_candidates(lock_doc, dataset, backbone, method)
+                schedule = (explore_candidates(protocol, dataset, backbone, selected_base)
+                            if stage == "explore" else [(p, horizons, seeds) for p in candidates])
 
-                for params in candidates:
+                for params, cell_horizons, cell_seeds in schedule:
                     params = complete_method_params(method, params)
                     candidate_id = canonical_hash({"method": method, "params": params})
-                    for horizon in horizons:
-                        for seed in seeds:
+                    for horizon in cell_horizons:
+                        for seed in cell_seeds:
                             identity = {
                                 "protocol": protocol["protocol_version"],
                                 "stage": stage,

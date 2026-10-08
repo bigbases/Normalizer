@@ -102,9 +102,10 @@ class CostModel:
             epochs * (it_train * train_iter + it_val * eval_iter)
             + pre * (it_train + it_val) * station_iter
         )
-        if cell.get("stage") == "final":
+        tested = cell.get("stage") in ("final", "explore")
+        if tested:
             seconds += it_test * eval_iter
-        reads = 3 if cell.get("stage") == "final" else 2
+        reads = 3 if tested else 2
         seconds += 8.0 + reads * meta["csv_mb"] / 40.0
         gpu_seconds = epochs * (it_train * compute_s + it_val * compute_s / 3)
         return seconds, min(1.0, gpu_seconds / max(seconds, 1e-9))

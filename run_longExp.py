@@ -175,7 +175,7 @@ parser.add_argument('--run_id', type=str, default='',
                     help='stable cell identifier supplied by the experiment planner')
 parser.add_argument('--candidate_id', type=str, default='',
                     help='normalizer configuration identifier used across horizons/seeds')
-parser.add_argument('--phase', type=str, choices=['search', 'confirm', 'final'], default='final')
+parser.add_argument('--phase', type=str, choices=['search', 'confirm', 'final', 'explore'], default='final')
 parser.add_argument('--result_file', type=str, default='result.csv',
                     help='CSV file for appending final (setting, MSE, MAE, ...) rows; '
                          'relative to CWD. Use this to separate baseline runs across scripts '
