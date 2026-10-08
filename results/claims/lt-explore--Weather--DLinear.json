@@ -1,5 +1,5 @@
 {
- "cells_remaining": 24,
+ "cells_remaining": 21,
  "cells_total": 26,
  "claimed_at": "2026-10-08T16:51:50+00:00",
  "code_rev": "047166f",
@@ -7,7 +7,7 @@
  "gpus": [
   0
  ],
- "heartbeat": "2026-10-08T17:00:02+00:00",
+ "heartbeat": "2026-10-08T17:03:09+00:00",
  "host": "itm21-a4000",
  "took_over_from": "",
  "worker": "itm21-a4000"
