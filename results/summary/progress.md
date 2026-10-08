@@ -1,13 +1,13 @@
 # Experiment progress
 
-Generated 2026-10-08T20:31:15+00:00 from 2123 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-08T20:51:40+00:00 from 2138 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
-| lt-search | 6 | 1 | 7 | 0 | 0 |
-| lt-tuned | 3 | 2 | 1 | 8 | 0 |
+| lt-search | 6 | 2 | 6 | 0 | 0 |
+| lt-tuned | 4 | 1 | 1 | 8 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -27,9 +27,9 @@ Generated 2026-10-08T20:31:15+00:00 from 2123 packaged cells. Regenerate with `p
 | lt-search--Electricity--DLinear | done | 10/10 |  |
 | lt-search--ETTm1--DLinear | done | 10/10 |  |
 | lt-search--Electricity--iTransformer | done | 10/10 |  |
-| lt-search--Traffic--iTransformer | ready | 0/10 |  |
+| lt-search--Traffic--iTransformer | claimed | 0/10 | itm24-gpu0-pro6000 |
 | lt-search--Weather--iTransformer | done | 10/10 |  |
-| lt-search--Traffic--DLinear | claimed | 2/10 | itm21-a4000 |
+| lt-search--Traffic--DLinear | claimed | 5/10 | itm21-a4000 |
 | lt-search--ETTh2--iTransformer | ready | 0/10 |  |
 | lt-search--ETTh1--DLinear | ready | 0/10 |  |
 | lt-search--ETTh1--iTransformer | ready | 0/10 |  |
@@ -38,9 +38,9 @@ Generated 2026-10-08T20:31:15+00:00 from 2123 packaged cells. Regenerate with `p
 | lt-search--ETTm2--iTransformer | ready | 0/10 |  |
 | lt-tuned--ETTm1--iTransformer | done | 12/12 |  |
 | lt-tuned--Weather--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--DLinear | claimed | 5/12 | itm24-gpu0-pro6000 |
+| lt-tuned--Electricity--DLinear | done | 12/12 |  |
 | lt-tuned--ETTm1--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--iTransformer | claimed | 0/12 | itm24-pro6000 |
+| lt-tuned--Electricity--iTransformer | claimed | 5/12 | itm24-pro6000 |
 | lt-tuned--Traffic--iTransformer | blocked | 0/? |  |
 | lt-tuned--Weather--iTransformer | ready | 0/12 |  |
 | lt-tuned--Traffic--DLinear | blocked | 0/? |  |
