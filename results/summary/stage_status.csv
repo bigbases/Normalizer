@@ -1,5 +1,5 @@
 Phase,Dataset,Backbone,Method,Status,CellsDone,CellsTotal,Worker
-lt-pilot,ETTm1,iTransformer,lt,claimed,1,20,itm21-a4000
+lt-pilot,ETTm1,iTransformer,lt,done,20,20,
 lt-pilot,ETTm1,DLinear,lt,done,20,20,
 lt-pilot,Weather,DLinear,lt,done,20,20,
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
