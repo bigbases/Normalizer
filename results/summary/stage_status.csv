@@ -26,10 +26,10 @@ lt-tuned,ETTm1,DLinear,lt,done,12,12,
 lt-tuned,Electricity,iTransformer,lt,done,12,12,
 lt-tuned,Traffic,iTransformer,lt,blocked,0,,
 lt-tuned,Weather,iTransformer,lt,done,12,12,
-lt-tuned,Traffic,DLinear,lt,ready,0,12,
+lt-tuned,Traffic,DLinear,lt,claimed,0,12,itm24-pro6000
 lt-tuned,ETTh2,iTransformer,lt,claimed,11,12,itm21-a4000
-lt-tuned,ETTh1,DLinear,lt,claimed,5,12,itm24-pro6000
-lt-tuned,ETTh1,iTransformer,lt,claimed,0,12,itm24-pro6000
+lt-tuned,ETTh1,DLinear,lt,done,12,12,
+lt-tuned,ETTh1,iTransformer,lt,claimed,10,12,itm24-pro6000
 lt-tuned,ETTh2,DLinear,lt,blocked,0,,
 lt-tuned,ETTm2,DLinear,lt,blocked,0,,
 lt-tuned,ETTm2,iTransformer,lt,blocked,0,,
