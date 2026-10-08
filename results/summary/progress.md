@@ -1,11 +1,11 @@
 # Experiment progress
 
-Generated 2026-10-08T18:27:05+00:00 from 1984 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-08T18:32:57+00:00 from 1992 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
-| lt-explore | 2 | 1 | 0 | 0 | 0 |
+| lt-explore | 3 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -18,7 +18,7 @@ Generated 2026-10-08T18:27:05+00:00 from 1984 packaged cells. Regenerate with `p
 | lt-pilot--ETTm1--DLinear | done | 20/20 |  |
 | lt-pilot--Weather--DLinear | done | 20/20 |  |
 | lt-explore--ETTm1--iTransformer | done | 48/48 |  |
-| lt-explore--Weather--DLinear | claimed | 42/50 | itm21-a4000 |
+| lt-explore--Weather--DLinear | done | 50/50 |  |
 | lt-explore--ETTm1--DLinear | done | 48/48 |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
