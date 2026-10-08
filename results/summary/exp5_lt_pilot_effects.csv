@@ -1,1 +1,15 @@
 Dataset,Backbone,Horizon,Term,Effect_pct,Better_level,Noise_pct,Exceeds_noise
+ETTm1,DLinear,96,s_norm,+0.046,0,0.112,False
+ETTm1,DLinear,96,kernel_size,-0.059,49,0.112,False
+ETTm1,DLinear,96,station_lr,-0.639,0.0005,0.112,True
+ETTm1,DLinear,96,s_norm:kernel_size,-0.011,,0.112,False
+ETTm1,DLinear,96,s_norm:station_lr,+0.034,,0.112,False
+ETTm1,DLinear,96,kernel_size:station_lr,-0.009,,0.112,False
+ETTm1,DLinear,96,centre_vs_corners,+0.259,,0.112,True
+ETTm1,DLinear,720,s_norm,+0.434,0,0.076,True
+ETTm1,DLinear,720,kernel_size,+0.250,13,0.076,True
+ETTm1,DLinear,720,station_lr,-0.070,0.0005,0.076,False
+ETTm1,DLinear,720,s_norm:kernel_size,+0.103,,0.076,True
+ETTm1,DLinear,720,s_norm:station_lr,+0.261,,0.076,True
+ETTm1,DLinear,720,kernel_size:station_lr,+0.203,,0.076,True
+ETTm1,DLinear,720,centre_vs_corners,+0.019,,0.076,False
