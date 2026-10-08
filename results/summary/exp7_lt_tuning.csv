@@ -80,6 +80,6 @@ Traffic,DLinear,4745a7892ea2,49,0.001,False,0.333992,0.398763,0.366378,False
 Traffic,iTransformer,17d87ad992eb,25,0.0001,True,0.319020,0.395614,0.357317,False
 Traffic,iTransformer,16b78929e6ec,25,0.0005,False,0.321034,0.397336,0.359185,False
 Traffic,iTransformer,7a018d35e1af,25,0.001,False,0.321274,0.402912,0.362093,False
-Traffic,iTransformer,30e642e79dc7,49,0.0001,False,0.316280,0.396290,0.356285,False
+Traffic,iTransformer,30e642e79dc7,49,0.0001,False,0.316280,0.396290,0.356285,True
 Traffic,iTransformer,93d2997fbc9c,49,0.0005,False,0.322043,0.404709,0.363376,False
-Traffic,iTransformer,ea987a97319e,49,0.001,False,0.320703,,,False
+Traffic,iTransformer,ea987a97319e,49,0.001,False,0.320703,0.400220,0.360462,False
