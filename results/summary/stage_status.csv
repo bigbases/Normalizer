@@ -32,7 +32,7 @@ lt-tuned,ETTh1,DLinear,lt,done,12,12,
 lt-tuned,ETTh1,iTransformer,lt,done,12,12,
 lt-tuned,ETTh2,DLinear,lt,done,12,12,
 lt-tuned,ETTm2,DLinear,lt,done,12,12,
-lt-tuned,ETTm2,iTransformer,lt,claimed,11,12,itm24-gpu0-pro6000
+lt-tuned,ETTm2,iTransformer,lt,done,12,12,
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
 exp1-lt,ETTh1,iTransformer,lt,done,12,12,
 exp1-lt,ETTh2,DLinear,lt,done,12,12,
