@@ -1,5 +1,5 @@
 {
- "description": "Exploratory LightNorm tuning on the TEST split (stage 'explore') for dev cases. Each entry overrides the supplied LightNorm settings of base_configs.json; backbone and training stay fixed. Purpose: find a tuning strategy and parameter baseline before the validation-based tuning plan. These cases are dev cases: their test split informed the search-space design, which must be disclosed. Round 1 = one-factor-at-a-time sweep around the supplied setting. Round 2 = combinations of round-1 improvements, plus 4 horizons x 3 seeds for the best single change per case.",
+ "description": "Exploratory LightNorm tuning on the TEST split (stage 'explore') for dev cases. Each entry overrides the supplied LightNorm settings of base_configs.json; backbone and training stay fixed. Purpose: find a tuning strategy and parameter baseline before the validation-based tuning plan. These cases are dev cases: their test split informed the search-space design, which must be disclosed. Round 1 = one-factor-at-a-time sweep around the supplied setting. Round 2 = combinations of round-1 improvements, plus 4 horizons x 3 seeds for the best single change per case. Round 3 = kernel refinement on iTransformer, affine/t_norm switches on top of the best single change, 3-seed check of the best ETTm1 x DLinear combination.",
  "default_horizons": [
   96,
   720
@@ -165,6 +165,43 @@
      "use_mlp": 1,
      "t_ff": 256
     }
+   },
+   {
+    "id": "r3-k37",
+    "round": 3,
+    "params": {
+     "kernel_size": 37
+    }
+   },
+   {
+    "id": "r3-k61",
+    "round": 3,
+    "params": {
+     "kernel_size": 61
+    }
+   },
+   {
+    "id": "r3-k73",
+    "round": 3,
+    "params": {
+     "kernel_size": 73
+    }
+   },
+   {
+    "id": "r3-k49-affine0",
+    "round": 3,
+    "params": {
+     "kernel_size": 49,
+     "affine": 0
+    }
+   },
+   {
+    "id": "r3-k49-tnorm0",
+    "round": 3,
+    "params": {
+     "kernel_size": 49,
+     "t_norm": 0
+    }
    }
   ],
   "Weather|DLinear": [
@@ -324,6 +361,38 @@
      "station_lr": 0.001,
      "t_ff": 512
     }
+   },
+   {
+    "id": "r3-slr1e-3-k97",
+    "round": 3,
+    "params": {
+     "station_lr": 0.001,
+     "kernel_size": 97
+    }
+   },
+   {
+    "id": "r3-slr1e-3-k25",
+    "round": 3,
+    "params": {
+     "station_lr": 0.001,
+     "kernel_size": 25
+    }
+   },
+   {
+    "id": "r3-slr1e-3-affine0",
+    "round": 3,
+    "params": {
+     "station_lr": 0.001,
+     "affine": 0
+    }
+   },
+   {
+    "id": "r3-slr1e-3-tnorm0",
+    "round": 3,
+    "params": {
+     "station_lr": 0.001,
+     "t_norm": 0
+    }
    }
   ],
   "ETTm1|DLinear": [
@@ -473,6 +542,49 @@
      "station_lr": 0.0005,
      "t_ff": 256,
      "kernel_size": 7
+    }
+   },
+   {
+    "id": "r3-full-slr5e-4-tff512",
+    "round": 3,
+    "params": {
+     "station_lr": 0.0005,
+     "t_ff": 512
+    },
+    "horizons": [
+     96,
+     192,
+     336,
+     720
+    ],
+    "seeds": [
+     2021,
+     2022,
+     2023
+    ]
+   },
+   {
+    "id": "r3-slr5e-4-tff1024",
+    "round": 3,
+    "params": {
+     "station_lr": 0.0005,
+     "t_ff": 1024
+    }
+   },
+   {
+    "id": "r3-slr5e-4-affine0",
+    "round": 3,
+    "params": {
+     "station_lr": 0.0005,
+     "affine": 0
+    }
+   },
+   {
+    "id": "r3-slr5e-4-tnorm0",
+    "round": 3,
+    "params": {
+     "station_lr": 0.0005,
+     "t_norm": 0
     }
    }
   ]
