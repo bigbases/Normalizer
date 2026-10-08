@@ -1,13 +1,13 @@
 # Experiment progress
 
-Generated 2026-10-08T03:37:09+00:00 from 1694 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-08T03:45:48+00:00 from 1696 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
-| exp3-none | 12 | 2 | 0 | 0 | 0 |
+| exp3-none | 13 | 1 | 0 | 0 | 0 |
 | exp3-tuned | 49 | 1 | 6 | 0 | 0 |
 
 | task | status | cells done | worker |
@@ -149,7 +149,7 @@ Generated 2026-10-08T03:37:09+00:00 from 1694 packaged cells. Regenerate with `p
 | exp3-none--Weather--DLinear | done | 12/12 |  |
 | exp3-none--Weather--iTransformer | done | 12/12 |  |
 | exp3-none--Electricity--DLinear | done | 12/12 |  |
-| exp3-none--Electricity--iTransformer | claimed | 10/12 | itm21-a4000 |
+| exp3-none--Electricity--iTransformer | done | 12/12 |  |
 | exp3-none--Traffic--DLinear | done | 12/12 |  |
 | exp3-none--Traffic--iTransformer | claimed | 0/12 | itm24-pro6000 |
 | exp3-tuned--ETTh1--DLinear--revin | done | 12/12 |  |
