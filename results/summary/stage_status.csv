@@ -137,7 +137,7 @@ exp3-none,Weather,DLinear,none,done,12,12,
 exp3-none,Weather,iTransformer,none,done,12,12,
 exp3-none,Electricity,DLinear,none,done,12,12,
 exp3-none,Electricity,iTransformer,none,ready,0,12,
-exp3-none,Traffic,DLinear,none,claimed,0,12,itm21-a4000
+exp3-none,Traffic,DLinear,none,claimed,1,12,itm21-a4000
 exp3-none,Traffic,iTransformer,none,ready,0,12,
 exp3-tuned,ETTh1,DLinear,revin,done,12,12,
 exp3-tuned,ETTh1,DLinear,san,done,12,12,
@@ -161,7 +161,7 @@ exp3-tuned,ETTm1,DLinear,ddn,done,12,12,
 exp3-tuned,ETTm1,DLinear,fan,done,12,12,
 exp3-tuned,ETTm1,iTransformer,revin,done,12,12,
 exp3-tuned,ETTm1,iTransformer,san,done,12,12,
-exp3-tuned,ETTm1,iTransformer,ddn,claimed,11,12,itm21-a4000
+exp3-tuned,ETTm1,iTransformer,ddn,done,12,12,
 exp3-tuned,ETTm1,iTransformer,fan,done,12,12,
 exp3-tuned,ETTm2,DLinear,revin,done,12,12,
 exp3-tuned,ETTm2,DLinear,san,done,12,12,
