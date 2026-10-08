@@ -7,11 +7,11 @@ lt-explore,Weather,DLinear,lt,done,58,58,
 lt-explore,ETTm1,DLinear,lt,done,66,66,
 lt-search,ETTm1,iTransformer,lt,done,10,10,
 lt-search,Weather,DLinear,lt,done,10,10,
-lt-search,Electricity,DLinear,lt,claimed,6,10,itm24-pro6000
-lt-search,ETTm1,DLinear,lt,claimed,1,10,itm24-pro6000
+lt-search,Electricity,DLinear,lt,done,10,10,
+lt-search,ETTm1,DLinear,lt,claimed,3,10,itm24-pro6000
 lt-search,Electricity,iTransformer,lt,claimed,0,10,itm24-gpu0-pro6000
 lt-search,Traffic,iTransformer,lt,ready,0,10,
-lt-search,Weather,iTransformer,lt,claimed,0,10,itm21-a4000
+lt-search,Weather,iTransformer,lt,claimed,1,10,itm21-a4000
 lt-search,Traffic,DLinear,lt,ready,0,10,
 lt-search,ETTh2,iTransformer,lt,ready,0,10,
 lt-search,ETTh1,DLinear,lt,ready,0,10,
@@ -21,7 +21,7 @@ lt-search,ETTm2,DLinear,lt,ready,0,10,
 lt-search,ETTm2,iTransformer,lt,ready,0,10,
 lt-tuned,ETTm1,iTransformer,lt,ready,0,12,
 lt-tuned,Weather,DLinear,lt,done,12,12,
-lt-tuned,Electricity,DLinear,lt,blocked,0,,
+lt-tuned,Electricity,DLinear,lt,ready,0,12,
 lt-tuned,ETTm1,DLinear,lt,blocked,0,,
 lt-tuned,Electricity,iTransformer,lt,blocked,0,,
 lt-tuned,Traffic,iTransformer,lt,blocked,0,,
