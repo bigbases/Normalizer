@@ -13,6 +13,7 @@
     exp5_lt_pilot_effects.csv   factorial main effects / interactions of the pilot vs seed noise
     exp6_lt_explore.csv         exploratory LightNorm settings on dev cases (TEST split) against the
                                 supplied LightNorm, SAN and DDN on the same seeds
+    exp7_lt_tuning.csv          LightNorm 6-point grid (validation, seed 2021) and the lock per case
 """
 
 from __future__ import annotations
@@ -27,6 +28,23 @@ import run_matrix as rm
 import select_hparams as sh
 
 METHODS = ["none", "revin", "san", "ddn", "fan", "lt"]
+BASELINES = ["none", "revin", "san", "ddn", "fan"]
+
+
+def method_labeler(bases):
+    """'lt' for the supplied LightNorm setting, 'lt_tuned' for any other LightNorm final."""
+    supplied = {}
+
+    def label(row):
+        if row.get("UseNorm") != "lt":
+            return row.get("UseNorm")
+        key = (row["Dataset"], row["Backbone"])
+        if key not in supplied:
+            base = rm.selected_base_config(bases, *key)
+            supplied[key] = rm.canonical_hash(
+                {"method": "lt", "params": rm.complete_method_params("lt", rm.supplied_lt_params(base))})
+        return "lt" if row.get("CandidateID") == supplied[key] else "lt_tuned"
+    return label
 
 
 def _num(value):
@@ -58,11 +76,12 @@ def stage_status(out, tasks):
             for t in tasks])
 
 
-def final_groups(rows):
+def final_groups(rows, label=None):
+    label = label or (lambda r: r["UseNorm"])
     groups = defaultdict(dict)
     for r in rows:
         if r.get("Phase") == "final" and r.get("Split") == "test" and r.get("MSE"):
-            key = (r["Dataset"], r["Backbone"], r["UseNorm"], int(r["Horizon"]))
+            key = (r["Dataset"], r["Backbone"], label(r), int(r["Horizon"]))
             groups[key][int(r["Seed"])] = r
     return groups
 
@@ -129,28 +148,67 @@ def exp2_validation(out, rows, protocol, bases):
            ["Dataset", "Backbone", "Method", "CandidateID", "Params", "Lock_mean_val_MSE"], selection)
 
 
-def exp3_comparison(out, groups, protocol):
+def exp3_comparison(out, groups, protocol, lt_lock_ids=None):
+    """Six-method comparison plus LightNorm after tuning ('lt_tuned').
+
+    lt_tuned mirrors 'lt' for cases whose lock is the supplied setting.
+    Complete/Best_MSE use the six original methods; Best_MSE_tuned replaces
+    the supplied LightNorm with lt_tuned.
+    """
     seeds = protocol["seeds"]
     order = _order(protocol)
-    cases = sorted({(k[0], k[1], k[3]) for k in groups}, key=lambda k: (*order(k[0], k[1]), k[2]))
+    lt_lock_ids = lt_lock_ids or {}
+    cases = sorted({(k[0], k[1], k[3]) for k in groups if k[2] != "lt_tuned"},
+                   key=lambda k: (*order(k[0], k[1]), k[2]))
     rows = []
     for ds, bb, h in cases:
-        line, complete, best = [ds, bb, h], True, None
-        for m in METHODS:
+        line, stats = [ds, bb, h], {}
+        for m in METHODS + ["lt_tuned"]:
             by_seed = groups.get((ds, bb, m, h), {})
+            if m == "lt_tuned" and lt_lock_ids.get((ds, bb)) == "supplied":
+                by_seed = groups.get((ds, bb, "lt", h), {})
             mse = [float(r["MSE"]) for r in by_seed.values()]
             mae = [float(r["MAE"]) for r in by_seed.values()]
-            full = all(s in by_seed for s in seeds)
-            complete &= full
-            if full and (best is None or mean(mse) < best[1]):
-                best = (m, mean(mse))
+            stats[m] = (all(s in by_seed for s in seeds), mean(mse) if mse else None)
             line += [len(mse), _num(mean(mse)) if mse else "", _num(_std(mse)) if mse else "",
                      _num(mean(mae)) if mae else "", _num(_std(mae)) if mae else ""]
-        rows.append(line + [complete, best[0] if complete and best else ""])
+
+        def best(methods):
+            if not all(stats[m][0] for m in methods):
+                return ""
+            return min(methods, key=lambda m: stats[m][1])
+        complete = all(stats[m][0] for m in METHODS)
+        rows.append(line + [complete, best(METHODS), best(BASELINES + ["lt_tuned"])])
     header = ["Dataset", "Backbone", "Horizon"]
-    for m in METHODS:
+    for m in METHODS + ["lt_tuned"]:
         header += [f"{m}_n", f"{m}_MSE", f"{m}_MSE_std", f"{m}_MAE", f"{m}_MAE_std"]
-    _write(out / "exp3_comparison.csv", header + ["Complete", "Best_MSE"], rows)
+    _write(out / "exp3_comparison.csv", header + ["Complete", "Best_MSE", "Best_MSE_tuned"], rows)
+
+
+def exp7_lt_tuning(out, rows, protocol, bases):
+    """LightNorm 6-point grid per case: seed-2021 validation MSE and the lock."""
+    locks = sh.lt_locks(rows, protocol, bases)["locks"]
+    lock_ids = {}
+    table = []
+    order = _order(protocol)
+    cases = sorted(((d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer")),
+                   key=lambda k: order(*k))
+    for ds, bb in cases:
+        base = rm.selected_base_config(bases, ds, bb)
+        lock = locks.get(f"{ds}|{bb}|lt")
+        for params, vals in sh.lt_candidate_scores(rows, protocol, bases, ds, bb):
+            supplied = rm.is_supplied_lt(params, base)
+            locked = lock is not None and params == lock
+            if locked:
+                lock_ids[(ds, bb)] = "supplied" if supplied else _lt_id(params)
+            done = all(v is not None for v in vals.values())
+            table.append([ds, bb, _lt_id(params), params["kernel_size"], params["station_lr"], supplied,
+                          *[_num(v) for v in vals.values()],
+                          _num(mean(vals.values())) if done else "", locked])
+    _write(out / "exp7_lt_tuning.csv",
+           ["Dataset", "Backbone", "CandidateID", "kernel_size", "station_lr", "Supplied",
+            *[f"Val_h{h}_s2021" for h in protocol["screen_horizons"]], "Val_mean", "Locked"], table)
+    return lock_ids
 
 
 def _lt_id(params):
@@ -283,10 +341,11 @@ def exp6_lt_explore(out, rows, protocol, bases):
 
 def write_all(out, rows, tasks, protocol, bases):
     out = Path(out)
-    groups = final_groups(rows)
+    groups = final_groups(rows, method_labeler(bases))
     stage_status(out, tasks)
     exp1_lightnorm(out, groups, protocol)
     exp2_validation(out, rows, protocol, bases)
-    exp3_comparison(out, groups, protocol)
+    lock_ids = exp7_lt_tuning(out, rows, protocol, bases)
+    exp3_comparison(out, groups, protocol, lock_ids)
     exp5_lt_pilot(out, rows, protocol, bases)
     exp6_lt_explore(out, rows, protocol, bases)

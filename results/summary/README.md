@@ -20,7 +20,8 @@ python experiments/results_pack.py summary
 | Exp2 | 비교 방법(RevIN·SAN·DDN·FAN)의 모듈 하이퍼파라미터를 **validation만으로** 선택 | `exp2-search`, `exp2-confirm` | 560 + 224 |
 | Exp3 | 동일 백본·동일 학습 조건에서 6개 방법(NoNorm 포함)의 test 비교 | `exp3-none`, `exp3-tuned` (+ Exp1 셀 공유) | 840 |
 | Exp5 | LightNorm 튜닝 축을 고르는 파일럿 (validation만 사용) | `lt-pilot` | 60 |
-| Exp6 (진행 중) | 개발용 케이스에서 test 기준 LightNorm 탐색. 튜닝 전략·파라미터 기준선 설계용 | `lt-explore` | 라운드마다 추가 |
+| Exp6 | 개발용 케이스에서 test 기준 LightNorm 탐색. 튜닝 전략·파라미터 기준선 설계용 | `lt-explore` | 174 |
+| Exp7 (진행 중) | LightNorm 본 튜닝: validation으로 설정을 확정한 뒤 final test | `lt-search`, `lt-tuned` | 140 + 최대 168 |
 
 - Exp1의 LightNorm 셀은 Exp3의 `lt` 셀과 run ID가 같습니다. 따라서 따로 반복 실행하지 않았습니다.
 - Exp3 비교에서 바뀌는 것은 정규화 모듈과 그 설정뿐입니다. 백본 구조, 백본 학습률, 데이터 분할, 학습 예산은 모든 방법이 동일합니다.
@@ -205,6 +206,7 @@ search·confirm 셀은 `--skip_test`로 실행되어 test split을 만들지 않
 | `Complete` | 6개 방법 모두 3 seed 완료 |
 | `Best_MSE` | 평균 MSE가 가장 낮은 방법 키. Complete일 때만 채워짐 |
 
+- `lt_tuned_*`: Exp7에서 validation으로 확정한 LightNorm 설정의 결과입니다. 확정 설정이 주어진 설정과 같으면 `lt_*`와 같은 값입니다. `Best_MSE_tuned`는 `lt` 대신 `lt_tuned`를 넣어 고른 최고 방법입니다. `Complete`, `Best_MSE`는 기존 6개 방법 기준 그대로입니다.
 - 보고서의 "승률(win rate)"은 이 표에서 계산합니다. 같은 행(케이스 × H)에서 `lt_MSE < <baseline>_MSE`인 행의 비율이며, 56행 기준입니다.
 - 3 seed 평균끼리 비교한 값이므로 통계적 유의성을 뜻하지 않습니다.
 
@@ -276,6 +278,15 @@ ETTm1 × iTransformer의 `centre`(s_norm 0)는 주어진 설정과 같은 설정
 | `Supplied_MSE`, `SAN_MSE`, `DDN_MSE` | 같은 seed에서의 Exp3 test MSE (기존 LightNorm 설정, 확정된 SAN·DDN) |
 | `vs_supplied_pct`, `vs_SAN_pct`, `vs_DDN_pct` | `Test_MSE` 대비 상대 차이. 음수면 LightNorm 후보가 더 좋음 |
 | `Beats_SAN`, `Beats_DDN` | `Test_MSE`가 더 낮은지 |
+
+### Exp7 LightNorm 본 튜닝 (`lt-search` → `lt-tuned`)
+
+- **탐색 공간:** 케이스마다 6개 = kernel_size {주어진 값, 49} × station_lr {1e-4, 5e-4, 1e-3}. 나머지 LightNorm 설정(use_mlp, s_norm, down_ratio, t_ff, affine, t_norm)은 주어진 값입니다. Exp6에서 DLinear는 station_lr, iTransformer는 kernel_size가 핵심 축으로 나온 것을 반영했습니다.
+- **선택:** seed 2021, H = 96, 720의 validation MSE 평균이 가장 낮은 설정입니다. 주어진 설정의 값은 Exp1 final 셀의 seed 2021 validation MSE를 재사용합니다. 같은 seed·같은 학습이며, GPU 간 차이는 약 5×10⁻⁷입니다.
+- **final:** 확정 설정 × 4 H × 3 seed. 주어진 설정이 확정되면 Exp1 셀을 그대로 씁니다.
+- **실행 순서:** `lt_tuning.case_priority` 순서이고, 케이스별 탐색이 끝나는 대로 그 케이스의 final이 먼저 실행됩니다.
+- **`exp7_lt_tuning.csv`:** 케이스 × 후보 6개. `Supplied`(주어진 설정 여부), `Val_h96_s2021`, `Val_h720_s2021`, `Val_mean`, `Locked`(확정 여부).
+- **dev 케이스:** ETTm1 × iTransformer, Weather × DLinear, ETTm1 × DLinear는 Exp6에서 test를 본 케이스이므로 독립 평가가 아닙니다.
 
 ---
 

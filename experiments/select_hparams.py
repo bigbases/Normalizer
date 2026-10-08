@@ -15,6 +15,7 @@ from run_matrix import (
     canonical_hash,
     complete_method_params,
     load_json,
+    lt_main_candidates,
     search_candidates,
     selected_base_config,
 )
@@ -132,6 +133,48 @@ def select(rows, mode, protocol, bases):
             "2021/2022, among the two candidates shortlisted using seed 2021."
         )
 
+    return output
+
+
+def lt_candidate_scores(raw_rows, protocol, bases, dataset, backbone):
+    """Seed-2021 validation MSE (horizons 96/720) of the 6 LightNorm grid points.
+
+    Search cells give the five new points; the supplied point comes from its
+    search cell when one exists (pilot), otherwise from its Exp1 final cell.
+    Returns [(params, {horizon: value})] in grid order.
+    """
+    horizons = protocol["screen_horizons"]
+    found = defaultdict(dict)
+    for r in raw_rows:
+        if (r.get("Dataset"), r.get("Backbone"), r.get("UseNorm")) != (dataset, backbone, "lt"):
+            continue
+        if str(r.get("Seed")) != "2021" or not r.get("BestValMSE") or r.get("Phase") not in ("search", "final"):
+            continue
+        h = int(r["Horizon"])
+        if h in horizons and (r["Phase"] == "search" or h not in found[r["CandidateID"]]):
+            found[r["CandidateID"]][h] = float(r["BestValMSE"])
+    base = selected_base_config(bases, dataset, backbone)
+    out = []
+    for params in lt_main_candidates(protocol, base):
+        cid = canonical_hash({"method": "lt", "params": complete_method_params("lt", params)})
+        out.append((complete_method_params("lt", params), {h: found[cid].get(h) for h in horizons}))
+    return out
+
+
+def lt_locks(raw_rows, protocol, bases, cases=None):
+    """Lock = lowest mean validation MSE over horizons 96/720 at seed 2021 (single seed)."""
+    output = {"protocol_version": protocol["protocol_version"], "locks": {}, "selection_rule": (
+        "LightNorm: minimum mean validation MSE across horizons 96/720 at seed 2021 among the "
+        "6-point grid kernel_size {supplied, 49} x station_lr {1e-4, 5e-4, 1e-3}.")}
+    rows = list(raw_rows)
+    cases = cases or [(d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer")]
+    for dataset, backbone in cases:
+        scored = lt_candidate_scores(rows, protocol, bases, dataset, backbone)
+        if not scored or any(v is None for _, vals in scored for v in vals.values()):
+            continue
+        best = min(scored, key=lambda item: (sum(item[1].values()) / len(item[1]),
+                                             canonical_hash({"method": "lt", "params": item[0]})))
+        output["locks"][f"{dataset}|{backbone}|lt"] = best[0]
     return output
 
 

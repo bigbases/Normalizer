@@ -128,7 +128,58 @@ class LightNormExploreTest(unittest.TestCase):
         with (out / "exp6_lt_explore.csv").open() as f:
             table = [r for r in csv.DictReader(f) if r["Dataset"] == "ETTm1" and r["Backbone"] == "DLinear"]
         self.assertTrue(table)
-        self.assertTrue(all(r["Done"] == "1/1" and r["SAN_MSE"] and r["vs_DDN_pct"] for r in table))
+        self.assertTrue(all(len(set(r["Done"].split("/"))) == 1 and r["SAN_MSE"] and r["vs_DDN_pct"]
+                            for r in table))
+
+
+class LightNormMainTuningTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.protocol = rm.load_json(rm.PROTOCOL_PATH)
+        cls.bases = rm.load_json(rm.BASE_CONFIGS_PATH)
+        cls.plan = rs.load_plan()
+
+    def cells(self, experiment, stage, dataset, backbone, lock_doc=None):
+        return rs._cells(self.protocol, self.bases, experiment, stage, dataset, backbone, ["lt"], lock_doc=lock_doc)
+
+    def test_grid_contains_supplied_and_search_skips_it(self):
+        for dataset, backbone in (("ETTm1", "DLinear"), ("ETTh2", "iTransformer"), ("Traffic", "iTransformer")):
+            base = rm.selected_base_config(self.bases, dataset, backbone)
+            grid = rm.lt_main_candidates(self.protocol, base)
+            self.assertEqual(len(grid), 6)
+            self.assertEqual(sum(rm.is_supplied_lt(p, base) for p in grid), 1)
+            self.assertEqual({p["station_lr"] for p in grid}, {1e-4, 5e-4, 1e-3})
+            self.assertIn(49, {p["kernel_size"] for p in grid})
+            search = self.cells("7_lightnorm_tuning", "search", dataset, backbone)
+            self.assertEqual(len(search), 10)
+
+    def test_lock_uses_supplied_final_validation_and_reuses_exp1_cells(self):
+        rows = fake_rows(self.cells("7_lightnorm_tuning", "search", "ETTm1", "DLinear"), value=0.6)
+        exp1 = self.cells("1_rebuttal_completion", "final", "ETTm1", "DLinear")
+        rows.update(fake_rows(exp1, value=0.1, step=0))         # supplied is best on validation
+        doc = sh.lt_locks(rows.values(), self.protocol, self.bases, [("ETTm1", "DLinear")])
+        base = rm.selected_base_config(self.bases, "ETTm1", "DLinear")
+        self.assertTrue(rm.is_supplied_lt(doc["locks"]["ETTm1|DLinear|lt"], base))
+        tuned = self.cells("8_lightnorm_tuned_final", "final", "ETTm1", "DLinear", lock_doc=doc)
+        self.assertEqual({c["run_id"] for c in tuned}, {c["run_id"] for c in exp1})
+
+        tasks = {t.task_id: t for t in rs.build_tasks(self.plan, self.protocol, self.bases, rows)}
+        self.assertEqual(tasks["lt-search--ETTm1--DLinear"].status, "done")
+        self.assertEqual(tasks["lt-tuned--ETTm1--DLinear"].status, "done")
+        self.assertEqual(tasks["lt-tuned--Weather--DLinear"].status, "blocked")
+        self.assertLess(tasks["lt-search--ETTm1--iTransformer"].rank, tasks["lt-search--ETTm2--DLinear"].rank)
+
+    def test_non_supplied_lock_is_reported_as_lt_tuned(self):
+        rows = fake_rows(self.cells("7_lightnorm_tuning", "search", "ETTm1", "DLinear"), value=0.1)
+        rows.update(fake_rows(self.cells("1_rebuttal_completion", "final", "ETTm1", "DLinear"), value=0.9))
+        doc = sh.lt_locks(rows.values(), self.protocol, self.bases, [("ETTm1", "DLinear")])
+        tuned = fake_rows(self.cells("8_lightnorm_tuned_final", "final", "ETTm1", "DLinear", lock_doc=doc))
+        label = st.method_labeler(self.bases)
+        self.assertEqual({label(r) for r in tuned.values()}, {"lt_tuned"})
+        rows.update(tuned)
+        groups = st.final_groups(list(rows.values()), label)
+        self.assertEqual(len(groups[("ETTm1", "DLinear", "lt_tuned", 96)]), 3)
+        self.assertEqual(len(groups[("ETTm1", "DLinear", "lt", 96)]), 3)
 
 
 if __name__ == "__main__":

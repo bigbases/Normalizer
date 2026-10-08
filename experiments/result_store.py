@@ -109,6 +109,7 @@ class Task:
     status: str = "pending"            # done | ready | blocked | claimed | failed
     claim: dict | None = None
     split: str | None = None           # the method, for phases split per method
+    rank: int = 0                      # case order within an "ordered" phase
 
     @property
     def task_id(self):
@@ -153,13 +154,14 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
         datasets = phase.get("datasets") or list(protocol["datasets"])
         # "cases" lists explicit [dataset, backbone] pairs instead of the product.
         cases = phase.get("cases") or [(d, b) for d in datasets for b in phase["backbones"]]
-        for dataset, backbone in cases:
+        for rank, (dataset, backbone) in enumerate(cases):
             for methods in groups:
                 task = Task(
                     phase=phase["name"], priority=int(phase["priority"]),
                     experiment=phase["experiment"], stage=phase["stage"],
                     dataset=dataset, backbone=backbone, methods=methods,
                     requires=phase.get("requires"), split=methods[0] if split else None,
+                    rank=rank if phase.get("ordered") else 0,
                 )
                 by_case[(task.phase, dataset, backbone)].append(task)
                 tasks.append(task)
@@ -172,12 +174,15 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
             if not deps or any(d.status != "done" for d in deps):
                 task.status = "blocked"
                 continue
-        rows = sh.validation_rows(_case_rows(results, task.dataset, task.backbone))
+        case_rows = _case_rows(results, task.dataset, task.backbone)
+        rows = sh.validation_rows(case_rows)
         lock_doc = shortlist_doc = None
         if task.stage == "confirm":
             shortlist_doc = sh.select(rows, "shortlist", protocol, bases)
         elif task.stage == "final" and any(m not in ("none", "lt") for m in task.methods):
             lock_doc = sh.select(rows, "lock", protocol, bases)
+        if task.stage == "final" and protocol["experiments"][task.experiment].get("lt_params") == "locked":
+            lock_doc = sh.lt_locks(case_rows, protocol, bases, [(task.dataset, task.backbone)])
         try:
             task.cells = _cells(protocol, bases, task.experiment, task.stage, task.dataset,
                                 task.backbone, task.methods, lock_doc, shortlist_doc)
@@ -250,10 +255,26 @@ def write_summary(root, results, tasks, protocol, bases):
     out.mkdir(parents=True, exist_ok=True)
     rows = sorted(results.values(), key=lambda r: r["RunID"])
 
+    # Protocol finals only (not 'explore' dev cells); LightNorm cells other than
+    # the supplied setting are the tuned finals and are listed as 'lt_tuned'.
+    # A labelling failure falls back to the raw method so pushes never block.
+    try:
+        import summary_tables
+        labeler = summary_tables.method_labeler(bases)
+    except Exception as exc:  # noqa: BLE001
+        print(f"warning: method labels unavailable: {exc!r}")
+        labeler = None
+
+    def label(row):
+        try:
+            return labeler(row) if labeler else row["UseNorm"]
+        except Exception:  # noqa: BLE001
+            return row["UseNorm"]
+
     groups = defaultdict(list)
     for r in rows:
-        if r["Split"] == "test" and r.get("MSE"):
-            groups[(r["Dataset"], r["Backbone"], r["UseNorm"], int(r["Horizon"]))].append(r)
+        if r.get("Phase") == "final" and r["Split"] == "test" and r.get("MSE"):
+            groups[(r["Dataset"], r["Backbone"], label(r), int(r["Horizon"]))].append(r)
     order = {d: i for i, d in enumerate(protocol["datasets"])}
     with (out / "final_test_mean_std.csv").open("w", newline="") as f:
         writer = csv.writer(f)

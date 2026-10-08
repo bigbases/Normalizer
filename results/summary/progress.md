@@ -1,11 +1,13 @@
 # Experiment progress
 
-Generated 2026-10-08T18:56:33+00:00 from 2026 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-08T19:18:28+00:00 from 2026 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
+| lt-search | 0 | 0 | 14 | 0 | 0 |
+| lt-tuned | 0 | 0 | 0 | 14 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -20,6 +22,34 @@ Generated 2026-10-08T18:56:33+00:00 from 2026 packaged cells. Regenerate with `p
 | lt-explore--ETTm1--iTransformer | done | 58/58 |  |
 | lt-explore--Weather--DLinear | done | 58/58 |  |
 | lt-explore--ETTm1--DLinear | done | 66/66 |  |
+| lt-search--ETTm1--iTransformer | ready | 2/10 |  |
+| lt-search--Weather--DLinear | ready | 4/10 |  |
+| lt-search--Electricity--DLinear | ready | 0/10 |  |
+| lt-search--ETTm1--DLinear | ready | 0/10 |  |
+| lt-search--Electricity--iTransformer | ready | 0/10 |  |
+| lt-search--Traffic--iTransformer | ready | 0/10 |  |
+| lt-search--Weather--iTransformer | ready | 0/10 |  |
+| lt-search--Traffic--DLinear | ready | 0/10 |  |
+| lt-search--ETTh2--iTransformer | ready | 0/10 |  |
+| lt-search--ETTh1--DLinear | ready | 0/10 |  |
+| lt-search--ETTh1--iTransformer | ready | 0/10 |  |
+| lt-search--ETTh2--DLinear | ready | 0/10 |  |
+| lt-search--ETTm2--DLinear | ready | 0/10 |  |
+| lt-search--ETTm2--iTransformer | ready | 0/10 |  |
+| lt-tuned--ETTm1--iTransformer | blocked | 0/? |  |
+| lt-tuned--Weather--DLinear | blocked | 0/? |  |
+| lt-tuned--Electricity--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTm1--DLinear | blocked | 0/? |  |
+| lt-tuned--Electricity--iTransformer | blocked | 0/? |  |
+| lt-tuned--Traffic--iTransformer | blocked | 0/? |  |
+| lt-tuned--Weather--iTransformer | blocked | 0/? |  |
+| lt-tuned--Traffic--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTh2--iTransformer | blocked | 0/? |  |
+| lt-tuned--ETTh1--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTh1--iTransformer | blocked | 0/? |  |
+| lt-tuned--ETTh2--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTm2--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTm2--iTransformer | blocked | 0/? |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |

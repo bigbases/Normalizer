@@ -226,11 +226,32 @@ def explore_candidates(protocol, dataset, backbone, base, doc=None):
     return schedule
 
 
+def lt_main_candidates(protocol, base):
+    """The 6-point LightNorm grid: kernel_size {supplied, 49} x station_lr {1e-4, 5e-4, 1e-3}.
+
+    Every other LightNorm setting (use_mlp, s_norm, down_ratio, t_ff, ...) stays
+    as supplied, so the supplied setting is always one of the six.
+    """
+    spec = protocol["lt_tuning"]["main"]
+    supplied = supplied_lt_params(base)
+    own = supplied.get("kernel_size") or METHOD_DEFAULTS["lt"]["kernel_size"]
+    kernels = [own] + [k for k in spec["kernel_size"] if k != "supplied" and k != own]
+    return [{**supplied, "kernel_size": k, "station_lr": lr} for k in kernels for lr in spec["station_lr"]]
+
+
+def is_supplied_lt(params, base):
+    return complete_method_params("lt", params) == complete_method_params("lt", supplied_lt_params(base))
+
+
 def search_candidates(protocol, dataset, method, base, lt_grid=None):
     if method == "lt":
-        if lt_grid != "pilot":
-            raise ValueError("LightNorm search needs an experiment with lt_grid='pilot'")
-        return lt_pilot_candidates(protocol, dataset, base)
+        if lt_grid == "pilot":
+            return lt_pilot_candidates(protocol, dataset, base)
+        if lt_grid == "main":
+            # The supplied setting's seed-2021 validation MSE is already in its
+            # Exp1 final cells (same seed and training), so it is not re-run.
+            return [c for c in lt_main_candidates(protocol, base) if not is_supplied_lt(c, base)]
+        raise ValueError("LightNorm search needs an experiment with lt_grid 'pilot' or 'main'")
     if method == "fan":
         ks = protocol["datasets"][dataset]["fan_k"]
         if protocol.get("fan_lr_grid", "station_scale") == "station_and_backbone":
@@ -683,7 +704,8 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
         shortlist_doc = load_json(args.shortlist) if args.shortlist else {}
     if stage == "confirm" and not shortlist_doc:
         raise ValueError("--shortlist is required for confirm stage")
-    if stage == "final" and any(m not in ("none", "lt") for m in methods) and not lock_doc:
+    needs_lock = [m for m in methods if m not in ("none", "lt") or exp.get("lt_params") == "locked"]
+    if stage == "final" and needs_lock and not lock_doc:
         raise ValueError("--locks is required for final comparisons with tuned baselines")
 
     horizons = protocol["screen_horizons"] if stage in ("search", "confirm") else protocol["horizons"]
@@ -701,6 +723,8 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                                                    lt_grid=exp.get("lt_grid"))
                 elif stage == "confirm":
                     candidates = shortlist_candidates(shortlist_doc, dataset, backbone, method)
+                elif method == "lt" and exp.get("lt_params") == "locked":
+                    candidates = locked_candidates(lock_doc, dataset, backbone, method)
                 elif method == "lt":
                     candidates = [supplied_lt_params(selected_base)]
                 elif method == "none":

@@ -194,7 +194,8 @@ class Worker:
 
     def task_key(self, task):
         seconds = sum(self.cost.seconds(c) for c in task.remaining)
-        return (task.priority, seconds if self.args.order == "fastest-first" else -seconds, task.task_id)
+        return (task.priority, task.rank, seconds if self.args.order == "fastest-first" else -seconds,
+                task.task_id)
 
     def claim_next(self):
         chosen = {}

@@ -50,6 +50,20 @@
       "methods": ["lt"],
       "phase": "explore",
       "description": "Exploratory LightNorm tuning on the test split for a few dev cases (configs/lt_explore.json). Used only to design the tuning strategy and parameter baseline; never part of the validation protocol or the reported comparison."
+    },
+    "7_lightnorm_tuning": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["lt"],
+      "phase": "search",
+      "lt_grid": "main",
+      "description": "Validation-only LightNorm search over lt_tuning.main (seed 2021, horizons 96/720); the supplied point reuses its Exp1 final-cell validation MSE."
+    },
+    "8_lightnorm_tuned_final": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["lt"],
+      "phase": "final",
+      "lt_params": "locked",
+      "description": "Test runs (4 horizons x 3 seeds) of the locked LightNorm setting; a lock equal to the supplied setting reuses the Exp1 cells."
     }
   },
   "lt_tuning": {
@@ -64,6 +78,12 @@
       "station_lr": "one ladder step below and above the supplied value; centre = supplied",
       "decision_rule": "Main effect of a factor = mean validation MSE at its high level minus at its low level over the 8 corners, relative to the corner mean, per case and horizon. Keep factors whose |effect| exceeds the seed noise of the supplied setting (3-seed CV of its validation MSE) in a majority of case-horizon pairs, and pick the two with the largest mean |effect|. A factor whose better level is the same in every case-horizon pair is fixed at that level instead of searched. down_ratio {2, 8} is screened only if fewer than two of the three factors qualify. The 6-point grid is (2-level factor) x (3-level factor) and always contains the supplied setting; pilot cases are locked only within that grid."
     },
+    "main": {
+      "kernel_size": ["supplied", 49],
+      "station_lr": [0.0001, 0.0005, 0.001],
+      "fixed": "use_mlp, s_norm, down_ratio, t_ff, affine, t_norm as supplied; backbone and training unchanged",
+      "selection": "lowest mean validation MSE over horizons 96/720 at seed 2021; the supplied point uses its Exp1 final-cell validation MSE"
+    },
     "case_priority": [
       "ETTm1|iTransformer", "Weather|DLinear", "Electricity|DLinear", "ETTm1|DLinear",
       "Electricity|iTransformer", "Traffic|iTransformer", "Weather|iTransformer", "Traffic|DLinear",
@@ -72,7 +92,8 @@
     ],
     "history": [
       "2026-10-08 use_mlp: rule-based (1 on Weather/Electricity/Traffic, 0 elsewhere); differs from the supplied launchers only on ETTm1 x DLinear (1 -> 0). t_ff is excluded (it acts only when use_mlp = 1).",
-      "2026-10-08 station_lr levels restricted to the 1e-n / 5e-n ladder; down_ratio given the lowest priority among the four candidate axes."
+      "2026-10-08 station_lr levels restricted to the 1e-n / 5e-n ladder; down_ratio given the lowest priority among the four candidate axes.",
+      "2026-10-09 Main grid set from the dev-case exploration (Exp6, test split of ETTm1 x iTransformer, Weather x DLinear, ETTm1 x DLinear): station_lr dominated on DLinear and kernel_size on iTransformer, combinations were not additive, s_norm / down_ratio / affine / t_norm did not help, and switching use_mlp off hurt. The pilot's s_norm x station_lr choice and the use_mlp rule are therefore not used; use_mlp stays as supplied."
     ]
   },
   "search_grids": {
