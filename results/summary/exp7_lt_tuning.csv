@@ -55,9 +55,9 @@ Weather,DLinear,93d2997fbc9c,49,0.0005,False,0.379583,0.636999,0.508291,False
 Weather,DLinear,ea987a97319e,49,0.001,False,0.377378,0.631009,0.504194,True
 Weather,iTransformer,87aa258a0845,25,0.0001,True,0.399798,0.606743,0.503270,False
 Weather,iTransformer,32f9bb44b35d,25,0.0005,False,0.390061,0.595015,0.492538,False
-Weather,iTransformer,ea5eb2000ea7,25,0.001,False,0.387869,0.593631,0.490750,False
+Weather,iTransformer,ea5eb2000ea7,25,0.001,False,0.387869,0.593631,0.490750,True
 Weather,iTransformer,4eef908abc6b,49,0.0001,False,0.400265,0.604103,0.502184,False
-Weather,iTransformer,fbf24d7f29ed,49,0.0005,False,0.389803,,,False
+Weather,iTransformer,fbf24d7f29ed,49,0.0005,False,0.389803,0.594623,0.492213,False
 Weather,iTransformer,f8b22adb97c0,49,0.001,False,0.388539,0.594692,0.491616,False
 Electricity,DLinear,bd1237dae9f6,25,0.0001,True,0.118820,0.179746,0.149283,False
 Electricity,DLinear,3aa4f628152b,25,0.0005,False,0.115888,0.177271,0.146580,False
