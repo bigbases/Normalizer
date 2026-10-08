@@ -1,0 +1,14 @@
+{
+ "cells_remaining": 10,
+ "cells_total": 10,
+ "claimed_at": "2026-10-08T21:27:14+00:00",
+ "code_rev": "9c90067",
+ "gpu": "NVIDIA RTX A4000",
+ "gpus": [
+  0
+ ],
+ "heartbeat": "2026-10-08T21:27:14+00:00",
+ "host": "itm21-a4000",
+ "took_over_from": "",
+ "worker": "itm21-a4000"
+}
