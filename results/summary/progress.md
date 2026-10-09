@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-09T18:13:44+00:00 from 2614 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-09T18:38:52+00:00 from 2629 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -9,12 +9,12 @@ Generated 2026-10-09T18:13:44+00:00 from 2614 packaged cells. Regenerate with `p
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 7 | 2 | 11 | 0 | 0 |
+| t3-search | 7 | 3 | 10 | 0 | 0 |
 | t3-confirm | 5 | 0 | 2 | 13 | 0 |
 | t3-lt-search | 3 | 0 | 7 | 0 | 0 |
 | t3-none | 3 | 0 | 7 | 0 | 0 |
 | t3-tuned | 5 | 0 | 0 | 15 | 0 |
-| t3-lt-tuned | 2 | 1 | 0 | 7 | 0 |
+| t3-lt-tuned | 3 | 0 | 0 | 7 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
@@ -74,10 +74,10 @@ Generated 2026-10-09T18:13:44+00:00 from 2614 packaged cells. Regenerate with `p
 | t3-search--ETTh1--TimeXer--ddn | done | 12/12 |  |
 | t3-search--ETTm1--TimeXer--san | done | 12/12 |  |
 | t3-search--ETTm1--TimeXer--ddn | ready | 0/12 |  |
-| t3-search--Weather--TimeXer--san | ready | 0/12 |  |
+| t3-search--Weather--TimeXer--san | claimed | 1/12 | itm21-a4000 |
 | t3-search--Weather--TimeXer--ddn | ready | 0/12 |  |
 | t3-search--Electricity--TimeXer--san | ready | 0/12 |  |
-| t3-search--Electricity--TimeXer--ddn | claimed | 2/12 | itm24-gpu0-pro6000 |
+| t3-search--Electricity--TimeXer--ddn | claimed | 5/12 | itm24-gpu0-pro6000 |
 | t3-search--Traffic--TimeXer--san | ready | 0/12 |  |
 | t3-search--Traffic--TimeXer--ddn | claimed | 0/12 | itm24-pro6000 |
 | t3-search--ETTh1--TimeMixerPP--san | done | 12/12 |  |
@@ -152,7 +152,7 @@ Generated 2026-10-09T18:13:44+00:00 from 2614 packaged cells. Regenerate with `p
 | t3-tuned--Traffic--TimeMixerPP--ddn | blocked | 0/? |  |
 | t3-lt-tuned--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--ETTm1--TimeXer | done | 12/12 |  |
-| t3-lt-tuned--Weather--TimeXer | claimed | 1/12 | itm21-a4000 |
+| t3-lt-tuned--Weather--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--ETTh1--TimeMixerPP | blocked | 0/? |  |
