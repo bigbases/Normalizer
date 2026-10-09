@@ -50,7 +50,7 @@ BASELINE_METHODS = ("revin", "san", "ddn", "fan")
 def candidate_catalog(protocol, bases):
     catalog = {}
     for dataset in protocol["datasets"]:
-        for backbone in ("DLinear", "iTransformer", "TimeMixerPP"):
+        for backbone in ("DLinear", "iTransformer", "TimeMixerPP", "TimeXer"):
             base = selected_base_config(bases, dataset, backbone)
             for method in BASELINE_METHODS:
                 for params in search_candidates(protocol, dataset, method, base):
@@ -167,7 +167,7 @@ def lt_locks(raw_rows, protocol, bases, cases=None):
         "LightNorm: minimum mean validation MSE across horizons 96/720 at seed 2021 among the "
         "6-point grid kernel_size {supplied, 49} x station_lr {1e-4, 5e-4, 1e-3}.")}
     rows = list(raw_rows)
-    cases = cases or [(d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer")]
+    cases = cases or [(d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer", "TimeMixerPP", "TimeXer")]
     for dataset, backbone in cases:
         scored = lt_candidate_scores(rows, protocol, bases, dataset, backbone)
         if not scored or any(v is None for _, vals in scored for v in vals.values()):

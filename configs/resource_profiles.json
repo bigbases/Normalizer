@@ -1,8 +1,12 @@
 {
   "description": "Conservative initial estimates for admission control. Live free memory and utilization are also checked before every launch.",
   "memory_headroom": 1.25,
-  "exclusive_datasets": ["Traffic"],
-  "exclusive_backbones": ["FEDformer"],
+  "exclusive_datasets": [
+    "Traffic"
+  ],
+  "exclusive_backbones": [
+    "FEDformer"
+  ],
   "dataset_memory_multiplier": {
     "ETTh1": 1.0,
     "ETTh2": 1.0,
@@ -43,6 +47,13 @@
       "channel_seq_mib": 1.8,
       "horizon_mib": 2.0,
       "util_percent": 50
+    },
+    "TimeXer": {
+      "base_mib": 1800,
+      "channel_seq_mib": 80,
+      "horizon_mib": 2.0,
+      "util_percent": 40,
+      "note": "fitted 2026-10-09 to RTX A4000 probes at H=720: ETTh1 2.5 GB, ETTm1 2.3 GB, Weather 3.4 GB peak; Electricity and Traffic (batch 16) exceed 16 GB"
     }
   },
   "normalizer_extra_mib": {

@@ -21,13 +21,13 @@
       "description": "Run only missing LightNorm cells; exact completed run IDs are skipped."
     },
     "2_normalizer_search": {
-      "backbones": ["DLinear", "iTransformer", "TimeMixerPP"],
+      "backbones": ["DLinear", "iTransformer", "TimeMixerPP", "TimeXer"],
       "methods": ["revin", "san", "ddn", "fan"],
       "phase": "search",
       "description": "Validation-only screen on horizons 96 and 720 with seed 2021."
     },
     "3_frozen_backbone_comparison": {
-      "backbones": ["DLinear", "iTransformer"],
+      "backbones": ["DLinear", "iTransformer", "TimeMixerPP", "TimeXer"],
       "methods": ["none", "revin", "san", "ddn", "fan", "lt"],
       "phase": "final",
       "description": "All methods share each dataset-backbone architecture and training setup; module settings are locked before test."
@@ -52,14 +52,14 @@
       "description": "Exploratory LightNorm tuning on the test split for a few dev cases (configs/lt_explore.json). Used only to design the tuning strategy and parameter baseline; never part of the validation protocol or the reported comparison."
     },
     "7_lightnorm_tuning": {
-      "backbones": ["DLinear", "iTransformer"],
+      "backbones": ["DLinear", "iTransformer", "TimeMixerPP", "TimeXer"],
       "methods": ["lt"],
       "phase": "search",
       "lt_grid": "main",
       "description": "Validation-only LightNorm search over lt_tuning.main (seed 2021, horizons 96/720); the supplied point reuses its Exp1 final-cell validation MSE."
     },
     "8_lightnorm_tuned_final": {
-      "backbones": ["DLinear", "iTransformer"],
+      "backbones": ["DLinear", "iTransformer", "TimeMixerPP", "TimeXer"],
       "methods": ["lt"],
       "phase": "final",
       "lt_params": "locked",
@@ -82,7 +82,8 @@
       "kernel_size": ["supplied", 49],
       "station_lr": [0.0001, 0.0005, 0.001],
       "fixed": "use_mlp, s_norm, down_ratio, t_ff, affine, t_norm as supplied; backbone and training unchanged",
-      "selection": "lowest mean validation MSE over horizons 96/720 at seed 2021; the supplied point uses its Exp1 final-cell validation MSE"
+      "selection": "lowest mean validation MSE over horizons 96/720 at seed 2021; the supplied point uses its Exp1 final-cell validation MSE",
+      "supplied_from_exp1": ["DLinear", "iTransformer"]
     },
     "case_priority": [
       "ETTm1|iTransformer", "Weather|DLinear", "Electricity|DLinear", "ETTm1|DLinear",

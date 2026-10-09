@@ -250,7 +250,11 @@ def search_candidates(protocol, dataset, method, base, lt_grid=None):
         if lt_grid == "main":
             # The supplied setting's seed-2021 validation MSE is already in its
             # Exp1 final cells (same seed and training), so it is not re-run.
-            return [c for c in lt_main_candidates(protocol, base) if not is_supplied_lt(c, base)]
+            # Backbones without Exp1 cells (TimeMixer++, TimeXer) search it too.
+            grid = lt_main_candidates(protocol, base)
+            if base.get("backbone") in protocol["lt_tuning"]["main"].get("supplied_from_exp1", []):
+                grid = [c for c in grid if not is_supplied_lt(c, base)]
+            return grid
         raise ValueError("LightNorm search needs an experiment with lt_grid 'pilot' or 'main'")
     if method == "fan":
         ks = protocol["datasets"][dataset]["fan_k"]

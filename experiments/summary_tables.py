@@ -191,12 +191,15 @@ def exp7_lt_tuning(out, rows, protocol, bases):
     lock_ids = {}
     table = []
     order = _order(protocol)
-    cases = sorted(((d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer")),
+    cases = sorted(((d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer", "TimeMixerPP", "TimeXer")),
                    key=lambda k: order(*k))
     for ds, bb in cases:
         base = rm.selected_base_config(bases, ds, bb)
         lock = locks.get(f"{ds}|{bb}|lt")
-        for params, vals in sh.lt_candidate_scores(rows, protocol, bases, ds, bb):
+        scored = sh.lt_candidate_scores(rows, protocol, bases, ds, bb)
+        if bb not in ("DLinear", "iTransformer") and not any(v is not None for _, vals in scored for v in vals.values()):
+            continue
+        for params, vals in scored:
             supplied = rm.is_supplied_lt(params, base)
             locked = lock is not None and params == lock
             if locked:
