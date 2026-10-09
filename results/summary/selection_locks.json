@@ -143,6 +143,11 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "ETTm1|TimeXer|san": {
+      "period_len": 4,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "ETTm1|iTransformer|ddn": {
       "hkernel_len": 5,
       "j": 0,
