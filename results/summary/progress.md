@@ -1,13 +1,13 @@
 # Experiment progress
 
-Generated 2026-10-08T22:19:41+00:00 from 2316 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-09T00:05:47+00:00 from 2328 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
-| lt-tuned | 13 | 0 | 1 | 0 | 0 |
+| lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -41,7 +41,7 @@ Generated 2026-10-08T22:19:41+00:00 from 2316 packaged cells. Regenerate with `p
 | lt-tuned--Electricity--DLinear | done | 12/12 |  |
 | lt-tuned--ETTm1--DLinear | done | 12/12 |  |
 | lt-tuned--Electricity--iTransformer | done | 12/12 |  |
-| lt-tuned--Traffic--iTransformer | ready | 0/12 |  |
+| lt-tuned--Traffic--iTransformer | done | 12/12 |  |
 | lt-tuned--Weather--iTransformer | done | 12/12 |  |
 | lt-tuned--Traffic--DLinear | done | 12/12 |  |
 | lt-tuned--ETTh2--iTransformer | done | 12/12 |  |
