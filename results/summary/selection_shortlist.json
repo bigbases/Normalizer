@@ -95,6 +95,36 @@
         "screen_mean_val_mse": 1.0385002758413713
       }
     ],
+    "ETTh1|TimeXer|ddn": [
+      {
+        "candidate_id": "e082b1250cbb",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 49,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.9549773536488055
+      },
+      {
+        "candidate_id": "6f0b0683bbd0",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "kernel_len": 25,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.9613529112324477
+      }
+    ],
     "ETTh1|TimeXer|san": [
       {
         "candidate_id": "61e69def41a7",
