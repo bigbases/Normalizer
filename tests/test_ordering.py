@@ -36,10 +36,13 @@ class OrderingTest(unittest.TestCase):
         model.measured[(cell["dataset"], cell["backbone"], cell["method"], cell["horizon"])] = 1234.0
         self.assertEqual(model.seconds(cell), 1234.0)
 
-    def test_profiled_memory_flags_timemixerpp_weather_as_too_large(self):
+    def test_t3_memory_priors_keep_timexer_traffic_off_16gb_gpus(self):
+        # Fitted to RTX A4000 probes at look-back 96 (TimeXer Traffic peaked at 13.8 GB).
         estimator = ResourceEstimator(load_json(RESOURCE_PROFILES_PATH), CostModel())
-        cell = plan("4_timemixerpp_generalization", datasets="Weather", methods="none")[0]
-        self.assertGreater(estimator.estimate(cell).memory_mib, 80 * 1024)
+        traffic = plan("3_frozen_backbone_comparison", datasets="Traffic", backbones="TimeXer", methods="none")[0]
+        weather = plan("3_frozen_backbone_comparison", datasets="Weather", backbones="TimeMixerPP", methods="none")[0]
+        self.assertGreater(estimator.estimate(traffic).memory_mib + 5000, 16376)
+        self.assertLess(estimator.estimate(weather).memory_mib, 8 * 1024)
 
 
 if __name__ == "__main__":

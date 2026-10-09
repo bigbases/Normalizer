@@ -119,13 +119,17 @@ def nonempty(value):
 
 
 def selected_base_config(base_document, dataset, backbone):
-    # The supplied file predates TimeMixer++; the user requested that its
-    # TimeMixer entries seed the TimeMixer++ backbone setup.
-    source_backbone = "TimeMixer" if backbone == "TimeMixerPP" else backbone
+    # TimeMixer++ rows (T3) are derived from the TimeMixer rows; datasets
+    # without one fall back to the TimeMixer entry.
     matches = [
         row for row in base_document["configs"]
-        if row["dataset"] == dataset and row["backbone"] == source_backbone
+        if row["dataset"] == dataset and row["backbone"] == backbone
     ]
+    if not matches and backbone == "TimeMixerPP":
+        matches = [
+            row for row in base_document["configs"]
+            if row["dataset"] == dataset and row["backbone"] == "TimeMixer"
+        ]
     if len(matches) != 1 or matches[0].get("selection_status") != "selected":
         raise ValueError(f"No selected base config for {dataset}|{backbone}")
     return deepcopy(matches[0])

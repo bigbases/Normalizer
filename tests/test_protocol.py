@@ -16,10 +16,14 @@ class ProtocolTest(unittest.TestCase):
         cls.protocol = load_json(PROTOCOL_PATH)
         cls.bases = load_json(BASE_CONFIGS_PATH)
 
-    def test_timemixerpp_uses_supplied_timemixer_seed_config(self):
+    def test_t3_backbones_use_official_lookback_96(self):
+        # TimeMixer++ rows derive from the TimeMixer rows with look-back 96 and
+        # channel mixing, and TimeXer uses look-back 96 (both official LTF settings).
         cfg = selected_base_config(self.bases, "ETTh1", "TimeMixerPP")
-        self.assertEqual(cfg["backbone"], "TimeMixer")
-        self.assertEqual(cfg["seq_len"], 720)
+        self.assertEqual((cfg["backbone"], cfg["seq_len"], cfg["channel_independence"]), ("TimeMixerPP", 96, 0))
+        tmix = selected_base_config(self.bases, "ETTh1", "TimeMixer")
+        self.assertEqual((cfg["d_model"], cfg["e_layers"]), (tmix["d_model"], tmix["e_layers"]))
+        self.assertEqual(selected_base_config(self.bases, "Traffic", "TimeXer")["seq_len"], 96)
 
     def test_fan_has_equal_capped_search_budget(self):
         base = selected_base_config(self.bases, "ETTh1", "DLinear")

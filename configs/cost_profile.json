@@ -1,301 +1,230 @@
 {
- "description": "Measured on CPU with torch.utils.flop_counter (train forward+backward per sample, batch-size independent) and saved-for-backward activation bytes, using the selected base configs. TimeMixerPP Electricity/Traffic rows are linear extrapolations (marked). Used for shortest-first ordering, admission memory, and budget estimates; refined at run time from measured elapsed times in the manifest.",
- "device": {
-  "name": "A100 80GB PCIe (FP32, deterministic)",
-  "tflops_effective": {
-   "DLinear": 10.0,
-   "iTransformer": 12.0,
-   "TimeMixerPP": 4.0,
-   "default": 8.0
+  "description": "Measured on CPU with torch.utils.flop_counter (train forward+backward per sample, batch-size independent) and saved-for-backward activation bytes, using the selected base configs. TimeMixerPP Electricity/Traffic rows are linear extrapolations (marked). Used for shortest-first ordering, admission memory, and budget estimates; refined at run time from measured elapsed times in the manifest.",
+  "device": {
+    "name": "A100 80GB PCIe (FP32, deterministic)",
+    "tflops_effective": {
+      "DLinear": 10.0,
+      "iTransformer": 12.0,
+      "TimeMixerPP": 4.0,
+      "default": 8.0
+    },
+    "host_to_device_gbps": 3.0,
+    "iter_overhead_s": {
+      "DLinear": 0.004,
+      "iTransformer": 0.007,
+      "TimeMixerPP": 0.04,
+      "default": 0.01
+    },
+    "context_mib": 700,
+    "activation_safety": 1.35
   },
-  "host_to_device_gbps": 3.0,
-  "iter_overhead_s": {
-   "DLinear": 0.004,
-   "iTransformer": 0.007,
-   "TimeMixerPP": 0.04,
-   "default": 0.01
+  "datasets": {
+    "ETTh1": {
+      "split": "ett_hour",
+      "rows": 17420,
+      "csv_mb": 2.6
+    },
+    "ETTh2": {
+      "split": "ett_hour",
+      "rows": 17420,
+      "csv_mb": 2.4
+    },
+    "ETTm1": {
+      "split": "ett_minute",
+      "rows": 69680,
+      "csv_mb": 10.4
+    },
+    "ETTm2": {
+      "split": "ett_minute",
+      "rows": 69680,
+      "csv_mb": 9.7
+    },
+    "Weather": {
+      "split": "custom",
+      "rows": 52696,
+      "csv_mb": 7.2
+    },
+    "Electricity": {
+      "split": "custom",
+      "rows": 26304,
+      "csv_mb": 95.6
+    },
+    "Traffic": {
+      "split": "custom",
+      "rows": 17544,
+      "csv_mb": 136.5
+    }
   },
-  "context_mib": 700,
-  "activation_safety": 1.35
- },
- "datasets": {
-  "ETTh1": {
-   "split": "ett_hour",
-   "rows": 17420,
-   "csv_mb": 2.6
+  "normalizers": {
+    "mflop_per_channel_sample": {
+      "none": 0.0,
+      "revin": 0.0,
+      "san": 3.0,
+      "ddn": 80.0,
+      "fan": 1.2,
+      "lt": 0.15
+    },
+    "iter_overhead_s": {
+      "none": 0.0,
+      "revin": 0.0003,
+      "san": 0.0012,
+      "ddn": 0.003,
+      "fan": 0.0012,
+      "lt": 0.0012
+    },
+    "pretrain": {
+      "none": false,
+      "revin": false,
+      "san": true,
+      "ddn": true,
+      "fan": false,
+      "lt": true
+    }
   },
-  "ETTh2": {
-   "split": "ett_hour",
-   "rows": 17420,
-   "csv_mb": 2.4
+  "expected_backbone_epochs": 7,
+  "profiles": {
+    "ETTh1|DLinear|720": {
+      "gflop_per_sample": 0.088,
+      "act_mib_per_sample": 2.92,
+      "params_m": 2.65
+    },
+    "ETTh1|DLinear|96": {
+      "gflop_per_sample": 0.0284,
+      "act_mib_per_sample": 0.45,
+      "params_m": 0.951
+    },
+    "ETTh1|iTransformer|720": {
+      "gflop_per_sample": 0.0235,
+      "act_mib_per_sample": 0.82,
+      "params_m": 0.385
+    },
+    "ETTh1|iTransformer|96": {
+      "gflop_per_sample": 0.0182,
+      "act_mib_per_sample": 0.64,
+      "params_m": 0.304
+    },
+    "ETTh2|DLinear|720": {
+      "gflop_per_sample": 0.088,
+      "act_mib_per_sample": 2.92,
+      "params_m": 2.65
+    },
+    "ETTh2|DLinear|96": {
+      "gflop_per_sample": 0.0284,
+      "act_mib_per_sample": 0.45,
+      "params_m": 0.951
+    },
+    "ETTh2|iTransformer|720": {
+      "gflop_per_sample": 0.0235,
+      "act_mib_per_sample": 0.82,
+      "params_m": 0.385
+    },
+    "ETTh2|iTransformer|96": {
+      "gflop_per_sample": 0.0182,
+      "act_mib_per_sample": 0.64,
+      "params_m": 0.304
+    },
+    "ETTm1|DLinear|720": {
+      "gflop_per_sample": 0.088,
+      "act_mib_per_sample": 2.92,
+      "params_m": 2.65
+    },
+    "ETTm1|DLinear|96": {
+      "gflop_per_sample": 0.0284,
+      "act_mib_per_sample": 0.45,
+      "params_m": 0.951
+    },
+    "ETTm1|iTransformer|720": {
+      "gflop_per_sample": 0.0257,
+      "act_mib_per_sample": 0.84,
+      "params_m": 0.385
+    },
+    "ETTm1|iTransformer|96": {
+      "gflop_per_sample": 0.0199,
+      "act_mib_per_sample": 0.66,
+      "params_m": 0.304
+    },
+    "ETTm2|DLinear|720": {
+      "gflop_per_sample": 0.088,
+      "act_mib_per_sample": 2.92,
+      "params_m": 2.65
+    },
+    "ETTm2|DLinear|96": {
+      "gflop_per_sample": 0.0284,
+      "act_mib_per_sample": 0.45,
+      "params_m": 0.951
+    },
+    "ETTm2|iTransformer|720": {
+      "gflop_per_sample": 0.0257,
+      "act_mib_per_sample": 0.84,
+      "params_m": 0.385
+    },
+    "ETTm2|iTransformer|96": {
+      "gflop_per_sample": 0.0199,
+      "act_mib_per_sample": 0.66,
+      "params_m": 0.304
+    },
+    "Electricity|DLinear|720": {
+      "gflop_per_sample": 4.0342,
+      "act_mib_per_sample": 7.91,
+      "params_m": 2.65
+    },
+    "Electricity|DLinear|96": {
+      "gflop_per_sample": 1.3036,
+      "act_mib_per_sample": 3.94,
+      "params_m": 0.951
+    },
+    "Electricity|iTransformer|720": {
+      "gflop_per_sample": 12.3462,
+      "act_mib_per_sample": 71.87,
+      "params_m": 5.473
+    },
+    "Electricity|iTransformer|96": {
+      "gflop_per_sample": 11.7232,
+      "act_mib_per_sample": 69.73,
+      "params_m": 5.153
+    },
+    "Traffic|DLinear|720": {
+      "gflop_per_sample": 10.8332,
+      "act_mib_per_sample": 16.49,
+      "params_m": 2.65
+    },
+    "Traffic|DLinear|96": {
+      "gflop_per_sample": 3.5007,
+      "act_mib_per_sample": 9.95,
+      "params_m": 0.951
+    },
+    "Traffic|iTransformer|720": {
+      "gflop_per_sample": 54.3137,
+      "act_mib_per_sample": 401.09,
+      "params_m": 7.051
+    },
+    "Traffic|iTransformer|96": {
+      "gflop_per_sample": 52.6537,
+      "act_mib_per_sample": 396.38,
+      "params_m": 6.731
+    },
+    "Weather|DLinear|720": {
+      "gflop_per_sample": 0.2639,
+      "act_mib_per_sample": 3.15,
+      "params_m": 2.65
+    },
+    "Weather|DLinear|96": {
+      "gflop_per_sample": 0.0853,
+      "act_mib_per_sample": 0.61,
+      "params_m": 0.951
+    },
+    "Weather|iTransformer|720": {
+      "gflop_per_sample": 0.8444,
+      "act_mib_per_sample": 12.53,
+      "params_m": 5.473
+    },
+    "Weather|iTransformer|96": {
+      "gflop_per_sample": 0.7946,
+      "act_mib_per_sample": 11.82,
+      "params_m": 5.153
+    }
   },
-  "ETTm1": {
-   "split": "ett_minute",
-   "rows": 69680,
-   "csv_mb": 10.4
-  },
-  "ETTm2": {
-   "split": "ett_minute",
-   "rows": 69680,
-   "csv_mb": 9.7
-  },
-  "Weather": {
-   "split": "custom",
-   "rows": 52696,
-   "csv_mb": 7.2
-  },
-  "Electricity": {
-   "split": "custom",
-   "rows": 26304,
-   "csv_mb": 95.6
-  },
-  "Traffic": {
-   "split": "custom",
-   "rows": 17544,
-   "csv_mb": 136.5
-  }
- },
- "normalizers": {
-  "mflop_per_channel_sample": {
-   "none": 0.0,
-   "revin": 0.0,
-   "san": 3.0,
-   "ddn": 80.0,
-   "fan": 1.2,
-   "lt": 0.15
-  },
-  "iter_overhead_s": {
-   "none": 0.0,
-   "revin": 0.0003,
-   "san": 0.0012,
-   "ddn": 0.003,
-   "fan": 0.0012,
-   "lt": 0.0012
-  },
-  "pretrain": {
-   "none": false,
-   "revin": false,
-   "san": true,
-   "ddn": true,
-   "fan": false,
-   "lt": true
-  }
- },
- "expected_backbone_epochs": 7,
- "profiles": {
-  "ETTh1|DLinear|720": {
-   "gflop_per_sample": 0.088,
-   "act_mib_per_sample": 2.92,
-   "params_m": 2.65
-  },
-  "ETTh1|DLinear|96": {
-   "gflop_per_sample": 0.0284,
-   "act_mib_per_sample": 0.45,
-   "params_m": 0.951
-  },
-  "ETTh1|TimeMixerPP|720": {
-   "gflop_per_sample": 227.108,
-   "act_mib_per_sample": 557.35,
-   "params_m": 2.185
-  },
-  "ETTh1|TimeMixerPP|96": {
-   "gflop_per_sample": 229.1225,
-   "act_mib_per_sample": 634.79,
-   "params_m": 1.34
-  },
-  "ETTh1|iTransformer|720": {
-   "gflop_per_sample": 0.0235,
-   "act_mib_per_sample": 0.82,
-   "params_m": 0.385
-  },
-  "ETTh1|iTransformer|96": {
-   "gflop_per_sample": 0.0182,
-   "act_mib_per_sample": 0.64,
-   "params_m": 0.304
-  },
-  "ETTh2|DLinear|720": {
-   "gflop_per_sample": 0.088,
-   "act_mib_per_sample": 2.92,
-   "params_m": 2.65
-  },
-  "ETTh2|DLinear|96": {
-   "gflop_per_sample": 0.0284,
-   "act_mib_per_sample": 0.45,
-   "params_m": 0.951
-  },
-  "ETTh2|TimeMixerPP|720": {
-   "gflop_per_sample": 228.554,
-   "act_mib_per_sample": 640.4,
-   "params_m": 2.185
-  },
-  "ETTh2|TimeMixerPP|96": {
-   "gflop_per_sample": 227.7189,
-   "act_mib_per_sample": 621.43,
-   "params_m": 1.34
-  },
-  "ETTh2|iTransformer|720": {
-   "gflop_per_sample": 0.0235,
-   "act_mib_per_sample": 0.82,
-   "params_m": 0.385
-  },
-  "ETTh2|iTransformer|96": {
-   "gflop_per_sample": 0.0182,
-   "act_mib_per_sample": 0.64,
-   "params_m": 0.304
-  },
-  "ETTm1|DLinear|720": {
-   "gflop_per_sample": 0.088,
-   "act_mib_per_sample": 2.92,
-   "params_m": 2.65
-  },
-  "ETTm1|DLinear|96": {
-   "gflop_per_sample": 0.0284,
-   "act_mib_per_sample": 0.45,
-   "params_m": 0.951
-  },
-  "ETTm1|TimeMixerPP|720": {
-   "gflop_per_sample": 230.1365,
-   "act_mib_per_sample": 682.76,
-   "params_m": 2.185
-  },
-  "ETTm1|TimeMixerPP|96": {
-   "gflop_per_sample": 227.5062,
-   "act_mib_per_sample": 612.29,
-   "params_m": 1.34
-  },
-  "ETTm1|iTransformer|720": {
-   "gflop_per_sample": 0.0257,
-   "act_mib_per_sample": 0.84,
-   "params_m": 0.385
-  },
-  "ETTm1|iTransformer|96": {
-   "gflop_per_sample": 0.0199,
-   "act_mib_per_sample": 0.66,
-   "params_m": 0.304
-  },
-  "ETTm2|DLinear|720": {
-   "gflop_per_sample": 0.088,
-   "act_mib_per_sample": 2.92,
-   "params_m": 2.65
-  },
-  "ETTm2|DLinear|96": {
-   "gflop_per_sample": 0.0284,
-   "act_mib_per_sample": 0.45,
-   "params_m": 0.951
-  },
-  "ETTm2|TimeMixerPP|720": {
-   "gflop_per_sample": 451.6543,
-   "act_mib_per_sample": 829.58,
-   "params_m": 3.364
-  },
-  "ETTm2|TimeMixerPP|96": {
-   "gflop_per_sample": 458.1839,
-   "act_mib_per_sample": 847.18,
-   "params_m": 2.519
-  },
-  "ETTm2|iTransformer|720": {
-   "gflop_per_sample": 0.0257,
-   "act_mib_per_sample": 0.84,
-   "params_m": 0.385
-  },
-  "ETTm2|iTransformer|96": {
-   "gflop_per_sample": 0.0199,
-   "act_mib_per_sample": 0.66,
-   "params_m": 0.304
-  },
-  "Electricity|DLinear|720": {
-   "gflop_per_sample": 4.0342,
-   "act_mib_per_sample": 7.91,
-   "params_m": 2.65
-  },
-  "Electricity|DLinear|96": {
-   "gflop_per_sample": 1.3036,
-   "act_mib_per_sample": 3.94,
-   "params_m": 0.951
-  },
-  "Electricity|TimeMixerPP|720": {
-   "gflop_per_sample": 18129.8,
-   "act_mib_per_sample": 40299.0,
-   "params_m": 2.774,
-   "extrapolated": true
-  },
-  "Electricity|TimeMixerPP|96": {
-   "gflop_per_sample": 18125.2,
-   "act_mib_per_sample": 40553.3,
-   "params_m": 1.929,
-   "extrapolated": true
-  },
-  "Electricity|iTransformer|720": {
-   "gflop_per_sample": 12.3462,
-   "act_mib_per_sample": 71.87,
-   "params_m": 5.473
-  },
-  "Electricity|iTransformer|96": {
-   "gflop_per_sample": 11.7232,
-   "act_mib_per_sample": 69.73,
-   "params_m": 5.153
-  },
-  "Traffic|DLinear|720": {
-   "gflop_per_sample": 10.8332,
-   "act_mib_per_sample": 16.49,
-   "params_m": 2.65
-  },
-  "Traffic|DLinear|96": {
-   "gflop_per_sample": 3.5007,
-   "act_mib_per_sample": 9.95,
-   "params_m": 0.951
-  },
-  "Traffic|TimeMixerPP|720": {
-   "gflop_per_sample": 194740.0,
-   "act_mib_per_sample": 216434.2,
-   "params_m": 11.096,
-   "extrapolated": true
-  },
-  "Traffic|TimeMixerPP|96": {
-   "gflop_per_sample": 194690.4,
-   "act_mib_per_sample": 217800.3,
-   "params_m": 7.716,
-   "extrapolated": true
-  },
-  "Traffic|iTransformer|720": {
-   "gflop_per_sample": 54.3137,
-   "act_mib_per_sample": 401.09,
-   "params_m": 7.051
-  },
-  "Traffic|iTransformer|96": {
-   "gflop_per_sample": 52.6537,
-   "act_mib_per_sample": 396.38,
-   "params_m": 6.731
-  },
-  "Weather|DLinear|720": {
-   "gflop_per_sample": 0.2639,
-   "act_mib_per_sample": 3.15,
-   "params_m": 2.65
-  },
-  "Weather|DLinear|96": {
-   "gflop_per_sample": 0.0853,
-   "act_mib_per_sample": 0.61,
-   "params_m": 0.951
-  },
-  "Weather|TimeMixerPP|720": {
-   "gflop_per_sample": 1186.0617,
-   "act_mib_per_sample": 2636.38,
-   "params_m": 2.774
-  },
-  "Weather|TimeMixerPP|96": {
-   "gflop_per_sample": 1185.7596,
-   "act_mib_per_sample": 2653.02,
-   "params_m": 1.929
-  },
-  "Weather|iTransformer|720": {
-   "gflop_per_sample": 0.8444,
-   "act_mib_per_sample": 12.53,
-   "params_m": 5.473
-  },
-  "Weather|iTransformer|96": {
-   "gflop_per_sample": 0.7946,
-   "act_mib_per_sample": 11.82,
-   "params_m": 5.153
-  }
- }
+  "notes": [
+    "2026-10-09: TimeMixerPP profiles removed; they described look-back 720 with channel independence, which T3 no longer uses."
+  ]
 }
