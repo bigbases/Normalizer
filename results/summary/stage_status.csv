@@ -56,7 +56,7 @@ t3-search,Weather,TimeXer,ddn,ready,0,12,
 t3-search,Electricity,TimeXer,san,ready,0,12,
 t3-search,Electricity,TimeXer,ddn,ready,0,12,
 t3-search,Traffic,TimeXer,san,ready,0,12,
-t3-search,Traffic,TimeXer,ddn,ready,0,12,
+t3-search,Traffic,TimeXer,ddn,claimed,0,12,itm24-pro6000
 t3-search,ETTh1,TimeMixerPP,san,done,12,12,
 t3-search,ETTh1,TimeMixerPP,ddn,done,12,12,
 t3-search,ETTm1,TimeMixerPP,san,ready,0,12,
@@ -64,9 +64,9 @@ t3-search,ETTm1,TimeMixerPP,ddn,ready,0,12,
 t3-search,Weather,TimeMixerPP,san,ready,0,12,
 t3-search,Weather,TimeMixerPP,ddn,ready,0,12,
 t3-search,Electricity,TimeMixerPP,san,ready,0,12,
-t3-search,Electricity,TimeMixerPP,ddn,claimed,3,12,itm24-gpu0-pro6000
+t3-search,Electricity,TimeMixerPP,ddn,claimed,6,12,itm24-gpu0-pro6000
 t3-search,Traffic,TimeMixerPP,san,ready,0,12,
-t3-search,Traffic,TimeMixerPP,ddn,claimed,4,12,itm24-pro6000
+t3-search,Traffic,TimeMixerPP,ddn,claimed,8,12,itm24-pro6000
 t3-confirm,ETTh1,TimeXer,san,done,4,4,
 t3-confirm,ETTh1,TimeXer,ddn,done,4,4,
 t3-confirm,ETTm1,TimeXer,san,blocked,0,,
@@ -88,7 +88,7 @@ t3-confirm,Electricity,TimeMixerPP,ddn,blocked,0,,
 t3-confirm,Traffic,TimeMixerPP,san,blocked,0,,
 t3-confirm,Traffic,TimeMixerPP,ddn,blocked,0,,
 t3-lt-search,ETTh1,TimeXer,lt,done,12,12,
-t3-lt-search,ETTm1,TimeXer,lt,ready,0,12,
+t3-lt-search,ETTm1,TimeXer,lt,claimed,1,12,itm21-a4000
 t3-lt-search,Weather,TimeXer,lt,ready,0,12,
 t3-lt-search,Electricity,TimeXer,lt,ready,0,12,
 t3-lt-search,Traffic,TimeXer,lt,ready,0,12,
@@ -118,7 +118,7 @@ t3-tuned,Electricity,TimeXer,ddn,blocked,0,,
 t3-tuned,Traffic,TimeXer,san,blocked,0,,
 t3-tuned,Traffic,TimeXer,ddn,blocked,0,,
 t3-tuned,ETTh1,TimeMixerPP,san,done,12,12,
-t3-tuned,ETTh1,TimeMixerPP,ddn,claimed,0,12,itm21-a4000
+t3-tuned,ETTh1,TimeMixerPP,ddn,done,12,12,
 t3-tuned,ETTm1,TimeMixerPP,san,blocked,0,,
 t3-tuned,ETTm1,TimeMixerPP,ddn,blocked,0,,
 t3-tuned,Weather,TimeMixerPP,san,blocked,0,,
