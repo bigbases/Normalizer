@@ -23,6 +23,15 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "ETTh1|TimeXer|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "kernel_len": 49,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "ETTh1|TimeXer|san": {
       "period_len": 4,
       "station_lr": 0.0001,
