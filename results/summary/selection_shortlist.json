@@ -1005,6 +1005,20 @@
     ],
     "Electricity|TimeXer|ddn": [
       {
+        "candidate_id": "1c7b90df1d3b",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 0,
+          "kernel_len": 49,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.15761519686769954
+      },
+      {
         "candidate_id": "f841fa3c59bc",
         "n_cells": 2,
         "params": {
@@ -1017,20 +1031,6 @@
           "wavelet": "coif3"
         },
         "screen_mean_val_mse": 0.1606171430809037
-      },
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.16083110587073945
       }
     ],
     "Electricity|iTransformer|ddn": [
