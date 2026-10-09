@@ -19,6 +19,12 @@ ETTh1,DLinear,san,61e69def41a7,"{""period_len"": 4, ""station_lr"": 0.0001, ""st
 ETTh1,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.676997,1.404146,,,1.040572,,False,False
 ETTh1,DLinear,san,f6904fc69cd0,"{""period_len"": 8, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.676008,1.400993,0.676445,1.401320,1.038500,1.038692,True,False
 ETTh1,DLinear,san,fa33e70a6a3a,"{""period_len"": 4, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.685537,1.414376,,,1.049957,,False,False
+ETTh1,TimeMixerPP,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.795986,1.679315,,,1.237651,,False,False
+ETTh1,TimeMixerPP,san,48f6c1ced712,"{""period_len"": 8, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.757967,1.608744,,,1.183355,,False,False
+ETTh1,TimeMixerPP,san,61e69def41a7,"{""period_len"": 4, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.709354,1.521458,,,1.115406,,True,False
+ETTh1,TimeMixerPP,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.783351,1.644370,,,1.213861,,False,False
+ETTh1,TimeMixerPP,san,f6904fc69cd0,"{""period_len"": 8, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.745343,1.573701,,,1.159522,,False,False
+ETTh1,TimeMixerPP,san,fa33e70a6a3a,"{""period_len"": 4, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.721661,1.555997,,,1.138829,,True,False
 ETTh1,TimeXer,ddn,1c7b90df1d3b,"{""hkernel_len"": 5, ""j"": 0, ""kernel_len"": 49, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.664749,1.452381,,,1.058565,,False,False
 ETTh1,TimeXer,ddn,43cd745f71d8,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.661158,1.428236,,,1.044697,,False,False
 ETTh1,TimeXer,ddn,44e9a626dff4,"{""hkernel_len"": 5, ""j"": 0, ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.663262,1.423783,,,1.043522,,False,False
