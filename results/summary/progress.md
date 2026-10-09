@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-09T06:17:32+00:00 from 2373 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-09T06:23:16+00:00 from 2376 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -9,11 +9,11 @@ Generated 2026-10-09T06:17:32+00:00 from 2373 packaged cells. Regenerate with `p
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 1 | 0 | 19 | 0 | 0 |
-| t3-confirm | 0 | 1 | 0 | 19 | 0 |
+| t3-search | 1 | 1 | 18 | 0 | 0 |
+| t3-confirm | 1 | 0 | 0 | 19 | 0 |
 | t3-lt-search | 0 | 0 | 10 | 0 | 0 |
 | t3-none | 1 | 0 | 9 | 0 | 0 |
-| t3-tuned | 0 | 0 | 0 | 20 | 0 |
+| t3-tuned | 0 | 0 | 1 | 19 | 0 |
 | t3-lt-tuned | 0 | 0 | 0 | 10 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -71,7 +71,7 @@ Generated 2026-10-09T06:17:32+00:00 from 2373 packaged cells. Regenerate with `p
 | exp1-lt--Traffic--DLinear | done | 12/12 |  |
 | exp1-lt--Traffic--iTransformer | done | 12/12 |  |
 | t3-search--ETTh1--TimeXer--san | done | 12/12 |  |
-| t3-search--ETTh1--TimeXer--ddn | ready | 0/12 |  |
+| t3-search--ETTh1--TimeXer--ddn | claimed | 0/12 | itm21-a4000 |
 | t3-search--ETTm1--TimeXer--san | ready | 0/12 |  |
 | t3-search--ETTm1--TimeXer--ddn | ready | 0/12 |  |
 | t3-search--Weather--TimeXer--san | ready | 0/12 |  |
@@ -90,7 +90,7 @@ Generated 2026-10-09T06:17:32+00:00 from 2373 packaged cells. Regenerate with `p
 | t3-search--Electricity--TimeMixerPP--ddn | ready | 0/12 |  |
 | t3-search--Traffic--TimeMixerPP--san | ready | 0/12 |  |
 | t3-search--Traffic--TimeMixerPP--ddn | ready | 0/12 |  |
-| t3-confirm--ETTh1--TimeXer--san | claimed | 1/4 | itm21-a4000 |
+| t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | blocked | 0/? |  |
 | t3-confirm--ETTm1--TimeXer--san | blocked | 0/? |  |
 | t3-confirm--ETTm1--TimeXer--ddn | blocked | 0/? |  |
@@ -130,7 +130,7 @@ Generated 2026-10-09T06:17:32+00:00 from 2373 packaged cells. Regenerate with `p
 | t3-none--Weather--TimeMixerPP | ready | 0/12 |  |
 | t3-none--Electricity--TimeMixerPP | ready | 0/12 |  |
 | t3-none--Traffic--TimeMixerPP | ready | 0/12 |  |
-| t3-tuned--ETTh1--TimeXer--san | blocked | 0/? |  |
+| t3-tuned--ETTh1--TimeXer--san | ready | 0/12 |  |
 | t3-tuned--ETTh1--TimeXer--ddn | blocked | 0/? |  |
 | t3-tuned--ETTm1--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--ETTm1--TimeXer--ddn | blocked | 0/? |  |
