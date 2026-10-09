@@ -64,12 +64,12 @@ t3-search,ETTm1,TimeMixerPP,ddn,ready,0,12,
 t3-search,Weather,TimeMixerPP,san,ready,0,12,
 t3-search,Weather,TimeMixerPP,ddn,ready,0,12,
 t3-search,Electricity,TimeMixerPP,san,ready,0,12,
-t3-search,Electricity,TimeMixerPP,ddn,claimed,8,12,itm24-gpu0-pro6000
+t3-search,Electricity,TimeMixerPP,ddn,claimed,9,12,itm24-gpu0-pro6000
 t3-search,Traffic,TimeMixerPP,san,ready,0,12,
 t3-search,Traffic,TimeMixerPP,ddn,claimed,8,12,itm24-pro6000
 t3-confirm,ETTh1,TimeXer,san,done,4,4,
 t3-confirm,ETTh1,TimeXer,ddn,done,4,4,
-t3-confirm,ETTm1,TimeXer,san,ready,0,4,
+t3-confirm,ETTm1,TimeXer,san,claimed,0,4,itm21-a4000
 t3-confirm,ETTm1,TimeXer,ddn,blocked,0,,
 t3-confirm,Weather,TimeXer,san,blocked,0,,
 t3-confirm,Weather,TimeXer,ddn,blocked,0,,
@@ -128,7 +128,7 @@ t3-tuned,Electricity,TimeMixerPP,ddn,blocked,0,,
 t3-tuned,Traffic,TimeMixerPP,san,blocked,0,,
 t3-tuned,Traffic,TimeMixerPP,ddn,blocked,0,,
 t3-lt-tuned,ETTh1,TimeXer,lt,done,12,12,
-t3-lt-tuned,ETTm1,TimeXer,lt,claimed,2,12,itm21-a4000
+t3-lt-tuned,ETTm1,TimeXer,lt,done,12,12,
 t3-lt-tuned,Weather,TimeXer,lt,blocked,0,,
 t3-lt-tuned,Electricity,TimeXer,lt,blocked,0,,
 t3-lt-tuned,Traffic,TimeXer,lt,blocked,0,,
