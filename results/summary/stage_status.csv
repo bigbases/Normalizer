@@ -54,9 +54,9 @@ t3-search,ETTm1,TimeXer,ddn,ready,0,12,
 t3-search,Weather,TimeXer,san,done,12,12,
 t3-search,Weather,TimeXer,ddn,ready,0,12,
 t3-search,Electricity,TimeXer,san,ready,0,12,
-t3-search,Electricity,TimeXer,ddn,claimed,5,12,itm24-gpu0-pro6000
+t3-search,Electricity,TimeXer,ddn,claimed,10,12,itm24-gpu0-pro6000
 t3-search,Traffic,TimeXer,san,ready,0,12,
-t3-search,Traffic,TimeXer,ddn,claimed,0,12,itm24-pro6000
+t3-search,Traffic,TimeXer,ddn,claimed,5,12,itm24-pro6000
 t3-search,ETTh1,TimeMixerPP,san,done,12,12,
 t3-search,ETTh1,TimeMixerPP,ddn,done,12,12,
 t3-search,ETTm1,TimeMixerPP,san,ready,0,12,
@@ -71,7 +71,7 @@ t3-confirm,ETTh1,TimeXer,san,done,4,4,
 t3-confirm,ETTh1,TimeXer,ddn,done,4,4,
 t3-confirm,ETTm1,TimeXer,san,done,4,4,
 t3-confirm,ETTm1,TimeXer,ddn,blocked,0,,
-t3-confirm,Weather,TimeXer,san,ready,0,4,
+t3-confirm,Weather,TimeXer,san,claimed,3,4,itm21-a4000
 t3-confirm,Weather,TimeXer,ddn,blocked,0,,
 t3-confirm,Electricity,TimeXer,san,blocked,0,,
 t3-confirm,Electricity,TimeXer,ddn,blocked,0,,
@@ -86,7 +86,7 @@ t3-confirm,Weather,TimeMixerPP,ddn,blocked,0,,
 t3-confirm,Electricity,TimeMixerPP,san,blocked,0,,
 t3-confirm,Electricity,TimeMixerPP,ddn,ready,0,4,
 t3-confirm,Traffic,TimeMixerPP,san,blocked,0,,
-t3-confirm,Traffic,TimeMixerPP,ddn,ready,0,4,
+t3-confirm,Traffic,TimeMixerPP,ddn,claimed,0,4,itm24-gpu0-pro6000
 t3-lt-search,ETTh1,TimeXer,lt,done,12,12,
 t3-lt-search,ETTm1,TimeXer,lt,done,12,12,
 t3-lt-search,Weather,TimeXer,lt,done,12,12,
@@ -100,9 +100,9 @@ t3-lt-search,Traffic,TimeMixerPP,lt,ready,0,12,
 t3-none,ETTh1,TimeXer,none,done,12,12,
 t3-none,ETTm1,TimeXer,none,done,12,12,
 t3-none,Weather,TimeXer,none,done,12,12,
-t3-none,Electricity,TimeXer,none,ready,0,12,
+t3-none,Electricity,TimeXer,none,claimed,0,12,itm21-a4000
 t3-none,Traffic,TimeXer,none,ready,0,12,
-t3-none,ETTh1,TimeMixerPP,none,claimed,1,12,itm21-a4000
+t3-none,ETTh1,TimeMixerPP,none,done,12,12,
 t3-none,ETTm1,TimeMixerPP,none,ready,0,12,
 t3-none,Weather,TimeMixerPP,none,ready,0,12,
 t3-none,Electricity,TimeMixerPP,none,ready,0,12,
