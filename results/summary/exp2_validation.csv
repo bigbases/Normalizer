@@ -209,7 +209,12 @@ Weather,DLinear,san,61e69def41a7,"{""period_len"": 4, ""station_lr"": 0.0001, ""
 Weather,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.377679,0.608601,0.376981,0.610382,0.493140,0.493411,True,False
 Weather,DLinear,san,f6904fc69cd0,"{""period_len"": 8, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.377380,0.610301,,,0.493840,,False,False
 Weather,DLinear,san,fa33e70a6a3a,"{""period_len"": 4, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.382386,0.627661,,,0.505023,,False,False
-Weather,TimeXer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.392556,,,,,,False,False
+Weather,TimeXer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.392556,0.652380,,,0.522468,,False,False
+Weather,TimeXer,san,48f6c1ced712,"{""period_len"": 8, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.402112,0.658748,,,0.530430,,False,False
+Weather,TimeXer,san,61e69def41a7,"{""period_len"": 4, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.400473,0.642822,,,0.521647,,False,False
+Weather,TimeXer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.387092,0.633810,,,0.510451,,True,False
+Weather,TimeXer,san,f6904fc69cd0,"{""period_len"": 8, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.395523,0.637798,,,0.516661,,True,False
+Weather,TimeXer,san,fa33e70a6a3a,"{""period_len"": 4, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.407914,0.664320,,,0.536117,,False,False
 Weather,iTransformer,ddn,1c7b90df1d3b,"{""hkernel_len"": 5, ""j"": 0, ""kernel_len"": 49, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.385958,0.583799,0.374426,0.593393,0.484879,0.484394,True,True
 Weather,iTransformer,ddn,43cd745f71d8,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.377196,0.596243,,,0.486720,,False,False
 Weather,iTransformer,ddn,44e9a626dff4,"{""hkernel_len"": 5, ""j"": 0, ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.377046,0.598995,,,0.488020,,False,False
