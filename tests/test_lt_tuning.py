@@ -72,6 +72,19 @@ class LightNormPilotTest(unittest.TestCase):
         doc = sh.select(sh.validation_rows(rows.values()), "shortlist", self.protocol, self.bases)
         self.assertEqual(list(doc["shortlists"]), ["ETTm1|DLinear|san"])
 
+    def test_selection_ignores_validation_cells_of_retired_backbones(self):
+        # TimeMixer++ search cells stay in the store after the backbone was retired.
+        rows = fake_rows(self.cells("2_normalizer_search", "search", "ETTm1", "DLinear", ["san"]))
+        for i, cid in enumerate(("e082b1250cbb", "f00000000000")):
+            for h in (96, 720):
+                rid = f"search-ETTh1-TimeMixerPP-ddn-h{h}-s2021-c{cid}"
+                rows[rid] = dict(RunID=rid, CandidateID=cid, Phase="search", Split="validation", Dataset="ETTh1",
+                                 Backbone="TimeMixerPP", Horizon=str(h), Seed="2021", BestValMSE=str(0.4 + i),
+                                 UseNorm="ddn", MSE="", MAE="")
+        for mode, key in (("shortlist", "shortlists"), ("lock", "locks")):
+            doc = sh.select(sh.validation_rows(rows.values()), mode, self.protocol, self.bases)
+            self.assertFalse([k for k in doc[key] if "TimeMixerPP" in k])
+
     def test_pilot_summary_effects(self):
         rows = {}
         for dataset, backbone in self.protocol["lt_tuning"]["pilot"]["cases"]:

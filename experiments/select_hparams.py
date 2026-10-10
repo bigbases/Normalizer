@@ -98,6 +98,10 @@ def select(rows, mode, protocol, bases):
     ranked = defaultdict(list)
     expected = 2 if mode == "shortlist" else 4
     for key, items in grouped.items():
+        # Validation cells of retired configurations (e.g. TimeMixer++) stay in
+        # the store but are no longer candidates.
+        if key not in catalog:
+            continue
         # Duplicate exact cells are a protocol error rather than extra evidence.
         unique_cells = {(r["Phase"], r["Horizon"], r["Seed"]): r for r in items}
         if len(unique_cells) != expected:
