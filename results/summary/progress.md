@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-10T06:15:50+00:00 from 2730 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-10T06:30:02+00:00 from 2734 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -10,10 +10,10 @@ Generated 2026-10-10T06:15:50+00:00 from 2730 packaged cells. Regenerate with `p
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 12 | 0 | 8 | 0 | 0 |
-| t3-confirm | 8 | 1 | 3 | 8 | 0 |
+| t3-confirm | 9 | 1 | 2 | 8 | 0 |
 | t3-lt-search | 3 | 0 | 7 | 0 | 0 |
 | t3-none | 5 | 0 | 5 | 0 | 0 |
-| t3-tuned | 6 | 0 | 2 | 12 | 0 |
+| t3-tuned | 6 | 0 | 3 | 11 | 0 |
 | t3-lt-tuned | 3 | 0 | 0 | 7 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -93,9 +93,9 @@ Generated 2026-10-10T06:15:50+00:00 from 2730 packaged cells. Regenerate with `p
 | t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--ETTm1--TimeXer--san | done | 4/4 |  |
-| t3-confirm--ETTm1--TimeXer--ddn | claimed | 0/4 | itm21-a4000 |
+| t3-confirm--ETTm1--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--Weather--TimeXer--san | done | 4/4 |  |
-| t3-confirm--Weather--TimeXer--ddn | ready | 0/4 |  |
+| t3-confirm--Weather--TimeXer--ddn | claimed | 0/4 | itm21-a4000 |
 | t3-confirm--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-confirm--Electricity--TimeXer--ddn | ready | 0/4 |  |
 | t3-confirm--Traffic--TimeXer--san | blocked | 0/? |  |
@@ -133,7 +133,7 @@ Generated 2026-10-10T06:15:50+00:00 from 2730 packaged cells. Regenerate with `p
 | t3-tuned--ETTh1--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeXer--san | done | 12/12 |  |
-| t3-tuned--ETTm1--TimeXer--ddn | blocked | 0/? |  |
+| t3-tuned--ETTm1--TimeXer--ddn | ready | 0/12 |  |
 | t3-tuned--Weather--TimeXer--san | done | 12/12 |  |
 | t3-tuned--Weather--TimeXer--ddn | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--san | blocked | 0/? |  |
