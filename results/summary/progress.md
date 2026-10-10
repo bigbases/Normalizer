@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-10T04:21:12+00:00 from 2697 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-10T04:49:08+00:00 from 2706 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -9,11 +9,11 @@ Generated 2026-10-10T04:21:12+00:00 from 2697 packaged cells. Regenerate with `p
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 10 | 0 | 10 | 0 | 0 |
+| t3-search | 10 | 1 | 9 | 0 | 0 |
 | t3-confirm | 8 | 0 | 2 | 10 | 0 |
 | t3-lt-search | 3 | 0 | 7 | 0 | 0 |
 | t3-none | 5 | 0 | 5 | 0 | 0 |
-| t3-tuned | 5 | 1 | 2 | 12 | 0 |
+| t3-tuned | 6 | 0 | 2 | 12 | 0 |
 | t3-lt-tuned | 3 | 0 | 0 | 7 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -73,7 +73,7 @@ Generated 2026-10-10T04:21:12+00:00 from 2697 packaged cells. Regenerate with `p
 | t3-search--ETTh1--TimeXer--san | done | 12/12 |  |
 | t3-search--ETTh1--TimeXer--ddn | done | 12/12 |  |
 | t3-search--ETTm1--TimeXer--san | done | 12/12 |  |
-| t3-search--ETTm1--TimeXer--ddn | ready | 0/12 |  |
+| t3-search--ETTm1--TimeXer--ddn | claimed | 0/12 | itm21-a4000 |
 | t3-search--Weather--TimeXer--san | done | 12/12 |  |
 | t3-search--Weather--TimeXer--ddn | ready | 0/12 |  |
 | t3-search--Electricity--TimeXer--san | ready | 0/12 |  |
@@ -134,7 +134,7 @@ Generated 2026-10-10T04:21:12+00:00 from 2697 packaged cells. Regenerate with `p
 | t3-tuned--ETTh1--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeXer--ddn | blocked | 0/? |  |
-| t3-tuned--Weather--TimeXer--san | claimed | 3/12 | itm21-a4000 |
+| t3-tuned--Weather--TimeXer--san | done | 12/12 |  |
 | t3-tuned--Weather--TimeXer--ddn | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--ddn | blocked | 0/? |  |
