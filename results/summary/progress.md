@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-10T17:16:17+00:00 from 2870 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-10T17:38:05+00:00 from 2882 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,8 +11,8 @@ Generated 2026-10-10T17:16:17+00:00 from 2870 packaged cells. Regenerate with `p
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 10 | 2 | 8 | 0 | 0 |
 | t3-confirm | 8 | 1 | 1 | 10 | 0 |
-| t3-lt-search | 4 | 0 | 6 | 0 | 0 |
-| t3-none | 6 | 1 | 3 | 0 | 0 |
+| t3-lt-search | 4 | 1 | 5 | 0 | 0 |
+| t3-none | 7 | 0 | 3 | 0 | 0 |
 | t3-tuned | 8 | 0 | 0 | 12 | 0 |
 | t3-lt-tuned | 4 | 0 | 0 | 6 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
@@ -116,7 +116,7 @@ Generated 2026-10-10T17:16:17+00:00 from 2870 packaged cells. Regenerate with `p
 | t3-lt-search--Electricity--TimeXer | ready | 3/12 |  |
 | t3-lt-search--Traffic--TimeXer | ready | 0/12 |  |
 | t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
-| t3-lt-search--ETTm1--TimeFilter | ready | 0/12 |  |
+| t3-lt-search--ETTm1--TimeFilter | claimed | 0/12 | itm21-a4000 |
 | t3-lt-search--Weather--TimeFilter | ready | 0/12 |  |
 | t3-lt-search--Electricity--TimeFilter | ready | 0/12 |  |
 | t3-lt-search--Traffic--TimeFilter | ready | 0/12 |  |
@@ -127,7 +127,7 @@ Generated 2026-10-10T17:16:17+00:00 from 2870 packaged cells. Regenerate with `p
 | t3-none--Traffic--TimeXer | ready | 0/12 |  |
 | t3-none--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-none--ETTm1--TimeFilter | done | 12/12 |  |
-| t3-none--Weather--TimeFilter | claimed | 0/12 | itm21-a4000 |
+| t3-none--Weather--TimeFilter | done | 12/12 |  |
 | t3-none--Electricity--TimeFilter | ready | 0/12 |  |
 | t3-none--Traffic--TimeFilter | ready | 0/12 |  |
 | t3-tuned--ETTh1--TimeXer--san | done | 12/12 |  |
