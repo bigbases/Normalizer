@@ -1027,32 +1027,32 @@
     ],
     "Electricity|TimeFilter|ddn": [
       {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.1484457091000751
-      },
-      {
-        "candidate_id": "6f0b0683bbd0",
+        "candidate_id": "e082b1250cbb",
         "n_cells": 2,
         "params": {
           "hkernel_len": 5,
           "j": 1,
-          "kernel_len": 25,
+          "kernel_len": 49,
           "station_lr": 0.0001,
           "station_type": "adaptive",
           "twice_epoch": 1,
           "wavelet": "coif3"
         },
-        "screen_mean_val_mse": 0.1493327309711362
+        "screen_mean_val_mse": 0.14423388340891158
+      },
+      {
+        "candidate_id": "1c7b90df1d3b",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 0,
+          "kernel_len": 49,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.1446418243395926
       }
     ],
     "Electricity|TimeXer|ddn": [
