@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-10T04:49:08+00:00 from 2706 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-10T05:26:43+00:00 from 2718 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -9,8 +9,8 @@ Generated 2026-10-10T04:49:08+00:00 from 2706 packaged cells. Regenerate with `p
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 10 | 1 | 9 | 0 | 0 |
-| t3-confirm | 8 | 0 | 2 | 10 | 0 |
+| t3-search | 11 | 1 | 8 | 0 | 0 |
+| t3-confirm | 8 | 0 | 3 | 9 | 0 |
 | t3-lt-search | 3 | 0 | 7 | 0 | 0 |
 | t3-none | 5 | 0 | 5 | 0 | 0 |
 | t3-tuned | 6 | 0 | 2 | 12 | 0 |
@@ -73,9 +73,9 @@ Generated 2026-10-10T04:49:08+00:00 from 2706 packaged cells. Regenerate with `p
 | t3-search--ETTh1--TimeXer--san | done | 12/12 |  |
 | t3-search--ETTh1--TimeXer--ddn | done | 12/12 |  |
 | t3-search--ETTm1--TimeXer--san | done | 12/12 |  |
-| t3-search--ETTm1--TimeXer--ddn | claimed | 0/12 | itm21-a4000 |
+| t3-search--ETTm1--TimeXer--ddn | done | 12/12 |  |
 | t3-search--Weather--TimeXer--san | done | 12/12 |  |
-| t3-search--Weather--TimeXer--ddn | ready | 0/12 |  |
+| t3-search--Weather--TimeXer--ddn | claimed | 0/12 | itm21-a4000 |
 | t3-search--Electricity--TimeXer--san | ready | 0/12 |  |
 | t3-search--Electricity--TimeXer--ddn | done | 12/12 |  |
 | t3-search--Traffic--TimeXer--san | ready | 0/12 |  |
@@ -93,7 +93,7 @@ Generated 2026-10-10T04:49:08+00:00 from 2706 packaged cells. Regenerate with `p
 | t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--ETTm1--TimeXer--san | done | 4/4 |  |
-| t3-confirm--ETTm1--TimeXer--ddn | blocked | 0/? |  |
+| t3-confirm--ETTm1--TimeXer--ddn | ready | 0/4 |  |
 | t3-confirm--Weather--TimeXer--san | done | 4/4 |  |
 | t3-confirm--Weather--TimeXer--ddn | blocked | 0/? |  |
 | t3-confirm--Electricity--TimeXer--san | blocked | 0/? |  |
