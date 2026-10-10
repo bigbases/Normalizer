@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-10T08:36:23+00:00 from 2762 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-10T14:53:34+00:00 from 2790 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -9,12 +9,12 @@ Generated 2026-10-10T08:36:23+00:00 from 2762 packaged cells. Regenerate with `p
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 12 | 0 | 8 | 0 | 0 |
-| t3-confirm | 10 | 0 | 2 | 8 | 0 |
-| t3-lt-search | 3 | 1 | 6 | 0 | 0 |
+| t3-search | 8 | 2 | 10 | 0 | 0 |
+| t3-confirm | 6 | 0 | 2 | 12 | 0 |
+| t3-lt-search | 4 | 0 | 6 | 0 | 0 |
 | t3-none | 5 | 0 | 5 | 0 | 0 |
-| t3-tuned | 8 | 0 | 2 | 10 | 0 |
-| t3-lt-tuned | 3 | 0 | 0 | 7 | 0 |
+| t3-tuned | 6 | 0 | 0 | 14 | 0 |
+| t3-lt-tuned | 3 | 0 | 1 | 6 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
@@ -76,20 +76,20 @@ Generated 2026-10-10T08:36:23+00:00 from 2762 packaged cells. Regenerate with `p
 | t3-search--ETTm1--TimeXer--ddn | done | 12/12 |  |
 | t3-search--Weather--TimeXer--san | done | 12/12 |  |
 | t3-search--Weather--TimeXer--ddn | done | 12/12 |  |
-| t3-search--Electricity--TimeXer--san | ready | 0/12 |  |
+| t3-search--Electricity--TimeXer--san | claimed | 1/12 | itm21-a4000 |
 | t3-search--Electricity--TimeXer--ddn | done | 12/12 |  |
 | t3-search--Traffic--TimeXer--san | ready | 0/12 |  |
 | t3-search--Traffic--TimeXer--ddn | done | 12/12 |  |
-| t3-search--ETTh1--TimeMixerPP--san | done | 12/12 |  |
-| t3-search--ETTh1--TimeMixerPP--ddn | done | 12/12 |  |
-| t3-search--ETTm1--TimeMixerPP--san | ready | 0/12 |  |
-| t3-search--ETTm1--TimeMixerPP--ddn | ready | 0/12 |  |
-| t3-search--Weather--TimeMixerPP--san | ready | 0/12 |  |
-| t3-search--Weather--TimeMixerPP--ddn | ready | 0/12 |  |
-| t3-search--Electricity--TimeMixerPP--san | ready | 0/12 |  |
-| t3-search--Electricity--TimeMixerPP--ddn | done | 12/12 |  |
-| t3-search--Traffic--TimeMixerPP--san | ready | 0/12 |  |
-| t3-search--Traffic--TimeMixerPP--ddn | done | 12/12 |  |
+| t3-search--ETTh1--TimeFilter--san | claimed | 0/12 | itm21-a4000 |
+| t3-search--ETTh1--TimeFilter--ddn | ready | 0/12 |  |
+| t3-search--ETTm1--TimeFilter--san | ready | 0/12 |  |
+| t3-search--ETTm1--TimeFilter--ddn | ready | 0/12 |  |
+| t3-search--Weather--TimeFilter--san | ready | 0/12 |  |
+| t3-search--Weather--TimeFilter--ddn | ready | 0/12 |  |
+| t3-search--Electricity--TimeFilter--san | ready | 0/12 |  |
+| t3-search--Electricity--TimeFilter--ddn | ready | 0/12 |  |
+| t3-search--Traffic--TimeFilter--san | ready | 0/12 |  |
+| t3-search--Traffic--TimeFilter--ddn | ready | 0/12 |  |
 | t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--ETTm1--TimeXer--san | done | 4/4 |  |
@@ -100,36 +100,36 @@ Generated 2026-10-10T08:36:23+00:00 from 2762 packaged cells. Regenerate with `p
 | t3-confirm--Electricity--TimeXer--ddn | ready | 0/4 |  |
 | t3-confirm--Traffic--TimeXer--san | blocked | 0/? |  |
 | t3-confirm--Traffic--TimeXer--ddn | ready | 0/4 |  |
-| t3-confirm--ETTh1--TimeMixerPP--san | done | 4/4 |  |
-| t3-confirm--ETTh1--TimeMixerPP--ddn | done | 4/4 |  |
-| t3-confirm--ETTm1--TimeMixerPP--san | blocked | 0/? |  |
-| t3-confirm--ETTm1--TimeMixerPP--ddn | blocked | 0/? |  |
-| t3-confirm--Weather--TimeMixerPP--san | blocked | 0/? |  |
-| t3-confirm--Weather--TimeMixerPP--ddn | blocked | 0/? |  |
-| t3-confirm--Electricity--TimeMixerPP--san | blocked | 0/? |  |
-| t3-confirm--Electricity--TimeMixerPP--ddn | done | 4/4 |  |
-| t3-confirm--Traffic--TimeMixerPP--san | blocked | 0/? |  |
-| t3-confirm--Traffic--TimeMixerPP--ddn | done | 4/4 |  |
+| t3-confirm--ETTh1--TimeFilter--san | blocked | 0/? |  |
+| t3-confirm--ETTh1--TimeFilter--ddn | blocked | 0/? |  |
+| t3-confirm--ETTm1--TimeFilter--san | blocked | 0/? |  |
+| t3-confirm--ETTm1--TimeFilter--ddn | blocked | 0/? |  |
+| t3-confirm--Weather--TimeFilter--san | blocked | 0/? |  |
+| t3-confirm--Weather--TimeFilter--ddn | blocked | 0/? |  |
+| t3-confirm--Electricity--TimeFilter--san | blocked | 0/? |  |
+| t3-confirm--Electricity--TimeFilter--ddn | blocked | 0/? |  |
+| t3-confirm--Traffic--TimeFilter--san | blocked | 0/? |  |
+| t3-confirm--Traffic--TimeFilter--ddn | blocked | 0/? |  |
 | t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-search--Weather--TimeXer | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeXer | claimed | 0/12 | itm21-a4000 |
+| t3-lt-search--Electricity--TimeXer | ready | 3/12 |  |
 | t3-lt-search--Traffic--TimeXer | ready | 0/12 |  |
-| t3-lt-search--ETTh1--TimeMixerPP | ready | 2/12 |  |
-| t3-lt-search--ETTm1--TimeMixerPP | ready | 0/12 |  |
-| t3-lt-search--Weather--TimeMixerPP | ready | 0/12 |  |
-| t3-lt-search--Electricity--TimeMixerPP | ready | 0/12 |  |
-| t3-lt-search--Traffic--TimeMixerPP | ready | 0/12 |  |
+| t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
+| t3-lt-search--ETTm1--TimeFilter | ready | 0/12 |  |
+| t3-lt-search--Weather--TimeFilter | ready | 0/12 |  |
+| t3-lt-search--Electricity--TimeFilter | ready | 0/12 |  |
+| t3-lt-search--Traffic--TimeFilter | ready | 0/12 |  |
 | t3-none--ETTh1--TimeXer | done | 12/12 |  |
 | t3-none--ETTm1--TimeXer | done | 12/12 |  |
 | t3-none--Weather--TimeXer | done | 12/12 |  |
 | t3-none--Electricity--TimeXer | done | 12/12 |  |
 | t3-none--Traffic--TimeXer | ready | 0/12 |  |
-| t3-none--ETTh1--TimeMixerPP | done | 12/12 |  |
-| t3-none--ETTm1--TimeMixerPP | ready | 0/12 |  |
-| t3-none--Weather--TimeMixerPP | ready | 0/12 |  |
-| t3-none--Electricity--TimeMixerPP | ready | 0/12 |  |
-| t3-none--Traffic--TimeMixerPP | ready | 0/12 |  |
+| t3-none--ETTh1--TimeFilter | done | 12/12 |  |
+| t3-none--ETTm1--TimeFilter | ready | 0/12 |  |
+| t3-none--Weather--TimeFilter | ready | 0/12 |  |
+| t3-none--Electricity--TimeFilter | ready | 0/12 |  |
+| t3-none--Traffic--TimeFilter | ready | 0/12 |  |
 | t3-tuned--ETTh1--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeXer--san | done | 12/12 |  |
@@ -140,26 +140,26 @@ Generated 2026-10-10T08:36:23+00:00 from 2762 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeXer--ddn | blocked | 0/? |  |
 | t3-tuned--Traffic--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--Traffic--TimeXer--ddn | blocked | 0/? |  |
-| t3-tuned--ETTh1--TimeMixerPP--san | done | 12/12 |  |
-| t3-tuned--ETTh1--TimeMixerPP--ddn | done | 12/12 |  |
-| t3-tuned--ETTm1--TimeMixerPP--san | blocked | 0/? |  |
-| t3-tuned--ETTm1--TimeMixerPP--ddn | blocked | 0/? |  |
-| t3-tuned--Weather--TimeMixerPP--san | blocked | 0/? |  |
-| t3-tuned--Weather--TimeMixerPP--ddn | blocked | 0/? |  |
-| t3-tuned--Electricity--TimeMixerPP--san | blocked | 0/? |  |
-| t3-tuned--Electricity--TimeMixerPP--ddn | ready | 0/12 |  |
-| t3-tuned--Traffic--TimeMixerPP--san | blocked | 0/? |  |
-| t3-tuned--Traffic--TimeMixerPP--ddn | ready | 0/12 |  |
+| t3-tuned--ETTh1--TimeFilter--san | blocked | 0/? |  |
+| t3-tuned--ETTh1--TimeFilter--ddn | blocked | 0/? |  |
+| t3-tuned--ETTm1--TimeFilter--san | blocked | 0/? |  |
+| t3-tuned--ETTm1--TimeFilter--ddn | blocked | 0/? |  |
+| t3-tuned--Weather--TimeFilter--san | blocked | 0/? |  |
+| t3-tuned--Weather--TimeFilter--ddn | blocked | 0/? |  |
+| t3-tuned--Electricity--TimeFilter--san | blocked | 0/? |  |
+| t3-tuned--Electricity--TimeFilter--ddn | blocked | 0/? |  |
+| t3-tuned--Traffic--TimeFilter--san | blocked | 0/? |  |
+| t3-tuned--Traffic--TimeFilter--ddn | blocked | 0/? |  |
 | t3-lt-tuned--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--Weather--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--ETTh1--TimeMixerPP | blocked | 0/? |  |
-| t3-lt-tuned--ETTm1--TimeMixerPP | blocked | 0/? |  |
-| t3-lt-tuned--Weather--TimeMixerPP | blocked | 0/? |  |
-| t3-lt-tuned--Electricity--TimeMixerPP | blocked | 0/? |  |
-| t3-lt-tuned--Traffic--TimeMixerPP | blocked | 0/? |  |
+| t3-lt-tuned--ETTh1--TimeFilter | ready | 0/12 |  |
+| t3-lt-tuned--ETTm1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--Weather--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--Electricity--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--Traffic--TimeFilter | blocked | 0/? |  |
 | exp2-search--ETTh1--DLinear--revin | done | 4/4 |  |
 | exp2-search--ETTh1--DLinear--san | done | 12/12 |  |
 | exp2-search--ETTh1--DLinear--ddn | done | 12/12 |  |
