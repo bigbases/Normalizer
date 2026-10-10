@@ -359,6 +359,15 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "Weather|TimeXer|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "kernel_len": 7,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "Weather|TimeXer|san": {
       "period_len": 24,
       "station_lr": 0.0001,

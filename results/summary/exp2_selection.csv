@@ -41,6 +41,7 @@ Weather,DLinear,ddn,43cd745f71d8,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"":
 Weather,DLinear,fan,c5b5799bc7f6,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 0.0005}",0.488118
 Weather,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.552721
 Weather,DLinear,san,61e69def41a7,"{""period_len"": 4, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.493377
+Weather,TimeXer,ddn,43cd745f71d8,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.494650
 Weather,TimeXer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.509823
 Weather,iTransformer,ddn,1c7b90df1d3b,"{""hkernel_len"": 5, ""j"": 0, ""kernel_len"": 49, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.484394
 Weather,iTransformer,fan,c5b5799bc7f6,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 0.0005}",0.480817
