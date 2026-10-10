@@ -49,6 +49,7 @@ Electricity,DLinear,ddn,6f0b0683bbd0,"{""hkernel_len"": 5, ""j"": 1, ""kernel_le
 Electricity,DLinear,fan,59c5876c8eff,"{""fan_aux_weight"": 1.0, ""freq_topk"": 3, ""station_lr"": 0.001}",0.148418
 Electricity,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.149703
 Electricity,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.143038
+Electricity,TimeMixerPP,ddn,6f0b0683bbd0,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"": 25, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.172937
 Electricity,iTransformer,ddn,e082b1250cbb,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"": 49, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.135650
 Electricity,iTransformer,fan,13915eef97cf,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 0.0005}",0.138447
 Electricity,iTransformer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.139219
