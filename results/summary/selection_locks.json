@@ -23,6 +23,11 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "ETTh1|TimeFilter|san": {
+      "period_len": 4,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "ETTh1|TimeXer|ddn": {
       "hkernel_len": 5,
       "j": 1,

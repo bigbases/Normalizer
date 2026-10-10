@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-10T15:45:23+00:00 from 2816 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-10T15:53:37+00:00 from 2818 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -10,10 +10,10 @@ Generated 2026-10-10T15:45:23+00:00 from 2816 packaged cells. Regenerate with `p
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 9 | 1 | 10 | 0 | 0 |
-| t3-confirm | 6 | 1 | 2 | 11 | 0 |
+| t3-confirm | 7 | 0 | 2 | 11 | 0 |
 | t3-lt-search | 4 | 0 | 6 | 0 | 0 |
 | t3-none | 5 | 0 | 5 | 0 | 0 |
-| t3-tuned | 6 | 0 | 0 | 14 | 0 |
+| t3-tuned | 6 | 0 | 1 | 13 | 0 |
 | t3-lt-tuned | 4 | 0 | 0 | 6 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -100,7 +100,7 @@ Generated 2026-10-10T15:45:23+00:00 from 2816 packaged cells. Regenerate with `p
 | t3-confirm--Electricity--TimeXer--ddn | ready | 0/4 |  |
 | t3-confirm--Traffic--TimeXer--san | blocked | 0/? |  |
 | t3-confirm--Traffic--TimeXer--ddn | ready | 0/4 |  |
-| t3-confirm--ETTh1--TimeFilter--san | claimed | 2/4 | itm21-a4000 |
+| t3-confirm--ETTh1--TimeFilter--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeFilter--ddn | blocked | 0/? |  |
 | t3-confirm--ETTm1--TimeFilter--san | blocked | 0/? |  |
 | t3-confirm--ETTm1--TimeFilter--ddn | blocked | 0/? |  |
@@ -140,7 +140,7 @@ Generated 2026-10-10T15:45:23+00:00 from 2816 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeXer--ddn | blocked | 0/? |  |
 | t3-tuned--Traffic--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--Traffic--TimeXer--ddn | blocked | 0/? |  |
-| t3-tuned--ETTh1--TimeFilter--san | blocked | 0/? |  |
+| t3-tuned--ETTh1--TimeFilter--san | ready | 0/12 |  |
 | t3-tuned--ETTh1--TimeFilter--ddn | blocked | 0/? |  |
 | t3-tuned--ETTm1--TimeFilter--san | blocked | 0/? |  |
 | t3-tuned--ETTm1--TimeFilter--ddn | blocked | 0/? |  |
