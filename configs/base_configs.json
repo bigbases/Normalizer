@@ -16,7 +16,8 @@
     "FEDformer",
     "TimeMixer",
     "TimeXer",
-    "TimeMixerPP"
+    "TimeMixerPP",
+    "TimeFilter"
   ],
   "configs": [
     {
@@ -1192,8 +1193,9 @@
       "down_sampling_window": 2,
       "down_sampling_method": "avg",
       "channel_independence": 0,
-      "selection_status": "selected",
-      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper."
+      "selection_status": "retired",
+      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper.",
+      "retired_note": "2026-10-10: retired from T3 and replaced by TimeFilter. PyPOTS applies the TimeMixer++ channel-mixing attention only with channel_independence 1, so these channel_independence 0 rows ran without it (the \"as in the TimeMixer++ paper\" claim in source is wrong); no official TimeMixer++ code or per-dataset hyperparameters exist to reproduce the reported results."
     },
     {
       "dataset": "ETTm1",
@@ -1219,8 +1221,9 @@
       "down_sampling_window": 2,
       "down_sampling_method": "avg",
       "channel_independence": 0,
-      "selection_status": "selected",
-      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper."
+      "selection_status": "retired",
+      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper.",
+      "retired_note": "2026-10-10: retired from T3 and replaced by TimeFilter. PyPOTS applies the TimeMixer++ channel-mixing attention only with channel_independence 1, so these channel_independence 0 rows ran without it (the \"as in the TimeMixer++ paper\" claim in source is wrong); no official TimeMixer++ code or per-dataset hyperparameters exist to reproduce the reported results."
     },
     {
       "dataset": "Weather",
@@ -1246,8 +1249,9 @@
       "down_sampling_window": 2,
       "down_sampling_method": "avg",
       "channel_independence": 0,
-      "selection_status": "selected",
-      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper."
+      "selection_status": "retired",
+      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper.",
+      "retired_note": "2026-10-10: retired from T3 and replaced by TimeFilter. PyPOTS applies the TimeMixer++ channel-mixing attention only with channel_independence 1, so these channel_independence 0 rows ran without it (the \"as in the TimeMixer++ paper\" claim in source is wrong); no official TimeMixer++ code or per-dataset hyperparameters exist to reproduce the reported results."
     },
     {
       "dataset": "Electricity",
@@ -1273,8 +1277,9 @@
       "down_sampling_window": 2,
       "down_sampling_method": "avg",
       "channel_independence": 0,
-      "selection_status": "selected",
-      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper."
+      "selection_status": "retired",
+      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper.",
+      "retired_note": "2026-10-10: retired from T3 and replaced by TimeFilter. PyPOTS applies the TimeMixer++ channel-mixing attention only with channel_independence 1, so these channel_independence 0 rows ran without it (the \"as in the TimeMixer++ paper\" claim in source is wrong); no official TimeMixer++ code or per-dataset hyperparameters exist to reproduce the reported results."
     },
     {
       "dataset": "Traffic",
@@ -1300,8 +1305,324 @@
       "down_sampling_window": 2,
       "down_sampling_method": "avg",
       "channel_independence": 0,
+      "selection_status": "retired",
+      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper.",
+      "retired_note": "2026-10-10: retired from T3 and replaced by TimeFilter. PyPOTS applies the TimeMixer++ channel-mixing attention only with channel_independence 1, so these channel_independence 0 rows ran without it (the \"as in the TimeMixer++ paper\" claim in source is wrong); no official TimeMixer++ code or per-dataset hyperparameters exist to reproduce the reported results."
+    },
+    {
+      "dataset": "ETTh1",
+      "backbone": "TimeFilter",
+      "seq_len": 96,
+      "label_len": 48,
+      "learning_rate": 0.0001,
+      "batch_size": 32,
+      "d_model": 128,
+      "e_layers": 2,
+      "station_lr": 0.0001,
+      "s_norm": 0,
+      "use_mlp": 0,
+      "down_ratio": 4,
+      "kernel_len": 25,
+      "kernel_size": "",
+      "d_ff": 256,
+      "d_layers": 1,
+      "factor": 3,
+      "n_heads": 4,
+      "patch_len": 2,
+      "down_sampling_layers": "",
+      "down_sampling_window": "",
+      "down_sampling_method": "",
+      "channel_independence": "",
+      "timefilter": {
+        "lradj": "cosine",
+        "alpha": 0.1,
+        "train_epochs": 10,
+        "patience": 3,
+        "horizons": {
+          "96": {
+            "dropout": 0.8,
+            "patch_len": 2,
+            "d_ff": 256,
+            "top_p": 0.5,
+            "pos": 0
+          },
+          "192": {
+            "dropout": 0.8,
+            "patch_len": 2,
+            "d_ff": 256,
+            "top_p": 0.5,
+            "pos": 0
+          },
+          "336": {
+            "dropout": 0.8,
+            "patch_len": 2,
+            "d_ff": 256,
+            "top_p": 0.5,
+            "pos": 0
+          },
+          "720": {
+            "dropout": 0.8,
+            "patch_len": 2,
+            "d_ff": 128,
+            "top_p": 0.5,
+            "pos": 0
+          }
+        }
+      },
       "selection_status": "selected",
-      "source": "derived from the TimeMixer row; T3 (2026-10-09): look-back 96 follows the official long-term forecasting protocol of TimeXer (NeurIPS 2024, 'look-back length is set to 96') and TimeMixer++ (ICLR 2025, input-96 settings). Channel mixing (channel_independence 0) as in the TimeMixer++ paper."
+      "source": "T3 (2026-10-10): official TimeFilter scripts (TROUBADOUR000/TimeFilter@dffde87, scripts/ETTh1.sh, seq_len=96 block) with run.py defaults (n_heads 4, alpha 0.1, top_p 0.5, pos 1, patience 3, lradj cosine); LightNorm supplied parameters copied from the TimeXer row of the same dataset."
+    },
+    {
+      "dataset": "ETTm1",
+      "backbone": "TimeFilter",
+      "seq_len": 96,
+      "label_len": 48,
+      "learning_rate": 0.0001,
+      "batch_size": 32,
+      "d_model": 256,
+      "e_layers": 2,
+      "station_lr": 0.0001,
+      "s_norm": 0,
+      "use_mlp": 0,
+      "down_ratio": 4,
+      "kernel_len": 25,
+      "kernel_size": "",
+      "d_ff": 256,
+      "d_layers": 1,
+      "factor": 3,
+      "n_heads": 4,
+      "patch_len": 8,
+      "down_sampling_layers": "",
+      "down_sampling_window": "",
+      "down_sampling_method": "",
+      "channel_independence": "",
+      "timefilter": {
+        "lradj": "cosine",
+        "alpha": 0.1,
+        "train_epochs": 10,
+        "patience": 3,
+        "horizons": {
+          "96": {
+            "dropout": 0.3,
+            "patch_len": 8,
+            "d_ff": 256,
+            "top_p": 0.0,
+            "pos": 1
+          },
+          "192": {
+            "dropout": 0.5,
+            "patch_len": 8,
+            "d_ff": 256,
+            "top_p": 0.0,
+            "pos": 1
+          },
+          "336": {
+            "dropout": 0.5,
+            "patch_len": 8,
+            "d_ff": 256,
+            "top_p": 0.0,
+            "pos": 1
+          },
+          "720": {
+            "dropout": 0.7,
+            "patch_len": 16,
+            "d_ff": 256,
+            "top_p": 0.0,
+            "pos": 1
+          }
+        }
+      },
+      "selection_status": "selected",
+      "source": "T3 (2026-10-10): official TimeFilter scripts (TROUBADOUR000/TimeFilter@dffde87, scripts/ETTm1.sh, seq_len=96 block) with run.py defaults (n_heads 4, alpha 0.1, top_p 0.5, pos 1, patience 3, lradj cosine); LightNorm supplied parameters copied from the TimeXer row of the same dataset."
+    },
+    {
+      "dataset": "Weather",
+      "backbone": "TimeFilter",
+      "seq_len": 96,
+      "label_len": 48,
+      "learning_rate": 0.0005,
+      "batch_size": 32,
+      "d_model": 128,
+      "e_layers": 2,
+      "station_lr": 0.0001,
+      "s_norm": 0,
+      "use_mlp": 0,
+      "down_ratio": 4,
+      "kernel_len": 25,
+      "kernel_size": "",
+      "d_ff": 256,
+      "d_layers": 1,
+      "factor": 3,
+      "n_heads": 4,
+      "patch_len": 48,
+      "down_sampling_layers": "",
+      "down_sampling_window": "",
+      "down_sampling_method": "",
+      "channel_independence": "",
+      "timefilter": {
+        "lradj": "cosine",
+        "alpha": 0.1,
+        "train_epochs": 10,
+        "patience": 3,
+        "horizons": {
+          "96": {
+            "dropout": 0.3,
+            "patch_len": 48,
+            "d_ff": 256,
+            "top_p": 0.5,
+            "pos": 1
+          },
+          "192": {
+            "dropout": 0.3,
+            "patch_len": 48,
+            "d_ff": 256,
+            "top_p": 0.5,
+            "pos": 1
+          },
+          "336": {
+            "dropout": 0.3,
+            "patch_len": 48,
+            "d_ff": 256,
+            "top_p": 0.5,
+            "pos": 1
+          },
+          "720": {
+            "dropout": 0.3,
+            "patch_len": 48,
+            "d_ff": 256,
+            "top_p": 0.5,
+            "pos": 1
+          }
+        }
+      },
+      "selection_status": "selected",
+      "source": "T3 (2026-10-10): official TimeFilter scripts (TROUBADOUR000/TimeFilter@dffde87, scripts/Weather.sh, seq_len=96 block) with run.py defaults (n_heads 4, alpha 0.1, top_p 0.5, pos 1, patience 3, lradj cosine); LightNorm supplied parameters copied from the TimeXer row of the same dataset."
+    },
+    {
+      "dataset": "Electricity",
+      "backbone": "TimeFilter",
+      "seq_len": 96,
+      "label_len": 48,
+      "learning_rate": 0.001,
+      "batch_size": 16,
+      "d_model": 512,
+      "e_layers": 2,
+      "station_lr": 0.0001,
+      "s_norm": 0,
+      "use_mlp": 0,
+      "down_ratio": 4,
+      "kernel_len": 25,
+      "kernel_size": "",
+      "d_ff": 512,
+      "d_layers": 1,
+      "factor": 3,
+      "n_heads": 4,
+      "patch_len": 32,
+      "down_sampling_layers": "",
+      "down_sampling_window": "",
+      "down_sampling_method": "",
+      "channel_independence": "",
+      "timefilter": {
+        "lradj": "cosine",
+        "alpha": 0.1,
+        "train_epochs": 15,
+        "patience": 3,
+        "horizons": {
+          "96": {
+            "dropout": 0.5,
+            "patch_len": 32,
+            "d_ff": 512,
+            "top_p": 0.5,
+            "pos": 1
+          },
+          "192": {
+            "dropout": 0.4,
+            "patch_len": 32,
+            "d_ff": 512,
+            "top_p": 0.5,
+            "pos": 1
+          },
+          "336": {
+            "dropout": 0.4,
+            "patch_len": 32,
+            "d_ff": 512,
+            "top_p": 0.5,
+            "pos": 1
+          },
+          "720": {
+            "dropout": 0.4,
+            "patch_len": 32,
+            "d_ff": 512,
+            "top_p": 0.5,
+            "pos": 1
+          }
+        }
+      },
+      "selection_status": "selected",
+      "source": "T3 (2026-10-10): official TimeFilter scripts (TROUBADOUR000/TimeFilter@dffde87, scripts/ECL.sh, seq_len=96 block) with run.py defaults (n_heads 4, alpha 0.1, top_p 0.5, pos 1, patience 3, lradj cosine); LightNorm supplied parameters copied from the TimeXer row of the same dataset."
+    },
+    {
+      "dataset": "Traffic",
+      "backbone": "TimeFilter",
+      "seq_len": 96,
+      "label_len": 48,
+      "learning_rate": 0.001,
+      "batch_size": 16,
+      "d_model": 512,
+      "e_layers": 3,
+      "station_lr": 0.0001,
+      "s_norm": 0,
+      "use_mlp": 0,
+      "down_ratio": 4,
+      "kernel_len": 25,
+      "kernel_size": "",
+      "d_ff": 2048,
+      "d_layers": 1,
+      "factor": 3,
+      "n_heads": 4,
+      "patch_len": 96,
+      "down_sampling_layers": "",
+      "down_sampling_window": "",
+      "down_sampling_method": "",
+      "channel_independence": "",
+      "timefilter": {
+        "lradj": "cosine",
+        "alpha": 0.1,
+        "train_epochs": 30,
+        "patience": 3,
+        "horizons": {
+          "96": {
+            "dropout": 0.3,
+            "patch_len": 96,
+            "d_ff": 2048,
+            "top_p": 0.0,
+            "pos": 0
+          },
+          "192": {
+            "dropout": 0.3,
+            "patch_len": 96,
+            "d_ff": 2048,
+            "top_p": 0.0,
+            "pos": 0
+          },
+          "336": {
+            "dropout": 0.3,
+            "patch_len": 96,
+            "d_ff": 2048,
+            "top_p": 0.0,
+            "pos": 0
+          },
+          "720": {
+            "dropout": 0.3,
+            "patch_len": 96,
+            "d_ff": 2048,
+            "top_p": 0.0,
+            "pos": 0
+          }
+        }
+      },
+      "selection_status": "selected",
+      "source": "T3 (2026-10-10): official TimeFilter scripts (TROUBADOUR000/TimeFilter@dffde87, scripts/Traffic.sh, seq_len=96 block) with run.py defaults (n_heads 4, alpha 0.1, top_p 0.5, pos 1, patience 3, lradj cosine); LightNorm supplied parameters copied from the TimeXer row of the same dataset."
     }
   ]
 }

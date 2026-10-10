@@ -27,6 +27,13 @@
       "horizon_mib": 1.5,
       "util_percent": 42
     },
+    "TimeFilter": {
+      "base_mib": 2500,
+      "channel_seq_mib": 50,
+      "horizon_mib": 2.0,
+      "util_percent": 60,
+      "note": "fitted 2026-10-10 to RTX A4000 probes at look-back 96 (official per-dataset patch_len): peak 1.4 GB ETTh1, 0.2 GB ETTm1/Weather, 5.3 GB Electricity, 5.7 GB Traffic; 0.39-0.46 s/iter on Electricity/Traffic"
+    },
     "TimeMixerPP": {
       "base_mib": 1800,
       "channel_seq_mib": 2.0,

@@ -37,13 +37,14 @@ class OrderingTest(unittest.TestCase):
         self.assertEqual(model.seconds(cell), 1234.0)
 
     def test_t3_memory_priors_keep_timexer_traffic_off_16gb_gpus(self):
-        # Fitted to RTX A4000 probes at look-back 96 (TimeXer Traffic peaked at 13.8 GB).
+        # Fitted to RTX A4000 probes at look-back 96 (TimeXer Traffic peaked at
+        # 13.8 GB, TimeFilter Traffic at 5.7 GB, which still fits a 16 GB GPU).
         estimator = ResourceEstimator(load_json(RESOURCE_PROFILES_PATH), CostModel())
         traffic = plan("3_frozen_backbone_comparison", datasets="Traffic", backbones="TimeXer", methods="none")[0]
-        weather = plan("3_frozen_backbone_comparison", datasets="Weather", backbones="TimeMixerPP", methods="none")[0]
+        tf_traffic = plan("3_frozen_backbone_comparison", datasets="Traffic", backbones="TimeFilter", methods="lt")[0]
         self.assertGreater(estimator.estimate(traffic).memory_mib + 5000, 16376)
-        self.assertLess(estimator.estimate(weather).memory_mib, 8 * 1024)
-
+        self.assertLess(estimator.estimate(tf_traffic).memory_mib + 5000, 16376)
+        self.assertGreater(estimator.estimate(tf_traffic).memory_mib, 5714)
 
 if __name__ == "__main__":
     unittest.main()

@@ -239,6 +239,15 @@ parser.add_argument('--down_sampling_window', type=int, default=2)
 parser.add_argument('--down_sampling_method', type=str, default='avg')
 parser.add_argument('--tmpp_use_internal_norm', type=str2bool, default=False)
 
+# TimeFilter arguments (official defaults).  tf_internal_norm=true restores the
+# official instance normalization and is only used for reproduction checks.
+parser.add_argument('--alpha', type=float, default=0.1, help='TimeFilter: kNN ratio for graph construction')
+parser.add_argument('--top_p', type=float, default=0.5, help='TimeFilter: dynamic routing threshold in the MoE')
+parser.add_argument('--pos', type=int, choices=[0, 1], default=1, help='TimeFilter: positional embedding')
+parser.add_argument('--tf_internal_norm', type=str2bool, default=False)
+parser.add_argument('--aux_loss_weight', type=float, default=0.05,
+                    help='weight of a backbone auxiliary loss (TimeFilter router loss)')
+
 # Formers
 parser.add_argument('--embed_type', type=int, default=0,
                     help='0: default 1: value embedding + temporal embedding + positional embedding 2: value embedding + temporal embedding 3: value embedding + positional embedding 4: value embedding')

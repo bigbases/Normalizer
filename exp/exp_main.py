@@ -229,6 +229,13 @@ class Exp_Main(Exp_Basic):
         outputs = self.station.de_normalize(outputs, statistics_pred)
         return self.criterion(outputs, batch_y)
 
+    def _with_aux_loss(self, loss):
+        """Add a backbone's auxiliary training loss (TimeFilter's router loss)."""
+        aux = getattr(self.model, 'aux_loss', None)
+        if aux is None:
+            return loss
+        return loss + self.args.aux_loss_weight * aux
+
     def vali(self, vali_data, vali_loader, criterion, epoch):
         total_loss = []
         self.model.eval()
@@ -326,11 +333,11 @@ class Exp_Main(Exp_Basic):
                         with torch.cuda.amp.autocast():
                             outputs = self._forward_model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                             outputs, batch_y_t = self._trim_outputs_and_target(outputs, batch_y)
-                            loss = self._training_forecast_loss(outputs, batch_y_t, statistics_pred)
+                            loss = self._with_aux_loss(self._training_forecast_loss(outputs, batch_y_t, statistics_pred))
                     else:
                         outputs = self._forward_model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                         outputs, batch_y_t = self._trim_outputs_and_target(outputs, batch_y)
-                        loss = self._training_forecast_loss(outputs, batch_y_t, statistics_pred)
+                        loss = self._with_aux_loss(self._training_forecast_loss(outputs, batch_y_t, statistics_pred))
 
                 train_loss.append(float(loss.item()))
 

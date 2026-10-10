@@ -191,7 +191,8 @@ def exp7_lt_tuning(out, rows, protocol, bases):
     lock_ids = {}
     table = []
     order = _order(protocol)
-    cases = sorted(((d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer", "TimeMixerPP", "TimeXer")),
+    cases = sorted(((d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer", "TimeFilter", "TimeXer")
+                    if rm.has_selected_base(bases, d, b)),
                    key=lambda k: order(*k))
     for ds, bb in cases:
         base = rm.selected_base_config(bases, ds, bb)

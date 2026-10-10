@@ -135,6 +135,28 @@ def selected_base_config(base_document, dataset, backbone):
     return deepcopy(matches[0])
 
 
+def has_selected_base(base_document, dataset, backbone):
+    try:
+        selected_base_config(base_document, dataset, backbone)
+    except ValueError:
+        return False
+    return True
+
+
+def timefilter_args(base, horizon):
+    """TimeFilter's official per-horizon arguments (dropout, patch_len, ...).
+
+    Base rows carry common keys plus a "horizons" map; the result is passed
+    after the fixed training arguments so it also sets train_epochs.
+    """
+    spec = base.get("timefilter")
+    if not spec:
+        raise ValueError(f'TimeFilter base row for {base.get("dataset")} has no "timefilter" block')
+    args = {k: v for k, v in spec.items() if k != "horizons"}
+    args.update(spec.get("horizons", {}).get(str(horizon), {}))
+    return args
+
+
 def resolve_backbone_config(base):
     resolved = deepcopy(base)
     for key, default in BACKBONE_DEFAULTS.items():
@@ -387,6 +409,9 @@ def cell_command(cell, data_root, result_file, checkpoint_root, gpu=0):
             "--channel_mixing", "true",
             "--tmpp_use_internal_norm", "false",
         ])
+    if cell["backbone"] == "TimeFilter":
+        for key, value in cell["timefilter"].items():
+            cmd.extend([f"--{key}", str(value)])
 
     if cell["stage"] in ("search", "confirm"):
         cmd.append("--skip_test")
@@ -764,6 +789,9 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                                     if backbone == "TimeMixerPP" else None
                                 ),
                             }
+                            # Added only for TimeFilter so that other backbones keep their hashes.
+                            if backbone == "TimeFilter":
+                                identity["timefilter"] = timefilter_args(base, horizon)
                             config_hash = canonical_hash(identity, length=16)
                             run_id = (
                                 f'{stage}-{dataset}-{backbone}-{method}-h{horizon}-s{seed}'

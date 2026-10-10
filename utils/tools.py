@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 import torch
 import matplotlib.pyplot as plt
@@ -18,6 +20,8 @@ def adjust_learning_rate(optimizer, epoch, args, learning_rate):
         }
     elif args.lradj == 'type3':
         lr_adjust = {}
+    elif args.lradj == 'cosine':
+        lr_adjust = {epoch: learning_rate / 2 * (1 + math.cos(epoch / args.train_epochs * math.pi))}
     elif args.lradj == '3':
         lr_adjust = {epoch: args.learning_rate if epoch < 10 else args.learning_rate*0.1}
     elif args.lradj == '4':
