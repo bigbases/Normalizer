@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-10T00:04:16+00:00 from 2686 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-10T04:21:12+00:00 from 2697 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,7 +12,7 @@ Generated 2026-10-10T00:04:16+00:00 from 2686 packaged cells. Regenerate with `p
 | t3-search | 10 | 0 | 10 | 0 | 0 |
 | t3-confirm | 8 | 0 | 2 | 10 | 0 |
 | t3-lt-search | 3 | 0 | 7 | 0 | 0 |
-| t3-none | 4 | 1 | 5 | 0 | 0 |
+| t3-none | 5 | 0 | 5 | 0 | 0 |
 | t3-tuned | 5 | 1 | 2 | 12 | 0 |
 | t3-lt-tuned | 3 | 0 | 0 | 7 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
@@ -123,7 +123,7 @@ Generated 2026-10-10T00:04:16+00:00 from 2686 packaged cells. Regenerate with `p
 | t3-none--ETTh1--TimeXer | done | 12/12 |  |
 | t3-none--ETTm1--TimeXer | done | 12/12 |  |
 | t3-none--Weather--TimeXer | done | 12/12 |  |
-| t3-none--Electricity--TimeXer | claimed | 4/12 | itm21-a4000 |
+| t3-none--Electricity--TimeXer | done | 12/12 |  |
 | t3-none--Traffic--TimeXer | ready | 0/12 |  |
 | t3-none--ETTh1--TimeMixerPP | done | 12/12 |  |
 | t3-none--ETTm1--TimeMixerPP | ready | 0/12 |  |
@@ -134,7 +134,7 @@ Generated 2026-10-10T00:04:16+00:00 from 2686 packaged cells. Regenerate with `p
 | t3-tuned--ETTh1--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeXer--ddn | blocked | 0/? |  |
-| t3-tuned--Weather--TimeXer--san | ready | 0/12 |  |
+| t3-tuned--Weather--TimeXer--san | claimed | 3/12 | itm21-a4000 |
 | t3-tuned--Weather--TimeXer--ddn | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--ddn | blocked | 0/? |  |
@@ -149,7 +149,7 @@ Generated 2026-10-10T00:04:16+00:00 from 2686 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeMixerPP--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeMixerPP--ddn | ready | 0/12 |  |
 | t3-tuned--Traffic--TimeMixerPP--san | blocked | 0/? |  |
-| t3-tuned--Traffic--TimeMixerPP--ddn | claimed | 0/12 | itm24-gpu0-pro6000 |
+| t3-tuned--Traffic--TimeMixerPP--ddn | ready | 0/12 |  |
 | t3-lt-tuned--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--Weather--TimeXer | done | 12/12 |  |
