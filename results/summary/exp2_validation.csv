@@ -19,6 +19,12 @@ ETTh1,DLinear,san,61e69def41a7,"{""period_len"": 4, ""station_lr"": 0.0001, ""st
 ETTh1,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.676997,1.404146,,,1.040572,,False,False
 ETTh1,DLinear,san,f6904fc69cd0,"{""period_len"": 8, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.676008,1.400993,0.676445,1.401320,1.038500,1.038692,True,False
 ETTh1,DLinear,san,fa33e70a6a3a,"{""period_len"": 4, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.685537,1.414376,,,1.049957,,False,False
+ETTh1,TimeFilter,ddn,1c7b90df1d3b,"{""hkernel_len"": 5, ""j"": 0, ""kernel_len"": 49, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.685717,1.405122,,,1.045420,,False,False
+ETTh1,TimeFilter,ddn,43cd745f71d8,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.669347,1.283970,,,0.976658,,False,False
+ETTh1,TimeFilter,ddn,44e9a626dff4,"{""hkernel_len"": 5, ""j"": 0, ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.673482,1.374350,,,1.023916,,False,False
+ETTh1,TimeFilter,ddn,6f0b0683bbd0,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"": 25, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.689266,1.252338,,,0.970802,,True,False
+ETTh1,TimeFilter,ddn,e082b1250cbb,"{""hkernel_len"": 5, ""j"": 1, ""kernel_len"": 49, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.669394,1.250736,,,0.960065,,True,False
+ETTh1,TimeFilter,ddn,f841fa3c59bc,"{""hkernel_len"": 5, ""j"": 0, ""kernel_len"": 25, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.686294,1.400056,,,1.043175,,False,False
 ETTh1,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.689356,1.510877,,,1.100117,,False,False
 ETTh1,TimeFilter,san,48f6c1ced712,"{""period_len"": 8, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.690139,1.511581,,,1.100860,,False,False
 ETTh1,TimeFilter,san,61e69def41a7,"{""period_len"": 4, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.675500,1.457193,0.674018,1.458631,1.066347,1.066336,True,True
