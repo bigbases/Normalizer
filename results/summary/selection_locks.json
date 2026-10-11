@@ -143,6 +143,15 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "ETTm1|TimeFilter|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "kernel_len": 49,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "ETTm1|TimeFilter|san": {
       "period_len": 4,
       "station_lr": 0.0001,
