@@ -355,6 +355,11 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "Weather|TimeFilter|san": {
+      "period_len": 24,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "Weather|TimeXer|ddn": {
       "hkernel_len": 5,
       "j": 1,
