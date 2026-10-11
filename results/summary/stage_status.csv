@@ -106,7 +106,7 @@ t3-none,ETTh1,TimeFilter,none,done,12,12,
 t3-none,ETTm1,TimeFilter,none,done,12,12,
 t3-none,Weather,TimeFilter,none,done,12,12,
 t3-none,Electricity,TimeFilter,none,done,12,12,
-t3-none,Traffic,TimeFilter,none,claimed,11,12,itm21-a4000
+t3-none,Traffic,TimeFilter,none,done,12,12,
 t3-tuned,ETTh1,TimeXer,san,done,12,12,
 t3-tuned,ETTh1,TimeXer,ddn,done,12,12,
 t3-tuned,ETTm1,TimeXer,san,done,12,12,
