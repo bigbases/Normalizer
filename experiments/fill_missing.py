@@ -96,13 +96,17 @@ class Notifier:
 
 
 def progress_text(tasks, args):
-    """Done/remaining runs of the selected phases, Electricity and Traffic apart."""
-    done = sum(len(t.done) for t in tasks if task_matches(t, args) and t.cells is not None)
+    """Done/remaining runs of the selected phases on every server, Electricity and Traffic apart.
+
+    Only the phase filter applies: a worker restricted to some datasets still
+    reports the whole experiment.
+    """
+    phases = parse_filter(args.phases) if args.phases else None
+    selected = [t for t in tasks if not phases or t.phase in phases]
+    done = sum(len(t.done) for t in selected if t.cells is not None)
     groups = {g: [0, 0] for g in (*BIG_DATASETS, "others")}   # known remaining, estimated (blocked)
     blocked = 0
-    for t in tasks:
-        if not task_matches(t, args):
-            continue
+    for t in selected:
         group = t.dataset if t.dataset in BIG_DATASETS else "others"
         if t.cells is None:
             blocked += 1
