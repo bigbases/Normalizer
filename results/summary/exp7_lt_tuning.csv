@@ -37,9 +37,9 @@ ETTh2,iTransformer,4ae12befa070,grid,49,0.0005,0,0,False,,,,,,False,False
 ETTh2,iTransformer,8d676af4ef0d,grid,49,0.001,0,0,False,,,,,,False,False
 ETTm1,DLinear,36b61b191ff5,grid,13,0.0001,1,1,True,0.378218,0.957766,0.667992,0.378641,0.957660,False,False
 ETTm1,DLinear,e42176d00844,grid,13,0.0005,1,1,False,0.371116,0.956512,0.663814,,,False,False
-ETTm1,DLinear,d510671ef280,grid,13,0.001,1,1,False,0.370904,0.956056,0.663480,0.369321,0.956883,True,False
+ETTm1,DLinear,d510671ef280,grid,13,0.001,1,1,False,0.370904,0.956056,0.663480,0.369321,0.957037,True,False
 ETTm1,DLinear,a3729a1a10be,grid,49,0.0001,1,1,False,0.380089,0.962999,0.671544,,,False,False
-ETTm1,DLinear,4db81df9b8fc,grid,49,0.0005,1,1,False,0.368703,0.958650,0.663676,,,True,False
+ETTm1,DLinear,4db81df9b8fc,grid,49,0.0005,1,1,False,0.368703,0.958650,0.663676,,0.960904,True,False
 ETTm1,DLinear,44258000b27a,grid,49,0.001,1,1,False,0.369357,0.958756,0.664056,,,False,False
 ETTm1,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.387677,0.988700,0.688189,,,False,False
 ETTm1,TimeFilter,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.386829,0.989771,0.688300,,,False,False
@@ -97,10 +97,10 @@ Weather,iTransformer,e69975585234,grid,49,0.0005,1,1,False,,,,,,False,False
 Weather,iTransformer,b05c2f930ffb,grid,49,0.001,1,1,False,,,,,,False,False
 Electricity,DLinear,bd1237dae9f6,grid,25,0.0001,0,1,True,0.118820,0.179746,0.149283,0.118630,0.179983,False,False
 Electricity,DLinear,3aa4f628152b,grid,25,0.0005,0,1,False,0.115888,0.177271,0.146580,,,False,False
-Electricity,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.115564,0.176133,0.145848,0.115400,0.176159,True,False
+Electricity,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.115564,0.176133,0.145848,0.115395,0.176159,True,True
 Electricity,DLinear,96063ae3aa85,grid,49,0.0001,0,1,False,0.118903,0.179422,0.149162,,,False,False
 Electricity,DLinear,ff60f736142d,grid,49,0.0005,0,1,False,0.116339,0.178121,0.147230,,,False,False
-Electricity,DLinear,a65571406a47,grid,49,0.001,0,1,False,0.115871,0.177122,0.146497,,,True,False
+Electricity,DLinear,a65571406a47,grid,49,0.001,0,1,False,0.115871,0.177122,0.146497,0.115895,0.177422,True,False
 Electricity,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.119737,,,,,False,False
 Electricity,TimeFilter,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.123645,,,,,False,False
 Electricity,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.125947,,,,,False,False
