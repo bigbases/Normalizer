@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-12T12:10:36+00:00 from 3185 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-12T13:14:01+00:00 from 3196 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
-| lt-search | 6 | 0 | 8 | 0 | 0 |
+| lt-search | 6 | 1 | 7 | 0 | 0 |
 | lt-confirm | 4 | 0 | 0 | 10 | 0 |
-| lt-tuned | 3 | 1 | 0 | 10 | 0 |
+| lt-tuned | 4 | 0 | 0 | 10 | 0 |
 | exp1-lt | 11 | 0 | 3 | 0 | 0 |
 | t3-search | 16 | 0 | 4 | 0 | 0 |
 | t3-confirm | 14 | 0 | 2 | 4 | 0 |
@@ -38,7 +38,7 @@ Generated 2026-10-12T12:10:36+00:00 from 3185 packaged cells. Regenerate with `p
 | lt-search--Electricity--iTransformer | done | 10/10 |  |
 | lt-search--Traffic--iTransformer | ready | 4/10 |  |
 | lt-search--Weather--iTransformer | done | 10/10 |  |
-| lt-search--Traffic--DLinear | ready | 4/10 |  |
+| lt-search--Traffic--DLinear | claimed | 4/10 | itm21-a4000 |
 | lt-search--ETTh2--iTransformer | ready | 4/10 |  |
 | lt-search--ETTh1--DLinear | ready | 4/10 |  |
 | lt-search--ETTh1--iTransformer | ready | 4/10 |  |
@@ -65,7 +65,7 @@ Generated 2026-10-12T12:10:36+00:00 from 3185 packaged cells. Regenerate with `p
 | lt-tuned--ETTm1--DLinear | done | 12/12 |  |
 | lt-tuned--Electricity--iTransformer | done | 12/12 |  |
 | lt-tuned--Traffic--iTransformer | blocked | 0/? |  |
-| lt-tuned--Weather--iTransformer | claimed | 1/12 | itm21-a4000 |
+| lt-tuned--Weather--iTransformer | done | 12/12 |  |
 | lt-tuned--Traffic--DLinear | blocked | 0/? |  |
 | lt-tuned--ETTh2--iTransformer | blocked | 0/? |  |
 | lt-tuned--ETTh1--DLinear | blocked | 0/? |  |
