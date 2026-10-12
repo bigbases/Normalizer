@@ -131,6 +131,12 @@ Traffic,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.333839,0.398128,0.365983,
 Traffic,DLinear,96063ae3aa85,grid,49,0.0001,0,1,False,0.335390,0.400656,0.368023,,,False,False
 Traffic,DLinear,ff60f736142d,grid,49,0.0005,0,1,False,0.334491,0.399741,0.367116,,,False,False
 Traffic,DLinear,a65571406a47,grid,49,0.001,0,1,False,0.334125,0.399400,0.366762,,,False,False
+Traffic,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,,0.422977,,,,False,False
+Traffic,TimeFilter,5a1d1c2227bd,grid,25,0.0005,0,0,False,,0.420240,,,,False,False
+Traffic,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,,,,,,False,False
+Traffic,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,,,,,,False,False
+Traffic,TimeFilter,fa2c86578cc2,grid,49,0.0005,0,0,False,,,,,,False,False
+Traffic,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,,,,,,False,False
 Traffic,iTransformer,17d87ad992eb,grid,25,0.0001,1,1,True,0.319020,0.395614,0.357317,0.317464,0.397088,True,False
 Traffic,iTransformer,16b78929e6ec,grid,25,0.0005,1,1,False,0.321034,0.397336,0.359185,,,False,False
 Traffic,iTransformer,7a018d35e1af,grid,25,0.001,1,1,False,0.321274,0.402912,0.362093,,,False,False
