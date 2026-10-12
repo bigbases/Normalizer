@@ -160,7 +160,7 @@ t3-tuned,Weather,TimeFilter,ddn,blocked,0,,
 t3-tuned,Electricity,TimeFilter,san,blocked,0,,
 t3-tuned,Electricity,TimeFilter,ddn,blocked,0,,
 t3-tuned,Traffic,TimeFilter,san,blocked,0,,
-t3-tuned,Traffic,TimeFilter,ddn,claimed,11,12,itm24-pro6000
+t3-tuned,Traffic,TimeFilter,ddn,done,12,12,
 t3-lt-tuned,ETTh1,TimeXer,lt,blocked,0,,
 t3-lt-tuned,ETTm1,TimeXer,lt,blocked,0,,
 t3-lt-tuned,Weather,TimeXer,lt,blocked,0,,
