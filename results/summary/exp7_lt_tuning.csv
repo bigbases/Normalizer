@@ -120,10 +120,10 @@ Electricity,iTransformer,026094c28304,grid,49,0.0001,1,1,False,0.109748,0.168419
 Electricity,iTransformer,e69975585234,grid,49,0.0005,1,1,False,0.109052,0.165128,0.137090,0.109424,0.167196,True,True
 Electricity,iTransformer,b05c2f930ffb,grid,49,0.001,1,1,False,0.108489,0.169975,0.139232,,,False,False
 Traffic,DLinear,bd1237dae9f6,grid,25,0.0001,0,1,True,0.335203,0.400656,0.367929,0.335281,0.400939,False,False
-Traffic,DLinear,3aa4f628152b,grid,25,0.0005,0,1,False,0.334331,0.399111,0.366721,,,False,False
-Traffic,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.333839,0.398128,0.365983,0.333620,0.398117,False,False
+Traffic,DLinear,3aa4f628152b,grid,25,0.0005,0,1,False,0.334331,0.399111,0.366721,,,True,False
+Traffic,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.333839,0.398128,0.365983,0.333620,0.398117,True,False
 Traffic,DLinear,96063ae3aa85,grid,49,0.0001,0,1,False,0.335390,0.400656,0.368023,,,False,False
-Traffic,DLinear,ff60f736142d,grid,49,0.0005,0,1,False,0.334491,,,,,False,False
+Traffic,DLinear,ff60f736142d,grid,49,0.0005,0,1,False,0.334491,0.399741,0.367116,,,False,False
 Traffic,DLinear,a65571406a47,grid,49,0.001,0,1,False,0.334125,0.399400,0.366762,,,False,False
 Traffic,iTransformer,17d87ad992eb,grid,25,0.0001,1,1,True,0.319020,0.395614,0.357317,0.317464,0.397088,False,False
 Traffic,iTransformer,16b78929e6ec,grid,25,0.0005,1,1,False,0.321034,0.397336,0.359185,,,False,False
