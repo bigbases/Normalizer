@@ -1,0 +1,15 @@
+{
+ "cells_remaining": 2,
+ "cells_total": 2,
+ "claimed_at": "2026-10-12T18:10:19+00:00",
+ "code_rev": "bb237944",
+ "gpu": "NVIDIA A100 80GB PCIe",
+ "gpus": [
+  0,
+  1
+ ],
+ "heartbeat": "2026-10-12T18:10:19+00:00",
+ "host": "elice-a100",
+ "took_over_from": "",
+ "worker": "elice-a100"
+}
