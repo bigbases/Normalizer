@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-12T15:46:20+00:00 from 3318 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-12T15:58:51+00:00 from 3328 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -10,10 +10,10 @@ Generated 2026-10-12T15:46:20+00:00 from 3318 packaged cells. Regenerate with `p
 | lt-confirm | 10 | 0 | 0 | 4 | 0 |
 | lt-tuned | 10 | 0 | 0 | 4 | 0 |
 | exp1-lt | 11 | 0 | 3 | 0 | 0 |
-| t3-search | 16 | 0 | 4 | 0 | 0 |
+| t3-search | 16 | 1 | 3 | 0 | 0 |
 | t3-confirm | 14 | 0 | 2 | 4 | 0 |
-| t3-lt-search | 1 | 1 | 8 | 0 | 0 |
-| t3-lt-struct | 0 | 0 | 1 | 9 | 0 |
+| t3-lt-search | 2 | 0 | 8 | 0 | 0 |
+| t3-lt-struct | 0 | 1 | 1 | 8 | 0 |
 | t3-lt-confirm | 0 | 0 | 0 | 10 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
 | t3-tuned | 12 | 0 | 2 | 6 | 0 |
@@ -105,7 +105,7 @@ Generated 2026-10-12T15:46:20+00:00 from 3318 packaged cells. Regenerate with `p
 | t3-search--Weather--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--Electricity--TimeFilter--san | ready | 0/12 |  |
 | t3-search--Electricity--TimeFilter--ddn | done | 12/12 |  |
-| t3-search--Traffic--TimeFilter--san | ready | 6/12 |  |
+| t3-search--Traffic--TimeFilter--san | claimed | 6/12 | itm21-a4000 |
 | t3-search--Traffic--TimeFilter--ddn | done | 12/12 |  |
 | t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
@@ -132,17 +132,17 @@ Generated 2026-10-12T15:46:20+00:00 from 3318 packaged cells. Regenerate with `p
 | t3-lt-search--Weather--TimeXer | ready | 6/12 |  |
 | t3-lt-search--Electricity--TimeXer | ready | 1/12 |  |
 | t3-lt-search--Traffic--TimeXer | ready | 0/12 |  |
-| t3-lt-search--ETTh1--TimeFilter | claimed | 6/12 | itm21-a4000 |
+| t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeFilter | ready | 6/12 |  |
 | t3-lt-search--Weather--TimeFilter | ready | 6/12 |  |
 | t3-lt-search--Electricity--TimeFilter | ready | 3/12 |  |
 | t3-lt-search--Traffic--TimeFilter | ready | 0/12 |  |
-| t3-lt-struct--ETTh1--TimeXer | ready | 0/6 |  |
+| t3-lt-struct--ETTh1--TimeXer | claimed | 4/6 | itm21-a4000 |
 | t3-lt-struct--ETTm1--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-struct--ETTh1--TimeFilter | blocked | 0/? |  |
+| t3-lt-struct--ETTh1--TimeFilter | ready | 0/6 |  |
 | t3-lt-struct--ETTm1--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Weather--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeFilter | blocked | 0/? |  |
