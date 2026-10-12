@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-11T23:55:33+00:00 from 3102 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-12T00:29:49+00:00 from 3107 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -13,7 +13,7 @@ Generated 2026-10-11T23:55:33+00:00 from 3102 packaged cells. Regenerate with `p
 | t3-confirm | 14 | 0 | 2 | 4 | 0 |
 | t3-lt-search | 6 | 1 | 3 | 0 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
-| t3-tuned | 11 | 2 | 1 | 6 | 0 |
+| t3-tuned | 12 | 1 | 1 | 6 | 0 |
 | t3-lt-tuned | 6 | 0 | 0 | 4 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
@@ -118,7 +118,7 @@ Generated 2026-10-11T23:55:33+00:00 from 3102 packaged cells. Regenerate with `p
 | t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--Weather--TimeFilter | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeFilter | claimed | 0/12 | itm21-a4000 |
+| t3-lt-search--Electricity--TimeFilter | claimed | 1/12 | itm21-a4000 |
 | t3-lt-search--Traffic--TimeFilter | ready | 0/12 |  |
 | t3-none--ETTh1--TimeXer | done | 12/12 |  |
 | t3-none--ETTm1--TimeXer | done | 12/12 |  |
@@ -139,7 +139,7 @@ Generated 2026-10-11T23:55:33+00:00 from 3102 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--ddn | ready | 0/12 |  |
 | t3-tuned--Traffic--TimeXer--san | blocked | 0/? |  |
-| t3-tuned--Traffic--TimeXer--ddn | claimed | 10/12 | itm24-pro6000 |
+| t3-tuned--Traffic--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeFilter--san | done | 12/12 |  |
@@ -149,7 +149,7 @@ Generated 2026-10-11T23:55:33+00:00 from 3102 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeFilter--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeFilter--ddn | blocked | 0/? |  |
 | t3-tuned--Traffic--TimeFilter--san | blocked | 0/? |  |
-| t3-tuned--Traffic--TimeFilter--ddn | claimed | 0/12 | itm24-pro6000 |
+| t3-tuned--Traffic--TimeFilter--ddn | claimed | 2/12 | itm24-pro6000 |
 | t3-lt-tuned--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--Weather--TimeXer | done | 12/12 |  |
