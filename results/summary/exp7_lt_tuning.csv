@@ -92,7 +92,7 @@ Weather,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,,,,,,False,False
 Weather,iTransformer,87aa258a0845,grid,25,0.0001,1,1,True,0.399798,0.606743,0.503270,0.396052,0.606770,False,False
 Weather,iTransformer,32f9bb44b35d,grid,25,0.0005,1,1,False,0.390061,0.595015,0.492538,,,False,False
 Weather,iTransformer,ea5eb2000ea7,grid,25,0.001,1,1,False,0.387869,0.593631,0.490750,0.386997,0.590234,False,False
-Weather,iTransformer,026094c28304,grid,49,0.0001,1,1,False,,,,,,False,False
+Weather,iTransformer,026094c28304,grid,49,0.0001,1,1,False,0.398159,,,,,False,False
 Weather,iTransformer,e69975585234,grid,49,0.0005,1,1,False,,,,,,False,False
 Weather,iTransformer,b05c2f930ffb,grid,49,0.001,1,1,False,,,,,,False,False
 Electricity,DLinear,bd1237dae9f6,grid,25,0.0001,0,1,True,0.118820,0.179746,0.149283,0.118630,0.179983,False,False
@@ -114,11 +114,11 @@ Electricity,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,,,,,,False,False
 Electricity,TimeXer,fa2c86578cc2,grid,49,0.0005,0,0,False,,,,,,False,False
 Electricity,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,,,,,,False,False
 Electricity,iTransformer,87aa258a0845,grid,25,0.0001,1,1,True,0.111190,0.166100,0.138645,0.112472,0.165777,False,False
-Electricity,iTransformer,32f9bb44b35d,grid,25,0.0005,1,1,False,0.110042,0.163817,0.136929,0.111094,0.167158,False,False
+Electricity,iTransformer,32f9bb44b35d,grid,25,0.0005,1,1,False,0.110042,0.163817,0.136929,0.111094,0.167158,True,False
 Electricity,iTransformer,ea5eb2000ea7,grid,25,0.001,1,1,False,0.109560,0.165823,0.137692,,,False,False
-Electricity,iTransformer,026094c28304,grid,49,0.0001,1,1,False,,,,,,False,False
-Electricity,iTransformer,e69975585234,grid,49,0.0005,1,1,False,,,,,,False,False
-Electricity,iTransformer,b05c2f930ffb,grid,49,0.001,1,1,False,,,,,,False,False
+Electricity,iTransformer,026094c28304,grid,49,0.0001,1,1,False,0.109748,0.168419,0.139084,,,False,False
+Electricity,iTransformer,e69975585234,grid,49,0.0005,1,1,False,0.109052,0.165128,0.137090,,,True,False
+Electricity,iTransformer,b05c2f930ffb,grid,49,0.001,1,1,False,0.108489,0.169975,0.139232,,,False,False
 Traffic,DLinear,bd1237dae9f6,grid,25,0.0001,0,1,True,0.335203,0.400656,0.367929,0.335281,0.400939,False,False
 Traffic,DLinear,3aa4f628152b,grid,25,0.0005,0,1,False,0.334331,0.399111,0.366721,,,False,False
 Traffic,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.333839,0.398128,0.365983,0.333620,0.398117,False,False
