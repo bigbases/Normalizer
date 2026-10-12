@@ -44,9 +44,76 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import result_store as rs  # noqa: E402
 import run_matrix as rm  # noqa: E402
 from cost_model import CostModel, order_cells  # noqa: E402
-from gpu_scheduler import ResourceEstimate, ResourceEstimator, query_gpus, select_gpu  # noqa: E402
+from gpu_scheduler import (  # noqa: E402
+    ResourceEstimate, ResourceEstimator, load_dotenv, query_gpus, select_gpu, send_discord,
+)
 
 ROOT = rs.ROOT
+
+BIG_DATASETS = ("Electricity", "Traffic")
+DEFAULT_BLOCKED_CELLS = {"confirm": 4, "search": 6, "final": 12}
+
+
+class Notifier:
+    """Discord messages about one worker (events, batched task completions, progress).
+
+    The webhook URL is read from a .env file (DISCORD_WEBHOOK_URL) and is never
+    logged; a missing URL turns notifications off, and a failed request only
+    logs the error type so that it never stops the worker.
+    """
+
+    def __init__(self, env_file, label, batch_minutes=30.0, enabled=True):
+        load_dotenv(env_file)
+        self.url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip() if enabled else ""
+        self.label = label
+        self.batch_seconds = batch_minutes * 60
+        self.pending = []
+        self.last_batch = time.monotonic()
+        if enabled and not self.url:
+            log(f"Discord notifications off: no DISCORD_WEBHOOK_URL in {env_file}")
+
+    def send(self, text):
+        if not self.url:
+            return False
+        try:
+            send_discord(self.url, f"**[{self.label}]** {text}")
+            return True
+        except Exception as exc:  # noqa: BLE001
+            log(f"Discord notification failed ({type(exc).__name__})")
+            return False
+
+    def finished(self, task_ids):
+        self.pending.extend(task_ids)
+        self.flush()
+
+    def flush(self, force=False):
+        due = force or time.monotonic() - self.last_batch >= self.batch_seconds
+        if self.pending and due:
+            shown = ", ".join(self.pending[:15]) + (f" 외 {len(self.pending) - 15}개" if len(self.pending) > 15 else "")
+            self.send(f"완료된 작업 {len(self.pending)}개: {shown}")
+            self.pending = []
+            self.last_batch = time.monotonic()
+
+
+def progress_text(tasks, args):
+    """Done/remaining runs of the selected phases, Electricity and Traffic apart."""
+    done = sum(len(t.done) for t in tasks if task_matches(t, args) and t.cells is not None)
+    groups = {g: [0, 0] for g in (*BIG_DATASETS, "others")}   # known remaining, estimated (blocked)
+    blocked = 0
+    for t in tasks:
+        if not task_matches(t, args):
+            continue
+        group = t.dataset if t.dataset in BIG_DATASETS else "others"
+        if t.cells is None:
+            blocked += 1
+            groups[group][1] += DEFAULT_BLOCKED_CELLS.get(t.stage, 12)
+        else:
+            groups[group][0] += len(t.cells) - len(t.done)
+    total = sum(a + b for a, b in groups.values())
+    parts = [f"{'그 외' if g == 'others' else g} {a + b}" for g, (a, b) in groups.items()]
+    return (f"진행 상황: 완료 {done} runs, 남은 약 {total} runs ({', '.join(parts)}). "
+            f"앞 단계를 기다리는 작업 {blocked}개는 최대치로 셈")
+
 
 # Test hook (--fake-runner): writes a plausible result row instead of training.
 FAKE_RUNNER = r"""
@@ -132,8 +199,9 @@ def command_release(args):
 
 # ----------------------------------------------------------------------- run
 class Worker:
-    def __init__(self, args):
+    def __init__(self, args, notifier=None):
         self.args = args
+        self.notifier = notifier or Notifier(args.env_file, args.host or rs.host_name(), enabled=False)
         self.repo = rs.GitRepo(ROOT, enabled=not args.no_git)
         if self.repo.enabled:
             self.repo.assert_clean()
@@ -171,6 +239,8 @@ class Worker:
         self.draining = False
         self.last_push = time.monotonic()
         self.next_claim_try = 0.0
+        self.last_tasks = None
+        self.next_progress = time.monotonic()
 
     @staticmethod
     def gpu_names():
@@ -276,6 +346,7 @@ class Worker:
                 tasks = rs.build_tasks(self.plan, self.protocol, self.bases, results,
                                        rs.read_claims(ROOT), self.lease_hours)
                 rs.write_summary(ROOT, results, tasks, self.protocol, self.bases)
+                self.last_tasks = tasks
             return added, finished, lost
 
         try:
@@ -292,8 +363,11 @@ class Worker:
         if lost:
             self.queue = [i for i in self.queue if i["task_id"] not in lost]
             log(f"claims taken over by another worker: {lost}")
+            self.notifier.send(f"다른 서버가 이어받은 작업: {', '.join(lost)}")
         if added or finished:
             log(f"pushed {added} cells; finished tasks: {finished or '-'}")
+        if finished:
+            self.notifier.finished(finished)
         self.check_code_rev()
         return True
 
@@ -386,12 +460,14 @@ class Worker:
                 continue
             self.failed_cells.setdefault(job["task_id"], {})[cell["run_id"]] = tail[-1500:]
             log(f"FAILED {cell['run_id']} (rc={code}); log: {job['log']}")
+            self.notifier.send(f"⚠️ run 실패: {cell['run_id']} (rc={code}). 로그: {job['log']}")
 
     # ----------------------------------------------------------------- loop
     def run(self):
         log(f"worker={self.worker_id} gpus={self.gpu_ids} ({self.gpu_name}, {self.capacity_mib} MiB) "
             f"slots={self.slots} threads={self.threads} torch={self.torch} code={self.code_rev} "
             f"git={'on' if self.repo.enabled else 'off'}")
+        self.notifier.send(f"워커 시작: {self.gpu_name} x{len(self.gpu_ids)}, 동시 {self.slots}개, 코드 {self.code_rev}")
         push_every = self.args.push_minutes * 60
         beat_every = self.args.heartbeat_minutes * 60
         while True:
@@ -403,6 +479,10 @@ class Worker:
                   any(self.failed_cells.get(t) and self.task_idle(t) for t in self.my_tasks)
             if due:
                 self.push("progress")
+            self.notifier.flush()
+            if self.args.notify_progress_hours > 0 and now >= self.next_progress:
+                self.next_progress = now + self.args.notify_progress_hours * 3600
+                self.send_progress()
 
             stop = [f for f in (ROOT / ".worker" / "STOP", self.local / "STOP") if f.exists()]
             if stop and not self.draining:
@@ -412,10 +492,13 @@ class Worker:
             if self.draining:
                 if not self.running:
                     self.push("drain")
+                    self.notifier.flush(force=True)
                     if self.draining == "stop":
                         log("stopped; remove the STOP file before starting again")
+                        self.notifier.send("워커 정지 (STOP 파일): 돌던 run을 마치고 종료")
                         return 0
                     log("drained; exiting so the new code can be used")
+                    self.notifier.send("새 코드를 받기 위해 워커 재시작")
                     return 3
             elif not self.queue and len(self.running) < self.slots and now >= self.next_claim_try:
                 try:
@@ -431,6 +514,8 @@ class Worker:
                     if not self.running and not self.my_tasks and not list(self.outbox.glob("*.csv")):
                         if outstanding == 0:
                             log("no unfinished eligible tasks left; exiting")
+                            self.notifier.flush(force=True)
+                            self.notifier.send("이 서버가 맡을 수 있는 작업을 모두 마쳐 워커 종료")
                             return 0
                         if self.args.once:
                             log(f"{outstanding} tasks are running elsewhere or blocked; exiting (--once)")
@@ -440,6 +525,14 @@ class Worker:
             self.launch_ready()
             time.sleep(self.args.poll_seconds)
 
+    def send_progress(self):
+        try:
+            tasks = self.last_tasks or rs.build_tasks(self.plan, self.protocol, self.bases, rs.read_store(ROOT),
+                                                      rs.read_claims(ROOT), self.lease_hours)
+            self.notifier.send(progress_text(tasks, self.args))
+        except Exception as exc:  # noqa: BLE001
+            log(f"progress notification skipped ({type(exc).__name__}: {exc})")
+
 
 def command_run(args):
     for stop in (ROOT / ".worker" / "STOP",):
@@ -447,7 +540,13 @@ def command_run(args):
             raise SystemExit(f"{stop} exists: remove it to start a worker")
     if args.max_processes_per_gpu < 1:
         raise SystemExit("--max-processes-per-gpu must be >= 1")
-    return Worker(args).run()
+    notifier = Notifier(args.env_file, args.host or rs.host_name(), args.notify_batch_minutes,
+                        enabled=not args.no_notify)
+    try:
+        return Worker(args, notifier).run()
+    except Exception as exc:
+        notifier.send(f"🛑 워커 비정상 종료: {type(exc).__name__}: {str(exc)[:300]}")
+        raise
 
 
 def main():
@@ -490,6 +589,12 @@ def main():
     r.add_argument("--summary-every-push", action="store_true")
     r.add_argument("--once", action="store_true", help="exit instead of waiting for other servers")
     r.add_argument("--fake-runner", type=float, default=None, help=argparse.SUPPRESS)
+    r.add_argument("--env-file", default=str(ROOT / ".env"), help="file with DISCORD_WEBHOOK_URL")
+    r.add_argument("--no-notify", action="store_true", help="no Discord messages")
+    r.add_argument("--notify-batch-minutes", type=float, default=30.0,
+                   help="send finished tasks at most this often (failures and exits are immediate)")
+    r.add_argument("--notify-progress-hours", type=float, default=0.0,
+                   help="overall progress every N hours (enable on one server only); 0 = off")
 
     rel = sub.add_parser("release", help="delete claims so tasks can be picked up again")
     rel.add_argument("task_ids", nargs="+")
