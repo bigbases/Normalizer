@@ -18,6 +18,8 @@ from run_matrix import (
     lt_main_candidates,
     search_candidates,
     has_selected_base,
+    lt_params,
+    lt_structure_candidates,
     selected_base_config,
 )
 
@@ -143,46 +145,112 @@ def select(rows, mode, protocol, bases):
     return output
 
 
-def lt_candidate_scores(raw_rows, protocol, bases, dataset, backbone):
-    """Seed-2021 validation MSE (horizons 96/720) of the 6 LightNorm grid points.
+def lt_validation(raw_rows, dataset, backbone, horizons, seeds):
+    """CandidateID -> {(seed, horizon): validation MSE} of LightNorm cells.
 
-    Search cells give the five new points; the supplied point comes from its
-    search cell when one exists (pilot), otherwise from its Exp1 final cell.
-    Returns [(params, {horizon: value})] in grid order.
+    Search/confirm cells are preferred; a supplied setting without them takes
+    the validation MSE of its Exp1 final cell (same seed and training).
     """
-    horizons = protocol["screen_horizons"]
     found = defaultdict(dict)
     for r in raw_rows:
         if (r.get("Dataset"), r.get("Backbone"), r.get("UseNorm")) != (dataset, backbone, "lt"):
             continue
-        if str(r.get("Seed")) != "2021" or not r.get("BestValMSE") or r.get("Phase") not in ("search", "final"):
+        if not r.get("BestValMSE") or r.get("Phase") not in ("search", "confirm", "final"):
             continue
-        h = int(r["Horizon"])
-        if h in horizons and (r["Phase"] == "search" or h not in found[r["CandidateID"]]):
-            found[r["CandidateID"]][h] = float(r["BestValMSE"])
+        key = (int(r["Seed"]), int(r["Horizon"]))
+        if key[0] in seeds and key[1] in horizons and (r["Phase"] != "final" or key not in found[r["CandidateID"]]):
+            found[r["CandidateID"]][key] = float(r["BestValMSE"])
+    return found
+
+
+def _lt_cid(params):
+    return canonical_hash({"method": "lt", "params": lt_params(params)})
+
+
+def _lt_mean(vals):
+    return sum(vals.values()) / len(vals) if vals and all(v is not None for v in vals.values()) else None
+
+
+def lt_case_scores(raw_rows, protocol, bases, dataset, backbone, seeds=(2021,)):
+    """[(params, {(seed, horizon): MSE or None})] for the LightNorm candidates of one case.
+
+    Candidates are the 6-point grid and, for the backbones in
+    lt_tuning.structure, the s_norm x use_mlp variants of the best grid point
+    at seed 2021 (listed once the grid is complete).
+    """
+    horizons = protocol["screen_horizons"]
+    found = lt_validation(raw_rows, dataset, backbone, horizons, set(seeds) | {2021})
     base = selected_base_config(bases, dataset, backbone)
-    out = []
-    for params in lt_main_candidates(protocol, base):
-        cid = canonical_hash({"method": "lt", "params": complete_method_params("lt", params)})
-        out.append((complete_method_params("lt", params), {h: found[cid].get(h) for h in horizons}))
+    values = lambda p, ss: {(sd, h): found[_lt_cid(p)].get((sd, h)) for sd in ss for h in horizons}
+    grid = [lt_params(p) for p in lt_main_candidates(protocol, base)]
+    out = [(p, values(p, seeds)) for p in grid]
+    if backbone in protocol["lt_tuning"]["structure"]["backbones"]:
+        best = _lt_best([(p, values(p, (2021,))) for p in grid])
+        if best is not None:
+            out += [(lt_params(p), values(p, seeds)) for p in lt_structure_candidates(protocol, best)]
     return out
 
 
-def lt_locks(raw_rows, protocol, bases, cases=None):
-    """Lock = lowest mean validation MSE over horizons 96/720 at seed 2021 (single seed)."""
-    output = {"protocol_version": protocol["protocol_version"], "locks": {}, "selection_rule": (
-        "LightNorm: minimum mean validation MSE across horizons 96/720 at seed 2021 among the "
-        "6-point grid kernel_size {supplied, 49} x station_lr {1e-4, 5e-4, 1e-3}.")}
+def _lt_best(scored):
+    """Lowest mean over the given cells; None while any candidate is incomplete."""
+    means = [(_lt_mean(v), _lt_cid(p), p) for p, v in scored]
+    if not means or any(m is None for m, _, _ in means):
+        return None
+    return min(means, key=lambda x: (x[0], x[1]))[2]
+
+
+def _lt_cases(protocol, bases, cases):
+    return cases or [(d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer", "TimeFilter", "TimeXer")
+                     if has_selected_base(bases, d, b)]
+
+
+def lt_grid_best(raw_rows, protocol, bases, cases=None):
+    """Best 6-point-grid setting at seed 2021: the anchor of the structure search."""
+    output = {"locks": {}}
     rows = list(raw_rows)
-    cases = cases or [(d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer", "TimeFilter", "TimeXer")
-                      if has_selected_base(bases, d, b)]
-    for dataset, backbone in cases:
-        scored = lt_candidate_scores(rows, protocol, bases, dataset, backbone)
-        if not scored or any(v is None for _, vals in scored for v in vals.values()):
+    for dataset, backbone in _lt_cases(protocol, bases, cases):
+        base = selected_base_config(bases, dataset, backbone)
+        found = lt_validation(rows, dataset, backbone, protocol["screen_horizons"], {2021})
+        grid = [lt_params(p) for p in lt_main_candidates(protocol, base)]
+        best = _lt_best([(p, {h: found[_lt_cid(p)].get((2021, h)) for h in protocol["screen_horizons"]}) for p in grid])
+        if best is not None:
+            output["locks"][f"{dataset}|{backbone}|lt"] = best
+    return output
+
+
+def lt_shortlists(raw_rows, protocol, bases, cases=None):
+    """Top-2 LightNorm candidates by seed-2021 mean validation MSE (96/720), as for SAN/DDN."""
+    output = {"shortlists": {}}
+    rows = list(raw_rows)
+    for dataset, backbone in _lt_cases(protocol, bases, cases):
+        scored = lt_case_scores(rows, protocol, bases, dataset, backbone, seeds=(2021,))
+        structure = backbone in protocol["lt_tuning"]["structure"]["backbones"]
+        if len(scored) < (9 if structure else 6) or any(_lt_mean(v) is None for _, v in scored):
             continue
-        best = min(scored, key=lambda item: (sum(item[1].values()) / len(item[1]),
-                                             canonical_hash({"method": "lt", "params": item[0]})))
-        output["locks"][f"{dataset}|{backbone}|lt"] = best[0]
+        ranked = sorted(scored, key=lambda item: (_lt_mean(item[1]), _lt_cid(item[0])))[:2]
+        output["shortlists"][f"{dataset}|{backbone}|lt"] = [
+            {"candidate_id": _lt_cid(p), "params": p, "screen_mean_val_mse": _lt_mean(v)} for p, v in ranked]
+    return output
+
+
+def lt_locks(raw_rows, protocol, bases, cases=None):
+    """Lock = lowest mean validation MSE over seeds 2021/2022 x horizons 96/720 among the shortlist."""
+    output = {"protocol_version": protocol["protocol_version"], "locks": {}, "selection_rule": (
+        "LightNorm: the two candidates with the lowest seed-2021 mean validation MSE (horizons 96/720) "
+        "among the 6-point grid kernel_size {supplied, 49} x station_lr {1e-4, 5e-4, 1e-3} (plus the "
+        "s_norm x use_mlp variants of the best grid point for the lt_tuning.structure backbones) are "
+        "confirmed at seed 2022; the lock has the lowest mean over the four cells, as for SAN/DDN.")}
+    rows = list(raw_rows)
+    shortlists = lt_shortlists(rows, protocol, bases, cases)["shortlists"]
+    for key, items in shortlists.items():
+        dataset, backbone, _ = key.split("|")
+        found = lt_validation(rows, dataset, backbone, protocol["screen_horizons"], {2021, 2022})
+        cells = [(item["params"], {k: found[item["candidate_id"]].get(k)
+                                   for k in ((sd, h) for sd in (2021, 2022) for h in protocol["screen_horizons"])})
+                 for item in items]
+        best = _lt_best(cells)
+        if best is not None:
+            output["locks"][key] = best
     return output
 
 

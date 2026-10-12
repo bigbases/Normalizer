@@ -177,12 +177,18 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
         case_rows = _case_rows(results, task.dataset, task.backbone)
         rows = sh.validation_rows(case_rows)
         lock_doc = shortlist_doc = None
-        if task.stage == "confirm":
+        exp = protocol["experiments"][task.experiment]
+        case = [(task.dataset, task.backbone)]
+        if task.stage == "confirm" and "lt" in task.methods:
+            shortlist_doc = sh.lt_shortlists(case_rows, protocol, bases, case)
+        elif task.stage == "confirm":
             shortlist_doc = sh.select(rows, "shortlist", protocol, bases)
         elif task.stage == "final" and any(m not in ("none", "lt") for m in task.methods):
             lock_doc = sh.select(rows, "lock", protocol, bases)
-        if task.stage == "final" and protocol["experiments"][task.experiment].get("lt_params") == "locked":
-            lock_doc = sh.lt_locks(case_rows, protocol, bases, [(task.dataset, task.backbone)])
+        if task.stage == "search" and exp.get("lt_grid") == "structure":
+            lock_doc = sh.lt_grid_best(case_rows, protocol, bases, case)   # anchor of the variants
+        if task.stage == "final" and exp.get("lt_params") == "locked":
+            lock_doc = sh.lt_locks(case_rows, protocol, bases, case)
         try:
             task.cells = _cells(protocol, bases, task.experiment, task.stage, task.dataset,
                                 task.backbone, task.methods, lock_doc, shortlist_doc)
@@ -271,9 +277,12 @@ def write_summary(root, results, tasks, protocol, bases):
         except Exception:  # noqa: BLE001
             return row["UseNorm"]
 
+    # Finals of the current tasks only: a re-tuned lock leaves the cells of the
+    # previous lock in the store, and they must not mix into the same group.
+    current = {c["run_id"] for t in tasks if t.cells for c in t.cells}
     groups = defaultdict(list)
     for r in rows:
-        if r.get("Phase") == "final" and r["Split"] == "test" and r.get("MSE"):
+        if r.get("Phase") == "final" and r["Split"] == "test" and r.get("MSE") and r["RunID"] in current:
             groups[(r["Dataset"], r["Backbone"], label(r), int(r["Horizon"]))].append(r)
     order = {d: i for i, d in enumerate(protocol["datasets"])}
     with (out / "final_test_mean_std.csv").open("w", newline="") as f:

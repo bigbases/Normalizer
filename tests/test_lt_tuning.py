@@ -50,10 +50,11 @@ class LightNormPilotTest(unittest.TestCase):
             self.assertEqual({p["station_lr"] for p in grid}, {5e-05, 1e-4, 5e-4})
 
     def test_supplied_setting_is_a_pilot_centre_when_rule_keeps_use_mlp(self):
-        final = {c["candidate_id"] for c in self.cells("1_rebuttal_completion", "final", "ETTm1", "iTransformer")}
+        # The pilot (dev, Exp5) keeps the dev-era supplied setting; Exp1 ties kernel_len to kernel_size.
+        base = rm.selected_base_config(self.bases, "ETTm1", "iTransformer")
+        dev_supplied = rm.canonical_hash({"method": "lt", "params": rm.complete_method_params("lt", rm.supplied_lt_params(base))})
         pilot = {c["candidate_id"] for c in self.cells("5_lightnorm_tuning", "search", "ETTm1", "iTransformer")}
-        self.assertEqual(len(final), 1)
-        self.assertTrue(final <= pilot)
+        self.assertIn(dev_supplied, pilot)
         # use_mlp rule changes ETTm1 x DLinear (supplied use_mlp = 1).
         final = {c["candidate_id"] for c in self.cells("1_rebuttal_completion", "final", "ETTm1", "DLinear")}
         pilot = {c["candidate_id"] for c in self.cells("5_lightnorm_tuning", "search", "ETTm1", "DLinear")}
@@ -166,10 +167,30 @@ class LightNormMainTuningTest(unittest.TestCase):
             search = self.cells("7_lightnorm_tuning", "search", dataset, backbone)
             self.assertEqual(len(search), 10)
 
+    def confirm_rows(self, rows, dataset, backbone, value):
+        doc = sh.lt_shortlists(rows.values(), self.protocol, self.bases, [(dataset, backbone)])
+        cells = rs._cells(self.protocol, self.bases, "7_lightnorm_tuning", "confirm", dataset, backbone, ["lt"],
+                          shortlist_doc=doc)
+        return fake_rows(cells, value=value, step=0)
+
+    def test_kernel_len_follows_kernel_size_and_keeps_aligned_ids(self):
+        for c in self.cells("7_lightnorm_tuning", "search", "ETTm1", "iTransformer"):
+            self.assertEqual(c["effective"]["kernel_len"], c["effective"]["kernel_size"])
+        # ETTm1 x DLinear already had kernel_len == kernel_size, so its Exp1 cells keep their IDs.
+        base = rm.selected_base_config(self.bases, "ETTm1", "DLinear")
+        old = rm.canonical_hash({"method": "lt", "params": rm.complete_method_params("lt", rm.supplied_lt_params(base))})
+        self.assertEqual({c["candidate_id"] for c in self.cells("1_rebuttal_completion", "final", "ETTm1", "DLinear")}, {old})
+
     def test_lock_uses_supplied_final_validation_and_reuses_exp1_cells(self):
         rows = fake_rows(self.cells("7_lightnorm_tuning", "search", "ETTm1", "DLinear"), value=0.6)
         exp1 = self.cells("1_rebuttal_completion", "final", "ETTm1", "DLinear")
         rows.update(fake_rows(exp1, value=0.1, step=0))         # supplied is best on validation
+        self.assertEqual(sh.lt_locks(rows.values(), self.protocol, self.bases, [("ETTm1", "DLinear")])["locks"], {})
+        confirm = self.confirm_rows(rows, "ETTm1", "DLinear", 0.6)
+        # the supplied point takes seed 2022 from Exp1; only the other shortlisted point is confirmed
+        self.assertEqual(len(confirm), 2)
+        self.assertEqual({r["Seed"] for r in confirm.values()}, {"2022"})
+        rows.update(confirm)
         doc = sh.lt_locks(rows.values(), self.protocol, self.bases, [("ETTm1", "DLinear")])
         base = rm.selected_base_config(self.bases, "ETTm1", "DLinear")
         self.assertTrue(rm.is_supplied_lt(doc["locks"]["ETTm1|DLinear|lt"], base))
@@ -178,6 +199,7 @@ class LightNormMainTuningTest(unittest.TestCase):
 
         tasks = {t.task_id: t for t in rs.build_tasks(self.plan, self.protocol, self.bases, rows)}
         self.assertEqual(tasks["lt-search--ETTm1--DLinear"].status, "done")
+        self.assertEqual(tasks["lt-confirm--ETTm1--DLinear"].status, "done")
         self.assertEqual(tasks["lt-tuned--ETTm1--DLinear"].status, "done")
         self.assertEqual(tasks["lt-tuned--Weather--DLinear"].status, "blocked")
         self.assertLess(tasks["lt-search--ETTm1--iTransformer"].rank, tasks["lt-search--ETTm2--DLinear"].rank)
@@ -185,6 +207,9 @@ class LightNormMainTuningTest(unittest.TestCase):
     def test_non_supplied_lock_is_reported_as_lt_tuned(self):
         rows = fake_rows(self.cells("7_lightnorm_tuning", "search", "ETTm1", "DLinear"), value=0.1)
         rows.update(fake_rows(self.cells("1_rebuttal_completion", "final", "ETTm1", "DLinear"), value=0.9))
+        confirm = self.confirm_rows(rows, "ETTm1", "DLinear", 0.1)
+        self.assertEqual(len(confirm), 4)                       # two new points x horizons 96/720
+        rows.update(confirm)
         doc = sh.lt_locks(rows.values(), self.protocol, self.bases, [("ETTm1", "DLinear")])
         tuned = fake_rows(self.cells("8_lightnorm_tuned_final", "final", "ETTm1", "DLinear", lock_doc=doc))
         label = st.method_labeler(self.bases)
@@ -194,6 +219,29 @@ class LightNormMainTuningTest(unittest.TestCase):
         self.assertEqual(len(groups[("ETTm1", "DLinear", "lt_tuned", 96)]), 3)
         self.assertEqual(len(groups[("ETTm1", "DLinear", "lt", 96)]), 3)
 
+    def test_t3_structure_search_follows_the_best_grid_point(self):
+        grid = self.cells("7_lightnorm_tuning", "search", "ETTh1", "TimeXer")
+        self.assertEqual(len(grid), 12)                         # 6 points x 2 horizons, supplied included
+        rows = fake_rows(grid, value=0.5)
+        anchor = sh.lt_grid_best(rows.values(), self.protocol, self.bases, [("ETTh1", "TimeXer")])
+        best = anchor["locks"]["ETTh1|TimeXer|lt"]
+        self.assertEqual(rm.lt_params(best), rm.lt_params(grid[0]["effective"]))   # lowest fake value
+        struct = self.cells("9_lightnorm_structure", "search", "ETTh1", "TimeXer", lock_doc=anchor)
+        self.assertEqual(len(struct), 6)                        # 3 s_norm x use_mlp variants x 2 horizons
+        self.assertEqual({(c["effective"]["s_norm"], c["effective"]["use_mlp"]) for c in struct}, {(1, 0), (0, 1), (1, 1)})
+        self.assertTrue(all(c["effective"]["kernel_size"] == best["kernel_size"] for c in struct))
+        self.assertEqual(sh.lt_shortlists(rows.values(), self.protocol, self.bases, [("ETTh1", "TimeXer")])["shortlists"], {})
+        rows.update(fake_rows(struct, value=0.1))               # a structure variant wins
+        confirm = self.confirm_rows(rows, "ETTh1", "TimeXer", 0.1)
+        self.assertEqual(len(confirm), 4)
+        rows.update(confirm)
+        lock = sh.lt_locks(rows.values(), self.protocol, self.bases, [("ETTh1", "TimeXer")])["locks"]["ETTh1|TimeXer|lt"]
+        self.assertNotEqual((lock["s_norm"], lock["use_mlp"]), (0, 0))
+        tasks = {t.task_id: t for t in rs.build_tasks(self.plan, self.protocol, self.bases, rows)}
+        for phase in ("t3-lt-search", "t3-lt-struct", "t3-lt-confirm"):
+            self.assertEqual(tasks[f"{phase}--ETTh1--TimeXer"].status, "done")
+        self.assertEqual(tasks["t3-lt-tuned--ETTh1--TimeXer"].status, "ready")
+        self.assertEqual(tasks["t3-lt-struct--ETTm1--TimeXer"].status, "blocked")
 
 if __name__ == "__main__":
     unittest.main()

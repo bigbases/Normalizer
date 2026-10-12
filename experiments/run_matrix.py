@@ -169,6 +169,25 @@ def complete_method_params(method, params):
     return {**METHOD_DEFAULTS[method], **params}
 
 
+def lt_params(params):
+    """Complete LightNorm settings with the pretraining target on the input kernel.
+
+    The method defines the pretraining target as T_Y = AvgPool1d(Y, k) with the
+    same k as the input decomposition, but the loss reads kernel_len, which
+    the supplied launchers set independently of kernel_size. Protocol cells
+    (Exp1, 7, 8, 9) therefore tie kernel_len to kernel_size; only cells where
+    the two differed get new run IDs. The dev experiments 5 (pilot) and 6
+    (explore) keep their original settings.
+    """
+    params = complete_method_params("lt", params)
+    params["kernel_len"] = params["kernel_size"]
+    return params
+
+
+def method_params(method, params, dev=False):
+    return lt_params(params) if method == "lt" and not dev else complete_method_params(method, params)
+
+
 def normalized_params(method, raw, base):
     params = dict(raw)
     scale = params.pop("station_lr_scale", None)
@@ -266,7 +285,16 @@ def lt_main_candidates(protocol, base):
 
 
 def is_supplied_lt(params, base):
-    return complete_method_params("lt", params) == complete_method_params("lt", supplied_lt_params(base))
+    return lt_params(params) == lt_params(supplied_lt_params(base))
+
+
+def lt_structure_candidates(protocol, anchor):
+    """The other s_norm x use_mlp combinations around the best 6-point-grid setting."""
+    spec = protocol["lt_tuning"]["structure"]
+    anchor = lt_params(anchor)
+    own = (int(anchor["s_norm"]), int(anchor["use_mlp"]))
+    return [{**anchor, "s_norm": s, "use_mlp": m}
+            for s in spec["s_norm"] for m in spec["use_mlp"] if (s, m) != own]
 
 
 def search_candidates(protocol, dataset, method, base, lt_grid=None):
@@ -751,11 +779,17 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
             for method in methods:
                 if stage == "explore":
                     candidates = None
+                elif stage == "search" and method == "lt" and exp.get("lt_grid") == "structure":
+                    candidates = lt_structure_candidates(
+                        protocol, locked_candidates(lock_doc, dataset, backbone, method)[0])
                 elif stage == "search":
                     candidates = search_candidates(protocol, dataset, method, selected_base,
                                                    lt_grid=exp.get("lt_grid"))
                 elif stage == "confirm":
                     candidates = shortlist_candidates(shortlist_doc, dataset, backbone, method)
+                    if method == "lt" and backbone in protocol["lt_tuning"]["main"].get("supplied_from_exp1", []):
+                        # its seed-2022 validation MSE is in the Exp1 final cells
+                        candidates = [c for c in candidates if not is_supplied_lt(c, selected_base)]
                 elif method == "lt" and exp.get("lt_params") == "locked":
                     candidates = locked_candidates(lock_doc, dataset, backbone, method)
                 elif method == "lt":
@@ -767,8 +801,9 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                 schedule = (explore_candidates(protocol, dataset, backbone, selected_base)
                             if stage == "explore" else [(p, horizons, seeds) for p in candidates])
 
+                dev = stage == "explore" or exp.get("lt_grid") == "pilot"
                 for params, cell_horizons, cell_seeds in schedule:
-                    params = complete_method_params(method, params)
+                    params = method_params(method, params, dev=dev)
                     candidate_id = canonical_hash({"method": method, "params": params})
                     for horizon in cell_horizons:
                         for seed in cell_seeds:

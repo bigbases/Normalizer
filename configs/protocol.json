@@ -63,7 +63,14 @@
       "methods": ["lt"],
       "phase": "final",
       "lt_params": "locked",
-      "description": "Test runs (4 horizons x 3 seeds) of the locked LightNorm setting; a lock equal to the supplied setting reuses the Exp1 cells."
+      "description": "Test runs (4 horizons x 3 seeds) of the locked LightNorm setting (two-stage validation selection); a lock equal to the supplied setting reuses the Exp1 cells."
+    },
+    "9_lightnorm_structure": {
+      "backbones": ["TimeFilter", "TimeXer"],
+      "methods": ["lt"],
+      "phase": "search",
+      "lt_grid": "structure",
+      "description": "Validation-only search (seed 2021, horizons 96/720) of the s_norm x use_mlp variants of the best 6-point-grid setting (lt_tuning.structure)."
     }
   },
   "lt_tuning": {
@@ -82,9 +89,17 @@
       "kernel_size": ["supplied", 49],
       "station_lr": [0.0001, 0.0005, 0.001],
       "fixed": "use_mlp, s_norm, down_ratio, t_ff, affine, t_norm as supplied; backbone and training unchanged",
-      "selection": "lowest mean validation MSE over horizons 96/720 at seed 2021; the supplied point uses its Exp1 final-cell validation MSE",
+      "selection": "top-2 by seed-2021 mean validation MSE (96/720), confirmed at seed 2022; lock = lowest mean over the four cells; the supplied point uses its Exp1 final-cell validation MSE",
       "supplied_from_exp1": ["DLinear", "iTransformer"]
     },
+    "structure": {
+      "backbones": ["TimeFilter", "TimeXer"],
+      "s_norm": [0, 1],
+      "use_mlp": [0, 1],
+      "rule": "After the 6-point grid, the other three s_norm x use_mlp combinations are searched at the best grid setting (seed 2021, horizons 96/720). The T3 backbones have no tuned supplied LightNorm structure, unlike DLinear/iTransformer whose supplied launchers set s_norm/use_mlp per dataset."
+    },
+    "confirm": "As for SAN/DDN: the two candidates with the lowest seed-2021 mean validation MSE are run at seed 2022 (horizons 96/720), and the lock has the lowest mean over the four cells. A supplied point on DLinear/iTransformer takes its seed-2022 value from its Exp1 final cell.",
+    "trend_target_kernel": "Protocol cells tie kernel_len (the decomposition kernel of the pretraining target) to kernel_size, as in the method definition T_Y = AvgPool1d(Y, k). Before 2026-10-12 the supplied launchers set kernel_len independently; the dev experiments 5 and 6 keep their original settings.",
     "case_priority": [
       "ETTm1|iTransformer", "Weather|DLinear", "Electricity|DLinear", "ETTm1|DLinear",
       "Electricity|iTransformer", "Traffic|iTransformer", "Weather|iTransformer", "Traffic|DLinear",
@@ -94,7 +109,8 @@
     "history": [
       "2026-10-08 use_mlp: rule-based (1 on Weather/Electricity/Traffic, 0 elsewhere); differs from the supplied launchers only on ETTm1 x DLinear (1 -> 0). t_ff is excluded (it acts only when use_mlp = 1).",
       "2026-10-08 station_lr levels restricted to the 1e-n / 5e-n ladder; down_ratio given the lowest priority among the four candidate axes.",
-      "2026-10-09 Main grid set from the dev-case exploration (Exp6, test split of ETTm1 x iTransformer, Weather x DLinear, ETTm1 x DLinear): station_lr dominated on DLinear and kernel_size on iTransformer, combinations were not additive, s_norm / down_ratio / affine / t_norm did not help, and switching use_mlp off hurt. The pilot's s_norm x station_lr choice and the use_mlp rule are therefore not used; use_mlp stays as supplied."
+      "2026-10-09 Main grid set from the dev-case exploration (Exp6, test split of ETTm1 x iTransformer, Weather x DLinear, ETTm1 x DLinear): station_lr dominated on DLinear and kernel_size on iTransformer, combinations were not additive, s_norm / down_ratio / affine / t_norm did not help, and switching use_mlp off hurt. The pilot's s_norm x station_lr choice and the use_mlp rule are therefore not used; use_mlp stays as supplied.",
+      "2026-10-12 Parity with SAN/DDN: two-stage selection (seed-2022 confirmation of the top two), s_norm x use_mlp structure search for the T3 backbones, and the pretraining-target kernel tied to kernel_size."
     ]
   },
   "search_grids": {

@@ -41,8 +41,7 @@ def method_labeler(bases):
         key = (row["Dataset"], row["Backbone"])
         if key not in supplied:
             base = rm.selected_base_config(bases, *key)
-            supplied[key] = rm.canonical_hash(
-                {"method": "lt", "params": rm.complete_method_params("lt", rm.supplied_lt_params(base))})
+            supplied[key] = rm.canonical_hash({"method": "lt", "params": rm.lt_params(rm.supplied_lt_params(base))})
         return "lt" if row.get("CandidateID") == supplied[key] else "lt_tuned"
     return label
 
@@ -186,33 +185,45 @@ def exp3_comparison(out, groups, protocol, lt_lock_ids=None):
 
 
 def exp7_lt_tuning(out, rows, protocol, bases):
-    """LightNorm 6-point grid per case: seed-2021 validation MSE and the lock."""
+    """LightNorm candidates per case: seed-2021/2022 validation MSE, shortlist, and lock."""
     locks = sh.lt_locks(rows, protocol, bases)["locks"]
+    shortlists = sh.lt_shortlists(rows, protocol, bases)["shortlists"]
     lock_ids = {}
     table = []
     order = _order(protocol)
+    horizons = protocol["screen_horizons"]
     cases = sorted(((d, b) for d in protocol["datasets"] for b in ("DLinear", "iTransformer", "TimeFilter", "TimeXer")
                     if rm.has_selected_base(bases, d, b)),
                    key=lambda k: order(*k))
     for ds, bb in cases:
         base = rm.selected_base_config(bases, ds, bb)
         lock = locks.get(f"{ds}|{bb}|lt")
-        scored = sh.lt_candidate_scores(rows, protocol, bases, ds, bb)
+        short = {item["candidate_id"] for item in shortlists.get(f"{ds}|{bb}|lt", [])}
+        scored = sh.lt_case_scores(rows, protocol, bases, ds, bb, seeds=(2021, 2022))
         if bb not in ("DLinear", "iTransformer") and not any(v is not None for _, vals in scored for v in vals.values()):
             continue
-        for params, vals in scored:
+        grid = len(rm.lt_main_candidates(protocol, base))
+        for i, (params, vals) in enumerate(scored):
+            cid = _lt_cur_id(params)
             supplied = rm.is_supplied_lt(params, base)
-            locked = lock is not None and params == lock
+            locked = lock is not None and rm.lt_params(lock) == params
             if locked:
-                lock_ids[(ds, bb)] = "supplied" if supplied else _lt_id(params)
-            done = all(v is not None for v in vals.values())
-            table.append([ds, bb, _lt_id(params), params["kernel_size"], params["station_lr"], supplied,
-                          *[_num(v) for v in vals.values()],
-                          _num(mean(vals.values())) if done else "", locked])
+                lock_ids[(ds, bb)] = "supplied" if supplied else cid
+            s21 = [vals[(2021, h)] for h in horizons]
+            s22 = [vals[(2022, h)] for h in horizons]
+            table.append([ds, bb, cid, "grid" if i < grid else "structure", params["kernel_size"],
+                          params["station_lr"], params["s_norm"], params["use_mlp"], supplied,
+                          *[_num(v) for v in s21], _num(mean(s21)) if None not in s21 else "",
+                          *[_num(v) for v in s22], cid in short, locked])
     _write(out / "exp7_lt_tuning.csv",
-           ["Dataset", "Backbone", "CandidateID", "kernel_size", "station_lr", "Supplied",
-            *[f"Val_h{h}_s2021" for h in protocol["screen_horizons"]], "Val_mean", "Locked"], table)
+           ["Dataset", "Backbone", "CandidateID", "Kind", "kernel_size", "station_lr", "s_norm", "use_mlp",
+            "Supplied", *[f"Val_h{h}_s2021" for h in horizons], "Val_mean_s2021",
+            *[f"Val_h{h}_s2022" for h in horizons], "Shortlisted", "Locked"], table)
     return lock_ids
+
+
+def _lt_cur_id(params):
+    return rm.canonical_hash({"method": "lt", "params": rm.lt_params(params)})
 
 
 def _lt_id(params):
@@ -237,7 +248,9 @@ def exp5_lt_pilot(out, rows, protocol, bases):
     for ds, bb in protocol["lt_tuning"]["pilot"]["cases"]:
         base = rm.selected_base_config(bases, ds, bb)
         supplied = rm.complete_method_params("lt", rm.supplied_lt_params(base))
-        sup_vals = val.get((ds, bb, "final", _lt_id(supplied)), {})
+        # dev-era Exp1 cells first; cases whose kernel_len was re-tied to kernel_size fall back to the new cells
+        sup_vals = (val.get((ds, bb, "final", _lt_id(supplied)))
+                    or val.get((ds, bb, "final", _lt_cur_id(supplied)), {}))
         sup = {h: sup_vals.get((h, 2021)) for h in horizons}
         noise = {}
         for h in horizons:
@@ -345,7 +358,8 @@ def exp6_lt_explore(out, rows, protocol, bases):
 
 def write_all(out, rows, tasks, protocol, bases):
     out = Path(out)
-    groups = final_groups(rows, method_labeler(bases))
+    current = {c["run_id"] for t in tasks if t.cells for c in t.cells}
+    groups = final_groups([r for r in rows if r["RunID"] in current], method_labeler(bases))
     stage_status(out, tasks)
     exp1_lightnorm(out, groups, protocol)
     exp2_validation(out, rows, protocol, bases)
