@@ -1,20 +1,23 @@
 # Experiment progress
 
-Generated 2026-10-12T00:29:49+00:00 from 3107 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-12T05:59:04+00:00 from 3124 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
-| lt-search | 14 | 0 | 0 | 0 | 0 |
-| lt-tuned | 14 | 0 | 0 | 0 | 0 |
-| exp1-lt | 14 | 0 | 0 | 0 | 0 |
+| lt-search | 1 | 1 | 12 | 0 | 0 |
+| lt-confirm | 0 | 0 | 0 | 14 | 0 |
+| lt-tuned | 0 | 0 | 0 | 14 | 0 |
+| exp1-lt | 11 | 0 | 3 | 0 | 0 |
 | t3-search | 16 | 0 | 4 | 0 | 0 |
 | t3-confirm | 14 | 0 | 2 | 4 | 0 |
-| t3-lt-search | 6 | 1 | 3 | 0 | 0 |
+| t3-lt-search | 0 | 1 | 9 | 0 | 0 |
+| t3-lt-struct | 0 | 0 | 0 | 10 | 0 |
+| t3-lt-confirm | 0 | 0 | 0 | 10 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
-| t3-tuned | 12 | 1 | 1 | 6 | 0 |
-| t3-lt-tuned | 6 | 0 | 0 | 4 | 0 |
+| t3-tuned | 12 | 0 | 2 | 6 | 0 |
+| t3-lt-tuned | 0 | 0 | 0 | 10 | 0 |
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
@@ -29,42 +32,56 @@ Generated 2026-10-12T00:29:49+00:00 from 3107 packaged cells. Regenerate with `p
 | lt-explore--Weather--DLinear | done | 58/58 |  |
 | lt-explore--ETTm1--DLinear | done | 66/66 |  |
 | lt-search--ETTm1--iTransformer | done | 10/10 |  |
-| lt-search--Weather--DLinear | done | 10/10 |  |
-| lt-search--Electricity--DLinear | done | 10/10 |  |
-| lt-search--ETTm1--DLinear | done | 10/10 |  |
-| lt-search--Electricity--iTransformer | done | 10/10 |  |
-| lt-search--Traffic--iTransformer | done | 10/10 |  |
-| lt-search--Weather--iTransformer | done | 10/10 |  |
-| lt-search--Traffic--DLinear | done | 10/10 |  |
-| lt-search--ETTh2--iTransformer | done | 10/10 |  |
-| lt-search--ETTh1--DLinear | done | 10/10 |  |
-| lt-search--ETTh1--iTransformer | done | 10/10 |  |
-| lt-search--ETTh2--DLinear | done | 10/10 |  |
-| lt-search--ETTm2--DLinear | done | 10/10 |  |
-| lt-search--ETTm2--iTransformer | done | 10/10 |  |
-| lt-tuned--ETTm1--iTransformer | done | 12/12 |  |
-| lt-tuned--Weather--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--DLinear | done | 12/12 |  |
-| lt-tuned--ETTm1--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--iTransformer | done | 12/12 |  |
-| lt-tuned--Traffic--iTransformer | done | 12/12 |  |
-| lt-tuned--Weather--iTransformer | done | 12/12 |  |
-| lt-tuned--Traffic--DLinear | done | 12/12 |  |
-| lt-tuned--ETTh2--iTransformer | done | 12/12 |  |
-| lt-tuned--ETTh1--DLinear | done | 12/12 |  |
-| lt-tuned--ETTh1--iTransformer | done | 12/12 |  |
-| lt-tuned--ETTh2--DLinear | done | 12/12 |  |
-| lt-tuned--ETTm2--DLinear | done | 12/12 |  |
-| lt-tuned--ETTm2--iTransformer | done | 12/12 |  |
+| lt-search--Weather--DLinear | claimed | 2/10 | itm21-a4000 |
+| lt-search--Electricity--DLinear | ready | 4/10 |  |
+| lt-search--ETTm1--DLinear | ready | 4/10 |  |
+| lt-search--Electricity--iTransformer | ready | 4/10 |  |
+| lt-search--Traffic--iTransformer | ready | 4/10 |  |
+| lt-search--Weather--iTransformer | ready | 4/10 |  |
+| lt-search--Traffic--DLinear | ready | 4/10 |  |
+| lt-search--ETTh2--iTransformer | ready | 4/10 |  |
+| lt-search--ETTh1--DLinear | ready | 4/10 |  |
+| lt-search--ETTh1--iTransformer | ready | 4/10 |  |
+| lt-search--ETTh2--DLinear | ready | 4/10 |  |
+| lt-search--ETTm2--DLinear | ready | 4/10 |  |
+| lt-search--ETTm2--iTransformer | ready | 0/10 |  |
+| lt-confirm--ETTm1--iTransformer | blocked | 0/? |  |
+| lt-confirm--Weather--DLinear | blocked | 0/? |  |
+| lt-confirm--Electricity--DLinear | blocked | 0/? |  |
+| lt-confirm--ETTm1--DLinear | blocked | 0/? |  |
+| lt-confirm--Electricity--iTransformer | blocked | 0/? |  |
+| lt-confirm--Traffic--iTransformer | blocked | 0/? |  |
+| lt-confirm--Weather--iTransformer | blocked | 0/? |  |
+| lt-confirm--Traffic--DLinear | blocked | 0/? |  |
+| lt-confirm--ETTh2--iTransformer | blocked | 0/? |  |
+| lt-confirm--ETTh1--DLinear | blocked | 0/? |  |
+| lt-confirm--ETTh1--iTransformer | blocked | 0/? |  |
+| lt-confirm--ETTh2--DLinear | blocked | 0/? |  |
+| lt-confirm--ETTm2--DLinear | blocked | 0/? |  |
+| lt-confirm--ETTm2--iTransformer | blocked | 0/? |  |
+| lt-tuned--ETTm1--iTransformer | blocked | 0/? |  |
+| lt-tuned--Weather--DLinear | blocked | 0/? |  |
+| lt-tuned--Electricity--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTm1--DLinear | blocked | 0/? |  |
+| lt-tuned--Electricity--iTransformer | blocked | 0/? |  |
+| lt-tuned--Traffic--iTransformer | blocked | 0/? |  |
+| lt-tuned--Weather--iTransformer | blocked | 0/? |  |
+| lt-tuned--Traffic--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTh2--iTransformer | blocked | 0/? |  |
+| lt-tuned--ETTh1--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTh1--iTransformer | blocked | 0/? |  |
+| lt-tuned--ETTh2--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTm2--DLinear | blocked | 0/? |  |
+| lt-tuned--ETTm2--iTransformer | blocked | 0/? |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh2--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTm1--DLinear | done | 12/12 |  |
-| exp1-lt--ETTm1--iTransformer | done | 12/12 |  |
+| exp1-lt--ETTm1--iTransformer | ready | 0/12 |  |
 | exp1-lt--ETTm2--DLinear | done | 12/12 |  |
-| exp1-lt--ETTm2--iTransformer | done | 12/12 |  |
-| exp1-lt--Weather--DLinear | done | 12/12 |  |
+| exp1-lt--ETTm2--iTransformer | ready | 0/12 |  |
+| exp1-lt--Weather--DLinear | ready | 0/12 |  |
 | exp1-lt--Weather--iTransformer | done | 12/12 |  |
 | exp1-lt--Electricity--DLinear | done | 12/12 |  |
 | exp1-lt--Electricity--iTransformer | done | 12/12 |  |
@@ -110,16 +127,36 @@ Generated 2026-10-12T00:29:49+00:00 from 3107 packaged cells. Regenerate with `p
 | t3-confirm--Electricity--TimeFilter--ddn | ready | 0/4 |  |
 | t3-confirm--Traffic--TimeFilter--san | blocked | 0/? |  |
 | t3-confirm--Traffic--TimeFilter--ddn | done | 4/4 |  |
-| t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
-| t3-lt-search--ETTm1--TimeXer | done | 12/12 |  |
-| t3-lt-search--Weather--TimeXer | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeXer | ready | 3/12 |  |
+| t3-lt-search--ETTh1--TimeXer | ready | 6/12 |  |
+| t3-lt-search--ETTm1--TimeXer | ready | 6/12 |  |
+| t3-lt-search--Weather--TimeXer | ready | 6/12 |  |
+| t3-lt-search--Electricity--TimeXer | ready | 1/12 |  |
 | t3-lt-search--Traffic--TimeXer | ready | 0/12 |  |
-| t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
-| t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
-| t3-lt-search--Weather--TimeFilter | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeFilter | claimed | 1/12 | itm21-a4000 |
+| t3-lt-search--ETTh1--TimeFilter | ready | 6/12 |  |
+| t3-lt-search--ETTm1--TimeFilter | ready | 6/12 |  |
+| t3-lt-search--Weather--TimeFilter | ready | 6/12 |  |
+| t3-lt-search--Electricity--TimeFilter | claimed | 3/12 | itm21-a4000 |
 | t3-lt-search--Traffic--TimeFilter | ready | 0/12 |  |
+| t3-lt-struct--ETTh1--TimeXer | blocked | 0/? |  |
+| t3-lt-struct--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-struct--Weather--TimeXer | blocked | 0/? |  |
+| t3-lt-struct--Electricity--TimeXer | blocked | 0/? |  |
+| t3-lt-struct--Traffic--TimeXer | blocked | 0/? |  |
+| t3-lt-struct--ETTh1--TimeFilter | blocked | 0/? |  |
+| t3-lt-struct--ETTm1--TimeFilter | blocked | 0/? |  |
+| t3-lt-struct--Weather--TimeFilter | blocked | 0/? |  |
+| t3-lt-struct--Electricity--TimeFilter | blocked | 0/? |  |
+| t3-lt-struct--Traffic--TimeFilter | blocked | 0/? |  |
+| t3-lt-confirm--ETTh1--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--Weather--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--ETTh1--TimeFilter | blocked | 0/? |  |
+| t3-lt-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
+| t3-lt-confirm--Weather--TimeFilter | blocked | 0/? |  |
+| t3-lt-confirm--Electricity--TimeFilter | blocked | 0/? |  |
+| t3-lt-confirm--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-none--ETTh1--TimeXer | done | 12/12 |  |
 | t3-none--ETTm1--TimeXer | done | 12/12 |  |
 | t3-none--Weather--TimeXer | done | 12/12 |  |
@@ -149,15 +186,15 @@ Generated 2026-10-12T00:29:49+00:00 from 3107 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeFilter--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeFilter--ddn | blocked | 0/? |  |
 | t3-tuned--Traffic--TimeFilter--san | blocked | 0/? |  |
-| t3-tuned--Traffic--TimeFilter--ddn | claimed | 2/12 | itm24-pro6000 |
-| t3-lt-tuned--ETTh1--TimeXer | done | 12/12 |  |
-| t3-lt-tuned--ETTm1--TimeXer | done | 12/12 |  |
-| t3-lt-tuned--Weather--TimeXer | done | 12/12 |  |
+| t3-tuned--Traffic--TimeFilter--ddn | ready | 2/12 |  |
+| t3-lt-tuned--ETTh1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--ETTh1--TimeFilter | done | 12/12 |  |
-| t3-lt-tuned--ETTm1--TimeFilter | done | 12/12 |  |
-| t3-lt-tuned--Weather--TimeFilter | done | 12/12 |  |
+| t3-lt-tuned--ETTh1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--ETTm1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--Weather--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned--Traffic--TimeFilter | blocked | 0/? |  |
 | exp2-search--ETTh1--DLinear--revin | done | 4/4 |  |
