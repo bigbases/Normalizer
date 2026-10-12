@@ -72,11 +72,11 @@ ETTm2,iTransformer,f9d4a024dd3a,grid,49,0.0001,0,0,False,,,,,,False,False
 ETTm2,iTransformer,fa2c86578cc2,grid,49,0.0005,0,0,False,,,,,,False,False
 ETTm2,iTransformer,70544b7f9269,grid,49,0.001,0,0,False,,,,,,False,False
 Weather,DLinear,36b61b191ff5,grid,13,0.0001,1,1,True,,,,,,False,False
-Weather,DLinear,e42176d00844,grid,13,0.0005,1,1,False,,,,,,False,False
-Weather,DLinear,d510671ef280,grid,13,0.001,1,1,False,,,,,,False,False
-Weather,DLinear,a3729a1a10be,grid,49,0.0001,1,1,False,,,,,,False,False
-Weather,DLinear,4db81df9b8fc,grid,49,0.0005,1,1,False,0.379272,,,,,False,False
-Weather,DLinear,44258000b27a,grid,49,0.001,1,1,False,0.377045,,,,,False,False
+Weather,DLinear,e42176d00844,grid,13,0.0005,1,1,False,0.379296,0.638265,0.508781,,,False,False
+Weather,DLinear,d510671ef280,grid,13,0.001,1,1,False,0.378536,0.632562,0.505549,,,False,False
+Weather,DLinear,a3729a1a10be,grid,49,0.0001,1,1,False,0.413986,0.656535,0.535260,,,False,False
+Weather,DLinear,4db81df9b8fc,grid,49,0.0005,1,1,False,0.379272,0.636629,0.507950,,,False,False
+Weather,DLinear,44258000b27a,grid,49,0.001,1,1,False,0.377045,0.632437,0.504741,,,False,False
 Weather,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.377606,0.650195,0.513900,,,False,False
 Weather,TimeFilter,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.378503,0.660773,0.519638,,,False,False
 Weather,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.378342,0.652796,0.515569,,,False,False

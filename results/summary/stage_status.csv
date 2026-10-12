@@ -6,8 +6,8 @@ lt-explore,ETTm1,iTransformer,lt,done,58,58,
 lt-explore,Weather,DLinear,lt,done,58,58,
 lt-explore,ETTm1,DLinear,lt,done,66,66,
 lt-search,ETTm1,iTransformer,lt,done,10,10,
-lt-search,Weather,DLinear,lt,claimed,2,10,itm21-a4000
-lt-search,Electricity,DLinear,lt,ready,4,10,
+lt-search,Weather,DLinear,lt,done,10,10,
+lt-search,Electricity,DLinear,lt,claimed,4,10,itm21-a4000
 lt-search,ETTm1,DLinear,lt,ready,4,10,
 lt-search,Electricity,iTransformer,lt,ready,4,10,
 lt-search,Traffic,iTransformer,lt,ready,4,10,
