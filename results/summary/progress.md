@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-12T22:55:06+00:00 from 3395 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T01:54:49+00:00 from 3422 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,13 +8,13 @@ Generated 2026-10-12T22:55:06+00:00 from 3395 packaged cells. Regenerate with `p
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-confirm | 12 | 0 | 0 | 2 | 0 |
-| lt-tuned | 11 | 1 | 0 | 2 | 0 |
+| lt-tuned | 12 | 0 | 0 | 2 | 0 |
 | exp1-lt | 12 | 0 | 2 | 0 | 0 |
-| t3-search | 16 | 2 | 2 | 0 | 0 |
-| t3-confirm | 14 | 1 | 1 | 4 | 0 |
+| t3-search | 16 | 1 | 3 | 0 | 0 |
+| t3-confirm | 14 | 0 | 2 | 4 | 0 |
 | t3-lt-search | 2 | 1 | 7 | 0 | 0 |
 | t3-lt-struct | 1 | 0 | 1 | 8 | 0 |
-| t3-lt-confirm | 0 | 0 | 1 | 9 | 0 |
+| t3-lt-confirm | 0 | 1 | 0 | 9 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
 | t3-tuned | 14 | 0 | 0 | 6 | 0 |
 | t3-lt-tuned | 0 | 0 | 0 | 10 | 0 |
@@ -60,7 +60,7 @@ Generated 2026-10-12T22:55:06+00:00 from 3395 packaged cells. Regenerate with `p
 | lt-confirm--ETTm2--DLinear | done | 4/4 |  |
 | lt-confirm--ETTm2--iTransformer | blocked | 0/? |  |
 | lt-tuned--ETTm1--iTransformer | blocked | 0/? |  |
-| lt-tuned--Weather--DLinear | claimed | 2/12 | itm21-a4000 |
+| lt-tuned--Weather--DLinear | done | 12/12 |  |
 | lt-tuned--Electricity--DLinear | done | 12/12 |  |
 | lt-tuned--ETTm1--DLinear | done | 12/12 |  |
 | lt-tuned--Electricity--iTransformer | done | 12/12 |  |
@@ -95,7 +95,7 @@ Generated 2026-10-12T22:55:06+00:00 from 3395 packaged cells. Regenerate with `p
 | t3-search--Weather--TimeXer--ddn | done | 12/12 |  |
 | t3-search--Electricity--TimeXer--san | ready | 1/12 |  |
 | t3-search--Electricity--TimeXer--ddn | done | 12/12 |  |
-| t3-search--Traffic--TimeXer--san | claimed | 0/12 | elice-a100 |
+| t3-search--Traffic--TimeXer--san | claimed | 10/12 | elice-a100 |
 | t3-search--Traffic--TimeXer--ddn | done | 12/12 |  |
 | t3-search--ETTh1--TimeFilter--san | done | 12/12 |  |
 | t3-search--ETTh1--TimeFilter--ddn | done | 12/12 |  |
@@ -105,7 +105,7 @@ Generated 2026-10-12T22:55:06+00:00 from 3395 packaged cells. Regenerate with `p
 | t3-search--Weather--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--Electricity--TimeFilter--san | ready | 0/12 |  |
 | t3-search--Electricity--TimeFilter--ddn | done | 12/12 |  |
-| t3-search--Traffic--TimeFilter--san | claimed | 9/12 | itm21-a4000 |
+| t3-search--Traffic--TimeFilter--san | ready | 9/12 |  |
 | t3-search--Traffic--TimeFilter--ddn | done | 12/12 |  |
 | t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
@@ -124,19 +124,19 @@ Generated 2026-10-12T22:55:06+00:00 from 3395 packaged cells. Regenerate with `p
 | t3-confirm--Weather--TimeFilter--san | done | 4/4 |  |
 | t3-confirm--Weather--TimeFilter--ddn | ready | 0/4 |  |
 | t3-confirm--Electricity--TimeFilter--san | blocked | 0/? |  |
-| t3-confirm--Electricity--TimeFilter--ddn | claimed | 0/4 | itm24-pro6000 |
+| t3-confirm--Electricity--TimeFilter--ddn | ready | 3/4 |  |
 | t3-confirm--Traffic--TimeFilter--san | blocked | 0/? |  |
 | t3-confirm--Traffic--TimeFilter--ddn | done | 4/4 |  |
 | t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeXer | ready | 6/12 |  |
 | t3-lt-search--Weather--TimeXer | ready | 6/12 |  |
 | t3-lt-search--Electricity--TimeXer | ready | 1/12 |  |
-| t3-lt-search--Traffic--TimeXer | ready | 0/12 |  |
+| t3-lt-search--Traffic--TimeXer | claimed | 0/12 | elice-a100 |
 | t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeFilter | ready | 6/12 |  |
 | t3-lt-search--Weather--TimeFilter | ready | 6/12 |  |
 | t3-lt-search--Electricity--TimeFilter | ready | 3/12 |  |
-| t3-lt-search--Traffic--TimeFilter | claimed | 2/12 | itm24-gpu0-pro6000 |
+| t3-lt-search--Traffic--TimeFilter | ready | 6/12 |  |
 | t3-lt-struct--ETTh1--TimeXer | done | 6/6 |  |
 | t3-lt-struct--ETTm1--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Weather--TimeXer | blocked | 0/? |  |
@@ -147,7 +147,7 @@ Generated 2026-10-12T22:55:06+00:00 from 3395 packaged cells. Regenerate with `p
 | t3-lt-struct--Weather--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeFilter | blocked | 0/? |  |
-| t3-lt-confirm--ETTh1--TimeXer | ready | 0/4 |  |
+| t3-lt-confirm--ETTh1--TimeXer | claimed | 0/4 | itm21-a4000 |
 | t3-lt-confirm--ETTm1--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
