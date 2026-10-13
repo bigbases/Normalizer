@@ -182,6 +182,11 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "Weather|TimeXer|san": {
+      "period_len": 12,
+      "station_lr": 0.0005,
+      "station_type": "adaptive"
+    },
     "Weather|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 4,

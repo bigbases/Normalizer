@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-13T18:06:07+00:00 from 3780 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T18:19:14+00:00 from 3787 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -9,9 +9,9 @@ Generated 2026-10-13T18:06:07+00:00 from 3780 packaged cells. Regenerate with `p
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-confirm | 14 | 0 | 0 | 0 | 0 |
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
-| lt-kernel-check | 3 | 1 | 0 | 0 | 0 |
+| lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 5 | 3 | 12 | 0 | 0 |
+| t3-search | 5 | 4 | 11 | 0 | 0 |
 | t3-confirm | 4 | 1 | 0 | 15 | 0 |
 | t3-lt-search | 6 | 1 | 3 | 0 | 0 |
 | t3-lt-struct | 6 | 0 | 0 | 4 | 0 |
@@ -76,7 +76,7 @@ Generated 2026-10-13T18:06:07+00:00 from 3780 packaged cells. Regenerate with `p
 | lt-tuned--ETTm2--iTransformer | done | 12/12 |  |
 | lt-kernel-check--Electricity--DLinear | done | 4/4 |  |
 | lt-kernel-check--Electricity--iTransformer | done | 4/4 |  |
-| lt-kernel-check--Traffic--DLinear | claimed | 0/4 | itm24-gpu0-pro6000 |
+| lt-kernel-check--Traffic--DLinear | done | 4/4 |  |
 | lt-kernel-check--Traffic--iTransformer | done | 4/4 |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
@@ -94,7 +94,7 @@ Generated 2026-10-13T18:06:07+00:00 from 3780 packaged cells. Regenerate with `p
 | exp1-lt--Traffic--iTransformer | done | 12/12 |  |
 | t3-search--ETTh1--TimeXer--san | done | 12/12 |  |
 | t3-search--ETTh1--TimeXer--ddn | done | 12/12 |  |
-| t3-search--ETTm1--TimeXer--san | ready | 4/12 |  |
+| t3-search--ETTm1--TimeXer--san | claimed | 4/12 | itm21-a4000 |
 | t3-search--ETTm1--TimeXer--ddn | ready | 0/12 |  |
 | t3-search--Weather--TimeXer--san | done | 12/12 |  |
 | t3-search--Weather--TimeXer--ddn | ready | 0/12 |  |
@@ -116,7 +116,7 @@ Generated 2026-10-13T18:06:07+00:00 from 3780 packaged cells. Regenerate with `p
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--ETTm1--TimeXer--san | blocked | 0/? |  |
 | t3-confirm--ETTm1--TimeXer--ddn | blocked | 0/? |  |
-| t3-confirm--Weather--TimeXer--san | claimed | 0/4 | itm21-a4000 |
+| t3-confirm--Weather--TimeXer--san | claimed | 3/4 | itm21-a4000 |
 | t3-confirm--Weather--TimeXer--ddn | blocked | 0/? |  |
 | t3-confirm--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-confirm--Electricity--TimeXer--ddn | blocked | 0/? |  |
