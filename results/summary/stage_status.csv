@@ -56,7 +56,7 @@ shift-none,Traffic,DLinear,none,ready,0,3,
 shift-tuned,Weather,DLinear,revin,done,3,3,
 shift-tuned,Weather,DLinear,san,blocked,0,,
 shift-tuned,Weather,DLinear,ddn,blocked,0,,
-shift-tuned,Weather,DLinear,fan,claimed,0,3,itm21-a4000
+shift-tuned,Weather,DLinear,fan,done,3,3,
 shift-tuned,Traffic,DLinear,revin,ready,0,3,
 shift-tuned,Traffic,DLinear,san,blocked,0,,
 shift-tuned,Traffic,DLinear,ddn,blocked,0,,
