@@ -356,7 +356,7 @@ class Worker:
         try:
             added, finished, lost = self.repo.transaction(
                 mutate, f"results: {self.worker_id} ({reason}) [skip ci]")
-        except RuntimeError as exc:
+        except (RuntimeError, OSError) as exc:      # OSError: git could not even start
             log(f"push failed, will retry: {exc}")
             return False
         self.last_push = time.monotonic()
@@ -420,7 +420,12 @@ class Worker:
             for var in ("LIGHTNORM_TORCH_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
                 env[var] = str(self.threads)
             handle = log_path.open("w")
-            process = subprocess.Popen(cmd, cwd=ROOT, env=env, stdout=handle, stderr=subprocess.STDOUT)
+            try:
+                process = subprocess.Popen(cmd, cwd=ROOT, env=env, stdout=handle, stderr=subprocess.STDOUT)
+            except OSError as exc:                   # e.g. no memory to fork: keep the cell queued
+                handle.close()
+                log(f"could not start {cell['run_id']}, retrying later: {exc}")
+                return
             job = {**item, "process": process, "gpu_id": gpu_id, "part": part, "log": log_path,
                    "handle": handle, "started": time.monotonic(), "started_at": rs.utcnow()}
             self.running[process.pid] = job
@@ -507,7 +512,7 @@ class Worker:
             elif not self.queue and len(self.running) < self.slots and now >= self.next_claim_try:
                 try:
                     task, outstanding = self.claim_next()
-                except RuntimeError as exc:
+                except (RuntimeError, OSError) as exc:
                     log(f"claim failed, retrying in 1 min: {exc}")
                     self.next_claim_try = now + 60
                     task, outstanding = None, -1
