@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-13T19:04:15+00:00 from 3809 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T19:16:19+00:00 from 3813 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,12 +12,12 @@ Generated 2026-10-13T19:04:15+00:00 from 3809 packaged cells. Regenerate with `p
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 7 | 3 | 10 | 0 | 0 |
-| t3-confirm | 5 | 1 | 1 | 13 | 0 |
+| t3-confirm | 6 | 1 | 0 | 13 | 0 |
 | t3-lt-search | 6 | 0 | 4 | 0 | 0 |
 | t3-lt-struct | 6 | 0 | 0 | 4 | 0 |
 | t3-lt-confirm | 6 | 0 | 0 | 4 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
-| t3-tuned | 4 | 0 | 1 | 15 | 0 |
+| t3-tuned | 4 | 0 | 2 | 14 | 0 |
 | t3-lt-tuned | 6 | 0 | 0 | 4 | 0 |
 | exp2-search | 28 | 0 | 28 | 0 | 0 |
 | exp2-confirm | 28 | 0 | 0 | 28 | 0 |
@@ -114,7 +114,7 @@ Generated 2026-10-13T19:04:15+00:00 from 3809 packaged cells. Regenerate with `p
 | t3-search--Traffic--TimeFilter--ddn | claimed | 4/12 | itm24-gpu0-pro6000 |
 | t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
-| t3-confirm--ETTm1--TimeXer--san | claimed | 0/4 | itm21-a4000 |
+| t3-confirm--ETTm1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTm1--TimeXer--ddn | blocked | 0/? |  |
 | t3-confirm--Weather--TimeXer--san | done | 4/4 |  |
 | t3-confirm--Weather--TimeXer--ddn | blocked | 0/? |  |
@@ -124,7 +124,7 @@ Generated 2026-10-13T19:04:15+00:00 from 3809 packaged cells. Regenerate with `p
 | t3-confirm--Traffic--TimeXer--ddn | blocked | 0/? |  |
 | t3-confirm--ETTh1--TimeFilter--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeFilter--ddn | done | 4/4 |  |
-| t3-confirm--ETTm1--TimeFilter--san | ready | 0/4 |  |
+| t3-confirm--ETTm1--TimeFilter--san | claimed | 0/4 | itm21-a4000 |
 | t3-confirm--ETTm1--TimeFilter--ddn | blocked | 0/? |  |
 | t3-confirm--Weather--TimeFilter--san | blocked | 0/? |  |
 | t3-confirm--Weather--TimeFilter--ddn | blocked | 0/? |  |
@@ -174,7 +174,7 @@ Generated 2026-10-13T19:04:15+00:00 from 3809 packaged cells. Regenerate with `p
 | t3-none--Traffic--TimeFilter | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeXer--ddn | done | 12/12 |  |
-| t3-tuned--ETTm1--TimeXer--san | blocked | 0/? |  |
+| t3-tuned--ETTm1--TimeXer--san | ready | 0/12 |  |
 | t3-tuned--ETTm1--TimeXer--ddn | blocked | 0/? |  |
 | t3-tuned--Weather--TimeXer--san | ready | 0/12 |  |
 | t3-tuned--Weather--TimeXer--ddn | blocked | 0/? |  |

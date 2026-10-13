@@ -179,12 +179,12 @@ ETTm1,TimeXer,ddn,e082b1250cbb,{},0.384920,0.847836,0.381275,0.840079,0.616378,0
 ETTm1,TimeXer,ddn,f841fa3c59bc,{},0.398605,0.872627,,,0.635616,,False,False
 ETTm1,TimeXer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.390237,0.894576,,,0.642407,,False,False
 ETTm1,TimeXer,san,48f6c1ced712,{},0.378163,0.888656,,,0.633409,,False,False
-ETTm1,TimeXer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.396927,0.867349,,,0.632138,,True,False
+ETTm1,TimeXer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.396927,0.867349,0.402954,0.868661,0.632138,0.633973,True,False
 ETTm1,TimeXer,san,61e69def41a7,{},0.370213,0.862550,0.375738,0.865456,0.616381,0.618489,False,False
 ETTm1,TimeXer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.390077,0.875027,,,0.632552,,False,False
 ETTm1,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.383338,0.890381,,,0.636859,,False,False
 ETTm1,TimeXer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.407843,0.870002,,,0.638923,,False,False
-ETTm1,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.382726,0.870412,,,0.626569,,True,False
+ETTm1,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.382726,0.870412,0.384632,0.869542,0.626569,0.626828,True,True
 ETTm1,TimeXer,san,f6904fc69cd0,{},0.378255,0.866580,0.381099,0.866651,0.622417,0.623146,False,False
 ETTm1,TimeXer,san,fa33e70a6a3a,{},0.371102,0.884415,,,0.627759,,False,False
 ETTm1,iTransformer,ddn,1c7b90df1d3b,{},0.398930,0.958184,,,0.678557,,False,False
