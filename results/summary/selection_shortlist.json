@@ -87,6 +87,38 @@
         "screen_mean_val_mse": 0.9755403908557274
       }
     ],
+    "ETTh1|TimeXer|ddn": [
+      {
+        "candidate_id": "275a2b5a29c2",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 32,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 0,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.9709526138768636
+      },
+      {
+        "candidate_id": "8b428784a508",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 12,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 0,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.9710369880814205
+      }
+    ],
     "ETTh1|TimeXer|san": [
       {
         "candidate_id": "604dd99690a2",
