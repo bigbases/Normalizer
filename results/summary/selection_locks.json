@@ -391,6 +391,15 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "Weather|TimeFilter|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "kernel_len": 49,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "Weather|TimeFilter|san": {
       "period_len": 24,
       "station_lr": 0.0001,
