@@ -92,12 +92,12 @@ Weather,DLinear,44258000b27a,grid,49,0.001,1,1,False,0.377045,0.632437,0.504741,
 Weather,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.377606,0.650195,0.513900,,,False,False
 Weather,TimeFilter,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.378503,0.660773,0.519638,,,False,False
 Weather,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.378342,0.652796,0.515569,,,False,False
-Weather,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.377547,0.638839,0.508193,,,False,False
-Weather,TimeFilter,fa2c86578cc2,grid,49,0.0005,0,0,False,0.378297,0.637987,0.508142,,,False,False
+Weather,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.377547,0.638839,0.508193,,,True,False
+Weather,TimeFilter,fa2c86578cc2,grid,49,0.0005,0,0,False,0.378297,0.637987,0.508142,,,True,False
 Weather,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,0.380905,0.641330,0.511117,,,False,False
-Weather,TimeFilter,ff60f736142d,structure,49,0.0005,0,1,False,,,,,,False,False
-Weather,TimeFilter,5c81e9db6dcd,structure,49,0.0005,1,0,False,,,,,,False,False
-Weather,TimeFilter,4db81df9b8fc,structure,49,0.0005,1,1,False,,,,,,False,False
+Weather,TimeFilter,ff60f736142d,structure,49,0.0005,0,1,False,0.383680,0.640357,0.512019,,,False,False
+Weather,TimeFilter,5c81e9db6dcd,structure,49,0.0005,1,0,False,0.385211,0.670315,0.527763,,,False,False
+Weather,TimeFilter,4db81df9b8fc,structure,49,0.0005,1,1,False,0.388576,0.673817,0.531196,,,False,False
 Weather,TimeXer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.403658,0.687590,0.545624,,,False,False
 Weather,TimeXer,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.399453,0.690066,0.544760,,,False,False
 Weather,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.399964,0.688020,0.543992,,,False,False
