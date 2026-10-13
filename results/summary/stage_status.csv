@@ -49,8 +49,8 @@ lt-tuned,ETTm2,DLinear,lt,done,12,12,
 lt-tuned,ETTm2,iTransformer,lt,done,12,12,
 lt-kernel-check,Electricity,DLinear,lt,claimed,0,4,itm24-gpu0-pro6000
 lt-kernel-check,Electricity,iTransformer,lt,done,4,4,
-lt-kernel-check,Traffic,DLinear,lt,ready,0,4,
-lt-kernel-check,Traffic,iTransformer,lt,claimed,2,4,itm24-gpu0-pro6000
+lt-kernel-check,Traffic,DLinear,lt,claimed,0,4,itm24-gpu0-pro6000
+lt-kernel-check,Traffic,iTransformer,lt,done,4,4,
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
 exp1-lt,ETTh1,iTransformer,lt,done,12,12,
 exp1-lt,ETTh2,DLinear,lt,done,12,12,
