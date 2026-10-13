@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-13T08:09:30+00:00 from 3556 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T08:25:00+00:00 from 3560 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,9 +12,9 @@ Generated 2026-10-13T08:09:30+00:00 from 3556 packaged cells. Regenerate with `p
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 16 | 0 | 4 | 0 | 0 |
 | t3-confirm | 14 | 0 | 2 | 4 | 0 |
-| t3-lt-search | 5 | 0 | 5 | 0 | 0 |
-| t3-lt-struct | 4 | 1 | 0 | 5 | 0 |
-| t3-lt-confirm | 4 | 0 | 0 | 6 | 0 |
+| t3-lt-search | 5 | 1 | 4 | 0 | 0 |
+| t3-lt-struct | 5 | 0 | 0 | 5 | 0 |
+| t3-lt-confirm | 4 | 0 | 1 | 5 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
 | t3-tuned | 14 | 0 | 0 | 6 | 0 |
 | t3-lt-tuned | 2 | 0 | 2 | 6 | 0 |
@@ -134,12 +134,12 @@ Generated 2026-10-13T08:09:30+00:00 from 3556 packaged cells. Regenerate with `p
 | t3-lt-search--Traffic--TimeXer | ready | 0/12 |  |
 | t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
-| t3-lt-search--Weather--TimeFilter | ready | 6/12 |  |
+| t3-lt-search--Weather--TimeFilter | claimed | 6/12 | itm21-a4000 |
 | t3-lt-search--Electricity--TimeFilter | ready | 3/12 |  |
 | t3-lt-search--Traffic--TimeFilter | ready | 6/12 |  |
 | t3-lt-struct--ETTh1--TimeXer | done | 6/6 |  |
 | t3-lt-struct--ETTm1--TimeXer | done | 6/6 |  |
-| t3-lt-struct--Weather--TimeXer | claimed | 2/6 | itm21-a4000 |
+| t3-lt-struct--Weather--TimeXer | done | 6/6 |  |
 | t3-lt-struct--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--ETTh1--TimeFilter | done | 6/6 |  |
@@ -149,7 +149,7 @@ Generated 2026-10-13T08:09:30+00:00 from 3556 packaged cells. Regenerate with `p
 | t3-lt-struct--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--ETTh1--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTm1--TimeXer | done | 4/4 |  |
-| t3-lt-confirm--Weather--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--Weather--TimeXer | ready | 0/4 |  |
 | t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--ETTh1--TimeFilter | done | 4/4 |  |
