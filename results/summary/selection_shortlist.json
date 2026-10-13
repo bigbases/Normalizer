@@ -1,36 +1,6 @@
 {
   "protocol_version": "journal-v1",
   "shortlists": {
-    "ETTh1|DLinear|ddn": [
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 1.049265426820154
-      },
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 1.0495980617510563
-      }
-    ],
     "ETTh1|DLinear|fan": [
       {
         "candidate_id": "e5360358fcb8",
@@ -95,36 +65,6 @@
         "screen_mean_val_mse": 1.0505652824107976
       }
     ],
-    "ETTh1|TimeFilter|ddn": [
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.9600649090000692
-      },
-      {
-        "candidate_id": "6f0b0683bbd0",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.9708018873290303
-      }
-    ],
     "ETTh1|TimeFilter|san": [
       {
         "candidate_id": "604dd99690a2",
@@ -147,36 +87,6 @@
         "screen_mean_val_mse": 0.9755403908557274
       }
     ],
-    "ETTh1|TimeXer|ddn": [
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.9549773536488055
-      },
-      {
-        "candidate_id": "6f0b0683bbd0",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.9613529112324477
-      }
-    ],
     "ETTh1|TimeXer|san": [
       {
         "candidate_id": "604dd99690a2",
@@ -197,36 +107,6 @@
           "station_type": "adaptive"
         },
         "screen_mean_val_mse": 0.9942407866810414
-      }
-    ],
-    "ETTh1|iTransformer|ddn": [
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 1.1156059554703335
-      },
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 1.1186408288727072
       }
     ],
     "ETTh1|iTransformer|fan": [
@@ -293,36 +173,6 @@
         "screen_mean_val_mse": 1.0538174004049943
       }
     ],
-    "ETTh2|DLinear|ddn": [
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.40836594597421544
-      },
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.4085560559872836
-      }
-    ],
     "ETTh2|DLinear|fan": [
       {
         "candidate_id": "96e68ab8643c",
@@ -387,36 +237,6 @@
         "screen_mean_val_mse": 0.4023731866961016
       }
     ],
-    "ETTh2|iTransformer|ddn": [
-      {
-        "candidate_id": "aa50bdd36231",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0005,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.4140772036386325
-      },
-      {
-        "candidate_id": "2d34e986cebd",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0005,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.41799817371236925
-      }
-    ],
     "ETTh2|iTransformer|fan": [
       {
         "candidate_id": "a463b7607f3d",
@@ -457,36 +277,6 @@
           "station_lr": 0.0001
         },
         "screen_mean_val_mse": 0.4824944679067535
-      }
-    ],
-    "ETTm1|DLinear|ddn": [
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.6326359648071913
-      },
-      {
-        "candidate_id": "6f0b0683bbd0",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.6424544949368618
       }
     ],
     "ETTm1|DLinear|fan": [
@@ -553,36 +343,6 @@
         "screen_mean_val_mse": 0.6290209798586194
       }
     ],
-    "ETTm1|TimeFilter|ddn": [
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.6206730909520934
-      },
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.6251379452557545
-      }
-    ],
     "ETTm1|TimeFilter|san": [
       {
         "candidate_id": "74fa903f9770",
@@ -605,36 +365,6 @@
         "screen_mean_val_mse": 0.6421363350960926
       }
     ],
-    "ETTm1|TimeXer|ddn": [
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.6163779083186944
-      },
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.621478677038865
-      }
-    ],
     "ETTm1|TimeXer|san": [
       {
         "candidate_id": "74fa903f9770",
@@ -655,36 +385,6 @@
           "station_type": "adaptive"
         },
         "screen_mean_val_mse": 0.6424067890816034
-      }
-    ],
-    "ETTm1|iTransformer|ddn": [
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.6651521024857068
-      },
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.6692879573343494
       }
     ],
     "ETTm1|iTransformer|fan": [
@@ -751,36 +451,6 @@
         "screen_mean_val_mse": 0.6346519299732969
       }
     ],
-    "ETTm2|DLinear|ddn": [
-      {
-        "candidate_id": "6f0b0683bbd0",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.19928112053166586
-      },
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.19985493198698442
-      }
-    ],
     "ETTm2|DLinear|fan": [
       {
         "candidate_id": "942f55772c3f",
@@ -843,36 +513,6 @@
           "station_type": "adaptive"
         },
         "screen_mean_val_mse": 0.19138423615669983
-      }
-    ],
-    "ETTm2|iTransformer|ddn": [
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.20207755120816176
-      },
-      {
-        "candidate_id": "1c7b90df1d3b",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.20770208579956206
       }
     ],
     "ETTm2|iTransformer|fan": [
@@ -939,36 +579,6 @@
         "screen_mean_val_mse": 0.2033031193711843
       }
     ],
-    "Electricity|DLinear|ddn": [
-      {
-        "candidate_id": "6f0b0683bbd0",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.13873544922098519
-      },
-      {
-        "candidate_id": "f841fa3c59bc",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.13899936204155286
-      }
-    ],
     "Electricity|DLinear|fan": [
       {
         "candidate_id": "59c5876c8eff",
@@ -1031,96 +641,6 @@
           "station_type": "adaptive"
         },
         "screen_mean_val_mse": 0.14533349907336135
-      }
-    ],
-    "Electricity|TimeFilter|ddn": [
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.14423388340891158
-      },
-      {
-        "candidate_id": "1c7b90df1d3b",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.1446418243395926
-      }
-    ],
-    "Electricity|TimeXer|ddn": [
-      {
-        "candidate_id": "1c7b90df1d3b",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.15761519686769954
-      },
-      {
-        "candidate_id": "f841fa3c59bc",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.1606171430809037
-      }
-    ],
-    "Electricity|iTransformer|ddn": [
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.13611754927924782
-      },
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.1362246449896187
       }
     ],
     "Electricity|iTransformer|fan": [
@@ -1187,36 +707,6 @@
         "screen_mean_val_mse": 0.1380682776699651
       }
     ],
-    "Traffic|DLinear|ddn": [
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.36505592419898314
-      },
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.3652645474286763
-      }
-    ],
     "Traffic|DLinear|fan": [
       {
         "candidate_id": "e92c5afd9424",
@@ -1279,96 +769,6 @@
           "station_type": "adaptive"
         },
         "screen_mean_val_mse": 0.37894062573711074
-      }
-    ],
-    "Traffic|TimeFilter|ddn": [
-      {
-        "candidate_id": "1c7b90df1d3b",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.38895785805697625
-      },
-      {
-        "candidate_id": "f841fa3c59bc",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.3893108711649592
-      }
-    ],
-    "Traffic|TimeXer|ddn": [
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.39513800306102403
-      },
-      {
-        "candidate_id": "44e9a626dff4",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.39522516307635946
-      }
-    ],
-    "Traffic|iTransformer|ddn": [
-      {
-        "candidate_id": "6f0b0683bbd0",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.3553943669710022
-      },
-      {
-        "candidate_id": "f841fa3c59bc",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.35705067277527774
       }
     ],
     "Traffic|iTransformer|fan": [
@@ -1435,36 +835,6 @@
         "screen_mean_val_mse": 0.36835104129635365
       }
     ],
-    "Weather|DLinear|ddn": [
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.48572044997817515
-      },
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.48716608211271084
-      }
-    ],
     "Weather|DLinear|fan": [
       {
         "candidate_id": "c5b5799bc7f6",
@@ -1529,36 +899,6 @@
         "screen_mean_val_mse": 0.5033489355731726
       }
     ],
-    "Weather|TimeFilter|ddn": [
-      {
-        "candidate_id": "6f0b0683bbd0",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.4842182342911019
-      },
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.48458961854539834
-      }
-    ],
     "Weather|TimeFilter|san": [
       {
         "candidate_id": "74fa903f9770",
@@ -1581,36 +921,6 @@
         "screen_mean_val_mse": 0.5061068035854984
       }
     ],
-    "Weather|TimeXer|ddn": [
-      {
-        "candidate_id": "43cd745f71d8",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.4917888168758855
-      },
-      {
-        "candidate_id": "e082b1250cbb",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.49846307379353205
-      }
-    ],
     "Weather|TimeXer|san": [
       {
         "candidate_id": "74fa903f9770",
@@ -1631,36 +941,6 @@
           "station_type": "adaptive"
         },
         "screen_mean_val_mse": 0.5224680931348462
-      }
-    ],
-    "Weather|iTransformer|ddn": [
-      {
-        "candidate_id": "6f0b0683bbd0",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "kernel_len": 25,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.4838407535326573
-      },
-      {
-        "candidate_id": "1c7b90df1d3b",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 0,
-          "kernel_len": 49,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 1,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.48487873922840186
       }
     ],
     "Weather|iTransformer|fan": [

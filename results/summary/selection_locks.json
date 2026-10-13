@@ -1,14 +1,5 @@
 {
   "locks": {
-    "ETTh1|DLinear|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "ETTh1|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 8,
@@ -18,32 +9,10 @@
       "affine": 1,
       "station_lr": 0.0001
     },
-    "ETTh1|TimeFilter|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
-    "ETTh1|TimeXer|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
-    "ETTh1|iTransformer|ddn": {
-      "hkernel_len": 5,
-      "j": 0,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
+    "ETTh1|TimeXer|san": {
+      "period_len": 12,
+      "station_lr": 0.0005,
+      "station_type": "adaptive"
     },
     "ETTh1|iTransformer|fan": {
       "fan_aux_weight": 1.0,
@@ -54,15 +23,6 @@
       "affine": 1,
       "station_lr": 0.0001
     },
-    "ETTh2|DLinear|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "ETTh2|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 8,
@@ -71,15 +31,6 @@
     "ETTh2|DLinear|revin": {
       "affine": 0,
       "station_lr": 0.0001
-    },
-    "ETTh2|iTransformer|ddn": {
-      "hkernel_len": 5,
-      "j": 0,
-      "kernel_len": 7,
-      "station_lr": 0.0005,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
     },
     "ETTh2|iTransformer|fan": {
       "fan_aux_weight": 1.0,
@@ -90,15 +41,6 @@
       "affine": 0,
       "station_lr": 0.0001
     },
-    "ETTm1|DLinear|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "ETTm1|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 16,
@@ -108,33 +50,6 @@
       "affine": 0,
       "station_lr": 0.0001
     },
-    "ETTm1|TimeFilter|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
-    "ETTm1|TimeXer|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
-    "ETTm1|iTransformer|ddn": {
-      "hkernel_len": 5,
-      "j": 0,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "ETTm1|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 16,
@@ -143,15 +58,6 @@
     "ETTm1|iTransformer|revin": {
       "affine": 0,
       "station_lr": 0.0001
-    },
-    "ETTm2|DLinear|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 25,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
     },
     "ETTm2|DLinear|fan": {
       "fan_aux_weight": 1.0,
@@ -167,15 +73,6 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
-    "ETTm2|iTransformer|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "ETTm2|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 6,
@@ -189,15 +86,6 @@
       "period_len": 24,
       "station_lr": 5e-05,
       "station_type": "adaptive"
-    },
-    "Electricity|DLinear|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 25,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
     },
     "Electricity|DLinear|fan": {
       "fan_aux_weight": 1.0,
@@ -213,33 +101,6 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
-    "Electricity|TimeFilter|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
-    "Electricity|TimeXer|ddn": {
-      "hkernel_len": 5,
-      "j": 0,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
-    "Electricity|iTransformer|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "Electricity|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 6,
@@ -248,15 +109,6 @@
     "Electricity|iTransformer|revin": {
       "affine": 0,
       "station_lr": 0.0001
-    },
-    "Traffic|DLinear|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
     },
     "Traffic|DLinear|fan": {
       "fan_aux_weight": 1.0,
@@ -272,33 +124,6 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
-    "Traffic|TimeFilter|ddn": {
-      "hkernel_len": 5,
-      "j": 0,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
-    "Traffic|TimeXer|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
-    "Traffic|iTransformer|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 25,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "Traffic|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 45,
@@ -312,15 +137,6 @@
       "period_len": 24,
       "station_lr": 5e-05,
       "station_type": "adaptive"
-    },
-    "Weather|DLinear|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
     },
     "Weather|DLinear|fan": {
       "fan_aux_weight": 1.0,
@@ -336,42 +152,15 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
-    "Weather|TimeFilter|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "Weather|TimeFilter|san": {
       "period_len": 24,
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
-    "Weather|TimeXer|ddn": {
-      "hkernel_len": 5,
-      "j": 1,
-      "kernel_len": 7,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
-    },
     "Weather|TimeXer|san": {
       "period_len": 24,
       "station_lr": 0.0001,
       "station_type": "adaptive"
-    },
-    "Weather|iTransformer|ddn": {
-      "hkernel_len": 5,
-      "j": 0,
-      "kernel_len": 49,
-      "station_lr": 0.0001,
-      "station_type": "adaptive",
-      "twice_epoch": 1,
-      "wavelet": "coif3"
     },
     "Weather|iTransformer|fan": {
       "fan_aux_weight": 1.0,
