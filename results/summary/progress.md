@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-13T21:46:23+00:00 from 3870 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T22:42:30+00:00 from 3885 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,8 +11,8 @@ Generated 2026-10-13T21:46:23+00:00 from 3870 packaged cells. Regenerate with `p
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 9 | 4 | 7 | 0 | 0 |
-| t3-confirm | 8 | 0 | 1 | 11 | 0 |
+| t3-search | 10 | 3 | 7 | 0 | 0 |
+| t3-confirm | 8 | 0 | 2 | 10 | 0 |
 | t3-lt-search | 6 | 0 | 4 | 0 | 0 |
 | t3-lt-struct | 6 | 0 | 0 | 4 | 0 |
 | t3-lt-confirm | 6 | 0 | 0 | 4 | 0 |
@@ -101,17 +101,17 @@ Generated 2026-10-13T21:46:23+00:00 from 3870 packaged cells. Regenerate with `p
 | t3-search--Electricity--TimeXer--san | ready | 1/12 |  |
 | t3-search--Electricity--TimeXer--ddn | done | 12/12 |  |
 | t3-search--Traffic--TimeXer--san | ready | 2/12 |  |
-| t3-search--Traffic--TimeXer--ddn | claimed | 10/12 | itm24-pro6000 |
+| t3-search--Traffic--TimeXer--ddn | done | 12/12 |  |
 | t3-search--ETTh1--TimeFilter--san | done | 12/12 |  |
 | t3-search--ETTh1--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--ETTm1--TimeFilter--san | done | 12/12 |  |
-| t3-search--ETTm1--TimeFilter--ddn | claimed | 0/12 | itm21-a4000 |
+| t3-search--ETTm1--TimeFilter--ddn | claimed | 9/12 | itm21-a4000 |
 | t3-search--Weather--TimeFilter--san | done | 12/12 |  |
 | t3-search--Weather--TimeFilter--ddn | ready | 0/12 |  |
 | t3-search--Electricity--TimeFilter--san | ready | 0/12 |  |
-| t3-search--Electricity--TimeFilter--ddn | claimed | 0/12 | itm24-pro6000 |
+| t3-search--Electricity--TimeFilter--ddn | claimed | 2/12 | itm24-pro6000 |
 | t3-search--Traffic--TimeFilter--san | ready | 6/12 |  |
-| t3-search--Traffic--TimeFilter--ddn | claimed | 4/12 | itm24-gpu0-pro6000 |
+| t3-search--Traffic--TimeFilter--ddn | claimed | 6/12 | itm24-gpu0-pro6000 |
 | t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--ETTm1--TimeXer--san | done | 4/4 |  |
@@ -121,7 +121,7 @@ Generated 2026-10-13T21:46:23+00:00 from 3870 packaged cells. Regenerate with `p
 | t3-confirm--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-confirm--Electricity--TimeXer--ddn | ready | 0/4 |  |
 | t3-confirm--Traffic--TimeXer--san | blocked | 0/? |  |
-| t3-confirm--Traffic--TimeXer--ddn | blocked | 0/? |  |
+| t3-confirm--Traffic--TimeXer--ddn | ready | 0/4 |  |
 | t3-confirm--ETTh1--TimeFilter--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeFilter--ddn | done | 4/4 |  |
 | t3-confirm--ETTm1--TimeFilter--san | done | 4/4 |  |
