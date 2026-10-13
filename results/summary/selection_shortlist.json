@@ -65,6 +65,38 @@
         "screen_mean_val_mse": 1.0505652824107976
       }
     ],
+    "ETTh1|TimeFilter|ddn": [
+      {
+        "candidate_id": "8b428784a508",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 12,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 0,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.950512614629087
+      },
+      {
+        "candidate_id": "275a2b5a29c2",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 32,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 0,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.9618921222185148
+      }
+    ],
     "ETTh1|TimeFilter|san": [
       {
         "candidate_id": "604dd99690a2",
