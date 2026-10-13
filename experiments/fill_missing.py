@@ -101,7 +101,7 @@ def progress_text(tasks, args):
     Only the phase filter applies: a worker restricted to some datasets still
     reports the whole experiment.
     """
-    phases = parse_filter(args.phases) if args.phases else None
+    phases = parse_filter(args.phases) | set(getattr(args, "open_phases", ())) if args.phases else None
     selected = [t for t in tasks if not phases or t.phase in phases]
     done = sum(len(t.done) for t in selected if t.cells is not None)
     groups = {g: [0, 0] for g in (*BIG_DATASETS, "others")}   # known remaining, estimated (blocked)
@@ -144,9 +144,14 @@ def parse_filter(value):
     return set(rm.parse_filter(value) or ())
 
 
+def open_phases(plan):
+    """Phases marked "open" in the plan are claimed by every worker, whatever its --phases."""
+    return {p["name"] for p in plan["phases"] if p.get("open")}
+
+
 def task_matches(task, args):
     return (
-        (not args.phases or task.phase in parse_filter(args.phases))
+        (not args.phases or task.phase in parse_filter(args.phases) or task.phase in getattr(args, "open_phases", ()))
         and (not args.datasets or task.dataset in parse_filter(args.datasets))
         and (not args.backbones or task.backbone in parse_filter(args.backbones))
     )
@@ -163,6 +168,7 @@ def command_list(args):
     repo = rs.GitRepo(ROOT, enabled=not args.no_git)
     repo.sync(read_only=True)
     protocol, bases, plan = load_context(ROOT)
+    args.open_phases = open_phases(plan)
     results = rs.read_store(ROOT)
     cost = CostModel()
     cost.calibrate_from_rows(results.values(), args.gpu_name)
@@ -212,6 +218,7 @@ class Worker:
             self.repo.sync()
         self.code_rev = self.repo.code_rev()
         self.protocol, self.bases, self.plan = load_context(ROOT)
+        self.args.open_phases = open_phases(self.plan)
         self.lease_hours = float(args.lease_hours or self.plan.get("lease_hours", 3))
 
         states = query_gpus()

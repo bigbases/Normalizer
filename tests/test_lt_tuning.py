@@ -1,8 +1,11 @@
 import csv
+import json
 import tempfile
 import unittest
+from argparse import Namespace
 from pathlib import Path
 
+from experiments import fill_missing as fm
 from experiments import result_store as rs
 from experiments import run_matrix as rm
 from experiments import select_hparams as sh
@@ -242,6 +245,32 @@ class LightNormMainTuningTest(unittest.TestCase):
             self.assertEqual(tasks[f"{phase}--ETTh1--TimeXer"].status, "done")
         self.assertEqual(tasks["t3-lt-tuned--ETTh1--TimeXer"].status, "ready")
         self.assertEqual(tasks["t3-lt-struct--ETTm1--TimeXer"].status, "blocked")
+
+
+class LightNormKernelCheckTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.protocol = rm.load_json(rm.PROTOCOL_PATH)
+        cls.bases = rm.load_json(rm.BASE_CONFIGS_PATH)
+        cls.plan = rs.load_plan()
+
+    def test_check_cells_are_points_of_the_13_25_49_grid(self):
+        cells = rs._cells(self.protocol, self.bases, "10_lightnorm_kernel_check", "search", "Traffic", "DLinear", ["lt"])
+        self.assertEqual(len(cells), 4)                      # 2 station_lr x horizons 96/720 at seed 2021
+        self.assertEqual({(c["effective"]["kernel_size"], c["effective"]["kernel_len"]) for c in cells}, {(13, 13)})
+        self.assertEqual({c["effective"]["station_lr"] for c in cells}, {1e-4, 1e-3})
+        alt = json.loads(json.dumps(self.protocol))
+        alt["lt_tuning"]["main"].update(kernel_size=["supplied", 13, 49], station_lr=[1e-4, 1e-3])
+        grid = rs._cells(alt, self.bases, "7_lightnorm_tuning", "search", "Traffic", "DLinear", ["lt"])
+        self.assertLessEqual({c["run_id"] for c in cells}, {c["run_id"] for c in grid})
+
+    def test_open_phase_is_claimed_whatever_the_phase_filter(self):
+        tasks = [t for t in rs.build_tasks(self.plan, self.protocol, self.bases, {}) if t.phase == "lt-kernel-check"]
+        self.assertEqual(len(tasks), 4)
+        big = Namespace(phases="t3-search", datasets=None, backbones=None, open_phases=fm.open_phases(self.plan))
+        small = Namespace(phases="t3-search", datasets="ETTh1,Weather", backbones=None, open_phases=big.open_phases)
+        self.assertTrue(all(fm.task_matches(t, big) for t in tasks))
+        self.assertFalse(any(fm.task_matches(t, small) for t in tasks))   # dataset filters still apply
 
 
 class SanGridTest(unittest.TestCase):

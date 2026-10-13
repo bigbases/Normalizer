@@ -311,7 +311,12 @@ def search_candidates(protocol, dataset, method, base, lt_grid=None):
             if base.get("backbone") in protocol["lt_tuning"]["main"].get("supplied_from_exp1", []):
                 grid = [c for c in grid if not is_supplied_lt(c, base)]
             return grid
-        raise ValueError("LightNorm search needs an experiment with lt_grid 'pilot' or 'main'")
+        if lt_grid == "kernel_check":
+            # Points of a {13, 25, 49} x {1e-4, 1e-3} grid that the current grid lacks.
+            spec = protocol["lt_tuning"]["kernel_check"]
+            return [{**supplied_lt_params(base), "kernel_size": spec["kernel_size"], "station_lr": lr}
+                    for lr in spec["station_lr"]]
+        raise ValueError("LightNorm search needs an experiment with lt_grid 'pilot', 'main' or 'kernel_check'")
     if method == "fan":
         ks = protocol["datasets"][dataset]["fan_k"]
         if protocol.get("fan_lr_grid", "station_scale") == "station_and_backbone":

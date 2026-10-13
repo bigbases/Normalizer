@@ -71,6 +71,13 @@
       "phase": "search",
       "lt_grid": "structure",
       "description": "Validation-only search (seed 2021, horizons 96/720) of the s_norm x use_mlp variants of the best 6-point-grid setting (lt_tuning.structure)."
+    },
+    "10_lightnorm_kernel_check": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["lt"],
+      "phase": "search",
+      "lt_grid": "kernel_check",
+      "description": "Validation-only check (seed 2021, horizons 96/720) of kernel_size 13 at station_lr {1e-4, 1e-3} where kernel 25 beat 49 (Electricity/Traffic), before deciding a {13, 25, 49} x {1e-4, 1e-3} grid. The cells are that grid's points, so they are reused if it is adopted."
     }
   },
   "lt_tuning": {
@@ -92,6 +99,7 @@
       "selection": "top-2 by seed-2021 mean validation MSE (96/720), confirmed at seed 2022; lock = lowest mean over the four cells; the supplied point uses its Exp1 final-cell validation MSE",
       "supplied_from_exp1": ["DLinear", "iTransformer"]
     },
+    "kernel_check": {"kernel_size": 13, "station_lr": [0.0001, 0.001]},
     "structure": {
       "backbones": ["TimeFilter", "TimeXer"],
       "s_norm": [0, 1],
