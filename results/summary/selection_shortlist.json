@@ -707,6 +707,38 @@
         "screen_mean_val_mse": 0.14533349907336135
       }
     ],
+    "Electricity|TimeXer|ddn": [
+      {
+        "candidate_id": "947a01bef6cf",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 7,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 0,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.1604857694627073
+      },
+      {
+        "candidate_id": "2c842a20e419",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 12,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.16122207610206035
+      }
+    ],
     "Electricity|iTransformer|fan": [
       {
         "candidate_id": "13915eef97cf",
@@ -833,6 +865,38 @@
           "station_type": "adaptive"
         },
         "screen_mean_val_mse": 0.37894062573711074
+      }
+    ],
+    "Traffic|TimeXer|ddn": [
+      {
+        "candidate_id": "bbeb523655cd",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 7,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.40124089282292585
+      },
+      {
+        "candidate_id": "2c842a20e419",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 12,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.40127601629266374
       }
     ],
     "Traffic|iTransformer|fan": [
