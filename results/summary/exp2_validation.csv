@@ -415,6 +415,7 @@ Traffic,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, "
 Traffic,DLinear,san,f6904fc69cd0,{},0.364695,0.413534,,,0.389114,,False,False
 Traffic,DLinear,san,fa33e70a6a3a,{},0.381487,0.422130,,,0.401809,,False,False
 Traffic,TimeFilter,ddn,1c7b90df1d3b,{},0.352620,0.425296,0.356743,0.424976,0.388958,0.389909,False,False
+Traffic,TimeFilter,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.414779,,,,,,False,False
 Traffic,TimeFilter,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.367112,,,,,,False,False
 Traffic,TimeFilter,ddn,43cd745f71d8,{},0.361419,0.433361,,,0.397390,,False,False
 Traffic,TimeFilter,ddn,44e9a626dff4,{},0.359510,0.431039,,,0.395274,,False,False
