@@ -102,8 +102,8 @@ Weather,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.406242,0.679568,0.542905
 Weather,TimeXer,fa2c86578cc2,grid,49,0.0005,0,0,False,0.400107,0.680445,0.540276,,,False,False
 Weather,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.400468,0.678840,0.539654,,,False,False
 Weather,TimeXer,a65571406a47,structure,49,0.001,0,1,False,,,,,,False,False
-Weather,TimeXer,0a7ae0db7542,structure,49,0.001,1,0,False,,,,,,False,False
-Weather,TimeXer,44258000b27a,structure,49,0.001,1,1,False,,,,,,False,False
+Weather,TimeXer,0a7ae0db7542,structure,49,0.001,1,0,False,,0.704545,,,,False,False
+Weather,TimeXer,44258000b27a,structure,49,0.001,1,1,False,,0.691321,,,,False,False
 Weather,iTransformer,87aa258a0845,grid,25,0.0001,1,1,True,0.399798,0.606743,0.503270,0.396052,0.606770,False,False
 Weather,iTransformer,32f9bb44b35d,grid,25,0.0005,1,1,False,0.390061,0.595015,0.492538,,,False,False
 Weather,iTransformer,ea5eb2000ea7,grid,25,0.001,1,1,False,0.387869,0.593631,0.490750,0.386920,0.591417,True,False
