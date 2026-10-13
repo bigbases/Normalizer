@@ -152,6 +152,9 @@ parser.add_argument('--kernel_len', type=int, default=25)
 parser.add_argument('--t_ff', type=int, default=64)
 parser.add_argument('--down_ratio', type=int, default=4)
 parser.add_argument('--twice_epoch', type=int, default=1)
+parser.add_argument('--joint_lr', type=str, default='station', choices=['station', 'backbone'],
+                    help='LR of the normalizer during joint training: its own station_lr, or the '
+                         'backbone LR and schedule (official DDN adds it to the backbone optimizer)')
 parser.add_argument('--j', type=int, default=0)
 parser.add_argument('--learnable', action='store_true', default=False)
 parser.add_argument('--wavelet', type=str, default='coif3')

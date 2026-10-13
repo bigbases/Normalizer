@@ -92,7 +92,9 @@ METHOD_DEFAULTS = {
     "none": {},
     "revin": {"station_lr": 1e-4},
     "san": {"station_type": "adaptive"},
-    "ddn": {"station_type": "adaptive", "twice_epoch": 1, "j": 0, "wavelet": "coif3"},
+    # j >= 1 keeps the frequency-domain branch (the "dual domain" of DDN) on;
+    # joint_lr follows the official code (normalizer at the backbone LR once joint).
+    "ddn": {"station_type": "adaptive", "twice_epoch": 1, "j": 1, "wavelet": "coif3", "joint_lr": "backbone"},
     "fan": {"fan_aux_weight": 1.0},
     "lt": {
         "affine": 1,

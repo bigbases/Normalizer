@@ -50,9 +50,17 @@ class ProtocolTest(unittest.TestCase):
     def test_ddn_candidates_are_distinct_and_use_wavelet_branch(self):
         base = selected_base_config(self.bases, "ETTh1", "DLinear")
         candidates = search_candidates(self.protocol, "ETTh1", "ddn", base)
-        keys = {(c["kernel_len"], c["j"]) for c in candidates}
-        self.assertEqual(len(keys), 6)
-        self.assertEqual({c["j"] for c in candidates}, {0, 1})
+        keys = {(c["kernel_len"], c["twice_epoch"]) for c in candidates}
+        self.assertEqual(keys, {(k, t) for k in (7, 12, 32) for t in (0, 1)})
+        self.assertEqual({c["j"] for c in candidates}, {1})       # j = 0 drops the frequency domain
+
+    def test_ddn_trains_jointly_at_backbone_lr_as_official(self):
+        args = Namespace(experiment="2_normalizer_search", stage="search", datasets="ETTh1",
+                         backbones="DLinear", methods="ddn", locks=None, shortlist=None)
+        cell = build_cells(args, self.protocol, self.bases)[0]
+        cmd = cell_command(cell, "/data", "/tmp/r.csv", "/tmp/ck")
+        last = {cmd[i]: cmd[i + 1] for i in range(len(cmd) - 1) if cmd[i].startswith("--")}
+        self.assertEqual((last["--joint_lr"], last["--j"]), ("backbone", "1"))
 
     def test_fan_screens_station_and_backbone_learning_rates(self):
         base = selected_base_config(self.bases, "ETTh1", "DLinear")

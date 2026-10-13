@@ -289,6 +289,7 @@ class Exp_Main(Exp_Basic):
         self._select_criterion()
 
         scaler = torch.cuda.amp.GradScaler() if self.args.use_amp else None
+        station_in_model_optim = False
 
         for epoch in range(self.args.train_epochs + self.station_setting[1]):
             if self.station_setting[0] > 0 and epoch == self.station_setting[1]:
@@ -301,9 +302,14 @@ class Exp_Main(Exp_Basic):
                 joint_station_ckpt = os.path.join(path_station, 'checkpoint.pth')
                 torch.save(self.station.state_dict(), joint_station_ckpt)
                 print(f'[save] station(pretrained) before joint training: {joint_station_ckpt}')
-                # Keep the normalizer on its declared station_lr.  It is
-                # stepped by station_optim below instead of being silently
-                # moved into the backbone optimizer at backbone LR.
+                # joint_lr 'station': the normalizer stays on its declared
+                # station_lr and is stepped by station_optim below.
+                # joint_lr 'backbone' (official DDN): it joins the backbone
+                # optimizer at the current backbone LR and follows its schedule.
+                if getattr(self.args, 'joint_lr', 'station') == 'backbone' and self.station_optim is not None:
+                    model_optim.add_param_group({'params': self.station_optim.param_groups[0]['params'],
+                                                 'lr': model_optim.param_groups[0]['lr']})
+                    station_in_model_optim = True
 
             self.model.train()
             self.station.train()
@@ -360,6 +366,7 @@ class Exp_Main(Exp_Basic):
                         joint_enabled = (
                             self.station_setting[2] > 0
                             and self.station_setting[3] <= epoch - self.station_setting[1]
+                            and not station_in_model_optim
                         )
                         if joint_enabled:
                             if self.station_optim is None:
@@ -377,6 +384,7 @@ class Exp_Main(Exp_Basic):
                         joint_enabled = (
                             self.station_setting[2] > 0
                             and self.station_setting[3] <= epoch - self.station_setting[1]
+                            and not station_in_model_optim
                         )
                         if joint_enabled:
                             if self.station_optim is None:
