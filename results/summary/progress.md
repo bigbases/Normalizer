@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-13T04:42:52+00:00 from 3476 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T05:05:25+00:00 from 3488 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,12 +8,12 @@ Generated 2026-10-13T04:42:52+00:00 from 3476 packaged cells. Regenerate with `p
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-confirm | 13 | 0 | 0 | 1 | 0 |
-| lt-tuned | 12 | 1 | 0 | 1 | 0 |
+| lt-tuned | 13 | 0 | 0 | 1 | 0 |
 | exp1-lt | 13 | 0 | 1 | 0 | 0 |
 | t3-search | 16 | 0 | 4 | 0 | 0 |
 | t3-confirm | 14 | 0 | 2 | 4 | 0 |
 | t3-lt-search | 4 | 0 | 6 | 0 | 0 |
-| t3-lt-struct | 2 | 0 | 2 | 6 | 0 |
+| t3-lt-struct | 2 | 1 | 1 | 6 | 0 |
 | t3-lt-confirm | 2 | 0 | 0 | 8 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
 | t3-tuned | 14 | 0 | 0 | 6 | 0 |
@@ -72,7 +72,7 @@ Generated 2026-10-13T04:42:52+00:00 from 3476 packaged cells. Regenerate with `p
 | lt-tuned--ETTh1--iTransformer | done | 12/12 |  |
 | lt-tuned--ETTh2--DLinear | done | 12/12 |  |
 | lt-tuned--ETTm2--DLinear | done | 12/12 |  |
-| lt-tuned--ETTm2--iTransformer | claimed | 0/12 | itm21-a4000 |
+| lt-tuned--ETTm2--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
@@ -138,7 +138,7 @@ Generated 2026-10-13T04:42:52+00:00 from 3476 packaged cells. Regenerate with `p
 | t3-lt-search--Electricity--TimeFilter | ready | 3/12 |  |
 | t3-lt-search--Traffic--TimeFilter | ready | 6/12 |  |
 | t3-lt-struct--ETTh1--TimeXer | done | 6/6 |  |
-| t3-lt-struct--ETTm1--TimeXer | ready | 0/6 |  |
+| t3-lt-struct--ETTm1--TimeXer | claimed | 0/6 | itm21-a4000 |
 | t3-lt-struct--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeXer | blocked | 0/? |  |
