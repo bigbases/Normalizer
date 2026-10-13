@@ -56,9 +56,12 @@ ETTm1,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,,,,,,False,False
 ETTm1,TimeXer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.402966,0.971038,0.687002,,,False,False
 ETTm1,TimeXer,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.404058,0.970124,0.687091,,,False,False
 ETTm1,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.404166,0.969630,0.686898,,,False,False
-ETTm1,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,,,,,,False,False
-ETTm1,TimeXer,fa2c86578cc2,grid,49,0.0005,0,0,False,,,,,,False,False
-ETTm1,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,,,,,,False,False
+ETTm1,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.392073,0.951084,0.671579,,,False,False
+ETTm1,TimeXer,fa2c86578cc2,grid,49,0.0005,0,0,False,0.392932,0.950899,0.671916,,,False,False
+ETTm1,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.394545,0.950311,0.672428,,,False,False
+ETTm1,TimeXer,96063ae3aa85,structure,49,0.0001,0,1,False,,,,,,False,False
+ETTm1,TimeXer,6538d62e5a7a,structure,49,0.0001,1,0,False,,,,,,False,False
+ETTm1,TimeXer,a3729a1a10be,structure,49,0.0001,1,1,False,,,,,,False,False
 ETTm1,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,,,,,,False,False
 ETTm1,iTransformer,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.391456,0.941129,0.666292,,,False,False
 ETTm1,iTransformer,e18334433cdb,grid,25,0.001,0,0,False,0.391067,0.934468,0.662767,,,False,False
@@ -75,8 +78,8 @@ ETTm2,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.116640,0.276530,0.1965
 ETTm2,iTransformer,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.115253,0.272955,0.194104,,,False,False
 ETTm2,iTransformer,e18334433cdb,grid,25,0.001,0,0,False,0.114195,0.284629,0.199412,,,False,False
 ETTm2,iTransformer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.115507,0.271919,0.193713,,,False,False
-ETTm2,iTransformer,fa2c86578cc2,grid,49,0.0005,0,0,False,0.114448,0.265487,0.189968,,,True,False
-ETTm2,iTransformer,70544b7f9269,grid,49,0.001,0,0,False,0.115179,0.269392,0.192286,,,True,False
+ETTm2,iTransformer,fa2c86578cc2,grid,49,0.0005,0,0,False,0.114448,0.265487,0.189968,0.115380,,True,False
+ETTm2,iTransformer,70544b7f9269,grid,49,0.001,0,0,False,0.115179,0.269392,0.192286,0.115848,,True,False
 Weather,DLinear,36b61b191ff5,grid,13,0.0001,1,1,True,0.407865,0.655743,0.531804,0.408552,0.656778,False,False
 Weather,DLinear,e42176d00844,grid,13,0.0005,1,1,False,0.379296,0.638265,0.508781,,,False,False
 Weather,DLinear,d510671ef280,grid,13,0.001,1,1,False,0.378536,0.632562,0.505549,0.374752,0.634268,True,True
