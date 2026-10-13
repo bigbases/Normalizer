@@ -1,18 +1,18 @@
 # Experiment progress
 
-Generated 2026-10-13T03:42:01+00:00 from 3448 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T04:03:49+00:00 from 3460 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
-| lt-confirm | 12 | 0 | 0 | 2 | 0 |
+| lt-confirm | 12 | 0 | 1 | 1 | 0 |
 | lt-tuned | 12 | 0 | 0 | 2 | 0 |
-| exp1-lt | 12 | 1 | 1 | 0 | 0 |
+| exp1-lt | 13 | 0 | 1 | 0 | 0 |
 | t3-search | 16 | 0 | 4 | 0 | 0 |
 | t3-confirm | 14 | 0 | 2 | 4 | 0 |
-| t3-lt-search | 2 | 0 | 8 | 0 | 0 |
+| t3-lt-search | 2 | 1 | 7 | 0 | 0 |
 | t3-lt-struct | 2 | 0 | 0 | 8 | 0 |
 | t3-lt-confirm | 2 | 0 | 0 | 8 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
@@ -58,7 +58,7 @@ Generated 2026-10-13T03:42:01+00:00 from 3448 packaged cells. Regenerate with `p
 | lt-confirm--ETTh1--iTransformer | done | 4/4 |  |
 | lt-confirm--ETTh2--DLinear | done | 2/2 |  |
 | lt-confirm--ETTm2--DLinear | done | 4/4 |  |
-| lt-confirm--ETTm2--iTransformer | blocked | 0/? |  |
+| lt-confirm--ETTm2--iTransformer | ready | 0/4 |  |
 | lt-tuned--ETTm1--iTransformer | blocked | 0/? |  |
 | lt-tuned--Weather--DLinear | done | 12/12 |  |
 | lt-tuned--Electricity--DLinear | done | 12/12 |  |
@@ -80,7 +80,7 @@ Generated 2026-10-13T03:42:01+00:00 from 3448 packaged cells. Regenerate with `p
 | exp1-lt--ETTm1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTm1--iTransformer | ready | 0/12 |  |
 | exp1-lt--ETTm2--DLinear | done | 12/12 |  |
-| exp1-lt--ETTm2--iTransformer | claimed | 0/12 | itm21-a4000 |
+| exp1-lt--ETTm2--iTransformer | done | 12/12 |  |
 | exp1-lt--Weather--DLinear | done | 12/12 |  |
 | exp1-lt--Weather--iTransformer | done | 12/12 |  |
 | exp1-lt--Electricity--DLinear | done | 12/12 |  |
@@ -128,7 +128,7 @@ Generated 2026-10-13T03:42:01+00:00 from 3448 packaged cells. Regenerate with `p
 | t3-confirm--Traffic--TimeFilter--san | blocked | 0/? |  |
 | t3-confirm--Traffic--TimeFilter--ddn | done | 4/4 |  |
 | t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
-| t3-lt-search--ETTm1--TimeXer | ready | 6/12 |  |
+| t3-lt-search--ETTm1--TimeXer | claimed | 6/12 | itm21-a4000 |
 | t3-lt-search--Weather--TimeXer | ready | 6/12 |  |
 | t3-lt-search--Electricity--TimeXer | ready | 1/12 |  |
 | t3-lt-search--Traffic--TimeXer | ready | 0/12 |  |

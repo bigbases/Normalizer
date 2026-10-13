@@ -71,12 +71,12 @@ ETTm2,DLinear,3e253a001116,grid,13,0.001,1,0,False,0.116308,0.255591,0.185949,0.
 ETTm2,DLinear,2ab9631694f6,grid,49,0.0001,1,0,False,0.116395,0.262413,0.189404,,,False,False
 ETTm2,DLinear,1f9d0bec94e3,grid,49,0.0005,1,0,False,0.116430,0.259079,0.187755,,,False,False
 ETTm2,DLinear,fc10f36ed3da,grid,49,0.001,1,0,False,0.116401,0.259165,0.187783,,,False,False
-ETTm2,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,,,,,,False,False
+ETTm2,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.116640,0.276530,0.196585,0.117401,0.277941,False,False
 ETTm2,iTransformer,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.115253,0.272955,0.194104,,,False,False
 ETTm2,iTransformer,e18334433cdb,grid,25,0.001,0,0,False,0.114195,0.284629,0.199412,,,False,False
 ETTm2,iTransformer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.115507,0.271919,0.193713,,,False,False
-ETTm2,iTransformer,fa2c86578cc2,grid,49,0.0005,0,0,False,0.114448,0.265487,0.189968,,,False,False
-ETTm2,iTransformer,70544b7f9269,grid,49,0.001,0,0,False,0.115179,0.269392,0.192286,,,False,False
+ETTm2,iTransformer,fa2c86578cc2,grid,49,0.0005,0,0,False,0.114448,0.265487,0.189968,,,True,False
+ETTm2,iTransformer,70544b7f9269,grid,49,0.001,0,0,False,0.115179,0.269392,0.192286,,,True,False
 Weather,DLinear,36b61b191ff5,grid,13,0.0001,1,1,True,0.407865,0.655743,0.531804,0.408552,0.656778,False,False
 Weather,DLinear,e42176d00844,grid,13,0.0005,1,1,False,0.379296,0.638265,0.508781,,,False,False
 Weather,DLinear,d510671ef280,grid,13,0.001,1,1,False,0.378536,0.632562,0.505549,0.374752,0.634268,True,True
