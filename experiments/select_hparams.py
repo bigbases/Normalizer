@@ -129,8 +129,13 @@ def select(rows, mode, protocol, bases):
                 for score, cid, count in selected
             ]
     else:
+        # Only the two shortlisted candidates may be locked: confirm cells of a
+        # candidate shortlisted under an earlier grid stay in the store.
+        shortlists = select(rows, "shortlist", protocol, bases)["shortlists"]
         output = {"protocol_version": protocol["protocol_version"], "locks": {}}
         for group, candidates in sorted(ranked.items()):
+            allowed = {c["candidate_id"] for c in shortlists.get("|".join(group), [])}
+            candidates = [c for c in candidates if c[1] in allowed]
             candidates.sort(key=lambda item: (item[0], item[1]))
             if not candidates:
                 continue

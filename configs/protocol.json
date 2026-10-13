@@ -116,12 +116,12 @@
   "search_grids": {
     "revin": [{"affine": 0}, {"affine": 1}],
     "san": [
-      {"period_len": 4, "station_lr_scale": 0.5},
-      {"period_len": 4, "station_lr_scale": 1.0},
-      {"period_len": 8, "station_lr_scale": 0.5},
-      {"period_len": 8, "station_lr_scale": 1.0},
-      {"period_len": 24, "station_lr_scale": 0.5},
-      {"period_len": 24, "station_lr_scale": 1.0}
+      {"period_len": 12, "station_lr": 5e-05},
+      {"period_len": 12, "station_lr": 0.0001},
+      {"period_len": 12, "station_lr": 0.0005},
+      {"period_len": 24, "station_lr": 5e-05},
+      {"period_len": 24, "station_lr": 0.0001},
+      {"period_len": 24, "station_lr": 0.0005}
     ],
     "ddn": [
       {"kernel_len": 7, "j": 0, "hkernel_len": 5},
@@ -136,6 +136,7 @@
   "fan_lr_grid": "station_and_backbone",
   "grid_revisions": [
     "2026-10-07 DDN: hkernel_len only acts when the wavelet level j > 0, so the supplied j=0 x hkernel_len {3,5} grid held 3 distinct settings. Replaced by kernel_len {7,25,49} x j {0,1} with hkernel_len at the official default 5 (official DDN scripts use j=1 on ETTh1/ETTm1/Weather/Electricity/Traffic).",
-    "2026-10-07 FAN: the reference implementation optimizes the frequency predictor with the backbone optimizer and learning rate. Candidates are K x {station_lr, backbone learning_rate}; when both are equal, K x {0.5, 1.0} x station_lr."
+    "2026-10-07 FAN: the reference implementation optimizes the frequency predictor with the backbone optimizer and learning rate. Candidates are K x {station_lr, backbone learning_rate}; when both are equal, K x {0.5, 1.0} x station_lr.",
+    "2026-10-13 SAN: the official scripts (run_linear.sh, run_trm.sh) fix period_len per dataset (24 on ETTh1/ETTh2/Electricity/Traffic, 12 on ETTm1/ETTm2/Weather) and use station_lr 1e-4 or 5e-5 there; the README names period_len and station_lr as the only two parameters to tune for other backbones. Grid is now period_len {12, 24} (the official values, so each dataset's official setting is a candidate) x station_lr {5e-5, 1e-4, 5e-4}. Replaces period_len {4, 8, 24} x station_lr scale {0.5, 1}: 4 and 8 are not official values and 12 was missing. Locks are chosen only among the two shortlisted candidates, so confirm cells of a candidate shortlisted under the old grid cannot be locked."
   ]
 }

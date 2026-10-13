@@ -243,5 +243,41 @@ class LightNormMainTuningTest(unittest.TestCase):
         self.assertEqual(tasks["t3-lt-tuned--ETTh1--TimeXer"].status, "ready")
         self.assertEqual(tasks["t3-lt-struct--ETTm1--TimeXer"].status, "blocked")
 
+
+class SanGridTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.protocol = rm.load_json(rm.PROTOCOL_PATH)
+        cls.bases = rm.load_json(rm.BASE_CONFIGS_PATH)
+
+    def cells(self, stage, shortlist_doc=None):
+        return rs._cells(self.protocol, self.bases, "2_normalizer_search", stage, "ETTm1", "DLinear", ["san"],
+                         shortlist_doc=shortlist_doc)
+
+    def test_grid_uses_official_period_lens_and_keeps_old_ids(self):
+        base = rm.selected_base_config(self.bases, "ETTm1", "DLinear")
+        grid = rm.search_candidates(self.protocol, "ETTm1", "san", base)
+        self.assertEqual({(p["period_len"], p["station_lr"]) for p in grid},
+                         {(p, lr) for p in (12, 24) for lr in (5e-5, 1e-4, 5e-4)})
+        # period_len 24 points of the old station_lr-scale grid keep their run identity
+        old = {rm.canonical_hash({"method": "san", "params": rm.complete_method_params(
+            "san", rm.normalized_params("san", {"period_len": 24, "station_lr_scale": s}, base))}) for s in (0.5, 1.0)}
+        self.assertLessEqual(old, {c["candidate_id"] for c in self.cells("search")})
+
+    def test_lock_is_chosen_among_the_shortlist_only(self):
+        search = self.cells("search")
+        rows = fake_rows(search)
+        shortlist = sh.select(sh.validation_rows(rows.values()), "shortlist", self.protocol, self.bases)
+        top2 = {c["candidate_id"] for c in shortlist["shortlists"]["ETTm1|DLinear|san"]}
+        confirm = fake_rows(self.cells("confirm", shortlist_doc=shortlist), value=0.5, step=0)
+        rows.update(confirm)
+        # confirm cells left by a candidate shortlisted under an earlier grid look better
+        outsider = next(c["candidate_id"] for c in search if c["candidate_id"] not in top2)
+        for rid, row in list(confirm.items()):
+            rows["stale-" + rid] = dict(row, RunID="stale-" + rid, CandidateID=outsider, BestValMSE="0.01")
+        lock = sh.select(sh.validation_rows(rows.values()), "lock", self.protocol, self.bases)["locks"]["ETTm1|DLinear|san"]
+        self.assertIn(rm.canonical_hash({"method": "san", "params": lock}), top2)
+
+
 if __name__ == "__main__":
     unittest.main()
