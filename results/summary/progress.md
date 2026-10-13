@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-13T05:05:25+00:00 from 3488 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T05:18:20+00:00 from 3494 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -13,8 +13,8 @@ Generated 2026-10-13T05:05:25+00:00 from 3488 packaged cells. Regenerate with `p
 | t3-search | 16 | 0 | 4 | 0 | 0 |
 | t3-confirm | 14 | 0 | 2 | 4 | 0 |
 | t3-lt-search | 4 | 0 | 6 | 0 | 0 |
-| t3-lt-struct | 2 | 1 | 1 | 6 | 0 |
-| t3-lt-confirm | 2 | 0 | 0 | 8 | 0 |
+| t3-lt-struct | 3 | 1 | 0 | 6 | 0 |
+| t3-lt-confirm | 2 | 0 | 1 | 7 | 0 |
 | t3-none | 9 | 0 | 1 | 0 | 0 |
 | t3-tuned | 14 | 0 | 0 | 6 | 0 |
 | t3-lt-tuned | 1 | 0 | 1 | 8 | 0 |
@@ -138,17 +138,17 @@ Generated 2026-10-13T05:05:25+00:00 from 3488 packaged cells. Regenerate with `p
 | t3-lt-search--Electricity--TimeFilter | ready | 3/12 |  |
 | t3-lt-search--Traffic--TimeFilter | ready | 6/12 |  |
 | t3-lt-struct--ETTh1--TimeXer | done | 6/6 |  |
-| t3-lt-struct--ETTm1--TimeXer | claimed | 0/6 | itm21-a4000 |
+| t3-lt-struct--ETTm1--TimeXer | done | 6/6 |  |
 | t3-lt-struct--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--ETTh1--TimeFilter | done | 6/6 |  |
-| t3-lt-struct--ETTm1--TimeFilter | ready | 0/6 |  |
+| t3-lt-struct--ETTm1--TimeFilter | claimed | 0/6 | itm21-a4000 |
 | t3-lt-struct--Weather--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--ETTh1--TimeXer | done | 4/4 |  |
-| t3-lt-confirm--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--ETTm1--TimeXer | ready | 0/4 |  |
 | t3-lt-confirm--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |

@@ -62,9 +62,9 @@ ETTm1,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.404166,0.969630,0.686898,,,
 ETTm1,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.392073,0.951084,0.671579,,,False,False
 ETTm1,TimeXer,fa2c86578cc2,grid,49,0.0005,0,0,False,0.392932,0.950899,0.671916,,,False,False
 ETTm1,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.394545,0.950311,0.672428,,,False,False
-ETTm1,TimeXer,96063ae3aa85,structure,49,0.0001,0,1,False,,,,,,False,False
-ETTm1,TimeXer,6538d62e5a7a,structure,49,0.0001,1,0,False,,,,,,False,False
-ETTm1,TimeXer,a3729a1a10be,structure,49,0.0001,1,1,False,,,,,,False,False
+ETTm1,TimeXer,96063ae3aa85,structure,49,0.0001,0,1,False,0.392567,0.954006,0.673287,,,False,False
+ETTm1,TimeXer,6538d62e5a7a,structure,49,0.0001,1,0,False,0.386889,0.943316,0.665102,,,True,False
+ETTm1,TimeXer,a3729a1a10be,structure,49,0.0001,1,1,False,0.382336,0.940269,0.661302,,,True,False
 ETTm1,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,,,,,,False,False
 ETTm1,iTransformer,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.391456,0.941129,0.666292,,,False,False
 ETTm1,iTransformer,e18334433cdb,grid,25,0.001,0,0,False,0.391067,0.934468,0.662767,,,False,False
