@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-13T22:59:34+00:00 from 3894 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T23:06:01+00:00 from 3899 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 6 | 2 | 6 | 0 | 0 |
-| lt-confirm | 2 | 3 | 1 | 8 | 0 |
-| lt-tuned | 1 | 0 | 1 | 12 | 0 |
+| lt-confirm | 3 | 2 | 1 | 8 | 0 |
+| lt-tuned | 1 | 0 | 2 | 11 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 10 | 3 | 7 | 0 | 0 |
@@ -32,7 +32,7 @@ Generated 2026-10-13T22:59:34+00:00 from 3894 packaged cells. Regenerate with `p
 | lt-explore--ETTm1--iTransformer | done | 58/58 |  |
 | lt-explore--Weather--DLinear | done | 58/58 |  |
 | lt-explore--ETTm1--DLinear | done | 66/66 |  |
-| lt-search--ETTm1--iTransformer | claimed | 6/10 | itm21-a4000 |
+| lt-search--ETTm1--iTransformer | claimed | 7/10 | itm21-a4000 |
 | lt-search--Weather--DLinear | done | 10/10 |  |
 | lt-search--Electricity--DLinear | done | 10/10 |  |
 | lt-search--ETTm1--DLinear | done | 10/10 |  |
@@ -50,7 +50,7 @@ Generated 2026-10-13T22:59:34+00:00 from 3894 packaged cells. Regenerate with `p
 | lt-confirm--Weather--DLinear | done | 4/4 |  |
 | lt-confirm--Electricity--DLinear | done | 4/4 |  |
 | lt-confirm--ETTm1--DLinear | ready | 2/4 |  |
-| lt-confirm--Electricity--iTransformer | claimed | 0/4 | itm24-gpu0-pro6000 |
+| lt-confirm--Electricity--iTransformer | done | 4/4 |  |
 | lt-confirm--Traffic--iTransformer | claimed | 0/4 | itm24-pro6000 |
 | lt-confirm--Weather--iTransformer | blocked | 0/? |  |
 | lt-confirm--Traffic--DLinear | claimed | 2/4 | itm24-pro6000 |
@@ -64,7 +64,7 @@ Generated 2026-10-13T22:59:34+00:00 from 3894 packaged cells. Regenerate with `p
 | lt-tuned--Weather--DLinear | done | 12/12 |  |
 | lt-tuned--Electricity--DLinear | ready | 0/12 |  |
 | lt-tuned--ETTm1--DLinear | blocked | 0/? |  |
-| lt-tuned--Electricity--iTransformer | blocked | 0/? |  |
+| lt-tuned--Electricity--iTransformer | ready | 0/12 |  |
 | lt-tuned--Traffic--iTransformer | blocked | 0/? |  |
 | lt-tuned--Weather--iTransformer | blocked | 0/? |  |
 | lt-tuned--Traffic--DLinear | blocked | 0/? |  |

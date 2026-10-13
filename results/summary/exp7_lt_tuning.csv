@@ -54,7 +54,7 @@ ETTm1,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.404166,0.969630,0.686898,,,
 ETTm1,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.392073,0.951084,0.671579,,,False,False
 ETTm1,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.394545,0.950311,0.672428,,,False,False
 ETTm1,iTransformer,21642c782956,grid,13,0.0001,0,0,False,,,,,,False,False
-ETTm1,iTransformer,05ffa3aaf2d6,grid,13,0.001,0,0,False,,,,,,False,False
+ETTm1,iTransformer,05ffa3aaf2d6,grid,13,0.001,0,0,False,,0.927021,,,,False,False
 ETTm1,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.388451,0.938376,0.663414,0.392101,0.937209,False,False
 ETTm1,iTransformer,e18334433cdb,grid,25,0.001,0,0,False,0.391067,0.934468,0.662767,,,False,False
 ETTm1,iTransformer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.369675,0.907419,0.638547,0.374554,0.906148,False,False
@@ -108,9 +108,9 @@ Electricity,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.125947,,,,,False,F
 Electricity,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,,,,,,False,False
 Electricity,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,,,,,,False,False
 Electricity,iTransformer,6a39ae0f488a,grid,13,0.0001,1,1,False,0.110615,0.165415,0.138015,,,False,False
-Electricity,iTransformer,c39ac94f708f,grid,13,0.001,1,1,False,0.109249,0.163133,0.136191,,,True,False
+Electricity,iTransformer,c39ac94f708f,grid,13,0.001,1,1,False,0.109249,0.163133,0.136191,0.109787,0.166705,True,True
 Electricity,iTransformer,87aa258a0845,grid,25,0.0001,1,1,True,0.111190,0.166100,0.138645,0.112472,0.165777,False,False
-Electricity,iTransformer,ea5eb2000ea7,grid,25,0.001,1,1,False,0.109560,0.165823,0.137692,,,True,False
+Electricity,iTransformer,ea5eb2000ea7,grid,25,0.001,1,1,False,0.109560,0.165823,0.137692,0.110416,0.168905,True,False
 Electricity,iTransformer,026094c28304,grid,49,0.0001,1,1,False,0.109748,0.168419,0.139084,,,False,False
 Electricity,iTransformer,b05c2f930ffb,grid,49,0.001,1,1,False,0.108489,0.169975,0.139232,,,False,False
 Traffic,DLinear,eb7d78e60988,grid,13,0.0001,0,1,False,0.337133,0.403501,0.370317,,,False,False
