@@ -7,7 +7,7 @@
  "gpus": [
   0
  ],
- "heartbeat": "2026-10-13T14:05:26+00:00",
+ "heartbeat": "2026-10-13T14:25:32+00:00",
  "host": "itm24-pro6000",
  "took_over_from": "elice-a100",
  "worker": "itm24-pro6000"
