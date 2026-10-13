@@ -1,6 +1,7 @@
 Dataset,Backbone,Method,CandidateID,Params,Lock_mean_val_MSE
 ETTh1,DLinear,fan,e5360358fcb8,"{""fan_aux_weight"": 1.0, ""freq_topk"": 8, ""station_lr"": 0.0005}",0.953081
 ETTh1,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",1.033960
+ETTh1,TimeFilter,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.968149
 ETTh1,TimeXer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.989969
 ETTh1,iTransformer,fan,96e68ab8643c,"{""fan_aux_weight"": 1.0, ""freq_topk"": 8, ""station_lr"": 0.0001}",0.981729
 ETTh1,iTransformer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",1.106668

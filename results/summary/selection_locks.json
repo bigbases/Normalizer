@@ -9,6 +9,11 @@
       "affine": 1,
       "station_lr": 0.0001
     },
+    "ETTh1|TimeFilter|san": {
+      "period_len": 12,
+      "station_lr": 0.0005,
+      "station_type": "adaptive"
+    },
     "ETTh1|TimeXer|san": {
       "period_len": 12,
       "station_lr": 0.0005,
