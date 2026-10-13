@@ -11,9 +11,9 @@ ETTh1,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.694806,1.594154,1.144480
 ETTh1,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.693065,1.589661,1.141363,,,False,False
 ETTh1,TimeFilter,fa2c86578cc2,grid,49,0.0005,0,0,False,0.695454,1.588618,1.142036,,,False,False
 ETTh1,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,0.700228,1.590668,1.145448,,,False,False
-ETTh1,TimeFilter,96063ae3aa85,structure,49,0.0001,0,1,False,0.688975,1.566470,1.127722,,,True,False
+ETTh1,TimeFilter,96063ae3aa85,structure,49,0.0001,0,1,False,0.688975,1.566470,1.127722,0.690699,1.573816,True,True
 ETTh1,TimeFilter,6538d62e5a7a,structure,49,0.0001,1,0,False,0.700867,1.570816,1.135841,,,False,False
-ETTh1,TimeFilter,a3729a1a10be,structure,49,0.0001,1,1,False,0.691708,1.571702,1.131705,,,True,False
+ETTh1,TimeFilter,a3729a1a10be,structure,49,0.0001,1,1,False,0.691708,1.571702,1.131705,0.692630,1.563982,True,False
 ETTh1,TimeXer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.691861,1.579569,1.135715,,,False,False
 ETTh1,TimeXer,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.691672,1.575520,1.133596,,,False,False
 ETTh1,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.683837,1.407750,1.045794,0.684155,1.577594,True,True
