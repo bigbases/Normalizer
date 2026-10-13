@@ -274,15 +274,20 @@ def explore_candidates(protocol, dataset, backbone, base, doc=None):
 
 
 def lt_main_candidates(protocol, base):
-    """The 6-point LightNorm grid: kernel_size {supplied, 49} x station_lr {1e-4, 5e-4, 1e-3}.
+    """The 6-point LightNorm grid: kernel_size {13, 25, 49} x station_lr {1e-4, 1e-3}.
 
     Every other LightNorm setting (use_mlp, s_norm, down_ratio, t_ff, ...) stays
-    as supplied, so the supplied setting is always one of the six.
+    as supplied. A "supplied" entry in lt_tuning.main.kernel_size stands for the
+    supplied kernel_size.
     """
     spec = protocol["lt_tuning"]["main"]
     supplied = supplied_lt_params(base)
     own = supplied.get("kernel_size") or METHOD_DEFAULTS["lt"]["kernel_size"]
-    kernels = [own] + [k for k in spec["kernel_size"] if k != "supplied" and k != own]
+    kernels = []
+    for k in spec["kernel_size"]:
+        k = own if k == "supplied" else k
+        if k not in kernels:
+            kernels.append(k)
     return [{**supplied, "kernel_size": k, "station_lr": lr} for k in kernels for lr in spec["station_lr"]]
 
 

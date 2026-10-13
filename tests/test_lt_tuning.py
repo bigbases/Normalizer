@@ -1,5 +1,4 @@
 import csv
-import json
 import tempfile
 import unittest
 from argparse import Namespace
@@ -159,16 +158,17 @@ class LightNormMainTuningTest(unittest.TestCase):
     def cells(self, experiment, stage, dataset, backbone, lock_doc=None):
         return rs._cells(self.protocol, self.bases, experiment, stage, dataset, backbone, ["lt"], lock_doc=lock_doc)
 
-    def test_grid_contains_supplied_and_search_skips_it(self):
-        for dataset, backbone in (("ETTm1", "DLinear"), ("ETTh2", "iTransformer"), ("Traffic", "iTransformer")):
+    def test_grid_and_search_skip_the_supplied_point(self):
+        # ETTh2 x iTransformer was supplied with station_lr 5e-4, which is not a grid level
+        for dataset, backbone, supplied in (("ETTm1", "DLinear", 1), ("ETTh2", "iTransformer", 0),
+                                            ("Traffic", "iTransformer", 1)):
             base = rm.selected_base_config(self.bases, dataset, backbone)
             grid = rm.lt_main_candidates(self.protocol, base)
-            self.assertEqual(len(grid), 6)
-            self.assertEqual(sum(rm.is_supplied_lt(p, base) for p in grid), 1)
-            self.assertEqual({p["station_lr"] for p in grid}, {1e-4, 5e-4, 1e-3})
-            self.assertIn(49, {p["kernel_size"] for p in grid})
+            self.assertEqual({(p["kernel_size"], p["station_lr"]) for p in grid},
+                             {(k, lr) for k in (13, 25, 49) for lr in (1e-4, 1e-3)})
+            self.assertEqual(sum(rm.is_supplied_lt(p, base) for p in grid), supplied)
             search = self.cells("7_lightnorm_tuning", "search", dataset, backbone)
-            self.assertEqual(len(search), 10)
+            self.assertEqual(len(search), 2 * (6 - supplied))
 
     def confirm_rows(self, rows, dataset, backbone, value):
         doc = sh.lt_shortlists(rows.values(), self.protocol, self.bases, [(dataset, backbone)])
@@ -259,9 +259,7 @@ class LightNormKernelCheckTest(unittest.TestCase):
         self.assertEqual(len(cells), 4)                      # 2 station_lr x horizons 96/720 at seed 2021
         self.assertEqual({(c["effective"]["kernel_size"], c["effective"]["kernel_len"]) for c in cells}, {(13, 13)})
         self.assertEqual({c["effective"]["station_lr"] for c in cells}, {1e-4, 1e-3})
-        alt = json.loads(json.dumps(self.protocol))
-        alt["lt_tuning"]["main"].update(kernel_size=["supplied", 13, 49], station_lr=[1e-4, 1e-3])
-        grid = rs._cells(alt, self.bases, "7_lightnorm_tuning", "search", "Traffic", "DLinear", ["lt"])
+        grid = rs._cells(self.protocol, self.bases, "7_lightnorm_tuning", "search", "Traffic", "DLinear", ["lt"])
         self.assertLessEqual({c["run_id"] for c in cells}, {c["run_id"] for c in grid})
 
     def test_open_phase_is_claimed_whatever_the_phase_filter(self):

@@ -242,7 +242,7 @@ def lt_locks(raw_rows, protocol, bases, cases=None):
     """Lock = lowest mean validation MSE over seeds 2021/2022 x horizons 96/720 among the shortlist."""
     output = {"protocol_version": protocol["protocol_version"], "locks": {}, "selection_rule": (
         "LightNorm: the two candidates with the lowest seed-2021 mean validation MSE (horizons 96/720) "
-        "among the 6-point grid kernel_size {supplied, 49} x station_lr {1e-4, 5e-4, 1e-3} (plus the "
+        "among the 6-point grid kernel_size {13, 25, 49} x station_lr {1e-4, 1e-3} (plus the "
         "s_norm x use_mlp variants of the best grid point for the lt_tuning.structure backbones) are "
         "confirmed at seed 2022; the lock has the lowest mean over the four cells, as for SAN/DDN.")}
     rows = list(raw_rows)
