@@ -1,0 +1,247 @@
+[2026-10-14 01:37:15] STOP written; waiting for running cells to finish
+[2026-10-14 01:40:17] pulled 14c23fdf results: itm21-a4000 (drain) [skip ci]
+[2026-10-14 01:40:17] benchmark starts
+[2026-10-14 01:40:20] NVIDIA RTX A4000 on 1db20844ba34, torch 2.1.0+cu118; writing /home/efficiency/itm21_a4000.csv
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:40:23] ETTh1/DLinear/H96: common max batch 1024
+[2026-10-14 01:40:31]   none  e2e B1 0.51 ms, Bmax 2.4 ms, module 0.02 ms, joint step 2.7 ms
+[2026-10-14 01:40:39]   revin e2e B1 0.74 ms, Bmax 2.7 ms, module 0.18 ms, joint step 5.0 ms
+[2026-10-14 01:40:48]   san   e2e B1 1.15 ms, Bmax 4.5 ms, module 0.67 ms, joint step 6.4 ms
+[2026-10-14 01:41:03]   ddn   e2e B1 4.09 ms, Bmax 28.1 ms, module 3.65 ms, joint step 18.3 ms
+[2026-10-14 01:41:12]   lt    e2e B1 1.15 ms, Bmax 4.5 ms, module 0.67 ms, joint step 6.7 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:41:12] ETTh1/DLinear/H720: common max batch 1024
+[2026-10-14 01:41:20]   none  e2e B1 0.59 ms, Bmax 5.0 ms, module 0.01 ms, joint step 3.1 ms
+[2026-10-14 01:41:29]   revin e2e B1 0.81 ms, Bmax 5.6 ms, module 0.17 ms, joint step 5.0 ms
+[2026-10-14 01:41:38]   san   e2e B1 1.31 ms, Bmax 7.3 ms, module 0.69 ms, joint step 6.6 ms
+[2026-10-14 01:41:54]   ddn   e2e B1 4.29 ms, Bmax 34.6 ms, module 3.72 ms, joint step 18.4 ms
+[2026-10-14 01:42:03]   lt    e2e B1 1.27 ms, Bmax 9.1 ms, module 0.67 ms, joint step 6.7 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:42:03] ETTh1/iTransformer/H96: common max batch 1024
+[2026-10-14 01:42:12]   none  e2e B1 1.63 ms, Bmax 3.9 ms, module 0.01 ms, joint step 11.4 ms
+[2026-10-14 01:42:21]   revin e2e B1 1.95 ms, Bmax 4.4 ms, module 0.18 ms, joint step 12.9 ms
+[2026-10-14 01:42:31]   san   e2e B1 2.33 ms, Bmax 7.0 ms, module 0.72 ms, joint step 15.0 ms
+[2026-10-14 01:42:48]   ddn   e2e B1 5.63 ms, Bmax 36.8 ms, module 3.94 ms, joint step 28.0 ms
+[2026-10-14 01:42:58]   lt    e2e B1 2.44 ms, Bmax 6.9 ms, module 0.70 ms, joint step 14.6 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:42:59] ETTh1/iTransformer/H720: common max batch 1024
+[2026-10-14 01:43:07]   none  e2e B1 1.68 ms, Bmax 4.2 ms, module 0.01 ms, joint step 11.3 ms
+[2026-10-14 01:43:16]   revin e2e B1 1.89 ms, Bmax 5.1 ms, module 0.18 ms, joint step 12.8 ms
+[2026-10-14 01:43:26]   san   e2e B1 2.37 ms, Bmax 7.5 ms, module 0.71 ms, joint step 15.2 ms
+[2026-10-14 01:43:44]   ddn   e2e B1 5.62 ms, Bmax 40.7 ms, module 3.96 ms, joint step 28.9 ms
+[2026-10-14 01:43:55]   lt    e2e B1 2.34 ms, Bmax 9.5 ms, module 0.68 ms, joint step 14.6 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:43:55] ETTh1/TimeXer/H96: common max batch 1024
+[2026-10-14 01:44:05]   none  e2e B1 2.29 ms, Bmax 17.2 ms, module 0.01 ms, joint step 11.7 ms
+[2026-10-14 01:44:15]   revin e2e B1 2.41 ms, Bmax 18.0 ms, module 0.18 ms, joint step 13.3 ms
+[2026-10-14 01:44:26]   san   e2e B1 2.89 ms, Bmax 19.4 ms, module 0.69 ms, joint step 15.4 ms
+[2026-10-14 01:44:43]   ddn   e2e B1 6.10 ms, Bmax 39.7 ms, module 3.84 ms, joint step 28.1 ms
+[2026-10-14 01:44:54]   lt    e2e B1 2.98 ms, Bmax 18.9 ms, module 0.69 ms, joint step 15.0 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:44:55] ETTh1/TimeXer/H720: common max batch 1024
+[2026-10-14 01:45:04]   none  e2e B1 2.29 ms, Bmax 19.7 ms, module 0.01 ms, joint step 11.8 ms
+[2026-10-14 01:45:15]   revin e2e B1 2.50 ms, Bmax 20.2 ms, module 0.18 ms, joint step 13.5 ms
+[2026-10-14 01:45:26]   san   e2e B1 3.05 ms, Bmax 21.5 ms, module 0.68 ms, joint step 15.4 ms
+[2026-10-14 01:45:43]   ddn   e2e B1 6.27 ms, Bmax 44.5 ms, module 3.95 ms, joint step 28.4 ms
+[2026-10-14 01:45:55]   lt    e2e B1 2.97 ms, Bmax 23.0 ms, module 0.68 ms, joint step 15.3 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:46:01] ETTh1/TimeFilter/H96: common max batch 1024
+[2026-10-14 01:46:58]   none  e2e B1 4.04 ms, Bmax 658.4 ms, module 0.01 ms, joint step 44.3 ms
+[2026-10-14 01:47:55]   revin e2e B1 4.22 ms, Bmax 663.4 ms, module 0.18 ms, joint step 44.5 ms
+[2026-10-14 01:48:53]   san   e2e B1 4.74 ms, Bmax 657.8 ms, module 0.69 ms, joint step 45.6 ms
+[2026-10-14 01:49:57]   ddn   e2e B1 7.77 ms, Bmax 686.1 ms, module 3.82 ms, joint step 53.7 ms
+[2026-10-14 01:50:54]   lt    e2e B1 4.72 ms, Bmax 655.3 ms, module 0.69 ms, joint step 45.2 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:51:02] ETTh1/TimeFilter/H720: common max batch 1024
+[2026-10-14 01:51:59]   none  e2e B1 4.12 ms, Bmax 662.1 ms, module 0.01 ms, joint step 44.8 ms
+[2026-10-14 01:52:56]   revin e2e B1 4.25 ms, Bmax 658.7 ms, module 0.18 ms, joint step 45.0 ms
+[2026-10-14 01:53:54]   san   e2e B1 4.81 ms, Bmax 662.7 ms, module 0.72 ms, joint step 46.4 ms
+[2026-10-14 01:54:58]   ddn   e2e B1 7.77 ms, Bmax 687.6 ms, module 4.01 ms, joint step 54.6 ms
+[2026-10-14 01:55:56]   lt    e2e B1 4.78 ms, Bmax 664.2 ms, module 0.69 ms, joint step 45.5 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 01:56:06] Traffic/DLinear/H96: common max batch 256
+[2026-10-14 01:56:21]   none  e2e B1 0.66 ms, Bmax 83.3 ms, module 0.02 ms, joint step 19.6 ms
+[2026-10-14 01:56:37]   revin e2e B1 0.84 ms, Bmax 88.4 ms, module 0.23 ms, joint step 30.0 ms
+[2026-10-14 01:57:03]   san   e2e B1 1.58 ms, Bmax 142.5 ms, module 0.94 ms, joint step 32.5 ms
+[2026-10-14 01:59:58]   ddn   e2e B1 8.32 ms, Bmax 941.9 ms, module 7.88 ms, joint step 297.0 ms
+[2026-10-14 02:00:31]   lt    e2e B1 1.31 ms, Bmax 181.4 ms, module 0.75 ms, joint step 51.8 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 02:00:41] Traffic/DLinear/H720: common max batch 256
+[2026-10-14 02:01:04]   none  e2e B1 0.89 ms, Bmax 165.8 ms, module 0.01 ms, joint step 50.4 ms
+[2026-10-14 02:01:30]   revin e2e B1 1.03 ms, Bmax 185.2 ms, module 0.18 ms, joint step 68.0 ms
+[2026-10-14 02:02:06]   san   e2e B1 1.71 ms, Bmax 239.5 ms, module 0.95 ms, joint step 69.1 ms
+[2026-10-14 02:05:33]   ddn   e2e B1 8.50 ms, Bmax 1148.5 ms, module 7.80 ms, joint step 373.6 ms
+[2026-10-14 02:06:20]   lt    e2e B1 1.71 ms, Bmax 298.2 ms, module 1.00 ms, joint step 96.1 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 02:06:29] Traffic/iTransformer/H96: common max batch 64
+[2026-10-14 02:07:09]   none  e2e B1 4.56 ms, Bmax 245.2 ms, module 0.01 ms, joint step 201.5 ms
+[2026-10-14 02:07:50]   revin e2e B1 4.76 ms, Bmax 252.6 ms, module 0.18 ms, joint step 206.2 ms
+[2026-10-14 02:08:35]   san   e2e B1 5.35 ms, Bmax 277.6 ms, module 0.96 ms, joint step 215.5 ms
+[2026-10-14 02:10:22]   ddn   e2e B1 12.41 ms, Bmax 540.2 ms, module 7.89 ms, joint step 369.8 ms
+[2026-10-14 02:11:09]   lt    e2e B1 5.27 ms, Bmax 279.9 ms, module 0.78 ms, joint step 217.4 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 02:11:19] Traffic/iTransformer/H720: common max batch 64
+[2026-10-14 02:11:59]   none  e2e B1 4.66 ms, Bmax 252.6 ms, module 0.01 ms, joint step 207.6 ms
+[2026-10-14 02:12:41]   revin e2e B1 4.83 ms, Bmax 260.4 ms, module 0.18 ms, joint step 213.7 ms
+[2026-10-14 02:13:28]   san   e2e B1 5.41 ms, Bmax 284.6 ms, module 0.94 ms, joint step 224.1 ms
+[2026-10-14 02:15:23]   ddn   e2e B1 12.44 ms, Bmax 576.7 ms, module 7.99 ms, joint step 384.9 ms
+[2026-10-14 02:16:13]   lt    e2e B1 5.46 ms, Bmax 293.6 ms, module 1.02 ms, joint step 229.7 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 02:16:28] Traffic/TimeXer/H96: common max batch 64
+[2026-10-14 02:18:25]   none  e2e B1 13.45 ms, Bmax 821.2 ms, module 0.01 ms, joint step 699.3 ms
+[2026-10-14 02:20:21]   revin e2e B1 13.56 ms, Bmax 813.5 ms, module 0.18 ms, joint step 700.1 ms
+[2026-10-14 02:22:20]   san   e2e B1 14.13 ms, Bmax 826.0 ms, module 0.93 ms, joint step 707.7 ms
+[2026-10-14 02:25:03]   ddn   e2e B1 20.37 ms, Bmax 998.6 ms, module 7.84 ms, joint step 817.1 ms
+[2026-10-14 02:27:03]   lt    e2e B1 13.83 ms, Bmax 832.4 ms, module 0.68 ms, joint step 709.5 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 02:27:17] Traffic/TimeXer/H720: common max batch 64
+[2026-10-14 02:29:18]   none  e2e B1 14.01 ms, Bmax 849.3 ms, module 0.01 ms, joint step 724.2 ms
+[2026-10-14 02:31:19]   revin e2e B1 14.13 ms, Bmax 848.6 ms, module 0.19 ms, joint step 725.6 ms
+[2026-10-14 02:33:21]   san   e2e B1 14.63 ms, Bmax 856.2 ms, module 0.93 ms, joint step 729.5 ms
+[2026-10-14 02:36:15]   ddn   e2e B1 20.96 ms, Bmax 1058.4 ms, module 8.01 ms, joint step 856.8 ms
+[2026-10-14 02:38:21]   lt    e2e B1 14.46 ms, Bmax 865.4 ms, module 0.75 ms, joint step 738.3 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 02:38:41] Traffic/TimeFilter/H96: common max batch 256
+[2026-10-14 02:40:37]   none  e2e B1 5.88 ms, Bmax 1336.9 ms, module 0.01 ms, joint step 208.2 ms
+[2026-10-14 02:42:34]   revin e2e B1 5.99 ms, Bmax 1336.4 ms, module 0.18 ms, joint step 209.0 ms
+[2026-10-14 02:44:37]   san   e2e B1 6.57 ms, Bmax 1373.8 ms, module 0.92 ms, joint step 213.3 ms
+[2026-10-14 02:48:31]   ddn   e2e B1 13.32 ms, Bmax 2040.5 ms, module 7.84 ms, joint step 324.1 ms
+[2026-10-14 02:50:40]   lt    e2e B1 6.36 ms, Bmax 1410.0 ms, module 0.68 ms, joint step 218.8 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 02:50:58] Traffic/TimeFilter/H720: common max batch 128
+[2026-10-14 02:52:09]   none  e2e B1 5.94 ms, Bmax 674.6 ms, module 0.01 ms, joint step 214.6 ms
+[2026-10-14 02:53:20]   revin e2e B1 6.09 ms, Bmax 679.9 ms, module 0.18 ms, joint step 217.5 ms
+[2026-10-14 02:54:36]   san   e2e B1 6.67 ms, Bmax 699.1 ms, module 0.93 ms, joint step 221.4 ms
+[2026-10-14 02:57:07]   ddn   e2e B1 13.45 ms, Bmax 1079.2 ms, module 7.80 ms, joint step 349.8 ms
+[2026-10-14 02:58:27]   lt    e2e B1 6.51 ms, Bmax 721.4 ms, module 0.75 ms, joint step 228.4 ms
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+Use GPU: cuda:0 (CUDA_VISIBLE_DEVICES=0)
+[2026-10-14 02:58:29] done
+[2026-10-14 02:58:30] benchmark exited rc=0
+[2026-10-14 02:58:30] worker restarted

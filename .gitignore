@@ -13,8 +13,10 @@ result.txt
 datasets/
 
 # Local outputs of run_matrix.py / run_pipeline.sh stay untracked; the shared,
-# packaged results live in results/store, results/claims and results/summary.
+# packaged results live in results/store, results/claims and results/summary;
+# efficiency benchmarks (experiments/efficiency.py) in results/efficiency.
 results/*
 !results/store/
 !results/claims/
 !results/summary/
+!results/efficiency/
