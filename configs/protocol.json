@@ -78,6 +78,15 @@
       "phase": "search",
       "lt_grid": "kernel_check",
       "description": "Validation-only check (seed 2021, horizons 96/720) of kernel_size 13 at station_lr {1e-4, 1e-3} where kernel 25 beat 49 (Electricity/Traffic), before deciding a {13, 25, 49} x {1e-4, 1e-3} grid. The cells are that grid's points, so they are reused if it is adopted."
+    },
+    "11_shift_robustness": {
+      "backbones": ["DLinear"],
+      "methods": ["none", "revin", "san", "ddn", "fan", "lt"],
+      "phase": "shift",
+      "lt_params": "locked",
+      "horizons": [96],
+      "shift": {"level": 1.0, "drift": 2.0},
+      "description": "Controlled distribution shift (rebuttal Q3, professor T1): each method's locked setting is trained once per seed on clean data and evaluated without adaptation on the clean test period and on test periods perturbed in the original scale by a +1 sigma level shift or a 0 -> +2 sigma linear drift (sigma: per-channel training-set standard deviation). Input length as in the main runs, H=96, seeds 2021-2023."
     }
   },
   "lt_tuning": {

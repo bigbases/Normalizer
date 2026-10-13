@@ -19,6 +19,32 @@ warnings.filterwarnings('ignore')
 
 HUGGINGFACE_REPO = "thuml/Time-Series-Library"
 
+
+def shift_test_period(values, args, set_type, train, test):
+    """Controlled distribution shift of the chronological test period (robustness evaluation only).
+
+    With args.test_shift = 'level' every test-period row gets +shift_level x sigma
+    (an abrupt level shift); with 'drift' the offset grows linearly from 0 to
+    +shift_drift x sigma over the test period (a gradual mean drift). sigma is each
+    channel's training-set standard deviation and the offset is added in the
+    original scale. Training/validation rows and the scaler are untouched, so test
+    windows are affected wherever they overlap the test period (inputs and targets).
+    """
+    kind = getattr(args, 'test_shift', 'none') or 'none'
+    if set_type != 2 or kind == 'none':
+        return values
+    values = np.array(values, dtype=np.float64, copy=True)
+    sigma = values[train[0]:train[1]].std(axis=0)
+    n = test[1] - test[0]
+    if kind == 'level':
+        offset = np.full((n, 1), float(args.shift_level))
+    elif kind == 'drift':
+        offset = np.linspace(0.0, float(args.shift_drift), n)[:, None]
+    else:
+        raise ValueError(f"unknown test_shift {kind!r}")
+    values[test[0]:test[1]] += offset * sigma[None, :]
+    return values
+
 class Dataset_ETT_hour(Dataset):
     def __init__(self, args, root_path, flag='train', size=None,
                  features='S', data_path='ETTh1.csv',
@@ -72,12 +98,14 @@ class Dataset_ETT_hour(Dataset):
         elif self.features == 'S':
             df_data = df_raw[[self.target]]
 
+        values = shift_test_period(df_data.values, self.args, self.set_type,
+                                   (border1s[0], border2s[0]), (border2s[1], border2s[2]))
         if self.scale:
             train_data = df_data[border1s[0]:border2s[0]]
             self.scaler.fit(train_data.values)
-            data = self.scaler.transform(df_data.values)
+            data = self.scaler.transform(values)
         else:
-            data = df_data.values
+            data = values
 
         df_stamp = df_raw[['date']][border1:border2]
         df_stamp['date'] = pd.to_datetime(df_stamp.date)
@@ -172,12 +200,14 @@ class Dataset_ETT_minute(Dataset):
         elif self.features == 'S':
             df_data = df_raw[[self.target]]
 
+        values = shift_test_period(df_data.values, self.args, self.set_type,
+                                   (border1s[0], border2s[0]), (border2s[1], border2s[2]))
         if self.scale:
             train_data = df_data[border1s[0]:border2s[0]]
             self.scaler.fit(train_data.values)
-            data = self.scaler.transform(df_data.values)
+            data = self.scaler.transform(values)
         else:
-            data = df_data.values
+            data = values
 
         df_stamp = df_raw[['date']][border1:border2]
         df_stamp['date'] = pd.to_datetime(df_stamp.date)
@@ -284,12 +314,14 @@ class Dataset_Custom(Dataset):
         elif self.features == 'S':
             df_data = df_raw[[self.target]]
 
+        values = shift_test_period(df_data.values, self.args, self.set_type,
+                                   (border1s[0], border2s[0]), (border2s[1], border2s[2]))
         if self.scale:
             train_data = df_data[border1s[0]:border2s[0]]
             self.scaler.fit(train_data.values)
-            data = self.scaler.transform(df_data.values)
+            data = self.scaler.transform(values)
         else:
-            data = df_data.values
+            data = values
 
         df_stamp = df_raw[['date']][border1:border2]
         df_stamp['date'] = pd.to_datetime(df_stamp.date)

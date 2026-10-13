@@ -47,6 +47,7 @@ PLAN_PATH = ROOT / "configs" / "distributed_plan.json"
 RESULT_FIELDS = [
     "RunID", "CandidateID", "ConfigHash", "Phase", "Split", "Setting", "Dataset",
     "Backbone", "Horizon", "MSE", "MAE", "Seed", "BestValMSE", "BestEpoch", "UseNorm",
+    "Extra",   # JSON of additional metrics, e.g. test MSE/MAE under controlled shifts
 ]
 PROVENANCE_FIELDS = ["Host", "Worker", "GPU", "Torch", "CodeRev", "ElapsedSeconds", "FinishedAt"]
 FIELDS = RESULT_FIELDS + PROVENANCE_FIELDS
@@ -166,7 +167,18 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
                 by_case[(task.phase, dataset, backbone)].append(task)
                 tasks.append(task)
 
-    for task in tasks:  # phases are sorted, so dependencies resolve first
+    # Resolve a phase only after the phase it requires, whatever their priorities.
+    phases = {p["name"]: p for p in plan["phases"]}
+    depth = {}
+
+    def phase_depth(name, seen=()):
+        if name not in depth:
+            required = phases.get(name, {}).get("requires")
+            depth[name] = (phase_depth(required, seen + (name,)) + 1
+                           if required in phases and required not in seen else 0)
+        return depth[name]
+
+    for task in sorted(tasks, key=lambda t: phase_depth(t.phase)):   # stable: priority order otherwise
         if task.requires:
             deps = by_case.get((task.requires, task.dataset, task.backbone), [])
             same_method = [d for d in deps if task.split and d.split == task.split]
@@ -183,12 +195,13 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
             shortlist_doc = sh.lt_shortlists(case_rows, protocol, bases, case)
         elif task.stage == "confirm":
             shortlist_doc = sh.select(rows, "shortlist", protocol, bases)
-        elif task.stage == "final" and any(m not in ("none", "lt") for m in task.methods):
+        elif task.stage in ("final", "shift") and any(m not in ("none", "lt") for m in task.methods):
             lock_doc = sh.select(rows, "lock", protocol, bases)
         if task.stage == "search" and exp.get("lt_grid") == "structure":
             lock_doc = sh.lt_grid_best(case_rows, protocol, bases, case)   # anchor of the variants
-        if task.stage == "final" and exp.get("lt_params") == "locked":
-            lock_doc = sh.lt_locks(case_rows, protocol, bases, case)
+        if task.stage in ("final", "shift") and exp.get("lt_params") == "locked" and "lt" in task.methods:
+            lt_locks = sh.lt_locks(case_rows, protocol, bases, case)["locks"]
+            lock_doc = {"locks": {**(lock_doc or {}).get("locks", {}), **lt_locks}}
         try:
             task.cells = _cells(protocol, bases, task.experiment, task.stage, task.dataset,
                                 task.backbone, task.methods, lock_doc, shortlist_doc)

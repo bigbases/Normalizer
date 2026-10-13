@@ -6,6 +6,7 @@ from utils.metrics import StreamingMetrics
 from utils.norm_losses import NormLosses
 
 import csv
+import json
 import os
 import time
 import warnings
@@ -41,6 +42,7 @@ class Exp_Main(Exp_Basic):
         )
         self.best_vali_loss = None
         self.best_epoch = -1
+        self.extra_result = {}     # extra metrics stored as JSON in the result row (e.g. shift robustness)
 
     def _station_paths(self, setting):
         # Main runtime uses fixed, simple subdirectories. Extra_exp overrides
@@ -79,6 +81,7 @@ class Exp_Main(Exp_Basic):
             'BestValMSE': self.best_vali_loss,
             'BestEpoch': self.best_epoch,
             'UseNorm': self.args.use_norm,
+            'Extra': json.dumps(self.extra_result, sort_keys=True) if self.extra_result else '',
         }
 
     def _append_result_row(self, row):
@@ -443,26 +446,13 @@ class Exp_Main(Exp_Basic):
         self.best_epoch = int(early_stopping.best_epoch) if early_stopping.best_epoch is not None else -1
         return self.model
 
-    def test(self, setting, test=0):
-        test_data, test_loader = self._get_data(flag='test')
-        if test:
-            print('loading model')
-            self.model.load_state_dict(torch.load(os.path.join(self.args.checkpoints, setting, 'checkpoint.pth'), map_location=self.device))
-            _, path_station = self._station_paths(setting)
-            station_ckpt = os.path.join(path_station, 'checkpoint.pth')
-            if os.path.exists(station_ckpt):
-                self.station.load_state_dict(torch.load(station_ckpt, map_location=self.device))
-
+    def _test_metrics(self, test_loader, folder_path=None):
+        """(mse, mae, rse) of the current model on a test loader, in the original value space."""
         # Metrics are accumulated per batch in float64.  Holding every
         # prediction (plus the unused inputs) needed ~20 GB of host RAM for
         # Traffic/H720, and np.array(..., dtype=object) silently produced an
         # object array whenever all batches had equal shape.
         stats = StreamingMetrics()
-        save_plots = bool(getattr(self.args, 'save_test_plots', False))
-        folder_path = os.path.join('./test_results', setting)
-        if save_plots:
-            os.makedirs(folder_path, exist_ok=True)
-
         self.model.eval()
         self.station.eval()
         with torch.no_grad():
@@ -482,13 +472,48 @@ class Exp_Main(Exp_Basic):
                 pred = outputs.detach().cpu().numpy()
                 true = batch_y_t.detach().cpu().numpy()
                 stats.update(pred, true)
-                if save_plots and i % 20 == 0:
+                if folder_path and i % 20 == 0:
                     x = input_x.detach().cpu().numpy()
                     gt = np.concatenate((x[0, :, -1], true[0, :, -1]), axis=0)
                     pd = np.concatenate((x[0, :, -1], pred[0, :, -1]), axis=0)
                     visual(gt, pd, os.path.join(folder_path, f'{i}.pdf'))
 
-        mse, mae, rse = stats.compute()
+        return stats.compute()
+
+    def evaluate_shifts(self):
+        """Test MSE/MAE of the trained model under the controlled level shift and drift.
+
+        The same checkpoint is evaluated without adaptation on test periods
+        perturbed by the data loader (args.test_shift); results go to the Extra
+        column of the result row written by test().
+        """
+        for kind in ('level', 'drift'):
+            self.args.test_shift = kind
+            try:
+                _, loader = self._get_data(flag='test')
+                mse, mae, _ = self._test_metrics(loader)
+            finally:
+                self.args.test_shift = 'none'
+            self.extra_result[f'MSE_{kind}'] = float(mse)
+            self.extra_result[f'MAE_{kind}'] = float(mae)
+            print(f'{kind} shift: mse:{mse}, mae:{mae}')
+        self.extra_result.update(shift_level=float(self.args.shift_level), shift_drift=float(self.args.shift_drift))
+
+    def test(self, setting, test=0):
+        test_data, test_loader = self._get_data(flag='test')
+        if test:
+            print('loading model')
+            self.model.load_state_dict(torch.load(os.path.join(self.args.checkpoints, setting, 'checkpoint.pth'), map_location=self.device))
+            _, path_station = self._station_paths(setting)
+            station_ckpt = os.path.join(path_station, 'checkpoint.pth')
+            if os.path.exists(station_ckpt):
+                self.station.load_state_dict(torch.load(station_ckpt, map_location=self.device))
+
+        save_plots = bool(getattr(self.args, 'save_test_plots', False))
+        folder_path = os.path.join('./test_results', setting)
+        if save_plots:
+            os.makedirs(folder_path, exist_ok=True)
+        mse, mae, rse = self._test_metrics(test_loader, folder_path if save_plots else None)
         print(f'mse:{mse}, mae:{mae}')
 
         with open('result.txt', 'a') as f:

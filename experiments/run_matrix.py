@@ -455,6 +455,9 @@ def cell_command(cell, data_root, result_file, checkpoint_root, gpu=0):
 
     if cell["stage"] in ("search", "confirm"):
         cmd.append("--skip_test")
+    if cell["stage"] == "shift":
+        cmd.extend(["--shift_eval", "true", "--shift_level", str(cell["shift"]["level"]),
+                    "--shift_drift", str(cell["shift"]["drift"])])
     return cmd
 
 
@@ -782,6 +785,7 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
         raise ValueError("--locks is required for final comparisons with tuned baselines")
 
     horizons = protocol["screen_horizons"] if stage in ("search", "confirm") else protocol["horizons"]
+    horizons = exp.get("horizons", horizons)
     seeds = [2021] if stage == "search" else ([2022] if stage == "confirm" else protocol["seeds"])
     cells = []
     for dataset in datasets:
@@ -839,6 +843,8 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                             # Added only for TimeFilter so that other backbones keep their hashes.
                             if backbone == "TimeFilter":
                                 identity["timefilter"] = timefilter_args(base, horizon)
+                            if stage == "shift":
+                                identity["shift"] = exp["shift"]
                             config_hash = canonical_hash(identity, length=16)
                             run_id = (
                                 f'{stage}-{dataset}-{backbone}-{method}-h{horizon}-s{seed}'
@@ -852,6 +858,7 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                                 "dataset_meta": protocol["datasets"][dataset],
                                 "effective": params,
                                 "base": base,
+                                **({"shift": exp["shift"]} if stage == "shift" else {}),
                             })
     return cells
 

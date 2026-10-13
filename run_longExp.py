@@ -178,7 +178,7 @@ parser.add_argument('--run_id', type=str, default='',
                     help='stable cell identifier supplied by the experiment planner')
 parser.add_argument('--candidate_id', type=str, default='',
                     help='normalizer configuration identifier used across horizons/seeds')
-parser.add_argument('--phase', type=str, choices=['search', 'confirm', 'final', 'explore'], default='final')
+parser.add_argument('--phase', type=str, choices=['search', 'confirm', 'final', 'explore', 'shift'], default='final')
 parser.add_argument('--result_file', type=str, default='result.csv',
                     help='CSV file for appending final (setting, MSE, MAE, ...) rows; '
                          'relative to CWD. Use this to separate baseline runs across scripts '
@@ -196,6 +196,13 @@ parser.add_argument('--freq', type=str, default='h',
 parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
 parser.add_argument('--station_root', type=str, default='.',
                     help='parent of station_pre/ and station/ normalizer checkpoints')
+parser.add_argument('--shift_eval', type=str2bool, default=False,
+                    help='after training, also evaluate on test periods with a +shift_level sigma level shift '
+                         'and a 0 -> +shift_drift sigma drift (results in the Extra column)')
+parser.add_argument('--shift_level', type=float, default=1.0)
+parser.add_argument('--shift_drift', type=float, default=2.0)
+parser.add_argument('--test_shift', type=str, default='none', choices=['none', 'level', 'drift'],
+                    help='perturbation applied to the test split by the data loader')
 parser.add_argument('--save_test_plots', type=str2bool, default=False,
                     help='write a PDF forecast plot every 20 test batches to ./test_results')
 parser.add_argument('--augmentation_ratio', type=int, default=0, help='How many times to augment')
@@ -336,6 +343,9 @@ def main():
                 print(f'>>>>>>>validation-only result : {setting}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
                 exp.record_validation_result(setting)
             else:
+                if args.shift_eval:
+                    print(f'>>>>>>>testing under controlled shifts : {setting}<<<<<<<<<<<<<<<<<')
+                    exp.evaluate_shifts()
                 print(f'>>>>>>>testing : {setting}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
                 exp.test(setting)
             if args.do_predict:

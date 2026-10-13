@@ -51,7 +51,7 @@ from gpu_scheduler import (  # noqa: E402
 ROOT = rs.ROOT
 
 BIG_DATASETS = ("Electricity", "Traffic")
-DEFAULT_BLOCKED_CELLS = {"confirm": 4, "search": 6, "final": 12}
+DEFAULT_BLOCKED_CELLS = {"confirm": 4, "search": 6, "final": 12, "shift": 3}
 
 
 class Notifier:
