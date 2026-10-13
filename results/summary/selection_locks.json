@@ -75,6 +75,11 @@
       "affine": 0,
       "station_lr": 0.0001
     },
+    "ETTm1|TimeFilter|san": {
+      "period_len": 12,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "ETTm1|TimeXer|san": {
       "period_len": 12,
       "station_lr": 0.0001,
