@@ -45,6 +45,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 import run_longExp  # noqa: E402  (argument parser of the experiments)
+import normalizers.LightNorm as lightnorm  # noqa: E402
 from exp.exp_main import Exp_Main  # noqa: E402
 from experiments.run_matrix import (  # noqa: E402
     BASE_CONFIGS_PATH, PROTOCOL_PATH, cell_command, load_json, method_params, normalized_params,
@@ -293,7 +294,7 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
         row = {"Timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"), **env,
                "GPUIdleBefore": idle, "Dataset": dataset, "Backbone": backbone, "Method": method,
                "Horizon": horizon, "SeqLen": args.seq_len, "Channels": args.enc_in, "TrainBatch": args.batch_size,
-               "MaxBatch": common, "Settings": json.dumps(params, sort_keys=True),
+               "MaxBatch": common, "Settings": json.dumps(params, sort_keys=True), "UpsampleKernel": "",
                "ParamsBackbone": n_params(exp.model), "ParamsModule": n_params(exp.station)}
 
         x1, y1, xm1, ym1 = batch(args, 1, device)
@@ -328,6 +329,10 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
         exp.model.eval()
         exp.station.eval()
         del x, y, xm, ym
+        if method == "lt":  # LightNorm's upsampling path on this device (triton / float64 / F.interpolate)
+            row["UpsampleKernel"] = ",".join(sorted(
+                (plan or {}).get("kernel", "interpolate") for key, plan in lightnorm._UPSAMPLE_PLANS.items()
+                if key[0] == "cuda" and key[3] == args.pred_len))
         row["GPUIdleAfter"] = wait_until_idle(opts.gpu, own, 1, interval=0)
         write_row(out, row)
         log(f"  {method:5s} e2e B1 {row['LatB1MeanMs']:.2f} ms, Bmax {row['LatBmaxMeanMs']:.1f} ms, "
