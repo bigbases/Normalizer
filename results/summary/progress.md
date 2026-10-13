@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-13T23:12:24+00:00 from 3908 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T23:29:57+00:00 from 3912 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 7 | 1 | 6 | 0 | 0 |
-| lt-confirm | 5 | 1 | 1 | 7 | 0 |
-| lt-tuned | 2 | 0 | 3 | 9 | 0 |
+| lt-confirm | 6 | 0 | 1 | 7 | 0 |
+| lt-tuned | 2 | 0 | 4 | 8 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 10 | 2 | 8 | 0 | 0 |
@@ -51,7 +51,7 @@ Generated 2026-10-13T23:12:24+00:00 from 3908 packaged cells. Regenerate with `p
 | lt-confirm--Electricity--DLinear | done | 4/4 |  |
 | lt-confirm--ETTm1--DLinear | done | 4/4 |  |
 | lt-confirm--Electricity--iTransformer | done | 4/4 |  |
-| lt-confirm--Traffic--iTransformer | claimed | 0/4 | itm24-pro6000 |
+| lt-confirm--Traffic--iTransformer | done | 4/4 |  |
 | lt-confirm--Weather--iTransformer | blocked | 0/? |  |
 | lt-confirm--Traffic--DLinear | done | 4/4 |  |
 | lt-confirm--ETTh2--iTransformer | blocked | 0/? |  |
@@ -65,7 +65,7 @@ Generated 2026-10-13T23:12:24+00:00 from 3908 packaged cells. Regenerate with `p
 | lt-tuned--Electricity--DLinear | ready | 0/12 |  |
 | lt-tuned--ETTm1--DLinear | ready | 0/12 |  |
 | lt-tuned--Electricity--iTransformer | ready | 0/12 |  |
-| lt-tuned--Traffic--iTransformer | blocked | 0/? |  |
+| lt-tuned--Traffic--iTransformer | ready | 0/12 |  |
 | lt-tuned--Weather--iTransformer | blocked | 0/? |  |
 | lt-tuned--Traffic--DLinear | done | 12/12 |  |
 | lt-tuned--ETTh2--iTransformer | blocked | 0/? |  |
