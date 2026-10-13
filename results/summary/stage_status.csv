@@ -47,7 +47,7 @@ lt-tuned,ETTh1,iTransformer,lt,done,12,12,
 lt-tuned,ETTh2,DLinear,lt,done,12,12,
 lt-tuned,ETTm2,DLinear,lt,done,12,12,
 lt-tuned,ETTm2,iTransformer,lt,done,12,12,
-lt-kernel-check,Electricity,DLinear,lt,claimed,0,4,itm24-gpu0-pro6000
+lt-kernel-check,Electricity,DLinear,lt,done,4,4,
 lt-kernel-check,Electricity,iTransformer,lt,done,4,4,
 lt-kernel-check,Traffic,DLinear,lt,claimed,0,4,itm24-gpu0-pro6000
 lt-kernel-check,Traffic,iTransformer,lt,done,4,4,
@@ -72,7 +72,7 @@ t3-search,ETTm1,TimeXer,ddn,ready,0,12,
 t3-search,Weather,TimeXer,san,done,12,12,
 t3-search,Weather,TimeXer,ddn,ready,0,12,
 t3-search,Electricity,TimeXer,san,ready,1,12,
-t3-search,Electricity,TimeXer,ddn,ready,0,12,
+t3-search,Electricity,TimeXer,ddn,claimed,0,12,itm24-gpu0-pro6000
 t3-search,Traffic,TimeXer,san,ready,2,12,
 t3-search,Traffic,TimeXer,ddn,claimed,0,12,itm24-pro6000
 t3-search,ETTh1,TimeFilter,san,done,12,12,
@@ -83,13 +83,13 @@ t3-search,Weather,TimeFilter,san,ready,4,12,
 t3-search,Weather,TimeFilter,ddn,ready,0,12,
 t3-search,Electricity,TimeFilter,san,ready,0,12,
 t3-search,Electricity,TimeFilter,ddn,ready,0,12,
-t3-search,Traffic,TimeFilter,san,claimed,6,12,itm24-gpu0-pro6000
+t3-search,Traffic,TimeFilter,san,ready,6,12,
 t3-search,Traffic,TimeFilter,ddn,claimed,4,12,itm24-gpu0-pro6000
 t3-confirm,ETTh1,TimeXer,san,done,4,4,
 t3-confirm,ETTh1,TimeXer,ddn,done,4,4,
 t3-confirm,ETTm1,TimeXer,san,blocked,0,,
 t3-confirm,ETTm1,TimeXer,ddn,blocked,0,,
-t3-confirm,Weather,TimeXer,san,ready,0,4,
+t3-confirm,Weather,TimeXer,san,claimed,0,4,itm21-a4000
 t3-confirm,Weather,TimeXer,ddn,blocked,0,,
 t3-confirm,Electricity,TimeXer,san,blocked,0,,
 t3-confirm,Electricity,TimeXer,ddn,blocked,0,,
