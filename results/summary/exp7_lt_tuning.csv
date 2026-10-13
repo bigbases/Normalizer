@@ -103,8 +103,8 @@ Weather,TimeXer,5a1d1c2227bd,grid,25,0.0005,0,0,False,0.399453,0.690066,0.544760
 Weather,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.399964,0.688020,0.543992,,,False,False
 Weather,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.406242,0.679568,0.542905,,,False,False
 Weather,TimeXer,fa2c86578cc2,grid,49,0.0005,0,0,False,0.400107,0.680445,0.540276,,,False,False
-Weather,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.400468,0.678840,0.539654,,0.680266,True,False
-Weather,TimeXer,a65571406a47,structure,49,0.001,0,1,False,0.391020,0.669518,0.530269,,,True,False
+Weather,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.400468,0.678840,0.539654,0.399494,0.680266,True,False
+Weather,TimeXer,a65571406a47,structure,49,0.001,0,1,False,0.391020,0.669518,0.530269,0.390238,0.671178,True,True
 Weather,TimeXer,0a7ae0db7542,structure,49,0.001,1,0,False,0.402468,0.704545,0.553506,,,False,False
 Weather,TimeXer,44258000b27a,structure,49,0.001,1,1,False,0.397049,0.691321,0.544185,,,False,False
 Weather,iTransformer,87aa258a0845,grid,25,0.0001,1,1,True,0.399798,0.606743,0.503270,0.396052,0.606770,False,False
