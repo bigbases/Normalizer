@@ -53,7 +53,7 @@ lt-kernel-check,Traffic,DLinear,lt,done,4,4,
 lt-kernel-check,Traffic,iTransformer,lt,done,4,4,
 shift-none,Weather,DLinear,none,done,3,3,
 shift-none,Traffic,DLinear,none,ready,0,3,
-shift-tuned,Weather,DLinear,revin,claimed,0,3,itm21-a4000
+shift-tuned,Weather,DLinear,revin,done,3,3,
 shift-tuned,Weather,DLinear,san,blocked,0,,
 shift-tuned,Weather,DLinear,ddn,blocked,0,,
 shift-tuned,Weather,DLinear,fan,claimed,0,3,itm21-a4000
