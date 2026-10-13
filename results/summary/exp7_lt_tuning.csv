@@ -96,7 +96,7 @@ Weather,iTransformer,ea5eb2000ea7,grid,25,0.001,1,1,False,0.387869,0.593631,0.49
 Weather,iTransformer,026094c28304,grid,49,0.0001,1,1,False,0.398159,0.609133,0.503646,,,False,False
 Weather,iTransformer,b05c2f930ffb,grid,49,0.001,1,1,False,0.388252,0.592395,0.490324,0.383305,0.590583,False,False
 Electricity,DLinear,eb7d78e60988,grid,13,0.0001,0,1,False,0.119001,0.175782,0.147391,,,False,False
-Electricity,DLinear,8a6abe16a00f,grid,13,0.001,0,1,False,0.114227,0.172248,0.143238,0.114320,,True,False
+Electricity,DLinear,8a6abe16a00f,grid,13,0.001,0,1,False,0.114227,0.172248,0.143238,0.114320,0.172415,True,True
 Electricity,DLinear,bd1237dae9f6,grid,25,0.0001,0,1,True,0.118820,0.179746,0.149283,0.118630,0.179983,False,False
 Electricity,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.115564,0.176133,0.145848,0.115395,0.176159,True,False
 Electricity,DLinear,96063ae3aa85,grid,49,0.0001,0,1,False,0.118903,0.179422,0.149162,,,False,False

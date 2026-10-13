@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-13T22:56:21+00:00 from 3893 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-13T22:59:34+00:00 from 3894 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 6 | 2 | 6 | 0 | 0 |
-| lt-confirm | 1 | 4 | 1 | 8 | 0 |
-| lt-tuned | 1 | 0 | 0 | 13 | 0 |
+| lt-confirm | 2 | 3 | 1 | 8 | 0 |
+| lt-tuned | 1 | 0 | 1 | 12 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 10 | 3 | 7 | 0 | 0 |
@@ -48,7 +48,7 @@ Generated 2026-10-13T22:56:21+00:00 from 3893 packaged cells. Regenerate with `p
 | lt-search--ETTm2--iTransformer | ready | 6/10 |  |
 | lt-confirm--ETTm1--iTransformer | blocked | 0/? |  |
 | lt-confirm--Weather--DLinear | done | 4/4 |  |
-| lt-confirm--Electricity--DLinear | claimed | 3/4 | itm24-gpu0-pro6000 |
+| lt-confirm--Electricity--DLinear | done | 4/4 |  |
 | lt-confirm--ETTm1--DLinear | ready | 2/4 |  |
 | lt-confirm--Electricity--iTransformer | claimed | 0/4 | itm24-gpu0-pro6000 |
 | lt-confirm--Traffic--iTransformer | claimed | 0/4 | itm24-pro6000 |
@@ -62,7 +62,7 @@ Generated 2026-10-13T22:56:21+00:00 from 3893 packaged cells. Regenerate with `p
 | lt-confirm--ETTm2--iTransformer | blocked | 0/? |  |
 | lt-tuned--ETTm1--iTransformer | blocked | 0/? |  |
 | lt-tuned--Weather--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--DLinear | blocked | 0/? |  |
+| lt-tuned--Electricity--DLinear | ready | 0/12 |  |
 | lt-tuned--ETTm1--DLinear | blocked | 0/? |  |
 | lt-tuned--Electricity--iTransformer | blocked | 0/? |  |
 | lt-tuned--Traffic--iTransformer | blocked | 0/? |  |
