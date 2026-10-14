@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T09:33:58+00:00 from 4347 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T09:49:03+00:00 from 4352 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -14,14 +14,14 @@ Generated 2026-10-14T09:33:58+00:00 from 4347 packaged cells. Regenerate with `p
 | shift-tuned | 2 | 0 | 2 | 4 | 0 |
 | shift-lt | 1 | 0 | 1 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 15 | 0 | 13 | 0 | 0 |
+| t3-search | 15 | 1 | 12 | 0 | 0 |
 | t3-confirm | 12 | 0 | 3 | 13 | 0 |
 | t3-lt-search | 9 | 0 | 5 | 0 | 0 |
 | t3-lt-struct | 9 | 0 | 0 | 5 | 0 |
-| t3-lt-confirm | 7 | 1 | 1 | 5 | 0 |
+| t3-lt-confirm | 8 | 1 | 0 | 5 | 0 |
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 10 | 0 | 2 | 16 | 0 |
-| t3-lt-tuned | 6 | 0 | 1 | 7 | 0 |
+| t3-lt-tuned | 6 | 0 | 2 | 6 | 0 |
 | exp2-search | 28 | 0 | 28 | 0 | 0 |
 | exp2-confirm | 28 | 0 | 0 | 28 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
@@ -133,7 +133,7 @@ Generated 2026-10-14T09:33:58+00:00 from 4347 packaged cells. Regenerate with `p
 | t3-search--ETTm2--TimeXer--ddn | ready | 0/12 |  |
 | t3-search--ETTh2--TimeFilter--san | done | 12/12 |  |
 | t3-search--ETTh2--TimeFilter--ddn | done | 12/12 |  |
-| t3-search--ETTm2--TimeFilter--san | ready | 0/12 |  |
+| t3-search--ETTm2--TimeFilter--san | claimed | 0/12 | itm21-a4000 |
 | t3-search--ETTm2--TimeFilter--ddn | ready | 0/12 |  |
 | t3-confirm--ETTh1--TimeXer--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeXer--ddn | done | 4/4 |  |
@@ -202,9 +202,9 @@ Generated 2026-10-14T09:33:58+00:00 from 4347 packaged cells. Regenerate with `p
 | t3-lt-confirm--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--ETTh2--TimeXer | done | 4/4 |  |
-| t3-lt-confirm--ETTm2--TimeXer | ready | 0/4 |  |
+| t3-lt-confirm--ETTm2--TimeXer | claimed | 1/4 | itm21-a4000 |
 | t3-lt-confirm--ETTh2--TimeFilter | done | 4/4 |  |
-| t3-lt-confirm--ETTm2--TimeFilter | claimed | 0/4 | itm21-a4000 |
+| t3-lt-confirm--ETTm2--TimeFilter | done | 4/4 |  |
 | t3-none--ETTh1--TimeXer | done | 12/12 |  |
 | t3-none--ETTm1--TimeXer | done | 12/12 |  |
 | t3-none--Weather--TimeXer | done | 12/12 |  |
@@ -260,7 +260,7 @@ Generated 2026-10-14T09:33:58+00:00 from 4347 packaged cells. Regenerate with `p
 | t3-lt-tuned--ETTh2--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--ETTm2--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--ETTh2--TimeFilter | done | 12/12 |  |
-| t3-lt-tuned--ETTm2--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--ETTm2--TimeFilter | ready | 0/12 |  |
 | exp2-search--ETTh1--DLinear--revin | done | 4/4 |  |
 | exp2-search--ETTh1--DLinear--san | ready | 4/12 |  |
 | exp2-search--ETTh1--DLinear--ddn | ready | 0/12 |  |
