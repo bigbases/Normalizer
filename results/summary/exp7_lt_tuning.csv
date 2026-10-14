@@ -72,7 +72,7 @@ ETTm2,iTransformer,21642c782956,grid,13,0.0001,0,0,False,0.118198,0.278328,0.198
 ETTm2,iTransformer,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.114291,0.275733,0.195012,,,False,False
 ETTm2,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.116640,0.276530,0.196585,0.117401,0.277941,False,False
 ETTm2,iTransformer,e18334433cdb,grid,25,0.001,0,0,False,0.114195,0.284629,0.199412,,,False,False
-ETTm2,iTransformer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.115507,0.271919,0.193713,,,True,False
+ETTm2,iTransformer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.115507,0.271919,0.193713,0.117320,0.268623,True,True
 ETTm2,iTransformer,70544b7f9269,grid,49,0.001,0,0,False,0.115179,0.269392,0.192286,0.115848,0.278186,True,False
 Weather,DLinear,36b61b191ff5,grid,13,0.0001,1,1,True,0.407865,0.655743,0.531804,0.408552,0.656778,False,False
 Weather,DLinear,d510671ef280,grid,13,0.001,1,1,False,0.378536,0.632562,0.505549,0.374752,0.634268,True,True
