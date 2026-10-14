@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T18:52:38+00:00 from 4574 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T19:00:30+00:00 from 4576 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -18,10 +18,10 @@ Generated 2026-10-14T18:52:38+00:00 from 4574 packaged cells. Regenerate with `p
 | t3-confirm | 17 | 1 | 1 | 9 | 0 |
 | t3-lt-search | 10 | 0 | 4 | 0 | 0 |
 | t3-lt-struct | 10 | 0 | 0 | 4 | 0 |
-| t3-lt-confirm | 9 | 1 | 0 | 4 | 0 |
+| t3-lt-confirm | 10 | 0 | 0 | 4 | 0 |
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 15 | 1 | 1 | 11 | 0 |
-| t3-lt-tuned | 9 | 0 | 0 | 5 | 0 |
+| t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
 | exp2-search | 28 | 0 | 28 | 0 | 0 |
 | exp2-confirm | 28 | 0 | 0 | 28 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
@@ -198,7 +198,7 @@ Generated 2026-10-14T18:52:38+00:00 from 4574 packaged cells. Regenerate with `p
 | t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--ETTh1--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--ETTm1--TimeFilter | done | 4/4 |  |
-| t3-lt-confirm--Weather--TimeFilter | claimed | 2/4 | itm21-a4000 |
+| t3-lt-confirm--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--ETTh2--TimeXer | done | 4/4 |  |
@@ -254,7 +254,7 @@ Generated 2026-10-14T18:52:38+00:00 from 4574 packaged cells. Regenerate with `p
 | t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-tuned--ETTm1--TimeFilter | done | 12/12 |  |
-| t3-lt-tuned--Weather--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--Weather--TimeFilter | done | 12/12 |  |
 | t3-lt-tuned--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned--ETTh2--TimeXer | done | 12/12 |  |
