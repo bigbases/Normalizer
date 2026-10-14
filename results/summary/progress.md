@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T16:21:43+00:00 from 4487 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T17:16:45+00:00 from 4505 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,11 +8,11 @@ Generated 2026-10-14T16:21:43+00:00 from 4487 packaged cells. Regenerate with `p
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-confirm | 14 | 0 | 0 | 0 | 0 |
-| lt-tuned | 11 | 0 | 3 | 0 | 0 |
+| lt-tuned | 11 | 2 | 1 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
-| shift-none | 1 | 0 | 1 | 0 | 0 |
-| shift-tuned | 2 | 0 | 2 | 4 | 0 |
-| shift-lt | 1 | 0 | 1 | 0 | 0 |
+| shift-none | 2 | 0 | 0 | 0 | 0 |
+| shift-tuned | 3 | 1 | 0 | 4 | 0 |
+| shift-lt | 1 | 1 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 19 | 0 | 9 | 0 | 0 |
 | t3-confirm | 17 | 0 | 2 | 9 | 0 |
@@ -20,7 +20,7 @@ Generated 2026-10-14T16:21:43+00:00 from 4487 packaged cells. Regenerate with `p
 | t3-lt-struct | 9 | 0 | 1 | 4 | 0 |
 | t3-lt-confirm | 9 | 0 | 0 | 5 | 0 |
 | t3-none | 13 | 0 | 1 | 0 | 0 |
-| t3-tuned | 12 | 1 | 4 | 11 | 0 |
+| t3-tuned | 12 | 2 | 3 | 11 | 0 |
 | t3-lt-tuned | 9 | 0 | 0 | 5 | 0 |
 | exp2-search | 28 | 0 | 28 | 0 | 0 |
 | exp2-confirm | 28 | 0 | 0 | 28 | 0 |
@@ -65,9 +65,9 @@ Generated 2026-10-14T16:21:43+00:00 from 4487 packaged cells. Regenerate with `p
 | lt-confirm--ETTm2--iTransformer | done | 4/4 |  |
 | lt-tuned--ETTm1--iTransformer | done | 12/12 |  |
 | lt-tuned--Weather--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--DLinear | ready | 0/12 |  |
+| lt-tuned--Electricity--DLinear | claimed | 0/12 | itm24-gpu0-pro6000 |
 | lt-tuned--ETTm1--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--iTransformer | ready | 0/12 |  |
+| lt-tuned--Electricity--iTransformer | claimed | 0/12 | itm24-pro6000 |
 | lt-tuned--Traffic--iTransformer | ready | 0/12 |  |
 | lt-tuned--Weather--iTransformer | done | 12/12 |  |
 | lt-tuned--Traffic--DLinear | done | 12/12 |  |
@@ -82,17 +82,17 @@ Generated 2026-10-14T16:21:43+00:00 from 4487 packaged cells. Regenerate with `p
 | lt-kernel-check--Traffic--DLinear | done | 4/4 |  |
 | lt-kernel-check--Traffic--iTransformer | done | 4/4 |  |
 | shift-none--Weather--DLinear | done | 3/3 |  |
-| shift-none--Traffic--DLinear | ready | 0/3 |  |
+| shift-none--Traffic--DLinear | done | 3/3 |  |
 | shift-tuned--Weather--DLinear--revin | done | 3/3 |  |
 | shift-tuned--Weather--DLinear--san | blocked | 0/? |  |
 | shift-tuned--Weather--DLinear--ddn | blocked | 0/? |  |
 | shift-tuned--Weather--DLinear--fan | done | 3/3 |  |
-| shift-tuned--Traffic--DLinear--revin | ready | 0/3 |  |
+| shift-tuned--Traffic--DLinear--revin | claimed | 1/3 | itm24-pro6000 |
 | shift-tuned--Traffic--DLinear--san | blocked | 0/? |  |
 | shift-tuned--Traffic--DLinear--ddn | blocked | 0/? |  |
-| shift-tuned--Traffic--DLinear--fan | ready | 0/3 |  |
+| shift-tuned--Traffic--DLinear--fan | done | 3/3 |  |
 | shift-lt--Weather--DLinear | done | 3/3 |  |
-| shift-lt--Traffic--DLinear | ready | 0/3 |  |
+| shift-lt--Traffic--DLinear | claimed | 0/3 | itm24-pro6000 |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
@@ -242,11 +242,11 @@ Generated 2026-10-14T16:21:43+00:00 from 4487 packaged cells. Regenerate with `p
 | t3-tuned--ETTh2--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTh2--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--ETTm2--TimeXer--san | done | 12/12 |  |
-| t3-tuned--ETTm2--TimeXer--ddn | ready | 0/12 |  |
+| t3-tuned--ETTm2--TimeXer--ddn | claimed | 0/12 | itm21-a4000 |
 | t3-tuned--ETTh2--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--ETTh2--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTm2--TimeFilter--san | done | 12/12 |  |
-| t3-tuned--ETTm2--TimeFilter--ddn | claimed | 0/12 | itm21-a4000 |
+| t3-tuned--ETTm2--TimeFilter--ddn | claimed | 11/12 | itm21-a4000 |
 | t3-lt-tuned--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--Weather--TimeXer | done | 12/12 |  |
