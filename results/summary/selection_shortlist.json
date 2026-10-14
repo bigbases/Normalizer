@@ -517,22 +517,22 @@
     ],
     "ETTm1|TimeFilter|ddn": [
       {
-        "candidate_id": "2c842a20e419",
+        "candidate_id": "bbeb523655cd",
         "n_cells": 2,
         "params": {
           "hkernel_len": 5,
           "j": 1,
           "joint_lr": "backbone",
-          "kernel_len": 12,
+          "kernel_len": 7,
           "station_lr": 0.0001,
           "station_type": "adaptive",
           "twice_epoch": 1,
           "wavelet": "coif3"
         },
-        "screen_mean_val_mse": 0.6291624339538965
+        "screen_mean_val_mse": 0.6193098320102136
       },
       {
-        "candidate_id": "275a2b5a29c2",
+        "candidate_id": "b833fe78c153",
         "n_cells": 2,
         "params": {
           "hkernel_len": 5,
@@ -541,10 +541,10 @@
           "kernel_len": 32,
           "station_lr": 0.0001,
           "station_type": "adaptive",
-          "twice_epoch": 0,
+          "twice_epoch": 1,
           "wavelet": "coif3"
         },
-        "screen_mean_val_mse": 0.6322944979625316
+        "screen_mean_val_mse": 0.6287977421719486
       }
     ],
     "ETTm1|TimeFilter|san": [
