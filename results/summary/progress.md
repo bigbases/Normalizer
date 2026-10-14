@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-14T02:43:23+00:00 from 4000 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T02:46:33+00:00 from 4006 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
-| lt-search | 12 | 1 | 1 | 0 | 0 |
-| lt-confirm | 11 | 0 | 1 | 2 | 0 |
-| lt-tuned | 7 | 0 | 4 | 3 | 0 |
+| lt-search | 13 | 0 | 1 | 0 | 0 |
+| lt-confirm | 11 | 0 | 2 | 1 | 0 |
+| lt-tuned | 7 | 1 | 3 | 3 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 1 | 0 | 1 | 0 | 0 |
 | shift-tuned | 2 | 0 | 2 | 4 | 0 |
@@ -47,7 +47,7 @@ Generated 2026-10-14T02:43:23+00:00 from 4000 packaged cells. Regenerate with `p
 | lt-search--ETTh1--DLinear | done | 10/10 |  |
 | lt-search--ETTh1--iTransformer | done | 10/10 |  |
 | lt-search--ETTh2--DLinear | done | 10/10 |  |
-| lt-search--ETTm2--DLinear | claimed | 6/10 | itm21-a4000 |
+| lt-search--ETTm2--DLinear | done | 10/10 |  |
 | lt-search--ETTm2--iTransformer | ready | 6/10 |  |
 | lt-confirm--ETTm1--iTransformer | done | 4/4 |  |
 | lt-confirm--Weather--DLinear | done | 4/4 |  |
@@ -61,7 +61,7 @@ Generated 2026-10-14T02:43:23+00:00 from 4000 packaged cells. Regenerate with `p
 | lt-confirm--ETTh1--DLinear | done | 4/4 |  |
 | lt-confirm--ETTh1--iTransformer | done | 4/4 |  |
 | lt-confirm--ETTh2--DLinear | ready | 2/4 |  |
-| lt-confirm--ETTm2--DLinear | blocked | 0/? |  |
+| lt-confirm--ETTm2--DLinear | ready | 2/4 |  |
 | lt-confirm--ETTm2--iTransformer | blocked | 0/? |  |
 | lt-tuned--ETTm1--iTransformer | done | 12/12 |  |
 | lt-tuned--Weather--DLinear | done | 12/12 |  |
@@ -73,7 +73,7 @@ Generated 2026-10-14T02:43:23+00:00 from 4000 packaged cells. Regenerate with `p
 | lt-tuned--Traffic--DLinear | done | 12/12 |  |
 | lt-tuned--ETTh2--iTransformer | done | 12/12 |  |
 | lt-tuned--ETTh1--DLinear | done | 12/12 |  |
-| lt-tuned--ETTh1--iTransformer | ready | 0/12 |  |
+| lt-tuned--ETTh1--iTransformer | claimed | 2/12 | itm21-a4000 |
 | lt-tuned--ETTh2--DLinear | blocked | 0/? |  |
 | lt-tuned--ETTm2--DLinear | blocked | 0/? |  |
 | lt-tuned--ETTm2--iTransformer | blocked | 0/? |  |
