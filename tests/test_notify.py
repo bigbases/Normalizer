@@ -56,11 +56,11 @@ class NotifierTest(unittest.TestCase):
         tasks = rs.build_tasks(plan, protocol, bases, {})
         args = Namespace(phases="t3-none", datasets=None, backbones=None)
         text = fm.progress_text(tasks, args)
-        # t3-none: 5 datasets x 2 backbones x 12 cells, nothing done
+        # t3-none: 7 datasets x 2 backbones x 12 cells, nothing done
         self.assertIn("완료 0 runs", text)
         self.assertIn("Electricity 24", text)
         self.assertIn("Traffic 24", text)
-        self.assertIn("그 외 72", text)
+        self.assertIn("그 외 120", text)
         # a worker limited to small datasets still reports the whole experiment
         small = Namespace(phases="t3-none", datasets="ETTh1,ETTm1,Weather", backbones=None)
         self.assertEqual(fm.progress_text(tasks, small), text)
