@@ -57,7 +57,7 @@ shift-tuned,Weather,DLinear,revin,done,3,3,
 shift-tuned,Weather,DLinear,san,blocked,0,,
 shift-tuned,Weather,DLinear,ddn,blocked,0,,
 shift-tuned,Weather,DLinear,fan,done,3,3,
-shift-tuned,Traffic,DLinear,revin,claimed,1,3,itm24-pro6000
+shift-tuned,Traffic,DLinear,revin,done,3,3,
 shift-tuned,Traffic,DLinear,san,blocked,0,,
 shift-tuned,Traffic,DLinear,ddn,blocked,0,,
 shift-tuned,Traffic,DLinear,fan,done,3,3,
