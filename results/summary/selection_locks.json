@@ -105,6 +105,16 @@
       "affine": 0,
       "station_lr": 0.0001
     },
+    "ETTm1|TimeFilter|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "joint_lr": "backbone",
+      "kernel_len": 7,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "ETTm1|TimeFilter|san": {
       "period_len": 12,
       "station_lr": 0.0001,
