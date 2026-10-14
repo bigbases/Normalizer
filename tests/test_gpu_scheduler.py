@@ -92,6 +92,19 @@ class MeasuredAdmissionTest(unittest.TestCase):
         # the temperature limit applies beyond the minimum only
         self.assertEqual(self.select(self.jobs(1), util=10, state=hot)[0], 0)
 
+    def test_memory_uses_measured_free_memory_after_warm_up(self):
+        # two settled cells guessed at 4 GB each actually leave 13.8 GB free on a 16 GB card
+        state = GPUState(0, 16376, 13800, 30, 60)
+        gpu, _ = self.select(self.jobs(2, memory=4000), util=30, state=state,
+                             estimate=ResourceEstimate(4000, 60, False), min_free_memory_mib=5000)
+        self.assertEqual(gpu, 0)
+        # a cell still warming up reserves its estimate on top of what is measured
+        young = self.jobs(1, memory=4000) + self.jobs(1, started=990.0, memory=6000)
+        gpu, reasons = self.select(young, util=30, state=GPUState(0, 16376, 9000, 30, 60),
+                                   estimate=ResourceEstimate(4000, 60, False), min_processes_per_gpu=3)
+        self.assertIsNone(gpu)
+        self.assertIn("memory", reasons[0])
+
     def test_thermal_slowdown_blocks_every_new_cell(self):
         throttling = GPUState(0, 97887, 80000, 10, 91, True)
         gpu, reasons = self.select([], util=10, state=throttling)

@@ -338,7 +338,10 @@ def select_gpu_measured(
 ):
     """Choose a GPU from measured utilization instead of summed per-cell guesses.
 
-    Memory still uses the per-cell estimates (an OOM is costly), but one more cell
+    Memory is read from nvidia-smi as well: cells past their warm-up already hold
+    their working memory (PyTorch keeps its peak allocation), so only cells still
+    warming up reserve their estimate on top of the measured free memory, and the
+    new cell needs its estimate plus ``min_free_memory_mib``.  One more cell
     starts only while the GPU's recent average utilization is below the target
     and every cell already on it has passed its warm-up, so each new process is
     measured before the next one is added.  Below ``min_processes_per_gpu`` the
@@ -359,11 +362,10 @@ def select_gpu_measured(
         if any(job["estimate"].exclusive for job in active) or (estimate.exclusive and active):
             reasons[gpu_id] = "exclusive cell"
             continue
-        reserved_memory = sum(job["estimate"].memory_mib for job in active)
-        external_memory = max(0, state.total_mib - state.free_mib - reserved_memory)
-        capacity_remaining = state.total_mib - external_memory - reserved_memory
+        warming = sum(job["estimate"].memory_mib for job in active if now - job["started"] < warmup_seconds)
+        capacity_remaining = state.free_mib - warming
         if capacity_remaining - estimate.memory_mib < min_free_memory_mib:
-            reasons[gpu_id] = f"memory ({capacity_remaining} MiB left)"
+            reasons[gpu_id] = f"memory ({capacity_remaining} MiB free after warming-up cells)"
             continue
         if throttled.get(gpu_id) or state.thermal_slowdown:
             reasons[gpu_id] = f"thermal slowdown ({state.temp_c} C)"
