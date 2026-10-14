@@ -62,6 +62,11 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "ETTh2|TimeXer|san": {
+      "period_len": 24,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "ETTh2|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 2,
