@@ -45,7 +45,8 @@ import result_store as rs  # noqa: E402
 import run_matrix as rm  # noqa: E402
 from cost_model import CostModel, order_cells  # noqa: E402
 from gpu_scheduler import (  # noqa: E402
-    ResourceEstimate, ResourceEstimator, load_dotenv, query_gpus, select_gpu, send_discord,
+    GpuUtilTracker, HostMonitor, ResourceEstimate, ResourceEstimator, load_dotenv, query_gpus,
+    select_gpu, select_gpu_measured, send_discord,
 )
 
 ROOT = rs.ROOT
@@ -252,6 +253,10 @@ class Worker:
         self.next_claim_try = 0.0
         self.last_tasks = None
         self.next_progress = time.monotonic()
+        self.util_tracker = GpuUtilTracker(args.util_window_seconds)
+        self.host_monitor = HostMonitor(args.util_window_seconds)
+        self.last_launch = 0.0
+        self.hold = ("", 0.0)      # last logged reason for not starting a queued cell, and when
 
     @staticmethod
     def gpu_names():
@@ -398,25 +403,83 @@ class Worker:
                 "Restart the worker to continue with the new code.")
 
     # -------------------------------------------------------------- running
+    def host_hold(self):
+        """Why the machine itself should not take another cell now, or None."""
+        a, host = self.args, self.host_monitor
+        busy = host.cpu_busy_percent()
+        if busy is not None and busy >= a.max_cpu_busy:
+            return f"host CPU {busy:.0f}% busy"
+        load = host.load_per_cpu()
+        if load is not None and load >= a.max_load_per_cpu:
+            return f"host load {load:.2f} per CPU"
+        mem = host.mem_available_gib()
+        if mem is not None and mem < a.min_host_mem_gib:
+            return f"host memory {mem:.1f} GiB available"
+        return None
+
+    def note_hold(self, reason):
+        now = time.monotonic()
+        last_reason, last_at = self.hold
+        if (reason != last_reason and now - last_at >= 60) or now - last_at >= 900:
+            log(f"holding queued cells: {reason}")
+            self.hold = (reason, now)
+
     def launch_ready(self):
-        if self.draining or not self.queue:
+        if self.draining:
             return
+        measured = self.args.admission == "measured"
+        if not self.queue and not measured:
+            return
+        now = time.monotonic()
         states = query_gpus()
+        if measured:   # keep the moving averages current even while nothing is queued
+            self.util_tracker.add(states, now)
+            self.host_monitor.sample(now)
+        if not self.queue:
+            return
         by_gpu = {}
         for job in self.running.values():
             by_gpu.setdefault(job["gpu_id"], []).append(job)
+        host_hold = self.host_hold() if measured and self.running else None
         for item in list(self.queue):
-            gpu_id = select_gpu(item["estimate"], states, by_gpu, self.gpu_ids,
-                                self.args.max_processes_per_gpu, self.args.max_gpu_util,
-                                self.args.min_free_memory_mib)
-            if gpu_id is None:
-                continue
+            last_this_round = False
+            if measured:
+                if host_hold:
+                    self.note_hold(host_hold)
+                    break
+                gpu_id, reasons = select_gpu_measured(
+                    item["estimate"], states, by_gpu, self.gpu_ids,
+                    {g: self.util_tracker.mean(g) for g in self.gpu_ids}, now,
+                    max_processes_per_gpu=self.args.max_processes_per_gpu,
+                    min_processes_per_gpu=self.args.min_processes_per_gpu,
+                    target_gpu_util=self.args.target_gpu_util,
+                    warmup_seconds=self.args.warmup_seconds,
+                    min_free_memory_mib=self.args.min_free_memory_mib,
+                    max_gpu_temp=self.args.max_gpu_temp,
+                    throttled={g: self.util_tracker.throttled(g) for g in self.gpu_ids})
+                if gpu_id is None:
+                    self.note_hold("; ".join(f"gpu{g} {r}" for g, r in sorted(reasons.items())))
+                    continue
+                if len(by_gpu.get(gpu_id, [])) >= self.args.min_processes_per_gpu:
+                    # beyond the minimum, start one cell at a time and let it show up in the readings
+                    if now - self.last_launch < self.args.launch_spacing_seconds:
+                        break
+                    last_this_round = True
+            else:
+                gpu_id = select_gpu(item["estimate"], states, by_gpu, self.gpu_ids,
+                                    self.args.max_processes_per_gpu, self.args.max_gpu_util,
+                                    self.args.min_free_memory_mib)
+                if gpu_id is None:
+                    continue
             cell = item["cell"]
             attempt = item["retries"] + 1
             part = self.local / "parts" / f'{cell["run_id"]}.attempt{attempt}.csv'
             part.unlink(missing_ok=True)
             log_path = self.local / "logs" / f'{cell["run_id"]}.attempt{attempt}.log'
             cmd = rm.cell_command(cell, self.args.data_root, part, self.local / "ckpt", gpu=0)
+            if self.args.loader_workers is not None and "--num_workers" in cmd:
+                # DataLoader processes do not change the results; fewer of them leave CPU to the training
+                cmd[cmd.index("--num_workers") + 1] = str(self.args.loader_workers)
             if self.args.fake_runner is not None:
                 keys = ("run_id", "candidate_id", "config_hash", "stage", "dataset", "backbone",
                         "horizon", "seed", "method")
@@ -424,6 +487,9 @@ class Worker:
                        str(part), str(self.args.fake_runner)]
             env = os.environ.copy()
             env.update(CUDA_VISIBLE_DEVICES=str(gpu_id), PYTHONUNBUFFERED="1")
+            if self.args.malloc_mmap_threshold_mib > 0:
+                threshold = self.args.malloc_mmap_threshold_mib * 2**20
+                env.update(MALLOC_MMAP_THRESHOLD_=str(threshold), MALLOC_TRIM_THRESHOLD_=str(2 * threshold))
             for var in ("LIGHTNORM_TORCH_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
                 env[var] = str(self.threads)
             handle = log_path.open("w")
@@ -438,8 +504,11 @@ class Worker:
             self.running[process.pid] = job
             by_gpu.setdefault(gpu_id, []).append(job)
             self.queue.remove(item)
+            self.last_launch = now
             rm.append_manifest(self.manifest, {"event": "started", "at": rs.utcnow(), "run_id": cell["run_id"],
                                                "physical_gpu": gpu_id, "attempt": attempt})
+            if last_this_round:
+                break
 
     def reap(self):
         for pid, job in list(self.running.items()):
@@ -483,6 +552,17 @@ class Worker:
         log(f"worker={self.worker_id} gpus={self.gpu_ids} ({self.gpu_name}, {self.capacity_mib} MiB) "
             f"slots={self.slots} threads={self.threads} torch={self.torch} code={self.code_rev} "
             f"git={'on' if self.repo.enabled else 'off'}")
+        a = self.args
+        if a.admission == "measured":
+            log(f"admission=measured: {a.min_processes_per_gpu}-{a.max_processes_per_gpu} cells/GPU, "
+                f"GPU util < {a.target_gpu_util:.0f}% over {a.util_window_seconds:.0f}s, warm-up {a.warmup_seconds:.0f}s, "
+                f"host CPU < {a.max_cpu_busy:.0f}%, load/CPU < {a.max_load_per_cpu}, "
+                f"host memory >= {a.min_host_mem_gib} GiB, GPU < {a.max_gpu_temp} C and no thermal slowdown, "
+                f"loader workers {a.loader_workers if a.loader_workers is not None else 'protocol'}, "
+                f"malloc mmap threshold {a.malloc_mmap_threshold_mib} MiB "
+                f"(host CPUs {self.host_monitor.cpus})")
+        else:
+            log(f"admission=estimate: summed util <= {a.max_gpu_util}%, {a.max_processes_per_gpu} cells/GPU")
         self.notifier.send(f"워커 시작: {self.gpu_name} x{len(self.gpu_ids)}, 동시 {self.slots}개, 코드 {self.code_rev}")
         push_every = self.args.push_minutes * 60
         beat_every = self.args.heartbeat_minutes * 60
@@ -556,6 +636,8 @@ def command_run(args):
             raise SystemExit(f"{stop} exists: remove it to start a worker")
     if args.max_processes_per_gpu < 1:
         raise SystemExit("--max-processes-per-gpu must be >= 1")
+    if args.loader_workers is not None and args.loader_workers < 0:
+        args.loader_workers = None
     notifier = Notifier(args.env_file, args.host or rs.host_name(), args.notify_batch_minutes,
                         enabled=not args.no_notify)
     try:
@@ -587,8 +669,37 @@ def main():
     r.add_argument("--data-root", required=True)
     r.add_argument("--gpus", help="physical GPU indices, e.g. 0 or 0,1")
     r.add_argument("--gpu-count", type=int)
-    r.add_argument("--max-processes-per-gpu", type=int, default=4)
-    r.add_argument("--max-gpu-util", type=int, default=92)
+    r.add_argument("--max-processes-per-gpu", type=int, default=4, help="upper limit of cells per GPU")
+    r.add_argument("--admission", choices=["measured", "estimate"], default="measured",
+                   help="measured: add cells while the measured GPU utilization and the host allow it; "
+                        "estimate: sum per-cell utilization guesses up to --max-gpu-util (old behavior)")
+    r.add_argument("--max-gpu-util", type=int, default=92, help="estimate admission only")
+    r.add_argument("--target-gpu-util", type=float, default=80.0,
+                   help="measured admission: add a cell only while the GPU's average utilization is below this")
+    r.add_argument("--min-processes-per-gpu", type=int, default=2,
+                   help="measured admission: cells started without the utilization and warm-up checks")
+    r.add_argument("--warmup-seconds", type=float, default=180.0,
+                   help="measured admission: wait this long after a cell starts before adding another on its GPU")
+    r.add_argument("--launch-spacing-seconds", type=float, default=60.0,
+                   help="measured admission: minimum gap between cells started beyond the minimum")
+    r.add_argument("--util-window-seconds", type=float, default=90.0,
+                   help="averaging window of the GPU utilization and host CPU readings")
+    r.add_argument("--max-cpu-busy", type=float, default=85.0,
+                   help="measured admission: no new cell while the host CPU is at least this busy (%%)")
+    r.add_argument("--max-load-per-cpu", type=float, default=0.9,
+                   help="measured admission: no new cell while the 1-min load average per CPU is at least this")
+    r.add_argument("--min-host-mem-gib", type=float, default=8.0,
+                   help="measured admission: no new cell while less host memory than this is available")
+    r.add_argument("--max-gpu-temp", type=int, default=90,
+                   help="measured admission: beyond the minimum, no new cell on a GPU at or above this "
+                        "temperature (C); 0 = off. A GPU in thermal slowdown never gets a new cell")
+    r.add_argument("--loader-workers", type=int, default=0,
+                   help="DataLoader processes per cell; -1 keeps the protocol value. Not part of the config hash: "
+                        "the batch order is the same for any value (data_provider.ReusedIteratorLoader), and "
+                        "in-process loading avoids passing large batches through shared memory")
+    r.add_argument("--malloc-mmap-threshold-mib", type=int, default=1024,
+                   help="glibc mmap threshold for cell processes so that large batch buffers are reused instead "
+                        "of being mapped and page-faulted every step; 0 = glibc default")
     r.add_argument("--min-free-memory-mib", type=int, default=1024)
     r.add_argument("--cpu-threads-per-worker", type=int, default=0)
     r.add_argument("--resource-profiles", default=str(ROOT / "configs" / "resource_profiles.a100_80gb.json"))

@@ -16,6 +16,26 @@ data_dict = {
 }
 
 
+class ReusedIteratorLoader(DataLoader):
+    """Single-process loading that reuses one iterator, as persistent workers do.
+
+    A DataLoader draws a base seed from its generator each time it creates an
+    iterator.  With persistent workers it creates one iterator for the whole run,
+    without workers one per epoch, which shifts the generator stream and so the
+    shuffled order from the second epoch on.  Reusing the iterator keeps the batch
+    order identical to the persistent-worker runs whatever num_workers is.
+    """
+
+    def __iter__(self):
+        if self.num_workers > 0:
+            return super().__iter__()
+        if self._iterator is None:
+            self._iterator = self._get_iterator()
+        else:
+            self._iterator._reset(self)
+        return self._iterator
+
+
 def seed_worker(worker_id):
     worker_seed = torch.initial_seed() % (2 ** 32)
     np.random.seed(worker_seed)
@@ -78,8 +98,9 @@ def data_provider(args, flag):
 
     # Persistent workers avoid re-forking the loader processes every epoch
     # (train and val loaders are iterated up to 15 times per run).  Shuffling
-    # still comes from the seeded generator in the main process.
-    data_loader = DataLoader(
+    # still comes from the seeded generator in the main process, and without
+    # workers the loader reuses its iterator so the order does not change.
+    data_loader = ReusedIteratorLoader(
         data_set,
         batch_size=batch_size,
         shuffle=shuffle_flag,
