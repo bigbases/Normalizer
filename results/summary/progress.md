@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T06:51:39+00:00 from 4280 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T07:10:26+00:00 from 4295 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -16,10 +16,10 @@ Generated 2026-10-14T06:51:39+00:00 from 4280 packaged cells. Regenerate with `p
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 14 | 0 | 14 | 0 | 0 |
 | t3-confirm | 12 | 0 | 2 | 14 | 0 |
-| t3-lt-search | 4 | 0 | 10 | 0 | 0 |
+| t3-lt-search | 4 | 1 | 9 | 0 | 0 |
 | t3-lt-struct | 4 | 0 | 0 | 10 | 0 |
-| t3-lt-confirm | 3 | 0 | 1 | 10 | 0 |
-| t3-none | 12 | 1 | 1 | 0 | 0 |
+| t3-lt-confirm | 3 | 1 | 0 | 10 | 0 |
+| t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 10 | 0 | 2 | 16 | 0 |
 | t3-lt-tuned | 3 | 0 | 0 | 11 | 0 |
 | exp2-search | 28 | 0 | 28 | 0 | 0 |
@@ -164,7 +164,7 @@ Generated 2026-10-14T06:51:39+00:00 from 4280 packaged cells. Regenerate with `p
 | t3-confirm--ETTm2--TimeFilter--san | blocked | 0/? |  |
 | t3-confirm--ETTm2--TimeFilter--ddn | blocked | 0/? |  |
 | t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
-| t3-lt-search--ETTm1--TimeXer | ready | 8/12 |  |
+| t3-lt-search--ETTm1--TimeXer | claimed | 8/12 | itm21-a4000 |
 | t3-lt-search--Weather--TimeXer | ready | 8/12 |  |
 | t3-lt-search--Electricity--TimeXer | ready | 0/12 |  |
 | t3-lt-search--Traffic--TimeXer | ready | 3/12 |  |
@@ -196,7 +196,7 @@ Generated 2026-10-14T06:51:39+00:00 from 4280 packaged cells. Regenerate with `p
 | t3-lt-confirm--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-confirm--ETTh1--TimeFilter | ready | 0/4 |  |
+| t3-lt-confirm--ETTh1--TimeFilter | claimed | 3/4 | itm21-a4000 |
 | t3-lt-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--Weather--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--Electricity--TimeFilter | blocked | 0/? |  |
@@ -216,7 +216,7 @@ Generated 2026-10-14T06:51:39+00:00 from 4280 packaged cells. Regenerate with `p
 | t3-none--Electricity--TimeFilter | done | 12/12 |  |
 | t3-none--Traffic--TimeFilter | done | 12/12 |  |
 | t3-none--ETTh2--TimeXer | done | 12/12 |  |
-| t3-none--ETTm2--TimeXer | claimed | 0/12 | itm21-a4000 |
+| t3-none--ETTm2--TimeXer | done | 12/12 |  |
 | t3-none--ETTh2--TimeFilter | done | 12/12 |  |
 | t3-none--ETTm2--TimeFilter | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeXer--san | done | 12/12 |  |
