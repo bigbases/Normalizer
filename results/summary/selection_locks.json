@@ -57,6 +57,11 @@
       "affine": 0,
       "station_lr": 0.0001
     },
+    "ETTh2|TimeFilter|san": {
+      "period_len": 12,
+      "station_lr": 5e-05,
+      "station_type": "adaptive"
+    },
     "ETTh2|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 2,
