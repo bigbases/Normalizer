@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T03:14:20+00:00 from 4057 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T03:20:38+00:00 from 4067 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-14T03:14:20+00:00 from 4057 packaged cells. Regenerate with `p
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-confirm | 14 | 0 | 0 | 0 | 0 |
-| lt-tuned | 10 | 0 | 4 | 0 | 0 |
+| lt-tuned | 10 | 1 | 3 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 1 | 0 | 1 | 0 | 0 |
 | shift-tuned | 2 | 0 | 2 | 4 | 0 |
@@ -19,7 +19,7 @@ Generated 2026-10-14T03:14:20+00:00 from 4057 packaged cells. Regenerate with `p
 | t3-lt-search | 1 | 0 | 13 | 0 | 0 |
 | t3-lt-struct | 1 | 0 | 0 | 13 | 0 |
 | t3-lt-confirm | 1 | 0 | 0 | 13 | 0 |
-| t3-none | 10 | 1 | 3 | 0 | 0 |
+| t3-none | 11 | 0 | 3 | 0 | 0 |
 | t3-tuned | 6 | 0 | 2 | 20 | 0 |
 | t3-lt-tuned | 1 | 0 | 0 | 13 | 0 |
 | exp2-search | 28 | 0 | 28 | 0 | 0 |
@@ -76,7 +76,7 @@ Generated 2026-10-14T03:14:20+00:00 from 4057 packaged cells. Regenerate with `p
 | lt-tuned--ETTh1--iTransformer | done | 12/12 |  |
 | lt-tuned--ETTh2--DLinear | done | 12/12 |  |
 | lt-tuned--ETTm2--DLinear | done | 12/12 |  |
-| lt-tuned--ETTm2--iTransformer | ready | 0/12 |  |
+| lt-tuned--ETTm2--iTransformer | claimed | 1/12 | itm21-a4000 |
 | lt-kernel-check--Electricity--DLinear | done | 4/4 |  |
 | lt-kernel-check--Electricity--iTransformer | done | 4/4 |  |
 | lt-kernel-check--Traffic--DLinear | done | 4/4 |  |
@@ -215,7 +215,7 @@ Generated 2026-10-14T03:14:20+00:00 from 4057 packaged cells. Regenerate with `p
 | t3-none--Weather--TimeFilter | done | 12/12 |  |
 | t3-none--Electricity--TimeFilter | done | 12/12 |  |
 | t3-none--Traffic--TimeFilter | done | 12/12 |  |
-| t3-none--ETTh2--TimeXer | claimed | 3/12 | itm21-a4000 |
+| t3-none--ETTh2--TimeXer | done | 12/12 |  |
 | t3-none--ETTm2--TimeXer | ready | 0/12 |  |
 | t3-none--ETTh2--TimeFilter | done | 12/12 |  |
 | t3-none--ETTm2--TimeFilter | ready | 0/12 |  |
