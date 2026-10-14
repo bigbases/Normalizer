@@ -323,6 +323,28 @@
         "screen_mean_val_mse": 0.4039834771843199
       }
     ],
+    "ETTh2|TimeXer|san": [
+      {
+        "candidate_id": "74fa903f9770",
+        "n_cells": 2,
+        "params": {
+          "period_len": 24,
+          "station_lr": 0.0001,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.4001984784857714
+      },
+      {
+        "candidate_id": "00687476a233",
+        "n_cells": 2,
+        "params": {
+          "period_len": 24,
+          "station_lr": 5e-05,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.40055816492095675
+      }
+    ],
     "ETTh2|iTransformer|fan": [
       {
         "candidate_id": "a463b7607f3d",
