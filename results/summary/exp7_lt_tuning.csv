@@ -36,9 +36,9 @@ ETTh2,TimeFilter,21642c782956,grid,13,0.0001,0,0,False,0.209484,0.607172,0.40832
 ETTh2,TimeFilter,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.208620,0.602745,0.405682,,,False,False
 ETTh2,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.210980,0.610787,0.410883,,,False,False
 ETTh2,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.211308,0.604072,0.407690,,,False,False
-ETTh2,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.211240,0.583501,0.397370,,,True,False
+ETTh2,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.211240,0.583501,0.397370,0.211755,0.590095,True,True
 ETTh2,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,0.211736,0.604104,0.407920,,,False,False
-ETTh2,TimeFilter,96063ae3aa85,structure,49,0.0001,0,1,False,0.210953,0.584427,0.397690,,,True,False
+ETTh2,TimeFilter,96063ae3aa85,structure,49,0.0001,0,1,False,0.210953,0.584427,0.397690,0.211562,0.591807,True,False
 ETTh2,TimeFilter,6538d62e5a7a,structure,49,0.0001,1,0,False,0.210739,0.598062,0.404401,,,False,False
 ETTh2,TimeFilter,a3729a1a10be,structure,49,0.0001,1,1,False,0.210230,0.595180,0.402705,,,False,False
 ETTh2,TimeXer,21642c782956,grid,13,0.0001,0,0,False,0.219114,0.621162,0.420138,,,False,False
@@ -48,8 +48,8 @@ ETTh2,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.210869,0.606110,0.408490,,,
 ETTh2,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.213481,0.592388,0.402935,,,False,False
 ETTh2,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.211201,0.586516,0.398859,,,False,False
 ETTh2,TimeXer,a65571406a47,structure,49,0.001,0,1,False,0.209546,0.584595,0.397071,,,False,False
-ETTh2,TimeXer,0a7ae0db7542,structure,49,0.001,1,0,False,0.213811,0.577656,0.395734,,,True,False
-ETTh2,TimeXer,44258000b27a,structure,49,0.001,1,1,False,0.212194,0.574057,0.393126,,,True,False
+ETTh2,TimeXer,0a7ae0db7542,structure,49,0.001,1,0,False,0.213811,0.577656,0.395734,0.212971,0.565771,True,False
+ETTh2,TimeXer,44258000b27a,structure,49,0.001,1,1,False,0.212194,0.574057,0.393126,0.212271,0.568956,True,True
 ETTh2,iTransformer,684acb6d5d36,grid,13,0.0001,0,0,False,0.237234,0.586652,0.411943,0.243517,0.581684,True,True
 ETTh2,iTransformer,ec25f92002df,grid,13,0.001,0,0,False,0.224182,0.632052,0.428117,,,False,False
 ETTh2,iTransformer,c341c0f6cf02,grid,25,0.0001,0,0,False,0.229798,0.613182,0.421490,0.235541,0.628204,False,False

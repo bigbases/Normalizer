@@ -115,6 +115,7 @@ ETTh2,DLinear,san,61e69def41a7,{},0.204068,0.597842,0.204193,0.600438,0.400955,0
 ETTh2,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.205131,0.599615,,,0.402373,,True,False
 ETTh2,DLinear,san,f6904fc69cd0,{},0.204322,0.599558,0.204692,0.602484,0.401940,0.402764,False,False
 ETTh2,DLinear,san,fa33e70a6a3a,{},0.205804,0.598978,,,0.402391,,False,False
+ETTh2,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.604070,,,,,False,False
 ETTh2,iTransformer,ddn,0792239d10b5,{},0.227865,0.646038,,,0.436951,,False,False
 ETTh2,iTransformer,ddn,2d34e986cebd,{},0.224223,0.611773,0.221334,0.621061,0.417998,0.419598,False,False
 ETTh2,iTransformer,ddn,724393cf2565,{},0.230835,0.615171,,,0.423003,,False,False
