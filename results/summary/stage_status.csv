@@ -62,7 +62,7 @@ shift-tuned,Traffic,DLinear,san,blocked,0,,
 shift-tuned,Traffic,DLinear,ddn,blocked,0,,
 shift-tuned,Traffic,DLinear,fan,done,3,3,
 shift-lt,Weather,DLinear,lt,done,3,3,
-shift-lt,Traffic,DLinear,lt,claimed,0,3,itm24-pro6000
+shift-lt,Traffic,DLinear,lt,done,3,3,
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
 exp1-lt,ETTh1,iTransformer,lt,done,12,12,
 exp1-lt,ETTh2,DLinear,lt,done,12,12,

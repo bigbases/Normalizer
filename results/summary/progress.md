@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T17:19:12+00:00 from 4508 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T17:22:22+00:00 from 4511 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,7 +12,7 @@ Generated 2026-10-14T17:19:12+00:00 from 4508 packaged cells. Regenerate with `p
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 2 | 0 | 0 | 0 | 0 |
 | shift-tuned | 4 | 0 | 0 | 4 | 0 |
-| shift-lt | 1 | 1 | 0 | 0 | 0 |
+| shift-lt | 2 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 19 | 0 | 9 | 0 | 0 |
 | t3-confirm | 17 | 0 | 2 | 9 | 0 |
@@ -92,7 +92,7 @@ Generated 2026-10-14T17:19:12+00:00 from 4508 packaged cells. Regenerate with `p
 | shift-tuned--Traffic--DLinear--ddn | blocked | 0/? |  |
 | shift-tuned--Traffic--DLinear--fan | done | 3/3 |  |
 | shift-lt--Weather--DLinear | done | 3/3 |  |
-| shift-lt--Traffic--DLinear | claimed | 0/3 | itm24-pro6000 |
+| shift-lt--Traffic--DLinear | done | 3/3 |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
