@@ -37,7 +37,7 @@ lt-tuned,ETTm1,iTransformer,lt,done,12,12,
 lt-tuned,Weather,DLinear,lt,done,12,12,
 lt-tuned,Electricity,DLinear,lt,done,12,12,
 lt-tuned,ETTm1,DLinear,lt,done,12,12,
-lt-tuned,Electricity,iTransformer,lt,claimed,6,12,itm24-pro6000
+lt-tuned,Electricity,iTransformer,lt,done,12,12,
 lt-tuned,Traffic,iTransformer,lt,claimed,0,12,itm24-gpu0-pro6000
 lt-tuned,Weather,iTransformer,lt,done,12,12,
 lt-tuned,Traffic,DLinear,lt,done,12,12,
@@ -114,7 +114,7 @@ t3-confirm,Weather,TimeXer,ddn,blocked,0,,
 t3-confirm,Electricity,TimeXer,san,blocked,0,,
 t3-confirm,Electricity,TimeXer,ddn,ready,0,4,
 t3-confirm,Traffic,TimeXer,san,blocked,0,,
-t3-confirm,Traffic,TimeXer,ddn,ready,0,4,
+t3-confirm,Traffic,TimeXer,ddn,claimed,0,4,itm24-pro6000
 t3-confirm,ETTh1,TimeFilter,san,done,4,4,
 t3-confirm,ETTh1,TimeFilter,ddn,done,4,4,
 t3-confirm,ETTm1,TimeFilter,san,done,4,4,
@@ -154,7 +154,7 @@ t3-lt-struct,Electricity,TimeXer,lt,blocked,0,,
 t3-lt-struct,Traffic,TimeXer,lt,blocked,0,,
 t3-lt-struct,ETTh1,TimeFilter,lt,done,6,6,
 t3-lt-struct,ETTm1,TimeFilter,lt,done,6,6,
-t3-lt-struct,Weather,TimeFilter,lt,claimed,0,6,itm21-a4000
+t3-lt-struct,Weather,TimeFilter,lt,claimed,3,6,itm21-a4000
 t3-lt-struct,Electricity,TimeFilter,lt,blocked,0,,
 t3-lt-struct,Traffic,TimeFilter,lt,blocked,0,,
 t3-lt-struct,ETTh2,TimeXer,lt,done,6,6,
