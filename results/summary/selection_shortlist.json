@@ -1115,6 +1115,38 @@
         "screen_mean_val_mse": 0.37894062573711074
       }
     ],
+    "Traffic|TimeFilter|ddn": [
+      {
+        "candidate_id": "947a01bef6cf",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 7,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 0,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.46064658561864724
+      },
+      {
+        "candidate_id": "bbeb523655cd",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 7,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.4621427725713987
+      }
+    ],
     "Traffic|TimeXer|ddn": [
       {
         "candidate_id": "bbeb523655cd",
