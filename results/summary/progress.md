@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T08:06:34+00:00 from 4312 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T08:46:56+00:00 from 4323 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -16,8 +16,8 @@ Generated 2026-10-14T08:06:34+00:00 from 4312 packaged cells. Regenerate with `p
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 15 | 0 | 13 | 0 | 0 |
 | t3-confirm | 12 | 0 | 3 | 13 | 0 |
-| t3-lt-search | 7 | 1 | 6 | 0 | 0 |
-| t3-lt-struct | 7 | 0 | 0 | 7 | 0 |
+| t3-lt-search | 8 | 1 | 5 | 0 | 0 |
+| t3-lt-struct | 7 | 0 | 1 | 6 | 0 |
 | t3-lt-confirm | 7 | 0 | 0 | 7 | 0 |
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 10 | 0 | 2 | 16 | 0 |
@@ -174,9 +174,9 @@ Generated 2026-10-14T08:06:34+00:00 from 4312 packaged cells. Regenerate with `p
 | t3-lt-search--Electricity--TimeFilter | ready | 2/12 |  |
 | t3-lt-search--Traffic--TimeFilter | ready | 4/12 |  |
 | t3-lt-search--ETTh2--TimeXer | done | 12/12 |  |
-| t3-lt-search--ETTm2--TimeXer | ready | 0/12 |  |
+| t3-lt-search--ETTm2--TimeXer | claimed | 0/12 | itm21-a4000 |
 | t3-lt-search--ETTh2--TimeFilter | done | 12/12 |  |
-| t3-lt-search--ETTm2--TimeFilter | claimed | 1/12 | itm21-a4000 |
+| t3-lt-search--ETTm2--TimeFilter | done | 12/12 |  |
 | t3-lt-struct--ETTh1--TimeXer | done | 6/6 |  |
 | t3-lt-struct--ETTm1--TimeXer | done | 6/6 |  |
 | t3-lt-struct--Weather--TimeXer | done | 6/6 |  |
@@ -190,7 +190,7 @@ Generated 2026-10-14T08:06:34+00:00 from 4312 packaged cells. Regenerate with `p
 | t3-lt-struct--ETTh2--TimeXer | done | 6/6 |  |
 | t3-lt-struct--ETTm2--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--ETTh2--TimeFilter | done | 6/6 |  |
-| t3-lt-struct--ETTm2--TimeFilter | blocked | 0/? |  |
+| t3-lt-struct--ETTm2--TimeFilter | ready | 0/6 |  |
 | t3-lt-confirm--ETTh1--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTm1--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--Weather--TimeXer | done | 4/4 |  |
