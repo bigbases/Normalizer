@@ -202,8 +202,8 @@ t3-tuned,Traffic,TimeXer,ddn,blocked,0,,
 t3-tuned,ETTh1,TimeFilter,san,done,12,12,
 t3-tuned,ETTh1,TimeFilter,ddn,done,12,12,
 t3-tuned,ETTm1,TimeFilter,san,done,12,12,
-t3-tuned,ETTm1,TimeFilter,ddn,claimed,6,12,itm21-a4000
-t3-tuned,Weather,TimeFilter,san,ready,0,12,
+t3-tuned,ETTm1,TimeFilter,ddn,done,12,12,
+t3-tuned,Weather,TimeFilter,san,claimed,0,12,itm21-a4000
 t3-tuned,Weather,TimeFilter,ddn,blocked,0,,
 t3-tuned,Electricity,TimeFilter,san,blocked,0,,
 t3-tuned,Electricity,TimeFilter,ddn,blocked,0,,
