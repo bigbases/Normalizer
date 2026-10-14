@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T17:22:22+00:00 from 4511 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T17:48:59+00:00 from 4538 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-14T17:22:22+00:00 from 4511 packaged cells. Regenerate with `p
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-confirm | 14 | 0 | 0 | 0 | 0 |
-| lt-tuned | 11 | 2 | 1 | 0 | 0 |
+| lt-tuned | 12 | 2 | 0 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 2 | 0 | 0 | 0 | 0 |
 | shift-tuned | 4 | 0 | 0 | 4 | 0 |
@@ -17,7 +17,7 @@ Generated 2026-10-14T17:22:22+00:00 from 4511 packaged cells. Regenerate with `p
 | t3-search | 19 | 0 | 9 | 0 | 0 |
 | t3-confirm | 17 | 0 | 2 | 9 | 0 |
 | t3-lt-search | 10 | 0 | 4 | 0 | 0 |
-| t3-lt-struct | 9 | 0 | 1 | 4 | 0 |
+| t3-lt-struct | 9 | 1 | 0 | 4 | 0 |
 | t3-lt-confirm | 9 | 0 | 0 | 5 | 0 |
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 13 | 1 | 3 | 11 | 0 |
@@ -65,10 +65,10 @@ Generated 2026-10-14T17:22:22+00:00 from 4511 packaged cells. Regenerate with `p
 | lt-confirm--ETTm2--iTransformer | done | 4/4 |  |
 | lt-tuned--ETTm1--iTransformer | done | 12/12 |  |
 | lt-tuned--Weather--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--DLinear | claimed | 0/12 | itm24-gpu0-pro6000 |
+| lt-tuned--Electricity--DLinear | done | 12/12 |  |
 | lt-tuned--ETTm1--DLinear | done | 12/12 |  |
-| lt-tuned--Electricity--iTransformer | claimed | 0/12 | itm24-pro6000 |
-| lt-tuned--Traffic--iTransformer | ready | 0/12 |  |
+| lt-tuned--Electricity--iTransformer | claimed | 6/12 | itm24-pro6000 |
+| lt-tuned--Traffic--iTransformer | claimed | 0/12 | itm24-gpu0-pro6000 |
 | lt-tuned--Weather--iTransformer | done | 12/12 |  |
 | lt-tuned--Traffic--DLinear | done | 12/12 |  |
 | lt-tuned--ETTh2--iTransformer | done | 12/12 |  |
@@ -184,7 +184,7 @@ Generated 2026-10-14T17:22:22+00:00 from 4511 packaged cells. Regenerate with `p
 | t3-lt-struct--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--ETTh1--TimeFilter | done | 6/6 |  |
 | t3-lt-struct--ETTm1--TimeFilter | done | 6/6 |  |
-| t3-lt-struct--Weather--TimeFilter | ready | 0/6 |  |
+| t3-lt-struct--Weather--TimeFilter | claimed | 0/6 | itm21-a4000 |
 | t3-lt-struct--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--ETTh2--TimeXer | done | 6/6 |  |
@@ -242,7 +242,7 @@ Generated 2026-10-14T17:22:22+00:00 from 4511 packaged cells. Regenerate with `p
 | t3-tuned--ETTh2--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTh2--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--ETTm2--TimeXer--san | done | 12/12 |  |
-| t3-tuned--ETTm2--TimeXer--ddn | claimed | 0/12 | itm21-a4000 |
+| t3-tuned--ETTm2--TimeXer--ddn | claimed | 9/12 | itm21-a4000 |
 | t3-tuned--ETTh2--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--ETTh2--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTm2--TimeFilter--san | done | 12/12 |  |
