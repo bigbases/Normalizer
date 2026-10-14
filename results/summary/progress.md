@@ -1,20 +1,20 @@
 # Experiment progress
 
-Generated 2026-10-14T01:23:35+00:00 from 3946 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T02:16:47+00:00 from 3963 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
-| lt-search | 9 | 0 | 5 | 0 | 0 |
-| lt-confirm | 8 | 0 | 1 | 5 | 0 |
-| lt-tuned | 4 | 1 | 3 | 6 | 0 |
+| lt-search | 10 | 1 | 3 | 0 | 0 |
+| lt-confirm | 9 | 0 | 1 | 4 | 0 |
+| lt-tuned | 4 | 1 | 4 | 5 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 1 | 0 | 1 | 0 | 0 |
 | shift-tuned | 2 | 0 | 2 | 4 | 0 |
 | shift-lt | 1 | 0 | 1 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 10 | 1 | 17 | 0 | 0 |
+| t3-search | 10 | 0 | 18 | 0 | 0 |
 | t3-confirm | 8 | 0 | 2 | 18 | 0 |
 | t3-lt-search | 0 | 0 | 14 | 0 | 0 |
 | t3-lt-struct | 0 | 0 | 0 | 14 | 0 |
@@ -44,8 +44,8 @@ Generated 2026-10-14T01:23:35+00:00 from 3946 packaged cells. Regenerate with `p
 | lt-search--Weather--iTransformer | done | 10/10 |  |
 | lt-search--Traffic--DLinear | done | 10/10 |  |
 | lt-search--ETTh2--iTransformer | done | 12/12 |  |
-| lt-search--ETTh1--DLinear | ready | 6/10 |  |
-| lt-search--ETTh1--iTransformer | ready | 6/10 |  |
+| lt-search--ETTh1--DLinear | done | 10/10 |  |
+| lt-search--ETTh1--iTransformer | claimed | 6/10 | itm21-a4000 |
 | lt-search--ETTh2--DLinear | ready | 6/10 |  |
 | lt-search--ETTm2--DLinear | ready | 6/10 |  |
 | lt-search--ETTm2--iTransformer | ready | 6/10 |  |
@@ -57,8 +57,8 @@ Generated 2026-10-14T01:23:35+00:00 from 3946 packaged cells. Regenerate with `p
 | lt-confirm--Traffic--iTransformer | done | 4/4 |  |
 | lt-confirm--Weather--iTransformer | done | 4/4 |  |
 | lt-confirm--Traffic--DLinear | done | 4/4 |  |
-| lt-confirm--ETTh2--iTransformer | ready | 2/4 |  |
-| lt-confirm--ETTh1--DLinear | blocked | 0/? |  |
+| lt-confirm--ETTh2--iTransformer | done | 4/4 |  |
+| lt-confirm--ETTh1--DLinear | ready | 2/4 |  |
 | lt-confirm--ETTh1--iTransformer | blocked | 0/? |  |
 | lt-confirm--ETTh2--DLinear | blocked | 0/? |  |
 | lt-confirm--ETTm2--DLinear | blocked | 0/? |  |
@@ -69,9 +69,9 @@ Generated 2026-10-14T01:23:35+00:00 from 3946 packaged cells. Regenerate with `p
 | lt-tuned--ETTm1--DLinear | done | 12/12 |  |
 | lt-tuned--Electricity--iTransformer | ready | 0/12 |  |
 | lt-tuned--Traffic--iTransformer | ready | 0/12 |  |
-| lt-tuned--Weather--iTransformer | claimed | 0/12 | itm21-a4000 |
+| lt-tuned--Weather--iTransformer | claimed | 11/12 | itm21-a4000 |
 | lt-tuned--Traffic--DLinear | done | 12/12 |  |
-| lt-tuned--ETTh2--iTransformer | blocked | 0/? |  |
+| lt-tuned--ETTh2--iTransformer | ready | 0/12 |  |
 | lt-tuned--ETTh1--DLinear | blocked | 0/? |  |
 | lt-tuned--ETTh1--iTransformer | blocked | 0/? |  |
 | lt-tuned--ETTh2--DLinear | blocked | 0/? |  |
@@ -120,7 +120,7 @@ Generated 2026-10-14T01:23:35+00:00 from 3946 packaged cells. Regenerate with `p
 | t3-search--ETTh1--TimeFilter--san | done | 12/12 |  |
 | t3-search--ETTh1--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--ETTm1--TimeFilter--san | done | 12/12 |  |
-| t3-search--ETTm1--TimeFilter--ddn | claimed | 9/12 | itm21-a4000 |
+| t3-search--ETTm1--TimeFilter--ddn | ready | 9/12 |  |
 | t3-search--Weather--TimeFilter--san | done | 12/12 |  |
 | t3-search--Weather--TimeFilter--ddn | ready | 0/12 |  |
 | t3-search--Electricity--TimeFilter--san | ready | 0/12 |  |
