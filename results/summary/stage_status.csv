@@ -211,11 +211,11 @@ t3-tuned,Traffic,TimeFilter,san,blocked,0,,
 t3-tuned,Traffic,TimeFilter,ddn,blocked,0,,
 t3-tuned,ETTh2,TimeXer,san,done,12,12,
 t3-tuned,ETTh2,TimeXer,ddn,done,12,12,
-t3-tuned,ETTm2,TimeXer,san,ready,0,12,
+t3-tuned,ETTm2,TimeXer,san,claimed,0,12,itm21-a4000
 t3-tuned,ETTm2,TimeXer,ddn,blocked,0,,
 t3-tuned,ETTh2,TimeFilter,san,done,12,12,
 t3-tuned,ETTh2,TimeFilter,ddn,done,12,12,
-t3-tuned,ETTm2,TimeFilter,san,claimed,0,12,itm21-a4000
+t3-tuned,ETTm2,TimeFilter,san,done,12,12,
 t3-tuned,ETTm2,TimeFilter,ddn,blocked,0,,
 t3-lt-tuned,ETTh1,TimeXer,lt,done,12,12,
 t3-lt-tuned,ETTm1,TimeXer,lt,done,12,12,
