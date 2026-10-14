@@ -212,7 +212,7 @@ t3-tuned,Traffic,TimeFilter,ddn,blocked,0,,
 t3-tuned,ETTh2,TimeXer,san,done,12,12,
 t3-tuned,ETTh2,TimeXer,ddn,done,12,12,
 t3-tuned,ETTm2,TimeXer,san,done,12,12,
-t3-tuned,ETTm2,TimeXer,ddn,claimed,9,12,itm21-a4000
+t3-tuned,ETTm2,TimeXer,ddn,done,12,12,
 t3-tuned,ETTh2,TimeFilter,san,done,12,12,
 t3-tuned,ETTh2,TimeFilter,ddn,done,12,12,
 t3-tuned,ETTm2,TimeFilter,san,done,12,12,
