@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T06:21:19+00:00 from 4262 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T06:40:39+00:00 from 4276 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,9 +17,9 @@ Generated 2026-10-14T06:21:19+00:00 from 4262 packaged cells. Regenerate with `p
 | t3-search | 14 | 0 | 14 | 0 | 0 |
 | t3-confirm | 12 | 0 | 2 | 14 | 0 |
 | t3-lt-search | 4 | 0 | 10 | 0 | 0 |
-| t3-lt-struct | 3 | 0 | 1 | 10 | 0 |
+| t3-lt-struct | 3 | 1 | 0 | 10 | 0 |
 | t3-lt-confirm | 3 | 0 | 0 | 11 | 0 |
-| t3-none | 11 | 1 | 2 | 0 | 0 |
+| t3-none | 12 | 0 | 2 | 0 | 0 |
 | t3-tuned | 10 | 0 | 2 | 16 | 0 |
 | t3-lt-tuned | 3 | 0 | 0 | 11 | 0 |
 | exp2-search | 28 | 0 | 28 | 0 | 0 |
@@ -182,7 +182,7 @@ Generated 2026-10-14T06:21:19+00:00 from 4262 packaged cells. Regenerate with `p
 | t3-lt-struct--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-struct--ETTh1--TimeFilter | ready | 0/6 |  |
+| t3-lt-struct--ETTh1--TimeFilter | claimed | 2/6 | itm21-a4000 |
 | t3-lt-struct--ETTm1--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Weather--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeFilter | blocked | 0/? |  |
@@ -218,7 +218,7 @@ Generated 2026-10-14T06:21:19+00:00 from 4262 packaged cells. Regenerate with `p
 | t3-none--ETTh2--TimeXer | done | 12/12 |  |
 | t3-none--ETTm2--TimeXer | ready | 0/12 |  |
 | t3-none--ETTh2--TimeFilter | done | 12/12 |  |
-| t3-none--ETTm2--TimeFilter | claimed | 0/12 | itm21-a4000 |
+| t3-none--ETTm2--TimeFilter | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeXer--san | ready | 0/12 |  |

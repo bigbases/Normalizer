@@ -11,8 +11,8 @@ ETTh1,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.692569,1.592985,1.142777
 ETTh1,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.694806,1.594154,1.144480,,,False,False
 ETTh1,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.693065,1.589661,1.141363,,,False,False
 ETTh1,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,0.700228,1.590668,1.145448,,,False,False
-ETTh1,TimeFilter,8a6abe16a00f,structure,13,0.001,0,1,False,,,,,,False,False
-ETTh1,TimeFilter,ac8e765c1f38,structure,13,0.001,1,0,False,,,,,,False,False
+ETTh1,TimeFilter,8a6abe16a00f,structure,13,0.001,0,1,False,,1.581617,,,,False,False
+ETTh1,TimeFilter,ac8e765c1f38,structure,13,0.001,1,0,False,,1.560981,,,,False,False
 ETTh1,TimeFilter,d510671ef280,structure,13,0.001,1,1,False,,,,,,False,False
 ETTh1,TimeXer,21642c782956,grid,13,0.0001,0,0,False,0.706052,1.573397,1.139725,,,False,False
 ETTh1,TimeXer,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.687975,1.562511,1.125243,,,False,False
