@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T03:20:38+00:00 from 4067 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T03:42:25+00:00 from 4081 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-14T03:20:38+00:00 from 4067 packaged cells. Regenerate with `p
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
 | lt-confirm | 14 | 0 | 0 | 0 | 0 |
-| lt-tuned | 10 | 1 | 3 | 0 | 0 |
+| lt-tuned | 11 | 0 | 3 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 1 | 0 | 1 | 0 | 0 |
 | shift-tuned | 2 | 0 | 2 | 4 | 0 |
@@ -16,7 +16,7 @@ Generated 2026-10-14T03:20:38+00:00 from 4067 packaged cells. Regenerate with `p
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 10 | 0 | 18 | 0 | 0 |
 | t3-confirm | 8 | 0 | 2 | 18 | 0 |
-| t3-lt-search | 1 | 0 | 13 | 0 | 0 |
+| t3-lt-search | 1 | 1 | 12 | 0 | 0 |
 | t3-lt-struct | 1 | 0 | 0 | 13 | 0 |
 | t3-lt-confirm | 1 | 0 | 0 | 13 | 0 |
 | t3-none | 11 | 0 | 3 | 0 | 0 |
@@ -76,7 +76,7 @@ Generated 2026-10-14T03:20:38+00:00 from 4067 packaged cells. Regenerate with `p
 | lt-tuned--ETTh1--iTransformer | done | 12/12 |  |
 | lt-tuned--ETTh2--DLinear | done | 12/12 |  |
 | lt-tuned--ETTm2--DLinear | done | 12/12 |  |
-| lt-tuned--ETTm2--iTransformer | claimed | 1/12 | itm21-a4000 |
+| lt-tuned--ETTm2--iTransformer | done | 12/12 |  |
 | lt-kernel-check--Electricity--DLinear | done | 4/4 |  |
 | lt-kernel-check--Electricity--iTransformer | done | 4/4 |  |
 | lt-kernel-check--Traffic--DLinear | done | 4/4 |  |
@@ -175,7 +175,7 @@ Generated 2026-10-14T03:20:38+00:00 from 4067 packaged cells. Regenerate with `p
 | t3-lt-search--Traffic--TimeFilter | ready | 4/12 |  |
 | t3-lt-search--ETTh2--TimeXer | ready | 0/12 |  |
 | t3-lt-search--ETTm2--TimeXer | ready | 0/12 |  |
-| t3-lt-search--ETTh2--TimeFilter | ready | 0/12 |  |
+| t3-lt-search--ETTh2--TimeFilter | claimed | 3/12 | itm21-a4000 |
 | t3-lt-search--ETTm2--TimeFilter | ready | 0/12 |  |
 | t3-lt-struct--ETTh1--TimeXer | done | 6/6 |  |
 | t3-lt-struct--ETTm1--TimeXer | blocked | 0/? |  |
