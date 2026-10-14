@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-14T03:49:48+00:00 from 4092 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-14T03:58:30+00:00 from 4102 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -16,8 +16,8 @@ Generated 2026-10-14T03:49:48+00:00 from 4092 packaged cells. Regenerate with `p
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 10 | 0 | 18 | 0 | 0 |
 | t3-confirm | 8 | 0 | 2 | 18 | 0 |
-| t3-lt-search | 2 | 1 | 11 | 0 | 0 |
-| t3-lt-struct | 1 | 0 | 1 | 12 | 0 |
+| t3-lt-search | 3 | 0 | 11 | 0 | 0 |
+| t3-lt-struct | 1 | 1 | 1 | 11 | 0 |
 | t3-lt-confirm | 1 | 0 | 0 | 13 | 0 |
 | t3-none | 11 | 0 | 3 | 0 | 0 |
 | t3-tuned | 6 | 0 | 2 | 20 | 0 |
@@ -173,7 +173,7 @@ Generated 2026-10-14T03:49:48+00:00 from 4092 packaged cells. Regenerate with `p
 | t3-lt-search--Weather--TimeFilter | ready | 8/12 |  |
 | t3-lt-search--Electricity--TimeFilter | ready | 2/12 |  |
 | t3-lt-search--Traffic--TimeFilter | ready | 4/12 |  |
-| t3-lt-search--ETTh2--TimeXer | claimed | 2/12 | itm21-a4000 |
+| t3-lt-search--ETTh2--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTm2--TimeXer | ready | 0/12 |  |
 | t3-lt-search--ETTh2--TimeFilter | done | 12/12 |  |
 | t3-lt-search--ETTm2--TimeFilter | ready | 0/12 |  |
@@ -187,9 +187,9 @@ Generated 2026-10-14T03:49:48+00:00 from 4092 packaged cells. Regenerate with `p
 | t3-lt-struct--Weather--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-struct--Traffic--TimeFilter | blocked | 0/? |  |
-| t3-lt-struct--ETTh2--TimeXer | blocked | 0/? |  |
+| t3-lt-struct--ETTh2--TimeXer | ready | 0/6 |  |
 | t3-lt-struct--ETTm2--TimeXer | blocked | 0/? |  |
-| t3-lt-struct--ETTh2--TimeFilter | ready | 0/6 |  |
+| t3-lt-struct--ETTh2--TimeFilter | claimed | 0/6 | itm21-a4000 |
 | t3-lt-struct--ETTm2--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--ETTh1--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTm1--TimeXer | blocked | 0/? |  |
