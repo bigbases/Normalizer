@@ -1339,6 +1339,38 @@
         "screen_mean_val_mse": 0.5033489355731726
       }
     ],
+    "Weather|TimeFilter|ddn": [
+      {
+        "candidate_id": "2c842a20e419",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 12,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.48363380222051866
+      },
+      {
+        "candidate_id": "b833fe78c153",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 32,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.48376164405053423
+      }
+    ],
     "Weather|TimeFilter|san": [
       {
         "candidate_id": "8f8916a4a95c",
