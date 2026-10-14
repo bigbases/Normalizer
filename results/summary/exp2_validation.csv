@@ -415,8 +415,8 @@ Electricity,TimeXer,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"
 Electricity,TimeXer,ddn,43cd745f71d8,{},0.131427,0.192323,,,0.161875,,False,False
 Electricity,TimeXer,ddn,44e9a626dff4,{},0.132951,0.188711,,,0.160831,,False,False
 Electricity,TimeXer,ddn,6f0b0683bbd0,{},0.132655,0.193729,,,0.163192,,False,False
-Electricity,TimeXer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.130986,0.191255,0.130569,,0.161121,,True,False
-Electricity,TimeXer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.127996,0.192975,0.129394,,0.160486,,True,False
+Electricity,TimeXer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.130986,0.191255,0.130569,0.189501,0.161121,0.160578,True,True
+Electricity,TimeXer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.127996,0.192975,0.129394,0.193148,0.160486,0.160878,True,False
 Electricity,TimeXer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.132790,0.192617,,,0.162704,,False,False
 Electricity,TimeXer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.131549,0.192832,,,0.162191,,False,False
 Electricity,TimeXer,ddn,e082b1250cbb,{},0.131613,0.191577,,,0.161595,,False,False
