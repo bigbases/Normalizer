@@ -350,6 +350,7 @@ Weather,TimeFilter,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001
 Weather,TimeFilter,san,f6904fc69cd0,{},0.384180,0.616187,0.384898,0.622397,0.500183,0.501915,False,False
 Weather,TimeFilter,san,fa33e70a6a3a,{},0.393615,0.634808,,,0.514212,,False,False
 Weather,TimeXer,ddn,1c7b90df1d3b,{},0.379131,0.627716,,,0.503423,,False,False
+Weather,TimeXer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",,0.628892,,,,,False,False
 Weather,TimeXer,ddn,43cd745f71d8,{},0.377765,0.605813,0.377605,0.617417,0.491789,0.494650,False,False
 Weather,TimeXer,ddn,44e9a626dff4,{},0.378003,0.650598,,,0.514301,,False,False
 Weather,TimeXer,ddn,6f0b0683bbd0,{},0.381676,0.623667,,,0.502671,,False,False
