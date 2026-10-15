@@ -156,6 +156,16 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "ETTm1|DLinear|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "joint_lr": "backbone",
+      "kernel_len": 7,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "ETTm1|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 16,
