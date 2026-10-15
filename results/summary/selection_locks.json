@@ -216,6 +216,16 @@
       "station_lr": 0.0001,
       "station_type": "adaptive"
     },
+    "Electricity|TimeFilter|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "joint_lr": "backbone",
+      "kernel_len": 32,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "Electricity|TimeXer|ddn": {
       "hkernel_len": 5,
       "j": 1,
