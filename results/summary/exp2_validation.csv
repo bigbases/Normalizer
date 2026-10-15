@@ -21,11 +21,11 @@ ETTh1,DLinear,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.664
 ETTh1,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.666676,1.400765,0.666923,1.401476,1.033721,1.033960,True,True
 ETTh1,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.684126,1.417005,,,1.050565,,False,False
 ETTh1,DLinear,san,48f6c1ced712,{},0.685332,1.416458,,,1.050895,,False,False
-ETTh1,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.667853,1.337149,,,1.002501,,True,False
+ETTh1,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.667853,1.337149,0.672926,1.343703,1.002501,1.005408,True,True
 ETTh1,DLinear,san,61e69def41a7,{},0.675787,1.398160,0.675203,1.398245,1.036973,1.036849,False,False
 ETTh1,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.676997,1.404146,,,1.040572,,False,False
 ETTh1,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.684638,1.415444,,,1.050041,,False,False
-ETTh1,DLinear,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.670444,1.349716,,,1.010080,,True,False
+ETTh1,DLinear,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.670444,1.349716,0.678153,,1.010080,,True,False
 ETTh1,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.676160,1.401054,,,1.038607,,False,False
 ETTh1,DLinear,san,f6904fc69cd0,{},0.676008,1.400993,0.676445,1.401320,1.038500,1.038692,False,False
 ETTh1,DLinear,san,fa33e70a6a3a,{},0.685537,1.414376,,,1.049957,,False,False
@@ -193,10 +193,10 @@ ETTh2,iTransformer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05,
 ETTh2,iTransformer,san,1df0a0a6f3b0,{},0.208219,0.601268,0.213974,0.608204,0.404743,0.407916,False,False
 ETTh2,iTransformer,san,29feb64bc7c2,{},0.207025,0.603831,0.210683,0.603667,0.405428,0.406301,False,False
 ETTh2,iTransformer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.216834,0.625497,,,0.421165,,False,False
-ETTh2,iTransformer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.220656,0.584445,,0.603368,0.402550,,True,False
+ETTh2,iTransformer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.220656,0.584445,0.213437,0.603368,0.402550,0.405476,True,True
 ETTh2,iTransformer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.217762,0.602284,,,0.410023,,False,False
 ETTh2,iTransformer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.218635,0.614671,,,0.416653,,False,False
-ETTh2,iTransformer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.218035,0.601442,,,0.409738,,True,False
+ETTh2,iTransformer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.218035,0.601442,0.211843,0.607367,0.409738,0.409672,True,False
 ETTh2,iTransformer,san,ba8acd87b8f4,{},0.213222,0.633371,,,0.423297,,False,False
 ETTh2,iTransformer,san,ba9881d40e68,{},0.212859,0.634895,,,0.423877,,False,False
 ETTh2,iTransformer,san,f650d6a8023a,{},0.214392,0.613516,,,0.413954,,False,False
@@ -636,6 +636,7 @@ Traffic,TimeXer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, "
 Traffic,TimeXer,san,61e69def41a7,{},0.420546,0.452180,,,0.436363,,False,False
 Traffic,TimeXer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",,0.443660,,,,,False,False
 Traffic,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.433852,,,,,False,False
+Traffic,TimeXer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",,0.446532,,,,,False,False
 Traffic,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",,0.438062,,,,,False,False
 Traffic,TimeXer,san,f6904fc69cd0,{},0.405395,0.432618,,,0.419006,,False,False
 Traffic,TimeXer,san,fa33e70a6a3a,{},0.419668,0.452588,,,0.436128,,False,False

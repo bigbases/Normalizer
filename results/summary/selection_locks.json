@@ -9,6 +9,11 @@
       "affine": 1,
       "station_lr": 0.0001
     },
+    "ETTh1|DLinear|san": {
+      "period_len": 12,
+      "station_lr": 0.0005,
+      "station_type": "adaptive"
+    },
     "ETTh1|TimeFilter|ddn": {
       "hkernel_len": 5,
       "j": 1,
@@ -100,6 +105,11 @@
     "ETTh2|iTransformer|revin": {
       "affine": 0,
       "station_lr": 0.0001
+    },
+    "ETTh2|iTransformer|san": {
+      "period_len": 24,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
     },
     "ETTm1|DLinear|fan": {
       "fan_aux_weight": 1.0,
