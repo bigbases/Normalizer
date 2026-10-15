@@ -57,6 +57,11 @@
       "affine": 0,
       "station_lr": 0.0001
     },
+    "ETTh2|DLinear|san": {
+      "period_len": 24,
+      "station_lr": 5e-05,
+      "station_type": "adaptive"
+    },
     "ETTh2|TimeFilter|ddn": {
       "hkernel_len": 5,
       "j": 1,
