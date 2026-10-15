@@ -1673,24 +1673,24 @@
     ],
     "Weather|iTransformer|san": [
       {
-        "candidate_id": "74fa903f9770",
+        "candidate_id": "604dd99690a2",
         "n_cells": 2,
         "params": {
-          "period_len": 24,
-          "station_lr": 0.0001,
+          "period_len": 12,
+          "station_lr": 0.0005,
           "station_type": "adaptive"
         },
-        "screen_mean_val_mse": 0.4737757216077026
+        "screen_mean_val_mse": 0.47169197365004145
       },
       {
-        "candidate_id": "00687476a233",
+        "candidate_id": "8f8916a4a95c",
         "n_cells": 2,
         "params": {
           "period_len": 24,
-          "station_lr": 5e-05,
+          "station_lr": 0.0005,
           "station_type": "adaptive"
         },
-        "screen_mean_val_mse": 0.47699908803025026
+        "screen_mean_val_mse": 0.4724494801651869
       }
     ]
   }
