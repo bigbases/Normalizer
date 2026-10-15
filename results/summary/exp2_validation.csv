@@ -305,15 +305,15 @@ ETTm1,iTransformer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001
 ETTm1,iTransformer,san,f6904fc69cd0,{},0.368478,0.876782,0.370322,0.882308,0.622630,0.624473,False,False
 ETTm1,iTransformer,san,fa33e70a6a3a,{},0.374689,0.888320,,,0.631504,,False,False
 ETTm2,DLinear,ddn,1c7b90df1d3b,{},0.122288,0.283623,,,0.202956,,False,False
-ETTm2,DLinear,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.123769,0.286357,,,0.205063,,True,False
+ETTm2,DLinear,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.123769,0.286357,,,0.205063,,False,False
 ETTm2,DLinear,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.121170,0.277570,,,0.199370,,True,False
 ETTm2,DLinear,ddn,43cd745f71d8,{},0.121726,0.281111,,,0.201418,,False,False
 ETTm2,DLinear,ddn,44e9a626dff4,{},0.121626,0.278083,0.121166,0.284891,0.199855,0.201442,False,False
 ETTm2,DLinear,ddn,6f0b0683bbd0,{},0.121498,0.277064,0.118919,0.277270,0.199281,0.198688,False,False
 ETTm2,DLinear,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.126431,0.301019,,,0.213725,,False,False
 ETTm2,DLinear,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.127413,0.298449,,,0.212931,,False,False
-ETTm2,DLinear,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.281349,,,,,False,False
-ETTm2,DLinear,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.281111,,,,,False,False
+ETTm2,DLinear,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.121268,0.281349,,,0.201309,,True,False
+ETTm2,DLinear,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.121860,0.281111,,,0.201486,,False,False
 ETTm2,DLinear,ddn,e082b1250cbb,{},0.121344,0.282834,,,0.202089,,False,False
 ETTm2,DLinear,ddn,f841fa3c59bc,{},0.122400,0.277380,,,0.199890,,False,False
 ETTm2,DLinear,fan,1b61650e14d1,"{""fan_aux_weight"": 1.0, ""freq_topk"": 11, ""station_lr"": 0.0001}",0.124909,0.306262,,,0.215585,,False,False
@@ -512,6 +512,7 @@ Electricity,TimeFilter,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_
 Electricity,TimeFilter,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.113497,0.192775,,,0.153136,,False,False
 Electricity,TimeFilter,ddn,e082b1250cbb,{},0.112588,0.175879,0.114666,0.181888,0.144234,0.146255,False,False
 Electricity,TimeFilter,ddn,f841fa3c59bc,{},0.119452,0.183839,,,0.151646,,False,False
+Electricity,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.183443,,,,,False,False
 Electricity,TimeFilter,san,48f6c1ced712,{},,0.191680,,,,,False,False
 Electricity,TimeFilter,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.185163,,,,,False,False
 Electricity,TimeFilter,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",,0.182467,,,,,False,False

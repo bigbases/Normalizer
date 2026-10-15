@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T19:12:57+00:00 from 4926 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T19:12:18+00:00 from 4929 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -22,8 +22,8 @@ Generated 2026-10-15T19:12:57+00:00 from 4926 packaged cells. Regenerate with `p
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 21 | 1 | 2 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
-| exp2-search | 45 | 2 | 9 | 0 | 0 |
-| exp2-confirm | 28 | 0 | 17 | 11 | 0 |
+| exp2-search | 46 | 1 | 9 | 0 | 0 |
+| exp2-confirm | 28 | 0 | 18 | 10 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | exp3-tuned | 28 | 0 | 0 | 28 | 0 |
 
@@ -123,7 +123,7 @@ Generated 2026-10-15T19:12:57+00:00 from 4926 packaged cells. Regenerate with `p
 | t3-search--ETTm1--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--Weather--TimeFilter--san | done | 12/12 |  |
 | t3-search--Weather--TimeFilter--ddn | done | 12/12 |  |
-| t3-search--Electricity--TimeFilter--san | claimed | 2/12 | elice-a100 |
+| t3-search--Electricity--TimeFilter--san | claimed | 3/12 | elice-a100 |
 | t3-search--Electricity--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--Traffic--TimeFilter--san | ready | 6/12 |  |
 | t3-search--Traffic--TimeFilter--ddn | done | 12/12 |  |
@@ -287,7 +287,7 @@ Generated 2026-10-15T19:12:57+00:00 from 4926 packaged cells. Regenerate with `p
 | exp2-search--ETTm1--iTransformer--fan | done | 12/12 |  |
 | exp2-search--ETTm2--DLinear--revin | done | 4/4 |  |
 | exp2-search--ETTm2--DLinear--san | done | 12/12 |  |
-| exp2-search--ETTm2--DLinear--ddn | claimed | 10/12 | itm21-a4000 |
+| exp2-search--ETTm2--DLinear--ddn | done | 12/12 |  |
 | exp2-search--ETTm2--DLinear--fan | done | 12/12 |  |
 | exp2-search--ETTm2--iTransformer--revin | done | 4/4 |  |
 | exp2-search--ETTm2--iTransformer--san | done | 12/12 |  |
@@ -343,7 +343,7 @@ Generated 2026-10-15T19:12:57+00:00 from 4926 packaged cells. Regenerate with `p
 | exp2-confirm--ETTm1--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--ETTm2--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--ETTm2--DLinear--san | ready | 2/4 |  |
-| exp2-confirm--ETTm2--DLinear--ddn | blocked | 0/? |  |
+| exp2-confirm--ETTm2--DLinear--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTm2--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--ETTm2--iTransformer--revin | done | 4/4 |  |
 | exp2-confirm--ETTm2--iTransformer--san | ready | 2/4 |  |

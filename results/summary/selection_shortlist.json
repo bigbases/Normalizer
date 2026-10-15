@@ -918,7 +918,7 @@
         "screen_mean_val_mse": 0.19937026639204233
       },
       {
-        "candidate_id": "275a2b5a29c2",
+        "candidate_id": "b833fe78c153",
         "n_cells": 2,
         "params": {
           "hkernel_len": 5,
@@ -927,10 +927,10 @@
           "kernel_len": 32,
           "station_lr": 0.0001,
           "station_type": "adaptive",
-          "twice_epoch": 0,
+          "twice_epoch": 1,
           "wavelet": "coif3"
         },
-        "screen_mean_val_mse": 0.20506310544951517
+        "screen_mean_val_mse": 0.20130851582708775
       }
     ],
     "ETTm2|DLinear|fan": [
