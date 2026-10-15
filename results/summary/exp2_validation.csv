@@ -359,9 +359,15 @@ ETTm2,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""st
 ETTm2,TimeXer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.137290,0.340170,,,0.238730,,False,False
 ETTm2,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.123133,0.281737,,,0.202435,,False,False
 ETTm2,iTransformer,ddn,1c7b90df1d3b,{},0.128842,0.286562,0.123754,0.289044,0.207702,0.207051,False,False
+ETTm2,iTransformer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.126266,0.283221,,,0.204743,,True,False
+ETTm2,iTransformer,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.121994,0.301439,,,0.211716,,True,False
 ETTm2,iTransformer,ddn,43cd745f71d8,{},0.123874,0.300239,,,0.212057,,False,False
 ETTm2,iTransformer,ddn,44e9a626dff4,{},0.123252,0.297716,,,0.210484,,False,False
 ETTm2,iTransformer,ddn,6f0b0683bbd0,{},0.124764,0.307212,,,0.215988,,False,False
+ETTm2,iTransformer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",,0.290968,,,,,False,False
+ETTm2,iTransformer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",,0.283943,,,,,False,False
+ETTm2,iTransformer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.305615,,,,,False,False
+ETTm2,iTransformer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.284647,,,,,False,False
 ETTm2,iTransformer,ddn,e082b1250cbb,{},0.127481,0.276674,0.124238,0.285614,0.202078,0.203502,False,False
 ETTm2,iTransformer,ddn,f841fa3c59bc,{},0.125796,0.300318,,,0.213057,,False,False
 ETTm2,iTransformer,fan,02cbda04af30,"{""fan_aux_weight"": 1.0, ""freq_topk"": 16, ""station_lr"": 0.0005}",0.127911,0.308834,,,0.218372,,False,False
@@ -518,13 +524,13 @@ Electricity,TimeFilter,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_
 Electricity,TimeFilter,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.113497,0.192775,,,0.153136,,False,False
 Electricity,TimeFilter,ddn,e082b1250cbb,{},0.112588,0.175879,0.114666,0.181888,0.144234,0.146255,False,False
 Electricity,TimeFilter,ddn,f841fa3c59bc,{},0.119452,0.183839,,,0.151646,,False,False
-Electricity,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.183443,,,,,False,False
+Electricity,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.118879,0.183443,,,0.151161,,False,False
 Electricity,TimeFilter,san,48f6c1ced712,{},,0.191680,,,,,False,False
-Electricity,TimeFilter,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",,0.179090,,,,,False,False
-Electricity,TimeFilter,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",,0.181507,,,,,False,False
-Electricity,TimeFilter,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.185163,,,,,False,False
-Electricity,TimeFilter,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",,0.174896,,,,,False,False
-Electricity,TimeFilter,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",,0.182467,,,,,False,False
+Electricity,TimeFilter,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.121944,0.179090,,,0.150517,,False,False
+Electricity,TimeFilter,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.117687,0.181507,,,0.149597,,True,False
+Electricity,TimeFilter,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.121903,0.185163,,,0.153533,,False,False
+Electricity,TimeFilter,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.117679,0.174896,,,0.146288,,True,False
+Electricity,TimeFilter,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.121261,0.182467,,,0.151864,,False,False
 Electricity,TimeFilter,san,fa33e70a6a3a,{},,0.211833,,,,,False,False
 Electricity,TimeMixerPP,ddn,1c7b90df1d3b,{},0.153188,0.207576,,,0.180382,,False,False
 Electricity,TimeMixerPP,ddn,43cd745f71d8,{},0.151413,0.206308,,,0.178860,,False,False
@@ -626,6 +632,7 @@ Traffic,TimeXer,ddn,e082b1250cbb,{},0.377774,0.438333,,,0.408054,,False,False
 Traffic,TimeXer,ddn,f841fa3c59bc,{},0.367859,0.426046,,,0.396952,,False,False
 Traffic,TimeXer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.443824,,,,,False,False
 Traffic,TimeXer,san,48f6c1ced712,{},0.406184,0.446656,,,0.426420,,False,False
+Traffic,TimeXer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",,0.443965,,,,,False,False
 Traffic,TimeXer,san,61e69def41a7,{},0.420546,0.452180,,,0.436363,,False,False
 Traffic,TimeXer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",,0.443660,,,,,False,False
 Traffic,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.433852,,,,,False,False
