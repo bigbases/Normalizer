@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T14:07:13+00:00 from 4831 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T14:29:04+00:00 from 4840 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -22,8 +22,8 @@ Generated 2026-10-15T14:07:13+00:00 from 4831 packaged cells. Regenerate with `p
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 20 | 2 | 0 | 6 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
-| exp2-search | 39 | 1 | 16 | 0 | 0 |
-| exp2-confirm | 28 | 0 | 11 | 17 | 0 |
+| exp2-search | 40 | 1 | 15 | 0 | 0 |
+| exp2-confirm | 28 | 0 | 12 | 16 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | exp3-tuned | 28 | 0 | 0 | 28 | 0 |
 
@@ -282,11 +282,11 @@ Generated 2026-10-15T14:07:13+00:00 from 4831 packaged cells. Regenerate with `p
 | exp2-search--ETTm1--DLinear--ddn | ready | 0/12 |  |
 | exp2-search--ETTm1--DLinear--fan | done | 12/12 |  |
 | exp2-search--ETTm1--iTransformer--revin | done | 4/4 |  |
-| exp2-search--ETTm1--iTransformer--san | ready | 4/12 |  |
+| exp2-search--ETTm1--iTransformer--san | claimed | 5/12 | itm21-a4000 |
 | exp2-search--ETTm1--iTransformer--ddn | ready | 0/12 |  |
 | exp2-search--ETTm1--iTransformer--fan | done | 12/12 |  |
 | exp2-search--ETTm2--DLinear--revin | done | 4/4 |  |
-| exp2-search--ETTm2--DLinear--san | claimed | 4/12 | itm21-a4000 |
+| exp2-search--ETTm2--DLinear--san | done | 12/12 |  |
 | exp2-search--ETTm2--DLinear--ddn | ready | 0/12 |  |
 | exp2-search--ETTm2--DLinear--fan | done | 12/12 |  |
 | exp2-search--ETTm2--iTransformer--revin | done | 4/4 |  |
@@ -342,7 +342,7 @@ Generated 2026-10-15T14:07:13+00:00 from 4831 packaged cells. Regenerate with `p
 | exp2-confirm--ETTm1--iTransformer--ddn | blocked | 0/? |  |
 | exp2-confirm--ETTm1--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--ETTm2--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--ETTm2--DLinear--san | blocked | 0/? |  |
+| exp2-confirm--ETTm2--DLinear--san | ready | 2/4 |  |
 | exp2-confirm--ETTm2--DLinear--ddn | blocked | 0/? |  |
 | exp2-confirm--ETTm2--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--ETTm2--iTransformer--revin | done | 4/4 |  |

@@ -881,6 +881,16 @@
     ],
     "ETTm2|DLinear|san": [
       {
+        "candidate_id": "8e67e1087c15",
+        "n_cells": 2,
+        "params": {
+          "period_len": 12,
+          "station_lr": 5e-05,
+          "station_type": "adaptive"
+        },
+        "screen_mean_val_mse": 0.1878789154432357
+      },
+      {
         "candidate_id": "00687476a233",
         "n_cells": 2,
         "params": {
@@ -889,16 +899,6 @@
           "station_type": "adaptive"
         },
         "screen_mean_val_mse": 0.1892915671487307
-      },
-      {
-        "candidate_id": "74fa903f9770",
-        "n_cells": 2,
-        "params": {
-          "period_len": 24,
-          "station_lr": 0.0001,
-          "station_type": "adaptive"
-        },
-        "screen_mean_val_mse": 0.19138423615669983
       }
     ],
     "ETTm2|TimeFilter|ddn": [
