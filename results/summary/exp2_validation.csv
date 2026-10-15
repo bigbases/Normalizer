@@ -111,8 +111,10 @@ ETTh2,DLinear,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.202
 ETTh2,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.202517,0.606376,0.203685,0.620009,0.404446,0.408147,True,False
 ETTh2,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.206535,0.598028,,,0.402282,,True,False
 ETTh2,DLinear,san,48f6c1ced712,{},0.205926,0.599101,,,0.402514,,False,False
+ETTh2,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.213618,,,,,,False,False
 ETTh2,DLinear,san,61e69def41a7,{},0.204068,0.597842,0.204193,0.600438,0.400955,0.401635,False,False
 ETTh2,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.205131,0.599615,,,0.402373,,True,False
+ETTh2,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.206207,,,,,,False,False
 ETTh2,DLinear,san,f6904fc69cd0,{},0.204322,0.599558,0.204692,0.602484,0.401940,0.402764,False,False
 ETTh2,DLinear,san,fa33e70a6a3a,{},0.205804,0.598978,,,0.402391,,False,False
 ETTh2,TimeFilter,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.231994,0.660601,,,0.446297,,False,False
@@ -350,10 +352,15 @@ Weather,TimeFilter,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001
 Weather,TimeFilter,san,f6904fc69cd0,{},0.384180,0.616187,0.384898,0.622397,0.500183,0.501915,False,False
 Weather,TimeFilter,san,fa33e70a6a3a,{},0.393615,0.634808,,,0.514212,,False,False
 Weather,TimeXer,ddn,1c7b90df1d3b,{},0.379131,0.627716,,,0.503423,,False,False
-Weather,TimeXer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",,0.628892,,,,,False,False
+Weather,TimeXer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.381087,0.628892,,,0.504989,,False,False
+Weather,TimeXer,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.380698,0.626444,,,0.503571,,False,False
 Weather,TimeXer,ddn,43cd745f71d8,{},0.377765,0.605813,0.377605,0.617417,0.491789,0.494650,False,False
 Weather,TimeXer,ddn,44e9a626dff4,{},0.378003,0.650598,,,0.514301,,False,False
 Weather,TimeXer,ddn,6f0b0683bbd0,{},0.381676,0.623667,,,0.502671,,False,False
+Weather,TimeXer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.380226,0.630576,,,0.505401,,False,False
+Weather,TimeXer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.376640,0.629018,,,0.502829,,True,False
+Weather,TimeXer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.385412,0.621475,,,0.503444,,False,False
+Weather,TimeXer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.376142,0.607202,,,0.491672,,True,False
 Weather,TimeXer,ddn,e082b1250cbb,{},0.378183,0.618743,0.378883,0.619104,0.498463,0.498728,False,False
 Weather,TimeXer,ddn,f841fa3c59bc,{},0.383206,0.630991,,,0.507099,,False,False
 Weather,TimeXer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.392556,0.652380,,,0.522468,,False,False
