@@ -20,6 +20,11 @@ rm -f .worker/STOP          # a previous graceful stop must not stop this worker
 {
   echo '#!/usr/bin/env bash'
   printf 'cd %q\n' "$ROOT"
+  # NVIDIA MPS client settings reach the worker even if an existing tmux server
+  # starts the session with its own environment.
+  for var in CUDA_MPS_PIPE_DIRECTORY CUDA_MPS_LOG_DIRECTORY; do
+    if [[ -n "${!var:-}" ]]; then printf 'export %s=%q\n' "$var" "${!var}"; fi
+  done
   echo 'while true; do'
   printf '  %q experiments/fill_missing.py run' "$PYTHON"
   printf ' %q' "$@"
