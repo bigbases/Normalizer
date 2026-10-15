@@ -258,8 +258,8 @@
       "station_lr": 0.0001
     },
     "ETTm2|iTransformer|san": {
-      "period_len": 24,
-      "station_lr": 0.0001,
+      "period_len": 12,
+      "station_lr": 5e-05,
       "station_type": "adaptive"
     },
     "Electricity|DLinear|fan": {

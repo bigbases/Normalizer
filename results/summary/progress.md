@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T21:37:41+00:00 from 5006 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T22:01:55+00:00 from 5012 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -20,12 +20,12 @@ Generated 2026-10-15T21:37:41+00:00 from 5006 packaged cells. Regenerate with `p
 | t3-lt-struct | 10 | 0 | 1 | 3 | 0 |
 | t3-lt-confirm | 10 | 0 | 0 | 4 | 0 |
 | t3-none | 13 | 0 | 1 | 0 | 0 |
-| t3-tuned | 22 | 1 | 1 | 4 | 0 |
+| t3-tuned | 22 | 2 | 0 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
 | exp2-search | 48 | 0 | 8 | 0 | 0 |
-| exp2-confirm | 36 | 1 | 11 | 8 | 0 |
+| exp2-confirm | 37 | 2 | 9 | 8 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 28 | 0 | 8 | 20 | 0 |
+| exp3-tuned | 28 | 0 | 9 | 19 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -115,7 +115,7 @@ Generated 2026-10-15T21:37:41+00:00 from 5006 packaged cells. Regenerate with `p
 | t3-search--Weather--TimeXer--ddn | done | 12/12 |  |
 | t3-search--Electricity--TimeXer--san | ready | 1/12 |  |
 | t3-search--Electricity--TimeXer--ddn | done | 12/12 |  |
-| t3-search--Traffic--TimeXer--san | claimed | 7/12 | itm24-pro6000 |
+| t3-search--Traffic--TimeXer--san | claimed | 8/12 | itm24-pro6000 |
 | t3-search--Traffic--TimeXer--ddn | done | 12/12 |  |
 | t3-search--ETTh1--TimeFilter--san | done | 12/12 |  |
 | t3-search--ETTh1--TimeFilter--ddn | done | 12/12 |  |
@@ -228,7 +228,7 @@ Generated 2026-10-15T21:37:41+00:00 from 5006 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--Traffic--TimeXer--san | blocked | 0/? |  |
-| t3-tuned--Traffic--TimeXer--ddn | ready | 0/12 |  |
+| t3-tuned--Traffic--TimeXer--ddn | claimed | 0/12 | elice-a100 |
 | t3-tuned--ETTh1--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeFilter--san | done | 12/12 |  |
@@ -236,7 +236,7 @@ Generated 2026-10-15T21:37:41+00:00 from 5006 packaged cells. Regenerate with `p
 | t3-tuned--Weather--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--Weather--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--Electricity--TimeFilter--san | blocked | 0/? |  |
-| t3-tuned--Electricity--TimeFilter--ddn | claimed | 4/12 | elice-a100 |
+| t3-tuned--Electricity--TimeFilter--ddn | claimed | 7/12 | elice-a100 |
 | t3-tuned--Traffic--TimeFilter--san | blocked | 0/? |  |
 | t3-tuned--Traffic--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTh2--TimeXer--san | done | 12/12 |  |
@@ -342,15 +342,15 @@ Generated 2026-10-15T21:37:41+00:00 from 5006 packaged cells. Regenerate with `p
 | exp2-confirm--ETTm1--iTransformer--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTm1--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--ETTm2--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--ETTm2--DLinear--san | ready | 2/4 |  |
+| exp2-confirm--ETTm2--DLinear--san | claimed | 2/4 | itm21-a4000 |
 | exp2-confirm--ETTm2--DLinear--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTm2--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--ETTm2--iTransformer--revin | done | 4/4 |  |
-| exp2-confirm--ETTm2--iTransformer--san | claimed | 2/4 | itm21-a4000 |
+| exp2-confirm--ETTm2--iTransformer--san | done | 4/4 |  |
 | exp2-confirm--ETTm2--iTransformer--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTm2--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Weather--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--Weather--DLinear--san | ready | 0/4 |  |
+| exp2-confirm--Weather--DLinear--san | claimed | 0/4 | itm21-a4000 |
 | exp2-confirm--Weather--DLinear--ddn | ready | 0/4 |  |
 | exp2-confirm--Weather--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Weather--iTransformer--revin | done | 4/4 |  |
@@ -416,7 +416,7 @@ Generated 2026-10-15T21:37:41+00:00 from 5006 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm2--DLinear--ddn | blocked | 0/? |  |
 | exp3-tuned--ETTm2--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--iTransformer--revin | done | 12/12 |  |
-| exp3-tuned--ETTm2--iTransformer--san | blocked | 0/? |  |
+| exp3-tuned--ETTm2--iTransformer--san | ready | 0/12 |  |
 | exp3-tuned--ETTm2--iTransformer--ddn | blocked | 0/? |  |
 | exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--revin | done | 12/12 |  |
