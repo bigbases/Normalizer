@@ -269,9 +269,15 @@ ETTm1,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""s
 ETTm1,TimeXer,san,f6904fc69cd0,{},0.378255,0.866580,0.381099,0.866651,0.622417,0.623146,False,False
 ETTm1,TimeXer,san,fa33e70a6a3a,{},0.371102,0.884415,,,0.627759,,False,False
 ETTm1,iTransformer,ddn,1c7b90df1d3b,{},0.398930,0.958184,,,0.678557,,False,False
+ETTm1,iTransformer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.387547,0.971678,,,0.679613,,False,False
+ETTm1,iTransformer,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.382525,0.955608,,,0.669067,,True,False
 ETTm1,iTransformer,ddn,43cd745f71d8,{},0.382001,0.956575,0.375982,0.948202,0.669288,0.665690,False,False
 ETTm1,iTransformer,ddn,44e9a626dff4,{},0.383018,0.947286,0.375854,0.947439,0.665152,0.663399,False,False
 ETTm1,iTransformer,ddn,6f0b0683bbd0,{},0.389670,0.951235,,,0.670452,,False,False
+ETTm1,iTransformer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.381073,0.980419,,,0.680746,,False,False
+ETTm1,iTransformer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.405860,0.977883,,,0.691871,,False,False
+ETTm1,iTransformer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.394111,0.952966,,,0.673538,,False,False
+ETTm1,iTransformer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.382001,0.956575,,,0.669288,,True,False
 ETTm1,iTransformer,ddn,e082b1250cbb,{},0.399828,0.960038,,,0.679933,,False,False
 ETTm1,iTransformer,ddn,f841fa3c59bc,{},0.392895,0.955513,,,0.674204,,False,False
 ETTm1,iTransformer,fan,1b61650e14d1,"{""fan_aux_weight"": 1.0, ""freq_topk"": 11, ""station_lr"": 0.0001}",0.388037,0.885038,0.387616,0.884570,0.636538,0.636315,True,False
