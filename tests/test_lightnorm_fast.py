@@ -53,5 +53,42 @@ class LightNormSpeedUpTest(unittest.TestCase):
                 torch.testing.assert_close(a, b, rtol=1e-5, atol=1e-7)
 
 
+@unittest.skipUnless(torch.cuda.is_available() and fast._jiterator is not None, "needs CUDA and jiterator")
+class LightNormFusedInferenceTest(unittest.TestCase):
+    """Without gradients the jiterator path must give the eager values bit for bit."""
+
+    @staticmethod
+    def bits(t):
+        return t.contiguous().view(torch.int32)
+
+    def test_bit_identical_to_eager(self):
+        dev = torch.device("cuda")
+        shapes = ((96, 96, 7), (336, 720, 7), (96, 720, 321), (96, 192, 21), (720, 720, 862))
+        for (seq_len, pred_len, channels), kernel, ratio, s_norm, t_norm, use_mlp, batch in itertools.product(
+                shapes, (13, 25, 49), (4, 8), (0, 1), (0, 1), (0, 1), (1, 64)):
+            cfg = Namespace(enc_in=channels, seq_len=seq_len, pred_len=pred_len, kernel_size=kernel,
+                            s_norm=s_norm, t_norm=t_norm, affine=1, use_mlp=use_mlp, down_ratio=ratio, t_ff=64)
+            torch.manual_seed(seq_len + kernel + ratio + 2 * s_norm + 3 * t_norm + use_mlp + batch)
+            model = fast.Model(cfg).to(dev).eval()
+            with torch.no_grad():
+                for p in (model.s_gamma, model.t_gamma):
+                    p.copy_(torch.rand(channels, device=dev) * 2 + 0.1)
+                for p in (model.s_beta, model.t_beta):
+                    p.copy_(torch.randn(channels, device=dev))
+            x = torch.randn(batch, seq_len, channels, device=dev) * 5 \
+                + torch.linspace(-3, 3, seq_len, device=dev)[None, :, None]
+            y = torch.randn(batch, pred_len, channels, device=dev)
+            with torch.enable_grad():                      # eager path
+                e_x, e_t = model.normalize(x)
+                e_y = model.de_normalize(y, e_t)
+            with torch.no_grad():                          # fused path
+                f_x, f_t = model.normalize(x)
+                self.assertTrue(model._fused_pass)
+                f_y = model.de_normalize(y, f_t)
+            for a, b in ((e_x, f_x), (e_t, f_t), (e_y, f_y)):
+                self.assertTrue(torch.equal(self.bits(a.detach()), self.bits(b)),
+                                (seq_len, pred_len, channels, kernel, ratio, s_norm, t_norm, use_mlp, batch))
+
+
 if __name__ == "__main__":
     unittest.main()

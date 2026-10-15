@@ -119,6 +119,70 @@ def linear_upsample(x, size):
     return _LinearUpsample.apply(x, plan)
 
 
+# ---------------------------------------------------------------------------
+# Inference fast path, same values as the eager code below.
+#
+# At batch 1 the module is bound by kernel launches rather than arithmetic.
+# Without gradients, the element-wise chains of normalize and de_normalize
+# therefore run as single CUDA kernels compiled with jiterator. Every step uses
+# an IEEE round-to-nearest intrinsic (__fadd_rn, __fmul_rn, __fdiv_rn,
+# __fsqrt_rn), which the compiler never contracts into an FMA, so each value is
+# rounded exactly as by the separate ATen kernels of the eager path, and the
+# upsampling keeps the fma(w0, a, w1 * b) of linear_upsample. Reductions,
+# pooling and the linear layers are the eager ATen kernels, applied to tensors
+# with the eager memory layout so that ATen picks the same kernels. With
+# gradients enabled (training) the eager path is used.
+# ---------------------------------------------------------------------------
+try:
+    from torch.cuda import jiterator as _jiterator
+except ImportError:
+    _jiterator = None
+
+_STD = "__fsqrt_rn(__fadd_rn(v, 1e-8f))"                          # sqrt(var + 1e-8)
+_UP = "fmaf(w0, a, __fmul_rn(w1, b))"                              # linear_upsample
+_INV = "__fdiv_rn(__fsub_rn(p, tb), __fadd_rn(tg, 1e-12f))"       # (p - t_beta) / (t_gamma + 1e-12)
+_FUSED_CODE = {
+    # (x - trend) * s_gamma + s_beta
+    "res": "T f(T x, T t, T g, T b) { return __fadd_rn(__fmul_rn(__fsub_rn(x, t), g), b); }",
+    # ((r - avg) / std) * s_gamma + s_beta
+    "res_norm": f"T f(T r, T a, T v, T g, T b) {{ return __fadd_rn(__fmul_rn(__fdiv_rn(__fsub_rn(r, a), {_STD}), g), b); }}",
+    # trend * t_gamma + t_beta
+    "trend": "T f(T t, T g, T b) { return __fadd_rn(__fmul_rn(t, g), b); }",
+    # ((trend - avg) / std) * t_gamma + t_beta
+    "trend_norm": f"T f(T t, T a, T v, T g, T b) {{ return __fadd_rn(__fmul_rn(__fdiv_rn(__fsub_rn(t, a), {_STD}), g), b); }}",
+    # inverse affine of the predicted trend, then the inverse trend normalization
+    "inv": f"T f(T p, T tg, T tb) {{ return {_INV}; }}",
+    "inv_norm": f"T f(T p, T tg, T tb, T a, T v) {{ return __fadd_rn(__fmul_rn({_INV}, {_STD}), a); }}",
+    # the same with the upsampling folded in (p from the two gathered neighbours)
+    "up_inv": f"T f(T a, T b, T w0, T w1, T tg, T tb) {{ T p = {_UP}; return {_INV}; }}",
+    "up_inv_norm": f"T f(T a, T b, T w0, T w1, T tg, T tb, T av, T v) {{ T p = {_UP}; "
+                   f"return __fadd_rn(__fmul_rn({_INV}, __fsqrt_rn(__fadd_rn(v, 1e-8f))), av); }}",
+    # (y - s_beta) / s_gamma [* std + avg] + trend
+    "denorm": "T f(T y, T g, T b, T tr) { return __fadd_rn(__fdiv_rn(__fsub_rn(y, b), g), tr); }",
+    "denorm_norm": f"T f(T y, T g, T b, T a, T v, T tr) {{ "
+                   f"return __fadd_rn(__fadd_rn(__fmul_rn(__fdiv_rn(__fsub_rn(y, b), g), {_STD}), a), tr); }}",
+}
+_FUSED = {}
+# Above this many predicted values the upsampling gathers inside its Triton
+# kernel instead of materializing both neighbours (memory traffic dominates).
+_GATHER_MAX = 1 << 17
+_PAD_INDEX = {}
+
+
+def _fused(name):
+    if name not in _FUSED:
+        _FUSED[name] = _jiterator._create_jit_fn("template <typename T> " + _FUSED_CODE[name])
+    return _FUSED[name]
+
+
+def _replicate_index(length, pad, device):
+    """Indices of the replicate-padded window: index_select gives F.pad(..., mode='replicate')."""
+    key = (length, pad, device)
+    if key not in _PAD_INDEX:
+        _PAD_INDEX[key] = torch.arange(-pad, length + pad, device=device).clamp_(0, length - 1)
+    return _PAD_INDEX[key]
+
+
 class DownUpTrendPredictor(nn.Module):
     def __init__(self, seq_len, pred_len, down_ratio=4, hidden_dim=64, use_mlp=False):
         super().__init__()
@@ -182,7 +246,57 @@ class Model(nn.Module):
         trend = self.decomposer.moving_avg.avg(padded.permute(0, 2, 1)).permute(0, 2, 1)
         return x - trend, trend
 
+    def _fusable(self, x):
+        return (_jiterator is not None and x.is_cuda and x.dtype == torch.float32
+                and not torch.is_grad_enabled() and isinstance(self.s_gamma, nn.Parameter))
+
+    def _normalize_fused(self, x):
+        """normalize() without gradients: same values in about half the kernel launches."""
+        pad = (self.kernel_size - 1) // 2
+        padded = x.index_select(1, _replicate_index(x.shape[1], pad, x.device))   # [B, L+2p, D] as F.pad
+        trend = self.decomposer.moving_avg.avg(padded.permute(0, 2, 1)).permute(0, 2, 1)
+        if self.s_norm:
+            residual = x - trend
+            avg = residual.mean(dim=1, keepdim=True)
+            var = residual.var(dim=1, keepdim=True, unbiased=False)
+            batch_x = _fused("res_norm")(residual, avg, var, self.s_gamma, self.s_beta)
+            self.avg, self.var, self.std = avg, var, None
+        else:
+            batch_x = _fused("res")(x, trend, self.s_gamma, self.s_beta)
+            self.avg = self.var = self.std = None
+        tg, tb = self.t_gamma, self.t_beta
+        if self.t_norm:
+            t_avg = trend.mean(dim=1, keepdim=True)
+            t_var = trend.var(dim=1, keepdim=True, unbiased=False)
+            trend = _fused("trend_norm")(trend, t_avg, t_var, tg, tb)
+        else:
+            trend = _fused("trend")(trend, tg, tb)
+
+        predictor = self.trend_predictor
+        down = F.avg_pool1d(trend.transpose(1, 2), kernel_size=predictor.down_ratio)     # [B, D, L/r]
+        pred = predictor.linear(down)                                                     # [B, D, H/r]
+        key = (x.device.type, x.device.index, pred.shape[-1], predictor.pred_len)
+        if key not in _UPSAMPLE_PLANS:
+            _UPSAMPLE_PLANS[key] = _calibrate_upsample(pred.shape[-1], predictor.pred_len, x.device)
+        plan = _UPSAMPLE_PLANS[key]
+        if plan is not None and pred.numel() <= _GATHER_MAX:
+            pred = pred.contiguous()
+            a = pred.index_select(-1, plan["i0"]).transpose(1, 2)                          # [B, H, D]
+            b = pred.index_select(-1, plan["i1"]).transpose(1, 2)
+            w0, w1 = plan["w0"].view(1, -1, 1), plan["w1"].view(1, -1, 1)
+            trend_out = (_fused("up_inv_norm")(a, b, w0, w1, tg, tb, t_avg, t_var) if self.t_norm
+                         else _fused("up_inv")(a, b, w0, w1, tg, tb))
+        else:
+            p = linear_upsample(pred, predictor.pred_len).transpose(1, 2)
+            trend_out = (_fused("inv_norm")(p, tg, tb, t_avg, t_var) if self.t_norm
+                         else _fused("inv")(p, tg, tb))
+        self._fused_pass = True
+        return batch_x, trend_out
+
     def normalize(self, batch_x):
+        if self._fusable(batch_x):
+            return self._normalize_fused(batch_x)
+        self._fused_pass = False
         batch_x, trend = self._decompose(batch_x)
 
         # Without s_norm/t_norm the statistics are 0 and 1, and in float32
@@ -218,6 +332,12 @@ class Model(nn.Module):
     def de_normalize(self, x, statistics):
         # batch_x: B*H*D (forecasts)
         trend_out = statistics
+        if getattr(self, "_fused_pass", False):
+            if self._fusable(x):
+                return (_fused("denorm_norm")(x, self.s_gamma, self.s_beta, self.avg, self.var, trend_out)
+                        if self.s_norm else _fused("denorm")(x, self.s_gamma, self.s_beta, trend_out))
+            if self.s_norm and self.std is None:
+                self.std = torch.sqrt(self.var + 1e-8)
         x = (x - self.s_beta) / self.s_gamma
         if self.s_norm:
             x = x * self.std + self.avg
