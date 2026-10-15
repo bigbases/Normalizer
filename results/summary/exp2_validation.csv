@@ -80,11 +80,15 @@ ETTh1,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""s
 ETTh1,TimeXer,san,f6904fc69cd0,{},0.678704,1.492750,,,1.085727,,False,False
 ETTh1,TimeXer,san,fa33e70a6a3a,{},0.690481,1.520173,,,1.105327,,False,False
 ETTh1,iTransformer,ddn,1c7b90df1d3b,{},0.747069,1.678439,,,1.212754,,False,False
-ETTh1,iTransformer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",,1.742936,,,,,False,False
-ETTh1,iTransformer,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,1.542755,,,,,False,False
+ETTh1,iTransformer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.781581,1.742936,,,1.262258,,False,False
+ETTh1,iTransformer,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.719816,1.542755,,,1.131285,,True,False
 ETTh1,iTransformer,ddn,43cd745f71d8,{},0.716068,1.515144,0.681098,1.469469,1.115606,1.095445,False,False
 ETTh1,iTransformer,ddn,44e9a626dff4,{},0.715677,1.521604,0.681012,1.444033,1.118641,1.090582,False,False
 ETTh1,iTransformer,ddn,6f0b0683bbd0,{},0.748861,1.662618,,,1.205740,,False,False
+ETTh1,iTransformer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.748582,1.665094,,,1.206838,,False,False
+ETTh1,iTransformer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.712860,1.638539,,,1.175700,,False,False
+ETTh1,iTransformer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.751087,1.685800,,,1.218443,,False,False
+ETTh1,iTransformer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.705672,1.472145,,,1.088908,,True,False
 ETTh1,iTransformer,ddn,e082b1250cbb,{},0.748282,1.671262,,,1.209772,,False,False
 ETTh1,iTransformer,ddn,f841fa3c59bc,{},0.743844,1.661500,,,1.202672,,False,False
 ETTh1,iTransformer,fan,6c1ea609882f,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 5e-05}",0.754667,1.297700,,,1.026183,,False,False
@@ -153,7 +157,9 @@ ETTh2,TimeXer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""s
 ETTh2,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.212321,0.592861,,,0.402591,,False,False
 ETTh2,TimeXer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.223046,0.587056,,,0.405051,,False,False
 ETTh2,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.213111,0.593794,,,0.403452,,False,False
+ETTh2,iTransformer,ddn,017e10566ec8,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.603796,,,,,False,False
 ETTh2,iTransformer,ddn,0792239d10b5,{},0.227865,0.646038,,,0.436951,,False,False
+ETTh2,iTransformer,ddn,20ecf006b43b,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0005, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.607877,,,,,False,False
 ETTh2,iTransformer,ddn,2d34e986cebd,{},0.224223,0.611773,0.221334,0.621061,0.417998,0.419598,False,False
 ETTh2,iTransformer,ddn,724393cf2565,{},0.230835,0.615171,,,0.423003,,False,False
 ETTh2,iTransformer,ddn,aa50bdd36231,{},0.214801,0.613354,0.218581,0.615300,0.414077,0.415509,False,False
@@ -431,9 +437,11 @@ Electricity,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.000
 Electricity,DLinear,san,f6904fc69cd0,{},0.117503,0.170278,0.117621,0.170263,0.143890,0.143916,False,False
 Electricity,DLinear,san,fa33e70a6a3a,{},0.119735,0.175173,,,0.147454,,False,False
 Electricity,TimeFilter,ddn,1c7b90df1d3b,{},0.112063,0.177221,0.115675,,0.144642,,False,False
+Electricity,TimeFilter,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.185975,,,,,False,False
 Electricity,TimeFilter,ddn,43cd745f71d8,{},0.115014,0.186367,,,0.150690,,False,False
 Electricity,TimeFilter,ddn,44e9a626dff4,{},0.116975,0.179916,,,0.148446,,False,False
 Electricity,TimeFilter,ddn,6f0b0683bbd0,{},0.116874,0.181791,,,0.149333,,False,False
+Electricity,TimeFilter,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",,0.195487,,,,,False,False
 Electricity,TimeFilter,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.129914,0.203322,,,0.166618,,True,False
 Electricity,TimeFilter,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.113497,0.192775,,,0.153136,,True,False
 Electricity,TimeFilter,ddn,e082b1250cbb,{},0.112588,0.175879,0.114666,0.181888,0.144234,0.146255,False,False
