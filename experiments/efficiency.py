@@ -302,7 +302,12 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
         return
     exps = {}
     for method in methods:
-        args, params = build_args(protocol, bases, dataset, backbone, method, horizon)
+        try:
+            args, params = build_args(protocol, bases, dataset, backbone, method, horizon)
+        except KeyError as exc:  # e.g. FAN has no settings for TimeXer/TimeFilter (not run there)
+            log(f"{dataset}/{backbone}/H{horizon}: {method} skipped, no settings ({exc})")
+            todo = [m for m in todo if m != method]
+            continue
         run_longExp.set_seed(2021, deterministic=False)
         exp = Exp_Main(args)
         exp.model.eval()
