@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T22:05:06+00:00 from 5014 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T22:15:48+00:00 from 5018 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,7 +11,7 @@ Generated 2026-10-15T22:05:06+00:00 from 5014 packaged cells. Regenerate with `p
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 2 | 0 | 0 | 0 | 0 |
-| shift-tuned | 4 | 0 | 0 | 4 | 0 |
+| shift-tuned | 4 | 0 | 1 | 3 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 25 | 1 | 2 | 0 | 0 |
@@ -23,9 +23,9 @@ Generated 2026-10-15T22:05:06+00:00 from 5014 packaged cells. Regenerate with `p
 | t3-tuned | 22 | 2 | 0 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
 | exp2-search | 48 | 0 | 8 | 0 | 0 |
-| exp2-confirm | 38 | 1 | 9 | 8 | 0 |
+| exp2-confirm | 39 | 1 | 8 | 8 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 28 | 0 | 10 | 18 | 0 |
+| exp3-tuned | 28 | 0 | 11 | 17 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -84,7 +84,7 @@ Generated 2026-10-15T22:05:06+00:00 from 5014 packaged cells. Regenerate with `p
 | shift-none--Weather--DLinear | done | 3/3 |  |
 | shift-none--Traffic--DLinear | done | 3/3 |  |
 | shift-tuned--Weather--DLinear--revin | done | 3/3 |  |
-| shift-tuned--Weather--DLinear--san | blocked | 0/? |  |
+| shift-tuned--Weather--DLinear--san | ready | 0/3 |  |
 | shift-tuned--Weather--DLinear--ddn | blocked | 0/? |  |
 | shift-tuned--Weather--DLinear--fan | done | 3/3 |  |
 | shift-tuned--Traffic--DLinear--revin | done | 3/3 |  |
@@ -334,7 +334,7 @@ Generated 2026-10-15T22:05:06+00:00 from 5014 packaged cells. Regenerate with `p
 | exp2-confirm--ETTh2--iTransformer--ddn | done | 4/4 |  |
 | exp2-confirm--ETTh2--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--ETTm1--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--ETTm1--DLinear--san | ready | 0/4 |  |
+| exp2-confirm--ETTm1--DLinear--san | claimed | 0/4 | itm21-a4000 |
 | exp2-confirm--ETTm1--DLinear--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTm1--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--ETTm1--iTransformer--revin | done | 4/4 |  |
@@ -350,7 +350,7 @@ Generated 2026-10-15T22:05:06+00:00 from 5014 packaged cells. Regenerate with `p
 | exp2-confirm--ETTm2--iTransformer--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTm2--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Weather--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--Weather--DLinear--san | claimed | 0/4 | itm21-a4000 |
+| exp2-confirm--Weather--DLinear--san | done | 4/4 |  |
 | exp2-confirm--Weather--DLinear--ddn | ready | 0/4 |  |
 | exp2-confirm--Weather--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Weather--iTransformer--revin | done | 4/4 |  |
@@ -420,7 +420,7 @@ Generated 2026-10-15T22:05:06+00:00 from 5014 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm2--iTransformer--ddn | blocked | 0/? |  |
 | exp3-tuned--ETTm2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Weather--DLinear--revin | done | 12/12 |  |
-| exp3-tuned--Weather--DLinear--san | blocked | 0/? |  |
+| exp3-tuned--Weather--DLinear--san | ready | 0/12 |  |
 | exp3-tuned--Weather--DLinear--ddn | blocked | 0/? |  |
 | exp3-tuned--Weather--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--Weather--iTransformer--revin | done | 12/12 |  |

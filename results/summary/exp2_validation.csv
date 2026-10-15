@@ -410,11 +410,11 @@ Weather,DLinear,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.4
 Weather,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.431515,0.674020,0.431288,0.674063,0.552767,0.552721,True,True
 Weather,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.381924,0.624774,,,0.503349,,False,False
 Weather,DLinear,san,48f6c1ced712,{},0.382324,0.627454,,,0.504889,,False,False
-Weather,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.375659,0.595796,,,0.485728,,True,False
+Weather,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.375659,0.595796,0.375291,0.595544,0.485728,0.485573,True,True
 Weather,DLinear,san,61e69def41a7,{},0.376909,0.609982,0.376180,0.610436,0.493446,0.493377,False,False
 Weather,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.377679,0.608601,0.376981,0.610382,0.493140,0.493411,False,False
 Weather,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.383087,0.626923,,,0.505005,,False,False
-Weather,DLinear,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.375763,0.595038,,,0.485400,,True,False
+Weather,DLinear,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.375763,0.595038,0.376142,0.596285,0.485400,0.485807,True,False
 Weather,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.378163,0.610204,,,0.494184,,False,False
 Weather,DLinear,san,f6904fc69cd0,{},0.377380,0.610301,,,0.493840,,False,False
 Weather,DLinear,san,fa33e70a6a3a,{},0.382386,0.627661,,,0.505023,,False,False
