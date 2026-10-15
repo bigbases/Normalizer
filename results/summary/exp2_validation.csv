@@ -282,11 +282,14 @@ ETTm1,iTransformer,fan,e0d362626473,"{""fan_aux_weight"": 1.0, ""freq_topk"": 16
 ETTm1,iTransformer,fan,eeca350696ee,"{""fan_aux_weight"": 1.0, ""freq_topk"": 11, ""station_lr"": 5e-05}",0.393024,0.893692,,,0.643358,,False,False
 ETTm1,iTransformer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.398013,0.949992,0.397464,0.948238,0.674003,0.673427,True,True
 ETTm1,iTransformer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.400085,0.954086,0.400107,0.956615,0.677085,0.677723,True,False
-ETTm1,iTransformer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.371025,0.898279,,,0.634652,,True,False
+ETTm1,iTransformer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.371025,0.898279,,,0.634652,,False,False
 ETTm1,iTransformer,san,48f6c1ced712,{},0.373551,0.891348,,,0.632450,,False,False
-ETTm1,iTransformer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.390546,,,,,,False,False
+ETTm1,iTransformer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.390546,0.887336,,,0.638941,,False,False
 ETTm1,iTransformer,san,61e69def41a7,{},0.367882,0.874680,0.369037,0.879595,0.621281,0.622799,False,False
 ETTm1,iTransformer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.370436,0.886974,,,0.628705,,True,False
+ETTm1,iTransformer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.372265,0.893872,,,0.633069,,False,False
+ETTm1,iTransformer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.390235,0.894847,,,0.642541,,False,False
+ETTm1,iTransformer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.369005,0.881059,,,0.625032,,True,False
 ETTm1,iTransformer,san,f6904fc69cd0,{},0.368478,0.876782,0.370322,0.882308,0.622630,0.624473,False,False
 ETTm1,iTransformer,san,fa33e70a6a3a,{},0.374689,0.888320,,,0.631504,,False,False
 ETTm2,DLinear,ddn,1c7b90df1d3b,{},0.122288,0.283623,,,0.202956,,False,False
