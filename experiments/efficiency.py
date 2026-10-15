@@ -275,7 +275,31 @@ def write_row(path, row):
         writer.writerow(row)
 
 
+def existing_keys(path, fields):
+    """Keys of the rows already in a CSV (for --resume)."""
+    if not path.exists():
+        return set()
+    with path.open(newline="") as handle:
+        return {tuple(str(row[f]) for f in fields) for row in csv.DictReader(handle)}
+
+
+def train_step_ms(step, x, y, xm, ym, opts):
+    """Mean step time and peak memory, or ("OOM", "") when the training batch does not fit."""
+    try:
+        t = timed(lambda: step(x, y, xm, ym), opts.warmup, opts.train_iters)
+        return t["mean"], t["peak_mib"]
+    except RuntimeError as exc:  # torch.cuda.OutOfMemoryError is a RuntimeError
+        if "out of memory" not in str(exc).lower():
+            raise
+        torch.cuda.empty_cache()
+        return "OOM", ""
+
+
 def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, device, env, out):
+    done = opts.done_cases
+    todo = [m for m in methods if (dataset, backbone, m, str(horizon)) not in done]
+    if not todo:
+        return
     exps = {}
     for method in methods:
         args, params = build_args(protocol, bases, dataset, backbone, method, horizon)
@@ -289,6 +313,8 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
     log(f"{dataset}/{backbone}/H{horizon}: common max batch {common}")
 
     for method, (exp, args, params) in exps.items():
+        if method not in todo:
+            continue
         own = lambda: torch.cuda.memory_reserved() / 2 ** 20  # noqa: E731
         idle = wait_until_idle(opts.gpu, own, opts.idle_tries)
         row = {"Timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"), **env,
@@ -322,10 +348,8 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
         x, y, xm, ym = batch(args, args.batch_size, device)
         row["TrainPreStepMs"] = row["TrainPrePeakMiB"] = ""
         if pretrain is not None:
-            t = timed(lambda: pretrain(x, y, xm, ym), opts.warmup, opts.train_iters)
-            row["TrainPreStepMs"], row["TrainPrePeakMiB"] = t["mean"], t["peak_mib"]
-        t = timed(lambda: joint(x, y, xm, ym), opts.warmup, opts.train_iters)
-        row["TrainJointStepMs"], row["TrainJointPeakMiB"] = t["mean"], t["peak_mib"]
+            row["TrainPreStepMs"], row["TrainPrePeakMiB"] = train_step_ms(pretrain, x, y, xm, ym, opts)
+        row["TrainJointStepMs"], row["TrainJointPeakMiB"] = train_step_ms(joint, x, y, xm, ym, opts)
         exp.model.eval()
         exp.station.eval()
         del x, y, xm, ym
@@ -335,18 +359,22 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
                 if key[0] == "cuda" and key[3] == args.pred_len))
         row["GPUIdleAfter"] = wait_until_idle(opts.gpu, own, 1, interval=0)
         write_row(out, row)
+        joint_ms = row["TrainJointStepMs"]
         log(f"  {method:5s} e2e B1 {row['LatB1MeanMs']:.2f} ms, Bmax {row['LatBmaxMeanMs']:.1f} ms, "
-            f"module {row['ModuleLatB1MeanMs']:.2f} ms, joint step {row['TrainJointStepMs']:.1f} ms")
+            f"module {row['ModuleLatB1MeanMs']:.2f} ms, joint step "
+            f"{joint_ms if isinstance(joint_ms, str) else f'{joint_ms:.1f} ms'}")
     del exps
     torch.cuda.empty_cache()
 
 
-def bench_scaling(protocol, bases, dataset, methods, horizon, lengths, device, env, out):
+def bench_scaling(protocol, bases, dataset, methods, horizon, lengths, device, env, out, done=frozenset()):
     """Module FLOPs and parameters over input lengths (DLinear rows supply the settings)."""
     for method in methods:
         if method == "none":
             continue
         for seq_len in lengths:
+            if (dataset, method, str(horizon), str(seq_len)) in done:
+                continue
             args, params = build_args(protocol, bases, dataset, "DLinear", method, horizon, seq_len=seq_len)
             exp = Exp_Main(args)
             exp.station.eval()
@@ -365,14 +393,17 @@ def summarize(path):
     import pandas as pd
     df = pd.read_csv(path)
     keys = ["Dataset", "Backbone", "Horizon"]
-    ref = df[df.Method == "none"].set_index(keys)
     cols = {"LatB1MeanMs": "lat B1", "LatBmaxMeanMs": "lat Bmax", "TrainJointStepMs": "train step",
             "PeakMemBmaxMiB": "mem Bmax"}
+    for c in cols:   # a training step that ran out of memory is recorded as "OOM"
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+    ref = df[df.Method == "none"].set_index(keys)
     rows = []
     for _, r in df[df.Method != "none"].iterrows():
         base = ref.loc[tuple(r[k] for k in keys)]
         row = {k: r[k] for k in keys + ["Method"]}
-        row.update({name: f"{100 * (r[c] / base[c] - 1):+.1f}%" for c, name in cols.items()})
+        row.update({name: (f"{100 * (r[c] / base[c] - 1):+.1f}%" if pd.notna(r[c]) else "OOM")
+                    for c, name in cols.items()})
         row["module/total FLOPs"] = f"{100 * r.FLOPsModule / max(r.FLOPsTotal, 1):.2f}%"
         row["module params"] = int(r.ParamsModule)
         rows.append(row)
@@ -398,6 +429,9 @@ def main():
     p.add_argument("--quick", action="store_true", help="few iterations (smoke test)")
     p.add_argument("--allow-busy", action="store_true", help="run although experiment processes are running")
     p.add_argument("--summary", action="store_true", help="only print the overhead table of --out")
+    p.add_argument("--resume", action="store_true",
+                   help="skip cases and scaling points already in the output CSVs (the common maximum batch "
+                        "is still computed over every method of a case)")
     opts = p.parse_args()
     if opts.summary:
         return summarize(opts.out)
@@ -422,7 +456,10 @@ def main():
     scaling_out = out.with_name(out.stem + "_scaling.csv")
     split = lambda s: [v for v in s.split(",") if v]  # noqa: E731
     methods = split(opts.methods)
-    log(f"{env['GPU']} on {env['Host']}, torch {env['Torch']}; writing {out}")
+    opts.done_cases = existing_keys(out, ("Dataset", "Backbone", "Method", "Horizon")) if opts.resume else set()
+    done_scaling = existing_keys(scaling_out, ("Dataset", "Method", "Horizon", "SeqLen")) if opts.resume else set()
+    log(f"{env['GPU']} on {env['Host']}, torch {env['Torch']}; writing {out}"
+        + (f" (resume: {len(opts.done_cases)} cases, {len(done_scaling)} scaling points done)" if opts.resume else ""))
 
     for dataset in split(opts.datasets):
         for backbone in split(opts.backbones):
@@ -430,7 +467,7 @@ def main():
                 bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, device, env, out)
         for horizon in map(int, split(opts.horizons)):
             bench_scaling(protocol, bases, dataset, methods, horizon, list(map(int, split(opts.scale_lengths))),
-                          device, env, scaling_out)
+                          device, env, scaling_out, done_scaling)
     log("done")
 
 
