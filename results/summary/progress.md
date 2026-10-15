@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T23:44:15+00:00 from 5048 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T23:41:27+00:00 from 5050 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -23,9 +23,9 @@ Generated 2026-10-15T23:44:15+00:00 from 5048 packaged cells. Regenerate with `p
 | t3-tuned | 23 | 1 | 0 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
 | exp2-search | 48 | 0 | 8 | 0 | 0 |
-| exp2-confirm | 43 | 2 | 3 | 8 | 0 |
+| exp2-confirm | 44 | 1 | 3 | 8 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 28 | 0 | 15 | 13 | 0 |
+| exp3-tuned | 28 | 0 | 16 | 12 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -339,7 +339,7 @@ Generated 2026-10-15T23:44:15+00:00 from 5048 packaged cells. Regenerate with `p
 | exp2-confirm--ETTm1--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--ETTm1--iTransformer--revin | done | 4/4 |  |
 | exp2-confirm--ETTm1--iTransformer--san | done | 4/4 |  |
-| exp2-confirm--ETTm1--iTransformer--ddn | claimed | 2/4 | itm21-a4000 |
+| exp2-confirm--ETTm1--iTransformer--ddn | done | 4/4 |  |
 | exp2-confirm--ETTm1--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--ETTm2--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--ETTm2--DLinear--san | done | 4/4 |  |
@@ -409,7 +409,7 @@ Generated 2026-10-15T23:44:15+00:00 from 5048 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm1--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm1--iTransformer--revin | done | 12/12 |  |
 | exp3-tuned--ETTm1--iTransformer--san | ready | 0/12 |  |
-| exp3-tuned--ETTm1--iTransformer--ddn | blocked | 0/? |  |
+| exp3-tuned--ETTm1--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm1--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--ETTm2--DLinear--san | ready | 0/12 |  |
