@@ -165,6 +165,11 @@
       "affine": 0,
       "station_lr": 0.0001
     },
+    "ETTm1|DLinear|san": {
+      "period_len": 12,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "ETTm1|TimeFilter|ddn": {
       "hkernel_len": 5,
       "j": 1,
