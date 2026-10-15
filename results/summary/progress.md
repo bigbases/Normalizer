@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T20:57:57+00:00 from 4964 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T21:03:29+00:00 from 4969 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -22,8 +22,8 @@ Generated 2026-10-15T20:57:57+00:00 from 4964 packaged cells. Regenerate with `p
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 22 | 1 | 1 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
-| exp2-search | 47 | 1 | 8 | 0 | 0 |
-| exp2-confirm | 28 | 0 | 19 | 9 | 0 |
+| exp2-search | 48 | 0 | 8 | 0 | 0 |
+| exp2-confirm | 28 | 1 | 19 | 8 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | exp3-tuned | 28 | 0 | 0 | 28 | 0 |
 
@@ -291,7 +291,7 @@ Generated 2026-10-15T20:57:57+00:00 from 4964 packaged cells. Regenerate with `p
 | exp2-search--ETTm2--DLinear--fan | done | 12/12 |  |
 | exp2-search--ETTm2--iTransformer--revin | done | 4/4 |  |
 | exp2-search--ETTm2--iTransformer--san | done | 12/12 |  |
-| exp2-search--ETTm2--iTransformer--ddn | claimed | 8/12 | itm21-a4000 |
+| exp2-search--ETTm2--iTransformer--ddn | done | 12/12 |  |
 | exp2-search--ETTm2--iTransformer--fan | done | 12/12 |  |
 | exp2-search--Weather--DLinear--revin | done | 4/4 |  |
 | exp2-search--Weather--DLinear--san | done | 12/12 |  |
@@ -326,7 +326,7 @@ Generated 2026-10-15T20:57:57+00:00 from 4964 packaged cells. Regenerate with `p
 | exp2-confirm--ETTh1--iTransformer--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTh1--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--ETTh2--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--ETTh2--DLinear--san | ready | 0/4 |  |
+| exp2-confirm--ETTh2--DLinear--san | claimed | 1/4 | itm21-a4000 |
 | exp2-confirm--ETTh2--DLinear--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTh2--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--ETTh2--iTransformer--revin | done | 4/4 |  |
@@ -347,7 +347,7 @@ Generated 2026-10-15T20:57:57+00:00 from 4964 packaged cells. Regenerate with `p
 | exp2-confirm--ETTm2--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--ETTm2--iTransformer--revin | done | 4/4 |  |
 | exp2-confirm--ETTm2--iTransformer--san | ready | 2/4 |  |
-| exp2-confirm--ETTm2--iTransformer--ddn | blocked | 0/? |  |
+| exp2-confirm--ETTm2--iTransformer--ddn | ready | 0/4 |  |
 | exp2-confirm--ETTm2--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Weather--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--Weather--DLinear--san | ready | 0/4 |  |
