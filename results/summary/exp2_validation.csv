@@ -324,12 +324,12 @@ ETTm2,DLinear,fan,b7ff1475f53f,"{""fan_aux_weight"": 1.0, ""freq_topk"": 11, ""s
 ETTm2,DLinear,fan,e0d362626473,"{""fan_aux_weight"": 1.0, ""freq_topk"": 16, ""station_lr"": 0.0001}",0.125161,0.307113,,,0.216137,,False,False
 ETTm2,DLinear,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.116557,0.264857,0.116654,0.264945,0.190707,0.190753,True,True
 ETTm2,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.116614,0.269399,0.116673,0.268601,0.193007,0.192822,True,False
-ETTm2,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.115738,0.262845,0.116017,0.263454,0.189292,0.189513,True,True
+ETTm2,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.115738,0.262845,0.116017,0.263454,0.189292,0.189513,True,False
 ETTm2,DLinear,san,48f6c1ced712,{},0.116151,0.262078,0.116511,0.262846,0.189115,0.189397,False,False
 ETTm2,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.124135,0.320120,,,0.222127,,False,False
 ETTm2,DLinear,san,61e69def41a7,{},0.117560,0.264461,,,0.191011,,False,False
 ETTm2,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.116789,0.265980,,,0.191384,,False,False
-ETTm2,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.115882,0.259876,,,0.187879,,True,False
+ETTm2,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.115882,0.259876,0.116467,0.260616,0.187879,0.188210,True,True
 ETTm2,DLinear,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.124278,0.322998,,,0.223638,,False,False
 ETTm2,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.117139,0.262524,,,0.189832,,False,False
 ETTm2,DLinear,san,f6904fc69cd0,{},0.117031,0.264651,,,0.190841,,False,False
