@@ -1,5 +1,5 @@
 {
- "cells_remaining": 9,
+ "cells_remaining": 8,
  "cells_total": 12,
  "claimed_at": "2026-10-15T18:20:56+00:00",
  "code_rev": "33f03e5a",
@@ -7,7 +7,7 @@
  "gpus": [
   0
  ],
- "heartbeat": "2026-10-15T19:54:56+00:00",
+ "heartbeat": "2026-10-15T20:09:27+00:00",
  "host": "itm24-pro6000",
  "took_over_from": "elice-a100",
  "worker": "itm24-pro6000"
