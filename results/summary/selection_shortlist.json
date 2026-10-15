@@ -441,6 +441,38 @@
         "screen_mean_val_mse": 0.40055816492095675
       }
     ],
+    "ETTh2|iTransformer|ddn": [
+      {
+        "candidate_id": "017e10566ec8",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 12,
+          "station_lr": 0.0005,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.4117210551917075
+      },
+      {
+        "candidate_id": "20ecf006b43b",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 7,
+          "station_lr": 0.0005,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.4192058477241964
+      }
+    ],
     "ETTh2|iTransformer|fan": [
       {
         "candidate_id": "a463b7607f3d",
@@ -1043,6 +1075,21 @@
     ],
     "Electricity|TimeFilter|ddn": [
       {
+        "candidate_id": "2c842a20e419",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 12,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.14877194924830642
+      },
+      {
         "candidate_id": "bbeb523655cd",
         "n_cells": 2,
         "params": {
@@ -1056,21 +1103,6 @@
           "wavelet": "coif3"
         },
         "screen_mean_val_mse": 0.15313616136217828
-      },
-      {
-        "candidate_id": "947a01bef6cf",
-        "n_cells": 2,
-        "params": {
-          "hkernel_len": 5,
-          "j": 1,
-          "joint_lr": "backbone",
-          "kernel_len": 7,
-          "station_lr": 0.0001,
-          "station_type": "adaptive",
-          "twice_epoch": 0,
-          "wavelet": "coif3"
-        },
-        "screen_mean_val_mse": 0.1666176069035845
       }
     ],
     "Electricity|TimeXer|ddn": [
