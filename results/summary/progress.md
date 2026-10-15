@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T18:25:48+00:00 from 4906 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T18:22:56+00:00 from 4907 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -14,7 +14,7 @@ Generated 2026-10-15T18:25:48+00:00 from 4906 packaged cells. Regenerate with `p
 | shift-tuned | 4 | 0 | 0 | 4 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
-| t3-search | 24 | 1 | 3 | 0 | 0 |
+| t3-search | 24 | 2 | 2 | 0 | 0 |
 | t3-confirm | 22 | 2 | 0 | 4 | 0 |
 | t3-lt-search | 10 | 1 | 3 | 0 | 0 |
 | t3-lt-struct | 10 | 0 | 0 | 4 | 0 |
@@ -22,8 +22,8 @@ Generated 2026-10-15T18:25:48+00:00 from 4906 packaged cells. Regenerate with `p
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 21 | 1 | 0 | 6 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
-| exp2-search | 44 | 2 | 10 | 0 | 0 |
-| exp2-confirm | 28 | 0 | 16 | 12 | 0 |
+| exp2-search | 45 | 1 | 10 | 0 | 0 |
+| exp2-confirm | 28 | 0 | 17 | 11 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | exp3-tuned | 28 | 0 | 0 | 28 | 0 |
 
@@ -123,7 +123,7 @@ Generated 2026-10-15T18:25:48+00:00 from 4906 packaged cells. Regenerate with `p
 | t3-search--ETTm1--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--Weather--TimeFilter--san | done | 12/12 |  |
 | t3-search--Weather--TimeFilter--ddn | done | 12/12 |  |
-| t3-search--Electricity--TimeFilter--san | ready | 0/12 |  |
+| t3-search--Electricity--TimeFilter--san | claimed | 0/12 | elice-a100 |
 | t3-search--Electricity--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--Traffic--TimeFilter--san | ready | 6/12 |  |
 | t3-search--Traffic--TimeFilter--ddn | done | 12/12 |  |
@@ -299,7 +299,7 @@ Generated 2026-10-15T18:25:48+00:00 from 4906 packaged cells. Regenerate with `p
 | exp2-search--Weather--DLinear--fan | done | 12/12 |  |
 | exp2-search--Weather--iTransformer--revin | done | 4/4 |  |
 | exp2-search--Weather--iTransformer--san | done | 12/12 |  |
-| exp2-search--Weather--iTransformer--ddn | claimed | 11/12 | itm21-a4000 |
+| exp2-search--Weather--iTransformer--ddn | done | 12/12 |  |
 | exp2-search--Weather--iTransformer--fan | done | 12/12 |  |
 | exp2-search--Electricity--DLinear--revin | done | 4/4 |  |
 | exp2-search--Electricity--DLinear--san | ready | 4/12 |  |
@@ -355,7 +355,7 @@ Generated 2026-10-15T18:25:48+00:00 from 4906 packaged cells. Regenerate with `p
 | exp2-confirm--Weather--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Weather--iTransformer--revin | done | 4/4 |  |
 | exp2-confirm--Weather--iTransformer--san | ready | 0/4 |  |
-| exp2-confirm--Weather--iTransformer--ddn | blocked | 0/? |  |
+| exp2-confirm--Weather--iTransformer--ddn | ready | 0/4 |  |
 | exp2-confirm--Weather--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--san | blocked | 0/? |  |

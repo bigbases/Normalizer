@@ -1710,19 +1710,19 @@
         "screen_mean_val_mse": 0.48578861792095285
       },
       {
-        "candidate_id": "b833fe78c153",
+        "candidate_id": "bbeb523655cd",
         "n_cells": 2,
         "params": {
           "hkernel_len": 5,
           "j": 1,
           "joint_lr": "backbone",
-          "kernel_len": 32,
+          "kernel_len": 7,
           "station_lr": 0.0001,
           "station_type": "adaptive",
           "twice_epoch": 1,
           "wavelet": "coif3"
         },
-        "screen_mean_val_mse": 0.4916086593726612
+        "screen_mean_val_mse": 0.4860779258012411
       }
     ],
     "Weather|iTransformer|fan": [
