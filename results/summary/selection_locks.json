@@ -282,11 +282,6 @@
       "affine": 1,
       "station_lr": 0.0001
     },
-    "Weather|DLinear|san": {
-      "period_len": 24,
-      "station_lr": 0.0001,
-      "station_type": "adaptive"
-    },
     "Weather|TimeFilter|ddn": {
       "hkernel_len": 5,
       "j": 1,
