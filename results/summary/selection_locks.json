@@ -209,6 +209,11 @@
       "affine": 0,
       "station_lr": 0.0001
     },
+    "ETTm1|iTransformer|san": {
+      "period_len": 12,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "ETTm2|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 11,
