@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T10:03:10+00:00 from 4742 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T10:09:29+00:00 from 4749 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -22,8 +22,8 @@ Generated 2026-10-15T10:03:10+00:00 from 4742 packaged cells. Regenerate with `p
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 20 | 0 | 1 | 7 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
-| exp2-search | 31 | 1 | 24 | 0 | 0 |
-| exp2-confirm | 28 | 0 | 3 | 25 | 0 |
+| exp2-search | 32 | 1 | 23 | 0 | 0 |
+| exp2-confirm | 28 | 0 | 4 | 24 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | exp3-tuned | 28 | 0 | 0 | 28 | 0 |
 
@@ -124,7 +124,7 @@ Generated 2026-10-15T10:03:10+00:00 from 4742 packaged cells. Regenerate with `p
 | t3-search--Weather--TimeFilter--san | done | 12/12 |  |
 | t3-search--Weather--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--Electricity--TimeFilter--san | ready | 0/12 |  |
-| t3-search--Electricity--TimeFilter--ddn | claimed | 3/12 | elice-a100 |
+| t3-search--Electricity--TimeFilter--ddn | claimed | 4/12 | elice-a100 |
 | t3-search--Traffic--TimeFilter--san | ready | 6/12 |  |
 | t3-search--Traffic--TimeFilter--ddn | done | 12/12 |  |
 | t3-search--ETTh2--TimeXer--san | done | 12/12 |  |
@@ -266,8 +266,8 @@ Generated 2026-10-15T10:03:10+00:00 from 4742 packaged cells. Regenerate with `p
 | exp2-search--ETTh1--DLinear--ddn | ready | 0/12 |  |
 | exp2-search--ETTh1--DLinear--fan | done | 12/12 |  |
 | exp2-search--ETTh1--iTransformer--revin | done | 4/4 |  |
-| exp2-search--ETTh1--iTransformer--san | claimed | 8/12 | itm21-a4000 |
-| exp2-search--ETTh1--iTransformer--ddn | ready | 0/12 |  |
+| exp2-search--ETTh1--iTransformer--san | done | 12/12 |  |
+| exp2-search--ETTh1--iTransformer--ddn | claimed | 2/12 | itm21-a4000 |
 | exp2-search--ETTh1--iTransformer--fan | done | 12/12 |  |
 | exp2-search--ETTh2--DLinear--revin | done | 4/4 |  |
 | exp2-search--ETTh2--DLinear--san | done | 12/12 |  |
@@ -322,7 +322,7 @@ Generated 2026-10-15T10:03:10+00:00 from 4742 packaged cells. Regenerate with `p
 | exp2-confirm--ETTh1--DLinear--ddn | blocked | 0/? |  |
 | exp2-confirm--ETTh1--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--ETTh1--iTransformer--revin | done | 4/4 |  |
-| exp2-confirm--ETTh1--iTransformer--san | blocked | 0/? |  |
+| exp2-confirm--ETTh1--iTransformer--san | ready | 0/4 |  |
 | exp2-confirm--ETTh1--iTransformer--ddn | blocked | 0/? |  |
 | exp2-confirm--ETTh1--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--ETTh2--DLinear--revin | done | 4/4 |  |
