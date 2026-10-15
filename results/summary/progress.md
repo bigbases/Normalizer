@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-15T22:49:27+00:00 from 5032 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-15T22:56:11+00:00 from 5033 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,7 +11,7 @@ Generated 2026-10-15T22:49:27+00:00 from 5032 packaged cells. Regenerate with `p
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 2 | 0 | 0 | 0 | 0 |
-| shift-tuned | 4 | 1 | 0 | 3 | 0 |
+| shift-tuned | 5 | 0 | 0 | 3 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 25 | 1 | 2 | 0 | 0 |
@@ -84,7 +84,7 @@ Generated 2026-10-15T22:49:27+00:00 from 5032 packaged cells. Regenerate with `p
 | shift-none--Weather--DLinear | done | 3/3 |  |
 | shift-none--Traffic--DLinear | done | 3/3 |  |
 | shift-tuned--Weather--DLinear--revin | done | 3/3 |  |
-| shift-tuned--Weather--DLinear--san | claimed | 2/3 | itm24-pro6000 |
+| shift-tuned--Weather--DLinear--san | done | 3/3 |  |
 | shift-tuned--Weather--DLinear--ddn | blocked | 0/? |  |
 | shift-tuned--Weather--DLinear--fan | done | 3/3 |  |
 | shift-tuned--Traffic--DLinear--revin | done | 3/3 |  |
