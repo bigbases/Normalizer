@@ -493,9 +493,15 @@ Weather,iTransformer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.00
 Weather,iTransformer,san,f6904fc69cd0,{},0.373710,0.569800,0.372507,0.574400,0.471755,0.472604,False,False
 Weather,iTransformer,san,fa33e70a6a3a,{},0.374896,0.585807,,,0.480351,,False,False
 Electricity,DLinear,ddn,1c7b90df1d3b,{},0.111712,0.168096,,,0.139904,,False,False
+Electricity,DLinear,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.110133,0.173182,,,0.141657,,True,False
+Electricity,DLinear,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.110101,0.166869,,,0.138485,,True,False
 Electricity,DLinear,ddn,43cd745f71d8,{},0.112451,0.166417,,,0.139434,,False,False
 Electricity,DLinear,ddn,44e9a626dff4,{},0.112658,0.167634,,,0.140146,,False,False
 Electricity,DLinear,ddn,6f0b0683bbd0,{},0.111348,0.166123,0.111476,0.166057,0.138735,0.138751,False,False
+Electricity,DLinear,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.110494,,,,,,False,False
+Electricity,DLinear,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.116130,,,,,,False,False
+Electricity,DLinear,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.110683,,,,,,False,False
+Electricity,DLinear,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.110361,,,,,,False,False
 Electricity,DLinear,ddn,e082b1250cbb,{},0.111515,0.166994,,,0.139254,,False,False
 Electricity,DLinear,ddn,f841fa3c59bc,{},0.111477,0.166522,0.111648,0.167095,0.138999,0.139185,False,False
 Electricity,DLinear,fan,2479cac43388,"{""fan_aux_weight"": 1.0, ""freq_topk"": 3, ""station_lr"": 0.0001}",0.127971,0.186420,,,0.157195,,False,False

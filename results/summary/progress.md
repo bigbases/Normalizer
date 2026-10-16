@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-16T05:25:07+00:00 from 5254 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-16T06:33:09+00:00 from 5274 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -22,10 +22,10 @@ Generated 2026-10-16T05:25:07+00:00 from 5254 packaged cells. Regenerate with `p
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 23 | 0 | 1 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
-| exp2-search | 51 | 1 | 4 | 0 | 0 |
+| exp2-search | 51 | 0 | 5 | 0 | 0 |
 | exp2-confirm | 49 | 0 | 2 | 5 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 41 | 1 | 7 | 7 | 0 |
+| exp3-tuned | 42 | 1 | 6 | 7 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -303,7 +303,7 @@ Generated 2026-10-16T05:25:07+00:00 from 5254 packaged cells. Regenerate with `p
 | exp2-search--Weather--iTransformer--fan | done | 12/12 |  |
 | exp2-search--Electricity--DLinear--revin | done | 4/4 |  |
 | exp2-search--Electricity--DLinear--san | done | 12/12 |  |
-| exp2-search--Electricity--DLinear--ddn | claimed | 0/12 | elice-a100 |
+| exp2-search--Electricity--DLinear--ddn | ready | 8/12 |  |
 | exp2-search--Electricity--DLinear--fan | done | 12/12 |  |
 | exp2-search--Electricity--iTransformer--revin | done | 4/4 |  |
 | exp2-search--Electricity--iTransformer--san | done | 12/12 |  |
@@ -408,8 +408,8 @@ Generated 2026-10-16T05:25:07+00:00 from 5254 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm1--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm1--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm1--iTransformer--revin | done | 12/12 |  |
-| exp3-tuned--ETTm1--iTransformer--san | claimed | 0/12 | itm21-a4000 |
-| exp3-tuned--ETTm1--iTransformer--ddn | ready | 0/12 |  |
+| exp3-tuned--ETTm1--iTransformer--san | done | 12/12 |  |
+| exp3-tuned--ETTm1--iTransformer--ddn | claimed | 0/12 | itm21-a4000 |
 | exp3-tuned--ETTm1--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--ETTm2--DLinear--san | done | 12/12 |  |
