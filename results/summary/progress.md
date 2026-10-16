@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-16T00:31:53+00:00 from 5066 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-16T00:54:15+00:00 from 5071 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -23,9 +23,9 @@ Generated 2026-10-16T00:31:53+00:00 from 5066 packaged cells. Regenerate with `p
 | t3-tuned | 23 | 1 | 0 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
 | exp2-search | 48 | 0 | 8 | 0 | 0 |
-| exp2-confirm | 46 | 1 | 1 | 8 | 0 |
+| exp2-confirm | 47 | 1 | 0 | 8 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 28 | 0 | 18 | 10 | 0 |
+| exp3-tuned | 28 | 0 | 19 | 9 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -228,7 +228,7 @@ Generated 2026-10-16T00:31:53+00:00 from 5066 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--Traffic--TimeXer--san | blocked | 0/? |  |
-| t3-tuned--Traffic--TimeXer--ddn | claimed | 2/12 | elice-a100 |
+| t3-tuned--Traffic--TimeXer--ddn | claimed | 3/12 | elice-a100 |
 | t3-tuned--ETTh1--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeFilter--san | done | 12/12 |  |
@@ -354,8 +354,8 @@ Generated 2026-10-16T00:31:53+00:00 from 5066 packaged cells. Regenerate with `p
 | exp2-confirm--Weather--DLinear--ddn | done | 4/4 |  |
 | exp2-confirm--Weather--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Weather--iTransformer--revin | done | 4/4 |  |
-| exp2-confirm--Weather--iTransformer--san | ready | 0/4 |  |
-| exp2-confirm--Weather--iTransformer--ddn | claimed | 0/4 | itm21-a4000 |
+| exp2-confirm--Weather--iTransformer--san | claimed | 0/4 | itm21-a4000 |
+| exp2-confirm--Weather--iTransformer--ddn | done | 4/4 |  |
 | exp2-confirm--Weather--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--san | blocked | 0/? |  |
@@ -425,7 +425,7 @@ Generated 2026-10-16T00:31:53+00:00 from 5066 packaged cells. Regenerate with `p
 | exp3-tuned--Weather--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--Weather--iTransformer--revin | done | 12/12 |  |
 | exp3-tuned--Weather--iTransformer--san | blocked | 0/? |  |
-| exp3-tuned--Weather--iTransformer--ddn | blocked | 0/? |  |
+| exp3-tuned--Weather--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--Weather--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Electricity--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--Electricity--DLinear--san | blocked | 0/? |  |
