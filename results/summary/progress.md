@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-16T01:40:04+00:00 from 5114 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-16T01:51:57+00:00 from 5126 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -25,7 +25,7 @@ Generated 2026-10-16T01:40:04+00:00 from 5114 packaged cells. Regenerate with `p
 | exp2-search | 48 | 0 | 8 | 0 | 0 |
 | exp2-confirm | 48 | 0 | 0 | 8 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 31 | 1 | 16 | 8 | 0 |
+| exp3-tuned | 32 | 1 | 15 | 8 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -228,7 +228,7 @@ Generated 2026-10-16T01:40:04+00:00 from 5114 packaged cells. Regenerate with `p
 | t3-tuned--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-tuned--Electricity--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--Traffic--TimeXer--san | blocked | 0/? |  |
-| t3-tuned--Traffic--TimeXer--ddn | claimed | 5/12 | elice-a100 |
+| t3-tuned--Traffic--TimeXer--ddn | claimed | 6/12 | elice-a100 |
 | t3-tuned--ETTh1--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--ETTh1--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTm1--TimeFilter--san | done | 12/12 |  |
@@ -393,7 +393,7 @@ Generated 2026-10-16T01:40:04+00:00 from 5114 packaged cells. Regenerate with `p
 | exp3-tuned--ETTh1--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTh1--iTransformer--revin | done | 12/12 |  |
 | exp3-tuned--ETTh1--iTransformer--san | ready | 0/12 |  |
-| exp3-tuned--ETTh1--iTransformer--ddn | ready | 0/12 |  |
+| exp3-tuned--ETTh1--iTransformer--ddn | claimed | 0/12 | itm21-a4000 |
 | exp3-tuned--ETTh1--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--ETTh2--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--ETTh2--DLinear--san | done | 12/12 |  |
@@ -401,7 +401,7 @@ Generated 2026-10-16T01:40:04+00:00 from 5114 packaged cells. Regenerate with `p
 | exp3-tuned--ETTh2--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTh2--iTransformer--revin | done | 12/12 |  |
 | exp3-tuned--ETTh2--iTransformer--san | done | 12/12 |  |
-| exp3-tuned--ETTh2--iTransformer--ddn | claimed | 1/12 | itm21-a4000 |
+| exp3-tuned--ETTh2--iTransformer--ddn | done | 12/12 |  |
 | exp3-tuned--ETTh2--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--ETTm1--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--ETTm1--DLinear--san | ready | 0/12 |  |
