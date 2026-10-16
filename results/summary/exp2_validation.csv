@@ -656,9 +656,9 @@ Traffic,TimeXer,san,48f6c1ced712,{},0.406184,0.446656,,,0.426420,,False,False
 Traffic,TimeXer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.394293,0.443965,,,0.419129,,False,False
 Traffic,TimeXer,san,61e69def41a7,{},0.420546,0.452180,,,0.436363,,False,False
 Traffic,TimeXer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.396819,0.443660,,,0.420240,,False,False
-Traffic,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.390478,0.433852,,,0.412165,,True,False
+Traffic,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.390478,0.433852,0.400337,0.432440,0.412165,0.414277,True,True
 Traffic,TimeXer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.396380,0.446532,,,0.421456,,False,False
-Traffic,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.393659,0.438062,,,0.415861,,True,False
+Traffic,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.393659,0.438062,0.404545,0.444662,0.415861,0.420232,True,False
 Traffic,TimeXer,san,f6904fc69cd0,{},0.405395,0.432618,,,0.419006,,False,False
 Traffic,TimeXer,san,fa33e70a6a3a,{},0.419668,0.452588,,,0.436128,,False,False
 Traffic,iTransformer,ddn,1c7b90df1d3b,{},0.323201,0.394646,,,0.358923,,False,False
