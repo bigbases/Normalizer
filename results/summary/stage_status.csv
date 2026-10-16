@@ -378,11 +378,11 @@ exp3-tuned,ETTm1,DLinear,san,done,12,12,
 exp3-tuned,ETTm1,DLinear,ddn,ready,0,12,
 exp3-tuned,ETTm1,DLinear,fan,done,12,12,
 exp3-tuned,ETTm1,iTransformer,revin,done,12,12,
-exp3-tuned,ETTm1,iTransformer,san,ready,0,12,
+exp3-tuned,ETTm1,iTransformer,san,claimed,0,12,itm21-a4000
 exp3-tuned,ETTm1,iTransformer,ddn,ready,0,12,
 exp3-tuned,ETTm1,iTransformer,fan,done,12,12,
 exp3-tuned,ETTm2,DLinear,revin,done,12,12,
-exp3-tuned,ETTm2,DLinear,san,claimed,8,12,itm21-a4000
+exp3-tuned,ETTm2,DLinear,san,done,12,12,
 exp3-tuned,ETTm2,DLinear,ddn,ready,0,12,
 exp3-tuned,ETTm2,DLinear,fan,done,12,12,
 exp3-tuned,ETTm2,iTransformer,revin,done,12,12,
