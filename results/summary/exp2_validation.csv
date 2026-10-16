@@ -598,12 +598,12 @@ Traffic,DLinear,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.3
 Traffic,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.336588,0.402248,0.336586,0.402248,0.369418,0.369417,True,False
 Traffic,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.347095,0.410191,0.348066,0.410076,0.378643,0.378857,True,True
 Traffic,DLinear,san,48f6c1ced712,{},0.366858,0.416193,,,0.391525,,False,False
-Traffic,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.355964,,,,,,False,False
+Traffic,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.355964,0.411527,,,0.383746,,False,False
 Traffic,DLinear,san,61e69def41a7,{},0.378712,0.418338,,,0.398525,,False,False
 Traffic,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.347411,0.410471,0.348349,0.410324,0.378941,0.379138,True,False
-Traffic,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.358761,,,,,,False,False
-Traffic,DLinear,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.348407,,,,,,False,False
-Traffic,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.357406,,,,,,False,False
+Traffic,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.358761,0.413134,,,0.385947,,False,False
+Traffic,DLinear,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.348407,0.412121,,,0.380264,,False,False
+Traffic,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.357406,0.411393,,,0.384400,,False,False
 Traffic,DLinear,san,f6904fc69cd0,{},0.364695,0.413534,,,0.389114,,False,False
 Traffic,DLinear,san,fa33e70a6a3a,{},0.381487,0.422130,,,0.401809,,False,False
 Traffic,TimeFilter,ddn,1c7b90df1d3b,{},0.352620,0.425296,0.356743,0.424976,0.388958,0.389909,False,False

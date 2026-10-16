@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-16T05:05:49+00:00 from 5242 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-16T05:17:07+00:00 from 5250 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,7 +11,7 @@ Generated 2026-10-16T05:05:49+00:00 from 5242 packaged cells. Regenerate with `p
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 2 | 0 | 0 | 0 | 0 |
-| shift-tuned | 6 | 0 | 0 | 2 | 0 |
+| shift-tuned | 6 | 0 | 1 | 1 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 26 | 0 | 2 | 0 | 0 |
@@ -22,10 +22,10 @@ Generated 2026-10-16T05:05:49+00:00 from 5242 packaged cells. Regenerate with `p
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 23 | 0 | 1 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
-| exp2-search | 50 | 2 | 4 | 0 | 0 |
-| exp2-confirm | 48 | 0 | 2 | 6 | 0 |
+| exp2-search | 51 | 1 | 4 | 0 | 0 |
+| exp2-confirm | 49 | 0 | 2 | 5 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 39 | 1 | 8 | 8 | 0 |
+| exp3-tuned | 40 | 1 | 8 | 7 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -88,7 +88,7 @@ Generated 2026-10-16T05:05:49+00:00 from 5242 packaged cells. Regenerate with `p
 | shift-tuned--Weather--DLinear--ddn | done | 3/3 |  |
 | shift-tuned--Weather--DLinear--fan | done | 3/3 |  |
 | shift-tuned--Traffic--DLinear--revin | done | 3/3 |  |
-| shift-tuned--Traffic--DLinear--san | blocked | 0/? |  |
+| shift-tuned--Traffic--DLinear--san | ready | 0/3 |  |
 | shift-tuned--Traffic--DLinear--ddn | blocked | 0/? |  |
 | shift-tuned--Traffic--DLinear--fan | done | 3/3 |  |
 | shift-lt--Weather--DLinear | done | 3/3 |  |
@@ -310,7 +310,7 @@ Generated 2026-10-16T05:05:49+00:00 from 5242 packaged cells. Regenerate with `p
 | exp2-search--Electricity--iTransformer--ddn | ready | 0/12 |  |
 | exp2-search--Electricity--iTransformer--fan | done | 12/12 |  |
 | exp2-search--Traffic--DLinear--revin | done | 4/4 |  |
-| exp2-search--Traffic--DLinear--san | claimed | 8/12 | elice-a100 |
+| exp2-search--Traffic--DLinear--san | done | 12/12 |  |
 | exp2-search--Traffic--DLinear--ddn | ready | 0/12 |  |
 | exp2-search--Traffic--DLinear--fan | done | 12/12 |  |
 | exp2-search--Traffic--iTransformer--revin | done | 4/4 |  |
@@ -366,7 +366,7 @@ Generated 2026-10-16T05:05:49+00:00 from 5242 packaged cells. Regenerate with `p
 | exp2-confirm--Electricity--iTransformer--ddn | blocked | 0/? |  |
 | exp2-confirm--Electricity--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--Traffic--DLinear--san | blocked | 0/? |  |
+| exp2-confirm--Traffic--DLinear--san | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--ddn | blocked | 0/? |  |
 | exp2-confirm--Traffic--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--iTransformer--revin | done | 4/4 |  |
@@ -412,7 +412,7 @@ Generated 2026-10-16T05:05:49+00:00 from 5242 packaged cells. Regenerate with `p
 | exp3-tuned--ETTm1--iTransformer--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm1--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--DLinear--revin | done | 12/12 |  |
-| exp3-tuned--ETTm2--DLinear--san | claimed | 4/12 | itm21-a4000 |
+| exp3-tuned--ETTm2--DLinear--san | claimed | 8/12 | itm21-a4000 |
 | exp3-tuned--ETTm2--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTm2--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTm2--iTransformer--revin | done | 12/12 |  |
@@ -436,7 +436,7 @@ Generated 2026-10-16T05:05:49+00:00 from 5242 packaged cells. Regenerate with `p
 | exp3-tuned--Electricity--iTransformer--ddn | blocked | 0/? |  |
 | exp3-tuned--Electricity--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Traffic--DLinear--revin | done | 12/12 |  |
-| exp3-tuned--Traffic--DLinear--san | blocked | 0/? |  |
+| exp3-tuned--Traffic--DLinear--san | done | 12/12 |  |
 | exp3-tuned--Traffic--DLinear--ddn | blocked | 0/? |  |
 | exp3-tuned--Traffic--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--Traffic--iTransformer--revin | done | 12/12 |  |
