@@ -506,10 +506,14 @@ Electricity,DLinear,fan,d593cedb5f74,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1
 Electricity,DLinear,fan,e4468eada22b,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0001}",0.129380,0.183596,,,0.156488,,False,False
 Electricity,DLinear,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.120089,0.179443,0.120090,0.179448,0.149766,0.149768,True,False
 Electricity,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.120082,0.179356,0.120077,0.179297,0.149719,0.149703,True,True
-Electricity,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.117844,0.172823,,,0.145333,,True,False
+Electricity,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.117844,0.172823,,,0.145333,,False,False
 Electricity,DLinear,san,48f6c1ced712,{},0.118906,0.174158,,,0.146532,,False,False
+Electricity,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.114975,0.168458,,,0.141717,,True,False
 Electricity,DLinear,san,61e69def41a7,{},0.118043,0.170689,,,0.144366,,False,False
 Electricity,DLinear,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.116731,0.169267,0.116862,0.169295,0.142999,0.143038,True,True
+Electricity,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.118508,,,,,,False,False
+Electricity,DLinear,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.114978,,,,,,False,False
+Electricity,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.117237,,,,,,False,False
 Electricity,DLinear,san,f6904fc69cd0,{},0.117503,0.170278,0.117621,0.170263,0.143890,0.143916,False,False
 Electricity,DLinear,san,fa33e70a6a3a,{},0.119735,0.175173,,,0.147454,,False,False
 Electricity,TimeFilter,ddn,1c7b90df1d3b,{},0.112063,0.177221,0.115675,,0.144642,,False,False
