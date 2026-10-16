@@ -288,6 +288,16 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "ETTm2|iTransformer|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "joint_lr": "backbone",
+      "kernel_len": 32,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 0,
+      "wavelet": "coif3"
+    },
     "ETTm2|iTransformer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 6,

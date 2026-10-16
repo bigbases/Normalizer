@@ -43,6 +43,7 @@ ETTm2,TimeFilter,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": 
 ETTm2,TimeFilter,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.202219
 ETTm2,TimeXer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.205677
 ETTm2,TimeXer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.199056
+ETTm2,iTransformer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.202178
 ETTm2,iTransformer,fan,9d16227c5d05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 0.0001}",0.209607
 ETTm2,iTransformer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.228453
 ETTm2,iTransformer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.193106
