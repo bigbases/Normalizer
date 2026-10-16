@@ -87,7 +87,7 @@ def _calibrate_upsample(in_len, out_len, device):
         cols = torch.arange(out_len, device=device)
         matrix.index_put_((i0, cols), w0, accumulate=True)
         matrix.index_put_((i1, cols), w1, accumulate=True)
-        plan = {"i0": i0, "i1": i1, "w0": w0, "w1": w1, "out_len": out_len, "matrix": matrix}
+        plan = {"i0": i0, "i1": i1, "w0": w0, "w1": w1, "in_len": in_len, "out_len": out_len, "matrix": matrix}
         generator = torch.Generator(device=device).manual_seed(0)
         probes = [torch.randn(3, 37, in_len, device=device, generator=generator) * s for s in (1e-3, 1.0, 1e3)]
         kernels = (["triton"] if triton is not None and device.type == "cuda" else []) + ["float64"]
@@ -164,7 +164,11 @@ _FUSED_CODE = {
 }
 _FUSED = {}
 # Above this many predicted values the upsampling gathers inside its Triton
-# kernel instead of materializing both neighbours (memory traffic dominates).
+# kernel instead of materializing both neighbours (memory traffic dominates),
+# and the full-resolution trend forecast is not built in normalize() at all:
+# normalize() returns a TrendForecast holding the H/r-point prediction, and
+# de_normalize() upsamples, inverts and adds it in one Triton kernel. The
+# [B, H, D] trend then never sits in memory while the backbone runs.
 _GATHER_MAX = 1 << 17
 _PAD_INDEX = {}
 
@@ -181,6 +185,146 @@ def _replicate_index(length, pad, device):
     if key not in _PAD_INDEX:
         _PAD_INDEX[key] = torch.arange(-pad, length + pad, device=device).clamp_(0, length - 1)
     return _PAD_INDEX[key]
+
+
+if triton is not None:
+    try:
+        from triton.language.extra.cuda import libdevice as _rn   # Triton >= 3: round-to-nearest intrinsics
+    except ImportError:
+        _rn = tl.math                                              # Triton 2
+
+    @triton.jit
+    def _denorm_kernel(y_ptr, pred_ptr, out_ptr, i0_ptr, i1_ptr, w0_ptr, w1_ptr, sg_ptr, sb_ptr, av_ptr, v_ptr,
+                       tg_ptr, tb_ptr, tav_ptr, tv_ptr, n, H, D, Hd, ys0, ys1, ys2,
+                       S_NORM: tl.constexpr, T_NORM: tl.constexpr, H_FAST: tl.constexpr, WIDE: tl.constexpr,
+                       BLOCK: tl.constexpr):
+        # The "denorm(_norm)" chain with the trend from "inv(_norm)" of linear_upsample(pred),
+        # every step an IEEE round-to-nearest libdevice call (never contracted into an FMA).
+        # 32-bit index arithmetic unless an offset can reach 2**31 (WIDE).
+        if WIDE:
+            offs = tl.program_id(0).to(tl.int64) * BLOCK + tl.arange(0, BLOCK)
+        else:
+            offs = tl.program_id(0) * BLOCK + tl.arange(0, BLOCK)
+        mask = offs < n
+        if H_FAST:                                  # output stored as [B, D, H], like y
+            j = offs % H
+            bd = offs // H
+            d = bd % D
+            b = bd // D
+        else:                                       # output stored as [B, H, D]
+            d = offs % D
+            bh = offs // D
+            j = bh % H
+            b = bh // H
+            bd = b * D + d
+        row = bd * Hd
+        a = tl.load(pred_ptr + row + tl.load(i0_ptr + j, mask=mask, other=0), mask=mask, other=0.0)
+        c = tl.load(pred_ptr + row + tl.load(i1_ptr + j, mask=mask, other=0), mask=mask, other=0.0)
+        p = tl.math.fma(tl.load(w0_ptr + j, mask=mask, other=0.0), a,
+                        _rn.mul_rn(tl.load(w1_ptr + j, mask=mask, other=0.0), c))
+        tg = tl.load(tg_ptr + d, mask=mask, other=1.0)
+        tb = tl.load(tb_ptr + d, mask=mask, other=0.0)
+        tr = _rn.div_rn(_rn.sub_rn(p, tb), _rn.add_rn(tg, 1e-12))
+        if T_NORM:
+            tv = tl.load(tv_ptr + bd, mask=mask, other=1.0)
+            tr = _rn.add_rn(_rn.mul_rn(tr, _rn.sqrt_rn(_rn.add_rn(tv, 1e-8))),
+                                tl.load(tav_ptr + bd, mask=mask, other=0.0))
+        y = tl.load(y_ptr + b * ys0 + j * ys1 + d * ys2, mask=mask, other=0.0)
+        x = _rn.div_rn(_rn.sub_rn(y, tl.load(sb_ptr + d, mask=mask, other=0.0)),
+                           tl.load(sg_ptr + d, mask=mask, other=1.0))
+        if S_NORM:
+            v = tl.load(v_ptr + bd, mask=mask, other=1.0)
+            x = _rn.add_rn(_rn.mul_rn(x, _rn.sqrt_rn(_rn.add_rn(v, 1e-8))),
+                               tl.load(av_ptr + bd, mask=mask, other=0.0))
+        tl.store(out_ptr + offs, _rn.add_rn(x, tr), mask=mask)
+
+
+_DENORM_OK = {}
+
+
+class TrendForecast:
+    """The trend forecast of a fused normalize() pass, kept at H/r points until de_normalize().
+
+    LightNorm.de_normalize() turns it into the forecast directly. Anything else that
+    uses it as a tensor (torch functions, indexing, tensor attributes) gets the
+    [B, H, D] trend, with the same values as before.
+    """
+
+    def __init__(self, pred, plan, t_gamma, t_beta, t_avg, t_var):
+        self.pred, self.plan = pred.contiguous(), plan
+        self.t_gamma, self.t_beta = t_gamma, t_beta
+        self.t_avg = None if t_avg is None else t_avg.contiguous()
+        self.t_var = None if t_var is None else t_var.contiguous()
+        self.shape = torch.Size((pred.shape[0], plan["out_len"], pred.shape[1]))
+
+    device = property(lambda self: self.pred.device)
+    dtype = property(lambda self: self.pred.dtype)
+
+    def materialize(self):
+        p = linear_upsample(self.pred, self.plan["out_len"]).transpose(1, 2)
+        if self.t_var is not None:
+            return _fused("inv_norm")(p, self.t_gamma, self.t_beta, self.t_avg, self.t_var)
+        return _fused("inv")(p, self.t_gamma, self.t_beta)
+
+    def denormalize(self, y, s_gamma, s_beta, avg, var):
+        """de_normalize(y, trend) for y [B, H, D] in one kernel (no [B, H, D] intermediates)."""
+        B, H, D = self.shape
+        h_fast = y.stride(1) < y.stride(2)
+        out = torch.empty((B, D, H) if h_fast else (B, H, D), dtype=y.dtype, device=y.device)
+        plan, n = self.plan, out.numel()
+        span = 1 + sum((size - 1) * stride for size, stride in zip(y.shape, y.stride()))
+        wide = max(n, span) + 1024 >= 2 ** 31
+        _denorm_kernel[(triton.cdiv(n, 1024),)](
+            y, self.pred, out, plan["i0"], plan["i1"], plan["w0"], plan["w1"], s_gamma, s_beta,
+            y if avg is None else avg.contiguous(), y if var is None else var.contiguous(),
+            self.t_gamma, self.t_beta, y if self.t_avg is None else self.t_avg,
+            y if self.t_var is None else self.t_var, n, H, D, self.pred.shape[-1], *y.stride(),
+            S_NORM=avg is not None, T_NORM=self.t_var is not None, H_FAST=h_fast, WIDE=wide, BLOCK=1024)
+        return out.transpose(1, 2) if h_fast else out
+
+    @classmethod
+    def __torch_function__(cls, func, types, args=(), kwargs=None):
+        from torch.utils._pytree import tree_map
+        unwrap = lambda a: a.materialize() if isinstance(a, cls) else a  # noqa: E731
+        return func(*tree_map(unwrap, args), **tree_map(unwrap, kwargs or {}))
+
+    def __getitem__(self, index):
+        return self.materialize()[index]
+
+    def __getattr__(self, name):
+        if name.startswith("__") or name in ("pred", "plan", "t_gamma", "t_beta", "t_avg", "t_var", "shape"):
+            raise AttributeError(name)
+        return getattr(self.materialize(), name)
+
+
+def _denorm_kernel_ok(plan, s_norm, t_norm, device):
+    """Check once per case that the kernel gives the values of the jiterator chain exactly."""
+    key = (device.type, device.index, plan["in_len"], plan["out_len"], s_norm, t_norm)
+    if key not in _DENORM_OK:
+        ok = False
+        if triton is not None and plan["kernel"] == "triton":
+            try:
+                with torch.no_grad():
+                    g = torch.Generator(device=device).manual_seed(0)
+                    rand = lambda *s: torch.randn(*s, device=device, generator=g)  # noqa: E731
+                    B, D, H, Hd = 3, 37, plan["out_len"], plan["in_len"]
+                    ok = True
+                    for scale in (1e-3, 1.0, 1e3):
+                        pred = rand(B, D, Hd) * scale
+                        tg, tb, sg, sb = rand(D).abs() + 0.1, rand(D), rand(D).abs() + 0.1, rand(D)
+                        tav, sav = rand(B, 1, D) * scale, rand(B, 1, D) * scale
+                        tvar, svar = rand(B, 1, D).abs() * scale, rand(B, 1, D).abs() * scale
+                        trend = TrendForecast(pred, plan, tg, tb, tav if t_norm else None, tvar if t_norm else None)
+                        ref_t = trend.materialize()
+                        for y in (rand(B, H, D) * scale, rand(B, D, H).transpose(1, 2) * scale):
+                            ref = (_fused("denorm_norm")(y, sg, sb, sav, svar, ref_t) if s_norm
+                                   else _fused("denorm")(y, sg, sb, ref_t))
+                            got = trend.denormalize(y, sg, sb, sav if s_norm else None, svar if s_norm else None)
+                            ok = ok and torch.equal(ref, got)
+            except Exception:  # e.g. Triton cannot compile here
+                ok = False
+        _DENORM_OK[key] = ok
+    return _DENORM_OK[key]
 
 
 class DownUpTrendPredictor(nn.Module):
@@ -279,7 +423,11 @@ class Model(nn.Module):
         if key not in _UPSAMPLE_PLANS:
             _UPSAMPLE_PLANS[key] = _calibrate_upsample(pred.shape[-1], predictor.pred_len, x.device)
         plan = _UPSAMPLE_PLANS[key]
-        if plan is not None and pred.numel() <= _GATHER_MAX:
+        if plan is not None and pred.numel() > _GATHER_MAX and _denorm_kernel_ok(plan, bool(self.s_norm),
+                                                                                 bool(self.t_norm), x.device):
+            trend_out = TrendForecast(pred, plan, tg, tb, t_avg if self.t_norm else None,
+                                      t_var if self.t_norm else None)
+        elif plan is not None and pred.numel() <= _GATHER_MAX:
             pred = pred.contiguous()
             a = pred.index_select(-1, plan["i0"]).transpose(1, 2)                          # [B, H, D]
             b = pred.index_select(-1, plan["i1"]).transpose(1, 2)
@@ -332,6 +480,10 @@ class Model(nn.Module):
     def de_normalize(self, x, statistics):
         # batch_x: B*H*D (forecasts)
         trend_out = statistics
+        if isinstance(trend_out, TrendForecast):
+            if self._fusable(x) and x.shape == trend_out.shape:
+                return trend_out.denormalize(x, self.s_gamma, self.s_beta, self.avg, self.var)
+            trend_out = trend_out.materialize()
         if getattr(self, "_fused_pass", False):
             if self._fusable(x):
                 return (_fused("denorm_norm")(x, self.s_gamma, self.s_beta, self.avg, self.var, trend_out)

@@ -84,10 +84,41 @@ class LightNormFusedInferenceTest(unittest.TestCase):
             with torch.no_grad():                          # fused path
                 f_x, f_t = model.normalize(x)
                 self.assertTrue(model._fused_pass)
+                deferred = batch * channels * (pred_len // ratio) > fast._GATHER_MAX and fast.triton is not None
+                self.assertEqual(isinstance(f_t, fast.TrendForecast), deferred)
                 f_y = model.de_normalize(y, f_t)
-            for a, b in ((e_x, f_x), (e_t, f_t), (e_y, f_y)):
-                self.assertTrue(torch.equal(self.bits(a.detach()), self.bits(b)),
-                                (seq_len, pred_len, channels, kernel, ratio, s_norm, t_norm, use_mlp, batch))
+                f_y_strided = model.de_normalize(y.transpose(1, 2).contiguous().transpose(1, 2), f_t)
+                if deferred:
+                    f_t = f_t.materialize()
+            case = (seq_len, pred_len, channels, kernel, ratio, s_norm, t_norm, use_mlp, batch)
+            for a, b in ((e_x, f_x), (e_t, f_t), (e_y, f_y), (e_y, f_y_strided)):
+                self.assertTrue(torch.equal(self.bits(a.detach()), self.bits(b)), case)
+
+    def test_deferred_trend_acts_as_tensor_and_saves_memory(self):
+        dev = torch.device("cuda")
+        batch, seq_len, pred_len, channels = 32, 336, 720, 862
+        cfg = Namespace(enc_in=channels, seq_len=seq_len, pred_len=pred_len, kernel_size=25, s_norm=1,
+                        t_norm=1, affine=1, use_mlp=0, down_ratio=4, t_ff=64)
+        torch.manual_seed(0)
+        model = fast.Model(cfg).to(dev).eval()
+        x = torch.randn(batch, seq_len, channels, device=dev)
+        with torch.enable_grad():
+            _, e_t = model.normalize(x)
+        e_t = e_t.detach()
+        with torch.no_grad():
+            model.normalize(x)                             # warm-up: plans, index caches, kernel check
+            torch.cuda.synchronize()
+            before = torch.cuda.memory_allocated()
+            f_x, f_t = model.normalize(x)
+            held = torch.cuda.memory_allocated() - before - f_x.numel() * f_x.element_size()
+            self.assertIsInstance(f_t, fast.TrendForecast)
+            self.assertLess(held, e_t.numel() * e_t.element_size() // 3)
+            target = torch.randn_like(e_t)
+            self.assertEqual(f_t.shape, e_t.shape)
+            self.assertTrue(torch.equal(F.mse_loss(f_t, target), F.mse_loss(e_t, target)))
+            self.assertTrue(torch.equal(target - f_t, target - e_t))
+            self.assertTrue(torch.equal(f_t[:, :, -1:], e_t[:, :, -1:]))
+            self.assertTrue(torch.equal(f_t.detach(), e_t))
 
 
 if __name__ == "__main__":

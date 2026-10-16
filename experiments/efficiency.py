@@ -27,6 +27,7 @@ Run it only when nothing else uses the GPU (stop the worker first):
 """
 import argparse
 import csv
+import gc
 import json
 import math
 import os
@@ -298,31 +299,45 @@ def train_step_ms(step, x, y, xm, ym, opts):
         return "OOM", ""
 
 
+def new_exp(args):
+    """A fresh model pair in eval mode. Each method is built and measured on its own, so the
+    peak memory of a method holds only its own weights, gradients and optimizer state."""
+    run_longExp.set_seed(2021, deterministic=False)
+    exp = Exp_Main(args)
+    exp.model.eval()
+    exp.station.eval()
+    return exp
+
+
+def release():
+    gc.collect()
+    torch.cuda.empty_cache()
+
+
 def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, device, env, out):
     done = opts.done_cases
     todo = [m for m in methods if (dataset, backbone, m, str(horizon)) not in done]
     if not todo:
         return
-    exps = {}
+    specs = {}
     for method in methods:
         try:
-            args, params = build_args(protocol, bases, dataset, backbone, method, horizon)
+            specs[method] = build_args(protocol, bases, dataset, backbone, method, horizon)
         except KeyError as exc:  # e.g. FAN has no settings for TimeXer/TimeFilter (not run there)
             log(f"{dataset}/{backbone}/H{horizon}: {method} skipped, no settings ({exc})")
             todo = [m for m in todo if m != method]
-            continue
-        run_longExp.set_seed(2021, deterministic=False)
-        exp = Exp_Main(args)
-        exp.model.eval()
-        exp.station.eval()
-        exps[method] = (exp, args, params)
     # one maximum batch for every method of the case, so throughput is compared at equal batch size
-    common = min(max_batch(exp, args, device, opts.max_batch) for exp, args, _ in exps.values())
+    sizes = []
+    for args, _ in specs.values():
+        sizes.append(max_batch(new_exp(args), args, device, opts.max_batch))
+        release()
+    common = min(sizes)
     log(f"{dataset}/{backbone}/H{horizon}: common max batch {common}")
 
-    for method, (exp, args, params) in exps.items():
+    for method, (args, params) in specs.items():
         if method not in todo:
             continue
+        exp = new_exp(args)
         own = lambda: torch.cuda.memory_reserved() / 2 ** 20  # noqa: E731
         idle = wait_until_idle(opts.gpu, own, opts.idle_tries)
         row = {"Timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"), **env,
@@ -358,9 +373,7 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
         if pretrain is not None:
             row["TrainPreStepMs"], row["TrainPrePeakMiB"] = train_step_ms(pretrain, x, y, xm, ym, opts)
         row["TrainJointStepMs"], row["TrainJointPeakMiB"] = train_step_ms(joint, x, y, xm, ym, opts)
-        exp.model.eval()
-        exp.station.eval()
-        del x, y, xm, ym
+        del x, y, xm, ym, pretrain, joint  # the closures hold the optimizers (and so the model)
         if method == "lt":  # LightNorm's upsampling path on this device (triton / float64 / F.interpolate)
             row["UpsampleKernel"] = ",".join(sorted(
                 (plan or {}).get("kernel", "interpolate") for key, plan in lightnorm._UPSAMPLE_PLANS.items()
@@ -371,8 +384,8 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
         log(f"  {method:5s} e2e B1 {row['LatB1MeanMs']:.2f} ms, Bmax {row['LatBmaxMeanMs']:.1f} ms, "
             f"module {row['ModuleLatB1MeanMs']:.2f} ms, joint step "
             f"{joint_ms if isinstance(joint_ms, str) else f'{joint_ms:.1f} ms'}")
-    del exps
-    torch.cuda.empty_cache()
+        del exp
+        release()
 
 
 def bench_scaling(protocol, bases, dataset, methods, horizon, lengths, device, env, out, done=frozenset()):
