@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-16T01:51:57+00:00 from 5126 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-16T02:07:24+00:00 from 5138 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -25,7 +25,7 @@ Generated 2026-10-16T01:51:57+00:00 from 5126 packaged cells. Regenerate with `p
 | exp2-search | 48 | 0 | 8 | 0 | 0 |
 | exp2-confirm | 48 | 0 | 0 | 8 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 32 | 1 | 15 | 8 | 0 |
+| exp3-tuned | 33 | 1 | 14 | 8 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -392,8 +392,8 @@ Generated 2026-10-16T01:51:57+00:00 from 5126 packaged cells. Regenerate with `p
 | exp3-tuned--ETTh1--DLinear--ddn | ready | 0/12 |  |
 | exp3-tuned--ETTh1--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--ETTh1--iTransformer--revin | done | 12/12 |  |
-| exp3-tuned--ETTh1--iTransformer--san | ready | 0/12 |  |
-| exp3-tuned--ETTh1--iTransformer--ddn | claimed | 0/12 | itm21-a4000 |
+| exp3-tuned--ETTh1--iTransformer--san | claimed | 0/12 | itm21-a4000 |
+| exp3-tuned--ETTh1--iTransformer--ddn | done | 12/12 |  |
 | exp3-tuned--ETTh1--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--ETTh2--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--ETTh2--DLinear--san | done | 12/12 |  |
