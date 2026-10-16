@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-16T14:32:07+00:00 from 5358 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-16T17:13:50+00:00 from 5361 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,11 +11,11 @@ Generated 2026-10-16T14:32:07+00:00 from 5358 packaged cells. Regenerate with `p
 | lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | lt-kernel-check | 4 | 0 | 0 | 0 | 0 |
 | shift-none | 2 | 0 | 0 | 0 | 0 |
-| shift-tuned | 6 | 0 | 1 | 1 | 0 |
+| shift-tuned | 7 | 0 | 0 | 1 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 26 | 0 | 2 | 0 | 0 |
-| t3-confirm | 24 | 0 | 2 | 2 | 0 |
+| t3-confirm | 24 | 1 | 1 | 2 | 0 |
 | t3-lt-search | 11 | 0 | 3 | 0 | 0 |
 | t3-lt-struct | 10 | 0 | 1 | 3 | 0 |
 | t3-lt-confirm | 10 | 0 | 0 | 4 | 0 |
@@ -88,7 +88,7 @@ Generated 2026-10-16T14:32:07+00:00 from 5358 packaged cells. Regenerate with `p
 | shift-tuned--Weather--DLinear--ddn | done | 3/3 |  |
 | shift-tuned--Weather--DLinear--fan | done | 3/3 |  |
 | shift-tuned--Traffic--DLinear--revin | done | 3/3 |  |
-| shift-tuned--Traffic--DLinear--san | ready | 0/3 |  |
+| shift-tuned--Traffic--DLinear--san | done | 3/3 |  |
 | shift-tuned--Traffic--DLinear--ddn | blocked | 0/? |  |
 | shift-tuned--Traffic--DLinear--fan | done | 3/3 |  |
 | shift-lt--Weather--DLinear | done | 3/3 |  |
@@ -143,7 +143,7 @@ Generated 2026-10-16T14:32:07+00:00 from 5358 packaged cells. Regenerate with `p
 | t3-confirm--Weather--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--Electricity--TimeXer--san | blocked | 0/? |  |
 | t3-confirm--Electricity--TimeXer--ddn | done | 4/4 |  |
-| t3-confirm--Traffic--TimeXer--san | ready | 0/4 |  |
+| t3-confirm--Traffic--TimeXer--san | claimed | 0/4 | itm24-pro6000 |
 | t3-confirm--Traffic--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeFilter--san | done | 4/4 |  |
 | t3-confirm--ETTh1--TimeFilter--ddn | done | 4/4 |  |
