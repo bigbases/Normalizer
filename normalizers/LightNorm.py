@@ -1,3 +1,5 @@
+from contextlib import nullcontext
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -242,13 +244,35 @@ if triton is not None:
 _DENORM_OK = {}
 
 
-class TrendForecast:
-    """The trend forecast of a fused normalize() pass, kept at H/r points until de_normalize().
+class _DeferredTrend:
+    """A trend forecast that is built only where it is used.
 
-    LightNorm.de_normalize() turns it into the forecast directly. Anything else that
-    uses it as a tensor (torch functions, indexing, tensor attributes) gets the
-    [B, H, D] trend, with the same values as before.
-    """
+    LightNorm.de_normalize() consumes it directly. Anything else that uses it as a
+    tensor (torch functions, indexing, tensor attributes) gets the [B, H, D] trend,
+    with the same values as an immediately built one."""
+
+    _FIELDS = ()
+
+    @classmethod
+    def __torch_function__(cls, func, types, args=(), kwargs=None):
+        from torch.utils._pytree import tree_map
+        unwrap = lambda a: a.materialize() if isinstance(a, _DeferredTrend) else a  # noqa: E731
+        return func(*tree_map(unwrap, args), **tree_map(unwrap, kwargs or {}))
+
+    def __getitem__(self, index):
+        return self.materialize()[index]
+
+    def __getattr__(self, name):
+        if name.startswith("__") or name in type(self)._FIELDS:
+            raise AttributeError(name)
+        return getattr(self.materialize(), name)
+
+
+class TrendForecast(_DeferredTrend):
+    """The trend forecast of a fused (no-gradient) normalize() pass, kept at H/r points;
+    de_normalize() upsamples, inverts and adds it in one kernel."""
+
+    _FIELDS = ("pred", "plan", "t_gamma", "t_beta", "t_avg", "t_var", "shape")
 
     def __init__(self, pred, plan, t_gamma, t_beta, t_avg, t_var):
         self.pred, self.plan = pred.contiguous(), plan
@@ -282,19 +306,106 @@ class TrendForecast:
             S_NORM=avg is not None, T_NORM=self.t_var is not None, H_FAST=h_fast, WIDE=wide, BLOCK=1024)
         return out.transpose(1, 2) if h_fast else out
 
-    @classmethod
-    def __torch_function__(cls, func, types, args=(), kwargs=None):
-        from torch.utils._pytree import tree_map
-        unwrap = lambda a: a.materialize() if isinstance(a, cls) else a  # noqa: E731
-        return func(*tree_map(unwrap, args), **tree_map(unwrap, kwargs or {}))
 
-    def __getitem__(self, index):
-        return self.materialize()[index]
+class _Recompute:
+    """Saved-tensor hooks of the training pass.
 
-    def __getattr__(self, name):
-        if name.startswith("__") or name in ("pred", "plan", "t_gamma", "t_beta", "t_avg", "t_var", "shape"):
-            raise AttributeError(name)
-        return getattr(self.materialize(), name)
+    Autograd keeps a recipe instead of a registered activation (or a view of it) and
+    rebuilds it with the same operations when backward needs it. The backward formulas
+    and kernels are the standard ones and the rebuilt tensor has the same values and
+    strides, so every gradient is unchanged; the activation just does not stay in memory
+    between forward and backward."""
+
+    def __init__(self):
+        self.recipes = {}
+
+    def add(self, base, fn):
+        self.recipes[base.untyped_storage().data_ptr()] = (fn, base.storage_offset(), base.stride())
+
+    def hooks(self):
+        return torch.autograd.graph.saved_tensors_hooks(self._pack, self._unpack)
+
+    def _pack(self, t):
+        entry = self.recipes.get(t.untyped_storage().data_ptr())
+        if entry is None:
+            return t
+        fn, offset, stride = entry
+        return _Recipe(fn, stride, t.size(), t.stride(), t.storage_offset() - offset)
+
+    @staticmethod
+    def _unpack(packed):
+        if not isinstance(packed, _Recipe):
+            return packed
+        with torch.no_grad():
+            base = packed.fn()
+        if base.stride() != packed.base_stride:
+            raise RuntimeError("LightNorm: a recomputed activation has another layout than the original")
+        return base.as_strided(packed.size, packed.stride, base.storage_offset() + packed.offset)
+
+
+class _Recipe:
+    __slots__ = ("fn", "base_stride", "size", "stride", "offset")
+
+    def __init__(self, fn, base_stride, size, stride, offset):
+        self.fn, self.base_stride, self.size, self.stride, self.offset = fn, base_stride, size, stride, offset
+
+
+# Training passes keep less of LightNorm's large activations for backward (same gradients):
+# the trend forecast stays on the H/r grid until de_normalize(), the two forecast-size
+# differences saved by the inverse divisions are rebuilt in backward, and the average-pool
+# input is not kept (its backward reads only the shape). False keeps every activation, as
+# autograd does by default. Tensors under _SAVE_LESS_MIN values are kept: they are small and
+# rebuilding them would only cost time. (Rebuilding the input-size residual and trend as
+# well saved more memory but cost 2-5% of the training step, so they are kept.)
+_TRAIN_SAVE_LESS = True
+_SAVE_LESS_MIN = 1 << 22
+
+
+def _saving_less(base, fn):
+    """Context around one operation: autograd keeps the recipe fn instead of base (or views of it)."""
+    rec = _Recompute()
+    rec.add(base, fn)
+    return rec.hooks()
+
+
+class _TrainingTrend(_DeferredTrend):
+    """The trend forecast of a training (gradient) pass, kept at H/r points.
+
+    It is upsampled and inverted (the eager operations, so with gradients) where it is
+    used, and the difference saved by the inverse affine division is rebuilt in
+    backward from the H/r-point prediction. A trend used as a tensor (e.g. by a loss)
+    is built once and shared, as a tensor would be; de_normalize() uses that one, or
+    builds its own without keeping it when it is the only user."""
+
+    _FIELDS = ("pred_down", "model", "trend_avg", "trend_std", "shape", "_built")
+
+    def __init__(self, model, pred_down, trend_avg, trend_std):
+        self.model, self.pred_down, self.trend_avg, self.trend_std = model, pred_down, trend_avg, trend_std
+        self.shape = torch.Size((pred_down.shape[0], model.trend_predictor.pred_len, pred_down.shape[2]))
+        self._built = None
+
+    device = property(lambda self: self.pred_down.device)
+    dtype = property(lambda self: self.pred_down.dtype)
+
+    def materialize(self):
+        if self._built is None:
+            self._built = self._build()
+        return self._built
+
+    def consume(self):
+        return self._build() if self._built is None else self._built
+
+    def _build(self):
+        # the recipe must not refer to self: self keeps the built trend, whose graph keeps the
+        # recipe, and that cycle runs through autograd nodes that Python's collector cannot see
+        m, pred_down, pred_len = self.model, self.pred_down, self.model.trend_predictor.pred_len
+        upsample = lambda: linear_upsample(pred_down.transpose(1, 2), pred_len).transpose(1, 2)  # noqa: E731
+        shifted = upsample() - m.t_beta
+        with _saving_less(shifted, lambda: upsample() - m.t_beta):
+            trend_out = shifted / (m.t_gamma + 1e-12)
+        if m.t_norm:
+            trend_out = trend_out * self.trend_std + self.trend_avg
+        return trend_out
 
 
 def _denorm_kernel_ok(plan, s_norm, t_norm, device):
@@ -345,14 +456,18 @@ class DownUpTrendPredictor(nn.Module):
         else:
             self.linear = nn.Linear(self.down_len, max(1, pred_len // down_ratio))
 
+    def predict_down(self, trend):
+        """trend [B, L, D] -> prediction on the downsampled grid [B, H//r, D]."""
+        # D 차원 각각 독립적으로 처리
+        trend_down = F.avg_pool1d(trend.transpose(1,2), kernel_size=self.down_ratio).transpose(1,2)  # [B, L//r, D]
+        return self.linear(trend_down.transpose(1,2)).transpose(1,2)  # [B, H//r, D]
+
     def forward(self, trend):
         """
         trend: [B, L, D]
         return: [B, H, D]
         """
-        # D 차원 각각 독립적으로 처리
-        trend_down = F.avg_pool1d(trend.transpose(1,2), kernel_size=self.down_ratio).transpose(1,2)  # [B, L//r, D]
-        pred_down = self.linear(trend_down.transpose(1,2)).transpose(1,2)  # [B, H//r, D]
+        pred_down = self.predict_down(trend)
         trend_up = linear_upsample(pred_down.transpose(1,2), self.pred_len).transpose(1,2)
         return trend_up
 
@@ -445,6 +560,7 @@ class Model(nn.Module):
         if self._fusable(batch_x):
             return self._normalize_fused(batch_x)
         self._fused_pass = False
+        training = (_TRAIN_SAVE_LESS and torch.is_grad_enabled() and isinstance(self.s_gamma, nn.Parameter))
         batch_x, trend = self._decompose(batch_x)
 
         # Without s_norm/t_norm the statistics are 0 and 1, and in float32
@@ -461,6 +577,7 @@ class Model(nn.Module):
         self.avg, self.var, self.std = avg, var, std
         batch_x = batch_x.mul(self.s_gamma) + self.s_beta
 
+        trend_avg = trend_std = None
         if self.t_norm:
             trend_avg = trend.mean(dim=1, keepdim=True).detach()
             trend_var = trend.var(dim=1, keepdim=True, unbiased=False).detach()
@@ -468,7 +585,19 @@ class Model(nn.Module):
             trend = (trend - trend_avg) / trend_std
         trend = trend.mul(self.t_gamma) + self.t_beta
 
-        trend_out = self.trend_predictor(trend)
+        predictor = self.trend_predictor
+        if training and trend.numel() >= _SAVE_LESS_MIN:
+            # the average-pool backward reads only the shape and layout of its input
+            shape, stride, dtype, device = trend.shape, trend.stride(), trend.dtype, trend.device
+            with _saving_less(trend, lambda: torch.empty_strided(shape, stride, dtype=dtype, device=device)):
+                pred_down = predictor.predict_down(trend)
+        else:
+            pred_down = predictor.predict_down(trend)
+        if training and pred_down.shape[0] * predictor.pred_len * pred_down.shape[2] >= _SAVE_LESS_MIN:
+            # the trend forecast stays on the H/r grid until de_normalize()
+            return batch_x, _TrainingTrend(self, pred_down, trend_avg, trend_std)
+
+        trend_out = linear_upsample(pred_down.transpose(1, 2), predictor.pred_len).transpose(1, 2)
 
         # affine inverse (gamma/beta가 Parameter면 device는 맞아있음)
         trend_out = (trend_out - self.t_beta) / (self.t_gamma + 1e-12)
@@ -480,9 +609,11 @@ class Model(nn.Module):
     def de_normalize(self, x, statistics):
         # batch_x: B*H*D (forecasts)
         trend_out = statistics
-        if isinstance(trend_out, TrendForecast):
-            if self._fusable(x) and x.shape == trend_out.shape:
-                return trend_out.denormalize(x, self.s_gamma, self.s_beta, self.avg, self.var)
+        if isinstance(trend_out, TrendForecast) and self._fusable(x) and x.shape == trend_out.shape:
+            return trend_out.denormalize(x, self.s_gamma, self.s_beta, self.avg, self.var)
+        if isinstance(trend_out, _TrainingTrend):
+            trend_out = trend_out.consume()
+        elif isinstance(trend_out, _DeferredTrend):
             trend_out = trend_out.materialize()
         if getattr(self, "_fused_pass", False):
             if self._fusable(x):
@@ -490,7 +621,11 @@ class Model(nn.Module):
                         if self.s_norm else _fused("denorm")(x, self.s_gamma, self.s_beta, trend_out))
             if self.s_norm and self.std is None:
                 self.std = torch.sqrt(self.var + 1e-8)
-        x = (x - self.s_beta) / self.s_gamma
+        forecast, shifted = x, x - self.s_beta
+        save_less = (_TRAIN_SAVE_LESS and torch.is_grad_enabled() and isinstance(self.s_gamma, nn.Parameter)
+                     and x.numel() >= _SAVE_LESS_MIN)
+        with _saving_less(shifted, lambda: forecast - self.s_beta) if save_less else nullcontext():
+            x = shifted / self.s_gamma
         if self.s_norm:
             x = x * self.std + self.avg
         x = x + trend_out

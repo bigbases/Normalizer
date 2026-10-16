@@ -1,5 +1,7 @@
+import gc
 import itertools
 import unittest
+import weakref
 from argparse import Namespace
 
 import torch
@@ -51,6 +53,72 @@ class LightNormSpeedUpTest(unittest.TestCase):
                 self.assertTrue(torch.equal(a, b))
             for a, b in zip(results[0][3], results[1][3]):
                 torch.testing.assert_close(a, b, rtol=1e-5, atol=1e-7)
+
+
+class TrainingSaveLessTest(unittest.TestCase):
+    """Rebuilding activations in backward must leave every output and gradient bit for bit unchanged."""
+
+    def setUp(self):
+        self.min_size, fast._SAVE_LESS_MIN = fast._SAVE_LESS_MIN, 0   # rebuild at every size here
+
+    def tearDown(self):
+        fast._SAVE_LESS_MIN = self.min_size
+
+    def run_step(self, model, backbone, x, target, mode, save_less):
+        fast._TRAIN_SAVE_LESS = save_less
+        try:
+            params = [p for p in list(model.parameters()) + list(backbone.parameters())]
+            for p in params:
+                p.grad = None
+            xn, trend = model.normalize(x)
+            out = backbone(xn.transpose(1, 2)).transpose(1, 2)
+            if mode == "pretrain":                        # station loss on the trend
+                loss = F.mse_loss(trend, target)
+                forecast = None
+            elif mode == "joint":                         # forecast loss (the training loop)
+                forecast = model.de_normalize(out, trend)
+                loss = F.mse_loss(forecast, target)
+            else:                                         # trend used as a tensor, then de-normalized
+                aux = F.mse_loss(trend, target)
+                forecast = model.de_normalize(out, trend)
+                loss = F.mse_loss(forecast, target) + 0.5 * aux
+            loss.backward()
+            return [xn.detach(), loss.detach()] + ([] if forecast is None else [forecast.detach()]) + \
+                [p.grad.clone() for p in params if p.grad is not None]
+        finally:
+            fast._TRAIN_SAVE_LESS = True
+
+    def test_same_outputs_and_gradients(self):
+        for mode, kernel, s_norm, t_norm, use_mlp, (seq_len, pred_len, channels) in itertools.product(
+                ("joint", "pretrain", "both"), (13, 49), (0, 1), (0, 1), (0, 1), ((96, 96, 7), (336, 720, 21))):
+            cfg = Namespace(enc_in=channels, seq_len=seq_len, pred_len=pred_len, kernel_size=kernel, s_norm=s_norm,
+                            t_norm=t_norm, affine=1, use_mlp=use_mlp, down_ratio=4, t_ff=64)
+            torch.manual_seed(kernel + s_norm + 3 * t_norm + use_mlp + seq_len)
+            model, backbone = fast.Model(cfg), torch.nn.Linear(seq_len, pred_len)
+            with torch.no_grad():
+                for p in model.parameters():
+                    p.add_(0.1 * torch.randn_like(p))
+            x = torch.randn(4, seq_len, channels) * 3 + torch.linspace(0, 5, seq_len)[None, :, None]
+            target = torch.randn(4, pred_len, channels)
+            kept = self.run_step(model, backbone, x, target, mode, False)
+            rebuilt = self.run_step(model, backbone, x, target, mode, True)
+            self.assertEqual(len(kept), len(rebuilt))
+            for a, b in zip(kept, rebuilt):
+                self.assertTrue(torch.equal(a, b), (mode, kernel, s_norm, t_norm, use_mlp, seq_len, pred_len))
+
+    def test_no_reference_cycle(self):
+        cfg = Namespace(enc_in=7, seq_len=96, pred_len=96, kernel_size=25, s_norm=1, t_norm=1, affine=1,
+                        use_mlp=0, down_ratio=4, t_ff=64)
+        model = fast.Model(cfg)
+        x = torch.randn(2, 96, 7)
+        xn, trend = model.normalize(x)
+        self.assertIsInstance(trend, fast._TrainingTrend)
+        aux = F.mse_loss(trend, torch.zeros(2, 96, 7))      # builds and keeps the trend
+        forecast = model.de_normalize(xn, trend)
+        ref = weakref.ref(trend)
+        del xn, trend, aux, forecast
+        gc.collect()
+        self.assertIsNone(ref())
 
 
 @unittest.skipUnless(torch.cuda.is_available() and fast._jiterator is not None, "needs CUDA and jiterator")
