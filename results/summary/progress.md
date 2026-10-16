@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-16T04:38:37+00:00 from 5223 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-16T04:46:51+00:00 from 5226 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -22,8 +22,8 @@ Generated 2026-10-16T04:38:37+00:00 from 5223 packaged cells. Regenerate with `p
 | t3-none | 13 | 0 | 1 | 0 | 0 |
 | t3-tuned | 23 | 0 | 1 | 4 | 0 |
 | t3-lt-tuned | 10 | 0 | 0 | 4 | 0 |
-| exp2-search | 48 | 2 | 6 | 0 | 0 |
-| exp2-confirm | 48 | 0 | 0 | 8 | 0 |
+| exp2-search | 49 | 1 | 6 | 0 | 0 |
+| exp2-confirm | 48 | 0 | 1 | 7 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | exp3-tuned | 39 | 1 | 8 | 8 | 0 |
 
@@ -302,7 +302,7 @@ Generated 2026-10-16T04:38:37+00:00 from 5223 packaged cells. Regenerate with `p
 | exp2-search--Weather--iTransformer--ddn | done | 12/12 |  |
 | exp2-search--Weather--iTransformer--fan | done | 12/12 |  |
 | exp2-search--Electricity--DLinear--revin | done | 4/4 |  |
-| exp2-search--Electricity--DLinear--san | claimed | 9/12 | elice-a100 |
+| exp2-search--Electricity--DLinear--san | done | 12/12 |  |
 | exp2-search--Electricity--DLinear--ddn | ready | 0/12 |  |
 | exp2-search--Electricity--DLinear--fan | done | 12/12 |  |
 | exp2-search--Electricity--iTransformer--revin | done | 4/4 |  |
@@ -358,7 +358,7 @@ Generated 2026-10-16T04:38:37+00:00 from 5223 packaged cells. Regenerate with `p
 | exp2-confirm--Weather--iTransformer--ddn | done | 4/4 |  |
 | exp2-confirm--Weather--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--Electricity--DLinear--san | blocked | 0/? |  |
+| exp2-confirm--Electricity--DLinear--san | ready | 0/4 |  |
 | exp2-confirm--Electricity--DLinear--ddn | blocked | 0/? |  |
 | exp2-confirm--Electricity--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--revin | done | 4/4 |  |
