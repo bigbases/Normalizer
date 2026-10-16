@@ -393,6 +393,16 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "Weather|DLinear|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "joint_lr": "backbone",
+      "kernel_len": 7,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "Weather|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 4,
