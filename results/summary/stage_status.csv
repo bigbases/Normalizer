@@ -136,7 +136,7 @@ t3-confirm,ETTm2,TimeFilter,ddn,done,4,4,
 t3-lt-search,ETTh1,TimeXer,lt,done,12,12,
 t3-lt-search,ETTm1,TimeXer,lt,done,12,12,
 t3-lt-search,Weather,TimeXer,lt,done,12,12,
-t3-lt-search,Electricity,TimeXer,lt,claimed,0,12,itm24-pro6000
+t3-lt-search,Electricity,TimeXer,lt,claimed,3,12,itm24-pro6000
 t3-lt-search,Traffic,TimeXer,lt,done,12,12,
 t3-lt-search,ETTh1,TimeFilter,lt,done,12,12,
 t3-lt-search,ETTm1,TimeFilter,lt,done,12,12,
@@ -198,7 +198,7 @@ t3-tuned,Weather,TimeXer,ddn,done,12,12,
 t3-tuned,Electricity,TimeXer,san,blocked,0,,
 t3-tuned,Electricity,TimeXer,ddn,done,12,12,
 t3-tuned,Traffic,TimeXer,san,ready,9,12,
-t3-tuned,Traffic,TimeXer,ddn,claimed,11,12,itm24-pro6000
+t3-tuned,Traffic,TimeXer,ddn,done,12,12,
 t3-tuned,ETTh1,TimeFilter,san,done,12,12,
 t3-tuned,ETTh1,TimeFilter,ddn,done,12,12,
 t3-tuned,ETTm1,TimeFilter,san,done,12,12,
