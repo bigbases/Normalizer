@@ -180,8 +180,8 @@ Traffic,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.357008,0.420800,0.3889
 Traffic,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.361523,0.424224,0.392874,,,False,False
 Traffic,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,0.358950,0.423296,0.391123,,,False,False
 Traffic,TimeFilter,a9d8cf5dffe6,structure,25,0.001,0,1,False,0.361302,0.421031,0.391166,,,False,False
-Traffic,TimeFilter,2214cc331066,structure,25,0.001,1,0,False,0.353847,0.415064,0.384456,,,False,False
-Traffic,TimeFilter,7a018d35e1af,structure,25,0.001,1,1,False,0.352695,,,,,False,False
+Traffic,TimeFilter,2214cc331066,structure,25,0.001,1,0,False,0.353847,0.415064,0.384456,,,True,False
+Traffic,TimeFilter,7a018d35e1af,structure,25,0.001,1,1,False,0.352695,0.416210,0.384453,,,True,False
 Traffic,TimeXer,21642c782956,grid,13,0.0001,0,0,False,0.410055,0.447843,0.428949,,,False,False
 Traffic,TimeXer,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.407872,0.445348,0.426610,,,False,False
 Traffic,TimeXer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.423138,0.456921,0.440029,,,False,False
