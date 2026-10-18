@@ -179,7 +179,7 @@ t3-none,ETTh1,TimeXer,none,done,12,12,
 t3-none,ETTm1,TimeXer,none,done,12,12,
 t3-none,Weather,TimeXer,none,done,12,12,
 t3-none,Electricity,TimeXer,none,done,12,12,
-t3-none,Traffic,TimeXer,none,claimed,2,12,itm24-pro6000
+t3-none,Traffic,TimeXer,none,claimed,3,12,itm24-pro6000
 t3-none,ETTh1,TimeFilter,none,done,12,12,
 t3-none,ETTm1,TimeFilter,none,done,12,12,
 t3-none,Weather,TimeFilter,none,done,12,12,
@@ -226,7 +226,7 @@ t3-lt-tuned,ETTh1,TimeFilter,lt,done,12,12,
 t3-lt-tuned,ETTm1,TimeFilter,lt,done,12,12,
 t3-lt-tuned,Weather,TimeFilter,lt,done,12,12,
 t3-lt-tuned,Electricity,TimeFilter,lt,blocked,0,,
-t3-lt-tuned,Traffic,TimeFilter,lt,claimed,9,12,itm24-gpu0-pro6000
+t3-lt-tuned,Traffic,TimeFilter,lt,done,12,12,
 t3-lt-tuned,ETTh2,TimeXer,lt,done,12,12,
 t3-lt-tuned,ETTm2,TimeXer,lt,done,12,12,
 t3-lt-tuned,ETTh2,TimeFilter,lt,done,12,12,
