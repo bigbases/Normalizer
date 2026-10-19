@@ -312,6 +312,16 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "Electricity|DLinear|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "joint_lr": "backbone",
+      "kernel_len": 12,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 0,
+      "wavelet": "coif3"
+    },
     "Electricity|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 3,

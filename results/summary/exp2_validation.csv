@@ -494,11 +494,11 @@ Weather,iTransformer,san,f6904fc69cd0,{},0.373710,0.569800,0.372507,0.574400,0.4
 Weather,iTransformer,san,fa33e70a6a3a,{},0.374896,0.585807,,,0.480351,,False,False
 Electricity,DLinear,ddn,1c7b90df1d3b,{},0.111712,0.168096,,,0.139904,,False,False
 Electricity,DLinear,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.110133,0.173182,,,0.141657,,False,False
-Electricity,DLinear,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.110101,0.166869,,,0.138485,,True,False
+Electricity,DLinear,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.110101,0.166869,0.110267,0.172842,0.138485,0.140020,True,False
 Electricity,DLinear,ddn,43cd745f71d8,{},0.112451,0.166417,,,0.139434,,False,False
 Electricity,DLinear,ddn,44e9a626dff4,{},0.112658,0.167634,,,0.140146,,False,False
 Electricity,DLinear,ddn,6f0b0683bbd0,{},0.111348,0.166123,0.111476,0.166057,0.138735,0.138751,False,False
-Electricity,DLinear,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.110494,0.166825,,,0.138659,,True,False
+Electricity,DLinear,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.110494,0.166825,0.110704,0.166953,0.138659,0.138744,True,True
 Electricity,DLinear,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.116130,0.172364,,,0.144247,,False,False
 Electricity,DLinear,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.110683,0.170025,,,0.140354,,False,False
 Electricity,DLinear,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.110361,0.170492,,,0.140426,,False,False
@@ -537,9 +537,9 @@ Electricity,TimeFilter,ddn,f841fa3c59bc,{},0.119452,0.183839,,,0.151646,,False,F
 Electricity,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.118879,0.183443,,,0.151161,,False,False
 Electricity,TimeFilter,san,48f6c1ced712,{},,0.191680,,,,,False,False
 Electricity,TimeFilter,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.121944,0.179090,,,0.150517,,False,False
-Electricity,TimeFilter,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.117687,0.181507,,,0.149597,,True,False
+Electricity,TimeFilter,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.117687,0.181507,,0.174543,0.149597,,True,False
 Electricity,TimeFilter,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.121903,0.185163,,,0.153533,,False,False
-Electricity,TimeFilter,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.117679,0.174896,,,0.146288,,True,False
+Electricity,TimeFilter,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.117679,0.174896,,0.173358,0.146288,,True,False
 Electricity,TimeFilter,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.121261,0.182467,,,0.151864,,False,False
 Electricity,TimeFilter,san,fa33e70a6a3a,{},,0.211833,,,,,False,False
 Electricity,TimeMixerPP,ddn,1c7b90df1d3b,{},0.153188,0.207576,,,0.180382,,False,False
