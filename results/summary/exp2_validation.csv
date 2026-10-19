@@ -567,9 +567,15 @@ Electricity,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05
 Electricity,TimeXer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.133690,0.192681,,,0.163185,,True,False
 Electricity,TimeXer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.137602,0.193514,,,0.165558,,False,False
 Electricity,iTransformer,ddn,1c7b90df1d3b,{},0.109991,0.164189,,,0.137090,,False,False
+Electricity,iTransformer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.110856,0.174868,,,0.142862,,False,False
+Electricity,iTransformer,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.107293,0.165856,,,0.136575,,False,False
 Electricity,iTransformer,ddn,43cd745f71d8,{},0.107181,0.165268,0.106902,0.164785,0.136225,0.136034,False,False
 Electricity,iTransformer,ddn,44e9a626dff4,{},0.107396,0.166288,,,0.136842,,False,False
 Electricity,iTransformer,ddn,6f0b0683bbd0,{},0.109487,0.165639,,,0.137563,,False,False
+Electricity,iTransformer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.106889,0.161046,,,0.133967,,True,False
+Electricity,iTransformer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.109488,0.174642,,,0.142065,,False,False
+Electricity,iTransformer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.110677,0.168794,,,0.139735,,False,False
+Electricity,iTransformer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.106245,0.162487,,,0.134366,,True,False
 Electricity,iTransformer,ddn,e082b1250cbb,{},0.109501,0.162734,0.108849,0.161515,0.136118,0.135650,False,False
 Electricity,iTransformer,ddn,f841fa3c59bc,{},0.109601,0.166678,,,0.138140,,False,False
 Electricity,iTransformer,fan,13915eef97cf,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 0.0005}",0.111525,0.164886,0.111712,0.165667,0.138205,0.138447,True,True
