@@ -332,60 +332,75 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
         sizes.append(max_batch(new_exp(args), args, device, opts.max_batch))
         release()
     common = min(sizes)
-    log(f"{dataset}/{backbone}/H{horizon}: common max batch {common}")
-
-    for method, (args, params) in specs.items():
-        if method not in todo:
-            continue
-        exp = new_exp(args)
-        own = lambda: torch.cuda.memory_reserved() / 2 ** 20  # noqa: E731
-        idle = wait_until_idle(opts.gpu, own, opts.idle_tries)
-        row = {"Timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"), **env,
-               "GPUIdleBefore": idle, "Dataset": dataset, "Backbone": backbone, "Method": method,
-               "Horizon": horizon, "SeqLen": args.seq_len, "Channels": args.enc_in, "TrainBatch": args.batch_size,
-               "MaxBatch": common, "Settings": json.dumps(params, sort_keys=True), "UpsampleKernel": "",
-               "ParamsBackbone": n_params(exp.model), "ParamsModule": n_params(exp.station)}
-
-        x1, y1, xm1, ym1 = batch(args, 1, device)
-        out1 = torch.randn(1, args.pred_len, args.enc_in, device=device)
-        row["FLOPsTotal"] = flops(lambda: forecast(exp, x1, y1, xm1, ym1))
-        row["FLOPsModule"] = flops(lambda: module_only(exp, x1, out1)) if method != "none" else 0
-
-        for label, size in (("B1", 1), ("Bmax", common)):
-            x, y, xm, ym = batch(args, size, device)
-            out_like = torch.randn(size, args.pred_len, args.enc_in, device=device)
-            iters = opts.iters if size == 1 else opts.iters_large
-            with torch.no_grad():
-                e2e = timed(lambda: forecast(exp, x, y, xm, ym), opts.warmup, iters)
-                mod = timed(lambda: module_only(exp, x, out_like), opts.warmup, iters)
-            row.update({f"Lat{label}MeanMs": e2e["mean"], f"Lat{label}P50Ms": e2e["p50"],
-                        f"Lat{label}P95Ms": e2e["p95"], f"Thr{label}PerSec": size * 1000.0 / e2e["mean"],
-                        f"PeakMem{label}MiB": e2e["peak_mib"], f"ModuleLat{label}MeanMs": mod["mean"],
-                        f"ModuleLat{label}P95Ms": mod["p95"]})
-            del x, y, xm, ym, out_like
-            torch.cuda.empty_cache()
-
-        exp.model.train()
-        exp.station.train()
-        pretrain, joint = make_steps(exp)
-        x, y, xm, ym = batch(args, args.batch_size, device)
-        row["TrainPreStepMs"] = row["TrainPrePeakMiB"] = ""
-        if pretrain is not None:
-            row["TrainPreStepMs"], row["TrainPrePeakMiB"] = train_step_ms(pretrain, x, y, xm, ym, opts)
-        row["TrainJointStepMs"], row["TrainJointPeakMiB"] = train_step_ms(joint, x, y, xm, ym, opts)
-        del x, y, xm, ym, pretrain, joint  # the closures hold the optimizers (and so the model)
-        if method == "lt":  # LightNorm's upsampling path on this device (triton / float64 / F.interpolate)
-            row["UpsampleKernel"] = ",".join(sorted(
-                (plan or {}).get("kernel", "interpolate") for key, plan in lightnorm._UPSAMPLE_PLANS.items()
-                if key[0] == "cuda" and key[3] == args.pred_len))
-        row["GPUIdleAfter"] = wait_until_idle(opts.gpu, own, 1, interval=0)
+    rows = None
+    while rows is None:
+        log(f"{dataset}/{backbone}/H{horizon}: common max batch {common}")
+        try:
+            rows = [bench_method(dataset, backbone, horizon, method, *specs[method], common, opts, device, env)
+                    for method in specs if method in todo]
+        except torch.cuda.OutOfMemoryError:
+            # the maximum batch fits one pass but not repeated passes (allocator fragmentation):
+            # measure every method of the case again at half the batch
+            if common == 1:
+                raise
+            common //= 2
+            log(f"{dataset}/{backbone}/H{horizon}: out of memory; measuring the case again")
+        release()
+    for row in rows:  # written only once every method of the case is measured at the same batch
         write_row(out, row)
         joint_ms = row["TrainJointStepMs"]
-        log(f"  {method:5s} e2e B1 {row['LatB1MeanMs']:.2f} ms, Bmax {row['LatBmaxMeanMs']:.1f} ms, "
+        log(f"  {row['Method']:5s} e2e B1 {row['LatB1MeanMs']:.2f} ms, Bmax {row['LatBmaxMeanMs']:.1f} ms, "
             f"module {row['ModuleLatB1MeanMs']:.2f} ms, joint step "
             f"{joint_ms if isinstance(joint_ms, str) else f'{joint_ms:.1f} ms'}")
-        del exp
-        release()
+
+
+def bench_method(dataset, backbone, horizon, method, args, params, common, opts, device, env):
+    """One method of a case at batch 1, at the case's common batch, and one training step."""
+    exp = new_exp(args)
+    own = lambda: torch.cuda.memory_reserved() / 2 ** 20  # noqa: E731
+    idle = wait_until_idle(opts.gpu, own, opts.idle_tries)
+    row = {"Timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"), **env,
+           "GPUIdleBefore": idle, "Dataset": dataset, "Backbone": backbone, "Method": method,
+           "Horizon": horizon, "SeqLen": args.seq_len, "Channels": args.enc_in, "TrainBatch": args.batch_size,
+           "MaxBatch": common, "Settings": json.dumps(params, sort_keys=True), "UpsampleKernel": "",
+           "ParamsBackbone": n_params(exp.model), "ParamsModule": n_params(exp.station)}
+
+    x1, y1, xm1, ym1 = batch(args, 1, device)
+    out1 = torch.randn(1, args.pred_len, args.enc_in, device=device)
+    row["FLOPsTotal"] = flops(lambda: forecast(exp, x1, y1, xm1, ym1))
+    row["FLOPsModule"] = flops(lambda: module_only(exp, x1, out1)) if method != "none" else 0
+
+    for label, size in (("B1", 1), ("Bmax", common)):
+        x, y, xm, ym = batch(args, size, device)
+        out_like = torch.randn(size, args.pred_len, args.enc_in, device=device)
+        iters = opts.iters if size == 1 else opts.iters_large
+        with torch.no_grad():
+            e2e = timed(lambda: forecast(exp, x, y, xm, ym), opts.warmup, iters)
+            mod = timed(lambda: module_only(exp, x, out_like), opts.warmup, iters)
+        row.update({f"Lat{label}MeanMs": e2e["mean"], f"Lat{label}P50Ms": e2e["p50"],
+                    f"Lat{label}P95Ms": e2e["p95"], f"Thr{label}PerSec": size * 1000.0 / e2e["mean"],
+                    f"PeakMem{label}MiB": e2e["peak_mib"], f"ModuleLat{label}MeanMs": mod["mean"],
+                    f"ModuleLat{label}P95Ms": mod["p95"]})
+        del x, y, xm, ym, out_like
+        torch.cuda.empty_cache()
+
+    exp.model.train()
+    exp.station.train()
+    pretrain, joint = make_steps(exp)
+    x, y, xm, ym = batch(args, args.batch_size, device)
+    row["TrainPreStepMs"] = row["TrainPrePeakMiB"] = ""
+    if pretrain is not None:
+        row["TrainPreStepMs"], row["TrainPrePeakMiB"] = train_step_ms(pretrain, x, y, xm, ym, opts)
+    row["TrainJointStepMs"], row["TrainJointPeakMiB"] = train_step_ms(joint, x, y, xm, ym, opts)
+    del x, y, xm, ym, pretrain, joint  # the closures hold the optimizers (and so the model)
+    if method == "lt":  # LightNorm's upsampling path on this device (triton / float64 / F.interpolate)
+        row["UpsampleKernel"] = ",".join(sorted(
+            (plan or {}).get("kernel", "interpolate") for key, plan in lightnorm._UPSAMPLE_PLANS.items()
+            if key[0] == "cuda" and key[3] == args.pred_len))
+    row["GPUIdleAfter"] = wait_until_idle(opts.gpu, own, 1, interval=0)
+    del exp
+    release()
+    return row
 
 
 def bench_scaling(protocol, bases, dataset, methods, horizon, lengths, device, env, out, done=frozenset()):
