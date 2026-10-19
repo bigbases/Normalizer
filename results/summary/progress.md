@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-19T15:02:07+00:00 from 5517 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-19T15:18:24+00:00 from 5519 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -23,9 +23,9 @@ Generated 2026-10-19T15:02:07+00:00 from 5517 packaged cells. Regenerate with `p
 | t3-tuned | 24 | 0 | 2 | 2 | 0 |
 | t3-lt-tuned | 11 | 0 | 2 | 1 | 0 |
 | exp2-search | 54 | 0 | 2 | 0 | 0 |
-| exp2-confirm | 49 | 1 | 4 | 2 | 0 |
+| exp2-confirm | 50 | 1 | 3 | 2 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 49 | 0 | 0 | 7 | 0 |
+| exp3-tuned | 49 | 0 | 1 | 6 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -358,11 +358,11 @@ Generated 2026-10-19T15:02:07+00:00 from 5517 packaged cells. Regenerate with `p
 | exp2-confirm--Weather--iTransformer--ddn | done | 4/4 |  |
 | exp2-confirm--Weather--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--revin | done | 4/4 |  |
-| exp2-confirm--Electricity--DLinear--san | claimed | 2/4 | itm21-a4000 |
+| exp2-confirm--Electricity--DLinear--san | done | 4/4 |  |
 | exp2-confirm--Electricity--DLinear--ddn | ready | 0/4 |  |
 | exp2-confirm--Electricity--DLinear--fan | done | 4/4 |  |
 | exp2-confirm--Electricity--iTransformer--revin | done | 4/4 |  |
-| exp2-confirm--Electricity--iTransformer--san | ready | 0/4 |  |
+| exp2-confirm--Electricity--iTransformer--san | claimed | 0/4 | itm21-a4000 |
 | exp2-confirm--Electricity--iTransformer--ddn | ready | 0/4 |  |
 | exp2-confirm--Electricity--iTransformer--fan | done | 4/4 |  |
 | exp2-confirm--Traffic--DLinear--revin | done | 4/4 |  |
@@ -428,7 +428,7 @@ Generated 2026-10-19T15:02:07+00:00 from 5517 packaged cells. Regenerate with `p
 | exp3-tuned--Weather--iTransformer--ddn | done | 12/12 |  |
 | exp3-tuned--Weather--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Electricity--DLinear--revin | done | 12/12 |  |
-| exp3-tuned--Electricity--DLinear--san | blocked | 0/? |  |
+| exp3-tuned--Electricity--DLinear--san | ready | 0/12 |  |
 | exp3-tuned--Electricity--DLinear--ddn | blocked | 0/? |  |
 | exp3-tuned--Electricity--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--Electricity--iTransformer--revin | done | 12/12 |  |
