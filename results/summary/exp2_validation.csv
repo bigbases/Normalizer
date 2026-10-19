@@ -590,9 +590,9 @@ Electricity,iTransformer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 
 Electricity,iTransformer,san,48f6c1ced712,{},0.111799,0.162393,0.111366,0.161977,0.137096,0.136884,False,False
 Electricity,iTransformer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.109565,0.169082,,,0.139324,,False,False
 Electricity,iTransformer,san,61e69def41a7,{},0.110338,0.164340,,,0.137339,,False,False
-Electricity,iTransformer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.110015,0.164422,,,0.137219,,True,False
+Electricity,iTransformer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.110015,0.164422,0.109812,0.166165,0.137219,0.137604,True,False
 Electricity,iTransformer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.110859,0.167663,,,0.139261,,False,False
-Electricity,iTransformer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.108949,0.163092,,,0.136020,,True,False
+Electricity,iTransformer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.108949,0.163092,0.109227,0.165169,0.136020,0.136609,True,True
 Electricity,iTransformer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.110759,0.165855,,,0.138307,,False,False
 Electricity,iTransformer,san,f6904fc69cd0,{},0.110663,0.163214,0.110462,0.161162,0.136939,0.136375,False,False
 Electricity,iTransformer,san,fa33e70a6a3a,{},0.110824,0.167326,,,0.139075,,False,False
