@@ -1218,19 +1218,19 @@
         "screen_mean_val_mse": 0.13848515665158628
       },
       {
-        "candidate_id": "275a2b5a29c2",
+        "candidate_id": "8b428784a508",
         "n_cells": 2,
         "params": {
           "hkernel_len": 5,
           "j": 1,
           "joint_lr": "backbone",
-          "kernel_len": 32,
+          "kernel_len": 12,
           "station_lr": 0.0001,
           "station_type": "adaptive",
           "twice_epoch": 0,
           "wavelet": "coif3"
         },
-        "screen_mean_val_mse": 0.14165705155270794
+        "screen_mean_val_mse": 0.13865930560665826
       }
     ],
     "Electricity|DLinear|fan": [
