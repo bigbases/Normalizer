@@ -346,6 +346,11 @@
       "twice_epoch": 0,
       "wavelet": "coif3"
     },
+    "Electricity|TimeXer|san": {
+      "period_len": 24,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "Electricity|iTransformer|ddn": {
       "hkernel_len": 5,
       "j": 1,

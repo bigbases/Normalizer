@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-19T17:37:46+00:00 from 5527 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-19T18:04:03+00:00 from 5531 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,12 +15,12 @@ Generated 2026-10-19T17:37:46+00:00 from 5527 packaged cells. Regenerate with `p
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
-| t3-confirm | 26 | 1 | 1 | 0 | 0 |
+| t3-confirm | 27 | 1 | 0 | 0 | 0 |
 | t3-lt-search | 14 | 0 | 0 | 0 | 0 |
 | t3-lt-struct | 13 | 0 | 1 | 0 | 0 |
 | t3-lt-confirm | 13 | 0 | 0 | 1 | 0 |
 | t3-none | 13 | 0 | 1 | 0 | 0 |
-| t3-tuned | 24 | 0 | 2 | 2 | 0 |
+| t3-tuned | 24 | 0 | 3 | 1 | 0 |
 | t3-lt-tuned | 11 | 1 | 1 | 1 | 0 |
 | exp2-search | 54 | 0 | 2 | 0 | 0 |
 | exp2-confirm | 52 | 1 | 1 | 2 | 0 |
@@ -141,7 +141,7 @@ Generated 2026-10-19T17:37:46+00:00 from 5527 packaged cells. Regenerate with `p
 | t3-confirm--ETTm1--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--Weather--TimeXer--san | done | 4/4 |  |
 | t3-confirm--Weather--TimeXer--ddn | done | 4/4 |  |
-| t3-confirm--Electricity--TimeXer--san | claimed | 0/4 | itm24-gpu0-pro6000 |
+| t3-confirm--Electricity--TimeXer--san | done | 4/4 |  |
 | t3-confirm--Electricity--TimeXer--ddn | done | 4/4 |  |
 | t3-confirm--Traffic--TimeXer--san | done | 4/4 |  |
 | t3-confirm--Traffic--TimeXer--ddn | done | 4/4 |  |
@@ -151,7 +151,7 @@ Generated 2026-10-19T17:37:46+00:00 from 5527 packaged cells. Regenerate with `p
 | t3-confirm--ETTm1--TimeFilter--ddn | done | 4/4 |  |
 | t3-confirm--Weather--TimeFilter--san | done | 4/4 |  |
 | t3-confirm--Weather--TimeFilter--ddn | done | 4/4 |  |
-| t3-confirm--Electricity--TimeFilter--san | ready | 0/4 |  |
+| t3-confirm--Electricity--TimeFilter--san | claimed | 0/4 | itm24-gpu0-pro6000 |
 | t3-confirm--Electricity--TimeFilter--ddn | done | 4/4 |  |
 | t3-confirm--Traffic--TimeFilter--san | done | 4/4 |  |
 | t3-confirm--Traffic--TimeFilter--ddn | done | 4/4 |  |
@@ -225,7 +225,7 @@ Generated 2026-10-19T17:37:46+00:00 from 5527 packaged cells. Regenerate with `p
 | t3-tuned--ETTm1--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--Weather--TimeXer--san | done | 12/12 |  |
 | t3-tuned--Weather--TimeXer--ddn | done | 12/12 |  |
-| t3-tuned--Electricity--TimeXer--san | blocked | 0/? |  |
+| t3-tuned--Electricity--TimeXer--san | ready | 0/12 |  |
 | t3-tuned--Electricity--TimeXer--ddn | done | 12/12 |  |
 | t3-tuned--Traffic--TimeXer--san | ready | 9/12 |  |
 | t3-tuned--Traffic--TimeXer--ddn | done | 12/12 |  |
