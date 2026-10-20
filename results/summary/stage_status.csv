@@ -221,11 +221,11 @@ t3-lt-tuned,ETTh1,TimeXer,lt,done,12,12,
 t3-lt-tuned,ETTm1,TimeXer,lt,done,12,12,
 t3-lt-tuned,Weather,TimeXer,lt,done,12,12,
 t3-lt-tuned,Electricity,TimeXer,lt,done,12,12,
-t3-lt-tuned,Traffic,TimeXer,lt,claimed,10,12,itm20-gpu0-a4000
+t3-lt-tuned,Traffic,TimeXer,lt,claimed,11,12,itm20-gpu0-a4000
 t3-lt-tuned,ETTh1,TimeFilter,lt,done,12,12,
 t3-lt-tuned,ETTm1,TimeFilter,lt,done,12,12,
 t3-lt-tuned,Weather,TimeFilter,lt,done,12,12,
-t3-lt-tuned,Electricity,TimeFilter,lt,ready,0,12,
+t3-lt-tuned,Electricity,TimeFilter,lt,claimed,0,12,itm20-gpu0-a4000
 t3-lt-tuned,Traffic,TimeFilter,lt,done,12,12,
 t3-lt-tuned,ETTh2,TimeXer,lt,done,12,12,
 t3-lt-tuned,ETTm2,TimeXer,lt,done,12,12,
@@ -399,11 +399,11 @@ exp3-tuned,Weather,iTransformer,ddn,done,12,12,
 exp3-tuned,Weather,iTransformer,fan,done,12,12,
 exp3-tuned,Electricity,DLinear,revin,done,12,12,
 exp3-tuned,Electricity,DLinear,san,done,12,12,
-exp3-tuned,Electricity,DLinear,ddn,claimed,4,12,itm21-a4000
+exp3-tuned,Electricity,DLinear,ddn,done,12,12,
 exp3-tuned,Electricity,DLinear,fan,done,12,12,
 exp3-tuned,Electricity,iTransformer,revin,done,12,12,
 exp3-tuned,Electricity,iTransformer,san,done,12,12,
-exp3-tuned,Electricity,iTransformer,ddn,ready,0,12,
+exp3-tuned,Electricity,iTransformer,ddn,claimed,0,12,itm21-a4000
 exp3-tuned,Electricity,iTransformer,fan,done,12,12,
 exp3-tuned,Traffic,DLinear,revin,done,12,12,
 exp3-tuned,Traffic,DLinear,san,done,12,12,
