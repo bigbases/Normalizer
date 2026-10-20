@@ -683,7 +683,7 @@ Traffic,iTransformer,ddn,43cd745f71d8,{},0.319396,0.400731,,,0.360063,,False,Fal
 Traffic,iTransformer,ddn,44e9a626dff4,{},0.319699,0.399524,,,0.359612,,False,False
 Traffic,iTransformer,ddn,6f0b0683bbd0,{},0.322876,0.387913,0.321684,0.390501,0.355394,0.355744,False,False
 Traffic,iTransformer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",,0.400560,,,,,False,False
-Traffic,iTransformer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",,0.397452,,,,,False,False
+Traffic,iTransformer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.326721,0.397452,,,0.362086,,False,False
 Traffic,iTransformer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.394649,,,,,False,False
 Traffic,iTransformer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",,0.396727,,,,,False,False
 Traffic,iTransformer,ddn,e082b1250cbb,{},0.322359,0.393257,,,0.357808,,False,False
@@ -700,5 +700,7 @@ Traffic,iTransformer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-0
 Traffic,iTransformer,san,48f6c1ced712,{},0.353098,0.407746,,,0.380422,,False,False
 Traffic,iTransformer,san,61e69def41a7,{},0.368146,0.423444,,,0.395795,,False,False
 Traffic,iTransformer,san,74fa903f9770,"{""period_len"": 24, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.339320,0.397382,0.336371,0.395859,0.368351,0.367233,True,False
+Traffic,iTransformer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,0.396055,,,,,False,False
+Traffic,iTransformer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",,0.394627,,,,,False,False
 Traffic,iTransformer,san,f6904fc69cd0,{},0.353485,0.399634,,,0.376559,,False,False
 Traffic,iTransformer,san,fa33e70a6a3a,{},0.369343,0.426355,,,0.397849,,False,False
