@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-20T20:36:26+00:00 from 5700 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-20T22:47:56+00:00 from 5715 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -25,7 +25,7 @@ Generated 2026-10-20T20:36:26+00:00 from 5700 packaged cells. Regenerate with `p
 | exp2-search | 56 | 0 | 0 | 0 | 0 |
 | exp2-confirm | 56 | 0 | 0 | 0 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| exp3-tuned | 55 | 1 | 0 | 0 | 0 |
+| exp3-tuned | 56 | 0 | 0 | 0 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
@@ -255,7 +255,7 @@ Generated 2026-10-20T20:36:26+00:00 from 5700 packaged cells. Regenerate with `p
 | t3-lt-tuned--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-tuned--ETTm1--TimeFilter | done | 12/12 |  |
 | t3-lt-tuned--Weather--TimeFilter | done | 12/12 |  |
-| t3-lt-tuned--Electricity--TimeFilter | claimed | 8/12 | itm20-gpu0-a4000 |
+| t3-lt-tuned--Electricity--TimeFilter | claimed | 11/12 | itm20-gpu0-a4000 |
 | t3-lt-tuned--Traffic--TimeFilter | done | 12/12 |  |
 | t3-lt-tuned--ETTh2--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--ETTm2--TimeXer | done | 12/12 |  |
@@ -441,5 +441,5 @@ Generated 2026-10-20T20:36:26+00:00 from 5700 packaged cells. Regenerate with `p
 | exp3-tuned--Traffic--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--Traffic--iTransformer--revin | done | 12/12 |  |
 | exp3-tuned--Traffic--iTransformer--san | done | 12/12 |  |
-| exp3-tuned--Traffic--iTransformer--ddn | claimed | 0/12 | itm24-pro6000 |
+| exp3-tuned--Traffic--iTransformer--ddn | done | 12/12 |  |
 | exp3-tuned--Traffic--iTransformer--fan | done | 12/12 |  |

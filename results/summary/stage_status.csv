@@ -225,7 +225,7 @@ t3-lt-tuned,Traffic,TimeXer,lt,done,12,12,
 t3-lt-tuned,ETTh1,TimeFilter,lt,done,12,12,
 t3-lt-tuned,ETTm1,TimeFilter,lt,done,12,12,
 t3-lt-tuned,Weather,TimeFilter,lt,done,12,12,
-t3-lt-tuned,Electricity,TimeFilter,lt,claimed,8,12,itm20-gpu0-a4000
+t3-lt-tuned,Electricity,TimeFilter,lt,claimed,11,12,itm20-gpu0-a4000
 t3-lt-tuned,Traffic,TimeFilter,lt,done,12,12,
 t3-lt-tuned,ETTh2,TimeXer,lt,done,12,12,
 t3-lt-tuned,ETTm2,TimeXer,lt,done,12,12,
@@ -411,5 +411,5 @@ exp3-tuned,Traffic,DLinear,ddn,done,12,12,
 exp3-tuned,Traffic,DLinear,fan,done,12,12,
 exp3-tuned,Traffic,iTransformer,revin,done,12,12,
 exp3-tuned,Traffic,iTransformer,san,done,12,12,
-exp3-tuned,Traffic,iTransformer,ddn,claimed,0,12,itm24-pro6000
+exp3-tuned,Traffic,iTransformer,ddn,done,12,12,
 exp3-tuned,Traffic,iTransformer,fan,done,12,12,
