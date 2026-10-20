@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-20T10:23:13+00:00 from 5638 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-20T12:27:22+00:00 from 5643 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -20,7 +20,7 @@ Generated 2026-10-20T10:23:13+00:00 from 5638 packaged cells. Regenerate with `p
 | t3-lt-struct | 14 | 0 | 0 | 0 | 0 |
 | t3-lt-confirm | 14 | 0 | 0 | 0 | 0 |
 | t3-none | 14 | 0 | 0 | 0 | 0 |
-| t3-tuned | 27 | 1 | 0 | 0 | 0 |
+| t3-tuned | 28 | 0 | 0 | 0 | 0 |
 | t3-lt-tuned | 12 | 1 | 1 | 0 | 0 |
 | exp2-search | 54 | 0 | 2 | 0 | 0 |
 | exp2-confirm | 54 | 0 | 0 | 2 | 0 |
@@ -237,7 +237,7 @@ Generated 2026-10-20T10:23:13+00:00 from 5638 packaged cells. Regenerate with `p
 | t3-tuned--Weather--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--Electricity--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--Electricity--TimeFilter--ddn | done | 12/12 |  |
-| t3-tuned--Traffic--TimeFilter--san | claimed | 11/12 | itm21-a4000 |
+| t3-tuned--Traffic--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--Traffic--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTh2--TimeXer--san | done | 12/12 |  |
 | t3-tuned--ETTh2--TimeXer--ddn | done | 12/12 |  |
@@ -251,7 +251,7 @@ Generated 2026-10-20T10:23:13+00:00 from 5638 packaged cells. Regenerate with `p
 | t3-lt-tuned--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--Weather--TimeXer | done | 12/12 |  |
 | t3-lt-tuned--Electricity--TimeXer | done | 12/12 |  |
-| t3-lt-tuned--Traffic--TimeXer | claimed | 9/12 | itm20-gpu0-a4000 |
+| t3-lt-tuned--Traffic--TimeXer | claimed | 10/12 | itm20-gpu0-a4000 |
 | t3-lt-tuned--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-tuned--ETTm1--TimeFilter | done | 12/12 |  |
 | t3-lt-tuned--Weather--TimeFilter | done | 12/12 |  |
@@ -429,7 +429,7 @@ Generated 2026-10-20T10:23:13+00:00 from 5638 packaged cells. Regenerate with `p
 | exp3-tuned--Weather--iTransformer--fan | done | 12/12 |  |
 | exp3-tuned--Electricity--DLinear--revin | done | 12/12 |  |
 | exp3-tuned--Electricity--DLinear--san | done | 12/12 |  |
-| exp3-tuned--Electricity--DLinear--ddn | claimed | 1/12 | itm21-a4000 |
+| exp3-tuned--Electricity--DLinear--ddn | claimed | 4/12 | itm21-a4000 |
 | exp3-tuned--Electricity--DLinear--fan | done | 12/12 |  |
 | exp3-tuned--Electricity--iTransformer--revin | done | 12/12 |  |
 | exp3-tuned--Electricity--iTransformer--san | done | 12/12 |  |
