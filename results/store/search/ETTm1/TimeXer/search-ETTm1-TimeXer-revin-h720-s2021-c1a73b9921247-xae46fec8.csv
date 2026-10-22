@@ -1,0 +1,2 @@
+RunID,CandidateID,ConfigHash,Phase,Split,Setting,Dataset,Backbone,Horizon,MSE,MAE,Seed,BestValMSE,BestEpoch,UseNorm,Extra,Host,Worker,GPU,Torch,CodeRev,ElapsedSeconds,FinishedAt
+search-ETTm1-TimeXer-revin-h720-s2021-c1a73b9921247-xae46fec8,1a73b9921247,ae46fec8ce04b8ca,search,validation,ETTm1_TimeXer_720_TimeXer_ETTm1_ftM_sl96_ll48_pl720_dm256_nh8_el1_dl1_df512_fc3_ebtimeF_dtTrue_journal-v1_unrevin_af0_sd2021_cfgae46fec8ce04_r0,ETTm1,TimeXer,720,,,2021,0.9399352787426237,4,revin,,itm21-a4000,itm21-a4000,NVIDIA RTX A4000,2.1.0+cu118,b67ea75f,333.9,2026-10-22T10:48:45+00:00
