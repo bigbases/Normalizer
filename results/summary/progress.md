@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-22T09:45:57+00:00 from 5823 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-22T09:50:27+00:00 from 5827 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,7 +15,7 @@ Generated 2026-10-22T09:45:57+00:00 from 5823 packaged cells. Regenerate with `p
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | t3-rf-search | 6 | 2 | 20 | 0 | 0 |
 | t3-rf-confirm | 5 | 0 | 1 | 22 | 0 |
-| t3-rf-tuned | 3 | 2 | 0 | 23 | 0 |
+| t3-rf-tuned | 4 | 1 | 0 | 23 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -107,7 +107,7 @@ Generated 2026-10-22T09:45:57+00:00 from 5823 packaged cells. Regenerate with `p
 | t3-rf-search--Traffic--TimeXer--revin | ready | 0/4 |  |
 | t3-rf-search--Traffic--TimeXer--fan | ready | 0/12 |  |
 | t3-rf-search--ETTh1--TimeFilter--revin | done | 4/4 |  |
-| t3-rf-search--ETTh1--TimeFilter--fan | claimed | 1/12 | itm20-gpu0-a4000 |
+| t3-rf-search--ETTh1--TimeFilter--fan | claimed | 3/12 | itm20-gpu0-a4000 |
 | t3-rf-search--ETTm1--TimeFilter--revin | ready | 0/4 |  |
 | t3-rf-search--ETTm1--TimeFilter--fan | ready | 0/12 |  |
 | t3-rf-search--Weather--TimeFilter--revin | ready | 0/4 |  |
@@ -162,7 +162,7 @@ Generated 2026-10-22T09:45:57+00:00 from 5823 packaged cells. Regenerate with `p
 | t3-rf-tuned--Electricity--TimeXer--fan | blocked | 0/? |  |
 | t3-rf-tuned--Traffic--TimeXer--revin | blocked | 0/? |  |
 | t3-rf-tuned--Traffic--TimeXer--fan | blocked | 0/? |  |
-| t3-rf-tuned--ETTh1--TimeFilter--revin | claimed | 10/12 | itm20-gpu1-a4000 |
+| t3-rf-tuned--ETTh1--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--ETTh1--TimeFilter--fan | blocked | 0/? |  |
 | t3-rf-tuned--ETTm1--TimeFilter--revin | blocked | 0/? |  |
 | t3-rf-tuned--ETTm1--TimeFilter--fan | blocked | 0/? |  |
