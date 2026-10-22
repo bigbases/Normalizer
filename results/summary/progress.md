@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-22T11:24:16+00:00 from 5952 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-22T11:26:03+00:00 from 5953 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -14,8 +14,8 @@ Generated 2026-10-22T11:24:16+00:00 from 5952 packaged cells. Regenerate with `p
 | shift-tuned | 8 | 0 | 0 | 0 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | t3-rf-search | 14 | 2 | 12 | 0 | 0 |
-| t3-rf-confirm | 13 | 1 | 0 | 14 | 0 |
-| t3-rf-tuned | 7 | 1 | 5 | 15 | 0 |
+| t3-rf-confirm | 14 | 0 | 0 | 14 | 0 |
+| t3-rf-tuned | 7 | 1 | 6 | 14 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -138,7 +138,7 @@ Generated 2026-10-22T11:24:16+00:00 from 5952 packaged cells. Regenerate with `p
 | t3-rf-confirm--ETTh1--TimeFilter--fan | done | 4/4 |  |
 | t3-rf-confirm--ETTm1--TimeFilter--revin | done | 4/4 |  |
 | t3-rf-confirm--ETTm1--TimeFilter--fan | blocked | 0/? |  |
-| t3-rf-confirm--Weather--TimeFilter--revin | claimed | 3/4 | itm20-gpu1-a4000 |
+| t3-rf-confirm--Weather--TimeFilter--revin | done | 4/4 |  |
 | t3-rf-confirm--Weather--TimeFilter--fan | blocked | 0/? |  |
 | t3-rf-confirm--Electricity--TimeFilter--revin | blocked | 0/? |  |
 | t3-rf-confirm--Electricity--TimeFilter--fan | blocked | 0/? |  |
@@ -166,7 +166,7 @@ Generated 2026-10-22T11:24:16+00:00 from 5952 packaged cells. Regenerate with `p
 | t3-rf-tuned--ETTh1--TimeFilter--fan | claimed | 9/12 | itm21-a4000 |
 | t3-rf-tuned--ETTm1--TimeFilter--revin | ready | 0/12 |  |
 | t3-rf-tuned--ETTm1--TimeFilter--fan | blocked | 0/? |  |
-| t3-rf-tuned--Weather--TimeFilter--revin | blocked | 0/? |  |
+| t3-rf-tuned--Weather--TimeFilter--revin | ready | 0/12 |  |
 | t3-rf-tuned--Weather--TimeFilter--fan | blocked | 0/? |  |
 | t3-rf-tuned--Electricity--TimeFilter--revin | blocked | 0/? |  |
 | t3-rf-tuned--Electricity--TimeFilter--fan | blocked | 0/? |  |
