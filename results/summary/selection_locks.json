@@ -554,6 +554,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "Weather|TimeFilter|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
     "Weather|TimeFilter|san": {
       "period_len": 24,
       "station_lr": 0.0005,
@@ -568,6 +572,10 @@
       "station_type": "adaptive",
       "twice_epoch": 1,
       "wavelet": "coif3"
+    },
+    "Weather|TimeXer|revin": {
+      "affine": 1,
+      "station_lr": 0.0001
     },
     "Weather|TimeXer|san": {
       "period_len": 24,
