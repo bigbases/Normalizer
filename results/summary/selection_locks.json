@@ -53,6 +53,11 @@
       "twice_epoch": 0,
       "wavelet": "coif3"
     },
+    "ETTh1|TimeXer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 8,
+      "station_lr": 0.0001
+    },
     "ETTh1|TimeXer|revin": {
       "affine": 0,
       "station_lr": 0.0001

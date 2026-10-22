@@ -7,6 +7,7 @@ ETTh1,TimeFilter,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": 
 ETTh1,TimeFilter,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",1.134049
 ETTh1,TimeFilter,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.968149
 ETTh1,TimeXer,ddn,275a2b5a29c2,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.975039
+ETTh1,TimeXer,fan,96e68ab8643c,"{""fan_aux_weight"": 1.0, ""freq_topk"": 8, ""station_lr"": 0.0001}",0.990969
 ETTh1,TimeXer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",1.129613
 ETTh1,TimeXer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.989969
 ETTh1,iTransformer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",1.081653
