@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-22T23:24:53+00:00 from 6096 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-22T23:27:40+00:00 from 6097 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -13,8 +13,8 @@ Generated 2026-10-22T23:24:53+00:00 from 6096 packaged cells. Regenerate with `p
 | shift-none | 2 | 0 | 0 | 0 | 0 |
 | shift-tuned | 8 | 0 | 0 | 0 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
-| t3-rf-search | 20 | 2 | 6 | 0 | 0 |
-| t3-rf-confirm | 17 | 3 | 0 | 8 | 0 |
+| t3-rf-search | 21 | 1 | 6 | 0 | 0 |
+| t3-rf-confirm | 17 | 3 | 1 | 7 | 0 |
 | t3-rf-tuned | 14 | 0 | 3 | 11 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
@@ -119,7 +119,7 @@ Generated 2026-10-22T23:24:53+00:00 from 6096 packaged cells. Regenerate with `p
 | t3-rf-search--ETTh2--TimeXer--revin | done | 4/4 |  |
 | t3-rf-search--ETTh2--TimeXer--fan | done | 12/12 |  |
 | t3-rf-search--ETTm2--TimeXer--revin | done | 4/4 |  |
-| t3-rf-search--ETTm2--TimeXer--fan | claimed | 11/12 | itm20-gpu0-a4000 |
+| t3-rf-search--ETTm2--TimeXer--fan | done | 12/12 |  |
 | t3-rf-search--ETTh2--TimeFilter--revin | done | 4/4 |  |
 | t3-rf-search--ETTh2--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-search--ETTm2--TimeFilter--revin | done | 4/4 |  |
@@ -147,7 +147,7 @@ Generated 2026-10-22T23:24:53+00:00 from 6096 packaged cells. Regenerate with `p
 | t3-rf-confirm--ETTh2--TimeXer--revin | done | 4/4 |  |
 | t3-rf-confirm--ETTh2--TimeXer--fan | done | 4/4 |  |
 | t3-rf-confirm--ETTm2--TimeXer--revin | done | 4/4 |  |
-| t3-rf-confirm--ETTm2--TimeXer--fan | blocked | 0/? |  |
+| t3-rf-confirm--ETTm2--TimeXer--fan | ready | 0/4 |  |
 | t3-rf-confirm--ETTh2--TimeFilter--revin | done | 4/4 |  |
 | t3-rf-confirm--ETTh2--TimeFilter--fan | done | 4/4 |  |
 | t3-rf-confirm--ETTm2--TimeFilter--revin | done | 4/4 |  |

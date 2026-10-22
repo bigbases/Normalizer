@@ -407,7 +407,7 @@ ETTm2,TimeXer,fan,1bd42266a640,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""st
 ETTm2,TimeXer,fan,9d16227c5d05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 0.0001}",0.134104,0.341167,,,0.237636,,True,False
 ETTm2,TimeXer,fan,c763f0dc6e08,"{""fan_aux_weight"": 1.0, ""freq_topk"": 16, ""station_lr"": 5e-05}",0.138784,0.358529,,,0.248657,,False,False
 ETTm2,TimeXer,fan,e0d362626473,"{""fan_aux_weight"": 1.0, ""freq_topk"": 16, ""station_lr"": 0.0001}",0.134119,0.346705,,,0.240412,,False,False
-ETTm2,TimeXer,fan,eeca350696ee,"{""fan_aux_weight"": 1.0, ""freq_topk"": 11, ""station_lr"": 5e-05}",0.138903,,,,,,False,False
+ETTm2,TimeXer,fan,eeca350696ee,"{""fan_aux_weight"": 1.0, ""freq_topk"": 11, ""station_lr"": 5e-05}",0.138903,0.357293,,,0.248098,,False,False
 ETTm2,TimeXer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.125855,0.290064,0.125595,0.291527,0.207959,0.208260,True,False
 ETTm2,TimeXer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.125768,0.289189,0.125570,0.290929,0.207479,0.207864,True,True
 ETTm2,TimeXer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.122161,0.277623,0.120715,0.275724,0.199892,0.199056,True,True
