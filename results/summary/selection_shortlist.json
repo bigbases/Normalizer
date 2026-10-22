@@ -203,6 +203,28 @@
         "screen_mean_val_mse": 0.9710369880814205
       }
     ],
+    "ETTh1|TimeXer|fan": [
+      {
+        "candidate_id": "96e68ab8643c",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 8,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.9897527102540362
+      },
+      {
+        "candidate_id": "b9173a97d7b8",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 4,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.992363839970533
+      }
+    ],
     "ETTh1|TimeXer|revin": [
       {
         "candidate_id": "1a73b9921247",
