@@ -341,6 +341,11 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "ETTm2|TimeXer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 6,
+      "station_lr": 0.0001
+    },
     "ETTm2|TimeXer|revin": {
       "affine": 1,
       "station_lr": 0.0001
