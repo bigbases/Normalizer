@@ -81,7 +81,7 @@ t3-rf-search,Weather,TimeFilter,revin,done,4,4,
 t3-rf-search,Weather,TimeFilter,fan,ready,0,12,
 t3-rf-search,Electricity,TimeFilter,revin,claimed,0,4,itm20-gpu1-a4000
 t3-rf-search,Electricity,TimeFilter,fan,ready,0,12,
-t3-rf-search,Traffic,TimeFilter,revin,ready,0,4,
+t3-rf-search,Traffic,TimeFilter,revin,claimed,0,4,itm21-a4000
 t3-rf-search,Traffic,TimeFilter,fan,ready,0,12,
 t3-rf-search,ETTh2,TimeXer,revin,done,4,4,
 t3-rf-search,ETTh2,TimeXer,fan,done,12,12,
@@ -130,7 +130,7 @@ t3-rf-tuned,Electricity,TimeXer,fan,blocked,0,,
 t3-rf-tuned,Traffic,TimeXer,revin,blocked,0,,
 t3-rf-tuned,Traffic,TimeXer,fan,blocked,0,,
 t3-rf-tuned,ETTh1,TimeFilter,revin,done,12,12,
-t3-rf-tuned,ETTh1,TimeFilter,fan,claimed,9,12,itm21-a4000
+t3-rf-tuned,ETTh1,TimeFilter,fan,done,12,12,
 t3-rf-tuned,ETTm1,TimeFilter,revin,ready,0,12,
 t3-rf-tuned,ETTm1,TimeFilter,fan,blocked,0,,
 t3-rf-tuned,Weather,TimeFilter,revin,ready,0,12,

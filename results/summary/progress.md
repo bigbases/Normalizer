@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-22T11:26:03+00:00 from 5953 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-22T11:31:46+00:00 from 5956 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -13,9 +13,9 @@ Generated 2026-10-22T11:26:03+00:00 from 5953 packaged cells. Regenerate with `p
 | shift-none | 2 | 0 | 0 | 0 | 0 |
 | shift-tuned | 8 | 0 | 0 | 0 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
-| t3-rf-search | 14 | 2 | 12 | 0 | 0 |
+| t3-rf-search | 14 | 3 | 11 | 0 | 0 |
 | t3-rf-confirm | 14 | 0 | 0 | 14 | 0 |
-| t3-rf-tuned | 7 | 1 | 6 | 14 | 0 |
+| t3-rf-tuned | 8 | 0 | 6 | 14 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -114,7 +114,7 @@ Generated 2026-10-22T11:26:03+00:00 from 5953 packaged cells. Regenerate with `p
 | t3-rf-search--Weather--TimeFilter--fan | ready | 0/12 |  |
 | t3-rf-search--Electricity--TimeFilter--revin | claimed | 0/4 | itm20-gpu1-a4000 |
 | t3-rf-search--Electricity--TimeFilter--fan | ready | 0/12 |  |
-| t3-rf-search--Traffic--TimeFilter--revin | ready | 0/4 |  |
+| t3-rf-search--Traffic--TimeFilter--revin | claimed | 0/4 | itm21-a4000 |
 | t3-rf-search--Traffic--TimeFilter--fan | ready | 0/12 |  |
 | t3-rf-search--ETTh2--TimeXer--revin | done | 4/4 |  |
 | t3-rf-search--ETTh2--TimeXer--fan | done | 12/12 |  |
@@ -163,7 +163,7 @@ Generated 2026-10-22T11:26:03+00:00 from 5953 packaged cells. Regenerate with `p
 | t3-rf-tuned--Traffic--TimeXer--revin | blocked | 0/? |  |
 | t3-rf-tuned--Traffic--TimeXer--fan | blocked | 0/? |  |
 | t3-rf-tuned--ETTh1--TimeFilter--revin | done | 12/12 |  |
-| t3-rf-tuned--ETTh1--TimeFilter--fan | claimed | 9/12 | itm21-a4000 |
+| t3-rf-tuned--ETTh1--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--ETTm1--TimeFilter--revin | ready | 0/12 |  |
 | t3-rf-tuned--ETTm1--TimeFilter--fan | blocked | 0/? |  |
 | t3-rf-tuned--Weather--TimeFilter--revin | ready | 0/12 |  |
