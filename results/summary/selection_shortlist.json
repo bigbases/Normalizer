@@ -469,6 +469,28 @@
         "screen_mean_val_mse": 0.41941675476799595
       }
     ],
+    "ETTh2|TimeFilter|fan": [
+      {
+        "candidate_id": "6e55c0ad8f58",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 2,
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.46891854630962493
+      },
+      {
+        "candidate_id": "6c1ea609882f",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 4,
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.47180924390537293
+      }
+    ],
     "ETTh2|TimeFilter|revin": [
       {
         "candidate_id": "1a73b9921247",
