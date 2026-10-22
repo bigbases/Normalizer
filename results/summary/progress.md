@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-22T10:52:08+00:00 from 5924 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-22T10:59:35+00:00 from 5929 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -13,8 +13,8 @@ Generated 2026-10-22T10:52:08+00:00 from 5924 packaged cells. Regenerate with `p
 | shift-none | 2 | 0 | 0 | 0 | 0 |
 | shift-tuned | 8 | 0 | 0 | 0 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
-| t3-rf-search | 12 | 2 | 14 | 0 | 0 |
-| t3-rf-confirm | 10 | 1 | 1 | 16 | 0 |
+| t3-rf-search | 13 | 1 | 14 | 0 | 0 |
+| t3-rf-confirm | 10 | 2 | 1 | 15 | 0 |
 | t3-rf-tuned | 7 | 1 | 2 | 18 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
@@ -100,7 +100,7 @@ Generated 2026-10-22T10:52:08+00:00 from 5924 packaged cells. Regenerate with `p
 | t3-rf-search--ETTh1--TimeXer--fan | done | 12/12 |  |
 | t3-rf-search--ETTm1--TimeXer--revin | done | 4/4 |  |
 | t3-rf-search--ETTm1--TimeXer--fan | ready | 0/12 |  |
-| t3-rf-search--Weather--TimeXer--revin | claimed | 2/4 | itm20-gpu1-a4000 |
+| t3-rf-search--Weather--TimeXer--revin | done | 4/4 |  |
 | t3-rf-search--Weather--TimeXer--fan | ready | 0/12 |  |
 | t3-rf-search--Electricity--TimeXer--revin | ready | 0/4 |  |
 | t3-rf-search--Electricity--TimeXer--fan | ready | 0/12 |  |
@@ -110,7 +110,7 @@ Generated 2026-10-22T10:52:08+00:00 from 5924 packaged cells. Regenerate with `p
 | t3-rf-search--ETTh1--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-search--ETTm1--TimeFilter--revin | done | 4/4 |  |
 | t3-rf-search--ETTm1--TimeFilter--fan | ready | 0/12 |  |
-| t3-rf-search--Weather--TimeFilter--revin | claimed | 2/4 | itm20-gpu0-a4000 |
+| t3-rf-search--Weather--TimeFilter--revin | claimed | 3/4 | itm20-gpu0-a4000 |
 | t3-rf-search--Weather--TimeFilter--fan | ready | 0/12 |  |
 | t3-rf-search--Electricity--TimeFilter--revin | ready | 0/4 |  |
 | t3-rf-search--Electricity--TimeFilter--fan | ready | 0/12 |  |
@@ -126,9 +126,9 @@ Generated 2026-10-22T10:52:08+00:00 from 5924 packaged cells. Regenerate with `p
 | t3-rf-search--ETTm2--TimeFilter--fan | ready | 0/12 |  |
 | t3-rf-confirm--ETTh1--TimeXer--revin | done | 4/4 |  |
 | t3-rf-confirm--ETTh1--TimeXer--fan | done | 4/4 |  |
-| t3-rf-confirm--ETTm1--TimeXer--revin | ready | 0/4 |  |
+| t3-rf-confirm--ETTm1--TimeXer--revin | claimed | 1/4 | itm20-gpu1-a4000 |
 | t3-rf-confirm--ETTm1--TimeXer--fan | blocked | 0/? |  |
-| t3-rf-confirm--Weather--TimeXer--revin | blocked | 0/? |  |
+| t3-rf-confirm--Weather--TimeXer--revin | ready | 0/4 |  |
 | t3-rf-confirm--Weather--TimeXer--fan | blocked | 0/? |  |
 | t3-rf-confirm--Electricity--TimeXer--revin | blocked | 0/? |  |
 | t3-rf-confirm--Electricity--TimeXer--fan | blocked | 0/? |  |
@@ -163,7 +163,7 @@ Generated 2026-10-22T10:52:08+00:00 from 5924 packaged cells. Regenerate with `p
 | t3-rf-tuned--Traffic--TimeXer--revin | blocked | 0/? |  |
 | t3-rf-tuned--Traffic--TimeXer--fan | blocked | 0/? |  |
 | t3-rf-tuned--ETTh1--TimeFilter--revin | done | 12/12 |  |
-| t3-rf-tuned--ETTh1--TimeFilter--fan | claimed | 0/12 | itm21-a4000 |
+| t3-rf-tuned--ETTh1--TimeFilter--fan | claimed | 1/12 | itm21-a4000 |
 | t3-rf-tuned--ETTm1--TimeFilter--revin | blocked | 0/? |  |
 | t3-rf-tuned--ETTm1--TimeFilter--fan | blocked | 0/? |  |
 | t3-rf-tuned--Weather--TimeFilter--revin | blocked | 0/? |  |
