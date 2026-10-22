@@ -141,14 +141,14 @@
         "screen_mean_val_mse": 0.9674210731726997
       },
       {
-        "candidate_id": "6c1ea609882f",
+        "candidate_id": "b9173a97d7b8",
         "n_cells": 2,
         "params": {
           "fan_aux_weight": 1.0,
           "freq_topk": 4,
-          "station_lr": 5e-05
+          "station_lr": 0.0001
         },
-        "screen_mean_val_mse": 0.9968887780155529
+        "screen_mean_val_mse": 0.9711962258766957
       }
     ],
     "ETTh1|TimeFilter|revin": [
@@ -1195,6 +1195,26 @@
           "wavelet": "coif3"
         },
         "screen_mean_val_mse": 0.20916126264712828
+      }
+    ],
+    "ETTm2|TimeFilter|revin": [
+      {
+        "candidate_id": "a22b7bdd93cb",
+        "n_cells": 2,
+        "params": {
+          "affine": 1,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.2054171079090211
+      },
+      {
+        "candidate_id": "1a73b9921247",
+        "n_cells": 2,
+        "params": {
+          "affine": 0,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.20558339522208585
       }
     ],
     "ETTm2|TimeFilter|san": [
