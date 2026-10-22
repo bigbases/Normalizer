@@ -417,6 +417,10 @@
       "twice_epoch": 0,
       "wavelet": "coif3"
     },
+    "Electricity|TimeXer|revin": {
+      "affine": 1,
+      "station_lr": 0.0001
+    },
     "Electricity|TimeXer|san": {
       "period_len": 24,
       "station_lr": 0.0001,
