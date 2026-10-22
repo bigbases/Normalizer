@@ -1991,6 +1991,26 @@
         "screen_mean_val_mse": 0.40127601629266374
       }
     ],
+    "Traffic|TimeXer|revin": [
+      {
+        "candidate_id": "a22b7bdd93cb",
+        "n_cells": 2,
+        "params": {
+          "affine": 1,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.40085005149818387
+      },
+      {
+        "candidate_id": "1a73b9921247",
+        "n_cells": 2,
+        "params": {
+          "affine": 0,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.40479685689967415
+      }
+    ],
     "Traffic|TimeXer|san": [
       {
         "candidate_id": "8e67e1087c15",
