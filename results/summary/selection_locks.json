@@ -299,6 +299,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "ETTm2|TimeFilter|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
     "ETTm2|TimeFilter|san": {
       "period_len": 24,
       "station_lr": 0.0001,
