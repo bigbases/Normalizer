@@ -687,7 +687,7 @@ Traffic,TimeFilter,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr""
 Traffic,TimeFilter,ddn,e082b1250cbb,{},0.350115,0.430628,,,0.390372,,False,False
 Traffic,TimeFilter,ddn,f841fa3c59bc,{},0.353474,0.425147,0.356116,0.425819,0.389311,0.390139,False,False
 Traffic,TimeFilter,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.337475,0.411568,0.336717,,0.374521,,True,False
-Traffic,TimeFilter,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.340849,0.413404,,,0.377126,,True,False
+Traffic,TimeFilter,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.340849,0.413404,0.336664,,0.377126,,True,False
 Traffic,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.376598,0.429848,,,0.403223,,False,False
 Traffic,TimeFilter,san,48f6c1ced712,{},0.389188,0.434567,,,0.411878,,False,False
 Traffic,TimeFilter,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.387581,0.436819,,,0.412200,,False,False
