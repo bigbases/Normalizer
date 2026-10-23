@@ -523,6 +523,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "Traffic|TimeXer|revin": {
+      "affine": 0,
+      "station_lr": 0.0001
+    },
     "Traffic|TimeXer|san": {
       "period_len": 12,
       "station_lr": 5e-05,
@@ -585,6 +589,11 @@
       "station_type": "adaptive",
       "twice_epoch": 1,
       "wavelet": "coif3"
+    },
+    "Weather|TimeFilter|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 4,
+      "station_lr": 0.0005
     },
     "Weather|TimeFilter|revin": {
       "affine": 1,
