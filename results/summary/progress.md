@@ -1,11 +1,11 @@
 # Experiment progress
 
-Generated 2026-10-23T07:55:19+00:00 from 6462 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-23T08:06:44+00:00 from 6475 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | lt-ksens | 10 | 1 | 3 | 0 | 0 |
-| lt-rsens | 6 | 2 | 6 | 0 | 0 |
+| lt-rsens | 7 | 2 | 5 | 0 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -52,11 +52,11 @@ Generated 2026-10-23T07:55:19+00:00 from 6462 packaged cells. Regenerate with `p
 | lt-rsens--ETTh1--iTransformer | done | 18/18 |  |
 | lt-rsens--ETTh2--DLinear | done | 18/18 |  |
 | lt-rsens--ETTh2--iTransformer | done | 18/18 |  |
-| lt-rsens--ETTm1--DLinear | claimed | 9/18 | itm20-gpu0-a4000 |
-| lt-rsens--ETTm1--iTransformer | ready | 3/18 |  |
+| lt-rsens--ETTm1--DLinear | done | 18/18 |  |
+| lt-rsens--ETTm1--iTransformer | claimed | 3/18 | itm20-gpu0-a4000 |
 | lt-rsens--ETTm2--DLinear | done | 18/18 |  |
 | lt-rsens--ETTm2--iTransformer | done | 18/18 |  |
-| lt-rsens--Weather--DLinear | claimed | 3/18 | itm20-gpu1-a4000 |
+| lt-rsens--Weather--DLinear | claimed | 7/18 | itm20-gpu1-a4000 |
 | lt-rsens--Weather--iTransformer | ready | 3/18 |  |
 | lt-rsens--Electricity--DLinear | ready | 3/18 |  |
 | lt-rsens--Electricity--iTransformer | ready | 3/18 |  |
