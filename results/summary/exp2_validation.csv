@@ -644,6 +644,8 @@ Electricity,TimeXer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"
 Electricity,TimeXer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.131549,0.192832,,,0.162191,,False,False
 Electricity,TimeXer,ddn,e082b1250cbb,{},0.131613,0.191577,,,0.161595,,False,False
 Electricity,TimeXer,ddn,f841fa3c59bc,{},0.128753,0.192481,0.129037,0.195376,0.160617,0.161412,False,False
+Electricity,TimeXer,fan,1bd42266a640,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 5e-05}",0.178834,,,,,,False,False
+Electricity,TimeXer,fan,2479cac43388,"{""fan_aux_weight"": 1.0, ""freq_topk"": 3, ""station_lr"": 0.0001}",0.170078,,,,,,False,False
 Electricity,TimeXer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.126967,0.197254,0.126181,0.200427,0.162111,0.162707,True,False
 Electricity,TimeXer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.126125,0.196344,0.125582,0.200249,0.161235,0.162075,True,True
 Electricity,TimeXer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.133674,0.197755,,,0.165714,,False,False
