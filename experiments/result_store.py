@@ -199,7 +199,7 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
             lock_doc = sh.select(rows, "lock", protocol, bases)
         if task.stage == "search" and exp.get("lt_grid") == "structure":
             lock_doc = sh.lt_grid_best(case_rows, protocol, bases, case)   # anchor of the variants
-        if task.stage in ("final", "shift") and exp.get("lt_params") == "locked" and "lt" in task.methods:
+        if task.stage in ("final", "shift") and exp.get("lt_params") in ("locked", "locked_kernel_sweep") and "lt" in task.methods:
             lt_locks = sh.lt_locks(case_rows, protocol, bases, case)["locks"]
             lock_doc = {"locks": {**(lock_doc or {}).get("locks", {}), **lt_locks}}
         try:

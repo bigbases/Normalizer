@@ -207,6 +207,23 @@ class LightNormMainTuningTest(unittest.TestCase):
         self.assertEqual(tasks["lt-tuned--Weather--DLinear"].status, "blocked")
         self.assertLess(tasks["lt-search--ETTm1--iTransformer"].rank, tasks["lt-search--ETTm2--DLinear"].rank)
 
+    def test_kernel_sensitivity_varies_only_the_kernel_of_the_lock(self):
+        base = rm.selected_base_config(self.bases, "ETTh1", "DLinear")
+        lock = {**rm.supplied_lt_params(base), "kernel_size": 49, "station_lr": 1e-3}
+        doc = {"locks": {"ETTh1|DLinear|lt": lock}}
+        sweep = self.cells("12_lightnorm_kernel_sensitivity", "final", "ETTh1", "DLinear", lock_doc=doc)
+        kernels = self.protocol["experiments"]["12_lightnorm_kernel_sensitivity"]["kernel_sweep"]
+        self.assertEqual(len(sweep), len(kernels) * len(self.protocol["seeds"]))   # H=96 only
+        self.assertEqual({c["horizon"] for c in sweep}, {96})
+        self.assertEqual({c["effective"]["kernel_size"] for c in sweep}, set(kernels))
+        for c in sweep:
+            self.assertEqual(c["effective"]["kernel_len"], c["effective"]["kernel_size"])
+            others = {k: v for k, v in c["effective"].items() if k not in ("kernel_size", "kernel_len")}
+            self.assertEqual(others, {k: v for k, v in rm.lt_params(lock).items() if k not in ("kernel_size", "kernel_len")})
+        # the locked kernel reuses the tuned final cells of experiment 8
+        tuned = {c["run_id"] for c in self.cells("8_lightnorm_tuned_final", "final", "ETTh1", "DLinear", lock_doc=doc)}
+        self.assertEqual({c["run_id"] for c in sweep if c["effective"]["kernel_size"] == 49}, {r for r in tuned if "-h96-" in r})
+
     def test_non_supplied_lock_is_reported_as_lt_tuned(self):
         rows = fake_rows(self.cells("7_lightnorm_tuning", "search", "ETTm1", "DLinear"), value=0.1)
         rows.update(fake_rows(self.cells("1_rebuttal_completion", "final", "ETTm1", "DLinear"), value=0.9))
