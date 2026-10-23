@@ -1,10 +1,10 @@
 # Experiment progress
 
-Generated 2026-10-23T07:04:57+00:00 from 6379 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-23T07:09:52+00:00 from 6385 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| lt-ksens | 9 | 2 | 3 | 0 | 0 |
+| lt-ksens | 10 | 1 | 3 | 0 | 0 |
 | lt-rsens | 1 | 2 | 11 | 0 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
@@ -39,7 +39,7 @@ Generated 2026-10-23T07:04:57+00:00 from 6379 packaged cells. Regenerate with `p
 | lt-ksens--ETTh2--DLinear | done | 18/18 |  |
 | lt-ksens--ETTh2--iTransformer | done | 18/18 |  |
 | lt-ksens--ETTm1--DLinear | done | 18/18 |  |
-| lt-ksens--ETTm1--iTransformer | claimed | 16/18 | itm20-gpu0-a4000 |
+| lt-ksens--ETTm1--iTransformer | done | 18/18 |  |
 | lt-ksens--ETTm2--DLinear | done | 18/18 |  |
 | lt-ksens--ETTm2--iTransformer | done | 18/18 |  |
 | lt-ksens--Weather--DLinear | done | 18/18 |  |
@@ -51,7 +51,7 @@ Generated 2026-10-23T07:04:57+00:00 from 6379 packaged cells. Regenerate with `p
 | lt-rsens--ETTh1--DLinear | claimed | 3/18 | itm20-gpu0-a4000 |
 | lt-rsens--ETTh1--iTransformer | ready | 3/18 |  |
 | lt-rsens--ETTh2--DLinear | done | 18/18 |  |
-| lt-rsens--ETTh2--iTransformer | claimed | 3/18 | itm20-gpu1-a4000 |
+| lt-rsens--ETTh2--iTransformer | claimed | 7/18 | itm20-gpu1-a4000 |
 | lt-rsens--ETTm1--DLinear | ready | 3/18 |  |
 | lt-rsens--ETTm1--iTransformer | ready | 3/18 |  |
 | lt-rsens--ETTm2--DLinear | ready | 3/18 |  |
