@@ -499,7 +499,7 @@ Weather,TimeFilter,fan,5980e8f9fd1d,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2,
 Weather,TimeFilter,fan,b9173a97d7b8,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 0.0001}",0.418758,0.632389,,,0.525574,,False,False
 Weather,TimeFilter,fan,c5b5799bc7f6,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 0.0005}",0.400234,0.620591,,,0.510413,,True,False
 Weather,TimeFilter,fan,e4468eada22b,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0001}",0.415592,0.630364,,,0.522978,,False,False
-Weather,TimeFilter,fan,ebd8ee347b05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 0.0001}",0.426040,,,,,,False,False
+Weather,TimeFilter,fan,ebd8ee347b05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 0.0001}",0.426040,0.639805,,,0.532923,,False,False
 Weather,TimeFilter,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.383360,0.665717,0.383214,0.675258,0.524538,0.526887,True,False
 Weather,TimeFilter,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.381879,0.665249,0.382993,0.672180,0.523564,0.525575,True,True
 Weather,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.384027,0.628186,,,0.506107,,False,False
