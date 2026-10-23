@@ -1,10 +1,10 @@
 # Experiment progress
 
-Generated 2026-10-23T05:31:47+00:00 from 6271 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-23T05:36:42+00:00 from 6280 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| lt-ksens | 2 | 2 | 10 | 0 | 0 |
+| lt-ksens | 3 | 2 | 9 | 0 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -33,14 +33,14 @@ Generated 2026-10-23T05:31:47+00:00 from 6271 packaged cells. Regenerate with `p
 
 | task | status | cells done | worker |
 |---|---|---|---|
-| lt-ksens--ETTh1--DLinear | claimed | 13/18 | itm20-gpu1-a4000 |
-| lt-ksens--ETTh1--iTransformer | claimed | 3/18 | itm20-gpu0-a4000 |
+| lt-ksens--ETTh1--DLinear | done | 18/18 |  |
+| lt-ksens--ETTh1--iTransformer | claimed | 7/18 | itm20-gpu0-a4000 |
 | lt-ksens--ETTh2--DLinear | done | 18/18 |  |
 | lt-ksens--ETTh2--iTransformer | done | 18/18 |  |
 | lt-ksens--ETTm1--DLinear | ready | 6/18 |  |
 | lt-ksens--ETTm1--iTransformer | ready | 6/18 |  |
 | lt-ksens--ETTm2--DLinear | ready | 3/18 |  |
-| lt-ksens--ETTm2--iTransformer | ready | 6/18 |  |
+| lt-ksens--ETTm2--iTransformer | claimed | 6/18 | itm20-gpu1-a4000 |
 | lt-ksens--Weather--DLinear | ready | 3/18 |  |
 | lt-ksens--Weather--iTransformer | ready | 9/18 |  |
 | lt-ksens--Electricity--DLinear | ready | 6/18 |  |
