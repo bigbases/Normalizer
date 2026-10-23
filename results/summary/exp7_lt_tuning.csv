@@ -94,7 +94,7 @@ ETTm2,DLinear,3e253a001116,grid,13,0.001,1,0,False,0.116308,0.255591,0.185949,0.
 ETTm2,DLinear,e943b70c12aa,grid,25,0.0001,1,0,False,0.116298,0.261377,0.188838,,,False,False
 ETTm2,DLinear,c0f9cbbc4768,grid,25,0.001,1,0,False,0.116397,0.257069,0.186733,0.116371,0.257063,True,False
 ETTm2,DLinear,2ab9631694f6,grid,49,0.0001,1,0,False,0.116395,0.262413,0.189404,,,False,False
-ETTm2,DLinear,fc10f36ed3da,grid,49,0.001,1,0,False,0.116401,0.259165,0.187783,,,False,False
+ETTm2,DLinear,fc10f36ed3da,grid,49,0.001,1,0,False,0.116401,0.259165,0.187783,0.116372,,False,False
 ETTm2,TimeFilter,21642c782956,grid,13,0.0001,0,0,False,0.126345,0.287761,0.207053,,,False,False
 ETTm2,TimeFilter,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.126632,0.287199,0.206916,,,False,False
 ETTm2,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.124887,0.289136,0.207011,,,False,False

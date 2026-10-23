@@ -5,10 +5,10 @@ lt-ksens,ETTh2,DLinear,lt,done,18,18,
 lt-ksens,ETTh2,iTransformer,lt,done,18,18,
 lt-ksens,ETTm1,DLinear,lt,done,18,18,
 lt-ksens,ETTm1,iTransformer,lt,ready,6,18,
-lt-ksens,ETTm2,DLinear,lt,claimed,4,18,itm20-gpu1-a4000
+lt-ksens,ETTm2,DLinear,lt,done,18,18,
 lt-ksens,ETTm2,iTransformer,lt,done,18,18,
-lt-ksens,Weather,DLinear,lt,ready,3,18,
-lt-ksens,Weather,iTransformer,lt,claimed,9,18,itm20-gpu0-a4000
+lt-ksens,Weather,DLinear,lt,claimed,3,18,itm20-gpu1-a4000
+lt-ksens,Weather,iTransformer,lt,claimed,15,18,itm20-gpu0-a4000
 lt-ksens,Electricity,DLinear,lt,ready,6,18,
 lt-ksens,Electricity,iTransformer,lt,ready,3,18,
 lt-ksens,Traffic,DLinear,lt,ready,3,18,
