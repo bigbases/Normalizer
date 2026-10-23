@@ -1,6 +1,10 @@
 # Efficiency measurements (`experiments/efficiency.py`)
 
-- `itm21_a4000_v3.csv`, `itm21_a4000_v3_scaling.csv`: current results. RTX A4000 with no other
+- `itm21_a4000_v4_DLinear_iTransformer.csv`, `itm21_a4000_v4_TimeXer_TimeFilter.csv` (and `_scaling`): current results
+  (paper Table XII, Fig. 3, Fig. 4, Table S5). Same code paths and settings as v3, measured 2026-10-23 on the idle RTX A4000
+  (`GPUIdleBefore` and `GPUIdleAfter` True in every row) by `.worker/bench_v4.sh` on itm21: all 7 datasets x 4 backbones
+  x H 96, 192, 336, 720 x NoNorm, RevIN, SAN, DDN, FAN, LightNorm (112 cases).
+- `itm21_a4000_v3.csv`, `itm21_a4000_v3_scaling.csv`: previous results (ETTh1 and Traffic only). RTX A4000 with no other
   process on the GPU (`GPUIdleBefore` = True in every row), measured 2026-10-17 and 2026-10-19 at
   code 79f58056 and earlier commits with the same measurement code paths. ETTh1 and Traffic x
   DLinear, iTransformer, TimeXer, TimeFilter x H 96, 720 x NoNorm, RevIN, SAN, DDN, FAN, LightNorm.
