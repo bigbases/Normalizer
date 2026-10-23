@@ -146,7 +146,7 @@ t3-rf-tuned,ETTm2,TimeXer,fan,claimed,0,12,itm20-gpu0-a4000
 t3-rf-tuned,ETTh2,TimeFilter,revin,done,12,12,
 t3-rf-tuned,ETTh2,TimeFilter,fan,done,12,12,
 t3-rf-tuned,ETTm2,TimeFilter,revin,done,12,12,
-t3-rf-tuned,ETTm2,TimeFilter,fan,claimed,11,12,itm21-a4000
+t3-rf-tuned,ETTm2,TimeFilter,fan,done,12,12,
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
 exp1-lt,ETTh1,iTransformer,lt,done,12,12,
 exp1-lt,ETTh2,DLinear,lt,done,12,12,

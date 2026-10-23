@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-23T00:12:35+00:00 from 6128 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-23T00:11:56+00:00 from 6129 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,7 +15,7 @@ Generated 2026-10-23T00:12:35+00:00 from 6128 packaged cells. Regenerate with `p
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | t3-rf-search | 22 | 0 | 6 | 0 | 0 |
 | t3-rf-confirm | 20 | 1 | 1 | 6 | 0 |
-| t3-rf-tuned | 14 | 3 | 3 | 8 | 0 |
+| t3-rf-tuned | 15 | 2 | 3 | 8 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -179,7 +179,7 @@ Generated 2026-10-23T00:12:35+00:00 from 6128 packaged cells. Regenerate with `p
 | t3-rf-tuned--ETTh2--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--ETTh2--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--ETTm2--TimeFilter--revin | done | 12/12 |  |
-| t3-rf-tuned--ETTm2--TimeFilter--fan | claimed | 11/12 | itm21-a4000 |
+| t3-rf-tuned--ETTm2--TimeFilter--fan | done | 12/12 |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
