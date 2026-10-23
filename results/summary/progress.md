@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-23T00:49:11+00:00 from 6157 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-23T00:47:07+00:00 from 6158 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,7 +15,7 @@ Generated 2026-10-23T00:49:11+00:00 from 6157 packaged cells. Regenerate with `p
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | t3-rf-search | 22 | 2 | 4 | 0 | 0 |
 | t3-rf-confirm | 21 | 1 | 0 | 6 | 0 |
-| t3-rf-tuned | 16 | 1 | 4 | 7 | 0 |
+| t3-rf-tuned | 17 | 0 | 4 | 7 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -165,7 +165,7 @@ Generated 2026-10-23T00:49:11+00:00 from 6157 packaged cells. Regenerate with `p
 | t3-rf-tuned--ETTh1--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--ETTh1--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--ETTm1--TimeFilter--revin | done | 12/12 |  |
-| t3-rf-tuned--ETTm1--TimeFilter--fan | claimed | 11/12 | itm21-a4000 |
+| t3-rf-tuned--ETTm1--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--Weather--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--Weather--TimeFilter--fan | blocked | 0/? |  |
 | t3-rf-tuned--Electricity--TimeFilter--revin | ready | 0/12 |  |
