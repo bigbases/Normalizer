@@ -180,7 +180,7 @@ Electricity,iTransformer,ea5eb2000ea7,grid,25,0.001,1,1,False,0.109560,0.165823,
 Electricity,iTransformer,026094c28304,grid,49,0.0001,1,1,False,0.109748,0.168419,0.139084,,,False,False
 Electricity,iTransformer,b05c2f930ffb,grid,49,0.001,1,1,False,0.108489,0.169975,0.139232,,,False,False
 Traffic,DLinear,eb7d78e60988,grid,13,0.0001,0,1,False,0.337133,0.403501,0.370317,,,False,False
-Traffic,DLinear,8a6abe16a00f,grid,13,0.001,0,1,False,0.334935,0.400302,0.367618,,,False,False
+Traffic,DLinear,8a6abe16a00f,grid,13,0.001,0,1,False,0.334935,0.400302,0.367618,0.334162,,False,False
 Traffic,DLinear,bd1237dae9f6,grid,25,0.0001,0,1,True,0.335203,0.400656,0.367929,0.335281,0.400939,False,False
 Traffic,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.333839,0.398128,0.365983,0.333619,0.398117,True,True
 Traffic,DLinear,96063ae3aa85,grid,49,0.0001,0,1,False,0.335390,0.400656,0.368023,,,False,False

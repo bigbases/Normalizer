@@ -11,8 +11,8 @@ lt-ksens,Weather,DLinear,lt,done,18,18,
 lt-ksens,Weather,iTransformer,lt,done,18,18,
 lt-ksens,Electricity,DLinear,lt,done,18,18,
 lt-ksens,Electricity,iTransformer,lt,ready,3,18,
-lt-ksens,Traffic,DLinear,lt,claimed,3,18,itm20-gpu1-a4000
-lt-ksens,Traffic,iTransformer,lt,claimed,11,18,itm20-gpu0-a4000
+lt-ksens,Traffic,DLinear,lt,done,18,18,
+lt-ksens,Traffic,iTransformer,lt,claimed,13,18,itm20-gpu0-a4000
 lt-rsens,ETTh1,DLinear,lt,done,18,18,
 lt-rsens,ETTh1,iTransformer,lt,done,18,18,
 lt-rsens,ETTh2,DLinear,lt,done,18,18,
@@ -25,7 +25,7 @@ lt-rsens,Weather,DLinear,lt,done,18,18,
 lt-rsens,Weather,iTransformer,lt,done,18,18,
 lt-rsens,Electricity,DLinear,lt,done,18,18,
 lt-rsens,Electricity,iTransformer,lt,ready,3,18,
-lt-rsens,Traffic,DLinear,lt,ready,3,18,
+lt-rsens,Traffic,DLinear,lt,claimed,3,18,itm20-gpu1-a4000
 lt-rsens,Traffic,iTransformer,lt,ready,3,18,
 lt-pilot,ETTm1,iTransformer,lt,done,20,20,
 lt-pilot,ETTm1,DLinear,lt,done,20,20,
