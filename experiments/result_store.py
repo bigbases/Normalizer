@@ -292,7 +292,10 @@ def write_summary(root, results, tasks, protocol, bases):
 
     # Finals of the current tasks only: a re-tuned lock leaves the cells of the
     # previous lock in the store, and they must not mix into the same group.
-    current = {c["run_id"] for t in tasks if t.cells for c in t.cells}
+    # LightNorm sensitivity sweeps (experiments 12, 13) are kept out of the method groups.
+    sweep = {k for k, e in protocol["experiments"].items()
+             if e.get("lt_params") in ("locked_kernel_sweep", "locked_ratio_sweep")}
+    current = {c["run_id"] for t in tasks if t.cells and t.experiment not in sweep for c in t.cells}
     groups = defaultdict(list)
     for r in rows:
         if r.get("Phase") == "final" and r["Split"] == "test" and r.get("MSE") and r["RunID"] in current:

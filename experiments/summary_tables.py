@@ -28,6 +28,7 @@ import run_matrix as rm
 import select_hparams as sh
 
 METHODS = ["none", "revin", "san", "ddn", "fan", "lt"]
+SWEEP_MODES = {"locked_kernel_sweep": "kernel_size", "locked_ratio_sweep": "down_ratio"}
 BASELINES = ["none", "revin", "san", "ddn", "fan"]
 
 
@@ -356,10 +357,35 @@ def exp6_lt_explore(out, rows, protocol, bases):
             "vs_supplied_pct", "vs_SAN_pct", "vs_DDN_pct", "Beats_SAN", "Beats_DDN"], table)
 
 
+def sensitivity(out, rows, tasks, sweep, protocol):
+    """Mean test MSE/MAE of each swept LightNorm value (experiments 12 and 13), per case and horizon."""
+    by_id = {r["RunID"]: r for r in rows}
+    for exp_name in sorted(sweep):
+        param = SWEEP_MODES[protocol["experiments"][exp_name]["lt_params"]]
+        groups = defaultdict(list)
+        for t in tasks:
+            if t.cells and t.experiment == exp_name:
+                for c in t.cells:
+                    if c["run_id"] in by_id:
+                        groups[(c["dataset"], c["backbone"], c["horizon"], c["effective"][param])].append(by_id[c["run_id"]])
+        order = _order(protocol)
+        table = []
+        for (ds, bb, h, val), rs in sorted(groups.items(), key=lambda kv: (*order(kv[0][0], kv[0][1]), kv[0][2], kv[0][3])):
+            mse = [float(r["MSE"]) for r in rs]
+            mae = [float(r["MAE"]) for r in rs]
+            table.append([ds, bb, h, val, len(rs), _num(mean(mse)), _num(_std(mse)), _num(mean(mae)), _num(_std(mae))])
+        _write(out / f"exp{exp_name.split('_')[0]}_{param}_sensitivity.csv",
+               ["Dataset", "Backbone", "Horizon", param, "Seeds", "MSE", "MSE_std", "MAE", "MAE_std"], table)
+
+
 def write_all(out, rows, tasks, protocol, bases):
     out = Path(out)
-    current = {c["run_id"] for t in tasks if t.cells for c in t.cells}
+    # Sensitivity sweeps (experiments 12, 13) are LightNorm final cells too, but they must not
+    # enter the method comparison: only cells of the other phases define the main results.
+    sweep = {k for k, e in protocol["experiments"].items() if e.get("lt_params") in SWEEP_MODES}
+    current = {c["run_id"] for t in tasks if t.cells and t.experiment not in sweep for c in t.cells}
     groups = final_groups([r for r in rows if r["RunID"] in current], method_labeler(bases))
+    sensitivity(out, rows, tasks, sweep, protocol)
     stage_status(out, tasks)
     exp1_lightnorm(out, groups, protocol)
     exp2_validation(out, rows, protocol, bases)
