@@ -2,7 +2,7 @@ Dataset,Backbone,CandidateID,Kind,kernel_size,station_lr,s_norm,use_mlp,Supplied
 ETTh1,DLinear,21642c782956,grid,13,0.0001,0,0,False,0.675778,1.415527,1.045652,,,False,False
 ETTh1,DLinear,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.671751,1.367091,1.019421,0.672316,1.364469,True,False
 ETTh1,DLinear,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.670565,1.410789,1.040677,0.670471,1.410310,False,False
-ETTh1,DLinear,e18334433cdb,grid,25,0.001,0,0,False,0.674049,1.370517,1.022283,,,False,False
+ETTh1,DLinear,e18334433cdb,grid,25,0.001,0,0,False,0.674049,1.370517,1.022283,0.674752,,False,False
 ETTh1,DLinear,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.670161,1.407333,1.038747,,,False,False
 ETTh1,DLinear,70544b7f9269,grid,49,0.001,0,0,False,0.673863,1.362479,1.018171,0.674328,1.362228,True,True
 ETTh1,TimeFilter,21642c782956,grid,13,0.0001,0,0,False,0.699840,1.591027,1.145433,,,False,False
@@ -32,9 +32,9 @@ ETTh1,iTransformer,0a7ae0db7542,grid,49,0.001,1,0,False,0.679805,1.345686,1.0127
 ETTh2,DLinear,4489ccd471e8,grid,13,0.0001,1,0,False,0.203837,0.599109,0.401473,,,False,False
 ETTh2,DLinear,b4e03b0fc1ac,grid,13,0.001,1,0,False,0.203526,0.590735,0.397131,0.203640,0.606328,True,True
 ETTh2,DLinear,b6cb51b1118e,grid,25,0.0001,1,0,True,0.203961,0.596093,0.400027,0.204166,0.603448,False,False
-ETTh2,DLinear,3faa7e5257ed,grid,25,0.001,1,0,False,0.204103,0.599199,0.401651,,,False,False
+ETTh2,DLinear,3faa7e5257ed,grid,25,0.001,1,0,False,0.204103,0.599199,0.401651,0.204499,,False,False
 ETTh2,DLinear,420371036e53,grid,49,0.0001,1,0,False,0.203979,0.595774,0.399877,0.204326,0.603010,True,False
-ETTh2,DLinear,ca0422c8191d,grid,49,0.001,1,0,False,0.205431,0.619620,0.412526,,,False,False
+ETTh2,DLinear,ca0422c8191d,grid,49,0.001,1,0,False,0.205431,0.619620,0.412526,0.206043,,False,False
 ETTh2,TimeFilter,21642c782956,grid,13,0.0001,0,0,False,0.209484,0.607172,0.408328,,,False,False
 ETTh2,TimeFilter,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.208620,0.602745,0.405682,,,False,False
 ETTh2,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.210980,0.610787,0.410883,,,False,False

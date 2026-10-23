@@ -1,10 +1,10 @@
 # Experiment progress
 
-Generated 2026-10-23T05:22:47+00:00 from 6244 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-23T05:31:47+00:00 from 6271 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| lt-ksens | 1 | 1 | 12 | 0 | 0 |
+| lt-ksens | 2 | 2 | 10 | 0 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -16,7 +16,7 @@ Generated 2026-10-23T05:22:47+00:00 from 6244 packaged cells. Regenerate with `p
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | t3-rf-search | 24 | 1 | 3 | 0 | 0 |
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
-| t3-rf-tuned | 20 | 1 | 3 | 4 | 0 |
+| t3-rf-tuned | 20 | 0 | 4 | 4 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -33,9 +33,9 @@ Generated 2026-10-23T05:22:47+00:00 from 6244 packaged cells. Regenerate with `p
 
 | task | status | cells done | worker |
 |---|---|---|---|
-| lt-ksens--ETTh1--DLinear | ready | 3/18 |  |
-| lt-ksens--ETTh1--iTransformer | ready | 3/18 |  |
-| lt-ksens--ETTh2--DLinear | claimed | 4/18 | itm20-gpu0-a4000 |
+| lt-ksens--ETTh1--DLinear | claimed | 13/18 | itm20-gpu1-a4000 |
+| lt-ksens--ETTh1--iTransformer | claimed | 3/18 | itm20-gpu0-a4000 |
+| lt-ksens--ETTh2--DLinear | done | 18/18 |  |
 | lt-ksens--ETTh2--iTransformer | done | 18/18 |  |
 | lt-ksens--ETTm1--DLinear | ready | 6/18 |  |
 | lt-ksens--ETTm1--iTransformer | ready | 6/18 |  |
@@ -128,7 +128,7 @@ Generated 2026-10-23T05:22:47+00:00 from 6244 packaged cells. Regenerate with `p
 | t3-rf-search--Weather--TimeFilter--revin | done | 4/4 |  |
 | t3-rf-search--Weather--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-search--Electricity--TimeFilter--revin | done | 4/4 |  |
-| t3-rf-search--Electricity--TimeFilter--fan | claimed | 1/12 | itm21-a4000 |
+| t3-rf-search--Electricity--TimeFilter--fan | claimed | 2/12 | itm21-a4000 |
 | t3-rf-search--Traffic--TimeFilter--revin | done | 4/4 |  |
 | t3-rf-search--Traffic--TimeFilter--fan | ready | 0/12 |  |
 | t3-rf-search--ETTh2--TimeXer--revin | done | 4/4 |  |
@@ -173,7 +173,7 @@ Generated 2026-10-23T05:22:47+00:00 from 6244 packaged cells. Regenerate with `p
 | t3-rf-tuned--ETTm1--TimeXer--fan | done | 12/12 |  |
 | t3-rf-tuned--Weather--TimeXer--revin | done | 12/12 |  |
 | t3-rf-tuned--Weather--TimeXer--fan | done | 12/12 |  |
-| t3-rf-tuned--Electricity--TimeXer--revin | claimed | 0/12 | itm20-gpu1-a4000 |
+| t3-rf-tuned--Electricity--TimeXer--revin | ready | 2/12 |  |
 | t3-rf-tuned--Electricity--TimeXer--fan | blocked | 0/? |  |
 | t3-rf-tuned--Traffic--TimeXer--revin | ready | 0/12 |  |
 | t3-rf-tuned--Traffic--TimeXer--fan | blocked | 0/? |  |
