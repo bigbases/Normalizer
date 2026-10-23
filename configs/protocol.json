@@ -96,6 +96,15 @@
       "kernel_sweep": [3, 7, 13, 25, 49, 73],
       "horizons": [96],
       "description": "Kernel-size sensitivity on every dataset: the locked LightNorm setting of each case with only kernel_size (and the tied kernel_len) replaced, test at H=96, seeds 2021-2023. The locked kernel's cells are the tuned final cells of experiment 8."
+    },
+    "13_lightnorm_ratio_sensitivity": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["lt"],
+      "phase": "final",
+      "lt_params": "locked_ratio_sweep",
+      "ratio_sweep": [1, 2, 4, 8, 16, 32],
+      "horizons": [96],
+      "description": "Downsampling-ratio sensitivity on every dataset: the locked LightNorm setting of each case with only down_ratio replaced, test at H=96, seeds 2021-2023. The locked ratio's cells are the tuned final cells of experiment 8."
     }
   },
   "lt_tuning": {

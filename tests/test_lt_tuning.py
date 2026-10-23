@@ -224,6 +224,18 @@ class LightNormMainTuningTest(unittest.TestCase):
         tuned = {c["run_id"] for c in self.cells("8_lightnorm_tuned_final", "final", "ETTh1", "DLinear", lock_doc=doc)}
         self.assertEqual({c["run_id"] for c in sweep if c["effective"]["kernel_size"] == 49}, {r for r in tuned if "-h96-" in r})
 
+    def test_ratio_sensitivity_varies_only_the_ratio_of_the_lock(self):
+        base = rm.selected_base_config(self.bases, "ETTh2", "DLinear")
+        lock = {**rm.supplied_lt_params(base), "kernel_size": 13, "station_lr": 1e-3}
+        doc = {"locks": {"ETTh2|DLinear|lt": lock}}
+        sweep = self.cells("13_lightnorm_ratio_sensitivity", "final", "ETTh2", "DLinear", lock_doc=doc)
+        ratios = self.protocol["experiments"]["13_lightnorm_ratio_sensitivity"]["ratio_sweep"]
+        self.assertEqual({c["effective"]["down_ratio"] for c in sweep}, set(ratios))
+        self.assertEqual({c["horizon"] for c in sweep}, {96})
+        locked_r = rm.lt_params(lock)["down_ratio"]
+        tuned = {c["run_id"] for c in self.cells("8_lightnorm_tuned_final", "final", "ETTh2", "DLinear", lock_doc=doc)}
+        self.assertEqual({c["run_id"] for c in sweep if c["effective"]["down_ratio"] == locked_r}, {r for r in tuned if "-h96-" in r})
+
     def test_non_supplied_lock_is_reported_as_lt_tuned(self):
         rows = fake_rows(self.cells("7_lightnorm_tuning", "search", "ETTm1", "DLinear"), value=0.1)
         rows.update(fake_rows(self.cells("1_rebuttal_completion", "final", "ETTm1", "DLinear"), value=0.9))

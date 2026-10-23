@@ -65,6 +65,8 @@
      "backbones": ["TimeXer", "TimeFilter"], "methods": ["lt"], "priority": 1, "requires": "t3-lt-confirm"},
     {"name": "lt-ksens", "experiment": "12_lightnorm_kernel_sensitivity", "stage": "final", "open": true,
      "backbones": ["DLinear", "iTransformer"], "methods": ["lt"], "priority": -1, "requires": "lt-confirm"},
+    {"name": "lt-rsens", "experiment": "13_lightnorm_ratio_sensitivity", "stage": "final", "open": true,
+     "backbones": ["DLinear", "iTransformer"], "methods": ["lt"], "priority": -1, "requires": "lt-confirm"},
     {"name": "t3-rf-search", "split": "method", "experiment": "2_normalizer_search", "stage": "search", "open": true,
      "cases": [["ETTh1", "TimeXer"], ["ETTm1", "TimeXer"], ["Weather", "TimeXer"], ["Electricity", "TimeXer"], ["Traffic", "TimeXer"], ["ETTh1", "TimeFilter"], ["ETTm1", "TimeFilter"], ["Weather", "TimeFilter"], ["Electricity", "TimeFilter"], ["Traffic", "TimeFilter"], ["ETTh2", "TimeXer"], ["ETTm2", "TimeXer"], ["ETTh2", "TimeFilter"], ["ETTm2", "TimeFilter"]],
      "backbones": ["TimeXer", "TimeFilter"], "methods": ["revin", "fan"], "priority": 0},

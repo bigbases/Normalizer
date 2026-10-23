@@ -780,7 +780,7 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
         shortlist_doc = load_json(args.shortlist) if args.shortlist else {}
     if stage == "confirm" and not shortlist_doc:
         raise ValueError("--shortlist is required for confirm stage")
-    needs_lock = [m for m in methods if m not in ("none", "lt") or exp.get("lt_params") in ("locked", "locked_kernel_sweep")]
+    needs_lock = [m for m in methods if m not in ("none", "lt") or exp.get("lt_params") in ("locked", "locked_kernel_sweep", "locked_ratio_sweep")]
     if stage == "final" and needs_lock and not lock_doc:
         raise ValueError("--locks is required for final comparisons with tuned baselines")
 
@@ -812,6 +812,9 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                     # the locked setting with only the kernel size replaced (lt_params ties kernel_len)
                     lock = locked_candidates(lock_doc, dataset, backbone, method)[0]
                     candidates = [{**lock, "kernel_size": k} for k in exp["kernel_sweep"]]
+                elif method == "lt" and exp.get("lt_params") == "locked_ratio_sweep":
+                    lock = locked_candidates(lock_doc, dataset, backbone, method)[0]
+                    candidates = [{**lock, "down_ratio": r} for r in exp["ratio_sweep"]]
                 elif method == "lt":
                     candidates = [supplied_lt_params(selected_base)]
                 elif method == "none":
