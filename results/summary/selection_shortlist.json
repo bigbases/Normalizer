@@ -2147,6 +2147,16 @@
     ],
     "Traffic|TimeXer|fan": [
       {
+        "candidate_id": "73d0bad9d492",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 45,
+          "station_lr": 0.001
+        },
+        "screen_mean_val_mse": 0.4719522303400131
+      },
+      {
         "candidate_id": "4f579ef507bf",
         "n_cells": 2,
         "params": {
@@ -2155,16 +2165,6 @@
           "station_lr": 0.001
         },
         "screen_mean_val_mse": 0.4734604948701767
-      },
-      {
-        "candidate_id": "08403ccc5d34",
-        "n_cells": 2,
-        "params": {
-          "fan_aux_weight": 1.0,
-          "freq_topk": 30,
-          "station_lr": 0.0001
-        },
-        "screen_mean_val_mse": 0.543963088410405
       }
     ],
     "Traffic|TimeXer|revin": [
