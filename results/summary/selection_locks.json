@@ -509,6 +509,11 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "Traffic|TimeFilter|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 15,
+      "station_lr": 0.001
+    },
     "Traffic|TimeFilter|revin": {
       "affine": 0,
       "station_lr": 0.0001
