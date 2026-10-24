@@ -1739,6 +1739,28 @@
         "screen_mean_val_mse": 0.16112060863993266
       }
     ],
+    "Electricity|TimeXer|fan": [
+      {
+        "candidate_id": "2479cac43388",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 3,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.18710957334125006
+      },
+      {
+        "candidate_id": "e4468eada22b",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 1,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.18900005254402474
+      }
+    ],
     "Electricity|TimeXer|revin": [
       {
         "candidate_id": "a22b7bdd93cb",
@@ -2003,6 +2025,28 @@
           "wavelet": "coif3"
         },
         "screen_mean_val_mse": 0.41063382549641225
+      }
+    ],
+    "Traffic|TimeFilter|fan": [
+      {
+        "candidate_id": "73d0bad9d492",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 45,
+          "station_lr": 0.001
+        },
+        "screen_mean_val_mse": 0.4724690816150262
+      },
+      {
+        "candidate_id": "4f579ef507bf",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 30,
+          "station_lr": 0.001
+        },
+        "screen_mean_val_mse": 0.47383029031065793
       }
     ],
     "Traffic|TimeFilter|revin": [
