@@ -1677,14 +1677,14 @@
         "screen_mean_val_mse": 0.1666554504806328
       },
       {
-        "candidate_id": "2479cac43388",
+        "candidate_id": "942f55772c3f",
         "n_cells": 2,
         "params": {
           "fan_aux_weight": 1.0,
-          "freq_topk": 3,
-          "station_lr": 0.0001
+          "freq_topk": 6,
+          "station_lr": 0.001
         },
-        "screen_mean_val_mse": 0.1725307532064851
+        "screen_mean_val_mse": 0.16863180943208295
       }
     ],
     "Electricity|TimeFilter|revin": [
