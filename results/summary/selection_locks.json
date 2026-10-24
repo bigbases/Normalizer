@@ -418,6 +418,11 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "Electricity|TimeFilter|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 3,
+      "station_lr": 0.001
+    },
     "Electricity|TimeFilter|revin": {
       "affine": 1,
       "station_lr": 0.0001
