@@ -619,7 +619,7 @@ Electricity,TimeFilter,fan,59c5876c8eff,"{""fan_aux_weight"": 1.0, ""freq_topk""
 Electricity,TimeFilter,fan,942f55772c3f,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 0.001}",0.151058,0.186206,,,0.168632,,True,False
 Electricity,TimeFilter,fan,9d16227c5d05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 0.0001}",0.160082,0.194707,,,0.177395,,False,False
 Electricity,TimeFilter,fan,d593cedb5f74,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.001}",0.154511,0.227579,,,0.191045,,False,False
-Electricity,TimeFilter,fan,e4468eada22b,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0001}",,0.237104,,,,,False,False
+Electricity,TimeFilter,fan,e4468eada22b,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0001}",0.158516,0.237104,,,0.197810,,False,False
 Electricity,TimeFilter,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.114468,0.179524,0.113588,0.179440,0.146996,0.146755,True,False
 Electricity,TimeFilter,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.114327,0.173448,0.114755,0.174088,0.143888,0.144155,True,True
 Electricity,TimeFilter,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.118879,0.183443,,,0.151161,,False,False
