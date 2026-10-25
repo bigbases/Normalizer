@@ -87,6 +87,12 @@ class Model(nn.Module):
             self.norm = Normalize(configs.enc_in, affine=False)
 
         self.register_buffer('masks', build_masks(self.seq_len, self.n_vars, self.patch_len), persistent=False)
+        # Diagnostic: tokens are ordered channel-major (index = c * N + n), so this mask
+        # marks every pair of tokens from different channels.
+        self.block_cross_channel = bool(getattr(configs, 'tf_block_cross_channel', False))
+        if self.block_cross_channel:
+            ch = torch.arange(self.n_vars * self.num_patches) // self.num_patches
+            self.register_buffer('cross_channel', ch[:, None] != ch[None, :], persistent=False)
         self.aux_loss = None
 
     def forward(self, x_enc, x_mark_enc=None, x_dec=None, x_mark_dec=None):
@@ -96,6 +102,10 @@ class Model(nn.Module):
         x = x.permute(0, 2, 1).reshape(-1, C * T)  # [B, C*T]
         x = self.patch_embed(x)  # [B, C*N, D]
 
+        if self.block_cross_channel:
+            for block in self.backbone.blocks:
+                block.gnn.cross_channel = self.cross_channel
+                block.gnn.graph_learner.cross_channel = self.cross_channel
         x, moe_loss = self.backbone(x, self.masks, self.alpha)
         self.aux_loss = moe_loss
 

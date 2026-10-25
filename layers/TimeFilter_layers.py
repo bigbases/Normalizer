@@ -216,6 +216,9 @@ class GraphLearner(nn.Module):
     def forward(self, x, masks=None, alpha=0.5):
         # x: [B, H, L, D]
         adj = F.gelu(torch.einsum('bhid,bhjd->bhij', self.proj_1(x), self.proj_2(x)))
+        cross = getattr(self, 'cross_channel', None)
+        if cross is not None:   # diagnostic: the kNN and the router see no scores between channels
+            adj = adj.masked_fill(cross, 0.0)
         adj = adj * mask_topk(adj, alpha)  # KNN
         mask, loss = self.mask_moe(adj, masks)
         adj = adj * mask
@@ -239,6 +242,9 @@ class GraphFilter(nn.Module):
 
         adj, loss = self.graph_learner(x.reshape(B, L, self.n_heads, -1).permute(0, 2, 1, 3), masks, alpha)  # [B, H, L, L]
 
+        cross = getattr(self, 'cross_channel', None)
+        if cross is not None:   # diagnostic: no message passing between channels
+            adj = adj.masked_fill(cross, float('-inf'))
         adj = torch.softmax(adj, dim=-1)
         adj = self.dropout(adj)
         out = self.graph_conv(adj, x)

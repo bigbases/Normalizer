@@ -453,6 +453,8 @@ class Exp_Main(Exp_Basic):
         # Traffic/H720, and np.array(..., dtype=object) silently produced an
         # object array whenever all batches had equal shape.
         stats = StreamingMetrics()
+        save_preds = getattr(self.args, 'save_test_preds', '')
+        kept_pred, kept_true = [], []
         self.model.eval()
         self.station.eval()
         with torch.no_grad():
@@ -472,12 +474,18 @@ class Exp_Main(Exp_Basic):
                 pred = outputs.detach().cpu().numpy()
                 true = batch_y_t.detach().cpu().numpy()
                 stats.update(pred, true)
+                if save_preds:
+                    kept_pred.append(pred.astype(np.float32))
+                    kept_true.append(true.astype(np.float32))
                 if folder_path and i % 20 == 0:
                     x = input_x.detach().cpu().numpy()
                     gt = np.concatenate((x[0, :, -1], true[0, :, -1]), axis=0)
                     pd = np.concatenate((x[0, :, -1], pred[0, :, -1]), axis=0)
                     visual(gt, pd, os.path.join(folder_path, f'{i}.pdf'))
 
+        if save_preds:
+            os.makedirs(os.path.dirname(os.path.abspath(save_preds)), exist_ok=True)
+            np.savez_compressed(save_preds, pred=np.concatenate(kept_pred), true=np.concatenate(kept_true))
         return stats.compute()
 
     def evaluate_shifts(self):
