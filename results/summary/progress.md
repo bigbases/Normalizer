@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-25T06:27:57+00:00 from 6745 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-25T19:03:16+00:00 from 6764 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,7 +17,7 @@ Generated 2026-10-25T06:27:57+00:00 from 6745 packaged cells. Regenerate with `p
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | t3-rf-search | 28 | 0 | 0 | 0 | 0 |
 | t3-rf-confirm | 28 | 0 | 0 | 0 | 0 |
-| t3-rf-tuned | 25 | 2 | 1 | 0 | 0 |
+| t3-rf-tuned | 26 | 2 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -190,8 +190,8 @@ Generated 2026-10-25T06:27:57+00:00 from 6745 packaged cells. Regenerate with `p
 | t3-rf-tuned--Weather--TimeXer--fan | done | 12/12 |  |
 | t3-rf-tuned--Electricity--TimeXer--revin | done | 12/12 |  |
 | t3-rf-tuned--Electricity--TimeXer--fan | done | 12/12 |  |
-| t3-rf-tuned--Traffic--TimeXer--revin | ready | 0/12 |  |
-| t3-rf-tuned--Traffic--TimeXer--fan | claimed | 0/12 | itm20-gpu0-a4000 |
+| t3-rf-tuned--Traffic--TimeXer--revin | claimed | 2/12 | itm21-a4000 |
+| t3-rf-tuned--Traffic--TimeXer--fan | claimed | 8/12 | itm20-gpu0-a4000 |
 | t3-rf-tuned--ETTh1--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--ETTh1--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--ETTm1--TimeFilter--revin | done | 12/12 |  |
@@ -200,7 +200,7 @@ Generated 2026-10-25T06:27:57+00:00 from 6745 packaged cells. Regenerate with `p
 | t3-rf-tuned--Weather--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--Electricity--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--Electricity--TimeFilter--fan | done | 12/12 |  |
-| t3-rf-tuned--Traffic--TimeFilter--revin | claimed | 3/12 | itm20-gpu1-a4000 |
+| t3-rf-tuned--Traffic--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--Traffic--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--ETTh2--TimeXer--revin | done | 12/12 |  |
 | t3-rf-tuned--ETTh2--TimeXer--fan | done | 12/12 |  |
