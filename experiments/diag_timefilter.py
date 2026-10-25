@@ -65,7 +65,6 @@ def plan(args):
             name = f'{variant}_{c["backbone"]}_{c["dataset"]}_{c["method"]}_s{c["seed"]}'
             cmd = rm.cell_command(c, args.data_root, out / "results.csv", out / "ckpt" / name, gpu=0)
             cmd[cmd.index("--run_id") + 1] = f'{c["run_id"]}-diag{variant}'
-            cmd[cmd.index("--phase") + 1] = f"diag{variant}"
             if "--num_workers" in cmd:
                 cmd[cmd.index("--num_workers") + 1] = "0"
             cmd += ["--save_test_preds", str(out / "preds" / f"{name}.npz")]
