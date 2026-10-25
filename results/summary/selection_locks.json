@@ -538,6 +538,11 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "Traffic|TimeXer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 45,
+      "station_lr": 0.001
+    },
     "Traffic|TimeXer|revin": {
       "affine": 1,
       "station_lr": 0.0001
