@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-25T00:37:54+00:00 from 6728 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-25T04:19:29+00:00 from 6741 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,7 +17,7 @@ Generated 2026-10-25T00:37:54+00:00 from 6728 packaged cells. Regenerate with `p
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
 | t3-rf-search | 28 | 0 | 0 | 0 | 0 |
 | t3-rf-confirm | 28 | 0 | 0 | 0 | 0 |
-| t3-rf-tuned | 23 | 3 | 2 | 0 | 0 |
+| t3-rf-tuned | 24 | 2 | 2 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -48,20 +48,20 @@ Generated 2026-10-25T00:37:54+00:00 from 6728 packaged cells. Regenerate with `p
 | lt-ksens--Electricity--iTransformer | done | 18/18 |  |
 | lt-ksens--Traffic--DLinear | done | 18/18 |  |
 | lt-ksens--Traffic--iTransformer | done | 18/18 |  |
-| lt-rsens--ETTh1--DLinear | done | 18/18 |  |
-| lt-rsens--ETTh1--iTransformer | done | 18/18 |  |
-| lt-rsens--ETTh2--DLinear | done | 18/18 |  |
-| lt-rsens--ETTh2--iTransformer | done | 18/18 |  |
-| lt-rsens--ETTm1--DLinear | done | 18/18 |  |
-| lt-rsens--ETTm1--iTransformer | done | 18/18 |  |
-| lt-rsens--ETTm2--DLinear | done | 18/18 |  |
-| lt-rsens--ETTm2--iTransformer | done | 18/18 |  |
-| lt-rsens--Weather--DLinear | done | 18/18 |  |
-| lt-rsens--Weather--iTransformer | done | 18/18 |  |
-| lt-rsens--Electricity--DLinear | done | 18/18 |  |
-| lt-rsens--Electricity--iTransformer | done | 18/18 |  |
-| lt-rsens--Traffic--DLinear | done | 18/18 |  |
-| lt-rsens--Traffic--iTransformer | done | 18/18 |  |
+| lt-rsens--ETTh1--DLinear | done | 3/3 |  |
+| lt-rsens--ETTh1--iTransformer | done | 3/3 |  |
+| lt-rsens--ETTh2--DLinear | done | 3/3 |  |
+| lt-rsens--ETTh2--iTransformer | done | 3/3 |  |
+| lt-rsens--ETTm1--DLinear | done | 3/3 |  |
+| lt-rsens--ETTm1--iTransformer | done | 3/3 |  |
+| lt-rsens--ETTm2--DLinear | done | 3/3 |  |
+| lt-rsens--ETTm2--iTransformer | done | 3/3 |  |
+| lt-rsens--Weather--DLinear | done | 3/3 |  |
+| lt-rsens--Weather--iTransformer | done | 3/3 |  |
+| lt-rsens--Electricity--DLinear | done | 3/3 |  |
+| lt-rsens--Electricity--iTransformer | done | 3/3 |  |
+| lt-rsens--Traffic--DLinear | done | 3/3 |  |
+| lt-rsens--Traffic--iTransformer | done | 3/3 |  |
 | lt-pilot--ETTm1--iTransformer | done | 20/20 |  |
 | lt-pilot--ETTm1--DLinear | done | 20/20 |  |
 | lt-pilot--Weather--DLinear | done | 20/20 |  |
@@ -188,7 +188,7 @@ Generated 2026-10-25T00:37:54+00:00 from 6728 packaged cells. Regenerate with `p
 | t3-rf-tuned--ETTm1--TimeXer--fan | done | 12/12 |  |
 | t3-rf-tuned--Weather--TimeXer--revin | done | 12/12 |  |
 | t3-rf-tuned--Weather--TimeXer--fan | done | 12/12 |  |
-| t3-rf-tuned--Electricity--TimeXer--revin | claimed | 6/12 | itm21-a4000 |
+| t3-rf-tuned--Electricity--TimeXer--revin | done | 12/12 |  |
 | t3-rf-tuned--Electricity--TimeXer--fan | done | 12/12 |  |
 | t3-rf-tuned--Traffic--TimeXer--revin | ready | 0/12 |  |
 | t3-rf-tuned--Traffic--TimeXer--fan | ready | 0/12 |  |
@@ -199,8 +199,8 @@ Generated 2026-10-25T00:37:54+00:00 from 6728 packaged cells. Regenerate with `p
 | t3-rf-tuned--Weather--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--Weather--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--Electricity--TimeFilter--revin | done | 12/12 |  |
-| t3-rf-tuned--Electricity--TimeFilter--fan | claimed | 4/12 | itm20-gpu0-a4000 |
-| t3-rf-tuned--Traffic--TimeFilter--revin | claimed | 0/12 | itm20-gpu1-a4000 |
+| t3-rf-tuned--Electricity--TimeFilter--fan | claimed | 9/12 | itm20-gpu0-a4000 |
+| t3-rf-tuned--Traffic--TimeFilter--revin | claimed | 2/12 | itm20-gpu1-a4000 |
 | t3-rf-tuned--Traffic--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--ETTh2--TimeXer--revin | done | 12/12 |  |
 | t3-rf-tuned--ETTh2--TimeXer--fan | done | 12/12 |  |
