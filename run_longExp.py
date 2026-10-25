@@ -257,6 +257,8 @@ parser.add_argument('--pos', type=int, choices=[0, 1], default=1, help='TimeFilt
 parser.add_argument('--tf_internal_norm', type=str2bool, default=False)
 parser.add_argument('--tf_block_cross_channel', type=str2bool, default=False,
                     help='TimeFilter diagnostic: block graph edges between different channels')
+parser.add_argument('--lt_channel_mix', type=str2bool, default=False,
+                    help='LightNorm diagnostic: residual channel-mixing layer on the trend forecast')
 parser.add_argument('--save_test_preds', type=str, default='',
                     help='diagnostic: save test predictions and targets (original scale) to this .npz path')
 parser.add_argument('--aux_loss_weight', type=float, default=0.05,

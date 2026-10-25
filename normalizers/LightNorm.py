@@ -439,9 +439,16 @@ def _denorm_kernel_ok(plan, s_norm, t_norm, device):
 
 
 class DownUpTrendPredictor(nn.Module):
-    def __init__(self, seq_len, pred_len, down_ratio=4, hidden_dim=64, use_mlp=False):
+    def __init__(self, seq_len, pred_len, down_ratio=4, hidden_dim=64, use_mlp=False, channels=None, channel_mix=False):
         super().__init__()
         self.down_ratio = down_ratio
+        # Diagnostic option: a channel-mixing layer on the H/r-point forecast, added residually and
+        # initialized to zero, so training starts from the channel-independent predictor.
+        self.channel_mix = None
+        if channel_mix:
+            self.channel_mix = nn.Linear(channels, channels)
+            nn.init.zeros_(self.channel_mix.weight)
+            nn.init.zeros_(self.channel_mix.bias)
         self.down_len = max(1, seq_len // down_ratio)
         self.pred_len = pred_len
 
@@ -460,7 +467,12 @@ class DownUpTrendPredictor(nn.Module):
         """trend [B, L, D] -> prediction on the downsampled grid [B, H//r, D]."""
         # D 차원 각각 독립적으로 처리
         trend_down = F.avg_pool1d(trend.transpose(1,2), kernel_size=self.down_ratio).transpose(1,2)  # [B, L//r, D]
-        return self.linear(trend_down.transpose(1,2)).transpose(1,2)  # [B, H//r, D]
+        pred = self.linear(trend_down.transpose(1,2)).transpose(1,2)  # [B, H//r, D]
+        return self.mix(pred)
+
+    def mix(self, pred):
+        """pred [B, H//r, D] -> same shape, with the optional residual channel mixing."""
+        return pred if self.channel_mix is None else pred + self.channel_mix(pred)
 
     def forward(self, trend):
         """
@@ -495,7 +507,9 @@ class Model(nn.Module):
             pred_len=configs.pred_len,
             down_ratio=configs.down_ratio,
             use_mlp=configs.use_mlp,
-            hidden_dim=configs.t_ff
+            hidden_dim=configs.t_ff,
+            channels=configs.enc_in,
+            channel_mix=bool(getattr(configs, 'lt_channel_mix', False)),
         )
 
     def _decompose(self, x):
@@ -534,6 +548,8 @@ class Model(nn.Module):
         predictor = self.trend_predictor
         down = F.avg_pool1d(trend.transpose(1, 2), kernel_size=predictor.down_ratio)     # [B, D, L/r]
         pred = predictor.linear(down)                                                     # [B, D, H/r]
+        if predictor.channel_mix is not None:
+            pred = predictor.mix(pred.transpose(1, 2)).transpose(1, 2)
         key = (x.device.type, x.device.index, pred.shape[-1], predictor.pred_len)
         if key not in _UPSAMPLE_PLANS:
             _UPSAMPLE_PLANS[key] = _calibrate_upsample(pred.shape[-1], predictor.pred_len, x.device)
