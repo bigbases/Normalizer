@@ -155,7 +155,7 @@ t3-rf-tuned,Weather,TimeXer,revin,done,12,12,
 t3-rf-tuned,Weather,TimeXer,fan,done,12,12,
 t3-rf-tuned,Electricity,TimeXer,revin,done,12,12,
 t3-rf-tuned,Electricity,TimeXer,fan,done,12,12,
-t3-rf-tuned,Traffic,TimeXer,revin,claimed,6,12,itm21-a4000
+t3-rf-tuned,Traffic,TimeXer,revin,done,12,12,
 t3-rf-tuned,Traffic,TimeXer,fan,done,12,12,
 t3-rf-tuned,ETTh1,TimeFilter,revin,done,12,12,
 t3-rf-tuned,ETTh1,TimeFilter,fan,done,12,12,
