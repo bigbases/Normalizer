@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-27T18:16:41+00:00 from 7181 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-27T18:19:57+00:00 from 7185 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-27T18:16:41+00:00 from 7181 packaged cells. Regenerate with `p
 | t3-length-s2022 | 24 | 0 | 0 | 0 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| t3-length-s2023 | 18 | 4 | 2 | 0 | 0 |
+| t3-length-s2023 | 19 | 4 | 1 | 0 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -119,19 +119,19 @@ Generated 2026-10-27T18:16:41+00:00 from 7181 packaged cells. Regenerate with `p
 | t3-length-s2023--ETTh2--TimeXer--lt | done | 6/6 |  |
 | t3-length-s2023--ETTm1--TimeXer--revin | done | 6/6 |  |
 | t3-length-s2023--ETTm1--TimeXer--san | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeXer--ddn | claimed | 0/6 | itm20-gpu0-a4000 |
+| t3-length-s2023--ETTm1--TimeXer--ddn | claimed | 1/6 | itm20-gpu0-a4000 |
 | t3-length-s2023--ETTm1--TimeXer--lt | done | 6/6 |  |
 | t3-length-s2023--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length-s2023--Weather--TimeXer--san | done | 6/6 |  |
-| t3-length-s2023--Weather--TimeXer--ddn | ready | 0/6 |  |
+| t3-length-s2023--Weather--TimeXer--ddn | claimed | 0/6 | itm20-gpu1-a4000 |
 | t3-length-s2023--Weather--TimeXer--lt | done | 6/6 |  |
 | t3-length-s2023--ETTh2--TimeFilter--revin | done | 6/6 |  |
 | t3-length-s2023--ETTh2--TimeFilter--san | done | 6/6 |  |
 | t3-length-s2023--ETTh2--TimeFilter--ddn | done | 6/6 |  |
 | t3-length-s2023--ETTh2--TimeFilter--lt | done | 6/6 |  |
 | t3-length-s2023--ETTm1--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeFilter--san | claimed | 4/6 | itm21-a4000 |
-| t3-length-s2023--ETTm1--TimeFilter--ddn | claimed | 3/6 | itm20-gpu1-a4000 |
+| t3-length-s2023--ETTm1--TimeFilter--san | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeFilter--ddn | claimed | 4/6 | itm20-gpu1-a4000 |
 | t3-length-s2023--ETTm1--TimeFilter--lt | done | 6/6 |  |
 | t3-length-s2023--Weather--TimeFilter--revin | done | 6/6 |  |
 | t3-length-s2023--Weather--TimeFilter--san | claimed | 0/6 | itm21-a4000 |
