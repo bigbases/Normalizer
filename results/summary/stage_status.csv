@@ -21,14 +21,14 @@ t3-length,ETTm1,TimeFilter,ddn,done,6,6,
 t3-length,ETTm1,TimeFilter,lt,done,6,6,
 t3-length,Weather,TimeFilter,revin,done,6,6,
 t3-length,Weather,TimeFilter,san,done,6,6,
-t3-length,Weather,TimeFilter,ddn,claimed,5,6,itm21-a4000
+t3-length,Weather,TimeFilter,ddn,done,6,6,
 t3-length,Weather,TimeFilter,lt,done,6,6,
 t3-length-s2022,ETTh2,TimeXer,revin,done,6,6,
 t3-length-s2022,ETTh2,TimeXer,san,done,6,6,
 t3-length-s2022,ETTh2,TimeXer,ddn,done,6,6,
 t3-length-s2022,ETTh2,TimeXer,lt,done,6,6,
 t3-length-s2022,ETTm1,TimeXer,revin,done,6,6,
-t3-length-s2022,ETTm1,TimeXer,san,claimed,1,6,itm20-gpu0-a4000
+t3-length-s2022,ETTm1,TimeXer,san,claimed,4,6,itm20-gpu0-a4000
 t3-length-s2022,ETTm1,TimeXer,ddn,ready,0,6,
 t3-length-s2022,ETTm1,TimeXer,lt,done,6,6,
 t3-length-s2022,Weather,TimeXer,revin,done,6,6,
@@ -41,7 +41,7 @@ t3-length-s2022,ETTh2,TimeFilter,ddn,done,6,6,
 t3-length-s2022,ETTh2,TimeFilter,lt,done,6,6,
 t3-length-s2022,ETTm1,TimeFilter,revin,done,6,6,
 t3-length-s2022,ETTm1,TimeFilter,san,claimed,0,6,itm21-a4000
-t3-length-s2022,ETTm1,TimeFilter,ddn,ready,0,6,
+t3-length-s2022,ETTm1,TimeFilter,ddn,claimed,0,6,itm20-gpu0-a4000
 t3-length-s2022,ETTm1,TimeFilter,lt,done,6,6,
 t3-length-s2022,Weather,TimeFilter,revin,done,6,6,
 t3-length-s2022,Weather,TimeFilter,san,ready,0,6,
