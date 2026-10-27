@@ -1,10 +1,10 @@
 # Experiment progress
 
-Generated 2026-10-27T13:59:19+00:00 from 7004 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-27T14:05:03+00:00 from 7014 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| t3-length | 13 | 3 | 8 | 0 | 0 |
+| t3-length | 14 | 4 | 6 | 0 | 0 |
 | t3-length-s2022 | 12 | 0 | 12 | 0 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -39,10 +39,10 @@ Generated 2026-10-27T13:59:19+00:00 from 7004 packaged cells. Regenerate with `p
 |---|---|---|---|
 | t3-length--ETTh2--TimeXer--revin | done | 6/6 |  |
 | t3-length--ETTh2--TimeXer--san | done | 6/6 |  |
-| t3-length--ETTh2--TimeXer--ddn | claimed | 0/6 | itm20-gpu1-a4000 |
+| t3-length--ETTh2--TimeXer--ddn | claimed | 4/6 | itm20-gpu1-a4000 |
 | t3-length--ETTh2--TimeXer--lt | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
-| t3-length--ETTm1--TimeXer--san | ready | 0/6 |  |
+| t3-length--ETTm1--TimeXer--san | claimed | 0/6 | itm21-a4000 |
 | t3-length--ETTm1--TimeXer--ddn | ready | 0/6 |  |
 | t3-length--ETTm1--TimeXer--lt | done | 6/6 |  |
 | t3-length--Weather--TimeXer--revin | done | 6/6 |  |
@@ -50,11 +50,11 @@ Generated 2026-10-27T13:59:19+00:00 from 7004 packaged cells. Regenerate with `p
 | t3-length--Weather--TimeXer--ddn | ready | 0/6 |  |
 | t3-length--Weather--TimeXer--lt | done | 6/6 |  |
 | t3-length--ETTh2--TimeFilter--revin | done | 6/6 |  |
-| t3-length--ETTh2--TimeFilter--san | claimed | 2/6 | itm20-gpu0-a4000 |
-| t3-length--ETTh2--TimeFilter--ddn | claimed | 2/6 | itm21-a4000 |
+| t3-length--ETTh2--TimeFilter--san | claimed | 4/6 | itm20-gpu0-a4000 |
+| t3-length--ETTh2--TimeFilter--ddn | done | 6/6 |  |
 | t3-length--ETTh2--TimeFilter--lt | done | 6/6 |  |
 | t3-length--ETTm1--TimeFilter--revin | done | 6/6 |  |
-| t3-length--ETTm1--TimeFilter--san | ready | 0/6 |  |
+| t3-length--ETTm1--TimeFilter--san | claimed | 0/6 | itm20-gpu0-a4000 |
 | t3-length--ETTm1--TimeFilter--ddn | ready | 0/6 |  |
 | t3-length--ETTm1--TimeFilter--lt | done | 6/6 |  |
 | t3-length--Weather--TimeFilter--revin | done | 6/6 |  |
