@@ -89,6 +89,14 @@
     {"name": "t3-length", "split": "method", "experiment": "14_input_length", "stage": "final", "open": true,
      "cases": [["ETTh2", "TimeXer"], ["ETTm1", "TimeXer"], ["Weather", "TimeXer"],
                ["ETTh2", "TimeFilter"], ["ETTm1", "TimeFilter"], ["Weather", "TimeFilter"]],
-     "backbones": ["TimeXer", "TimeFilter"], "methods": ["revin", "lt"], "priority": 0}
+     "backbones": ["TimeXer", "TimeFilter"], "methods": ["revin", "lt"], "seeds": [2021], "priority": -3},
+    {"name": "t3-length-s2022", "split": "method", "experiment": "14_input_length", "stage": "final", "open": true,
+     "cases": [["ETTh2", "TimeXer"], ["ETTm1", "TimeXer"], ["Weather", "TimeXer"],
+               ["ETTh2", "TimeFilter"], ["ETTm1", "TimeFilter"], ["Weather", "TimeFilter"]],
+     "backbones": ["TimeXer", "TimeFilter"], "methods": ["revin", "lt"], "seeds": [2022], "priority": -2},
+    {"name": "t3-length-s2023", "split": "method", "experiment": "14_input_length", "stage": "final", "open": true,
+     "cases": [["ETTh2", "TimeXer"], ["ETTm1", "TimeXer"], ["Weather", "TimeXer"],
+               ["ETTh2", "TimeFilter"], ["ETTm1", "TimeFilter"], ["Weather", "TimeFilter"]],
+     "backbones": ["TimeXer", "TimeFilter"], "methods": ["revin", "lt"], "seeds": [2023], "priority": -1}
   ]
 }

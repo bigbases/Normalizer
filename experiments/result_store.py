@@ -111,6 +111,7 @@ class Task:
     claim: dict | None = None
     split: str | None = None           # the method, for phases split per method
     rank: int = 0                      # case order within an "ordered" phase
+    seeds: list | None = None          # only these seeds, for phases split by seed
 
     @property
     def task_id(self):
@@ -162,7 +163,7 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
                     experiment=phase["experiment"], stage=phase["stage"],
                     dataset=dataset, backbone=backbone, methods=methods,
                     requires=phase.get("requires"), split=methods[0] if split else None,
-                    rank=rank if phase.get("ordered") else 0,
+                    rank=rank if phase.get("ordered") else 0, seeds=phase.get("seeds"),
                 )
                 by_case[(task.phase, dataset, backbone)].append(task)
                 tasks.append(task)
@@ -205,6 +206,8 @@ def build_tasks(plan, protocol, bases, results, claims=None, lease_hours=None, n
         try:
             task.cells = _cells(protocol, bases, task.experiment, task.stage, task.dataset,
                                 task.backbone, task.methods, lock_doc, shortlist_doc)
+            if task.seeds:   # "seeds" phases run one seed over every case before the next seed
+                task.cells = [c for c in task.cells if c["seed"] in task.seeds]
         except ValueError:
             task.status = "blocked"      # selection incomplete for this case
             continue
