@@ -1,11 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-27T13:50:37+00:00 from 6994 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-27T13:59:19+00:00 from 7004 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
+| t3-length | 13 | 3 | 8 | 0 | 0 |
+| t3-length-s2022 | 12 | 0 | 12 | 0 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
+| t3-length-s2023 | 12 | 0 | 12 | 0 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -18,7 +21,6 @@ Generated 2026-10-27T13:50:37+00:00 from 6994 packaged cells. Regenerate with `p
 | t3-rf-search | 28 | 0 | 0 | 0 | 0 |
 | t3-rf-confirm | 28 | 0 | 0 | 0 | 0 |
 | t3-rf-tuned | 28 | 0 | 0 | 0 | 0 |
-| t3-length | 12 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -35,6 +37,54 @@ Generated 2026-10-27T13:50:37+00:00 from 6994 packaged cells. Regenerate with `p
 
 | task | status | cells done | worker |
 |---|---|---|---|
+| t3-length--ETTh2--TimeXer--revin | done | 6/6 |  |
+| t3-length--ETTh2--TimeXer--san | done | 6/6 |  |
+| t3-length--ETTh2--TimeXer--ddn | claimed | 0/6 | itm20-gpu1-a4000 |
+| t3-length--ETTh2--TimeXer--lt | done | 6/6 |  |
+| t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
+| t3-length--ETTm1--TimeXer--san | ready | 0/6 |  |
+| t3-length--ETTm1--TimeXer--ddn | ready | 0/6 |  |
+| t3-length--ETTm1--TimeXer--lt | done | 6/6 |  |
+| t3-length--Weather--TimeXer--revin | done | 6/6 |  |
+| t3-length--Weather--TimeXer--san | ready | 0/6 |  |
+| t3-length--Weather--TimeXer--ddn | ready | 0/6 |  |
+| t3-length--Weather--TimeXer--lt | done | 6/6 |  |
+| t3-length--ETTh2--TimeFilter--revin | done | 6/6 |  |
+| t3-length--ETTh2--TimeFilter--san | claimed | 2/6 | itm20-gpu0-a4000 |
+| t3-length--ETTh2--TimeFilter--ddn | claimed | 2/6 | itm21-a4000 |
+| t3-length--ETTh2--TimeFilter--lt | done | 6/6 |  |
+| t3-length--ETTm1--TimeFilter--revin | done | 6/6 |  |
+| t3-length--ETTm1--TimeFilter--san | ready | 0/6 |  |
+| t3-length--ETTm1--TimeFilter--ddn | ready | 0/6 |  |
+| t3-length--ETTm1--TimeFilter--lt | done | 6/6 |  |
+| t3-length--Weather--TimeFilter--revin | done | 6/6 |  |
+| t3-length--Weather--TimeFilter--san | ready | 0/6 |  |
+| t3-length--Weather--TimeFilter--ddn | ready | 0/6 |  |
+| t3-length--Weather--TimeFilter--lt | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeXer--san | ready | 0/6 |  |
+| t3-length-s2022--ETTh2--TimeXer--ddn | ready | 0/6 |  |
+| t3-length-s2022--ETTh2--TimeXer--lt | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeXer--san | ready | 0/6 |  |
+| t3-length-s2022--ETTm1--TimeXer--ddn | ready | 0/6 |  |
+| t3-length-s2022--ETTm1--TimeXer--lt | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeXer--san | ready | 0/6 |  |
+| t3-length-s2022--Weather--TimeXer--ddn | ready | 0/6 |  |
+| t3-length-s2022--Weather--TimeXer--lt | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeFilter--san | ready | 0/6 |  |
+| t3-length-s2022--ETTh2--TimeFilter--ddn | ready | 0/6 |  |
+| t3-length-s2022--ETTh2--TimeFilter--lt | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeFilter--san | ready | 0/6 |  |
+| t3-length-s2022--ETTm1--TimeFilter--ddn | ready | 0/6 |  |
+| t3-length-s2022--ETTm1--TimeFilter--lt | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeFilter--san | ready | 0/6 |  |
+| t3-length-s2022--Weather--TimeFilter--ddn | ready | 0/6 |  |
+| t3-length-s2022--Weather--TimeFilter--lt | done | 6/6 |  |
 | lt-ksens--ETTh1--DLinear | done | 18/18 |  |
 | lt-ksens--ETTh1--iTransformer | done | 18/18 |  |
 | lt-ksens--ETTh2--DLinear | done | 18/18 |  |
@@ -63,6 +113,30 @@ Generated 2026-10-27T13:50:37+00:00 from 6994 packaged cells. Regenerate with `p
 | lt-rsens--Electricity--iTransformer | done | 18/18 |  |
 | lt-rsens--Traffic--DLinear | done | 18/18 |  |
 | lt-rsens--Traffic--iTransformer | done | 18/18 |  |
+| t3-length-s2023--ETTh2--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeXer--san | ready | 0/6 |  |
+| t3-length-s2023--ETTh2--TimeXer--ddn | ready | 0/6 |  |
+| t3-length-s2023--ETTh2--TimeXer--lt | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeXer--san | ready | 0/6 |  |
+| t3-length-s2023--ETTm1--TimeXer--ddn | ready | 0/6 |  |
+| t3-length-s2023--ETTm1--TimeXer--lt | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeXer--san | ready | 0/6 |  |
+| t3-length-s2023--Weather--TimeXer--ddn | ready | 0/6 |  |
+| t3-length-s2023--Weather--TimeXer--lt | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeFilter--san | ready | 0/6 |  |
+| t3-length-s2023--ETTh2--TimeFilter--ddn | ready | 0/6 |  |
+| t3-length-s2023--ETTh2--TimeFilter--lt | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeFilter--san | ready | 0/6 |  |
+| t3-length-s2023--ETTm1--TimeFilter--ddn | ready | 0/6 |  |
+| t3-length-s2023--ETTm1--TimeFilter--lt | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeFilter--san | ready | 0/6 |  |
+| t3-length-s2023--Weather--TimeFilter--ddn | ready | 0/6 |  |
+| t3-length-s2023--Weather--TimeFilter--lt | done | 6/6 |  |
 | lt-pilot--ETTm1--iTransformer | done | 20/20 |  |
 | lt-pilot--ETTm1--DLinear | done | 20/20 |  |
 | lt-pilot--Weather--DLinear | done | 20/20 |  |
@@ -211,18 +285,6 @@ Generated 2026-10-27T13:50:37+00:00 from 6994 packaged cells. Regenerate with `p
 | t3-rf-tuned--ETTh2--TimeFilter--fan | done | 12/12 |  |
 | t3-rf-tuned--ETTm2--TimeFilter--revin | done | 12/12 |  |
 | t3-rf-tuned--ETTm2--TimeFilter--fan | done | 12/12 |  |
-| t3-length--ETTh2--TimeXer--revin | done | 18/18 |  |
-| t3-length--ETTh2--TimeXer--lt | done | 18/18 |  |
-| t3-length--ETTm1--TimeXer--revin | done | 18/18 |  |
-| t3-length--ETTm1--TimeXer--lt | done | 18/18 |  |
-| t3-length--Weather--TimeXer--revin | done | 18/18 |  |
-| t3-length--Weather--TimeXer--lt | done | 18/18 |  |
-| t3-length--ETTh2--TimeFilter--revin | done | 18/18 |  |
-| t3-length--ETTh2--TimeFilter--lt | done | 18/18 |  |
-| t3-length--ETTm1--TimeFilter--revin | done | 18/18 |  |
-| t3-length--ETTm1--TimeFilter--lt | done | 18/18 |  |
-| t3-length--Weather--TimeFilter--revin | done | 18/18 |  |
-| t3-length--Weather--TimeFilter--lt | done | 18/18 |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
