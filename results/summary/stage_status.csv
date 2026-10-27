@@ -180,13 +180,13 @@ t3-length,ETTh2,TimeXer,lt,done,18,18,
 t3-length,ETTm1,TimeXer,revin,done,18,18,
 t3-length,ETTm1,TimeXer,lt,done,18,18,
 t3-length,Weather,TimeXer,revin,done,18,18,
-t3-length,Weather,TimeXer,lt,claimed,13,18,itm20-gpu1-a4000
+t3-length,Weather,TimeXer,lt,done,18,18,
 t3-length,ETTh2,TimeFilter,revin,done,18,18,
 t3-length,ETTh2,TimeFilter,lt,done,18,18,
 t3-length,ETTm1,TimeFilter,revin,done,18,18,
 t3-length,ETTm1,TimeFilter,lt,done,18,18,
 t3-length,Weather,TimeFilter,revin,done,18,18,
-t3-length,Weather,TimeFilter,lt,claimed,10,18,itm20-gpu0-a4000
+t3-length,Weather,TimeFilter,lt,claimed,14,18,itm20-gpu0-a4000
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
 exp1-lt,ETTh1,iTransformer,lt,done,12,12,
 exp1-lt,ETTh2,DLinear,lt,done,12,12,
