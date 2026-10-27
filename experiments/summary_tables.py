@@ -378,14 +378,38 @@ def sensitivity(out, rows, tasks, sweep, protocol):
                ["Dataset", "Backbone", "Horizon", param, "Seeds", "MSE", "MSE_std", "MAE", "MAE_std"], table)
 
 
+def input_length(out, rows, tasks, lengths, protocol):
+    """Mean test MSE/MAE per input length of the side runs with other look-back windows (experiment 14)."""
+    by_id = {r["RunID"]: r for r in rows}
+    for exp_name in sorted(lengths):
+        groups = defaultdict(list)
+        for t in tasks:
+            if t.cells and t.experiment == exp_name:
+                for c in t.cells:
+                    if c["run_id"] in by_id:
+                        groups[(c["dataset"], c["backbone"], c["base"]["seq_len"], c["horizon"], c["method"])].append(
+                            by_id[c["run_id"]])
+        order = _order(protocol)
+        table = []
+        for (ds, bb, L, h, m), rs in sorted(groups.items(), key=lambda kv: (*order(kv[0][0], kv[0][1]), *kv[0][2:])):
+            mse = [float(r["MSE"]) for r in rs]
+            mae = [float(r["MAE"]) for r in rs]
+            table.append([ds, bb, L, h, m, len(rs), _num(mean(mse)), _num(_std(mse)), _num(mean(mae)), _num(_std(mae))])
+        _write(out / f"exp{exp_name.split('_')[0]}_input_length.csv",
+               ["Dataset", "Backbone", "SeqLen", "Horizon", "Method", "Seeds", "MSE", "MSE_std", "MAE", "MAE_std"], table)
+
+
 def write_all(out, rows, tasks, protocol, bases):
     out = Path(out)
     # Sensitivity sweeps (experiments 12, 13) are LightNorm final cells too, but they must not
     # enter the method comparison: only cells of the other phases define the main results.
     sweep = {k for k, e in protocol["experiments"].items() if e.get("lt_params") in SWEEP_MODES}
-    current = {c["run_id"] for t in tasks if t.cells and t.experiment not in sweep for c in t.cells}
+    # Input-length runs (experiment 14) are side studies as well.
+    lengths = {k for k, e in protocol["experiments"].items() if e.get("seq_lens")}
+    current = {c["run_id"] for t in tasks if t.cells and t.experiment not in sweep | lengths for c in t.cells}
     groups = final_groups([r for r in rows if r["RunID"] in current], method_labeler(bases))
     sensitivity(out, rows, tasks, sweep, protocol)
+    input_length(out, rows, tasks, lengths, protocol)
     stage_status(out, tasks)
     exp1_lightnorm(out, groups, protocol)
     exp2_validation(out, rows, protocol, bases)

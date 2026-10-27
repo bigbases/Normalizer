@@ -85,6 +85,10 @@
      "datasets": ["ETTh1", "ETTh2"], "backbones": ["TimeMixerPP"], "methods": ["none", "lt"], "priority": 7},
     {"name": "exp4-fan", "experiment": "4_timemixerpp_generalization", "stage": "final", "enabled": false,
      "datasets": ["ETTh1", "ETTh2"], "backbones": ["TimeMixerPP"], "methods": ["fan"], "priority": 7,
-     "requires": "tmpp-confirm"}
+     "requires": "tmpp-confirm"},
+    {"name": "t3-length", "split": "method", "experiment": "14_input_length", "stage": "final", "open": true,
+     "cases": [["ETTh2", "TimeXer"], ["ETTm1", "TimeXer"], ["Weather", "TimeXer"],
+               ["ETTh2", "TimeFilter"], ["ETTm1", "TimeFilter"], ["Weather", "TimeFilter"]],
+     "backbones": ["TimeXer", "TimeFilter"], "methods": ["revin", "lt"], "priority": 0}
   ]
 }

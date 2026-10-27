@@ -825,10 +825,13 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                             if stage == "explore" else [(p, horizons, seeds) for p in candidates])
 
                 dev = stage == "explore" or exp.get("lt_grid") == "pilot"
+                # Experiments with "seq_lens" rerun each cell at other input lengths (label_len = L/2).
+                cell_bases = ([{**base, "seq_len": L, "label_len": L // 2} for L in exp["seq_lens"]]
+                              if exp.get("seq_lens") else [base])
                 for params, cell_horizons, cell_seeds in schedule:
                     params = method_params(method, params, dev=dev)
                     candidate_id = canonical_hash({"method": method, "params": params})
-                    for horizon in cell_horizons:
+                    for cell_base, horizon in ((b, h) for b in cell_bases for h in cell_horizons):
                         for seed in cell_seeds:
                             identity = {
                                 "protocol": protocol["protocol_version"],
@@ -838,7 +841,7 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                                 "method": method,
                                 "horizon": horizon,
                                 "seed": seed,
-                                "base": {k: base.get(k) for k in BACKBONE_KEYS},
+                                "base": {k: cell_base.get(k) for k in BACKBONE_KEYS},
                                 "normalizer": params,
                                 "training": FIXED_TRAINING_ARGS,
                                 "data": protocol["datasets"][dataset],
@@ -849,7 +852,7 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                             }
                             # Added only for TimeFilter so that other backbones keep their hashes.
                             if backbone == "TimeFilter":
-                                identity["timefilter"] = timefilter_args(base, horizon)
+                                identity["timefilter"] = timefilter_args(cell_base, horizon)
                             if stage == "shift":
                                 identity["shift"] = exp["shift"]
                             config_hash = canonical_hash(identity, length=16)
@@ -864,7 +867,7 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                                 "run_id": run_id,
                                 "dataset_meta": protocol["datasets"][dataset],
                                 "effective": params,
-                                "base": base,
+                                "base": cell_base,
                                 **({"shift": exp["shift"]} if stage == "shift" else {}),
                             })
     return cells

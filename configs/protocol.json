@@ -105,6 +105,15 @@
       "ratio_sweep": [1, 2, 4, 8, 16, 32],
       "horizons": [96],
       "description": "Downsampling-ratio sensitivity on every dataset: the locked LightNorm setting of each case with only down_ratio replaced, test at H=96, seeds 2021-2023. The locked ratio's cells are the tuned final cells of experiment 8."
+    },
+    "14_input_length": {
+      "backbones": ["TimeXer", "TimeFilter"],
+      "methods": ["revin", "lt"],
+      "phase": "final",
+      "lt_params": "locked",
+      "seq_lens": [192, 336, 720],
+      "horizons": [96, 720],
+      "description": "Input-length side study for the short official look-back (96) of TimeXer/TimeFilter: each case's locked RevIN and LightNorm settings rerun at look-back 192, 336 and 720 (label_len = L/2, backbone and training otherwise unchanged), test at H=96/720, seeds 2021-2023. Kept out of the main comparison (results/summary/exp14_input_length.csv)."
     }
   },
   "lt_tuning": {
