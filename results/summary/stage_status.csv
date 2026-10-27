@@ -97,7 +97,7 @@ t3-length-s2023,ETTm1,TimeFilter,ddn,done,6,6,
 t3-length-s2023,ETTm1,TimeFilter,lt,done,6,6,
 t3-length-s2023,Weather,TimeFilter,revin,done,6,6,
 t3-length-s2023,Weather,TimeFilter,san,done,6,6,
-t3-length-s2023,Weather,TimeFilter,ddn,claimed,3,6,itm20-gpu0-a4000
+t3-length-s2023,Weather,TimeFilter,ddn,done,6,6,
 t3-length-s2023,Weather,TimeFilter,lt,done,6,6,
 lt-pilot,ETTm1,iTransformer,lt,done,20,20,
 lt-pilot,ETTm1,DLinear,lt,done,20,20,
