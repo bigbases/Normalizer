@@ -18,7 +18,9 @@ Models are built exactly as in the experiments (run_matrix cell ->
 run_longExp arguments -> Exp_Main); inputs are random tensors of the same
 shapes, so no data is read. Normalizers use fixed representative settings:
 the official defaults of SAN (period_len per dataset) and DDN (kernel_len 7,
-j 1), RevIN with affine, and LightNorm's supplied setting.
+j 1), RevIN with affine, and LightNorm's supplied setting, or with
+--lt-settings locked its locked setting of the main results (kernel_size,
+station_lr, s_norm and use_mlp from results/summary/exp7_lt_tuning.csv).
 
 Run it only when nothing else uses the GPU (stop the worker first):
   python experiments/efficiency.py --out results/efficiency/itm21.csv
@@ -64,6 +66,7 @@ SAN_PERIOD = {"ETTh1": 24, "ETTh2": 24, "Electricity": 24, "Traffic": 24, "ETTm1
 # FAN's number of selected frequencies: the official default, first value of protocol "fan_k".
 FAN_TOPK = {"ETTh1": 4, "ETTh2": 4, "ETTm1": 11, "ETTm2": 11, "Weather": 2, "Electricity": 3, "Traffic": 30}
 MAX_BATCH = 1024
+LT_LOCKS_CSV = ROOT / "results" / "summary" / "exp7_lt_tuning.csv"
 
 
 def log(msg):
@@ -71,28 +74,37 @@ def log(msg):
 
 
 # ----------------------------------------------------------------- set-up
-def method_settings(dataset, method, selected_base):
-    """Representative normalizer settings (not tuned per case)."""
+def load_lt_locks(path=LT_LOCKS_CSV):
+    """{(dataset, backbone): locked LightNorm overrides} from the Exp7 tuning summary."""
+    with Path(path).open(newline="") as handle:
+        rows = [r for r in csv.DictReader(handle) if r["Locked"] == "True"]
+    return {(r["Dataset"], r["Backbone"]): {"kernel_size": int(r["kernel_size"]), "station_lr": float(r["station_lr"]),
+                                            "s_norm": int(r["s_norm"]), "use_mlp": int(r["use_mlp"])} for r in rows}
+
+
+def method_settings(dataset, method, selected_base, lt_lock=None):
+    """Representative normalizer settings (not tuned per case); LightNorm optionally locked."""
     raw = {
         "none": {},
         "revin": {"affine": 1},
         "san": {"period_len": SAN_PERIOD[dataset]},
         "ddn": {"kernel_len": 7, "j": 1, "hkernel_len": 5, "twice_epoch": 1},
         "fan": {"freq_topk": FAN_TOPK[dataset]},
-        "lt": supplied_lt_params(selected_base),
+        "lt": {**supplied_lt_params(selected_base), **(lt_lock or {})},
     }[method]
     if method in ("revin", "san", "ddn", "fan"):
         raw = normalized_params(method, raw, selected_base)
     return method_params(method, raw)
 
 
-def build_args(protocol, bases, dataset, backbone, method, horizon, seq_len=None):
+def build_args(protocol, bases, dataset, backbone, method, horizon, seq_len=None, lt_locks=None):
     """run_longExp arguments of the experiment cell, optionally at another input length."""
     selected = selected_base_config(bases, dataset, backbone)
     base = resolve_backbone_config(selected)
     if seq_len is not None:
         base = {**base, "seq_len": seq_len, "label_len": seq_len // 2}
-    params = method_settings(dataset, method, selected)
+    lt_lock = lt_locks[(dataset, backbone)] if lt_locks is not None and method == "lt" else None
+    params = method_settings(dataset, method, selected, lt_lock)
     cell = {"dataset": dataset, "backbone": backbone, "method": method, "horizon": horizon, "seed": 2021,
             "stage": "final", "candidate_id": "bench", "config_hash": "bench", "run_id": "bench",
             "dataset_meta": protocol["datasets"][dataset], "effective": params, "base": base}
@@ -322,7 +334,7 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
     specs = {}
     for method in methods:
         try:
-            specs[method] = build_args(protocol, bases, dataset, backbone, method, horizon)
+            specs[method] = build_args(protocol, bases, dataset, backbone, method, horizon, lt_locks=opts.lt_locks)
         except KeyError as exc:  # e.g. FAN has no settings for TimeXer/TimeFilter (not run there)
             log(f"{dataset}/{backbone}/H{horizon}: {method} skipped, no settings ({exc})")
             todo = [m for m in todo if m != method]
@@ -462,6 +474,8 @@ def main():
     p.add_argument("--train-iters", type=int, default=50)
     p.add_argument("--max-batch", type=int, default=MAX_BATCH)
     p.add_argument("--idle-tries", type=int, default=10, help="minutes to wait for a busy GPU before measuring anyway")
+    p.add_argument("--lt-settings", choices=("supplied", "locked"), default="supplied",
+                   help="LightNorm setting per case: the supplied launcher setting or the locked one of Exp7")
     p.add_argument("--quick", action="store_true", help="few iterations (smoke test)")
     p.add_argument("--allow-busy", action="store_true", help="run although experiment processes are running")
     p.add_argument("--summary", action="store_true", help="only print the overhead table of --out")
@@ -487,6 +501,7 @@ def main():
     device = torch.device("cuda:0")
     opts.gpu = physical  # nvidia-smi index for the idle checks
     protocol, bases = load_json(PROTOCOL_PATH), load_json(BASE_CONFIGS_PATH)
+    opts.lt_locks = load_lt_locks() if opts.lt_settings == "locked" else None
     env = environment(0)
     out = Path(opts.out)
     scaling_out = out.with_name(out.stem + "_scaling.csv")
