@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-27T12:13:35+00:00 from 6938 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-27T12:33:41+00:00 from 6952 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -18,7 +18,7 @@ Generated 2026-10-27T12:13:35+00:00 from 6938 packaged cells. Regenerate with `p
 | t3-rf-search | 28 | 0 | 0 | 0 | 0 |
 | t3-rf-confirm | 28 | 0 | 0 | 0 | 0 |
 | t3-rf-tuned | 28 | 0 | 0 | 0 | 0 |
-| t3-length | 8 | 3 | 1 | 0 | 0 |
+| t3-length | 9 | 3 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -216,13 +216,13 @@ Generated 2026-10-27T12:13:35+00:00 from 6938 packaged cells. Regenerate with `p
 | t3-length--ETTm1--TimeXer--revin | done | 18/18 |  |
 | t3-length--ETTm1--TimeXer--lt | done | 18/18 |  |
 | t3-length--Weather--TimeXer--revin | done | 18/18 |  |
-| t3-length--Weather--TimeXer--lt | claimed | 0/18 | itm20-gpu1-a4000 |
+| t3-length--Weather--TimeXer--lt | claimed | 5/18 | itm20-gpu1-a4000 |
 | t3-length--ETTh2--TimeFilter--revin | done | 18/18 |  |
 | t3-length--ETTh2--TimeFilter--lt | done | 18/18 |  |
 | t3-length--ETTm1--TimeFilter--revin | done | 18/18 |  |
-| t3-length--ETTm1--TimeFilter--lt | claimed | 5/18 | itm21-a4000 |
-| t3-length--Weather--TimeFilter--revin | claimed | 11/18 | itm20-gpu0-a4000 |
-| t3-length--Weather--TimeFilter--lt | ready | 0/18 |  |
+| t3-length--ETTm1--TimeFilter--lt | claimed | 7/18 | itm21-a4000 |
+| t3-length--Weather--TimeFilter--revin | done | 18/18 |  |
+| t3-length--Weather--TimeFilter--lt | claimed | 0/18 | itm20-gpu0-a4000 |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
