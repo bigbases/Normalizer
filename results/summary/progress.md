@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-27T16:56:15+00:00 from 7123 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-27T17:06:57+00:00 from 7131 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | t3-length | 24 | 0 | 0 | 0 | 0 |
-| t3-length-s2022 | 21 | 3 | 0 | 0 | 0 |
+| t3-length-s2022 | 22 | 2 | 0 | 0 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| t3-length-s2023 | 12 | 0 | 12 | 0 | 0 |
+| t3-length-s2023 | 12 | 1 | 11 | 0 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -71,7 +71,7 @@ Generated 2026-10-27T16:56:15+00:00 from 7123 packaged cells. Regenerate with `p
 | t3-length-s2022--ETTm1--TimeXer--lt | done | 6/6 |  |
 | t3-length-s2022--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length-s2022--Weather--TimeXer--san | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeXer--ddn | claimed | 0/6 | itm20-gpu0-a4000 |
+| t3-length-s2022--Weather--TimeXer--ddn | claimed | 2/6 | itm20-gpu0-a4000 |
 | t3-length-s2022--Weather--TimeXer--lt | done | 6/6 |  |
 | t3-length-s2022--ETTh2--TimeFilter--revin | done | 6/6 |  |
 | t3-length-s2022--ETTh2--TimeFilter--san | done | 6/6 |  |
@@ -82,8 +82,8 @@ Generated 2026-10-27T16:56:15+00:00 from 7123 packaged cells. Regenerate with `p
 | t3-length-s2022--ETTm1--TimeFilter--ddn | done | 6/6 |  |
 | t3-length-s2022--ETTm1--TimeFilter--lt | done | 6/6 |  |
 | t3-length-s2022--Weather--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeFilter--san | claimed | 3/6 | itm21-a4000 |
-| t3-length-s2022--Weather--TimeFilter--ddn | claimed | 0/6 | itm20-gpu1-a4000 |
+| t3-length-s2022--Weather--TimeFilter--san | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeFilter--ddn | claimed | 2/6 | itm20-gpu1-a4000 |
 | t3-length-s2022--Weather--TimeFilter--lt | done | 6/6 |  |
 | lt-ksens--ETTh1--DLinear | done | 18/18 |  |
 | lt-ksens--ETTh1--iTransformer | done | 18/18 |  |
@@ -126,7 +126,7 @@ Generated 2026-10-27T16:56:15+00:00 from 7123 packaged cells. Regenerate with `p
 | t3-length-s2023--Weather--TimeXer--ddn | ready | 0/6 |  |
 | t3-length-s2023--Weather--TimeXer--lt | done | 6/6 |  |
 | t3-length-s2023--ETTh2--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2023--ETTh2--TimeFilter--san | ready | 0/6 |  |
+| t3-length-s2023--ETTh2--TimeFilter--san | claimed | 1/6 | itm21-a4000 |
 | t3-length-s2023--ETTh2--TimeFilter--ddn | ready | 0/6 |  |
 | t3-length-s2023--ETTh2--TimeFilter--lt | done | 6/6 |  |
 | t3-length-s2023--ETTm1--TimeFilter--revin | done | 6/6 |  |
