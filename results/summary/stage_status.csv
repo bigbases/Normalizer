@@ -186,7 +186,7 @@ t3-length,ETTh2,TimeFilter,lt,done,18,18,
 t3-length,ETTm1,TimeFilter,revin,done,18,18,
 t3-length,ETTm1,TimeFilter,lt,done,18,18,
 t3-length,Weather,TimeFilter,revin,done,18,18,
-t3-length,Weather,TimeFilter,lt,claimed,14,18,itm20-gpu0-a4000
+t3-length,Weather,TimeFilter,lt,done,18,18,
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
 exp1-lt,ETTh1,iTransformer,lt,done,12,12,
 exp1-lt,ETTh2,DLinear,lt,done,12,12,

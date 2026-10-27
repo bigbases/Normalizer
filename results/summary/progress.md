@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-27T13:37:18+00:00 from 6990 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-27T13:50:37+00:00 from 6994 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -18,7 +18,7 @@ Generated 2026-10-27T13:37:18+00:00 from 6990 packaged cells. Regenerate with `p
 | t3-rf-search | 28 | 0 | 0 | 0 | 0 |
 | t3-rf-confirm | 28 | 0 | 0 | 0 | 0 |
 | t3-rf-tuned | 28 | 0 | 0 | 0 | 0 |
-| t3-length | 11 | 1 | 0 | 0 | 0 |
+| t3-length | 12 | 0 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -222,7 +222,7 @@ Generated 2026-10-27T13:37:18+00:00 from 6990 packaged cells. Regenerate with `p
 | t3-length--ETTm1--TimeFilter--revin | done | 18/18 |  |
 | t3-length--ETTm1--TimeFilter--lt | done | 18/18 |  |
 | t3-length--Weather--TimeFilter--revin | done | 18/18 |  |
-| t3-length--Weather--TimeFilter--lt | claimed | 14/18 | itm20-gpu0-a4000 |
+| t3-length--Weather--TimeFilter--lt | done | 18/18 |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
