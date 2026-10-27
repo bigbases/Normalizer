@@ -20,7 +20,7 @@ t3-length,ETTm1,TimeFilter,san,done,6,6,
 t3-length,ETTm1,TimeFilter,ddn,done,6,6,
 t3-length,ETTm1,TimeFilter,lt,done,6,6,
 t3-length,Weather,TimeFilter,revin,done,6,6,
-t3-length,Weather,TimeFilter,san,claimed,4,6,itm20-gpu0-a4000
+t3-length,Weather,TimeFilter,san,done,6,6,
 t3-length,Weather,TimeFilter,ddn,claimed,0,6,itm21-a4000
 t3-length,Weather,TimeFilter,lt,done,6,6,
 t3-length-s2022,ETTh2,TimeXer,revin,done,6,6,
