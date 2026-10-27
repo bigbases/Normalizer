@@ -1,10 +1,10 @@
 # Experiment progress
 
-Generated 2026-10-27T15:04:35+00:00 from 7050 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-27T15:04:58+00:00 from 7052 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| t3-length | 20 | 4 | 0 | 0 | 0 |
+| t3-length | 21 | 3 | 0 | 0 | 0 |
 | t3-length-s2022 | 12 | 1 | 11 | 0 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -55,7 +55,7 @@ Generated 2026-10-27T15:04:35+00:00 from 7050 packaged cells. Regenerate with `p
 | t3-length--ETTh2--TimeFilter--lt | done | 6/6 |  |
 | t3-length--ETTm1--TimeFilter--revin | done | 6/6 |  |
 | t3-length--ETTm1--TimeFilter--san | done | 6/6 |  |
-| t3-length--ETTm1--TimeFilter--ddn | claimed | 4/6 | itm21-a4000 |
+| t3-length--ETTm1--TimeFilter--ddn | done | 6/6 |  |
 | t3-length--ETTm1--TimeFilter--lt | done | 6/6 |  |
 | t3-length--Weather--TimeFilter--revin | done | 6/6 |  |
 | t3-length--Weather--TimeFilter--san | claimed | 4/6 | itm20-gpu0-a4000 |
