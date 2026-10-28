@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T06:21:57+00:00 from 7304 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T07:06:59+00:00 from 7314 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-28T06:21:57+00:00 from 7304 packaged cells. Regenerate with `p
 | t3-lt-tuned | 12 | 0 | 0 | 2 | 0 |
 | t3-lt-tuned-s2022 | 12 | 0 | 0 | 2 | 0 |
 | t3-lt-tuned-s2023 | 11 | 1 | 0 | 2 | 0 |
-| t3-length | 21 | 2 | 1 | 0 | 0 |
+| t3-length | 22 | 2 | 0 | 0 | 0 |
 | t3-length-s2022 | 20 | 0 | 4 | 0 | 0 |
 | t3-length-s2023 | 20 | 0 | 4 | 0 | 0 |
 | dlit-length | 0 | 0 | 24 | 0 | 0 |
@@ -104,11 +104,11 @@ Generated 2026-10-28T06:21:57+00:00 from 7304 packaged cells. Regenerate with `p
 | t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--san | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--ddn | done | 6/6 |  |
-| t3-length--ETTm1--TimeXer--lt | claimed | 0/6 | itm20-gpu0-a4000 |
+| t3-length--ETTm1--TimeXer--lt | claimed | 4/6 | itm20-gpu0-a4000 |
 | t3-length--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length--Weather--TimeXer--san | done | 6/6 |  |
 | t3-length--Weather--TimeXer--ddn | done | 6/6 |  |
-| t3-length--Weather--TimeXer--lt | ready | 0/6 |  |
+| t3-length--Weather--TimeXer--lt | claimed | 0/6 | itm21-a4000 |
 | t3-length--ETTh2--TimeFilter--revin | done | 6/6 |  |
 | t3-length--ETTh2--TimeFilter--san | done | 6/6 |  |
 | t3-length--ETTh2--TimeFilter--ddn | done | 6/6 |  |
@@ -116,7 +116,7 @@ Generated 2026-10-28T06:21:57+00:00 from 7304 packaged cells. Regenerate with `p
 | t3-length--ETTm1--TimeFilter--revin | done | 6/6 |  |
 | t3-length--ETTm1--TimeFilter--san | done | 6/6 |  |
 | t3-length--ETTm1--TimeFilter--ddn | done | 6/6 |  |
-| t3-length--ETTm1--TimeFilter--lt | claimed | 0/6 | itm21-a4000 |
+| t3-length--ETTm1--TimeFilter--lt | done | 6/6 |  |
 | t3-length--Weather--TimeFilter--revin | done | 6/6 |  |
 | t3-length--Weather--TimeFilter--san | done | 6/6 |  |
 | t3-length--Weather--TimeFilter--ddn | done | 6/6 |  |
