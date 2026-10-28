@@ -1973,14 +1973,14 @@
         "screen_mean_val_mse": 1.815023705008484
       },
       {
-        "candidate_id": "6c1ea609882f",
+        "candidate_id": "e4468eada22b",
         "n_cells": 2,
         "params": {
           "fan_aux_weight": 1.0,
-          "freq_topk": 4,
-          "station_lr": 5e-05
+          "freq_topk": 1,
+          "station_lr": 0.0001
         },
-        "screen_mean_val_mse": 1.8393377363681793
+        "screen_mean_val_mse": 1.8325170386760008
       }
     ],
     "Exchange|TimeFilter|revin": [
