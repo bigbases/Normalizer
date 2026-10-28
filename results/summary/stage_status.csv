@@ -22,7 +22,7 @@ t3-lt-tuned,ETTh1,TimeFilter,lt,done,4,4,
 t3-lt-tuned,ETTm1,TimeFilter,lt,done,4,4,
 t3-lt-tuned,Weather,TimeFilter,lt,done,4,4,
 t3-lt-tuned,Electricity,TimeFilter,lt,done,4,4,
-t3-lt-tuned,Traffic,TimeFilter,lt,claimed,3,4,itm20-gpu0-a4000
+t3-lt-tuned,Traffic,TimeFilter,lt,done,4,4,
 t3-lt-tuned,ETTh2,TimeXer,lt,done,4,4,
 t3-lt-tuned,ETTm2,TimeXer,lt,done,4,4,
 t3-lt-tuned,ETTh2,TimeFilter,lt,done,4,4,
