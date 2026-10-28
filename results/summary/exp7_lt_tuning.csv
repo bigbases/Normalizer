@@ -169,10 +169,10 @@ Traffic,iTransformer,a3729a1a10be,grid,49,0.0001,1,1,False,0.315613,0.393321,0.3
 Traffic,iTransformer,44258000b27a,grid,49,0.001,1,1,False,0.319162,0.402610,0.360886,,,False,False
 Exchange,DLinear,21642c782956,grid,13,0.0001,0,0,False,0.126767,0.812154,0.469460,,,False,False
 Exchange,DLinear,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.125586,0.929334,0.527460,,,False,False
-Exchange,DLinear,b3998ed7ee0d,grid,25,0.0001,0,0,True,,0.791508,,,,False,False
+Exchange,DLinear,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.126185,0.791508,0.458846,,,False,False
 Exchange,DLinear,e18334433cdb,grid,25,0.001,0,0,False,,0.895733,,,,False,False
 Exchange,DLinear,f9d4a024dd3a,grid,49,0.0001,0,0,False,,0.922374,,,,False,False
-Exchange,DLinear,70544b7f9269,grid,49,0.001,0,0,False,,0.876544,,,,False,False
+Exchange,DLinear,70544b7f9269,grid,49,0.001,0,0,False,0.126407,0.876544,0.501475,,,False,False
 Exchange,iTransformer,21642c782956,grid,13,0.0001,0,0,False,,,,,,False,False
 Exchange,iTransformer,05ffa3aaf2d6,grid,13,0.001,0,0,False,,,,,,False,False
 Exchange,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,,,,,,False,False
