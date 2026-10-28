@@ -456,6 +456,16 @@
       "station_lr": 0.0005,
       "station_type": "adaptive"
     },
+    "Exchange|DLinear|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "joint_lr": "backbone",
+      "kernel_len": 32,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "Exchange|DLinear|dishts": {
       "dish_init": "uniform",
       "station_lr": 0.0001
