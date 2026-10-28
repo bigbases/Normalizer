@@ -105,4 +105,5 @@ Traffic,iTransformer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}
 Traffic,iTransformer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.365708
 Exchange,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.620977
 Exchange,TimeFilter,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.536359
+Exchange,TimeXer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.503581
 Exchange,iTransformer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",1.005206

@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T19:54:09+00:00 from 7445 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T19:54:20+00:00 from 7450 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,17 +15,17 @@ Generated 2026-10-28T19:54:09+00:00 from 7445 packaged cells. Regenerate with `p
 | exch-search | 4 | 0 | 16 | 0 | 0 |
 | exch-lt-search | 0 | 0 | 4 | 0 | 0 |
 | dish-confirm | 0 | 0 | 0 | 28 | 0 |
-| exch-confirm | 3 | 1 | 0 | 16 | 0 |
+| exch-confirm | 4 | 0 | 0 | 16 | 0 |
 | exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
 | dish-tuned | 0 | 0 | 0 | 28 | 0 |
 | exch-none | 3 | 1 | 0 | 0 | 0 |
-| exch-tuned | 2 | 0 | 1 | 17 | 0 |
+| exch-tuned | 2 | 1 | 1 | 16 | 0 |
 | exch-lt-tuned | 0 | 0 | 0 | 4 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 0 | 28 | 0 |
 | exch-none-s2022 | 0 | 0 | 4 | 0 | 0 |
-| exch-tuned-s2022 | 0 | 0 | 3 | 17 | 0 |
+| exch-tuned-s2022 | 0 | 0 | 4 | 16 | 0 |
 | exch-lt-tuned-s2022 | 0 | 0 | 0 | 4 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
@@ -41,7 +41,7 @@ Generated 2026-10-28T19:54:09+00:00 from 7445 packaged cells. Regenerate with `p
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
 | dish-tuned-s2023 | 0 | 0 | 0 | 28 | 0 |
 | exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
-| exch-tuned-s2023 | 0 | 0 | 3 | 17 | 0 |
+| exch-tuned-s2023 | 0 | 0 | 4 | 16 | 0 |
 | exch-lt-tuned-s2023 | 0 | 0 | 0 | 4 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
@@ -277,7 +277,7 @@ Generated 2026-10-28T19:54:09+00:00 from 7445 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--iTransformer--fan | blocked | 0/? |  |
 | exch-confirm--Exchange--iTransformer--dishts | blocked | 0/? |  |
-| exch-confirm--Exchange--TimeXer--revin | claimed | 0/4 | itm21-a4000 |
+| exch-confirm--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-confirm--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--fan | blocked | 0/? |  |
@@ -333,12 +333,12 @@ Generated 2026-10-28T19:54:09+00:00 from 7445 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--fan | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--dishts | blocked | 0/? |  |
-| exch-tuned--Exchange--TimeXer--revin | blocked | 0/? |  |
+| exch-tuned--Exchange--TimeXer--revin | ready | 0/4 |  |
 | exch-tuned--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--fan | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--dishts | blocked | 0/? |  |
-| exch-tuned--Exchange--TimeFilter--revin | ready | 0/4 |  |
+| exch-tuned--Exchange--TimeFilter--revin | claimed | 1/4 | itm21-a4000 |
 | exch-tuned--Exchange--TimeFilter--san | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeFilter--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeFilter--fan | blocked | 0/? |  |
@@ -417,7 +417,7 @@ Generated 2026-10-28T19:54:09+00:00 from 7445 packaged cells. Regenerate with `p
 | exch-tuned-s2022--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-tuned-s2022--Exchange--iTransformer--fan | blocked | 0/? |  |
 | exch-tuned-s2022--Exchange--iTransformer--dishts | blocked | 0/? |  |
-| exch-tuned-s2022--Exchange--TimeXer--revin | blocked | 0/? |  |
+| exch-tuned-s2022--Exchange--TimeXer--revin | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned-s2022--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-tuned-s2022--Exchange--TimeXer--fan | blocked | 0/? |  |
@@ -621,7 +621,7 @@ Generated 2026-10-28T19:54:09+00:00 from 7445 packaged cells. Regenerate with `p
 | exch-tuned-s2023--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-tuned-s2023--Exchange--iTransformer--fan | blocked | 0/? |  |
 | exch-tuned-s2023--Exchange--iTransformer--dishts | blocked | 0/? |  |
-| exch-tuned-s2023--Exchange--TimeXer--revin | blocked | 0/? |  |
+| exch-tuned-s2023--Exchange--TimeXer--revin | ready | 0/4 |  |
 | exch-tuned-s2023--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned-s2023--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-tuned-s2023--Exchange--TimeXer--fan | blocked | 0/? |  |
