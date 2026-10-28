@@ -173,8 +173,8 @@ Exchange,DLinear,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.126185,0.791508,0.458846
 Exchange,DLinear,e18334433cdb,grid,25,0.001,0,0,False,0.127790,0.895733,0.511762,,,False,False
 Exchange,DLinear,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.125992,0.922374,0.524183,,,False,False
 Exchange,DLinear,70544b7f9269,grid,49,0.001,0,0,False,0.126407,0.876544,0.501475,,,False,False
-Exchange,TimeFilter,21642c782956,grid,13,0.0001,0,0,False,,1.131609,,,,False,False
-Exchange,TimeFilter,05ffa3aaf2d6,grid,13,0.001,0,0,False,,0.875638,,,,False,False
+Exchange,TimeFilter,21642c782956,grid,13,0.0001,0,0,False,0.126470,1.131609,0.629040,,,False,False
+Exchange,TimeFilter,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.126924,0.875638,0.501281,,,False,False
 Exchange,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,,1.039047,,,,False,False
 Exchange,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,,0.867100,,,,False,False
 Exchange,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,,0.949470,,,,False,False
