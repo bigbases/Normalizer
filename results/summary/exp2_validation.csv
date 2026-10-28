@@ -232,9 +232,9 @@ ETTh2,iTransformer,ddn,c29aaaf1531b,{},0.228258,0.610404,,,0.419331,,False,False
 ETTh2,iTransformer,ddn,c9cff07612c9,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.235583,0.637170,,,0.436376,,False,False
 ETTh2,iTransformer,ddn,cf604827e7c5,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0005, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.218071,0.666966,,,0.442518,,False,False
 ETTh2,iTransformer,dishts,0d02cdc698e2,"{""dish_init"": ""avg"", ""station_lr"": 0.00025}",0.447379,0.785615,,,0.616497,,False,False
-ETTh2,iTransformer,dishts,32dd4f2f88ea,"{""dish_init"": ""uniform"", ""station_lr"": 0.0005}",0.375947,0.736988,,0.726798,0.556468,,True,False
+ETTh2,iTransformer,dishts,32dd4f2f88ea,"{""dish_init"": ""uniform"", ""station_lr"": 0.0005}",0.375947,0.736988,0.369762,0.726798,0.556468,0.552374,True,True
 ETTh2,iTransformer,dishts,7c017459a91d,"{""dish_init"": ""uniform"", ""station_lr"": 0.00025}",0.428957,0.724383,,,0.576670,,False,False
-ETTh2,iTransformer,dishts,a2c0e26a0d04,"{""dish_init"": ""standard"", ""station_lr"": 0.00025}",0.371615,0.769107,,0.823035,0.570361,,True,False
+ETTh2,iTransformer,dishts,a2c0e26a0d04,"{""dish_init"": ""standard"", ""station_lr"": 0.00025}",0.371615,0.769107,0.612898,0.823035,0.570361,0.644164,True,False
 ETTh2,iTransformer,dishts,ad8813500c6f,"{""dish_init"": ""avg"", ""station_lr"": 0.0005}",0.481884,0.786573,,,0.634229,,False,False
 ETTh2,iTransformer,dishts,d06468615702,"{""dish_init"": ""standard"", ""station_lr"": 0.0005}",0.455565,0.710993,,,0.583279,,False,False
 ETTh2,iTransformer,fan,0cc1917d7101,{},0.246175,0.732317,,,0.489246,,False,False
@@ -876,6 +876,12 @@ Exchange,TimeXer,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"
 Exchange,TimeXer,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.254698,3.441167,,,1.847932,,False,False
 Exchange,TimeXer,dishts,9db6b0bec9f5,"{""dish_init"": ""uniform"", ""station_lr"": 5e-05}",0.136712,1.645395,0.133806,1.753878,0.891053,0.917448,True,True
 Exchange,TimeXer,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.198627,3.093759,,,1.646193,,False,False
+Exchange,TimeXer,fan,5843cea72f0c,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 5e-05}",,3.447697,,,,,False,False
+Exchange,TimeXer,fan,6c1ea609882f,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 5e-05}",,3.481556,,,,,False,False
+Exchange,TimeXer,fan,6e55c0ad8f58,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 5e-05}",,3.440790,,,,,False,False
+Exchange,TimeXer,fan,b9173a97d7b8,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 0.0001}",,3.476499,,,,,False,False
+Exchange,TimeXer,fan,e4468eada22b,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0001}",,3.431232,,,,,False,False
+Exchange,TimeXer,fan,ebd8ee347b05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 0.0001}",,3.441743,,,,,False,False
 Exchange,TimeXer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.131329,0.856092,0.129780,0.897153,0.493710,0.503589,True,False
 Exchange,TimeXer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.131420,0.854728,0.129768,0.898407,0.493074,0.503581,True,True
 Exchange,iTransformer,dishts,112f7a5e174c,"{""dish_init"": ""avg"", ""station_lr"": 5e-05}",0.326483,4.131281,,,2.228882,,False,False

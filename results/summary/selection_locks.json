@@ -171,6 +171,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "ETTh2|iTransformer|dishts": {
+      "dish_init": "uniform",
+      "station_lr": 0.0005
+    },
     "ETTh2|iTransformer|revin": {
       "affine": 0,
       "station_lr": 0.0001
