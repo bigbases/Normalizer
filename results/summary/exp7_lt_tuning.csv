@@ -175,7 +175,7 @@ Exchange,DLinear,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.125992,0.922374,0.52418
 Exchange,DLinear,70544b7f9269,grid,49,0.001,0,0,False,0.126407,0.876544,0.501475,,,False,False
 Exchange,iTransformer,21642c782956,grid,13,0.0001,0,0,False,0.180479,0.883958,0.532218,,,False,False
 Exchange,iTransformer,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.143190,1.336938,0.740064,,,False,False
-Exchange,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.177331,0.883380,0.530356,,,True,False
+Exchange,iTransformer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.177331,0.883380,0.530356,,0.938166,True,False
 Exchange,iTransformer,e18334433cdb,grid,25,0.001,0,0,False,0.141586,1.344788,0.743187,,,False,False
-Exchange,iTransformer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.154971,0.878649,0.516810,,,True,False
+Exchange,iTransformer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.154971,0.878649,0.516810,,0.932771,True,False
 Exchange,iTransformer,70544b7f9269,grid,49,0.001,0,0,False,0.136737,1.313979,0.725358,,,False,False
