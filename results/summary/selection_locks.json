@@ -486,6 +486,11 @@
       "dish_init": "uniform",
       "station_lr": 5e-05
     },
+    "Exchange|TimeXer|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 1,
+      "station_lr": 0.0001
+    },
     "Exchange|TimeXer|revin": {
       "affine": 1,
       "station_lr": 0.0001

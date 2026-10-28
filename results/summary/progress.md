@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T20:56:05+00:00 from 7758 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,17 +15,17 @@ Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `p
 | exch-search | 13 | 2 | 5 | 0 | 0 |
 | exch-lt-search | 2 | 0 | 2 | 0 | 0 |
 | dish-confirm | 4 | 0 | 0 | 24 | 0 |
-| exch-confirm | 12 | 1 | 0 | 7 | 0 |
+| exch-confirm | 13 | 0 | 0 | 7 | 0 |
 | exch-lt-confirm | 2 | 0 | 0 | 2 | 0 |
-| dish-tuned | 2 | 2 | 0 | 24 | 0 |
+| dish-tuned | 3 | 1 | 0 | 24 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
-| exch-tuned | 11 | 0 | 1 | 8 | 0 |
+| exch-tuned | 11 | 0 | 2 | 7 | 0 |
 | exch-lt-tuned | 2 | 0 | 0 | 2 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 4 | 24 | 0 |
 | exch-none-s2022 | 0 | 0 | 4 | 0 | 0 |
-| exch-tuned-s2022 | 0 | 0 | 12 | 8 | 0 |
+| exch-tuned-s2022 | 0 | 0 | 13 | 7 | 0 |
 | exch-lt-tuned-s2022 | 0 | 0 | 2 | 2 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
@@ -41,7 +41,7 @@ Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `p
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
 | dish-tuned-s2023 | 0 | 0 | 4 | 24 | 0 |
 | exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
-| exch-tuned-s2023 | 0 | 0 | 12 | 8 | 0 |
+| exch-tuned-s2023 | 0 | 0 | 13 | 7 | 0 |
 | exch-lt-tuned-s2023 | 0 | 0 | 2 | 2 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
@@ -217,7 +217,7 @@ Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `p
 | dish-search--Traffic--TimeFilter | ready | 0/12 |  |
 | exch-search--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-search--Exchange--DLinear--san | done | 12/12 |  |
-| exch-search--Exchange--DLinear--ddn | claimed | 0/12 | itm20-gpu1-a4000 |
+| exch-search--Exchange--DLinear--ddn | claimed | 2/12 | itm20-gpu1-a4000 |
 | exch-search--Exchange--DLinear--fan | done | 12/12 |  |
 | exch-search--Exchange--DLinear--dishts | done | 12/12 |  |
 | exch-search--Exchange--iTransformer--revin | done | 4/4 |  |
@@ -280,7 +280,7 @@ Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-confirm--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--ddn | blocked | 0/? |  |
-| exch-confirm--Exchange--TimeXer--fan | claimed | 0/4 | itm20-gpu1-a4000 |
+| exch-confirm--Exchange--TimeXer--fan | done | 4/4 |  |
 | exch-confirm--Exchange--TimeXer--dishts | done | 4/4 |  |
 | exch-confirm--Exchange--TimeFilter--revin | done | 4/4 |  |
 | exch-confirm--Exchange--TimeFilter--san | blocked | 0/? |  |
@@ -296,7 +296,7 @@ Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `p
 | dish-tuned--ETTh1--TimeXer | blocked | 0/? |  |
 | dish-tuned--ETTh1--TimeFilter | blocked | 0/? |  |
 | dish-tuned--ETTh2--DLinear | done | 4/4 |  |
-| dish-tuned--ETTh2--iTransformer | claimed | 2/4 | itm20-gpu1-a4000 |
+| dish-tuned--ETTh2--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTh2--TimeXer | blocked | 0/? |  |
 | dish-tuned--ETTh2--TimeFilter | blocked | 0/? |  |
 | dish-tuned--ETTm1--DLinear | blocked | 0/? |  |
@@ -336,7 +336,7 @@ Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--ddn | blocked | 0/? |  |
-| exch-tuned--Exchange--TimeXer--fan | blocked | 0/? |  |
+| exch-tuned--Exchange--TimeXer--fan | ready | 0/4 |  |
 | exch-tuned--Exchange--TimeXer--dishts | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--san | blocked | 0/? |  |
@@ -420,7 +420,7 @@ Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `p
 | exch-tuned-s2022--Exchange--TimeXer--revin | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned-s2022--Exchange--TimeXer--ddn | blocked | 0/? |  |
-| exch-tuned-s2022--Exchange--TimeXer--fan | blocked | 0/? |  |
+| exch-tuned-s2022--Exchange--TimeXer--fan | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeXer--dishts | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeFilter--revin | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeFilter--san | blocked | 0/? |  |
@@ -624,7 +624,7 @@ Generated 2026-10-28T20:55:16+00:00 from 7750 packaged cells. Regenerate with `p
 | exch-tuned-s2023--Exchange--TimeXer--revin | ready | 0/4 |  |
 | exch-tuned-s2023--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned-s2023--Exchange--TimeXer--ddn | blocked | 0/? |  |
-| exch-tuned-s2023--Exchange--TimeXer--fan | blocked | 0/? |  |
+| exch-tuned-s2023--Exchange--TimeXer--fan | ready | 0/4 |  |
 | exch-tuned-s2023--Exchange--TimeXer--dishts | ready | 0/4 |  |
 | exch-tuned-s2023--Exchange--TimeFilter--revin | ready | 0/4 |  |
 | exch-tuned-s2023--Exchange--TimeFilter--san | blocked | 0/? |  |
