@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T21:18:21+00:00 from 7812 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T21:16:06+00:00 from 7814 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -13,10 +13,10 @@ Generated 2026-10-28T21:18:21+00:00 from 7812 packaged cells. Regenerate with `p
 | t3-length-s2023 | 24 | 0 | 0 | 0 | 0 |
 | dish-search | 4 | 0 | 24 | 0 | 0 |
 | exch-search | 15 | 1 | 4 | 0 | 0 |
-| exch-lt-search | 2 | 2 | 0 | 0 | 0 |
+| exch-lt-search | 3 | 1 | 0 | 0 | 0 |
 | dish-confirm | 4 | 0 | 0 | 24 | 0 |
 | exch-confirm | 15 | 0 | 0 | 5 | 0 |
-| exch-lt-confirm | 2 | 0 | 0 | 2 | 0 |
+| exch-lt-confirm | 2 | 0 | 1 | 1 | 0 |
 | dish-tuned | 4 | 0 | 0 | 24 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 13 | 1 | 1 | 5 | 0 |
@@ -237,7 +237,7 @@ Generated 2026-10-28T21:18:21+00:00 from 7812 packaged cells. Regenerate with `p
 | exch-search--Exchange--TimeFilter--dishts | done | 12/12 |  |
 | exch-lt-search--Exchange--DLinear | done | 12/12 |  |
 | exch-lt-search--Exchange--iTransformer | done | 12/12 |  |
-| exch-lt-search--Exchange--TimeXer | claimed | 10/12 | itm21-a4000 |
+| exch-lt-search--Exchange--TimeXer | done | 12/12 |  |
 | exch-lt-search--Exchange--TimeFilter | claimed | 6/12 | itm20-gpu1-a4000 |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
@@ -289,7 +289,7 @@ Generated 2026-10-28T21:18:21+00:00 from 7812 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--TimeFilter--dishts | done | 4/4 |  |
 | exch-lt-confirm--Exchange--DLinear | done | 4/4 |  |
 | exch-lt-confirm--Exchange--iTransformer | done | 4/4 |  |
-| exch-lt-confirm--Exchange--TimeXer | blocked | 0/? |  |
+| exch-lt-confirm--Exchange--TimeXer | ready | 0/4 |  |
 | exch-lt-confirm--Exchange--TimeFilter | blocked | 0/? |  |
 | dish-tuned--ETTh1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
