@@ -112,6 +112,7 @@ Exchange,DLinear,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"
 Exchange,DLinear,fan,ebd8ee347b05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 0.0001}",2.144669
 Exchange,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.620977
 Exchange,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.693301
+Exchange,TimeFilter,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.552324
 Exchange,TimeFilter,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.753703
 Exchange,TimeFilter,fan,6e55c0ad8f58,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 5e-05}",1.823261
 Exchange,TimeFilter,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.536359
