@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T22:08:19+00:00 from 7928 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T22:11:14+00:00 from 7930 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,10 +11,10 @@ Generated 2026-10-28T22:08:19+00:00 from 7928 packaged cells. Regenerate with `p
 | t3-length | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2022 | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2023 | 24 | 0 | 0 | 0 | 0 |
-| dish-search | 4 | 2 | 22 | 0 | 0 |
+| dish-search | 5 | 1 | 22 | 0 | 0 |
 | exch-search | 19 | 1 | 0 | 0 | 0 |
 | exch-lt-search | 4 | 0 | 0 | 0 | 0 |
-| dish-confirm | 4 | 0 | 0 | 24 | 0 |
+| dish-confirm | 4 | 0 | 1 | 23 | 0 |
 | exch-confirm | 18 | 0 | 1 | 1 | 0 |
 | exch-lt-confirm | 4 | 0 | 0 | 0 | 0 |
 | dish-tuned | 4 | 0 | 0 | 24 | 0 |
@@ -194,7 +194,7 @@ Generated 2026-10-28T22:08:19+00:00 from 7928 packaged cells. Regenerate with `p
 | dish-search--ETTh2--DLinear | done | 12/12 |  |
 | dish-search--ETTh2--iTransformer | done | 12/12 |  |
 | dish-search--ETTh2--TimeXer | claimed | 0/12 | itm20-gpu1-a4000 |
-| dish-search--ETTh2--TimeFilter | claimed | 10/12 | itm20-gpu1-a4000 |
+| dish-search--ETTh2--TimeFilter | done | 12/12 |  |
 | dish-search--ETTm1--DLinear | ready | 0/12 |  |
 | dish-search--ETTm1--iTransformer | ready | 0/12 |  |
 | dish-search--ETTm1--TimeXer | ready | 0/12 |  |
@@ -246,7 +246,7 @@ Generated 2026-10-28T22:08:19+00:00 from 7928 packaged cells. Regenerate with `p
 | dish-confirm--ETTh2--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh2--iTransformer | done | 4/4 |  |
 | dish-confirm--ETTh2--TimeXer | blocked | 0/? |  |
-| dish-confirm--ETTh2--TimeFilter | blocked | 0/? |  |
+| dish-confirm--ETTh2--TimeFilter | ready | 0/4 |  |
 | dish-confirm--ETTm1--DLinear | blocked | 0/? |  |
 | dish-confirm--ETTm1--iTransformer | blocked | 0/? |  |
 | dish-confirm--ETTm1--TimeXer | blocked | 0/? |  |
