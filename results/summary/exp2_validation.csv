@@ -868,3 +868,5 @@ Exchange,iTransformer,fan,e4468eada22b,"{""fan_aux_weight"": 1.0, ""freq_topk"":
 Exchange,iTransformer,fan,ebd8ee347b05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 0.0001}",0.270655,4.064731,0.297229,3.973574,2.167693,2.151547,True,True
 Exchange,iTransformer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.173637,1.959132,0.175670,1.800325,1.066385,1.027191,True,False
 Exchange,iTransformer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.172351,1.956249,0.177551,1.714671,1.064300,1.005206,True,True
+Exchange,iTransformer,san,03927128a7d2,"{""period_len"": 6, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",,1.414657,,,,,False,False
+Exchange,iTransformer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",,1.467476,,,,,False,False
