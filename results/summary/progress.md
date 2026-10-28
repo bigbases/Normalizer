@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T19:04:41+00:00 from 7378 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T19:10:54+00:00 from 7381 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -9,7 +9,7 @@ Generated 2026-10-28T19:04:41+00:00 from 7378 packaged cells. Regenerate with `p
 | t3-lt-tuned-s2022 | 14 | 0 | 0 | 0 | 0 |
 | t3-lt-tuned-s2023 | 13 | 1 | 0 | 0 | 0 |
 | t3-length | 24 | 0 | 0 | 0 | 0 |
-| t3-length-s2022 | 22 | 2 | 0 | 0 | 0 |
+| t3-length-s2022 | 23 | 1 | 0 | 0 | 0 |
 | t3-length-s2023 | 21 | 3 | 0 | 0 | 0 |
 | dish-search | 0 | 0 | 28 | 0 | 0 |
 | exch-search | 0 | 0 | 20 | 0 | 0 |
@@ -150,7 +150,7 @@ Generated 2026-10-28T19:04:41+00:00 from 7378 packaged cells. Regenerate with `p
 | t3-length-s2022--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length-s2022--Weather--TimeXer--san | done | 6/6 |  |
 | t3-length-s2022--Weather--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeXer--lt | claimed | 4/6 | itm21-a4000 |
+| t3-length-s2022--Weather--TimeXer--lt | done | 6/6 |  |
 | t3-length-s2022--ETTh2--TimeFilter--revin | done | 6/6 |  |
 | t3-length-s2022--ETTh2--TimeFilter--san | done | 6/6 |  |
 | t3-length-s2022--ETTh2--TimeFilter--ddn | done | 6/6 |  |
@@ -182,7 +182,7 @@ Generated 2026-10-28T19:04:41+00:00 from 7378 packaged cells. Regenerate with `p
 | t3-length-s2023--ETTm1--TimeFilter--revin | done | 6/6 |  |
 | t3-length-s2023--ETTm1--TimeFilter--san | done | 6/6 |  |
 | t3-length-s2023--ETTm1--TimeFilter--ddn | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeFilter--lt | claimed | 0/6 | itm20-gpu0-a4000 |
+| t3-length-s2023--ETTm1--TimeFilter--lt | claimed | 1/6 | itm20-gpu0-a4000 |
 | t3-length-s2023--Weather--TimeFilter--revin | done | 6/6 |  |
 | t3-length-s2023--Weather--TimeFilter--san | done | 6/6 |  |
 | t3-length-s2023--Weather--TimeFilter--ddn | done | 6/6 |  |
