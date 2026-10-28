@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T19:44:39+00:00 from 7421 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T19:49:03+00:00 from 7425 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,11 +15,11 @@ Generated 2026-10-28T19:44:39+00:00 from 7421 packaged cells. Regenerate with `p
 | exch-search | 3 | 0 | 17 | 0 | 0 |
 | exch-lt-search | 0 | 0 | 4 | 0 | 0 |
 | dish-confirm | 0 | 0 | 0 | 28 | 0 |
-| exch-confirm | 1 | 1 | 1 | 17 | 0 |
+| exch-confirm | 1 | 2 | 0 | 17 | 0 |
 | exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
 | dish-tuned | 0 | 0 | 0 | 28 | 0 |
 | exch-none | 2 | 0 | 2 | 0 | 0 |
-| exch-tuned | 0 | 1 | 0 | 19 | 0 |
+| exch-tuned | 1 | 0 | 0 | 19 | 0 |
 | exch-lt-tuned | 0 | 0 | 0 | 4 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -282,7 +282,7 @@ Generated 2026-10-28T19:44:39+00:00 from 7421 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--fan | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--dishts | blocked | 0/? |  |
-| exch-confirm--Exchange--TimeFilter--revin | ready | 0/4 |  |
+| exch-confirm--Exchange--TimeFilter--revin | claimed | 0/4 | itm20-gpu1-a4000 |
 | exch-confirm--Exchange--TimeFilter--san | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeFilter--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeFilter--fan | blocked | 0/? |  |
@@ -328,7 +328,7 @@ Generated 2026-10-28T19:44:39+00:00 from 7421 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--DLinear--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--DLinear--fan | blocked | 0/? |  |
 | exch-tuned--Exchange--DLinear--dishts | blocked | 0/? |  |
-| exch-tuned--Exchange--iTransformer--revin | claimed | 0/4 | itm20-gpu1-a4000 |
+| exch-tuned--Exchange--iTransformer--revin | done | 4/4 |  |
 | exch-tuned--Exchange--iTransformer--san | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--fan | blocked | 0/? |  |
