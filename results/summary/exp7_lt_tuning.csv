@@ -36,11 +36,11 @@ ETTh2,TimeFilter,2214cc331066,grid,25,0.001,1,0,False,0.208711,0.606195,0.407453
 ETTh2,TimeFilter,6538d62e5a7a,grid,49,0.0001,1,0,False,0.210739,0.598062,0.404401,,,False,False
 ETTh2,TimeFilter,0a7ae0db7542,grid,49,0.001,1,0,False,0.210344,0.610947,0.410646,,,False,False
 ETTh2,TimeXer,4e5b34a628d0,grid,13,0.0001,1,0,False,0.222290,0.632147,0.427219,,,False,False
-ETTh2,TimeXer,ac8e765c1f38,grid,13,0.001,1,0,False,,0.608284,,,,False,False
+ETTh2,TimeXer,ac8e765c1f38,grid,13,0.001,1,0,False,0.211305,0.608284,0.409794,,,False,False
 ETTh2,TimeXer,5871f175ed70,grid,25,0.0001,1,0,True,0.219500,0.602531,0.411015,,,False,False
 ETTh2,TimeXer,2214cc331066,grid,25,0.001,1,0,False,0.213412,0.586708,0.400060,,,False,False
-ETTh2,TimeXer,6538d62e5a7a,grid,49,0.0001,1,0,False,,0.585043,,,,False,False
-ETTh2,TimeXer,0a7ae0db7542,grid,49,0.001,1,0,False,0.213811,0.577656,0.395734,0.212971,0.565771,False,False
+ETTh2,TimeXer,6538d62e5a7a,grid,49,0.0001,1,0,False,0.214433,0.585043,0.399738,,,True,False
+ETTh2,TimeXer,0a7ae0db7542,grid,49,0.001,1,0,False,0.213811,0.577656,0.395734,0.212971,0.565771,True,False
 ETTh2,iTransformer,684acb6d5d36,grid,13,0.0001,0,0,False,0.237234,0.586652,0.411943,0.243517,0.581684,True,True
 ETTh2,iTransformer,ec25f92002df,grid,13,0.001,0,0,False,0.224182,0.632052,0.428117,,,False,False
 ETTh2,iTransformer,c341c0f6cf02,grid,25,0.0001,0,0,False,0.229798,0.613182,0.421490,0.235541,0.628204,False,False
