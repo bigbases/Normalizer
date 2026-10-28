@@ -452,6 +452,11 @@
       "dish_init": "uniform",
       "station_lr": 0.0001
     },
+    "Exchange|DLinear|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 2,
+      "station_lr": 0.0001
+    },
     "Exchange|DLinear|revin": {
       "affine": 1,
       "station_lr": 0.0001
