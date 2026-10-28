@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T20:26:20+00:00 from 7614 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T20:24:06+00:00 from 7622 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -19,7 +19,7 @@ Generated 2026-10-28T20:26:20+00:00 from 7614 packaged cells. Regenerate with `p
 | exch-lt-confirm | 0 | 1 | 1 | 2 | 0 |
 | dish-tuned | 2 | 0 | 0 | 26 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
-| exch-tuned | 6 | 2 | 0 | 12 | 0 |
+| exch-tuned | 8 | 0 | 0 | 12 | 0 |
 | exch-lt-tuned | 0 | 0 | 0 | 4 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -326,12 +326,12 @@ Generated 2026-10-28T20:26:20+00:00 from 7614 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-tuned--Exchange--DLinear--san | blocked | 0/? |  |
 | exch-tuned--Exchange--DLinear--ddn | blocked | 0/? |  |
-| exch-tuned--Exchange--DLinear--fan | claimed | 0/4 | itm21-a4000 |
+| exch-tuned--Exchange--DLinear--fan | done | 4/4 |  |
 | exch-tuned--Exchange--DLinear--dishts | done | 4/4 |  |
 | exch-tuned--Exchange--iTransformer--revin | done | 4/4 |  |
 | exch-tuned--Exchange--iTransformer--san | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--ddn | blocked | 0/? |  |
-| exch-tuned--Exchange--iTransformer--fan | claimed | 0/4 | itm21-a4000 |
+| exch-tuned--Exchange--iTransformer--fan | done | 4/4 |  |
 | exch-tuned--Exchange--iTransformer--dishts | done | 4/4 |  |
 | exch-tuned--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeXer--san | blocked | 0/? |  |
