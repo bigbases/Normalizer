@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T06:24:10+00:00 from 7303 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T06:21:57+00:00 from 7304 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-28T06:24:10+00:00 from 7303 packaged cells. Regenerate with `p
 | t3-lt-tuned | 12 | 0 | 0 | 2 | 0 |
 | t3-lt-tuned-s2022 | 12 | 0 | 0 | 2 | 0 |
 | t3-lt-tuned-s2023 | 11 | 1 | 0 | 2 | 0 |
-| t3-length | 20 | 3 | 1 | 0 | 0 |
+| t3-length | 21 | 2 | 1 | 0 | 0 |
 | t3-length-s2022 | 20 | 0 | 4 | 0 | 0 |
 | t3-length-s2023 | 20 | 0 | 4 | 0 | 0 |
 | dlit-length | 0 | 0 | 24 | 0 | 0 |
@@ -100,7 +100,7 @@ Generated 2026-10-28T06:24:10+00:00 from 7303 packaged cells. Regenerate with `p
 | t3-length--ETTh2--TimeXer--revin | done | 6/6 |  |
 | t3-length--ETTh2--TimeXer--san | done | 6/6 |  |
 | t3-length--ETTh2--TimeXer--ddn | done | 6/6 |  |
-| t3-length--ETTh2--TimeXer--lt | claimed | 5/6 | itm21-a4000 |
+| t3-length--ETTh2--TimeXer--lt | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--san | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--ddn | done | 6/6 |  |
