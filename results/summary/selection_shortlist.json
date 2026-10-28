@@ -1869,6 +1869,26 @@
         "screen_mean_val_mse": 0.7077001735922837
       }
     ],
+    "Exchange|TimeFilter|dishts": [
+      {
+        "candidate_id": "4b3fc1cfcf90",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.6680040989248526
+      },
+      {
+        "candidate_id": "112f7a5e174c",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 1.1907809586929423
+      }
+    ],
     "Exchange|TimeFilter|revin": [
       {
         "candidate_id": "a22b7bdd93cb",
@@ -1891,6 +1911,15 @@
     ],
     "Exchange|TimeXer|dishts": [
       {
+        "candidate_id": "9db6b0bec9f5",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.8910534439519757
+      },
+      {
         "candidate_id": "4b3fc1cfcf90",
         "n_cells": 2,
         "params": {
@@ -1898,15 +1927,6 @@
           "station_lr": 5e-05
         },
         "screen_mean_val_mse": 0.9963869210332632
-      },
-      {
-        "candidate_id": "4ff89483b844",
-        "n_cells": 2,
-        "params": {
-          "dish_init": "uniform",
-          "station_lr": 0.0001
-        },
-        "screen_mean_val_mse": 1.4615983773200285
       }
     ],
     "Exchange|TimeXer|revin": [
