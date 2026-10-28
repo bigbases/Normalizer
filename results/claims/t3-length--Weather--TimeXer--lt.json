@@ -1,14 +1,14 @@
 {
  "cells_remaining": 2,
  "cells_total": 6,
- "claimed_at": "2026-10-28T06:55:33+00:00",
- "code_rev": "bb7dc4dc",
+ "claimed_at": "2026-10-28T17:07:10+00:00",
+ "code_rev": "17c2c812c",
  "gpu": "NVIDIA RTX A4000",
  "gpus": [
   0
  ],
- "heartbeat": "2026-10-28T07:24:12+00:00",
+ "heartbeat": "2026-10-28T17:07:10+00:00",
  "host": "itm21-a4000",
- "took_over_from": "",
+ "took_over_from": "itm21-a4000",
  "worker": "itm21-a4000"
 }
