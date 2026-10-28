@@ -14,11 +14,11 @@ t3-lt-confirm,ETTm2,TimeXer,lt,done,4,4,
 t3-lt-confirm,ETTh2,TimeFilter,lt,done,4,4,
 t3-lt-confirm,ETTm2,TimeFilter,lt,done,4,4,
 t3-lt-tuned,ETTh1,TimeXer,lt,done,4,4,
-t3-lt-tuned,ETTm1,TimeXer,lt,ready,0,4,
+t3-lt-tuned,ETTm1,TimeXer,lt,claimed,0,4,itm21-a4000
 t3-lt-tuned,Weather,TimeXer,lt,ready,0,4,
 t3-lt-tuned,Electricity,TimeXer,lt,done,4,4,
 t3-lt-tuned,Traffic,TimeXer,lt,blocked,0,,
-t3-lt-tuned,ETTh1,TimeFilter,lt,claimed,2,4,itm21-a4000
+t3-lt-tuned,ETTh1,TimeFilter,lt,done,4,4,
 t3-lt-tuned,ETTm1,TimeFilter,lt,ready,0,4,
 t3-lt-tuned,Weather,TimeFilter,lt,done,4,4,
 t3-lt-tuned,Electricity,TimeFilter,lt,done,4,4,
