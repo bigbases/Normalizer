@@ -134,9 +134,9 @@ Electricity,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,0.117449,0.171522,0.
 Electricity,TimeXer,21642c782956,grid,13,0.0001,0,0,False,0.140459,0.198163,0.169311,,,False,False
 Electricity,TimeXer,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.132629,0.198591,0.165610,,,False,False
 Electricity,TimeXer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.137311,0.199655,0.168483,,,False,False
-Electricity,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.131569,0.199506,0.165537,,0.202623,True,False
+Electricity,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.131569,0.199506,0.165537,0.132248,0.202623,True,False
 Electricity,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.135100,0.199115,0.167107,,,False,False
-Electricity,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.128588,0.198329,0.163458,0.128265,0.201920,True,False
+Electricity,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.128588,0.198329,0.163458,0.128265,0.201920,True,True
 Electricity,iTransformer,6a39ae0f488a,grid,13,0.0001,1,1,False,0.110615,0.165415,0.138015,,,False,False
 Electricity,iTransformer,c39ac94f708f,grid,13,0.001,1,1,False,0.109249,0.163133,0.136191,0.109787,0.166705,True,True
 Electricity,iTransformer,87aa258a0845,grid,25,0.0001,1,1,True,0.111190,0.166100,0.138645,0.112472,0.165777,False,False
