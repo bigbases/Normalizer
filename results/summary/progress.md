@@ -1,13 +1,13 @@
 # Experiment progress
 
-Generated 2026-10-28T07:25:45+00:00 from 7321 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T07:29:23+00:00 from 7324 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | t3-lt-confirm | 14 | 0 | 0 | 0 | 0 |
-| t3-lt-tuned | 12 | 1 | 1 | 0 | 0 |
-| t3-lt-tuned-s2022 | 12 | 0 | 2 | 0 | 0 |
-| t3-lt-tuned-s2023 | 11 | 1 | 2 | 0 | 0 |
+| t3-lt-tuned | 12 | 2 | 0 | 0 | 0 |
+| t3-lt-tuned-s2022 | 12 | 1 | 1 | 0 | 0 |
+| t3-lt-tuned-s2023 | 12 | 0 | 2 | 0 | 0 |
 | t3-length | 22 | 2 | 0 | 0 | 0 |
 | t3-length-s2022 | 20 | 0 | 4 | 0 | 0 |
 | t3-length-s2023 | 20 | 0 | 4 | 0 | 0 |
@@ -64,7 +64,7 @@ Generated 2026-10-28T07:25:45+00:00 from 7321 packaged cells. Regenerate with `p
 | t3-lt-tuned--ETTm1--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--Electricity--TimeFilter | done | 4/4 |  |
-| t3-lt-tuned--Traffic--TimeFilter | ready | 0/4 |  |
+| t3-lt-tuned--Traffic--TimeFilter | claimed | 0/4 | itm20-gpu0-a4000 |
 | t3-lt-tuned--ETTh2--TimeXer | done | 4/4 |  |
 | t3-lt-tuned--ETTm2--TimeXer | done | 4/4 |  |
 | t3-lt-tuned--ETTh2--TimeFilter | done | 4/4 |  |
@@ -78,14 +78,14 @@ Generated 2026-10-28T07:25:45+00:00 from 7321 packaged cells. Regenerate with `p
 | t3-lt-tuned-s2022--ETTm1--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--Electricity--TimeFilter | done | 4/4 |  |
-| t3-lt-tuned-s2022--Traffic--TimeFilter | ready | 0/4 |  |
+| t3-lt-tuned-s2022--Traffic--TimeFilter | claimed | 0/4 | itm21-a4000 |
 | t3-lt-tuned-s2022--ETTh2--TimeXer | done | 4/4 |  |
 | t3-lt-tuned-s2022--ETTm2--TimeXer | done | 4/4 |  |
 | t3-lt-tuned-s2022--ETTh2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--ETTm2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2023--ETTh1--TimeXer | done | 4/4 |  |
 | t3-lt-tuned-s2023--ETTm1--TimeXer | done | 4/4 |  |
-| t3-lt-tuned-s2023--Weather--TimeXer | claimed | 2/4 | itm20-gpu1-a4000 |
+| t3-lt-tuned-s2023--Weather--TimeXer | done | 4/4 |  |
 | t3-lt-tuned-s2023--Electricity--TimeXer | done | 4/4 |  |
 | t3-lt-tuned-s2023--Traffic--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned-s2023--ETTh1--TimeFilter | done | 4/4 |  |
@@ -108,7 +108,7 @@ Generated 2026-10-28T07:25:45+00:00 from 7321 packaged cells. Regenerate with `p
 | t3-length--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length--Weather--TimeXer--san | done | 6/6 |  |
 | t3-length--Weather--TimeXer--ddn | done | 6/6 |  |
-| t3-length--Weather--TimeXer--lt | claimed | 3/6 | itm21-a4000 |
+| t3-length--Weather--TimeXer--lt | claimed | 4/6 | itm21-a4000 |
 | t3-length--ETTh2--TimeFilter--revin | done | 6/6 |  |
 | t3-length--ETTh2--TimeFilter--san | done | 6/6 |  |
 | t3-length--ETTh2--TimeFilter--ddn | done | 6/6 |  |
