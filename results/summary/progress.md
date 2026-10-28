@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T22:54:57+00:00 from 8029 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -14,16 +14,16 @@ Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `p
 | dish-search | 9 | 1 | 18 | 0 | 0 |
 | exch-search | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-search | 4 | 0 | 0 | 0 | 0 |
-| dish-confirm | 6 | 2 | 1 | 19 | 0 |
+| dish-confirm | 7 | 2 | 0 | 19 | 0 |
 | exch-confirm | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-confirm | 4 | 0 | 0 | 0 | 0 |
-| dish-tuned | 6 | 0 | 0 | 22 | 0 |
+| dish-tuned | 6 | 0 | 1 | 21 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 4 | 0 | 0 | 0 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2022 | 0 | 0 | 6 | 22 | 0 |
+| dish-tuned-s2022 | 0 | 0 | 7 | 21 | 0 |
 | exch-none-s2022 | 0 | 0 | 4 | 0 | 0 |
 | exch-tuned-s2022 | 0 | 0 | 20 | 0 | 0 |
 | exch-lt-tuned-s2022 | 0 | 0 | 4 | 0 | 0 |
@@ -39,7 +39,7 @@ Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `p
 | t3-rf-search | 24 | 0 | 4 | 0 | 0 |
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
-| dish-tuned-s2023 | 0 | 0 | 6 | 22 | 0 |
+| dish-tuned-s2023 | 0 | 0 | 7 | 21 | 0 |
 | exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
 | exch-tuned-s2023 | 0 | 0 | 20 | 0 | 0 |
 | exch-lt-tuned-s2023 | 0 | 0 | 4 | 0 | 0 |
@@ -195,7 +195,7 @@ Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `p
 | dish-search--ETTh2--iTransformer | done | 12/12 |  |
 | dish-search--ETTh2--TimeXer | done | 12/12 |  |
 | dish-search--ETTh2--TimeFilter | done | 12/12 |  |
-| dish-search--ETTm1--DLinear | claimed | 2/12 | itm20-gpu0-a4000 |
+| dish-search--ETTm1--DLinear | claimed | 4/12 | itm20-gpu0-a4000 |
 | dish-search--ETTm1--iTransformer | ready | 0/12 |  |
 | dish-search--ETTm1--TimeXer | ready | 0/12 |  |
 | dish-search--ETTm1--TimeFilter | ready | 0/12 |  |
@@ -241,7 +241,7 @@ Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `p
 | exch-lt-search--Exchange--TimeFilter | done | 12/12 |  |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
-| dish-confirm--ETTh1--TimeXer | claimed | 1/4 | itm20-gpu1-a4000 |
+| dish-confirm--ETTh1--TimeXer | done | 4/4 |  |
 | dish-confirm--ETTh1--TimeFilter | claimed | 1/4 | itm21-a4000 |
 | dish-confirm--ETTh2--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh2--iTransformer | done | 4/4 |  |
@@ -251,7 +251,7 @@ Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `p
 | dish-confirm--ETTm1--iTransformer | blocked | 0/? |  |
 | dish-confirm--ETTm1--TimeXer | blocked | 0/? |  |
 | dish-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
-| dish-confirm--ETTm2--DLinear | ready | 0/4 |  |
+| dish-confirm--ETTm2--DLinear | claimed | 0/4 | itm20-gpu1-a4000 |
 | dish-confirm--ETTm2--iTransformer | blocked | 0/? |  |
 | dish-confirm--ETTm2--TimeXer | blocked | 0/? |  |
 | dish-confirm--ETTm2--TimeFilter | blocked | 0/? |  |
@@ -293,7 +293,7 @@ Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `p
 | exch-lt-confirm--Exchange--TimeFilter | done | 4/4 |  |
 | dish-tuned--ETTh1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
-| dish-tuned--ETTh1--TimeXer | blocked | 0/? |  |
+| dish-tuned--ETTh1--TimeXer | ready | 0/4 |  |
 | dish-tuned--ETTh1--TimeFilter | blocked | 0/? |  |
 | dish-tuned--ETTh2--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh2--iTransformer | done | 4/4 |  |
@@ -377,7 +377,7 @@ Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `p
 | lt-rsens--Traffic--iTransformer | done | 18/18 |  |
 | dish-tuned-s2022--ETTh1--DLinear | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh1--iTransformer | ready | 0/4 |  |
-| dish-tuned-s2022--ETTh1--TimeXer | blocked | 0/? |  |
+| dish-tuned-s2022--ETTh1--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh1--TimeFilter | blocked | 0/? |  |
 | dish-tuned-s2022--ETTh2--DLinear | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh2--iTransformer | ready | 0/4 |  |
@@ -581,7 +581,7 @@ Generated 2026-10-28T22:51:31+00:00 from 8024 packaged cells. Regenerate with `p
 | t3-rf-tuned--ETTm2--TimeFilter--fan | blocked | 0/? |  |
 | dish-tuned-s2023--ETTh1--DLinear | ready | 0/4 |  |
 | dish-tuned-s2023--ETTh1--iTransformer | ready | 0/4 |  |
-| dish-tuned-s2023--ETTh1--TimeXer | blocked | 0/? |  |
+| dish-tuned-s2023--ETTh1--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2023--ETTh1--TimeFilter | blocked | 0/? |  |
 | dish-tuned-s2023--ETTh2--DLinear | ready | 0/4 |  |
 | dish-tuned-s2023--ETTh2--iTransformer | ready | 0/4 |  |
