@@ -1971,24 +1971,24 @@
     ],
     "Exchange|TimeXer|fan": [
       {
-        "candidate_id": "6e55c0ad8f58",
-        "n_cells": 2,
-        "params": {
-          "fan_aux_weight": 1.0,
-          "freq_topk": 2,
-          "station_lr": 5e-05
-        },
-        "screen_mean_val_mse": 1.8419542109505052
-      },
-      {
-        "candidate_id": "5843cea72f0c",
+        "candidate_id": "e4468eada22b",
         "n_cells": 2,
         "params": {
           "fan_aux_weight": 1.0,
           "freq_topk": 1,
-          "station_lr": 5e-05
+          "station_lr": 0.0001
         },
-        "screen_mean_val_mse": 1.843793605587312
+        "screen_mean_val_mse": 1.8186002029549508
+      },
+      {
+        "candidate_id": "ebd8ee347b05",
+        "n_cells": 2,
+        "params": {
+          "fan_aux_weight": 1.0,
+          "freq_topk": 2,
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 1.8299664933057058
       }
     ],
     "Exchange|TimeXer|revin": [
