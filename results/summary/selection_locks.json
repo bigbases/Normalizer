@@ -487,6 +487,11 @@
       "affine": 1,
       "station_lr": 0.0001
     },
+    "Exchange|iTransformer|san": {
+      "period_len": 12,
+      "station_lr": 5e-05,
+      "station_type": "adaptive"
+    },
     "Traffic|DLinear|ddn": {
       "hkernel_len": 5,
       "j": 1,

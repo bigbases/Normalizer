@@ -1889,6 +1889,26 @@
         "screen_mean_val_mse": 0.5713078322864714
       }
     ],
+    "Exchange|TimeXer|dishts": [
+      {
+        "candidate_id": "4b3fc1cfcf90",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.9963869210332632
+      },
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 1.4615983773200285
+      }
+    ],
     "Exchange|TimeXer|revin": [
       {
         "candidate_id": "a22b7bdd93cb",
