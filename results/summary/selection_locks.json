@@ -106,6 +106,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "ETTh2|DLinear|dishts": {
+      "dish_init": "uniform",
+      "station_lr": 0.0001
+    },
     "ETTh2|DLinear|revin": {
       "affine": 0,
       "station_lr": 0.0001
@@ -440,6 +444,10 @@
       "station_lr": 0.0005,
       "station_type": "adaptive"
     },
+    "Exchange|DLinear|dishts": {
+      "dish_init": "uniform",
+      "station_lr": 0.0001
+    },
     "Exchange|DLinear|revin": {
       "affine": 1,
       "station_lr": 0.0001
@@ -450,6 +458,10 @@
     },
     "Exchange|TimeXer|revin": {
       "affine": 1,
+      "station_lr": 0.0001
+    },
+    "Exchange|iTransformer|dishts": {
+      "dish_init": "standard",
       "station_lr": 0.0001
     },
     "Exchange|iTransformer|revin": {
