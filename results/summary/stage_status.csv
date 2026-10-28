@@ -130,7 +130,7 @@ t3-length-s2023,Weather,TimeFilter,lt,done,6,6,
 dish-search,ETTh1,DLinear,dishts,done,12,12,
 dish-search,ETTh1,iTransformer,dishts,done,12,12,
 dish-search,ETTh1,TimeXer,dishts,ready,0,12,
-dish-search,ETTh1,TimeFilter,dishts,claimed,3,12,itm20-gpu0-a4000
+dish-search,ETTh1,TimeFilter,dishts,claimed,4,12,itm20-gpu0-a4000
 dish-search,ETTh2,DLinear,dishts,done,12,12,
 dish-search,ETTh2,iTransformer,dishts,done,12,12,
 dish-search,ETTh2,TimeXer,dishts,done,12,12,
@@ -280,7 +280,7 @@ exch-tuned,Exchange,TimeXer,fan,done,4,4,
 exch-tuned,Exchange,TimeXer,dishts,done,4,4,
 exch-tuned,Exchange,TimeFilter,revin,done,4,4,
 exch-tuned,Exchange,TimeFilter,san,done,4,4,
-exch-tuned,Exchange,TimeFilter,ddn,claimed,2,4,itm21-a4000
+exch-tuned,Exchange,TimeFilter,ddn,done,4,4,
 exch-tuned,Exchange,TimeFilter,fan,done,4,4,
 exch-tuned,Exchange,TimeFilter,dishts,done,4,4,
 exch-lt-tuned,Exchange,DLinear,lt,done,4,4,

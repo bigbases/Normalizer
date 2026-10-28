@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T22:30:27+00:00 from 7973 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T22:29:15+00:00 from 7976 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -19,7 +19,7 @@ Generated 2026-10-28T22:30:27+00:00 from 7973 packaged cells. Regenerate with `p
 | exch-lt-confirm | 4 | 0 | 0 | 0 | 0 |
 | dish-tuned | 4 | 1 | 0 | 23 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
-| exch-tuned | 19 | 1 | 0 | 0 | 0 |
+| exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 4 | 0 | 0 | 0 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -190,7 +190,7 @@ Generated 2026-10-28T22:30:27+00:00 from 7973 packaged cells. Regenerate with `p
 | dish-search--ETTh1--DLinear | done | 12/12 |  |
 | dish-search--ETTh1--iTransformer | done | 12/12 |  |
 | dish-search--ETTh1--TimeXer | ready | 0/12 |  |
-| dish-search--ETTh1--TimeFilter | claimed | 3/12 | itm20-gpu0-a4000 |
+| dish-search--ETTh1--TimeFilter | claimed | 4/12 | itm20-gpu0-a4000 |
 | dish-search--ETTh2--DLinear | done | 12/12 |  |
 | dish-search--ETTh2--iTransformer | done | 12/12 |  |
 | dish-search--ETTh2--TimeXer | done | 12/12 |  |
@@ -340,7 +340,7 @@ Generated 2026-10-28T22:30:27+00:00 from 7973 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--TimeXer--dishts | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--san | done | 4/4 |  |
-| exch-tuned--Exchange--TimeFilter--ddn | claimed | 2/4 | itm21-a4000 |
+| exch-tuned--Exchange--TimeFilter--ddn | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--fan | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--dishts | done | 4/4 |  |
 | exch-lt-tuned--Exchange--DLinear | done | 4/4 |  |
