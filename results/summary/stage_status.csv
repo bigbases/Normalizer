@@ -62,7 +62,7 @@ t3-length,ETTh2,TimeXer,lt,done,6,6,
 t3-length,ETTm1,TimeXer,revin,done,6,6,
 t3-length,ETTm1,TimeXer,san,done,6,6,
 t3-length,ETTm1,TimeXer,ddn,done,6,6,
-t3-length,ETTm1,TimeXer,lt,claimed,4,6,itm20-gpu1-a4000
+t3-length,ETTm1,TimeXer,lt,done,6,6,
 t3-length,Weather,TimeXer,revin,done,6,6,
 t3-length,Weather,TimeXer,san,done,6,6,
 t3-length,Weather,TimeXer,ddn,done,6,6,

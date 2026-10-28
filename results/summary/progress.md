@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T18:26:32+00:00 from 7355 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T18:27:53+00:00 from 7357 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@ Generated 2026-10-28T18:26:32+00:00 from 7355 packaged cells. Regenerate with `p
 | t3-lt-tuned | 14 | 0 | 0 | 0 | 0 |
 | t3-lt-tuned-s2022 | 13 | 1 | 0 | 0 | 0 |
 | t3-lt-tuned-s2023 | 13 | 1 | 0 | 0 | 0 |
-| t3-length | 22 | 2 | 0 | 0 | 0 |
+| t3-length | 23 | 1 | 0 | 0 | 0 |
 | t3-length-s2022 | 21 | 2 | 1 | 0 | 0 |
 | t3-length-s2023 | 20 | 0 | 4 | 0 | 0 |
 | dish-search | 0 | 0 | 28 | 0 | 0 |
@@ -122,7 +122,7 @@ Generated 2026-10-28T18:26:32+00:00 from 7355 packaged cells. Regenerate with `p
 | t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--san | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--ddn | done | 6/6 |  |
-| t3-length--ETTm1--TimeXer--lt | claimed | 4/6 | itm20-gpu1-a4000 |
+| t3-length--ETTm1--TimeXer--lt | done | 6/6 |  |
 | t3-length--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length--Weather--TimeXer--san | done | 6/6 |  |
 | t3-length--Weather--TimeXer--ddn | done | 6/6 |  |
