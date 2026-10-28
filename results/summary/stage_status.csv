@@ -36,7 +36,7 @@ t3-lt-tuned-s2022,ETTh1,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2022,ETTm1,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2022,Weather,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2022,Electricity,TimeFilter,lt,done,4,4,
-t3-lt-tuned-s2022,Traffic,TimeFilter,lt,claimed,3,4,itm21-a4000
+t3-lt-tuned-s2022,Traffic,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2022,ETTh2,TimeXer,lt,done,4,4,
 t3-lt-tuned-s2022,ETTm2,TimeXer,lt,done,4,4,
 t3-lt-tuned-s2022,ETTh2,TimeFilter,lt,done,4,4,
