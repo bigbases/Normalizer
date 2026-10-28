@@ -2109,6 +2109,38 @@
         "screen_mean_val_mse": 0.5493482481688261
       }
     ],
+    "Exchange|iTransformer|ddn": [
+      {
+        "candidate_id": "b833fe78c153",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 32,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.8135674636633623
+      },
+      {
+        "candidate_id": "2c842a20e419",
+        "n_cells": 2,
+        "params": {
+          "hkernel_len": 5,
+          "j": 1,
+          "joint_lr": "backbone",
+          "kernel_len": 12,
+          "station_lr": 0.0001,
+          "station_type": "adaptive",
+          "twice_epoch": 1,
+          "wavelet": "coif3"
+        },
+        "screen_mean_val_mse": 0.8337557008046479
+      }
+    ],
     "Exchange|iTransformer|dishts": [
       {
         "candidate_id": "991b5cc14619",
