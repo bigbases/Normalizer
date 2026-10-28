@@ -162,7 +162,7 @@ exch-search,Exchange,DLinear,fan,done,12,12,
 exch-search,Exchange,DLinear,dishts,done,12,12,
 exch-search,Exchange,iTransformer,revin,done,4,4,
 exch-search,Exchange,iTransformer,san,done,12,12,
-exch-search,Exchange,iTransformer,ddn,claimed,1,12,itm20-gpu1-a4000
+exch-search,Exchange,iTransformer,ddn,claimed,3,12,itm20-gpu1-a4000
 exch-search,Exchange,iTransformer,fan,done,12,12,
 exch-search,Exchange,iTransformer,dishts,done,12,12,
 exch-search,Exchange,TimeXer,revin,done,4,4,
@@ -218,7 +218,7 @@ exch-confirm,Exchange,iTransformer,ddn,blocked,0,,
 exch-confirm,Exchange,iTransformer,fan,done,4,4,
 exch-confirm,Exchange,iTransformer,dishts,done,4,4,
 exch-confirm,Exchange,TimeXer,revin,done,4,4,
-exch-confirm,Exchange,TimeXer,san,ready,0,4,
+exch-confirm,Exchange,TimeXer,san,claimed,0,4,itm21-a4000
 exch-confirm,Exchange,TimeXer,ddn,blocked,0,,
 exch-confirm,Exchange,TimeXer,fan,done,4,4,
 exch-confirm,Exchange,TimeXer,dishts,done,4,4,
@@ -285,8 +285,8 @@ exch-tuned,Exchange,TimeFilter,fan,done,4,4,
 exch-tuned,Exchange,TimeFilter,dishts,done,4,4,
 exch-lt-tuned,Exchange,DLinear,lt,done,4,4,
 exch-lt-tuned,Exchange,iTransformer,lt,done,4,4,
-exch-lt-tuned,Exchange,TimeXer,lt,claimed,0,4,itm20-gpu0-a4000
-exch-lt-tuned,Exchange,TimeFilter,lt,ready,0,4,
+exch-lt-tuned,Exchange,TimeXer,lt,done,4,4,
+exch-lt-tuned,Exchange,TimeFilter,lt,claimed,0,4,itm20-gpu0-a4000
 lt-ksens,ETTh1,DLinear,lt,done,18,18,
 lt-ksens,ETTh1,iTransformer,lt,done,18,18,
 lt-ksens,ETTh2,DLinear,lt,done,18,18,
