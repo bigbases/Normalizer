@@ -40,7 +40,7 @@
     },
     "ETTh1|TimeFilter|dishts": {
       "dish_init": "avg",
-      "station_lr": 5e-05
+      "station_lr": 0.0001
     },
     "ETTh1|TimeFilter|fan": {
       "fan_aux_weight": 1.0,

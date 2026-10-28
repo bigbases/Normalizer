@@ -884,13 +884,13 @@
         "screen_mean_val_mse": 0.6057473912181586
       },
       {
-        "candidate_id": "112f7a5e174c",
+        "candidate_id": "991b5cc14619",
         "n_cells": 2,
         "params": {
           "dish_init": "avg",
-          "station_lr": 5e-05
+          "station_lr": 0.0001
         },
-        "screen_mean_val_mse": 0.6160385293927874
+        "screen_mean_val_mse": 0.6154017081736464
       }
     ],
     "ETTm1|DLinear|fan": [
