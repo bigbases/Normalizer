@@ -335,7 +335,9 @@ def search_candidates(protocol, dataset, method, base, lt_grid=None):
                     for lr in spec["station_lr"]]
         raise ValueError("LightNorm search needs an experiment with lt_grid 'pilot', 'main' or 'kernel_check'")
     if method == "fan":
-        ks = protocol["datasets"][dataset]["fan_k"]
+        # fan_k_grid overrides the dataset entry without changing dataset_meta, which
+        # enters the config hash of every method.
+        ks = protocol.get("fan_k_grid", {}).get(dataset) or protocol["datasets"][dataset]["fan_k"]
         if protocol.get("fan_lr_grid", "station_scale") == "station_and_backbone":
             # The FAN reference code trains the frequency predictor with the
             # backbone optimizer's learning rate; screen that setting next to

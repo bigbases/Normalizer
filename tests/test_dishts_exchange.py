@@ -53,7 +53,11 @@ class DishTSExchangeProtocolTest(unittest.TestCase):
         fan = rm.search_candidates(self.protocol, "Exchange", "fan", base)
         self.assertEqual({c["freq_topk"] for c in fan}, {1, 2, 4})
         for ds, k in (("ETTh2", 3), ("ETTm2", 5)):
-            self.assertIn(k, self.protocol["datasets"][ds]["fan_k"])
+            ks = {c["freq_topk"] for c in rm.search_candidates(self.protocol, ds, "fan", rm.selected_base_config(self.bases, ds, "DLinear"))}
+            self.assertIn(k, ks)
+        # dataset_meta enters every config hash, so the FAN fix must not touch it
+        self.assertEqual(self.protocol["datasets"]["ETTh2"]["fan_k"], [4, 2, 8])
+        self.assertEqual(self.protocol["datasets"]["ETTm2"]["fan_k"], [11, 6, 16])
         lt = rm.search_candidates(self.protocol, "Exchange", "lt", base, lt_grid="main")
         self.assertEqual(len(lt), 6)                            # supplied point searched: no Exp1 cells
         lt7 = rm.search_candidates(self.protocol, "ETTh1", "lt", rm.selected_base_config(self.bases, "ETTh1", "DLinear"), lt_grid="main")
