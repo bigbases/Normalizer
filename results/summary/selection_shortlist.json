@@ -341,6 +341,26 @@
         "screen_mean_val_mse": 1.1312854860655286
       }
     ],
+    "ETTh1|iTransformer|dishts": [
+      {
+        "candidate_id": "4b3fc1cfcf90",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 1.0535255579008935
+      },
+      {
+        "candidate_id": "9db6b0bec9f5",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 1.0562172679300295
+      }
+    ],
     "ETTh1|iTransformer|fan": [
       {
         "candidate_id": "96e68ab8643c",
@@ -1900,13 +1920,13 @@
         "screen_mean_val_mse": 0.6680040989248526
       },
       {
-        "candidate_id": "112f7a5e174c",
+        "candidate_id": "9db6b0bec9f5",
         "n_cells": 2,
         "params": {
-          "dish_init": "avg",
+          "dish_init": "uniform",
           "station_lr": 5e-05
         },
-        "screen_mean_val_mse": 1.1907809586929423
+        "screen_mean_val_mse": 0.8533480760774442
       }
     ],
     "Exchange|TimeFilter|revin": [
