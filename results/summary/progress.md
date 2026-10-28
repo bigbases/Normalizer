@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T20:15:06+00:00 from 7538 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T20:13:00+00:00 from 7540 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,10 +12,10 @@ Generated 2026-10-28T20:15:06+00:00 from 7538 packaged cells. Regenerate with `p
 | t3-length-s2022 | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2023 | 23 | 1 | 0 | 0 | 0 |
 | dish-search | 2 | 0 | 26 | 0 | 0 |
-| exch-search | 6 | 2 | 12 | 0 | 0 |
+| exch-search | 7 | 1 | 12 | 0 | 0 |
 | exch-lt-search | 0 | 0 | 4 | 0 | 0 |
 | dish-confirm | 1 | 1 | 0 | 26 | 0 |
-| exch-confirm | 6 | 0 | 0 | 14 | 0 |
+| exch-confirm | 6 | 0 | 1 | 13 | 0 |
 | exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
 | dish-tuned | 0 | 1 | 0 | 27 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
@@ -223,7 +223,7 @@ Generated 2026-10-28T20:15:06+00:00 from 7538 packaged cells. Regenerate with `p
 | exch-search--Exchange--iTransformer--revin | done | 4/4 |  |
 | exch-search--Exchange--iTransformer--san | ready | 0/12 |  |
 | exch-search--Exchange--iTransformer--ddn | ready | 0/12 |  |
-| exch-search--Exchange--iTransformer--fan | claimed | 10/12 | itm21-a4000 |
+| exch-search--Exchange--iTransformer--fan | done | 12/12 |  |
 | exch-search--Exchange--iTransformer--dishts | done | 12/12 |  |
 | exch-search--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-search--Exchange--TimeXer--san | ready | 0/12 |  |
@@ -275,7 +275,7 @@ Generated 2026-10-28T20:15:06+00:00 from 7538 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--iTransformer--revin | done | 4/4 |  |
 | exch-confirm--Exchange--iTransformer--san | blocked | 0/? |  |
 | exch-confirm--Exchange--iTransformer--ddn | blocked | 0/? |  |
-| exch-confirm--Exchange--iTransformer--fan | blocked | 0/? |  |
+| exch-confirm--Exchange--iTransformer--fan | ready | 0/4 |  |
 | exch-confirm--Exchange--iTransformer--dishts | done | 4/4 |  |
 | exch-confirm--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-confirm--Exchange--TimeXer--san | blocked | 0/? |  |
