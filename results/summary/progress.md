@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T22:36:40+00:00 from 7985 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T22:35:27+00:00 from 7986 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,7 +17,7 @@ Generated 2026-10-28T22:36:40+00:00 from 7985 packaged cells. Regenerate with `p
 | dish-confirm | 6 | 0 | 0 | 22 | 0 |
 | exch-confirm | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-confirm | 4 | 0 | 0 | 0 | 0 |
-| dish-tuned | 4 | 1 | 1 | 22 | 0 |
+| dish-tuned | 5 | 0 | 1 | 22 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 4 | 0 | 0 | 0 | 0 |
@@ -298,7 +298,7 @@ Generated 2026-10-28T22:36:40+00:00 from 7985 packaged cells. Regenerate with `p
 | dish-tuned--ETTh2--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh2--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTh2--TimeXer | ready | 0/4 |  |
-| dish-tuned--ETTh2--TimeFilter | claimed | 3/4 | itm21-a4000 |
+| dish-tuned--ETTh2--TimeFilter | done | 4/4 |  |
 | dish-tuned--ETTm1--DLinear | blocked | 0/? |  |
 | dish-tuned--ETTm1--iTransformer | blocked | 0/? |  |
 | dish-tuned--ETTm1--TimeXer | blocked | 0/? |  |

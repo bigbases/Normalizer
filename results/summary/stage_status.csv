@@ -238,7 +238,7 @@ dish-tuned,ETTh1,TimeFilter,dishts,blocked,0,,
 dish-tuned,ETTh2,DLinear,dishts,done,4,4,
 dish-tuned,ETTh2,iTransformer,dishts,done,4,4,
 dish-tuned,ETTh2,TimeXer,dishts,ready,0,4,
-dish-tuned,ETTh2,TimeFilter,dishts,claimed,3,4,itm21-a4000
+dish-tuned,ETTh2,TimeFilter,dishts,done,4,4,
 dish-tuned,ETTm1,DLinear,dishts,blocked,0,,
 dish-tuned,ETTm1,iTransformer,dishts,blocked,0,,
 dish-tuned,ETTm1,TimeXer,dishts,blocked,0,,
