@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T21:41:06+00:00 from 7854 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T21:41:35+00:00 from 7859 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,10 +12,10 @@ Generated 2026-10-28T21:41:06+00:00 from 7854 packaged cells. Regenerate with `p
 | t3-length-s2022 | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2023 | 24 | 0 | 0 | 0 | 0 |
 | dish-search | 4 | 0 | 24 | 0 | 0 |
-| exch-search | 15 | 3 | 2 | 0 | 0 |
+| exch-search | 16 | 2 | 2 | 0 | 0 |
 | exch-lt-search | 4 | 0 | 0 | 0 | 0 |
 | dish-confirm | 4 | 0 | 0 | 24 | 0 |
-| exch-confirm | 15 | 0 | 0 | 5 | 0 |
+| exch-confirm | 15 | 0 | 1 | 4 | 0 |
 | exch-lt-confirm | 4 | 0 | 0 | 0 | 0 |
 | dish-tuned | 4 | 0 | 0 | 24 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
@@ -222,11 +222,11 @@ Generated 2026-10-28T21:41:06+00:00 from 7854 packaged cells. Regenerate with `p
 | exch-search--Exchange--DLinear--dishts | done | 12/12 |  |
 | exch-search--Exchange--iTransformer--revin | done | 4/4 |  |
 | exch-search--Exchange--iTransformer--san | done | 12/12 |  |
-| exch-search--Exchange--iTransformer--ddn | claimed | 0/12 | itm20-gpu1-a4000 |
+| exch-search--Exchange--iTransformer--ddn | claimed | 1/12 | itm20-gpu1-a4000 |
 | exch-search--Exchange--iTransformer--fan | done | 12/12 |  |
 | exch-search--Exchange--iTransformer--dishts | done | 12/12 |  |
 | exch-search--Exchange--TimeXer--revin | done | 4/4 |  |
-| exch-search--Exchange--TimeXer--san | claimed | 8/12 | itm20-gpu1-a4000 |
+| exch-search--Exchange--TimeXer--san | done | 12/12 |  |
 | exch-search--Exchange--TimeXer--ddn | ready | 0/12 |  |
 | exch-search--Exchange--TimeXer--fan | done | 12/12 |  |
 | exch-search--Exchange--TimeXer--dishts | done | 12/12 |  |
@@ -278,7 +278,7 @@ Generated 2026-10-28T21:41:06+00:00 from 7854 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--iTransformer--fan | done | 4/4 |  |
 | exch-confirm--Exchange--iTransformer--dishts | done | 4/4 |  |
 | exch-confirm--Exchange--TimeXer--revin | done | 4/4 |  |
-| exch-confirm--Exchange--TimeXer--san | blocked | 0/? |  |
+| exch-confirm--Exchange--TimeXer--san | ready | 0/4 |  |
 | exch-confirm--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--fan | done | 4/4 |  |
 | exch-confirm--Exchange--TimeXer--dishts | done | 4/4 |  |
