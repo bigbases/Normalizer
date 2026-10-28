@@ -106,11 +106,6 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
-    "ETTh2|DLinear|fan": {
-      "fan_aux_weight": 1.0,
-      "freq_topk": 8,
-      "station_lr": 0.0001
-    },
     "ETTh2|DLinear|revin": {
       "affine": 0,
       "station_lr": 0.0001
@@ -129,11 +124,6 @@
       "station_type": "adaptive",
       "twice_epoch": 1,
       "wavelet": "coif3"
-    },
-    "ETTh2|TimeFilter|fan": {
-      "fan_aux_weight": 1.0,
-      "freq_topk": 4,
-      "station_lr": 0.0001
     },
     "ETTh2|TimeFilter|revin": {
       "affine": 1,
@@ -154,11 +144,6 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
-    "ETTh2|TimeXer|fan": {
-      "fan_aux_weight": 1.0,
-      "freq_topk": 2,
-      "station_lr": 0.0001
-    },
     "ETTh2|TimeXer|revin": {
       "affine": 0,
       "station_lr": 0.0001
@@ -177,11 +162,6 @@
       "station_type": "adaptive",
       "twice_epoch": 1,
       "wavelet": "coif3"
-    },
-    "ETTh2|iTransformer|fan": {
-      "fan_aux_weight": 1.0,
-      "freq_topk": 2,
-      "station_lr": 0.00025
     },
     "ETTh2|iTransformer|revin": {
       "affine": 0,
@@ -298,11 +278,6 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
-    "ETTm2|DLinear|fan": {
-      "fan_aux_weight": 1.0,
-      "freq_topk": 11,
-      "station_lr": 0.001
-    },
     "ETTm2|DLinear|revin": {
       "affine": 0,
       "station_lr": 0.0001
@@ -321,11 +296,6 @@
       "station_type": "adaptive",
       "twice_epoch": 1,
       "wavelet": "coif3"
-    },
-    "ETTm2|TimeFilter|fan": {
-      "fan_aux_weight": 1.0,
-      "freq_topk": 16,
-      "station_lr": 0.0001
     },
     "ETTm2|TimeFilter|revin": {
       "affine": 0,
@@ -346,11 +316,6 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
-    "ETTm2|TimeXer|fan": {
-      "fan_aux_weight": 1.0,
-      "freq_topk": 6,
-      "station_lr": 0.0001
-    },
     "ETTm2|TimeXer|revin": {
       "affine": 1,
       "station_lr": 0.0001
@@ -369,11 +334,6 @@
       "station_type": "adaptive",
       "twice_epoch": 0,
       "wavelet": "coif3"
-    },
-    "ETTm2|iTransformer|fan": {
-      "fan_aux_weight": 1.0,
-      "freq_topk": 6,
-      "station_lr": 0.0001
     },
     "ETTm2|iTransformer|revin": {
       "affine": 0,
