@@ -461,6 +461,11 @@
       "affine": 1,
       "station_lr": 0.0001
     },
+    "Exchange|DLinear|san": {
+      "period_len": 12,
+      "station_lr": 0.0001,
+      "station_type": "adaptive"
+    },
     "Exchange|TimeFilter|revin": {
       "affine": 1,
       "station_lr": 0.0001

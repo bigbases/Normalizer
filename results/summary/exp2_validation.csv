@@ -847,8 +847,8 @@ Exchange,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.
 Exchange,DLinear,san,03927128a7d2,"{""period_len"": 6, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.150275,1.548367,,,0.849321,,False,False
 Exchange,DLinear,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.150095,1.378598,,,0.764346,,False,False
 Exchange,DLinear,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.134224,1.305934,,,0.720079,,False,False
-Exchange,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.138194,1.277207,,,0.707700,,True,False
-Exchange,DLinear,san,abe847f73759,"{""period_len"": 6, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.138779,1.272664,,,0.705722,,True,False
+Exchange,DLinear,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.138194,1.277207,0.139429,1.218374,0.707700,0.693301,True,True
+Exchange,DLinear,san,abe847f73759,"{""period_len"": 6, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",0.138779,1.272664,0.140896,1.269857,0.705722,0.705549,True,False
 Exchange,DLinear,san,c249c8a08724,"{""period_len"": 6, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.137341,1.357152,,,0.747246,,False,False
 Exchange,TimeFilter,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.141582,1.001034,0.128274,0.923019,0.571308,0.548477,True,False
 Exchange,TimeFilter,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.141582,0.960068,0.127784,0.916002,0.550825,0.536359,True,True
@@ -870,3 +870,5 @@ Exchange,iTransformer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001
 Exchange,iTransformer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.172351,1.956249,0.177551,1.714671,1.064300,1.005206,True,True
 Exchange,iTransformer,san,03927128a7d2,"{""period_len"": 6, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",,1.414657,,,,,False,False
 Exchange,iTransformer,san,604dd99690a2,"{""period_len"": 12, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",,1.467476,,,,,False,False
+Exchange,iTransformer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",,1.209704,,,,,False,False
+Exchange,iTransformer,san,9bf431f8fa9e,"{""period_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive""}",,1.380744,,,,,False,False
