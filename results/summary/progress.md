@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T20:23:21+00:00 from 7596 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T20:21:08+00:00 from 7602 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,10 +12,10 @@ Generated 2026-10-28T20:23:21+00:00 from 7596 packaged cells. Regenerate with `p
 | t3-length-s2022 | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2023 | 24 | 0 | 0 | 0 | 0 |
 | dish-search | 2 | 0 | 26 | 0 | 0 |
-| exch-search | 8 | 1 | 11 | 0 | 0 |
+| exch-search | 9 | 0 | 11 | 0 | 0 |
 | exch-lt-search | 1 | 1 | 2 | 0 | 0 |
 | dish-confirm | 2 | 0 | 0 | 26 | 0 |
-| exch-confirm | 7 | 1 | 0 | 12 | 0 |
+| exch-confirm | 7 | 1 | 1 | 11 | 0 |
 | exch-lt-confirm | 0 | 0 | 1 | 3 | 0 |
 | dish-tuned | 2 | 0 | 0 | 26 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
@@ -216,7 +216,7 @@ Generated 2026-10-28T20:23:21+00:00 from 7596 packaged cells. Regenerate with `p
 | dish-search--Traffic--TimeXer | ready | 0/12 |  |
 | dish-search--Traffic--TimeFilter | ready | 0/12 |  |
 | exch-search--Exchange--DLinear--revin | done | 4/4 |  |
-| exch-search--Exchange--DLinear--san | claimed | 6/12 | itm21-a4000 |
+| exch-search--Exchange--DLinear--san | done | 12/12 |  |
 | exch-search--Exchange--DLinear--ddn | ready | 0/12 |  |
 | exch-search--Exchange--DLinear--fan | done | 12/12 |  |
 | exch-search--Exchange--DLinear--dishts | done | 12/12 |  |
@@ -268,7 +268,7 @@ Generated 2026-10-28T20:23:21+00:00 from 7596 packaged cells. Regenerate with `p
 | dish-confirm--Traffic--TimeXer | blocked | 0/? |  |
 | dish-confirm--Traffic--TimeFilter | blocked | 0/? |  |
 | exch-confirm--Exchange--DLinear--revin | done | 4/4 |  |
-| exch-confirm--Exchange--DLinear--san | blocked | 0/? |  |
+| exch-confirm--Exchange--DLinear--san | ready | 0/4 |  |
 | exch-confirm--Exchange--DLinear--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--DLinear--fan | claimed | 0/4 | itm20-gpu0-a4000 |
 | exch-confirm--Exchange--DLinear--dishts | done | 4/4 |  |
