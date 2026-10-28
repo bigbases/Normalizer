@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T20:18:16+00:00 from 7547 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T20:19:38+00:00 from 7559 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -19,7 +19,7 @@ Generated 2026-10-28T20:18:16+00:00 from 7547 packaged cells. Regenerate with `p
 | exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
 | dish-tuned | 1 | 0 | 0 | 27 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
-| exch-tuned | 5 | 1 | 0 | 14 | 0 |
+| exch-tuned | 6 | 0 | 0 | 14 | 0 |
 | exch-lt-tuned | 0 | 0 | 0 | 4 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -235,7 +235,7 @@ Generated 2026-10-28T20:18:16+00:00 from 7547 packaged cells. Regenerate with `p
 | exch-search--Exchange--TimeFilter--ddn | ready | 0/12 |  |
 | exch-search--Exchange--TimeFilter--fan | ready | 0/12 |  |
 | exch-search--Exchange--TimeFilter--dishts | ready | 0/12 |  |
-| exch-lt-search--Exchange--DLinear | claimed | 0/12 | itm20-gpu1-a4000 |
+| exch-lt-search--Exchange--DLinear | claimed | 8/12 | itm20-gpu1-a4000 |
 | exch-lt-search--Exchange--iTransformer | ready | 0/12 |  |
 | exch-lt-search--Exchange--TimeXer | ready | 0/12 |  |
 | exch-lt-search--Exchange--TimeFilter | ready | 0/12 |  |
@@ -332,7 +332,7 @@ Generated 2026-10-28T20:18:16+00:00 from 7547 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--iTransformer--san | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--fan | blocked | 0/? |  |
-| exch-tuned--Exchange--iTransformer--dishts | claimed | 0/4 | itm20-gpu1-a4000 |
+| exch-tuned--Exchange--iTransformer--dishts | done | 4/4 |  |
 | exch-tuned--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--ddn | blocked | 0/? |  |
