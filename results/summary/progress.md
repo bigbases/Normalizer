@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T20:01:32+00:00 from 7458 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T20:01:52+00:00 from 7468 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,15 +11,15 @@ Generated 2026-10-28T20:01:32+00:00 from 7458 packaged cells. Regenerate with `p
 | t3-length | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2022 | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2023 | 23 | 1 | 0 | 0 | 0 |
-| dish-search | 0 | 0 | 28 | 0 | 0 |
-| exch-search | 4 | 2 | 14 | 0 | 0 |
+| dish-search | 0 | 1 | 27 | 0 | 0 |
+| exch-search | 4 | 3 | 13 | 0 | 0 |
 | exch-lt-search | 0 | 0 | 4 | 0 | 0 |
 | dish-confirm | 0 | 0 | 0 | 28 | 0 |
 | exch-confirm | 4 | 0 | 0 | 16 | 0 |
 | exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
 | dish-tuned | 0 | 0 | 0 | 28 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
-| exch-tuned | 3 | 1 | 0 | 16 | 0 |
+| exch-tuned | 4 | 0 | 0 | 16 | 0 |
 | exch-lt-tuned | 0 | 0 | 0 | 4 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -191,7 +191,7 @@ Generated 2026-10-28T20:01:32+00:00 from 7458 packaged cells. Regenerate with `p
 | dish-search--ETTh1--iTransformer | ready | 0/12 |  |
 | dish-search--ETTh1--TimeXer | ready | 0/12 |  |
 | dish-search--ETTh1--TimeFilter | ready | 0/12 |  |
-| dish-search--ETTh2--DLinear | ready | 0/12 |  |
+| dish-search--ETTh2--DLinear | claimed | 0/12 | itm20-gpu1-a4000 |
 | dish-search--ETTh2--iTransformer | ready | 0/12 |  |
 | dish-search--ETTh2--TimeXer | ready | 0/12 |  |
 | dish-search--ETTh2--TimeFilter | ready | 0/12 |  |
@@ -224,7 +224,7 @@ Generated 2026-10-28T20:01:32+00:00 from 7458 packaged cells. Regenerate with `p
 | exch-search--Exchange--iTransformer--san | ready | 0/12 |  |
 | exch-search--Exchange--iTransformer--ddn | ready | 0/12 |  |
 | exch-search--Exchange--iTransformer--fan | ready | 0/12 |  |
-| exch-search--Exchange--iTransformer--dishts | ready | 0/12 |  |
+| exch-search--Exchange--iTransformer--dishts | claimed | 6/12 | itm21-a4000 |
 | exch-search--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-search--Exchange--TimeXer--san | ready | 0/12 |  |
 | exch-search--Exchange--TimeXer--ddn | ready | 0/12 |  |
@@ -333,7 +333,7 @@ Generated 2026-10-28T20:01:32+00:00 from 7458 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--fan | blocked | 0/? |  |
 | exch-tuned--Exchange--iTransformer--dishts | blocked | 0/? |  |
-| exch-tuned--Exchange--TimeXer--revin | claimed | 0/4 | itm21-a4000 |
+| exch-tuned--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--fan | blocked | 0/? |  |
