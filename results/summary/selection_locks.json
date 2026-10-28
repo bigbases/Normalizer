@@ -160,6 +160,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "ETTh2|TimeXer|dishts": {
+      "dish_init": "standard",
+      "station_lr": 0.0001
+    },
     "ETTh2|TimeXer|revin": {
       "affine": 0,
       "station_lr": 0.0001
