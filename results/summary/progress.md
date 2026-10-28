@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T20:04:46+00:00 from 7480 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T20:04:14+00:00 from 7489 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,10 +12,10 @@ Generated 2026-10-28T20:04:46+00:00 from 7480 packaged cells. Regenerate with `p
 | t3-length-s2022 | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2023 | 23 | 1 | 0 | 0 | 0 |
 | dish-search | 0 | 1 | 27 | 0 | 0 |
-| exch-search | 5 | 2 | 13 | 0 | 0 |
+| exch-search | 6 | 1 | 13 | 0 | 0 |
 | exch-lt-search | 0 | 0 | 4 | 0 | 0 |
 | dish-confirm | 0 | 0 | 0 | 28 | 0 |
-| exch-confirm | 4 | 0 | 1 | 15 | 0 |
+| exch-confirm | 4 | 1 | 1 | 14 | 0 |
 | exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
 | dish-tuned | 0 | 0 | 0 | 28 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
@@ -191,7 +191,7 @@ Generated 2026-10-28T20:04:46+00:00 from 7480 packaged cells. Regenerate with `p
 | dish-search--ETTh1--iTransformer | ready | 0/12 |  |
 | dish-search--ETTh1--TimeXer | ready | 0/12 |  |
 | dish-search--ETTh1--TimeFilter | ready | 0/12 |  |
-| dish-search--ETTh2--DLinear | claimed | 0/12 | itm20-gpu1-a4000 |
+| dish-search--ETTh2--DLinear | claimed | 2/12 | itm20-gpu1-a4000 |
 | dish-search--ETTh2--iTransformer | ready | 0/12 |  |
 | dish-search--ETTh2--TimeXer | ready | 0/12 |  |
 | dish-search--ETTh2--TimeFilter | ready | 0/12 |  |
@@ -224,7 +224,7 @@ Generated 2026-10-28T20:04:46+00:00 from 7480 packaged cells. Regenerate with `p
 | exch-search--Exchange--iTransformer--san | ready | 0/12 |  |
 | exch-search--Exchange--iTransformer--ddn | ready | 0/12 |  |
 | exch-search--Exchange--iTransformer--fan | ready | 0/12 |  |
-| exch-search--Exchange--iTransformer--dishts | claimed | 6/12 | itm21-a4000 |
+| exch-search--Exchange--iTransformer--dishts | done | 12/12 |  |
 | exch-search--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-search--Exchange--TimeXer--san | ready | 0/12 |  |
 | exch-search--Exchange--TimeXer--ddn | ready | 0/12 |  |
@@ -271,12 +271,12 @@ Generated 2026-10-28T20:04:46+00:00 from 7480 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--DLinear--san | blocked | 0/? |  |
 | exch-confirm--Exchange--DLinear--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--DLinear--fan | blocked | 0/? |  |
-| exch-confirm--Exchange--DLinear--dishts | ready | 0/4 |  |
+| exch-confirm--Exchange--DLinear--dishts | claimed | 1/4 | itm21-a4000 |
 | exch-confirm--Exchange--iTransformer--revin | done | 4/4 |  |
 | exch-confirm--Exchange--iTransformer--san | blocked | 0/? |  |
 | exch-confirm--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--iTransformer--fan | blocked | 0/? |  |
-| exch-confirm--Exchange--iTransformer--dishts | blocked | 0/? |  |
+| exch-confirm--Exchange--iTransformer--dishts | ready | 0/4 |  |
 | exch-confirm--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-confirm--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--ddn | blocked | 0/? |  |

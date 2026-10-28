@@ -1825,6 +1825,26 @@
         "screen_mean_val_mse": 0.49371035840539707
       }
     ],
+    "Exchange|iTransformer|dishts": [
+      {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 2.10195828566239
+      },
+      {
+        "candidate_id": "d2a446c80585",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 2.135996655161892
+      }
+    ],
     "Exchange|iTransformer|revin": [
       {
         "candidate_id": "a22b7bdd93cb",
