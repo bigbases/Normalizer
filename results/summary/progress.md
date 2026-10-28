@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T19:49:38+00:00 from 7439 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T19:51:00+00:00 from 7443 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,10 +15,10 @@ Generated 2026-10-28T19:49:38+00:00 from 7439 packaged cells. Regenerate with `p
 | exch-search | 4 | 0 | 16 | 0 | 0 |
 | exch-lt-search | 0 | 0 | 4 | 0 | 0 |
 | dish-confirm | 0 | 0 | 0 | 28 | 0 |
-| exch-confirm | 2 | 1 | 1 | 16 | 0 |
+| exch-confirm | 2 | 2 | 0 | 16 | 0 |
 | exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
 | dish-tuned | 0 | 0 | 0 | 28 | 0 |
-| exch-none | 2 | 2 | 0 | 0 | 0 |
+| exch-none | 3 | 1 | 0 | 0 | 0 |
 | exch-tuned | 2 | 0 | 0 | 18 | 0 |
 | exch-lt-tuned | 0 | 0 | 0 | 4 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
@@ -277,7 +277,7 @@ Generated 2026-10-28T19:49:38+00:00 from 7439 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--iTransformer--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--iTransformer--fan | blocked | 0/? |  |
 | exch-confirm--Exchange--iTransformer--dishts | blocked | 0/? |  |
-| exch-confirm--Exchange--TimeXer--revin | ready | 0/4 |  |
+| exch-confirm--Exchange--TimeXer--revin | claimed | 0/4 | itm21-a4000 |
 | exch-confirm--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeXer--fan | blocked | 0/? |  |
@@ -321,7 +321,7 @@ Generated 2026-10-28T19:49:38+00:00 from 7439 packaged cells. Regenerate with `p
 | dish-tuned--Traffic--TimeFilter | blocked | 0/? |  |
 | exch-none--Exchange--DLinear | done | 4/4 |  |
 | exch-none--Exchange--iTransformer | done | 4/4 |  |
-| exch-none--Exchange--TimeXer | claimed | 0/4 | itm21-a4000 |
+| exch-none--Exchange--TimeXer | done | 4/4 |  |
 | exch-none--Exchange--TimeFilter | claimed | 0/4 | itm20-gpu1-a4000 |
 | exch-tuned--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-tuned--Exchange--DLinear--san | blocked | 0/? |  |
