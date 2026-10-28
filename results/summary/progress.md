@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T21:29:42+00:00 from 7830 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T21:30:23+00:00 from 7832 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -13,10 +13,10 @@ Generated 2026-10-28T21:29:42+00:00 from 7830 packaged cells. Regenerate with `p
 | t3-length-s2023 | 24 | 0 | 0 | 0 | 0 |
 | dish-search | 4 | 0 | 24 | 0 | 0 |
 | exch-search | 15 | 2 | 3 | 0 | 0 |
-| exch-lt-search | 3 | 1 | 0 | 0 | 0 |
+| exch-lt-search | 4 | 0 | 0 | 0 | 0 |
 | dish-confirm | 4 | 0 | 0 | 24 | 0 |
 | exch-confirm | 15 | 0 | 0 | 5 | 0 |
-| exch-lt-confirm | 2 | 1 | 0 | 1 | 0 |
+| exch-lt-confirm | 2 | 1 | 1 | 0 | 0 |
 | dish-tuned | 4 | 0 | 0 | 24 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 15 | 0 | 0 | 5 | 0 |
@@ -238,7 +238,7 @@ Generated 2026-10-28T21:29:42+00:00 from 7830 packaged cells. Regenerate with `p
 | exch-lt-search--Exchange--DLinear | done | 12/12 |  |
 | exch-lt-search--Exchange--iTransformer | done | 12/12 |  |
 | exch-lt-search--Exchange--TimeXer | done | 12/12 |  |
-| exch-lt-search--Exchange--TimeFilter | claimed | 10/12 | itm20-gpu1-a4000 |
+| exch-lt-search--Exchange--TimeFilter | done | 12/12 |  |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
 | dish-confirm--ETTh1--TimeXer | blocked | 0/? |  |
@@ -290,7 +290,7 @@ Generated 2026-10-28T21:29:42+00:00 from 7830 packaged cells. Regenerate with `p
 | exch-lt-confirm--Exchange--DLinear | done | 4/4 |  |
 | exch-lt-confirm--Exchange--iTransformer | done | 4/4 |  |
 | exch-lt-confirm--Exchange--TimeXer | claimed | 0/4 | itm20-gpu0-a4000 |
-| exch-lt-confirm--Exchange--TimeFilter | blocked | 0/? |  |
+| exch-lt-confirm--Exchange--TimeFilter | ready | 0/4 |  |
 | dish-tuned--ETTh1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTh1--TimeXer | blocked | 0/? |  |
