@@ -5,9 +5,9 @@
   "screen_horizons": [96, 720],
   "datasets": {
     "ETTh1": {"relative_path": "ETT-small/ETTh1.csv", "channels": 7, "freq": "h", "fan_k": [4, 2, 8]},
-    "ETTh2": {"relative_path": "ETT-small/ETTh2.csv", "channels": 7, "freq": "h", "fan_k": [3, 1, 6]},
+    "ETTh2": {"relative_path": "ETT-small/ETTh2.csv", "channels": 7, "freq": "h", "fan_k": [4, 2, 8]},
     "ETTm1": {"relative_path": "ETT-small/ETTm1.csv", "channels": 7, "freq": "t", "fan_k": [11, 6, 16]},
-    "ETTm2": {"relative_path": "ETT-small/ETTm2.csv", "channels": 7, "freq": "t", "fan_k": [5, 3, 8]},
+    "ETTm2": {"relative_path": "ETT-small/ETTm2.csv", "channels": 7, "freq": "t", "fan_k": [11, 6, 16]},
     "Weather": {"relative_path": "weather/weather.csv", "channels": 21, "freq": "t", "fan_k": [2, 1, 4]},
     "Electricity": {"relative_path": "electricity/electricity.csv", "channels": 321, "freq": "h", "fan_k": [3, 1, 6]},
     "Traffic": {"relative_path": "traffic/traffic.csv", "channels": 862, "freq": "h", "fan_k": [30, 15, 45]},
