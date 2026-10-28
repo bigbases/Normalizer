@@ -251,6 +251,7 @@ class LightNormMainTuningTest(unittest.TestCase):
         self.assertEqual(len(groups[("ETTm1", "DLinear", "lt_tuned", 96)]), 3)
         self.assertEqual(len(groups[("ETTm1", "DLinear", "lt", 96)]), 3)
 
+    @unittest.skip("T3 structure search disabled on 2026-10-28 (protocol lt_tuning.structure.enabled=false, 992197ad)")
     def test_t3_structure_search_follows_the_best_grid_point(self):
         grid = self.cells("7_lightnorm_tuning", "search", "ETTh1", "TimeXer")
         self.assertEqual(len(grid), 12)                         # 6 points x 2 horizons, supplied included

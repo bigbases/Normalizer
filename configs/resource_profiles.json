@@ -70,6 +70,7 @@
     "san": 700,
     "ddn": 900,
     "fan": 600,
+    "dishts": 128,
     "lt": 500
   },
   "normalizer_extra_util": {
@@ -78,6 +79,7 @@
     "san": 7,
     "ddn": 9,
     "fan": 6,
+    "dishts": 1,
     "lt": 5
   }
 }

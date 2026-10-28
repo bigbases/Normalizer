@@ -30,6 +30,9 @@ import select_hparams as sh
 METHODS = ["none", "revin", "san", "ddn", "fan", "lt"]
 SWEEP_MODES = {"locked_kernel_sweep": "kernel_size", "locked_ratio_sweep": "down_ratio"}
 BASELINES = ["none", "revin", "san", "ddn", "fan"]
+# Methods added after the original six (2026-10-28): reported as extra columns of
+# exp3_comparison.csv; Complete and Best_MSE still refer to the original six.
+EXTRA_METHODS = ["dishts"]
 
 
 def method_labeler(bases):
@@ -163,7 +166,7 @@ def exp3_comparison(out, groups, protocol, lt_lock_ids=None):
     rows = []
     for ds, bb, h in cases:
         line, stats = [ds, bb, h], {}
-        for m in METHODS + ["lt_tuned"]:
+        for m in METHODS + ["lt_tuned"] + EXTRA_METHODS:
             by_seed = groups.get((ds, bb, m, h), {})
             if m == "lt_tuned" and lt_lock_ids.get((ds, bb)) == "supplied":
                 by_seed = groups.get((ds, bb, "lt", h), {})
@@ -180,7 +183,7 @@ def exp3_comparison(out, groups, protocol, lt_lock_ids=None):
         complete = all(stats[m][0] for m in METHODS)
         rows.append(line + [complete, best(METHODS), best(BASELINES + ["lt_tuned"])])
     header = ["Dataset", "Backbone", "Horizon"]
-    for m in METHODS + ["lt_tuned"]:
+    for m in METHODS + ["lt_tuned"] + EXTRA_METHODS:
         header += [f"{m}_n", f"{m}_MSE", f"{m}_MSE_std", f"{m}_MAE", f"{m}_MAE_std"]
     _write(out / "exp3_comparison.csv", header + ["Complete", "Best_MSE", "Best_MSE_tuned"], rows)
 

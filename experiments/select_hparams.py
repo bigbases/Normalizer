@@ -47,7 +47,7 @@ def read_validation_rows(paths):
 
 # Baseline normalizers tuned by search/confirm/lock.  LightNorm search cells
 # (Exp5 pilot) are validation rows too but follow their own selection rule.
-BASELINE_METHODS = ("revin", "san", "ddn", "fan")
+BASELINE_METHODS = ("revin", "san", "ddn", "fan", "dishts")
 
 
 def candidate_catalog(protocol, bases):

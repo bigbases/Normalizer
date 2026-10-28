@@ -66,6 +66,11 @@ def _norm_suffix(args) -> str:
             'aw' + str(args.fan_aux_weight),
             'slr' + str(args.station_lr),
         ]
+    elif un == 'dishts':
+        tokens += [
+            'di' + str(args.dish_init),
+            'slr' + str(args.station_lr),
+        ]
     elif un == 'lt':
         tokens += [
             'tn' + str(args.t_norm),
@@ -139,8 +144,8 @@ parser.add_argument('--cross_activation', type=str, default='tanh',
 # non-station / normalization config
 parser.add_argument('--station_type', type=str, default='adaptive')
 parser.add_argument('--use_norm', type=str, default='none',
-                    choices=['none', 'revin', 'san', 'ddn', 'fan', 'lt'],
-                    help='normalization mode: [none, revin, san, ddn, fan, lt]')
+                    choices=['none', 'revin', 'san', 'ddn', 'fan', 'dishts', 'lt'],
+                    help='normalization mode: [none, revin, san, ddn, fan, dishts, lt]')
 parser.add_argument('--pre_epoch', type=int, default=5)
 parser.add_argument('--station_lr', type=float, default=0.0001,
                     help='learning rate for the station (normalizer) module; matches SAN/DDN original')
@@ -167,6 +172,8 @@ parser.add_argument('--freq_topk', type=int, default=4,
                     help='FAN: number of retained RFFT bins (dataset-specific)')
 parser.add_argument('--fan_aux_weight', type=float, default=1.0,
                     help='FAN: coefficient on main-frequency MSE; 1.0 matches the reference code')
+parser.add_argument('--dish_init', type=str, default='standard', choices=['standard', 'avg', 'uniform'],
+                    help='Dish-TS: initialization of the CONET weights (reference code options)')
 
 # experiment plumbing
 parser.add_argument('--seed', type=int, default=2021, help='global random seed')

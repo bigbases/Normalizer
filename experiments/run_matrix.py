@@ -96,6 +96,7 @@ METHOD_DEFAULTS = {
     # joint_lr follows the official code (normalizer at the backbone LR once joint).
     "ddn": {"station_type": "adaptive", "twice_epoch": 1, "j": 1, "wavelet": "coif3", "joint_lr": "backbone"},
     "fan": {"fan_aux_weight": 1.0},
+    "dishts": {},
     "lt": {
         "affine": 1,
         "t_norm": 1,
@@ -196,7 +197,7 @@ def normalized_params(method, raw, base):
     if scale is not None:
         center = float(base.get("station_lr") or 1e-4)
         params["station_lr"] = center * float(scale)
-    if method in ("san", "ddn", "fan") and "station_lr" not in params:
+    if method in ("san", "ddn", "fan", "dishts") and "station_lr" not in params:
         params["station_lr"] = float(base.get("station_lr") or 1e-4)
     if method == "fan":
         params["fan_aux_weight"] = 1.0
@@ -304,6 +305,17 @@ def lt_structure_candidates(protocol, anchor):
             for s in spec["s_norm"] for m in spec["use_mlp"] if (s, m) != own]
 
 
+def supplied_from_exp1(protocol, dataset, backbone):
+    """Whether the supplied LightNorm setting has Exp1 final cells for this case.
+
+    Datasets added later (Exchange) have none, so their supplied point is searched
+    and confirmed like the other grid points.
+    """
+    spec = protocol["lt_tuning"]["main"]
+    datasets = spec.get("supplied_from_exp1_datasets")
+    return backbone in spec.get("supplied_from_exp1", []) and (datasets is None or dataset in datasets)
+
+
 def search_candidates(protocol, dataset, method, base, lt_grid=None):
     if method == "lt":
         if lt_grid == "pilot":
@@ -313,7 +325,7 @@ def search_candidates(protocol, dataset, method, base, lt_grid=None):
             # Exp1 final cells (same seed and training), so it is not re-run.
             # Backbones without Exp1 cells (TimeMixer++, TimeXer) search it too.
             grid = lt_main_candidates(protocol, base)
-            if base.get("backbone") in protocol["lt_tuning"]["main"].get("supplied_from_exp1", []):
+            if supplied_from_exp1(protocol, dataset, base.get("backbone")):
                 grid = [c for c in grid if not is_supplied_lt(c, base)]
             return grid
         if lt_grid == "kernel_check":
@@ -337,8 +349,22 @@ def search_candidates(protocol, dataset, method, base, lt_grid=None):
                 {"freq_topk": k, "station_lr_scale": scale}
                 for k in ks for scale in (0.5, 1.0)
             ]
+    elif method == "dishts":
+        # The Dish-TS reference code trains its CONET with the backbone optimizer;
+        # screen that learning rate next to the shared normalizer station_lr, as for FAN.
+        station = float(base.get("station_lr") or 1e-4)
+        backbone = float(base.get("learning_rate") or 1e-4)
+        lrs = [station, backbone] if backbone != station else [0.5 * station, station]
+        raw = [{"dish_init": init, "station_lr": lr}
+               for init in protocol["search_grids"]["dishts"]["dish_init"] for lr in lrs]
     else:
         raw = protocol["search_grids"].get(method, [{}])
+        periods = protocol["datasets"][dataset].get("san_period_len")
+        if method == "san" and periods:
+            # A dataset whose official SAN slice length lies outside the shared grid
+            # (Exchange: 6) screens that length and the nearest shared one instead.
+            lrs = sorted({item["station_lr"] for item in raw})
+            raw = [{"period_len": p, "station_lr": lr} for p in periods for lr in lrs]
     return [normalized_params(method, item, base) for item in raw]
 
 
@@ -803,7 +829,7 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
                                                    lt_grid=exp.get("lt_grid"))
                 elif stage == "confirm":
                     candidates = shortlist_candidates(shortlist_doc, dataset, backbone, method)
-                    if method == "lt" and backbone in protocol["lt_tuning"]["main"].get("supplied_from_exp1", []):
+                    if method == "lt" and supplied_from_exp1(protocol, dataset, backbone):
                         # its seed-2022 validation MSE is in the Exp1 final cells
                         candidates = [c for c in candidates if not is_supplied_lt(c, selected_base)]
                 elif method == "lt" and exp.get("lt_params") == "locked":

@@ -62,9 +62,10 @@ METHODS = ("none", "revin", "san", "ddn", "lt")
 HORIZONS = (96, 720)
 SCALE_LENGTHS = (96, 336, 720, 1440)
 # Official SAN scripts fix period_len per dataset (24 hourly, 12 for 10/15-minute data).
-SAN_PERIOD = {"ETTh1": 24, "ETTh2": 24, "Electricity": 24, "Traffic": 24, "ETTm1": 12, "ETTm2": 12, "Weather": 12}
-# FAN's number of selected frequencies: the official default, first value of protocol "fan_k".
-FAN_TOPK = {"ETTh1": 4, "ETTh2": 4, "ETTm1": 11, "ETTm2": 11, "Weather": 2, "Electricity": 3, "Traffic": 30}
+SAN_PERIOD = {"ETTh1": 24, "ETTh2": 24, "Electricity": 24, "Traffic": 24, "ETTm1": 12, "ETTm2": 12, "Weather": 12,
+              "Exchange": 6}
+# FAN's number of selected frequencies: the official K of the FAN paper (Table 1), first value of protocol "fan_k".
+FAN_TOPK = {"ETTh1": 4, "ETTh2": 3, "ETTm1": 11, "ETTm2": 5, "Weather": 2, "Electricity": 3, "Traffic": 30, "Exchange": 2}
 MAX_BATCH = 1024
 LT_LOCKS_CSV = ROOT / "results" / "summary" / "exp7_lt_tuning.csv"
 
@@ -90,9 +91,10 @@ def method_settings(dataset, method, selected_base, lt_lock=None):
         "san": {"period_len": SAN_PERIOD[dataset]},
         "ddn": {"kernel_len": 7, "j": 1, "hkernel_len": 5, "twice_epoch": 1},
         "fan": {"freq_topk": FAN_TOPK[dataset]},
+        "dishts": {"dish_init": "standard"},
         "lt": {**supplied_lt_params(selected_base), **(lt_lock or {})},
     }[method]
-    if method in ("revin", "san", "ddn", "fan"):
+    if method in ("revin", "san", "ddn", "fan", "dishts"):
         raw = normalized_params(method, raw, selected_base)
     return method_params(method, raw)
 

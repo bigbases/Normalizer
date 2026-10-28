@@ -12,6 +12,7 @@ data_dict = {
     'Weather': Dataset_Custom,
     'Electricity': Dataset_Custom,
     'Traffic': Dataset_Custom,
+    'Exchange': Dataset_Custom,
     'custom': Dataset_Custom,
 }
 

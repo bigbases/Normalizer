@@ -23,7 +23,7 @@ class Exp_Main(Exp_Basic):
     """Main training/eval runtime for the production forecasting pipeline.
 
     Supported ``use_norm`` values: ``none``, ``revin``, ``san``, ``ddn``,
-    ``fan``, and ``lt``.
+    ``fan``, ``dishts``, and ``lt``.
 
     Ablation / analysis variants (san_ms, ddn_ms, lt_joint, lt_freeze,
     naive_last, naive_linear, san_phase1, ddn_phase1) and their supporting
@@ -107,6 +107,7 @@ class Exp_Main(Exp_Basic):
             'san': 'SAN',
             'ddn': 'DDN',
             'fan': 'FAN',
+            'dishts': 'DishTS',
             'lt': 'LightNorm',
         }[self.args.use_norm]
         station_mod = import_module(f'normalizers.{station_module_name}')
@@ -122,6 +123,8 @@ class Exp_Main(Exp_Basic):
             'ddn':   [1, self.args.pre_epoch, 1, self.args.twice_epoch],
             # FAN's frequency predictor is trained jointly with the backbone.
             'fan':   [0, 0, 1, 0],
+            # Dish-TS's CONET is trained jointly with the backbone, as in its reference code.
+            'dishts': [0, 0, 1, 0],
             'lt':    [1, self.args.pre_epoch, 1, 0],
         }
         self.station_setting = station_setting_dict[self.args.use_norm]

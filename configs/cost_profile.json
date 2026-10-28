@@ -53,6 +53,11 @@
       "split": "custom",
       "rows": 17544,
       "csv_mb": 136.5
+    },
+    "Exchange": {
+      "split": "custom",
+      "rows": 7588,
+      "csv_mb": 0.6
     }
   },
   "normalizers": {
@@ -62,6 +67,7 @@
       "san": 3.0,
       "ddn": 80.0,
       "fan": 1.2,
+      "dishts": 0.01,
       "lt": 0.15
     },
     "iter_overhead_s": {
@@ -70,6 +76,7 @@
       "san": 0.0012,
       "ddn": 0.003,
       "fan": 0.0012,
+      "dishts": 0.0003,
       "lt": 0.0012
     },
     "pretrain": {
@@ -78,6 +85,7 @@
       "san": true,
       "ddn": true,
       "fan": false,
+      "dishts": false,
       "lt": true
     }
   },
