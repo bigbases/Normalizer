@@ -656,13 +656,13 @@
         "screen_mean_val_mse": 0.5066085979043641
       },
       {
-        "candidate_id": "991b5cc14619",
+        "candidate_id": "d2a446c80585",
         "n_cells": 2,
         "params": {
-          "dish_init": "avg",
+          "dish_init": "standard",
           "station_lr": 0.0001
         },
-        "screen_mean_val_mse": 0.5339893668860117
+        "screen_mean_val_mse": 0.5137102592382878
       }
     ],
     "ETTh2|TimeXer|revin": [
