@@ -1911,6 +1911,15 @@
     ],
     "Exchange|TimeFilter|dishts": [
       {
+        "candidate_id": "d2a446c80585",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.5834137543681122
+      },
+      {
         "candidate_id": "4b3fc1cfcf90",
         "n_cells": 2,
         "params": {
@@ -1918,15 +1927,6 @@
           "station_lr": 5e-05
         },
         "screen_mean_val_mse": 0.6680040989248526
-      },
-      {
-        "candidate_id": "9db6b0bec9f5",
-        "n_cells": 2,
-        "params": {
-          "dish_init": "uniform",
-          "station_lr": 5e-05
-        },
-        "screen_mean_val_mse": 0.8533480760774442
       }
     ],
     "Exchange|TimeFilter|revin": [
