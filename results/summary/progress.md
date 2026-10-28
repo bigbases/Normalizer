@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T19:59:03+00:00 from 7454 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T19:57:58+00:00 from 7456 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,14 +12,14 @@ Generated 2026-10-28T19:59:03+00:00 from 7454 packaged cells. Regenerate with `p
 | t3-length-s2022 | 24 | 0 | 0 | 0 | 0 |
 | t3-length-s2023 | 23 | 1 | 0 | 0 | 0 |
 | dish-search | 0 | 0 | 28 | 0 | 0 |
-| exch-search | 4 | 0 | 16 | 0 | 0 |
+| exch-search | 4 | 1 | 15 | 0 | 0 |
 | exch-lt-search | 0 | 0 | 4 | 0 | 0 |
 | dish-confirm | 0 | 0 | 0 | 28 | 0 |
 | exch-confirm | 4 | 0 | 0 | 16 | 0 |
 | exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
 | dish-tuned | 0 | 0 | 0 | 28 | 0 |
 | exch-none | 3 | 1 | 0 | 0 | 0 |
-| exch-tuned | 2 | 2 | 0 | 16 | 0 |
+| exch-tuned | 3 | 1 | 0 | 16 | 0 |
 | exch-lt-tuned | 0 | 0 | 0 | 4 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -219,7 +219,7 @@ Generated 2026-10-28T19:59:03+00:00 from 7454 packaged cells. Regenerate with `p
 | exch-search--Exchange--DLinear--san | ready | 0/12 |  |
 | exch-search--Exchange--DLinear--ddn | ready | 0/12 |  |
 | exch-search--Exchange--DLinear--fan | ready | 0/12 |  |
-| exch-search--Exchange--DLinear--dishts | ready | 0/12 |  |
+| exch-search--Exchange--DLinear--dishts | claimed | 0/12 | itm20-gpu1-a4000 |
 | exch-search--Exchange--iTransformer--revin | done | 4/4 |  |
 | exch-search--Exchange--iTransformer--san | ready | 0/12 |  |
 | exch-search--Exchange--iTransformer--ddn | ready | 0/12 |  |
@@ -338,7 +338,7 @@ Generated 2026-10-28T19:59:03+00:00 from 7454 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--TimeXer--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--fan | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--dishts | blocked | 0/? |  |
-| exch-tuned--Exchange--TimeFilter--revin | claimed | 2/4 | itm21-a4000 |
+| exch-tuned--Exchange--TimeFilter--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--san | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeFilter--ddn | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeFilter--fan | blocked | 0/? |  |
