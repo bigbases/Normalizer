@@ -1,16 +1,16 @@
 # Experiment progress
 
-Generated 2026-10-28T01:56:52+00:00 from 7226 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T02:09:09+00:00 from 7230 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| t3-lt-confirm | 9 | 3 | 2 | 0 | 0 |
-| t3-lt-tuned | 6 | 0 | 3 | 5 | 0 |
-| t3-lt-tuned-s2022 | 6 | 0 | 3 | 5 | 0 |
-| t3-lt-tuned-s2023 | 6 | 0 | 3 | 5 | 0 |
-| t3-length | 20 | 0 | 2 | 2 | 0 |
-| t3-length-s2022 | 20 | 0 | 2 | 2 | 0 |
-| t3-length-s2023 | 20 | 0 | 2 | 2 | 0 |
+| t3-lt-confirm | 10 | 3 | 1 | 0 | 0 |
+| t3-lt-tuned | 6 | 0 | 4 | 4 | 0 |
+| t3-lt-tuned-s2022 | 6 | 0 | 4 | 4 | 0 |
+| t3-lt-tuned-s2023 | 6 | 0 | 4 | 4 | 0 |
+| t3-length | 20 | 0 | 3 | 1 | 0 |
+| t3-length-s2022 | 20 | 0 | 3 | 1 | 0 |
+| t3-length-s2023 | 20 | 0 | 3 | 1 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
@@ -39,12 +39,12 @@ Generated 2026-10-28T01:56:52+00:00 from 7226 packaged cells. Regenerate with `p
 | task | status | cells done | worker |
 |---|---|---|---|
 | t3-lt-confirm--ETTh1--TimeXer | done | 4/4 |  |
-| t3-lt-confirm--ETTm1--TimeXer | claimed | 0/4 | itm21-a4000 |
+| t3-lt-confirm--ETTm1--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--Weather--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--Electricity--TimeXer | ready | 2/4 |  |
 | t3-lt-confirm--Traffic--TimeXer | claimed | 0/4 | itm20-gpu1-a4000 |
 | t3-lt-confirm--ETTh1--TimeFilter | done | 4/4 |  |
-| t3-lt-confirm--ETTm1--TimeFilter | ready | 0/4 |  |
+| t3-lt-confirm--ETTm1--TimeFilter | claimed | 0/4 | itm21-a4000 |
 | t3-lt-confirm--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--Electricity--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--Traffic--TimeFilter | claimed | 0/4 | itm20-gpu0-a4000 |
@@ -53,7 +53,7 @@ Generated 2026-10-28T01:56:52+00:00 from 7226 packaged cells. Regenerate with `p
 | t3-lt-confirm--ETTh2--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--ETTm2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--ETTh1--TimeXer | done | 4/4 |  |
-| t3-lt-tuned--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--ETTm1--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned--Weather--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
@@ -67,7 +67,7 @@ Generated 2026-10-28T01:56:52+00:00 from 7226 packaged cells. Regenerate with `p
 | t3-lt-tuned--ETTh2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--ETTm2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--ETTh1--TimeXer | done | 4/4 |  |
-| t3-lt-tuned-s2022--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTm1--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned-s2022--Weather--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned-s2022--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned-s2022--Traffic--TimeXer | blocked | 0/? |  |
@@ -81,7 +81,7 @@ Generated 2026-10-28T01:56:52+00:00 from 7226 packaged cells. Regenerate with `p
 | t3-lt-tuned-s2022--ETTh2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--ETTm2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2023--ETTh1--TimeXer | done | 4/4 |  |
-| t3-lt-tuned-s2023--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTm1--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned-s2023--Weather--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned-s2023--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned-s2023--Traffic--TimeXer | blocked | 0/? |  |
@@ -101,7 +101,7 @@ Generated 2026-10-28T01:56:52+00:00 from 7226 packaged cells. Regenerate with `p
 | t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--san | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--ddn | done | 6/6 |  |
-| t3-length--ETTm1--TimeXer--lt | blocked | 0/? |  |
+| t3-length--ETTm1--TimeXer--lt | ready | 0/6 |  |
 | t3-length--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length--Weather--TimeXer--san | done | 6/6 |  |
 | t3-length--Weather--TimeXer--ddn | done | 6/6 |  |
@@ -125,7 +125,7 @@ Generated 2026-10-28T01:56:52+00:00 from 7226 packaged cells. Regenerate with `p
 | t3-length-s2022--ETTm1--TimeXer--revin | done | 6/6 |  |
 | t3-length-s2022--ETTm1--TimeXer--san | done | 6/6 |  |
 | t3-length-s2022--ETTm1--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2022--ETTm1--TimeXer--lt | blocked | 0/? |  |
+| t3-length-s2022--ETTm1--TimeXer--lt | ready | 0/6 |  |
 | t3-length-s2022--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length-s2022--Weather--TimeXer--san | done | 6/6 |  |
 | t3-length-s2022--Weather--TimeXer--ddn | done | 6/6 |  |
@@ -149,7 +149,7 @@ Generated 2026-10-28T01:56:52+00:00 from 7226 packaged cells. Regenerate with `p
 | t3-length-s2023--ETTm1--TimeXer--revin | done | 6/6 |  |
 | t3-length-s2023--ETTm1--TimeXer--san | done | 6/6 |  |
 | t3-length-s2023--ETTm1--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeXer--lt | blocked | 0/? |  |
+| t3-length-s2023--ETTm1--TimeXer--lt | ready | 0/6 |  |
 | t3-length-s2023--Weather--TimeXer--revin | done | 6/6 |  |
 | t3-length-s2023--Weather--TimeXer--san | done | 6/6 |  |
 | t3-length-s2023--Weather--TimeXer--ddn | done | 6/6 |  |
