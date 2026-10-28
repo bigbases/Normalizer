@@ -114,6 +114,15 @@
       "seq_lens": [192, 336, 720],
       "horizons": [96, 720],
       "description": "Input-length side study for the short official look-back (96) of TimeXer/TimeFilter: each case's locked RevIN, SAN, DDN and LightNorm settings rerun at look-back 192, 336 and 720 (label_len = L/2, backbone and training otherwise unchanged), test at H=96/720, seeds 2021-2023. Kept out of the main comparison (results/summary/exp14_input_length.csv)."
+    },
+    "15_input_length_dl_it": {
+      "backbones": ["DLinear", "iTransformer"],
+      "methods": ["revin", "san", "ddn", "lt"],
+      "phase": "final",
+      "lt_params": "locked",
+      "seq_lens": {"DLinear": [96, 192, 720], "iTransformer": [96, 192, 336]},
+      "horizons": [96, 720],
+      "description": "Input-length side study on DLinear (main look-back 336) and iTransformer (main look-back 720), as experiment 14 for TimeXer/TimeFilter: each case's locked RevIN, SAN, DDN and LightNorm settings rerun at the other look-backs (label_len = L/2, backbone and training otherwise unchanged), test at H=96/720, seeds 2021-2023. Kept out of the main comparison (results/summary/exp15_input_length.csv)."
     }
   },
   "lt_tuning": {

@@ -826,7 +826,10 @@ def build_cells(args, protocol, base_document, lock_doc=None, shortlist_doc=None
 
                 dev = stage == "explore" or exp.get("lt_grid") == "pilot"
                 # Experiments with "seq_lens" rerun each cell at other input lengths (label_len = L/2).
-                cell_bases = ([{**base, "seq_len": L, "label_len": L // 2} for L in exp["seq_lens"]]
+                lens = exp.get("seq_lens")
+                if isinstance(lens, dict):   # per-backbone input lengths
+                    lens = lens.get(backbone, [])
+                cell_bases = ([{**base, "seq_len": L, "label_len": L // 2} for L in lens]
                               if exp.get("seq_lens") else [base])
                 for params, cell_horizons, cell_seeds in schedule:
                     params = method_params(method, params, dev=dev)
