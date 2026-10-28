@@ -172,6 +172,12 @@ def _lt_cid(params):
     return canonical_hash({"method": "lt", "params": lt_params(params)})
 
 
+def _structure_search(protocol, backbone):
+    """True when the s_norm x use_mlp variants join the LightNorm candidates of this backbone."""
+    spec = protocol["lt_tuning"]["structure"]
+    return spec.get("enabled", True) and backbone in spec["backbones"]
+
+
 def _lt_mean(vals):
     return sum(vals.values()) / len(vals) if vals and all(v is not None for v in vals.values()) else None
 
@@ -189,7 +195,7 @@ def lt_case_scores(raw_rows, protocol, bases, dataset, backbone, seeds=(2021,)):
     values = lambda p, ss: {(sd, h): found[_lt_cid(p)].get((sd, h)) for sd in ss for h in horizons}
     grid = [lt_params(p) for p in lt_main_candidates(protocol, base)]
     out = [(p, values(p, seeds)) for p in grid]
-    if backbone in protocol["lt_tuning"]["structure"]["backbones"]:
+    if _structure_search(protocol, backbone):
         best = _lt_best([(p, values(p, (2021,))) for p in grid])
         if best is not None:
             out += [(lt_params(p), values(p, seeds)) for p in lt_structure_candidates(protocol, best)]
@@ -229,7 +235,7 @@ def lt_shortlists(raw_rows, protocol, bases, cases=None):
     rows = list(raw_rows)
     for dataset, backbone in _lt_cases(protocol, bases, cases):
         scored = lt_case_scores(rows, protocol, bases, dataset, backbone, seeds=(2021,))
-        structure = backbone in protocol["lt_tuning"]["structure"]["backbones"]
+        structure = _structure_search(protocol, backbone)
         if len(scored) < (9 if structure else 6) or any(_lt_mean(v) is None for _, v in scored):
             continue
         ranked = sorted(scored, key=lambda item: (_lt_mean(item[1]), _lt_cid(item[0])))[:2]
@@ -243,7 +249,7 @@ def lt_locks(raw_rows, protocol, bases, cases=None):
     output = {"protocol_version": protocol["protocol_version"], "locks": {}, "selection_rule": (
         "LightNorm: the two candidates with the lowest seed-2021 mean validation MSE (horizons 96/720) "
         "among the 6-point grid kernel_size {13, 25, 49} x station_lr {1e-4, 1e-3} (plus the "
-        "s_norm x use_mlp variants of the best grid point for the lt_tuning.structure backbones) are "
+        "s_norm x use_mlp variants of the best grid point while lt_tuning.structure is enabled) are "
         "confirmed at seed 2022; the lock has the lowest mean over the four cells, as for SAN/DDN.")}
     rows = list(raw_rows)
     shortlists = lt_shortlists(rows, protocol, bases, cases)["shortlists"]

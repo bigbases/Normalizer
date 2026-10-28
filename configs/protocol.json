@@ -137,6 +137,7 @@
     },
     "kernel_check": {"kernel_size": 13, "station_lr": [0.0001, 0.001]},
     "structure": {
+      "enabled": false,
       "backbones": ["TimeFilter", "TimeXer"],
       "s_norm": [0, 1],
       "use_mlp": [0, 1],
@@ -155,7 +156,8 @@
       "2026-10-08 station_lr levels restricted to the 1e-n / 5e-n ladder; down_ratio given the lowest priority among the four candidate axes.",
       "2026-10-09 Main grid set from the dev-case exploration (Exp6, test split of ETTm1 x iTransformer, Weather x DLinear, ETTm1 x DLinear): station_lr dominated on DLinear and kernel_size on iTransformer, combinations were not additive, s_norm / down_ratio / affine / t_norm did not help, and switching use_mlp off hurt. The pilot's s_norm x station_lr choice and the use_mlp rule are therefore not used; use_mlp stays as supplied.",
       "2026-10-12 Parity with SAN/DDN: two-stage selection (seed-2022 confirmation of the top two), s_norm x use_mlp structure search for the T3 backbones, and the pretraining-target kernel tied to kernel_size.",
-      "2026-10-14 Grid kernel_size {13, 25, 49} x station_lr {1e-4, 1e-3} (replacing {supplied, 49} x {1e-4, 5e-4, 1e-3}): kernel 49 was locked in 14 of 20 cases but 25 beat 49 on Electricity/Traffic, where kernel 13 then improved the seed-2021 validation by 0.5-1.8% in 3 of 4 cases (experiment 10); dropping station_lr 5e-4 cost 0.09% on average (below the 0.26% median seed noise), while any other pair of levels lost up to 6-8% in some case."
+      "2026-10-14 Grid kernel_size {13, 25, 49} x station_lr {1e-4, 1e-3} (replacing {supplied, 49} x {1e-4, 5e-4, 1e-3}): kernel 49 was locked in 14 of 20 cases but 25 beat 49 on Electricity/Traffic, where kernel 13 then improved the seed-2021 validation by 0.5-1.8% in 3 of 4 cases (experiment 10); dropping station_lr 5e-4 cost 0.09% on average (below the 0.26% median seed noise), while any other pair of levels lost up to 6-8% in some case.",
+      "2026-10-28 Structure search of the T3 backbones switched off (lt_tuning.structure.enabled = false, user decision): TimeXer/TimeFilter keep a linear predictor without residual instance normalization and r=4, so LightNorm has the same 6-point grid as every other normalizer on every backbone. Locks are re-selected with the same two-stage rule among the 6 grid points; confirm cells of the new shortlists and tuned finals of changed locks run seed by seed (plan phases t3-lt-confirm, t3-lt-tuned, t3-lt-tuned-s2022, t3-lt-tuned-s2023). Experiment 9 cells stay in the store but no longer enter the selection."
     ]
   },
   "search_grids": {
