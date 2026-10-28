@@ -763,5 +763,7 @@ Exchange,iTransformer,revin,96,2021,0.120972,,0.253443,,NVIDIA RTX A4000
 Exchange,iTransformer,revin,192,2021,0.267420,,0.386004,,NVIDIA RTX A4000
 Exchange,iTransformer,revin,336,2021,0.443074,,0.501832,,NVIDIA RTX A4000
 Exchange,iTransformer,revin,720,2021,1.174929,,0.803288,,NVIDIA RTX A4000
+Exchange,iTransformer,san,96,2021,0.092875,,0.216882,,NVIDIA RTX A4000
+Exchange,iTransformer,san,192,2021,0.196065,,0.316982,,NVIDIA RTX A4000
 Exchange,iTransformer,san,336,2021,0.353423,,0.430803,,NVIDIA RTX A4000
 Exchange,iTransformer,san,720,2021,1.065244,,0.787819,,NVIDIA RTX A4000

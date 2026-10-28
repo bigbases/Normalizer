@@ -269,7 +269,7 @@ exch-tuned,Exchange,DLinear,ddn,blocked,0,,
 exch-tuned,Exchange,DLinear,fan,done,4,4,
 exch-tuned,Exchange,DLinear,dishts,done,4,4,
 exch-tuned,Exchange,iTransformer,revin,done,4,4,
-exch-tuned,Exchange,iTransformer,san,claimed,2,4,itm20-gpu0-a4000
+exch-tuned,Exchange,iTransformer,san,done,4,4,
 exch-tuned,Exchange,iTransformer,ddn,blocked,0,,
 exch-tuned,Exchange,iTransformer,fan,done,4,4,
 exch-tuned,Exchange,iTransformer,dishts,done,4,4,
