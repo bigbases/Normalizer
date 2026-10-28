@@ -8,7 +8,7 @@ t3-lt-confirm,ETTh1,TimeFilter,lt,done,4,4,
 t3-lt-confirm,ETTm1,TimeFilter,lt,done,4,4,
 t3-lt-confirm,Weather,TimeFilter,lt,done,4,4,
 t3-lt-confirm,Electricity,TimeFilter,lt,done,4,4,
-t3-lt-confirm,Traffic,TimeFilter,lt,claimed,1,4,itm20-gpu0-a4000
+t3-lt-confirm,Traffic,TimeFilter,lt,claimed,2,4,itm20-gpu0-a4000
 t3-lt-confirm,ETTh2,TimeXer,lt,done,4,4,
 t3-lt-confirm,ETTm2,TimeXer,lt,done,4,4,
 t3-lt-confirm,ETTh2,TimeFilter,lt,done,4,4,
@@ -28,11 +28,11 @@ t3-lt-tuned,ETTm2,TimeXer,lt,done,4,4,
 t3-lt-tuned,ETTh2,TimeFilter,lt,done,4,4,
 t3-lt-tuned,ETTm2,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2022,ETTh1,TimeXer,lt,done,4,4,
-t3-lt-tuned-s2022,ETTm1,TimeXer,lt,ready,0,4,
+t3-lt-tuned-s2022,ETTm1,TimeXer,lt,claimed,0,4,itm21-a4000
 t3-lt-tuned-s2022,Weather,TimeXer,lt,ready,0,4,
 t3-lt-tuned-s2022,Electricity,TimeXer,lt,done,4,4,
 t3-lt-tuned-s2022,Traffic,TimeXer,lt,blocked,0,,
-t3-lt-tuned-s2022,ETTh1,TimeFilter,lt,claimed,0,4,itm21-a4000
+t3-lt-tuned-s2022,ETTh1,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2022,ETTm1,TimeFilter,lt,ready,0,4,
 t3-lt-tuned-s2022,Weather,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2022,Electricity,TimeFilter,lt,done,4,4,

@@ -1,12 +1,12 @@
 # Experiment progress
 
-Generated 2026-10-28T04:46:17+00:00 from 7263 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T04:58:45+00:00 from 7268 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | t3-lt-confirm | 12 | 2 | 0 | 0 | 0 |
 | t3-lt-tuned | 12 | 0 | 0 | 2 | 0 |
-| t3-lt-tuned-s2022 | 8 | 1 | 3 | 2 | 0 |
+| t3-lt-tuned-s2022 | 9 | 1 | 2 | 2 | 0 |
 | t3-lt-tuned-s2023 | 7 | 0 | 5 | 2 | 0 |
 | t3-length | 20 | 0 | 4 | 0 | 0 |
 | t3-length-s2022 | 20 | 0 | 4 | 0 | 0 |
@@ -47,7 +47,7 @@ Generated 2026-10-28T04:46:17+00:00 from 7263 packaged cells. Regenerate with `p
 | t3-lt-confirm--ETTm1--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--Electricity--TimeFilter | done | 4/4 |  |
-| t3-lt-confirm--Traffic--TimeFilter | claimed | 1/4 | itm20-gpu0-a4000 |
+| t3-lt-confirm--Traffic--TimeFilter | claimed | 2/4 | itm20-gpu0-a4000 |
 | t3-lt-confirm--ETTh2--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTm2--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTh2--TimeFilter | done | 4/4 |  |
@@ -67,11 +67,11 @@ Generated 2026-10-28T04:46:17+00:00 from 7263 packaged cells. Regenerate with `p
 | t3-lt-tuned--ETTh2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--ETTm2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--ETTh1--TimeXer | done | 4/4 |  |
-| t3-lt-tuned-s2022--ETTm1--TimeXer | ready | 0/4 |  |
+| t3-lt-tuned-s2022--ETTm1--TimeXer | claimed | 0/4 | itm21-a4000 |
 | t3-lt-tuned-s2022--Weather--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned-s2022--Electricity--TimeXer | done | 4/4 |  |
 | t3-lt-tuned-s2022--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTh1--TimeFilter | claimed | 0/4 | itm21-a4000 |
+| t3-lt-tuned-s2022--ETTh1--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--ETTm1--TimeFilter | ready | 0/4 |  |
 | t3-lt-tuned-s2022--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--Electricity--TimeFilter | done | 4/4 |  |
