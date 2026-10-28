@@ -1,11 +1,11 @@
 # Experiment progress
 
-Generated 2026-10-28T02:24:31+00:00 from 7234 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T03:34:28+00:00 from 7241 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | t3-lt-confirm | 11 | 3 | 0 | 0 | 0 |
-| t3-lt-tuned | 6 | 1 | 4 | 3 | 0 |
+| t3-lt-tuned | 7 | 1 | 3 | 3 | 0 |
 | t3-lt-tuned-s2022 | 6 | 0 | 5 | 3 | 0 |
 | t3-lt-tuned-s2023 | 6 | 0 | 5 | 3 | 0 |
 | t3-length | 20 | 0 | 4 | 0 | 0 |
@@ -41,13 +41,13 @@ Generated 2026-10-28T02:24:31+00:00 from 7234 packaged cells. Regenerate with `p
 | t3-lt-confirm--ETTh1--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTm1--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--Weather--TimeXer | done | 4/4 |  |
-| t3-lt-confirm--Electricity--TimeXer | claimed | 2/4 | itm21-a4000 |
-| t3-lt-confirm--Traffic--TimeXer | claimed | 0/4 | itm20-gpu1-a4000 |
+| t3-lt-confirm--Electricity--TimeXer | claimed | 3/4 | itm21-a4000 |
+| t3-lt-confirm--Traffic--TimeXer | claimed | 1/4 | itm20-gpu1-a4000 |
 | t3-lt-confirm--ETTh1--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--ETTm1--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--Electricity--TimeFilter | done | 4/4 |  |
-| t3-lt-confirm--Traffic--TimeFilter | claimed | 0/4 | itm20-gpu0-a4000 |
+| t3-lt-confirm--Traffic--TimeFilter | claimed | 1/4 | itm20-gpu0-a4000 |
 | t3-lt-confirm--ETTh2--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTm2--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTh2--TimeFilter | done | 4/4 |  |
@@ -57,12 +57,12 @@ Generated 2026-10-28T02:24:31+00:00 from 7234 packaged cells. Regenerate with `p
 | t3-lt-tuned--Weather--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--ETTh1--TimeFilter | ready | 0/4 |  |
+| t3-lt-tuned--ETTh1--TimeFilter | claimed | 0/4 | itm21-a4000 |
 | t3-lt-tuned--ETTm1--TimeFilter | ready | 0/4 |  |
 | t3-lt-tuned--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--Electricity--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--Traffic--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned--ETTh2--TimeXer | claimed | 0/4 | itm21-a4000 |
+| t3-lt-tuned--ETTh2--TimeXer | done | 4/4 |  |
 | t3-lt-tuned--ETTm2--TimeXer | done | 4/4 |  |
 | t3-lt-tuned--ETTh2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--ETTm2--TimeFilter | done | 4/4 |  |

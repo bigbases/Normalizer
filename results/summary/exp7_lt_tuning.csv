@@ -134,7 +134,7 @@ Electricity,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,0.117449,0.171522,0.
 Electricity,TimeXer,21642c782956,grid,13,0.0001,0,0,False,0.140459,0.198163,0.169311,,,False,False
 Electricity,TimeXer,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.132629,0.198591,0.165610,,,False,False
 Electricity,TimeXer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.137311,0.199655,0.168483,,,False,False
-Electricity,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.131569,0.199506,0.165537,,,True,False
+Electricity,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.131569,0.199506,0.165537,,0.202623,True,False
 Electricity,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.135100,0.199115,0.167107,,,False,False
 Electricity,TimeXer,70544b7f9269,grid,49,0.001,0,0,False,0.128588,0.198329,0.163458,0.128265,0.201920,True,False
 Electricity,iTransformer,6a39ae0f488a,grid,13,0.0001,1,1,False,0.110615,0.165415,0.138015,,,False,False
@@ -150,13 +150,13 @@ Traffic,DLinear,a9d8cf5dffe6,grid,25,0.001,0,1,False,0.333839,0.398128,0.365983,
 Traffic,DLinear,96063ae3aa85,grid,49,0.0001,0,1,False,0.335390,0.400656,0.368023,,,False,False
 Traffic,DLinear,a65571406a47,grid,49,0.001,0,1,False,0.334125,0.399400,0.366762,0.333878,0.398950,True,False
 Traffic,TimeFilter,21642c782956,grid,13,0.0001,0,0,False,0.363006,0.422423,0.392715,,,False,False
-Traffic,TimeFilter,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.359400,0.420279,0.389840,,,True,False
+Traffic,TimeFilter,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.359400,0.420279,0.389840,0.357883,,True,False
 Traffic,TimeFilter,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.359462,0.422977,0.391220,,,False,False
 Traffic,TimeFilter,e18334433cdb,grid,25,0.001,0,0,False,0.357008,0.420800,0.388904,,,True,False
 Traffic,TimeFilter,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.361523,0.424224,0.392874,,,False,False
 Traffic,TimeFilter,70544b7f9269,grid,49,0.001,0,0,False,0.358950,0.423296,0.391123,,,False,False
 Traffic,TimeXer,21642c782956,grid,13,0.0001,0,0,False,0.410055,0.447843,0.428949,,,True,False
-Traffic,TimeXer,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.407872,0.445348,0.426610,,,True,False
+Traffic,TimeXer,05ffa3aaf2d6,grid,13,0.001,0,0,False,0.407872,0.445348,0.426610,0.406133,,True,False
 Traffic,TimeXer,b3998ed7ee0d,grid,25,0.0001,0,0,True,0.423138,0.456921,0.440029,,,False,False
 Traffic,TimeXer,e18334433cdb,grid,25,0.001,0,0,False,0.419420,0.452839,0.436129,,,False,False
 Traffic,TimeXer,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.420626,0.453982,0.437304,,,False,False
