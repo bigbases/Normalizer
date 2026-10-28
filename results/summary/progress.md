@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T21:06:56+00:00 from 7782 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T21:07:43+00:00 from 7786 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,11 +15,11 @@ Generated 2026-10-28T21:06:56+00:00 from 7782 packaged cells. Regenerate with `p
 | exch-search | 14 | 1 | 5 | 0 | 0 |
 | exch-lt-search | 2 | 2 | 0 | 0 | 0 |
 | dish-confirm | 4 | 0 | 0 | 24 | 0 |
-| exch-confirm | 13 | 0 | 1 | 6 | 0 |
+| exch-confirm | 13 | 1 | 0 | 6 | 0 |
 | exch-lt-confirm | 2 | 0 | 0 | 2 | 0 |
 | dish-tuned | 4 | 0 | 0 | 24 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
-| exch-tuned | 12 | 1 | 0 | 7 | 0 |
+| exch-tuned | 13 | 0 | 0 | 7 | 0 |
 | exch-lt-tuned | 2 | 0 | 0 | 2 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -269,7 +269,7 @@ Generated 2026-10-28T21:06:56+00:00 from 7782 packaged cells. Regenerate with `p
 | dish-confirm--Traffic--TimeFilter | blocked | 0/? |  |
 | exch-confirm--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-confirm--Exchange--DLinear--san | done | 4/4 |  |
-| exch-confirm--Exchange--DLinear--ddn | ready | 0/4 |  |
+| exch-confirm--Exchange--DLinear--ddn | claimed | 0/4 | itm20-gpu0-a4000 |
 | exch-confirm--Exchange--DLinear--fan | done | 4/4 |  |
 | exch-confirm--Exchange--DLinear--dishts | done | 4/4 |  |
 | exch-confirm--Exchange--iTransformer--revin | done | 4/4 |  |
@@ -336,7 +336,7 @@ Generated 2026-10-28T21:06:56+00:00 from 7782 packaged cells. Regenerate with `p
 | exch-tuned--Exchange--TimeXer--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeXer--san | blocked | 0/? |  |
 | exch-tuned--Exchange--TimeXer--ddn | blocked | 0/? |  |
-| exch-tuned--Exchange--TimeXer--fan | claimed | 0/4 | itm20-gpu0-a4000 |
+| exch-tuned--Exchange--TimeXer--fan | done | 4/4 |  |
 | exch-tuned--Exchange--TimeXer--dishts | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--revin | done | 4/4 |  |
 | exch-tuned--Exchange--TimeFilter--san | blocked | 0/? |  |
