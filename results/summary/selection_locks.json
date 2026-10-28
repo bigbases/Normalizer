@@ -488,6 +488,11 @@
       "dish_init": "standard",
       "station_lr": 0.0001
     },
+    "Exchange|TimeFilter|fan": {
+      "fan_aux_weight": 1.0,
+      "freq_topk": 2,
+      "station_lr": 5e-05
+    },
     "Exchange|TimeFilter|revin": {
       "affine": 1,
       "station_lr": 0.0001
