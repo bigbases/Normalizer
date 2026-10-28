@@ -42,12 +42,12 @@ t3-lt-tuned-s2022,ETTm2,TimeXer,lt,done,4,4,
 t3-lt-tuned-s2022,ETTh2,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2022,ETTm2,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2023,ETTh1,TimeXer,lt,done,4,4,
-t3-lt-tuned-s2023,ETTm1,TimeXer,lt,claimed,0,4,itm20-gpu0-a4000
+t3-lt-tuned-s2023,ETTm1,TimeXer,lt,claimed,2,4,itm20-gpu0-a4000
 t3-lt-tuned-s2023,Weather,TimeXer,lt,claimed,0,4,itm20-gpu1-a4000
 t3-lt-tuned-s2023,Electricity,TimeXer,lt,done,4,4,
 t3-lt-tuned-s2023,Traffic,TimeXer,lt,blocked,0,,
 t3-lt-tuned-s2023,ETTh1,TimeFilter,lt,done,4,4,
-t3-lt-tuned-s2023,ETTm1,TimeFilter,lt,claimed,0,4,itm21-a4000
+t3-lt-tuned-s2023,ETTm1,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2023,Weather,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2023,Electricity,TimeFilter,lt,done,4,4,
 t3-lt-tuned-s2023,Traffic,TimeFilter,lt,blocked,0,,
@@ -58,7 +58,7 @@ t3-lt-tuned-s2023,ETTm2,TimeFilter,lt,done,4,4,
 t3-length,ETTh2,TimeXer,revin,done,6,6,
 t3-length,ETTh2,TimeXer,san,done,6,6,
 t3-length,ETTh2,TimeXer,ddn,done,6,6,
-t3-length,ETTh2,TimeXer,lt,ready,0,6,
+t3-length,ETTh2,TimeXer,lt,claimed,0,6,itm21-a4000
 t3-length,ETTm1,TimeXer,revin,done,6,6,
 t3-length,ETTm1,TimeXer,san,done,6,6,
 t3-length,ETTm1,TimeXer,ddn,done,6,6,

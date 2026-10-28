@@ -1,14 +1,14 @@
 # Experiment progress
 
-Generated 2026-10-28T05:55:14+00:00 from 7290 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T06:12:05+00:00 from 7296 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | t3-lt-confirm | 12 | 2 | 0 | 0 | 0 |
 | t3-lt-tuned | 12 | 0 | 0 | 2 | 0 |
 | t3-lt-tuned-s2022 | 12 | 0 | 0 | 2 | 0 |
-| t3-lt-tuned-s2023 | 9 | 3 | 0 | 2 | 0 |
-| t3-length | 20 | 0 | 4 | 0 | 0 |
+| t3-lt-tuned-s2023 | 10 | 2 | 0 | 2 | 0 |
+| t3-length | 20 | 1 | 3 | 0 | 0 |
 | t3-length-s2022 | 20 | 0 | 4 | 0 | 0 |
 | t3-length-s2023 | 20 | 0 | 4 | 0 | 0 |
 | dlit-length | 0 | 0 | 24 | 0 | 0 |
@@ -84,12 +84,12 @@ Generated 2026-10-28T05:55:14+00:00 from 7290 packaged cells. Regenerate with `p
 | t3-lt-tuned-s2022--ETTh2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2022--ETTm2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2023--ETTh1--TimeXer | done | 4/4 |  |
-| t3-lt-tuned-s2023--ETTm1--TimeXer | claimed | 0/4 | itm20-gpu0-a4000 |
+| t3-lt-tuned-s2023--ETTm1--TimeXer | claimed | 2/4 | itm20-gpu0-a4000 |
 | t3-lt-tuned-s2023--Weather--TimeXer | claimed | 0/4 | itm20-gpu1-a4000 |
 | t3-lt-tuned-s2023--Electricity--TimeXer | done | 4/4 |  |
 | t3-lt-tuned-s2023--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned-s2023--ETTh1--TimeFilter | done | 4/4 |  |
-| t3-lt-tuned-s2023--ETTm1--TimeFilter | claimed | 0/4 | itm21-a4000 |
+| t3-lt-tuned-s2023--ETTm1--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2023--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2023--Electricity--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned-s2023--Traffic--TimeFilter | blocked | 0/? |  |
@@ -100,7 +100,7 @@ Generated 2026-10-28T05:55:14+00:00 from 7290 packaged cells. Regenerate with `p
 | t3-length--ETTh2--TimeXer--revin | done | 6/6 |  |
 | t3-length--ETTh2--TimeXer--san | done | 6/6 |  |
 | t3-length--ETTh2--TimeXer--ddn | done | 6/6 |  |
-| t3-length--ETTh2--TimeXer--lt | ready | 0/6 |  |
+| t3-length--ETTh2--TimeXer--lt | claimed | 0/6 | itm21-a4000 |
 | t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--san | done | 6/6 |  |
 | t3-length--ETTm1--TimeXer--ddn | done | 6/6 |  |
