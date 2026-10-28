@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-28T20:21:34+00:00 from 7584 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T20:22:24+00:00 from 7592 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -13,10 +13,10 @@ Generated 2026-10-28T20:21:34+00:00 from 7584 packaged cells. Regenerate with `p
 | t3-length-s2023 | 24 | 0 | 0 | 0 | 0 |
 | dish-search | 2 | 0 | 26 | 0 | 0 |
 | exch-search | 8 | 1 | 11 | 0 | 0 |
-| exch-lt-search | 0 | 2 | 2 | 0 | 0 |
+| exch-lt-search | 1 | 1 | 2 | 0 | 0 |
 | dish-confirm | 2 | 0 | 0 | 26 | 0 |
 | exch-confirm | 7 | 0 | 1 | 12 | 0 |
-| exch-lt-confirm | 0 | 0 | 0 | 4 | 0 |
+| exch-lt-confirm | 0 | 0 | 1 | 3 | 0 |
 | dish-tuned | 1 | 1 | 0 | 26 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 6 | 0 | 1 | 13 | 0 |
@@ -235,8 +235,8 @@ Generated 2026-10-28T20:21:34+00:00 from 7584 packaged cells. Regenerate with `p
 | exch-search--Exchange--TimeFilter--ddn | ready | 0/12 |  |
 | exch-search--Exchange--TimeFilter--fan | ready | 0/12 |  |
 | exch-search--Exchange--TimeFilter--dishts | ready | 0/12 |  |
-| exch-lt-search--Exchange--DLinear | claimed | 10/12 | itm20-gpu1-a4000 |
-| exch-lt-search--Exchange--iTransformer | claimed | 0/12 | itm20-gpu1-a4000 |
+| exch-lt-search--Exchange--DLinear | done | 12/12 |  |
+| exch-lt-search--Exchange--iTransformer | claimed | 6/12 | itm20-gpu1-a4000 |
 | exch-lt-search--Exchange--TimeXer | ready | 0/12 |  |
 | exch-lt-search--Exchange--TimeFilter | ready | 0/12 |  |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
@@ -287,7 +287,7 @@ Generated 2026-10-28T20:21:34+00:00 from 7584 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--TimeFilter--ddn | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeFilter--fan | blocked | 0/? |  |
 | exch-confirm--Exchange--TimeFilter--dishts | blocked | 0/? |  |
-| exch-lt-confirm--Exchange--DLinear | blocked | 0/? |  |
+| exch-lt-confirm--Exchange--DLinear | ready | 0/4 |  |
 | exch-lt-confirm--Exchange--iTransformer | blocked | 0/? |  |
 | exch-lt-confirm--Exchange--TimeXer | blocked | 0/? |  |
 | exch-lt-confirm--Exchange--TimeFilter | blocked | 0/? |  |
