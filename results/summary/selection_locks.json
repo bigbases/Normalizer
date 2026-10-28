@@ -516,6 +516,16 @@
       "station_lr": 5e-05,
       "station_type": "adaptive"
     },
+    "Exchange|TimeXer|ddn": {
+      "hkernel_len": 5,
+      "j": 1,
+      "joint_lr": "backbone",
+      "kernel_len": 12,
+      "station_lr": 0.0001,
+      "station_type": "adaptive",
+      "twice_epoch": 1,
+      "wavelet": "coif3"
+    },
     "Exchange|TimeXer|dishts": {
       "dish_init": "uniform",
       "station_lr": 5e-05
