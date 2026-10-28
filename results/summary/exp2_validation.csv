@@ -211,6 +211,8 @@ ETTh2,TimeXer,ddn,8b428784a508,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""b
 ETTh2,TimeXer,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.216172,0.698779,,,0.457475,,False,False
 ETTh2,TimeXer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 32, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.220944,0.595298,0.213795,0.611596,0.408121,0.410408,True,True
 ETTh2,TimeXer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.212910,0.632335,,,0.422622,,False,False
+ETTh2,TimeXer,dishts,112f7a5e174c,"{""dish_init"": ""avg"", ""station_lr"": 5e-05}",,0.695837,,,,,False,False
+ETTh2,TimeXer,dishts,4b3fc1cfcf90,"{""dish_init"": ""standard"", ""station_lr"": 5e-05}",,0.718159,,,,,False,False
 ETTh2,TimeXer,fan,6c1ea609882f,{},0.269987,0.707476,,,0.488732,,False,False
 ETTh2,TimeXer,fan,6e55c0ad8f58,{},0.266887,0.694261,,,0.480574,,False,False
 ETTh2,TimeXer,fan,96e68ab8643c,{},0.249261,0.692707,,,0.470984,,False,False
