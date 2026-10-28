@@ -836,6 +836,7 @@ Exchange,DLinear,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0
 Exchange,DLinear,dishts,ad8813500c6f,"{""dish_init"": ""avg"", ""station_lr"": 0.0005}",0.225322,2.826994,0.183141,3.425692,1.526158,1.665287,True,False
 Exchange,DLinear,dishts,d06468615702,"{""dish_init"": ""standard"", ""station_lr"": 0.0005}",0.220749,3.069704,,,1.645227,,False,False
 Exchange,DLinear,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.164628,3.038079,,,1.601353,,False,False
+Exchange,DLinear,fan,2cdea59375aa,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0005}",,4.250988,,,,,False,False
 Exchange,DLinear,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.126728,1.128703,0.126630,1.150378,0.627715,0.633110,True,False
 Exchange,DLinear,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.126651,1.114524,0.126471,1.116263,0.620587,0.620977,True,True
 Exchange,TimeFilter,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.141582,1.001034,0.128274,0.923019,0.571308,0.548477,True,False
