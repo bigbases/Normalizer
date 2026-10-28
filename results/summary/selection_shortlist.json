@@ -873,6 +873,26 @@
         "screen_mean_val_mse": 0.637383988534387
       }
     ],
+    "ETTm1|DLinear|dishts": [
+      {
+        "candidate_id": "4b3fc1cfcf90",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.6057473912181586
+      },
+      {
+        "candidate_id": "112f7a5e174c",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.6160385293927874
+      }
+    ],
     "ETTm1|DLinear|fan": [
       {
         "candidate_id": "e0d362626473",
