@@ -1,11 +1,11 @@
 # Experiment progress
 
-Generated 2026-10-28T03:55:26+00:00 from 7246 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-28T04:10:57+00:00 from 7250 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | t3-lt-confirm | 12 | 2 | 0 | 0 | 0 |
-| t3-lt-tuned | 9 | 1 | 2 | 2 | 0 |
+| t3-lt-tuned | 10 | 1 | 1 | 2 | 0 |
 | t3-lt-tuned-s2022 | 7 | 0 | 5 | 2 | 0 |
 | t3-lt-tuned-s2023 | 7 | 0 | 5 | 2 | 0 |
 | t3-length | 20 | 0 | 4 | 0 | 0 |
@@ -53,12 +53,12 @@ Generated 2026-10-28T03:55:26+00:00 from 7246 packaged cells. Regenerate with `p
 | t3-lt-confirm--ETTh2--TimeFilter | done | 4/4 |  |
 | t3-lt-confirm--ETTm2--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--ETTh1--TimeXer | done | 4/4 |  |
-| t3-lt-tuned--ETTm1--TimeXer | claimed | 0/4 | itm21-a4000 |
+| t3-lt-tuned--ETTm1--TimeXer | done | 4/4 |  |
 | t3-lt-tuned--Weather--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned--Electricity--TimeXer | done | 4/4 |  |
 | t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-tuned--ETTh1--TimeFilter | done | 4/4 |  |
-| t3-lt-tuned--ETTm1--TimeFilter | ready | 0/4 |  |
+| t3-lt-tuned--ETTm1--TimeFilter | claimed | 0/4 | itm21-a4000 |
 | t3-lt-tuned--Weather--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--Electricity--TimeFilter | done | 4/4 |  |
 | t3-lt-tuned--Traffic--TimeFilter | blocked | 0/? |  |
