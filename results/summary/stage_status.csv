@@ -233,7 +233,7 @@ exch-lt-confirm,Exchange,TimeXer,lt,done,4,4,
 exch-lt-confirm,Exchange,TimeFilter,lt,done,4,4,
 dish-tuned,ETTh1,DLinear,dishts,done,4,4,
 dish-tuned,ETTh1,iTransformer,dishts,done,4,4,
-dish-tuned,ETTh1,TimeXer,dishts,claimed,1,4,itm20-gpu1-a4000
+dish-tuned,ETTh1,TimeXer,dishts,done,4,4,
 dish-tuned,ETTh1,TimeFilter,dishts,ready,0,4,
 dish-tuned,ETTh2,DLinear,dishts,done,4,4,
 dish-tuned,ETTh2,iTransformer,dishts,done,4,4,
