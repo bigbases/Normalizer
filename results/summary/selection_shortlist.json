@@ -1827,34 +1827,34 @@
     ],
     "Exchange|DLinear|ddn": [
       {
-        "candidate_id": "2c842a20e419",
+        "candidate_id": "bbeb523655cd",
         "n_cells": 2,
         "params": {
           "hkernel_len": 5,
           "j": 1,
           "joint_lr": "backbone",
-          "kernel_len": 12,
+          "kernel_len": 7,
           "station_lr": 0.0001,
           "station_type": "adaptive",
           "twice_epoch": 1,
           "wavelet": "coif3"
         },
-        "screen_mean_val_mse": 0.7213562224060297
+        "screen_mean_val_mse": 0.6085671103958573
       },
       {
-        "candidate_id": "8b428784a508",
+        "candidate_id": "b833fe78c153",
         "n_cells": 2,
         "params": {
           "hkernel_len": 5,
           "j": 1,
           "joint_lr": "backbone",
-          "kernel_len": 12,
+          "kernel_len": 32,
           "station_lr": 0.0001,
           "station_type": "adaptive",
-          "twice_epoch": 0,
+          "twice_epoch": 1,
           "wavelet": "coif3"
         },
-        "screen_mean_val_mse": 1.0119600457449753
+        "screen_mean_val_mse": 0.6112978540006138
       }
     ],
     "Exchange|DLinear|dishts": [
