@@ -1,12 +1,12 @@
 Phase,Dataset,Backbone,Method,Status,CellsDone,CellsTotal,Worker
 t3-lt-confirm,ETTh1,TimeXer,lt,done,4,4,
-t3-lt-confirm,ETTm1,TimeXer,lt,ready,0,4,
-t3-lt-confirm,Weather,TimeXer,lt,claimed,2,4,itm20-gpu0-a4000
+t3-lt-confirm,ETTm1,TimeXer,lt,claimed,0,4,itm21-a4000
+t3-lt-confirm,Weather,TimeXer,lt,claimed,3,4,itm20-gpu0-a4000
 t3-lt-confirm,Electricity,TimeXer,lt,ready,2,4,
 t3-lt-confirm,Traffic,TimeXer,lt,claimed,0,4,itm20-gpu1-a4000
-t3-lt-confirm,ETTh1,TimeFilter,lt,claimed,2,4,itm21-a4000
+t3-lt-confirm,ETTh1,TimeFilter,lt,done,4,4,
 t3-lt-confirm,ETTm1,TimeFilter,lt,ready,0,4,
-t3-lt-confirm,Weather,TimeFilter,lt,claimed,2,4,itm20-gpu1-a4000
+t3-lt-confirm,Weather,TimeFilter,lt,claimed,3,4,itm20-gpu1-a4000
 t3-lt-confirm,Electricity,TimeFilter,lt,done,4,4,
 t3-lt-confirm,Traffic,TimeFilter,lt,claimed,0,4,itm20-gpu0-a4000
 t3-lt-confirm,ETTh2,TimeXer,lt,done,4,4,
@@ -18,7 +18,7 @@ t3-lt-tuned,ETTm1,TimeXer,lt,blocked,0,,
 t3-lt-tuned,Weather,TimeXer,lt,blocked,0,,
 t3-lt-tuned,Electricity,TimeXer,lt,blocked,0,,
 t3-lt-tuned,Traffic,TimeXer,lt,blocked,0,,
-t3-lt-tuned,ETTh1,TimeFilter,lt,blocked,0,,
+t3-lt-tuned,ETTh1,TimeFilter,lt,ready,0,4,
 t3-lt-tuned,ETTm1,TimeFilter,lt,blocked,0,,
 t3-lt-tuned,Weather,TimeFilter,lt,blocked,0,,
 t3-lt-tuned,Electricity,TimeFilter,lt,done,4,4,
@@ -32,7 +32,7 @@ t3-lt-tuned-s2022,ETTm1,TimeXer,lt,blocked,0,,
 t3-lt-tuned-s2022,Weather,TimeXer,lt,blocked,0,,
 t3-lt-tuned-s2022,Electricity,TimeXer,lt,blocked,0,,
 t3-lt-tuned-s2022,Traffic,TimeXer,lt,blocked,0,,
-t3-lt-tuned-s2022,ETTh1,TimeFilter,lt,blocked,0,,
+t3-lt-tuned-s2022,ETTh1,TimeFilter,lt,ready,0,4,
 t3-lt-tuned-s2022,ETTm1,TimeFilter,lt,blocked,0,,
 t3-lt-tuned-s2022,Weather,TimeFilter,lt,blocked,0,,
 t3-lt-tuned-s2022,Electricity,TimeFilter,lt,done,4,4,
@@ -46,7 +46,7 @@ t3-lt-tuned-s2023,ETTm1,TimeXer,lt,blocked,0,,
 t3-lt-tuned-s2023,Weather,TimeXer,lt,blocked,0,,
 t3-lt-tuned-s2023,Electricity,TimeXer,lt,blocked,0,,
 t3-lt-tuned-s2023,Traffic,TimeXer,lt,blocked,0,,
-t3-lt-tuned-s2023,ETTh1,TimeFilter,lt,blocked,0,,
+t3-lt-tuned-s2023,ETTh1,TimeFilter,lt,ready,0,4,
 t3-lt-tuned-s2023,ETTm1,TimeFilter,lt,blocked,0,,
 t3-lt-tuned-s2023,Weather,TimeFilter,lt,blocked,0,,
 t3-lt-tuned-s2023,Electricity,TimeFilter,lt,done,4,4,
