@@ -95,10 +95,10 @@ exch-tuned-s2022,Exchange,TimeXer,ddn,done,4,4,
 exch-tuned-s2022,Exchange,TimeXer,fan,done,4,4,
 exch-tuned-s2022,Exchange,TimeXer,dishts,done,4,4,
 exch-tuned-s2022,Exchange,TimeFilter,revin,done,4,4,
-exch-tuned-s2022,Exchange,TimeFilter,san,ready,0,4,
+exch-tuned-s2022,Exchange,TimeFilter,san,claimed,0,4,itm20-gpu0-a4000
 exch-tuned-s2022,Exchange,TimeFilter,ddn,done,4,4,
-exch-tuned-s2022,Exchange,TimeFilter,fan,claimed,0,4,itm20-gpu1-a4000
-exch-tuned-s2022,Exchange,TimeFilter,dishts,claimed,0,4,itm20-gpu0-a4000
+exch-tuned-s2022,Exchange,TimeFilter,fan,claimed,2,4,itm20-gpu1-a4000
+exch-tuned-s2022,Exchange,TimeFilter,dishts,done,4,4,
 exch-lt-tuned-s2022,Exchange,DLinear,lt,done,4,4,
 exch-lt-tuned-s2022,Exchange,iTransformer,lt,done,4,4,
 exch-lt-tuned-s2022,Exchange,TimeXer,lt,done,4,4,
