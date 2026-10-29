@@ -1713,6 +1713,26 @@
         "screen_mean_val_mse": 0.13865930560665826
       }
     ],
+    "Electricity|DLinear|dishts": [
+      {
+        "candidate_id": "d2a446c80585",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.14445265197815996
+      },
+      {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.1447242083027959
+      }
+    ],
     "Electricity|DLinear|fan": [
       {
         "candidate_id": "59c5876c8eff",
