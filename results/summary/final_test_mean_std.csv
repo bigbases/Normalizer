@@ -755,6 +755,7 @@ Exchange,iTransformer,fan,96,2021,0.136341,,0.282876,,NVIDIA RTX A4000
 Exchange,iTransformer,fan,192,2021,0.246919,,0.381653,,NVIDIA RTX A4000
 Exchange,iTransformer,fan,336,2021,0.570576,,0.595711,,NVIDIA RTX A4000
 Exchange,iTransformer,fan,720,2021,1.430050,,0.955912,,NVIDIA RTX A4000
+Exchange,iTransformer,lt_tuned,96,2021,0.114440,,0.246204,,NVIDIA RTX A4000
 Exchange,iTransformer,lt_tuned,192,2021,0.222505,,0.343357,,NVIDIA RTX A4000
 Exchange,iTransformer,lt_tuned,336,2021,0.402621,,0.464610,,NVIDIA RTX A4000
 Exchange,iTransformer,lt_tuned,720,2021,1.174164,,0.828023,,NVIDIA RTX A4000
