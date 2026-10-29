@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T08:12:34+00:00 from 8299 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T08:14:29+00:00 from 8304 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -12,7 +12,7 @@ Generated 2026-10-29T08:12:34+00:00 from 8299 packaged cells. Regenerate with `p
 | exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 4 | 0 | 0 | 0 | 0 |
 | exch-none-s2022 | 3 | 0 | 1 | 0 | 0 |
-| exch-tuned-s2022 | 11 | 3 | 6 | 0 | 0 |
+| exch-tuned-s2022 | 13 | 3 | 4 | 0 | 0 |
 | exch-lt-tuned-s2022 | 3 | 0 | 1 | 0 | 0 |
 | exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
 | exch-tuned-s2023 | 0 | 0 | 20 | 0 | 0 |
@@ -141,7 +141,7 @@ Generated 2026-10-29T08:12:34+00:00 from 8299 packaged cells. Regenerate with `p
 | exch-none-s2022--Exchange--TimeFilter | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--DLinear--san | done | 4/4 |  |
-| exch-tuned-s2022--Exchange--DLinear--ddn | claimed | 0/4 | itm20-gpu1-a4000 |
+| exch-tuned-s2022--Exchange--DLinear--ddn | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--DLinear--fan | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--DLinear--dishts | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--iTransformer--revin | done | 4/4 |  |
@@ -150,11 +150,11 @@ Generated 2026-10-29T08:12:34+00:00 from 8299 packaged cells. Regenerate with `p
 | exch-tuned-s2022--Exchange--iTransformer--fan | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--iTransformer--dishts | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--TimeXer--revin | done | 4/4 |  |
-| exch-tuned-s2022--Exchange--TimeXer--san | claimed | 3/4 | itm20-gpu1-a4000 |
-| exch-tuned-s2022--Exchange--TimeXer--ddn | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeXer--san | done | 4/4 |  |
+| exch-tuned-s2022--Exchange--TimeXer--ddn | claimed | 0/4 | itm20-gpu1-a4000 |
 | exch-tuned-s2022--Exchange--TimeXer--fan | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--TimeXer--dishts | done | 4/4 |  |
-| exch-tuned-s2022--Exchange--TimeFilter--revin | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeFilter--revin | claimed | 0/4 | itm20-gpu0-a4000 |
 | exch-tuned-s2022--Exchange--TimeFilter--san | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeFilter--ddn | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeFilter--fan | ready | 0/4 |  |
