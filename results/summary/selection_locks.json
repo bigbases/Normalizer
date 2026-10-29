@@ -778,6 +778,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "Weather|TimeXer|dishts": {
+      "dish_init": "standard",
+      "station_lr": 0.0001
+    },
     "Weather|TimeXer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 1,

@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T11:52:45+00:00 from 8661 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T12:05:34+00:00 from 8665 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,12 +17,12 @@ Generated 2026-10-29T11:52:45+00:00 from 8661 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 20 | 2 | 6 | 0 | 0 |
-| dish-confirm | 19 | 1 | 0 | 8 | 0 |
-| dish-tuned | 19 | 0 | 0 | 9 | 0 |
+| dish-search | 20 | 3 | 5 | 0 | 0 |
+| dish-confirm | 20 | 0 | 0 | 8 | 0 |
+| dish-tuned | 19 | 0 | 1 | 8 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2022 | 0 | 0 | 19 | 9 | 0 |
+| dish-tuned-s2022 | 0 | 0 | 20 | 8 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -35,7 +35,7 @@ Generated 2026-10-29T11:52:45+00:00 from 8661 packaged cells. Regenerate with `p
 | t3-rf-search | 24 | 0 | 4 | 0 | 0 |
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
-| dish-tuned-s2023 | 0 | 0 | 19 | 9 | 0 |
+| dish-tuned-s2023 | 0 | 0 | 20 | 8 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -211,7 +211,7 @@ Generated 2026-10-29T11:52:45+00:00 from 8661 packaged cells. Regenerate with `p
 | dish-search--Weather--iTransformer | done | 12/12 |  |
 | dish-search--Weather--TimeXer | done | 12/12 |  |
 | dish-search--Weather--TimeFilter | done | 12/12 |  |
-| dish-search--Electricity--DLinear | ready | 0/12 |  |
+| dish-search--Electricity--DLinear | claimed | 0/12 | itm21-a4000 |
 | dish-search--Electricity--iTransformer | ready | 0/12 |  |
 | dish-search--Electricity--TimeXer | claimed | 0/12 | itm20-gpu1-a4000 |
 | dish-search--Electricity--TimeFilter | claimed | 0/12 | itm20-gpu0-a4000 |
@@ -237,7 +237,7 @@ Generated 2026-10-29T11:52:45+00:00 from 8661 packaged cells. Regenerate with `p
 | dish-confirm--ETTm2--TimeFilter | done | 4/4 |  |
 | dish-confirm--Weather--DLinear | done | 4/4 |  |
 | dish-confirm--Weather--iTransformer | done | 4/4 |  |
-| dish-confirm--Weather--TimeXer | claimed | 0/4 | itm21-a4000 |
+| dish-confirm--Weather--TimeXer | done | 4/4 |  |
 | dish-confirm--Weather--TimeFilter | done | 4/4 |  |
 | dish-confirm--Electricity--DLinear | blocked | 0/? |  |
 | dish-confirm--Electricity--iTransformer | blocked | 0/? |  |
@@ -265,7 +265,7 @@ Generated 2026-10-29T11:52:45+00:00 from 8661 packaged cells. Regenerate with `p
 | dish-tuned--ETTm2--TimeFilter | done | 4/4 |  |
 | dish-tuned--Weather--DLinear | done | 4/4 |  |
 | dish-tuned--Weather--iTransformer | done | 4/4 |  |
-| dish-tuned--Weather--TimeXer | blocked | 0/? |  |
+| dish-tuned--Weather--TimeXer | ready | 0/4 |  |
 | dish-tuned--Weather--TimeFilter | done | 4/4 |  |
 | dish-tuned--Electricity--DLinear | blocked | 0/? |  |
 | dish-tuned--Electricity--iTransformer | blocked | 0/? |  |
@@ -321,7 +321,7 @@ Generated 2026-10-29T11:52:45+00:00 from 8661 packaged cells. Regenerate with `p
 | dish-tuned-s2022--ETTm2--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2022--Weather--DLinear | ready | 0/4 |  |
 | dish-tuned-s2022--Weather--iTransformer | ready | 0/4 |  |
-| dish-tuned-s2022--Weather--TimeXer | blocked | 0/? |  |
+| dish-tuned-s2022--Weather--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--Weather--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2022--Electricity--DLinear | blocked | 0/? |  |
 | dish-tuned-s2022--Electricity--iTransformer | blocked | 0/? |  |
@@ -497,7 +497,7 @@ Generated 2026-10-29T11:52:45+00:00 from 8661 packaged cells. Regenerate with `p
 | dish-tuned-s2023--ETTm2--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2023--Weather--DLinear | ready | 0/4 |  |
 | dish-tuned-s2023--Weather--iTransformer | ready | 0/4 |  |
-| dish-tuned-s2023--Weather--TimeXer | blocked | 0/? |  |
+| dish-tuned-s2023--Weather--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2023--Weather--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2023--Electricity--DLinear | blocked | 0/? |  |
 | dish-tuned-s2023--Electricity--iTransformer | blocked | 0/? |  |
