@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T11:34:43+00:00 from 8648 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T11:43:10+00:00 from 8656 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,9 +17,9 @@ Generated 2026-10-29T11:34:43+00:00 from 8648 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 19 | 2 | 7 | 0 | 0 |
+| dish-search | 19 | 3 | 6 | 0 | 0 |
 | dish-confirm | 19 | 0 | 0 | 9 | 0 |
-| dish-tuned | 17 | 1 | 1 | 9 | 0 |
+| dish-tuned | 18 | 1 | 0 | 9 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 19 | 9 | 0 |
@@ -209,11 +209,11 @@ Generated 2026-10-29T11:34:43+00:00 from 8648 packaged cells. Regenerate with `p
 | dish-search--ETTm2--TimeFilter | done | 12/12 |  |
 | dish-search--Weather--DLinear | done | 12/12 |  |
 | dish-search--Weather--iTransformer | done | 12/12 |  |
-| dish-search--Weather--TimeXer | claimed | 7/12 | itm20-gpu1-a4000 |
+| dish-search--Weather--TimeXer | claimed | 11/12 | itm20-gpu1-a4000 |
 | dish-search--Weather--TimeFilter | done | 12/12 |  |
 | dish-search--Electricity--DLinear | ready | 0/12 |  |
 | dish-search--Electricity--iTransformer | ready | 0/12 |  |
-| dish-search--Electricity--TimeXer | ready | 0/12 |  |
+| dish-search--Electricity--TimeXer | claimed | 0/12 | itm20-gpu1-a4000 |
 | dish-search--Electricity--TimeFilter | claimed | 0/12 | itm20-gpu0-a4000 |
 | dish-search--Traffic--DLinear | ready | 0/12 |  |
 | dish-search--Traffic--iTransformer | ready | 0/12 |  |
@@ -257,7 +257,7 @@ Generated 2026-10-29T11:34:43+00:00 from 8648 packaged cells. Regenerate with `p
 | dish-tuned--ETTh2--TimeFilter | done | 4/4 |  |
 | dish-tuned--ETTm1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTm1--iTransformer | done | 4/4 |  |
-| dish-tuned--ETTm1--TimeXer | claimed | 0/4 | itm21-a4000 |
+| dish-tuned--ETTm1--TimeXer | done | 4/4 |  |
 | dish-tuned--ETTm1--TimeFilter | done | 4/4 |  |
 | dish-tuned--ETTm2--DLinear | done | 4/4 |  |
 | dish-tuned--ETTm2--iTransformer | done | 4/4 |  |
@@ -266,7 +266,7 @@ Generated 2026-10-29T11:34:43+00:00 from 8648 packaged cells. Regenerate with `p
 | dish-tuned--Weather--DLinear | done | 4/4 |  |
 | dish-tuned--Weather--iTransformer | done | 4/4 |  |
 | dish-tuned--Weather--TimeXer | blocked | 0/? |  |
-| dish-tuned--Weather--TimeFilter | ready | 0/4 |  |
+| dish-tuned--Weather--TimeFilter | claimed | 0/4 | itm21-a4000 |
 | dish-tuned--Electricity--DLinear | blocked | 0/? |  |
 | dish-tuned--Electricity--iTransformer | blocked | 0/? |  |
 | dish-tuned--Electricity--TimeXer | blocked | 0/? |  |
