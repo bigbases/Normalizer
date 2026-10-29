@@ -1829,6 +1829,26 @@
         "screen_mean_val_mse": 0.14877194924830642
       }
     ],
+    "Electricity|TimeFilter|dishts": [
+      {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.1504189504392492
+      },
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.15141600824119347
+      }
+    ],
     "Electricity|TimeFilter|fan": [
       {
         "candidate_id": "59c5876c8eff",
