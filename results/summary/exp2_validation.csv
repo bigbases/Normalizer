@@ -482,6 +482,8 @@ ETTm2,TimeXer,ddn,b833fe78c153,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""b
 ETTm2,TimeXer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.126372,0.301745,,,0.214059,,False,False
 ETTm2,TimeXer,dishts,112f7a5e174c,"{""dish_init"": ""avg"", ""station_lr"": 5e-05}",0.179538,,,,,,False,False
 ETTm2,TimeXer,dishts,4b3fc1cfcf90,"{""dish_init"": ""standard"", ""station_lr"": 5e-05}",0.186842,,,,,,False,False
+ETTm2,TimeXer,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.188887,,,,,,False,False
+ETTm2,TimeXer,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.181791,,,,,,False,False
 ETTm2,TimeXer,fan,1b61650e14d1,{},0.134002,0.345377,0.135245,0.343306,0.239689,0.239482,False,False
 ETTm2,TimeXer,fan,1bd42266a640,{},0.138821,0.352188,,,0.245504,,False,False
 ETTm2,TimeXer,fan,9d16227c5d05,{},0.134104,0.341167,0.135248,0.337910,0.237636,0.237107,False,False
@@ -641,8 +643,8 @@ Weather,iTransformer,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr
 Weather,iTransformer,ddn,e082b1250cbb,{},0.392007,0.591973,,,0.491990,,False,False
 Weather,iTransformer,ddn,f841fa3c59bc,{},0.384417,0.592746,,,0.488582,,False,False
 Weather,iTransformer,dishts,32dd4f2f88ea,"{""dish_init"": ""uniform"", ""station_lr"": 0.0005}",0.458632,0.733027,,,0.595830,,False,False
-Weather,iTransformer,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.419523,0.611265,0.416882,,0.515394,,True,False
-Weather,iTransformer,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.413435,0.612202,0.424580,,0.512819,,True,False
+Weather,iTransformer,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.419523,0.611265,0.416882,0.601492,0.515394,0.512290,True,True
+Weather,iTransformer,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.413435,0.612202,0.424580,0.604328,0.512819,0.513636,True,False
 Weather,iTransformer,dishts,ad8813500c6f,"{""dish_init"": ""avg"", ""station_lr"": 0.0005}",0.415988,0.713492,,,0.564740,,False,False
 Weather,iTransformer,dishts,d06468615702,"{""dish_init"": ""standard"", ""station_lr"": 0.0005}",0.505874,0.699317,,,0.602595,,False,False
 Weather,iTransformer,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.420723,0.621438,,,0.521080,,False,False
