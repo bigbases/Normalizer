@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T10:40:01+00:00 from 8576 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T10:40:25+00:00 from 8578 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,8 +17,8 @@ Generated 2026-10-29T10:40:01+00:00 from 8576 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 15 | 4 | 9 | 0 | 0 |
-| dish-confirm | 14 | 1 | 0 | 13 | 0 |
+| dish-search | 16 | 3 | 9 | 0 | 0 |
+| dish-confirm | 14 | 1 | 1 | 12 | 0 |
 | dish-tuned | 14 | 0 | 0 | 14 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -202,10 +202,10 @@ Generated 2026-10-29T10:40:01+00:00 from 8576 packaged cells. Regenerate with `p
 | dish-search--ETTm1--DLinear | done | 12/12 |  |
 | dish-search--ETTm1--iTransformer | done | 12/12 |  |
 | dish-search--ETTm1--TimeXer | claimed | 0/12 | itm20-gpu1-a4000 |
-| dish-search--ETTm1--TimeFilter | claimed | 1/12 | itm20-gpu0-a4000 |
+| dish-search--ETTm1--TimeFilter | claimed | 2/12 | itm20-gpu0-a4000 |
 | dish-search--ETTm2--DLinear | done | 12/12 |  |
 | dish-search--ETTm2--iTransformer | done | 12/12 |  |
-| dish-search--ETTm2--TimeXer | claimed | 11/12 | itm20-gpu0-a4000 |
+| dish-search--ETTm2--TimeXer | done | 12/12 |  |
 | dish-search--ETTm2--TimeFilter | done | 12/12 |  |
 | dish-search--Weather--DLinear | done | 12/12 |  |
 | dish-search--Weather--iTransformer | done | 12/12 |  |
@@ -233,7 +233,7 @@ Generated 2026-10-29T10:40:01+00:00 from 8576 packaged cells. Regenerate with `p
 | dish-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
 | dish-confirm--ETTm2--DLinear | done | 4/4 |  |
 | dish-confirm--ETTm2--iTransformer | done | 4/4 |  |
-| dish-confirm--ETTm2--TimeXer | blocked | 0/? |  |
+| dish-confirm--ETTm2--TimeXer | ready | 0/4 |  |
 | dish-confirm--ETTm2--TimeFilter | claimed | 3/4 | itm21-a4000 |
 | dish-confirm--Weather--DLinear | done | 4/4 |  |
 | dish-confirm--Weather--iTransformer | done | 4/4 |  |
