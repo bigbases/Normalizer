@@ -174,11 +174,11 @@ Exchange,DLinear,e18334433cdb,grid,25,0.001,0,0,False,0.127790,0.895733,0.511762
 Exchange,DLinear,f9d4a024dd3a,grid,49,0.0001,0,0,False,0.125992,0.922374,0.524183,,,False,False
 Exchange,DLinear,70544b7f9269,grid,49,0.001,0,0,False,0.126407,0.876544,0.501475,,,False,False
 Exchange,TimeFilter,4e5b34a628d0,grid,13,0.0001,1,0,False,0.125505,1.074401,0.599953,,,False,False
-Exchange,TimeFilter,ac8e765c1f38,grid,13,0.001,1,0,False,0.126938,0.917256,0.522097,,,True,False
+Exchange,TimeFilter,ac8e765c1f38,grid,13,0.001,1,0,False,0.126938,0.917256,0.522097,,0.714368,True,False
 Exchange,TimeFilter,5871f175ed70,grid,25,0.0001,1,0,True,0.125692,0.989634,0.557663,,,False,False
 Exchange,TimeFilter,2214cc331066,grid,25,0.001,1,0,False,0.126634,0.923511,0.525073,,,False,False
 Exchange,TimeFilter,6538d62e5a7a,grid,49,0.0001,1,0,False,0.127585,0.940414,0.534000,,,False,False
-Exchange,TimeFilter,0a7ae0db7542,grid,49,0.001,1,0,False,0.127548,0.876896,0.502222,,,True,False
+Exchange,TimeFilter,0a7ae0db7542,grid,49,0.001,1,0,False,0.127548,0.876896,0.502222,,0.590596,True,False
 Exchange,TimeXer,4e5b34a628d0,grid,13,0.0001,1,0,False,0.126765,0.987563,0.557164,,,False,False
 Exchange,TimeXer,ac8e765c1f38,grid,13,0.001,1,0,False,0.125900,0.969678,0.547789,,,False,False
 Exchange,TimeXer,5871f175ed70,grid,25,0.0001,1,0,True,0.125105,0.936490,0.530798,,,False,False
