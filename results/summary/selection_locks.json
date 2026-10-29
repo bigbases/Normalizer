@@ -364,6 +364,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "ETTm2|TimeXer|dishts": {
+      "dish_init": "avg",
+      "station_lr": 5e-05
+    },
     "ETTm2|TimeXer|revin": {
       "affine": 1,
       "station_lr": 0.0001

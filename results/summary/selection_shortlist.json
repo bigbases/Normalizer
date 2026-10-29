@@ -1107,6 +1107,15 @@
     ],
     "ETTm1|TimeXer|dishts": [
       {
+        "candidate_id": "9db6b0bec9f5",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.6313578101098961
+      },
+      {
         "candidate_id": "4b3fc1cfcf90",
         "n_cells": 2,
         "params": {
@@ -1114,15 +1123,6 @@
           "station_lr": 5e-05
         },
         "screen_mean_val_mse": 0.6346155918408918
-      },
-      {
-        "candidate_id": "4ff89483b844",
-        "n_cells": 2,
-        "params": {
-          "dish_init": "uniform",
-          "station_lr": 0.0001
-        },
-        "screen_mean_val_mse": 0.6355905378425964
       }
     ],
     "ETTm1|TimeXer|fan": [
@@ -3059,6 +3059,26 @@
           "wavelet": "coif3"
         },
         "screen_mean_val_mse": 0.48376164405053423
+      }
+    ],
+    "Weather|TimeFilter|dishts": [
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.49553960750847065
+      },
+      {
+        "candidate_id": "32dd4f2f88ea",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0005
+        },
+        "screen_mean_val_mse": 0.4975164399420318
       }
     ],
     "Weather|TimeFilter|fan": [
