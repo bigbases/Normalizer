@@ -85,8 +85,8 @@ exch-tuned-s2022,Exchange,DLinear,ddn,claimed,0,4,itm20-gpu1-a4000
 exch-tuned-s2022,Exchange,DLinear,fan,done,4,4,
 exch-tuned-s2022,Exchange,DLinear,dishts,done,4,4,
 exch-tuned-s2022,Exchange,iTransformer,revin,done,4,4,
-exch-tuned-s2022,Exchange,iTransformer,san,claimed,0,4,itm20-gpu0-a4000
-exch-tuned-s2022,Exchange,iTransformer,ddn,ready,0,4,
+exch-tuned-s2022,Exchange,iTransformer,san,done,4,4,
+exch-tuned-s2022,Exchange,iTransformer,ddn,claimed,0,4,itm20-gpu0-a4000
 exch-tuned-s2022,Exchange,iTransformer,fan,done,4,4,
 exch-tuned-s2022,Exchange,iTransformer,dishts,done,4,4,
 exch-tuned-s2022,Exchange,TimeXer,revin,done,4,4,
