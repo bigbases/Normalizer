@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T08:49:11+00:00 from 8370 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T08:49:33+00:00 from 8372 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,7 +15,7 @@ Generated 2026-10-29T08:49:11+00:00 from 8370 packaged cells. Regenerate with `p
 | exch-tuned-s2022 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2022 | 4 | 0 | 0 | 0 | 0 |
 | exch-none-s2023 | 2 | 1 | 1 | 0 | 0 |
-| exch-tuned-s2023 | 4 | 2 | 14 | 0 | 0 |
+| exch-tuned-s2023 | 5 | 1 | 14 | 0 | 0 |
 | exch-lt-tuned-s2023 | 1 | 0 | 3 | 0 | 0 |
 | dish-search | 9 | 0 | 19 | 0 | 0 |
 | dish-confirm | 9 | 0 | 0 | 19 | 0 |
@@ -170,7 +170,7 @@ Generated 2026-10-29T08:49:11+00:00 from 8370 packaged cells. Regenerate with `p
 | exch-tuned-s2023--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-tuned-s2023--Exchange--DLinear--san | done | 4/4 |  |
 | exch-tuned-s2023--Exchange--DLinear--ddn | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--DLinear--fan | claimed | 2/4 | itm20-gpu0-a4000 |
+| exch-tuned-s2023--Exchange--DLinear--fan | done | 4/4 |  |
 | exch-tuned-s2023--Exchange--DLinear--dishts | done | 4/4 |  |
 | exch-tuned-s2023--Exchange--iTransformer--revin | done | 4/4 |  |
 | exch-tuned-s2023--Exchange--iTransformer--san | ready | 0/4 |  |
