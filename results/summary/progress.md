@@ -1,13 +1,13 @@
 # Experiment progress
 
-Generated 2026-10-29T07:20:02+00:00 from 8181 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T07:24:46+00:00 from 8193 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
 | exch-search | 20 | 0 | 0 | 0 | 0 |
-| exch-lt-search | 2 | 1 | 1 | 0 | 0 |
+| exch-lt-search | 3 | 0 | 1 | 0 | 0 |
 | exch-confirm | 20 | 0 | 0 | 0 | 0 |
-| exch-lt-confirm | 1 | 0 | 1 | 2 | 0 |
+| exch-lt-confirm | 1 | 1 | 1 | 1 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 1 | 0 | 0 | 3 | 0 |
@@ -81,7 +81,7 @@ Generated 2026-10-29T07:20:02+00:00 from 8181 packaged cells. Regenerate with `p
 | exch-search--Exchange--TimeFilter--dishts | done | 12/12 |  |
 | exch-lt-search--Exchange--DLinear | done | 12/12 |  |
 | exch-lt-search--Exchange--iTransformer | done | 12/12 |  |
-| exch-lt-search--Exchange--TimeXer | claimed | 2/12 | itm20-gpu0-a4000 |
+| exch-lt-search--Exchange--TimeXer | done | 12/12 |  |
 | exch-lt-search--Exchange--TimeFilter | ready | 0/12 |  |
 | exch-confirm--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-confirm--Exchange--DLinear--san | done | 4/4 |  |
@@ -104,8 +104,8 @@ Generated 2026-10-29T07:20:02+00:00 from 8181 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--TimeFilter--fan | done | 4/4 |  |
 | exch-confirm--Exchange--TimeFilter--dishts | done | 4/4 |  |
 | exch-lt-confirm--Exchange--DLinear | done | 4/4 |  |
-| exch-lt-confirm--Exchange--iTransformer | ready | 0/4 |  |
-| exch-lt-confirm--Exchange--TimeXer | blocked | 0/? |  |
+| exch-lt-confirm--Exchange--iTransformer | claimed | 2/4 | itm20-gpu0-a4000 |
+| exch-lt-confirm--Exchange--TimeXer | ready | 0/4 |  |
 | exch-lt-confirm--Exchange--TimeFilter | blocked | 0/? |  |
 | exch-none--Exchange--DLinear | done | 4/4 |  |
 | exch-none--Exchange--iTransformer | done | 4/4 |  |
