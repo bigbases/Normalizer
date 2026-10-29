@@ -214,6 +214,10 @@
       "twice_epoch": 1,
       "wavelet": "coif3"
     },
+    "ETTm1|DLinear|dishts": {
+      "dish_init": "standard",
+      "station_lr": 5e-05
+    },
     "ETTm1|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 16,
