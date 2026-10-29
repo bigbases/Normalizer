@@ -1,8 +1,8 @@
 Phase,Dataset,Backbone,Method,Status,CellsDone,CellsTotal,Worker
 t3-lt-search,ETTh1,TimeXer,lt,done,12,12,
 t3-lt-search,ETTm1,TimeXer,lt,done,12,12,
-t3-lt-search,Weather,TimeXer,lt,claimed,7,12,itm21-a4000
-t3-lt-search,Electricity,TimeXer,lt,ready,2,12,
+t3-lt-search,Weather,TimeXer,lt,claimed,9,12,itm21-a4000
+t3-lt-search,Electricity,TimeXer,lt,claimed,2,12,itm20-gpu1-a4000
 t3-lt-search,Traffic,TimeXer,lt,ready,2,12,
 t3-lt-search,ETTh1,TimeFilter,lt,done,12,12,
 t3-lt-search,ETTm1,TimeFilter,lt,done,12,12,
@@ -12,7 +12,7 @@ t3-lt-search,Traffic,TimeFilter,lt,ready,2,12,
 t3-lt-search,ETTh2,TimeXer,lt,done,12,12,
 t3-lt-search,ETTm2,TimeXer,lt,done,12,12,
 t3-lt-search,ETTh2,TimeFilter,lt,done,12,12,
-t3-lt-search,ETTm2,TimeFilter,lt,claimed,8,12,itm20-gpu1-a4000
+t3-lt-search,ETTm2,TimeFilter,lt,done,12,12,
 t3-lt-confirm,ETTh1,TimeXer,lt,ready,0,4,
 t3-lt-confirm,ETTm1,TimeXer,lt,ready,2,4,
 t3-lt-confirm,Weather,TimeXer,lt,blocked,0,,
@@ -26,7 +26,7 @@ t3-lt-confirm,Traffic,TimeFilter,lt,blocked,0,,
 t3-lt-confirm,ETTh2,TimeXer,lt,ready,2,4,
 t3-lt-confirm,ETTm2,TimeXer,lt,ready,0,4,
 t3-lt-confirm,ETTh2,TimeFilter,lt,ready,0,4,
-t3-lt-confirm,ETTm2,TimeFilter,lt,blocked,0,,
+t3-lt-confirm,ETTm2,TimeFilter,lt,ready,0,4,
 t3-lt-tuned,ETTh1,TimeXer,lt,blocked,0,,
 t3-lt-tuned,ETTm1,TimeXer,lt,blocked,0,,
 t3-lt-tuned,Weather,TimeXer,lt,blocked,0,,
