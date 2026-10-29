@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T07:57:23+00:00 from 8250 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T07:58:44+00:00 from 8254 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,8 +11,8 @@ Generated 2026-10-29T07:57:23+00:00 from 8250 packaged cells. Regenerate with `p
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 3 | 0 | 0 | 1 | 0 |
-| exch-none-s2022 | 1 | 1 | 2 | 0 | 0 |
-| exch-tuned-s2022 | 5 | 0 | 15 | 0 | 0 |
+| exch-none-s2022 | 2 | 0 | 2 | 0 | 0 |
+| exch-tuned-s2022 | 5 | 1 | 14 | 0 | 0 |
 | exch-lt-tuned-s2022 | 1 | 0 | 2 | 1 | 0 |
 | exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
 | exch-tuned-s2023 | 0 | 0 | 20 | 0 | 0 |
@@ -137,7 +137,7 @@ Generated 2026-10-29T07:57:23+00:00 from 8250 packaged cells. Regenerate with `p
 | exch-lt-tuned--Exchange--TimeFilter | blocked | 0/? |  |
 | exch-none-s2022--Exchange--DLinear | done | 4/4 |  |
 | exch-none-s2022--Exchange--iTransformer | ready | 0/4 |  |
-| exch-none-s2022--Exchange--TimeXer | claimed | 0/4 | itm20-gpu0-a4000 |
+| exch-none-s2022--Exchange--TimeXer | done | 4/4 |  |
 | exch-none-s2022--Exchange--TimeFilter | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--DLinear--san | done | 4/4 |  |
@@ -148,7 +148,7 @@ Generated 2026-10-29T07:57:23+00:00 from 8250 packaged cells. Regenerate with `p
 | exch-tuned-s2022--Exchange--iTransformer--san | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--iTransformer--ddn | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--iTransformer--fan | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--iTransformer--dishts | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--iTransformer--dishts | claimed | 0/4 | itm20-gpu0-a4000 |
 | exch-tuned-s2022--Exchange--TimeXer--revin | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeXer--san | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeXer--ddn | ready | 0/4 |  |
