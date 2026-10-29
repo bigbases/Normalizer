@@ -1,33 +1,28 @@
 # Experiment progress
 
-Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T07:20:02+00:00 from 8181 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| t3-lt-search | 11 | 3 | 0 | 0 | 0 |
-| t3-lt-confirm | 0 | 0 | 11 | 3 | 0 |
-| t3-lt-tuned | 0 | 0 | 0 | 14 | 0 |
-| t3-lt-tuned-s2022 | 0 | 0 | 0 | 14 | 0 |
-| t3-lt-tuned-s2023 | 0 | 0 | 0 | 14 | 0 |
-| t3-length | 18 | 0 | 0 | 6 | 0 |
-| t3-length-s2022 | 18 | 0 | 0 | 6 | 0 |
-| t3-length-s2023 | 18 | 0 | 0 | 6 | 0 |
-| dish-search | 9 | 0 | 19 | 0 | 0 |
 | exch-search | 20 | 0 | 0 | 0 | 0 |
-| exch-lt-search | 1 | 0 | 3 | 0 | 0 |
-| dish-confirm | 9 | 0 | 0 | 19 | 0 |
+| exch-lt-search | 2 | 1 | 1 | 0 | 0 |
 | exch-confirm | 20 | 0 | 0 | 0 | 0 |
-| exch-lt-confirm | 1 | 0 | 0 | 3 | 0 |
-| dish-tuned | 7 | 0 | 2 | 19 | 0 |
+| exch-lt-confirm | 1 | 0 | 1 | 2 | 0 |
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 1 | 0 | 0 | 3 | 0 |
-| lt-ksens | 14 | 0 | 0 | 0 | 0 |
-| lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2022 | 0 | 0 | 9 | 19 | 0 |
 | exch-none-s2022 | 0 | 0 | 4 | 0 | 0 |
 | exch-tuned-s2022 | 0 | 0 | 20 | 0 | 0 |
 | exch-lt-tuned-s2022 | 0 | 0 | 1 | 3 | 0 |
+| exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
+| exch-tuned-s2023 | 0 | 0 | 20 | 0 | 0 |
+| exch-lt-tuned-s2023 | 0 | 0 | 1 | 3 | 0 |
+| dish-search | 9 | 0 | 19 | 0 | 0 |
+| dish-confirm | 9 | 0 | 0 | 19 | 0 |
+| dish-tuned | 7 | 0 | 2 | 19 | 0 |
+| lt-ksens | 14 | 0 | 0 | 0 | 0 |
+| lt-rsens | 14 | 0 | 0 | 0 | 0 |
+| dish-tuned-s2022 | 0 | 0 | 9 | 19 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -41,194 +36,29 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
 | dish-tuned-s2023 | 0 | 0 | 9 | 19 | 0 |
-| exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
-| exch-tuned-s2023 | 0 | 0 | 20 | 0 | 0 |
-| exch-lt-tuned-s2023 | 0 | 0 | 1 | 3 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
 | t3-none | 14 | 0 | 0 | 0 | 0 |
 | t3-tuned | 28 | 0 | 0 | 0 | 0 |
-| dlit-length | 0 | 0 | 24 | 0 | 0 |
 | exp2-search | 52 | 0 | 4 | 0 | 0 |
-| dlit-length-s2022 | 0 | 0 | 24 | 0 | 0 |
 | exp2-confirm | 52 | 0 | 0 | 4 | 0 |
-| dlit-length-s2023 | 0 | 0 | 24 | 0 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | exp3-tuned | 52 | 0 | 0 | 4 | 0 |
+| t3-lt-search | 11 | 3 | 0 | 0 | 0 |
+| t3-lt-confirm | 0 | 0 | 11 | 3 | 0 |
+| t3-lt-tuned | 0 | 0 | 0 | 14 | 0 |
+| t3-lt-tuned-s2022 | 0 | 0 | 0 | 14 | 0 |
+| t3-lt-tuned-s2023 | 0 | 0 | 0 | 14 | 0 |
+| t3-length | 18 | 0 | 0 | 6 | 0 |
+| t3-length-s2022 | 18 | 0 | 0 | 6 | 0 |
+| t3-length-s2023 | 18 | 0 | 0 | 6 | 0 |
+| dlit-length | 0 | 0 | 24 | 0 | 0 |
+| dlit-length-s2022 | 0 | 0 | 24 | 0 | 0 |
+| dlit-length-s2023 | 0 | 0 | 24 | 0 | 0 |
 
 | task | status | cells done | worker |
 |---|---|---|---|
-| t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
-| t3-lt-search--ETTm1--TimeXer | done | 12/12 |  |
-| t3-lt-search--Weather--TimeXer | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeXer | claimed | 9/12 | itm20-gpu1-a4000 |
-| t3-lt-search--Traffic--TimeXer | claimed | 5/12 | itm20-gpu0-a4000 |
-| t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
-| t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
-| t3-lt-search--Weather--TimeFilter | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeFilter | done | 12/12 |  |
-| t3-lt-search--Traffic--TimeFilter | claimed | 2/12 | itm21-a4000 |
-| t3-lt-search--ETTh2--TimeXer | done | 12/12 |  |
-| t3-lt-search--ETTm2--TimeXer | done | 12/12 |  |
-| t3-lt-search--ETTh2--TimeFilter | done | 12/12 |  |
-| t3-lt-search--ETTm2--TimeFilter | done | 12/12 |  |
-| t3-lt-confirm--ETTh1--TimeXer | ready | 0/4 |  |
-| t3-lt-confirm--ETTm1--TimeXer | ready | 2/4 |  |
-| t3-lt-confirm--Weather--TimeXer | ready | 0/4 |  |
-| t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
-| t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-confirm--ETTh1--TimeFilter | ready | 2/4 |  |
-| t3-lt-confirm--ETTm1--TimeFilter | ready | 2/4 |  |
-| t3-lt-confirm--Weather--TimeFilter | ready | 0/4 |  |
-| t3-lt-confirm--Electricity--TimeFilter | ready | 0/4 |  |
-| t3-lt-confirm--Traffic--TimeFilter | blocked | 0/? |  |
-| t3-lt-confirm--ETTh2--TimeXer | ready | 2/4 |  |
-| t3-lt-confirm--ETTm2--TimeXer | ready | 0/4 |  |
-| t3-lt-confirm--ETTh2--TimeFilter | ready | 0/4 |  |
-| t3-lt-confirm--ETTm2--TimeFilter | ready | 0/4 |  |
-| t3-lt-tuned--ETTh1--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--ETTm1--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--Weather--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--Electricity--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--ETTh1--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned--ETTm1--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned--Weather--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned--Electricity--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned--Traffic--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned--ETTh2--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--ETTm2--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned--ETTh2--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned--ETTm2--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTh1--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTm1--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2022--Weather--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2022--Electricity--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2022--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTh1--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTm1--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2022--Weather--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2022--Electricity--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2022--Traffic--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTh2--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTm2--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTh2--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2022--ETTm2--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2023--ETTh1--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2023--ETTm1--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2023--Weather--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2023--Electricity--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2023--Traffic--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2023--ETTh1--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2023--ETTm1--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2023--Weather--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2023--Electricity--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2023--Traffic--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2023--ETTh2--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2023--ETTm2--TimeXer | blocked | 0/? |  |
-| t3-lt-tuned-s2023--ETTh2--TimeFilter | blocked | 0/? |  |
-| t3-lt-tuned-s2023--ETTm2--TimeFilter | blocked | 0/? |  |
-| t3-length--ETTh2--TimeXer--revin | done | 6/6 |  |
-| t3-length--ETTh2--TimeXer--san | done | 6/6 |  |
-| t3-length--ETTh2--TimeXer--ddn | done | 6/6 |  |
-| t3-length--ETTh2--TimeXer--lt | blocked | 0/? |  |
-| t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
-| t3-length--ETTm1--TimeXer--san | done | 6/6 |  |
-| t3-length--ETTm1--TimeXer--ddn | done | 6/6 |  |
-| t3-length--ETTm1--TimeXer--lt | blocked | 0/? |  |
-| t3-length--Weather--TimeXer--revin | done | 6/6 |  |
-| t3-length--Weather--TimeXer--san | done | 6/6 |  |
-| t3-length--Weather--TimeXer--ddn | done | 6/6 |  |
-| t3-length--Weather--TimeXer--lt | blocked | 0/? |  |
-| t3-length--ETTh2--TimeFilter--revin | done | 6/6 |  |
-| t3-length--ETTh2--TimeFilter--san | done | 6/6 |  |
-| t3-length--ETTh2--TimeFilter--ddn | done | 6/6 |  |
-| t3-length--ETTh2--TimeFilter--lt | blocked | 0/? |  |
-| t3-length--ETTm1--TimeFilter--revin | done | 6/6 |  |
-| t3-length--ETTm1--TimeFilter--san | done | 6/6 |  |
-| t3-length--ETTm1--TimeFilter--ddn | done | 6/6 |  |
-| t3-length--ETTm1--TimeFilter--lt | blocked | 0/? |  |
-| t3-length--Weather--TimeFilter--revin | done | 6/6 |  |
-| t3-length--Weather--TimeFilter--san | done | 6/6 |  |
-| t3-length--Weather--TimeFilter--ddn | done | 6/6 |  |
-| t3-length--Weather--TimeFilter--lt | blocked | 0/? |  |
-| t3-length-s2022--ETTh2--TimeXer--revin | done | 6/6 |  |
-| t3-length-s2022--ETTh2--TimeXer--san | done | 6/6 |  |
-| t3-length-s2022--ETTh2--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2022--ETTh2--TimeXer--lt | blocked | 0/? |  |
-| t3-length-s2022--ETTm1--TimeXer--revin | done | 6/6 |  |
-| t3-length-s2022--ETTm1--TimeXer--san | done | 6/6 |  |
-| t3-length-s2022--ETTm1--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2022--ETTm1--TimeXer--lt | blocked | 0/? |  |
-| t3-length-s2022--Weather--TimeXer--revin | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeXer--san | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeXer--lt | blocked | 0/? |  |
-| t3-length-s2022--ETTh2--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2022--ETTh2--TimeFilter--san | done | 6/6 |  |
-| t3-length-s2022--ETTh2--TimeFilter--ddn | done | 6/6 |  |
-| t3-length-s2022--ETTh2--TimeFilter--lt | blocked | 0/? |  |
-| t3-length-s2022--ETTm1--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2022--ETTm1--TimeFilter--san | done | 6/6 |  |
-| t3-length-s2022--ETTm1--TimeFilter--ddn | done | 6/6 |  |
-| t3-length-s2022--ETTm1--TimeFilter--lt | blocked | 0/? |  |
-| t3-length-s2022--Weather--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeFilter--san | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeFilter--ddn | done | 6/6 |  |
-| t3-length-s2022--Weather--TimeFilter--lt | blocked | 0/? |  |
-| t3-length-s2023--ETTh2--TimeXer--revin | done | 6/6 |  |
-| t3-length-s2023--ETTh2--TimeXer--san | done | 6/6 |  |
-| t3-length-s2023--ETTh2--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2023--ETTh2--TimeXer--lt | blocked | 0/? |  |
-| t3-length-s2023--ETTm1--TimeXer--revin | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeXer--san | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeXer--lt | blocked | 0/? |  |
-| t3-length-s2023--Weather--TimeXer--revin | done | 6/6 |  |
-| t3-length-s2023--Weather--TimeXer--san | done | 6/6 |  |
-| t3-length-s2023--Weather--TimeXer--ddn | done | 6/6 |  |
-| t3-length-s2023--Weather--TimeXer--lt | blocked | 0/? |  |
-| t3-length-s2023--ETTh2--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2023--ETTh2--TimeFilter--san | done | 6/6 |  |
-| t3-length-s2023--ETTh2--TimeFilter--ddn | done | 6/6 |  |
-| t3-length-s2023--ETTh2--TimeFilter--lt | blocked | 0/? |  |
-| t3-length-s2023--ETTm1--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeFilter--san | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeFilter--ddn | done | 6/6 |  |
-| t3-length-s2023--ETTm1--TimeFilter--lt | blocked | 0/? |  |
-| t3-length-s2023--Weather--TimeFilter--revin | done | 6/6 |  |
-| t3-length-s2023--Weather--TimeFilter--san | done | 6/6 |  |
-| t3-length-s2023--Weather--TimeFilter--ddn | done | 6/6 |  |
-| t3-length-s2023--Weather--TimeFilter--lt | blocked | 0/? |  |
-| dish-search--ETTh1--DLinear | done | 12/12 |  |
-| dish-search--ETTh1--iTransformer | done | 12/12 |  |
-| dish-search--ETTh1--TimeXer | done | 12/12 |  |
-| dish-search--ETTh1--TimeFilter | done | 12/12 |  |
-| dish-search--ETTh2--DLinear | done | 12/12 |  |
-| dish-search--ETTh2--iTransformer | done | 12/12 |  |
-| dish-search--ETTh2--TimeXer | done | 12/12 |  |
-| dish-search--ETTh2--TimeFilter | done | 12/12 |  |
-| dish-search--ETTm1--DLinear | ready | 10/12 |  |
-| dish-search--ETTm1--iTransformer | ready | 0/12 |  |
-| dish-search--ETTm1--TimeXer | ready | 0/12 |  |
-| dish-search--ETTm1--TimeFilter | ready | 0/12 |  |
-| dish-search--ETTm2--DLinear | done | 12/12 |  |
-| dish-search--ETTm2--iTransformer | ready | 0/12 |  |
-| dish-search--ETTm2--TimeXer | ready | 0/12 |  |
-| dish-search--ETTm2--TimeFilter | ready | 0/12 |  |
-| dish-search--Weather--DLinear | ready | 1/12 |  |
-| dish-search--Weather--iTransformer | ready | 0/12 |  |
-| dish-search--Weather--TimeXer | ready | 0/12 |  |
-| dish-search--Weather--TimeFilter | ready | 0/12 |  |
-| dish-search--Electricity--DLinear | ready | 0/12 |  |
-| dish-search--Electricity--iTransformer | ready | 0/12 |  |
-| dish-search--Electricity--TimeXer | ready | 0/12 |  |
-| dish-search--Electricity--TimeFilter | ready | 0/12 |  |
-| dish-search--Traffic--DLinear | ready | 0/12 |  |
-| dish-search--Traffic--iTransformer | ready | 0/12 |  |
-| dish-search--Traffic--TimeXer | ready | 0/12 |  |
-| dish-search--Traffic--TimeFilter | ready | 0/12 |  |
 | exch-search--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-search--Exchange--DLinear--san | done | 12/12 |  |
 | exch-search--Exchange--DLinear--ddn | done | 12/12 |  |
@@ -250,37 +80,9 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | exch-search--Exchange--TimeFilter--fan | done | 12/12 |  |
 | exch-search--Exchange--TimeFilter--dishts | done | 12/12 |  |
 | exch-lt-search--Exchange--DLinear | done | 12/12 |  |
-| exch-lt-search--Exchange--iTransformer | ready | 0/12 |  |
-| exch-lt-search--Exchange--TimeXer | ready | 0/12 |  |
+| exch-lt-search--Exchange--iTransformer | done | 12/12 |  |
+| exch-lt-search--Exchange--TimeXer | claimed | 2/12 | itm20-gpu0-a4000 |
 | exch-lt-search--Exchange--TimeFilter | ready | 0/12 |  |
-| dish-confirm--ETTh1--DLinear | done | 4/4 |  |
-| dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
-| dish-confirm--ETTh1--TimeXer | done | 4/4 |  |
-| dish-confirm--ETTh1--TimeFilter | done | 4/4 |  |
-| dish-confirm--ETTh2--DLinear | done | 4/4 |  |
-| dish-confirm--ETTh2--iTransformer | done | 4/4 |  |
-| dish-confirm--ETTh2--TimeXer | done | 4/4 |  |
-| dish-confirm--ETTh2--TimeFilter | done | 4/4 |  |
-| dish-confirm--ETTm1--DLinear | blocked | 0/? |  |
-| dish-confirm--ETTm1--iTransformer | blocked | 0/? |  |
-| dish-confirm--ETTm1--TimeXer | blocked | 0/? |  |
-| dish-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
-| dish-confirm--ETTm2--DLinear | done | 4/4 |  |
-| dish-confirm--ETTm2--iTransformer | blocked | 0/? |  |
-| dish-confirm--ETTm2--TimeXer | blocked | 0/? |  |
-| dish-confirm--ETTm2--TimeFilter | blocked | 0/? |  |
-| dish-confirm--Weather--DLinear | blocked | 0/? |  |
-| dish-confirm--Weather--iTransformer | blocked | 0/? |  |
-| dish-confirm--Weather--TimeXer | blocked | 0/? |  |
-| dish-confirm--Weather--TimeFilter | blocked | 0/? |  |
-| dish-confirm--Electricity--DLinear | blocked | 0/? |  |
-| dish-confirm--Electricity--iTransformer | blocked | 0/? |  |
-| dish-confirm--Electricity--TimeXer | blocked | 0/? |  |
-| dish-confirm--Electricity--TimeFilter | blocked | 0/? |  |
-| dish-confirm--Traffic--DLinear | blocked | 0/? |  |
-| dish-confirm--Traffic--iTransformer | blocked | 0/? |  |
-| dish-confirm--Traffic--TimeXer | blocked | 0/? |  |
-| dish-confirm--Traffic--TimeFilter | blocked | 0/? |  |
 | exch-confirm--Exchange--DLinear--revin | done | 4/4 |  |
 | exch-confirm--Exchange--DLinear--san | done | 4/4 |  |
 | exch-confirm--Exchange--DLinear--ddn | done | 4/4 |  |
@@ -302,37 +104,9 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | exch-confirm--Exchange--TimeFilter--fan | done | 4/4 |  |
 | exch-confirm--Exchange--TimeFilter--dishts | done | 4/4 |  |
 | exch-lt-confirm--Exchange--DLinear | done | 4/4 |  |
-| exch-lt-confirm--Exchange--iTransformer | blocked | 0/? |  |
+| exch-lt-confirm--Exchange--iTransformer | ready | 0/4 |  |
 | exch-lt-confirm--Exchange--TimeXer | blocked | 0/? |  |
 | exch-lt-confirm--Exchange--TimeFilter | blocked | 0/? |  |
-| dish-tuned--ETTh1--DLinear | done | 4/4 |  |
-| dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
-| dish-tuned--ETTh1--TimeXer | done | 4/4 |  |
-| dish-tuned--ETTh1--TimeFilter | ready | 0/4 |  |
-| dish-tuned--ETTh2--DLinear | done | 4/4 |  |
-| dish-tuned--ETTh2--iTransformer | done | 4/4 |  |
-| dish-tuned--ETTh2--TimeXer | done | 4/4 |  |
-| dish-tuned--ETTh2--TimeFilter | done | 4/4 |  |
-| dish-tuned--ETTm1--DLinear | blocked | 0/? |  |
-| dish-tuned--ETTm1--iTransformer | blocked | 0/? |  |
-| dish-tuned--ETTm1--TimeXer | blocked | 0/? |  |
-| dish-tuned--ETTm1--TimeFilter | blocked | 0/? |  |
-| dish-tuned--ETTm2--DLinear | ready | 0/4 |  |
-| dish-tuned--ETTm2--iTransformer | blocked | 0/? |  |
-| dish-tuned--ETTm2--TimeXer | blocked | 0/? |  |
-| dish-tuned--ETTm2--TimeFilter | blocked | 0/? |  |
-| dish-tuned--Weather--DLinear | blocked | 0/? |  |
-| dish-tuned--Weather--iTransformer | blocked | 0/? |  |
-| dish-tuned--Weather--TimeXer | blocked | 0/? |  |
-| dish-tuned--Weather--TimeFilter | blocked | 0/? |  |
-| dish-tuned--Electricity--DLinear | blocked | 0/? |  |
-| dish-tuned--Electricity--iTransformer | blocked | 0/? |  |
-| dish-tuned--Electricity--TimeXer | blocked | 0/? |  |
-| dish-tuned--Electricity--TimeFilter | blocked | 0/? |  |
-| dish-tuned--Traffic--DLinear | blocked | 0/? |  |
-| dish-tuned--Traffic--iTransformer | blocked | 0/? |  |
-| dish-tuned--Traffic--TimeXer | blocked | 0/? |  |
-| dish-tuned--Traffic--TimeFilter | blocked | 0/? |  |
 | exch-none--Exchange--DLinear | done | 4/4 |  |
 | exch-none--Exchange--iTransformer | done | 4/4 |  |
 | exch-none--Exchange--TimeXer | done | 4/4 |  |
@@ -361,6 +135,146 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | exch-lt-tuned--Exchange--iTransformer | blocked | 0/? |  |
 | exch-lt-tuned--Exchange--TimeXer | blocked | 0/? |  |
 | exch-lt-tuned--Exchange--TimeFilter | blocked | 0/? |  |
+| exch-none-s2022--Exchange--DLinear | ready | 0/4 |  |
+| exch-none-s2022--Exchange--iTransformer | ready | 0/4 |  |
+| exch-none-s2022--Exchange--TimeXer | ready | 0/4 |  |
+| exch-none-s2022--Exchange--TimeFilter | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--DLinear--revin | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--DLinear--san | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--DLinear--ddn | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--DLinear--fan | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--DLinear--dishts | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--iTransformer--revin | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--iTransformer--san | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--iTransformer--ddn | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--iTransformer--fan | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--iTransformer--dishts | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeXer--revin | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeXer--san | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeXer--ddn | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeXer--fan | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeXer--dishts | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeFilter--revin | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeFilter--san | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeFilter--ddn | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeFilter--fan | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--TimeFilter--dishts | ready | 0/4 |  |
+| exch-lt-tuned-s2022--Exchange--DLinear | ready | 0/4 |  |
+| exch-lt-tuned-s2022--Exchange--iTransformer | blocked | 0/? |  |
+| exch-lt-tuned-s2022--Exchange--TimeXer | blocked | 0/? |  |
+| exch-lt-tuned-s2022--Exchange--TimeFilter | blocked | 0/? |  |
+| exch-none-s2023--Exchange--DLinear | ready | 0/4 |  |
+| exch-none-s2023--Exchange--iTransformer | ready | 0/4 |  |
+| exch-none-s2023--Exchange--TimeXer | ready | 0/4 |  |
+| exch-none-s2023--Exchange--TimeFilter | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--DLinear--revin | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--DLinear--san | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--DLinear--ddn | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--DLinear--fan | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--DLinear--dishts | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--iTransformer--revin | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--iTransformer--san | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--iTransformer--ddn | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--iTransformer--fan | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--iTransformer--dishts | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeXer--revin | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeXer--san | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeXer--ddn | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeXer--fan | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeXer--dishts | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeFilter--revin | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeFilter--san | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeFilter--ddn | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeFilter--fan | ready | 0/4 |  |
+| exch-tuned-s2023--Exchange--TimeFilter--dishts | ready | 0/4 |  |
+| exch-lt-tuned-s2023--Exchange--DLinear | ready | 0/4 |  |
+| exch-lt-tuned-s2023--Exchange--iTransformer | blocked | 0/? |  |
+| exch-lt-tuned-s2023--Exchange--TimeXer | blocked | 0/? |  |
+| exch-lt-tuned-s2023--Exchange--TimeFilter | blocked | 0/? |  |
+| dish-search--ETTh1--DLinear | done | 12/12 |  |
+| dish-search--ETTh1--iTransformer | done | 12/12 |  |
+| dish-search--ETTh1--TimeXer | done | 12/12 |  |
+| dish-search--ETTh1--TimeFilter | done | 12/12 |  |
+| dish-search--ETTh2--DLinear | done | 12/12 |  |
+| dish-search--ETTh2--iTransformer | done | 12/12 |  |
+| dish-search--ETTh2--TimeXer | done | 12/12 |  |
+| dish-search--ETTh2--TimeFilter | done | 12/12 |  |
+| dish-search--ETTm1--DLinear | ready | 10/12 |  |
+| dish-search--ETTm1--iTransformer | ready | 0/12 |  |
+| dish-search--ETTm1--TimeXer | ready | 0/12 |  |
+| dish-search--ETTm1--TimeFilter | ready | 0/12 |  |
+| dish-search--ETTm2--DLinear | done | 12/12 |  |
+| dish-search--ETTm2--iTransformer | ready | 0/12 |  |
+| dish-search--ETTm2--TimeXer | ready | 0/12 |  |
+| dish-search--ETTm2--TimeFilter | ready | 0/12 |  |
+| dish-search--Weather--DLinear | ready | 1/12 |  |
+| dish-search--Weather--iTransformer | ready | 0/12 |  |
+| dish-search--Weather--TimeXer | ready | 0/12 |  |
+| dish-search--Weather--TimeFilter | ready | 0/12 |  |
+| dish-search--Electricity--DLinear | ready | 0/12 |  |
+| dish-search--Electricity--iTransformer | ready | 0/12 |  |
+| dish-search--Electricity--TimeXer | ready | 0/12 |  |
+| dish-search--Electricity--TimeFilter | ready | 0/12 |  |
+| dish-search--Traffic--DLinear | ready | 0/12 |  |
+| dish-search--Traffic--iTransformer | ready | 0/12 |  |
+| dish-search--Traffic--TimeXer | ready | 0/12 |  |
+| dish-search--Traffic--TimeFilter | ready | 0/12 |  |
+| dish-confirm--ETTh1--DLinear | done | 4/4 |  |
+| dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
+| dish-confirm--ETTh1--TimeXer | done | 4/4 |  |
+| dish-confirm--ETTh1--TimeFilter | done | 4/4 |  |
+| dish-confirm--ETTh2--DLinear | done | 4/4 |  |
+| dish-confirm--ETTh2--iTransformer | done | 4/4 |  |
+| dish-confirm--ETTh2--TimeXer | done | 4/4 |  |
+| dish-confirm--ETTh2--TimeFilter | done | 4/4 |  |
+| dish-confirm--ETTm1--DLinear | blocked | 0/? |  |
+| dish-confirm--ETTm1--iTransformer | blocked | 0/? |  |
+| dish-confirm--ETTm1--TimeXer | blocked | 0/? |  |
+| dish-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
+| dish-confirm--ETTm2--DLinear | done | 4/4 |  |
+| dish-confirm--ETTm2--iTransformer | blocked | 0/? |  |
+| dish-confirm--ETTm2--TimeXer | blocked | 0/? |  |
+| dish-confirm--ETTm2--TimeFilter | blocked | 0/? |  |
+| dish-confirm--Weather--DLinear | blocked | 0/? |  |
+| dish-confirm--Weather--iTransformer | blocked | 0/? |  |
+| dish-confirm--Weather--TimeXer | blocked | 0/? |  |
+| dish-confirm--Weather--TimeFilter | blocked | 0/? |  |
+| dish-confirm--Electricity--DLinear | blocked | 0/? |  |
+| dish-confirm--Electricity--iTransformer | blocked | 0/? |  |
+| dish-confirm--Electricity--TimeXer | blocked | 0/? |  |
+| dish-confirm--Electricity--TimeFilter | blocked | 0/? |  |
+| dish-confirm--Traffic--DLinear | blocked | 0/? |  |
+| dish-confirm--Traffic--iTransformer | blocked | 0/? |  |
+| dish-confirm--Traffic--TimeXer | blocked | 0/? |  |
+| dish-confirm--Traffic--TimeFilter | blocked | 0/? |  |
+| dish-tuned--ETTh1--DLinear | done | 4/4 |  |
+| dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
+| dish-tuned--ETTh1--TimeXer | done | 4/4 |  |
+| dish-tuned--ETTh1--TimeFilter | ready | 0/4 |  |
+| dish-tuned--ETTh2--DLinear | done | 4/4 |  |
+| dish-tuned--ETTh2--iTransformer | done | 4/4 |  |
+| dish-tuned--ETTh2--TimeXer | done | 4/4 |  |
+| dish-tuned--ETTh2--TimeFilter | done | 4/4 |  |
+| dish-tuned--ETTm1--DLinear | blocked | 0/? |  |
+| dish-tuned--ETTm1--iTransformer | blocked | 0/? |  |
+| dish-tuned--ETTm1--TimeXer | blocked | 0/? |  |
+| dish-tuned--ETTm1--TimeFilter | blocked | 0/? |  |
+| dish-tuned--ETTm2--DLinear | ready | 0/4 |  |
+| dish-tuned--ETTm2--iTransformer | blocked | 0/? |  |
+| dish-tuned--ETTm2--TimeXer | blocked | 0/? |  |
+| dish-tuned--ETTm2--TimeFilter | blocked | 0/? |  |
+| dish-tuned--Weather--DLinear | blocked | 0/? |  |
+| dish-tuned--Weather--iTransformer | blocked | 0/? |  |
+| dish-tuned--Weather--TimeXer | blocked | 0/? |  |
+| dish-tuned--Weather--TimeFilter | blocked | 0/? |  |
+| dish-tuned--Electricity--DLinear | blocked | 0/? |  |
+| dish-tuned--Electricity--iTransformer | blocked | 0/? |  |
+| dish-tuned--Electricity--TimeXer | blocked | 0/? |  |
+| dish-tuned--Electricity--TimeFilter | blocked | 0/? |  |
+| dish-tuned--Traffic--DLinear | blocked | 0/? |  |
+| dish-tuned--Traffic--iTransformer | blocked | 0/? |  |
+| dish-tuned--Traffic--TimeXer | blocked | 0/? |  |
+| dish-tuned--Traffic--TimeFilter | blocked | 0/? |  |
 | lt-ksens--ETTh1--DLinear | done | 18/18 |  |
 | lt-ksens--ETTh1--iTransformer | done | 18/18 |  |
 | lt-ksens--ETTh2--DLinear | done | 18/18 |  |
@@ -417,34 +331,6 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | dish-tuned-s2022--Traffic--iTransformer | blocked | 0/? |  |
 | dish-tuned-s2022--Traffic--TimeXer | blocked | 0/? |  |
 | dish-tuned-s2022--Traffic--TimeFilter | blocked | 0/? |  |
-| exch-none-s2022--Exchange--DLinear | ready | 0/4 |  |
-| exch-none-s2022--Exchange--iTransformer | ready | 0/4 |  |
-| exch-none-s2022--Exchange--TimeXer | ready | 0/4 |  |
-| exch-none-s2022--Exchange--TimeFilter | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--DLinear--revin | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--DLinear--san | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--DLinear--ddn | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--DLinear--fan | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--DLinear--dishts | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--iTransformer--revin | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--iTransformer--san | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--iTransformer--ddn | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--iTransformer--fan | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--iTransformer--dishts | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeXer--revin | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeXer--san | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeXer--ddn | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeXer--fan | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeXer--dishts | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeFilter--revin | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeFilter--san | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeFilter--ddn | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeFilter--fan | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--TimeFilter--dishts | ready | 0/4 |  |
-| exch-lt-tuned-s2022--Exchange--DLinear | ready | 0/4 |  |
-| exch-lt-tuned-s2022--Exchange--iTransformer | blocked | 0/? |  |
-| exch-lt-tuned-s2022--Exchange--TimeXer | blocked | 0/? |  |
-| exch-lt-tuned-s2022--Exchange--TimeFilter | blocked | 0/? |  |
 | lt-pilot--ETTm1--iTransformer | done | 20/20 |  |
 | lt-pilot--ETTm1--DLinear | done | 20/20 |  |
 | lt-pilot--Weather--DLinear | done | 20/20 |  |
@@ -621,34 +507,6 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | dish-tuned-s2023--Traffic--iTransformer | blocked | 0/? |  |
 | dish-tuned-s2023--Traffic--TimeXer | blocked | 0/? |  |
 | dish-tuned-s2023--Traffic--TimeFilter | blocked | 0/? |  |
-| exch-none-s2023--Exchange--DLinear | ready | 0/4 |  |
-| exch-none-s2023--Exchange--iTransformer | ready | 0/4 |  |
-| exch-none-s2023--Exchange--TimeXer | ready | 0/4 |  |
-| exch-none-s2023--Exchange--TimeFilter | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--DLinear--revin | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--DLinear--san | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--DLinear--ddn | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--DLinear--fan | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--DLinear--dishts | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--iTransformer--revin | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--iTransformer--san | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--iTransformer--ddn | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--iTransformer--fan | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--iTransformer--dishts | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeXer--revin | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeXer--san | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeXer--ddn | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeXer--fan | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeXer--dishts | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeFilter--revin | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeFilter--san | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeFilter--ddn | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeFilter--fan | ready | 0/4 |  |
-| exch-tuned-s2023--Exchange--TimeFilter--dishts | ready | 0/4 |  |
-| exch-lt-tuned-s2023--Exchange--DLinear | ready | 0/4 |  |
-| exch-lt-tuned-s2023--Exchange--iTransformer | blocked | 0/? |  |
-| exch-lt-tuned-s2023--Exchange--TimeXer | blocked | 0/? |  |
-| exch-lt-tuned-s2023--Exchange--TimeFilter | blocked | 0/? |  |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
@@ -761,30 +619,6 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | t3-tuned--ETTh2--TimeFilter--ddn | done | 12/12 |  |
 | t3-tuned--ETTm2--TimeFilter--san | done | 12/12 |  |
 | t3-tuned--ETTm2--TimeFilter--ddn | done | 12/12 |  |
-| dlit-length--ETTh2--DLinear--revin | ready | 0/6 |  |
-| dlit-length--ETTh2--DLinear--san | ready | 0/6 |  |
-| dlit-length--ETTh2--DLinear--ddn | ready | 0/6 |  |
-| dlit-length--ETTh2--DLinear--lt | ready | 0/6 |  |
-| dlit-length--ETTm1--DLinear--revin | ready | 0/6 |  |
-| dlit-length--ETTm1--DLinear--san | ready | 0/6 |  |
-| dlit-length--ETTm1--DLinear--ddn | ready | 0/6 |  |
-| dlit-length--ETTm1--DLinear--lt | ready | 0/6 |  |
-| dlit-length--Weather--DLinear--revin | ready | 0/6 |  |
-| dlit-length--Weather--DLinear--san | ready | 0/6 |  |
-| dlit-length--Weather--DLinear--ddn | ready | 0/6 |  |
-| dlit-length--Weather--DLinear--lt | ready | 0/6 |  |
-| dlit-length--ETTh2--iTransformer--revin | ready | 0/6 |  |
-| dlit-length--ETTh2--iTransformer--san | ready | 0/6 |  |
-| dlit-length--ETTh2--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length--ETTh2--iTransformer--lt | ready | 0/6 |  |
-| dlit-length--ETTm1--iTransformer--revin | ready | 0/6 |  |
-| dlit-length--ETTm1--iTransformer--san | ready | 0/6 |  |
-| dlit-length--ETTm1--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length--ETTm1--iTransformer--lt | ready | 0/6 |  |
-| dlit-length--Weather--iTransformer--revin | ready | 0/6 |  |
-| dlit-length--Weather--iTransformer--san | ready | 0/6 |  |
-| dlit-length--Weather--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length--Weather--iTransformer--lt | ready | 0/6 |  |
 | exp2-search--ETTh1--DLinear--revin | done | 4/4 |  |
 | exp2-search--ETTh1--DLinear--san | done | 12/12 |  |
 | exp2-search--ETTh1--DLinear--ddn | done | 12/12 |  |
@@ -841,30 +675,6 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | exp2-search--Traffic--iTransformer--san | done | 12/12 |  |
 | exp2-search--Traffic--iTransformer--ddn | done | 12/12 |  |
 | exp2-search--Traffic--iTransformer--fan | done | 12/12 |  |
-| dlit-length-s2022--ETTh2--DLinear--revin | ready | 0/6 |  |
-| dlit-length-s2022--ETTh2--DLinear--san | ready | 0/6 |  |
-| dlit-length-s2022--ETTh2--DLinear--ddn | ready | 0/6 |  |
-| dlit-length-s2022--ETTh2--DLinear--lt | ready | 0/6 |  |
-| dlit-length-s2022--ETTm1--DLinear--revin | ready | 0/6 |  |
-| dlit-length-s2022--ETTm1--DLinear--san | ready | 0/6 |  |
-| dlit-length-s2022--ETTm1--DLinear--ddn | ready | 0/6 |  |
-| dlit-length-s2022--ETTm1--DLinear--lt | ready | 0/6 |  |
-| dlit-length-s2022--Weather--DLinear--revin | ready | 0/6 |  |
-| dlit-length-s2022--Weather--DLinear--san | ready | 0/6 |  |
-| dlit-length-s2022--Weather--DLinear--ddn | ready | 0/6 |  |
-| dlit-length-s2022--Weather--DLinear--lt | ready | 0/6 |  |
-| dlit-length-s2022--ETTh2--iTransformer--revin | ready | 0/6 |  |
-| dlit-length-s2022--ETTh2--iTransformer--san | ready | 0/6 |  |
-| dlit-length-s2022--ETTh2--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length-s2022--ETTh2--iTransformer--lt | ready | 0/6 |  |
-| dlit-length-s2022--ETTm1--iTransformer--revin | ready | 0/6 |  |
-| dlit-length-s2022--ETTm1--iTransformer--san | ready | 0/6 |  |
-| dlit-length-s2022--ETTm1--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length-s2022--ETTm1--iTransformer--lt | ready | 0/6 |  |
-| dlit-length-s2022--Weather--iTransformer--revin | ready | 0/6 |  |
-| dlit-length-s2022--Weather--iTransformer--san | ready | 0/6 |  |
-| dlit-length-s2022--Weather--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length-s2022--Weather--iTransformer--lt | ready | 0/6 |  |
 | exp2-confirm--ETTh1--DLinear--revin | done | 4/4 |  |
 | exp2-confirm--ETTh1--DLinear--san | done | 4/4 |  |
 | exp2-confirm--ETTh1--DLinear--ddn | done | 4/4 |  |
@@ -921,30 +731,6 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | exp2-confirm--Traffic--iTransformer--san | done | 4/4 |  |
 | exp2-confirm--Traffic--iTransformer--ddn | done | 4/4 |  |
 | exp2-confirm--Traffic--iTransformer--fan | done | 4/4 |  |
-| dlit-length-s2023--ETTh2--DLinear--revin | ready | 0/6 |  |
-| dlit-length-s2023--ETTh2--DLinear--san | ready | 0/6 |  |
-| dlit-length-s2023--ETTh2--DLinear--ddn | ready | 0/6 |  |
-| dlit-length-s2023--ETTh2--DLinear--lt | ready | 0/6 |  |
-| dlit-length-s2023--ETTm1--DLinear--revin | ready | 0/6 |  |
-| dlit-length-s2023--ETTm1--DLinear--san | ready | 0/6 |  |
-| dlit-length-s2023--ETTm1--DLinear--ddn | ready | 0/6 |  |
-| dlit-length-s2023--ETTm1--DLinear--lt | ready | 0/6 |  |
-| dlit-length-s2023--Weather--DLinear--revin | ready | 0/6 |  |
-| dlit-length-s2023--Weather--DLinear--san | ready | 0/6 |  |
-| dlit-length-s2023--Weather--DLinear--ddn | ready | 0/6 |  |
-| dlit-length-s2023--Weather--DLinear--lt | ready | 0/6 |  |
-| dlit-length-s2023--ETTh2--iTransformer--revin | ready | 0/6 |  |
-| dlit-length-s2023--ETTh2--iTransformer--san | ready | 0/6 |  |
-| dlit-length-s2023--ETTh2--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length-s2023--ETTh2--iTransformer--lt | ready | 0/6 |  |
-| dlit-length-s2023--ETTm1--iTransformer--revin | ready | 0/6 |  |
-| dlit-length-s2023--ETTm1--iTransformer--san | ready | 0/6 |  |
-| dlit-length-s2023--ETTm1--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length-s2023--ETTm1--iTransformer--lt | ready | 0/6 |  |
-| dlit-length-s2023--Weather--iTransformer--revin | ready | 0/6 |  |
-| dlit-length-s2023--Weather--iTransformer--san | ready | 0/6 |  |
-| dlit-length-s2023--Weather--iTransformer--ddn | ready | 0/6 |  |
-| dlit-length-s2023--Weather--iTransformer--lt | ready | 0/6 |  |
 | exp3-none--ETTh1--DLinear | done | 12/12 |  |
 | exp3-none--ETTh1--iTransformer | done | 12/12 |  |
 | exp3-none--ETTh2--DLinear | done | 12/12 |  |
@@ -1015,3 +801,217 @@ Generated 2026-10-29T07:00:51+00:00 from 8165 packaged cells. Regenerate with `p
 | exp3-tuned--Traffic--iTransformer--san | done | 12/12 |  |
 | exp3-tuned--Traffic--iTransformer--ddn | done | 12/12 |  |
 | exp3-tuned--Traffic--iTransformer--fan | done | 12/12 |  |
+| t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
+| t3-lt-search--ETTm1--TimeXer | done | 12/12 |  |
+| t3-lt-search--Weather--TimeXer | done | 12/12 |  |
+| t3-lt-search--Electricity--TimeXer | claimed | 10/12 | itm20-gpu1-a4000 |
+| t3-lt-search--Traffic--TimeXer | claimed | 6/12 | itm20-gpu0-a4000 |
+| t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
+| t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
+| t3-lt-search--Weather--TimeFilter | done | 12/12 |  |
+| t3-lt-search--Electricity--TimeFilter | done | 12/12 |  |
+| t3-lt-search--Traffic--TimeFilter | claimed | 2/12 | itm21-a4000 |
+| t3-lt-search--ETTh2--TimeXer | done | 12/12 |  |
+| t3-lt-search--ETTm2--TimeXer | done | 12/12 |  |
+| t3-lt-search--ETTh2--TimeFilter | done | 12/12 |  |
+| t3-lt-search--ETTm2--TimeFilter | done | 12/12 |  |
+| t3-lt-confirm--ETTh1--TimeXer | ready | 0/4 |  |
+| t3-lt-confirm--ETTm1--TimeXer | ready | 2/4 |  |
+| t3-lt-confirm--Weather--TimeXer | ready | 0/4 |  |
+| t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--ETTh1--TimeFilter | ready | 2/4 |  |
+| t3-lt-confirm--ETTm1--TimeFilter | ready | 2/4 |  |
+| t3-lt-confirm--Weather--TimeFilter | ready | 0/4 |  |
+| t3-lt-confirm--Electricity--TimeFilter | ready | 0/4 |  |
+| t3-lt-confirm--Traffic--TimeFilter | blocked | 0/? |  |
+| t3-lt-confirm--ETTh2--TimeXer | ready | 2/4 |  |
+| t3-lt-confirm--ETTm2--TimeXer | ready | 0/4 |  |
+| t3-lt-confirm--ETTh2--TimeFilter | ready | 0/4 |  |
+| t3-lt-confirm--ETTm2--TimeFilter | ready | 0/4 |  |
+| t3-lt-tuned--ETTh1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--Weather--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--Electricity--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--Traffic--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--ETTh1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--ETTm1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--Weather--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--Electricity--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--Traffic--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--ETTh2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--ETTm2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--ETTh2--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned--ETTm2--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTh1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--Weather--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--Electricity--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--Traffic--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTh1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTm1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2022--Weather--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2022--Electricity--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2022--Traffic--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTh2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTm2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTh2--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTm2--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTh1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTm1--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--Weather--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--Electricity--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--Traffic--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTh1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTm1--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2023--Weather--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2023--Electricity--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2023--Traffic--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTh2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTm2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTh2--TimeFilter | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTm2--TimeFilter | blocked | 0/? |  |
+| t3-length--ETTh2--TimeXer--revin | done | 6/6 |  |
+| t3-length--ETTh2--TimeXer--san | done | 6/6 |  |
+| t3-length--ETTh2--TimeXer--ddn | done | 6/6 |  |
+| t3-length--ETTh2--TimeXer--lt | blocked | 0/? |  |
+| t3-length--ETTm1--TimeXer--revin | done | 6/6 |  |
+| t3-length--ETTm1--TimeXer--san | done | 6/6 |  |
+| t3-length--ETTm1--TimeXer--ddn | done | 6/6 |  |
+| t3-length--ETTm1--TimeXer--lt | blocked | 0/? |  |
+| t3-length--Weather--TimeXer--revin | done | 6/6 |  |
+| t3-length--Weather--TimeXer--san | done | 6/6 |  |
+| t3-length--Weather--TimeXer--ddn | done | 6/6 |  |
+| t3-length--Weather--TimeXer--lt | blocked | 0/? |  |
+| t3-length--ETTh2--TimeFilter--revin | done | 6/6 |  |
+| t3-length--ETTh2--TimeFilter--san | done | 6/6 |  |
+| t3-length--ETTh2--TimeFilter--ddn | done | 6/6 |  |
+| t3-length--ETTh2--TimeFilter--lt | blocked | 0/? |  |
+| t3-length--ETTm1--TimeFilter--revin | done | 6/6 |  |
+| t3-length--ETTm1--TimeFilter--san | done | 6/6 |  |
+| t3-length--ETTm1--TimeFilter--ddn | done | 6/6 |  |
+| t3-length--ETTm1--TimeFilter--lt | blocked | 0/? |  |
+| t3-length--Weather--TimeFilter--revin | done | 6/6 |  |
+| t3-length--Weather--TimeFilter--san | done | 6/6 |  |
+| t3-length--Weather--TimeFilter--ddn | done | 6/6 |  |
+| t3-length--Weather--TimeFilter--lt | blocked | 0/? |  |
+| t3-length-s2022--ETTh2--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeXer--san | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeXer--ddn | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeXer--lt | blocked | 0/? |  |
+| t3-length-s2022--ETTm1--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeXer--san | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeXer--ddn | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeXer--lt | blocked | 0/? |  |
+| t3-length-s2022--Weather--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeXer--san | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeXer--ddn | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeXer--lt | blocked | 0/? |  |
+| t3-length-s2022--ETTh2--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeFilter--san | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeFilter--ddn | done | 6/6 |  |
+| t3-length-s2022--ETTh2--TimeFilter--lt | blocked | 0/? |  |
+| t3-length-s2022--ETTm1--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeFilter--san | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeFilter--ddn | done | 6/6 |  |
+| t3-length-s2022--ETTm1--TimeFilter--lt | blocked | 0/? |  |
+| t3-length-s2022--Weather--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeFilter--san | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeFilter--ddn | done | 6/6 |  |
+| t3-length-s2022--Weather--TimeFilter--lt | blocked | 0/? |  |
+| t3-length-s2023--ETTh2--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeXer--san | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeXer--ddn | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeXer--lt | blocked | 0/? |  |
+| t3-length-s2023--ETTm1--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeXer--san | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeXer--ddn | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeXer--lt | blocked | 0/? |  |
+| t3-length-s2023--Weather--TimeXer--revin | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeXer--san | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeXer--ddn | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeXer--lt | blocked | 0/? |  |
+| t3-length-s2023--ETTh2--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeFilter--san | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeFilter--ddn | done | 6/6 |  |
+| t3-length-s2023--ETTh2--TimeFilter--lt | blocked | 0/? |  |
+| t3-length-s2023--ETTm1--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeFilter--san | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeFilter--ddn | done | 6/6 |  |
+| t3-length-s2023--ETTm1--TimeFilter--lt | blocked | 0/? |  |
+| t3-length-s2023--Weather--TimeFilter--revin | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeFilter--san | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeFilter--ddn | done | 6/6 |  |
+| t3-length-s2023--Weather--TimeFilter--lt | blocked | 0/? |  |
+| dlit-length--ETTh2--DLinear--revin | ready | 0/6 |  |
+| dlit-length--ETTh2--DLinear--san | ready | 0/6 |  |
+| dlit-length--ETTh2--DLinear--ddn | ready | 0/6 |  |
+| dlit-length--ETTh2--DLinear--lt | ready | 0/6 |  |
+| dlit-length--ETTm1--DLinear--revin | ready | 0/6 |  |
+| dlit-length--ETTm1--DLinear--san | ready | 0/6 |  |
+| dlit-length--ETTm1--DLinear--ddn | ready | 0/6 |  |
+| dlit-length--ETTm1--DLinear--lt | ready | 0/6 |  |
+| dlit-length--Weather--DLinear--revin | ready | 0/6 |  |
+| dlit-length--Weather--DLinear--san | ready | 0/6 |  |
+| dlit-length--Weather--DLinear--ddn | ready | 0/6 |  |
+| dlit-length--Weather--DLinear--lt | ready | 0/6 |  |
+| dlit-length--ETTh2--iTransformer--revin | ready | 0/6 |  |
+| dlit-length--ETTh2--iTransformer--san | ready | 0/6 |  |
+| dlit-length--ETTh2--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length--ETTh2--iTransformer--lt | ready | 0/6 |  |
+| dlit-length--ETTm1--iTransformer--revin | ready | 0/6 |  |
+| dlit-length--ETTm1--iTransformer--san | ready | 0/6 |  |
+| dlit-length--ETTm1--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length--ETTm1--iTransformer--lt | ready | 0/6 |  |
+| dlit-length--Weather--iTransformer--revin | ready | 0/6 |  |
+| dlit-length--Weather--iTransformer--san | ready | 0/6 |  |
+| dlit-length--Weather--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length--Weather--iTransformer--lt | ready | 0/6 |  |
+| dlit-length-s2022--ETTh2--DLinear--revin | ready | 0/6 |  |
+| dlit-length-s2022--ETTh2--DLinear--san | ready | 0/6 |  |
+| dlit-length-s2022--ETTh2--DLinear--ddn | ready | 0/6 |  |
+| dlit-length-s2022--ETTh2--DLinear--lt | ready | 0/6 |  |
+| dlit-length-s2022--ETTm1--DLinear--revin | ready | 0/6 |  |
+| dlit-length-s2022--ETTm1--DLinear--san | ready | 0/6 |  |
+| dlit-length-s2022--ETTm1--DLinear--ddn | ready | 0/6 |  |
+| dlit-length-s2022--ETTm1--DLinear--lt | ready | 0/6 |  |
+| dlit-length-s2022--Weather--DLinear--revin | ready | 0/6 |  |
+| dlit-length-s2022--Weather--DLinear--san | ready | 0/6 |  |
+| dlit-length-s2022--Weather--DLinear--ddn | ready | 0/6 |  |
+| dlit-length-s2022--Weather--DLinear--lt | ready | 0/6 |  |
+| dlit-length-s2022--ETTh2--iTransformer--revin | ready | 0/6 |  |
+| dlit-length-s2022--ETTh2--iTransformer--san | ready | 0/6 |  |
+| dlit-length-s2022--ETTh2--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length-s2022--ETTh2--iTransformer--lt | ready | 0/6 |  |
+| dlit-length-s2022--ETTm1--iTransformer--revin | ready | 0/6 |  |
+| dlit-length-s2022--ETTm1--iTransformer--san | ready | 0/6 |  |
+| dlit-length-s2022--ETTm1--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length-s2022--ETTm1--iTransformer--lt | ready | 0/6 |  |
+| dlit-length-s2022--Weather--iTransformer--revin | ready | 0/6 |  |
+| dlit-length-s2022--Weather--iTransformer--san | ready | 0/6 |  |
+| dlit-length-s2022--Weather--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length-s2022--Weather--iTransformer--lt | ready | 0/6 |  |
+| dlit-length-s2023--ETTh2--DLinear--revin | ready | 0/6 |  |
+| dlit-length-s2023--ETTh2--DLinear--san | ready | 0/6 |  |
+| dlit-length-s2023--ETTh2--DLinear--ddn | ready | 0/6 |  |
+| dlit-length-s2023--ETTh2--DLinear--lt | ready | 0/6 |  |
+| dlit-length-s2023--ETTm1--DLinear--revin | ready | 0/6 |  |
+| dlit-length-s2023--ETTm1--DLinear--san | ready | 0/6 |  |
+| dlit-length-s2023--ETTm1--DLinear--ddn | ready | 0/6 |  |
+| dlit-length-s2023--ETTm1--DLinear--lt | ready | 0/6 |  |
+| dlit-length-s2023--Weather--DLinear--revin | ready | 0/6 |  |
+| dlit-length-s2023--Weather--DLinear--san | ready | 0/6 |  |
+| dlit-length-s2023--Weather--DLinear--ddn | ready | 0/6 |  |
+| dlit-length-s2023--Weather--DLinear--lt | ready | 0/6 |  |
+| dlit-length-s2023--ETTh2--iTransformer--revin | ready | 0/6 |  |
+| dlit-length-s2023--ETTh2--iTransformer--san | ready | 0/6 |  |
+| dlit-length-s2023--ETTh2--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length-s2023--ETTh2--iTransformer--lt | ready | 0/6 |  |
+| dlit-length-s2023--ETTm1--iTransformer--revin | ready | 0/6 |  |
+| dlit-length-s2023--ETTm1--iTransformer--san | ready | 0/6 |  |
+| dlit-length-s2023--ETTm1--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length-s2023--ETTm1--iTransformer--lt | ready | 0/6 |  |
+| dlit-length-s2023--Weather--iTransformer--revin | ready | 0/6 |  |
+| dlit-length-s2023--Weather--iTransformer--san | ready | 0/6 |  |
+| dlit-length-s2023--Weather--iTransformer--ddn | ready | 0/6 |  |
+| dlit-length-s2023--Weather--iTransformer--lt | ready | 0/6 |  |
