@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T10:21:49+00:00 from 8549 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T10:23:37+00:00 from 8555 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -19,7 +19,7 @@ Generated 2026-10-29T10:21:49+00:00 from 8549 packaged cells. Regenerate with `p
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
 | dish-search | 15 | 1 | 12 | 0 | 0 |
 | dish-confirm | 14 | 0 | 1 | 13 | 0 |
-| dish-tuned | 10 | 2 | 2 | 14 | 0 |
+| dish-tuned | 11 | 2 | 1 | 14 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 14 | 14 | 0 |
@@ -205,7 +205,7 @@ Generated 2026-10-29T10:21:49+00:00 from 8549 packaged cells. Regenerate with `p
 | dish-search--ETTm1--TimeFilter | ready | 0/12 |  |
 | dish-search--ETTm2--DLinear | done | 12/12 |  |
 | dish-search--ETTm2--iTransformer | done | 12/12 |  |
-| dish-search--ETTm2--TimeXer | claimed | 4/12 | itm20-gpu0-a4000 |
+| dish-search--ETTm2--TimeXer | claimed | 6/12 | itm20-gpu0-a4000 |
 | dish-search--ETTm2--TimeFilter | done | 12/12 |  |
 | dish-search--Weather--DLinear | done | 12/12 |  |
 | dish-search--Weather--iTransformer | done | 12/12 |  |
@@ -256,14 +256,14 @@ Generated 2026-10-29T10:21:49+00:00 from 8549 packaged cells. Regenerate with `p
 | dish-tuned--ETTh2--TimeXer | done | 4/4 |  |
 | dish-tuned--ETTh2--TimeFilter | done | 4/4 |  |
 | dish-tuned--ETTm1--DLinear | done | 4/4 |  |
-| dish-tuned--ETTm1--iTransformer | claimed | 0/4 | itm21-a4000 |
+| dish-tuned--ETTm1--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTm1--TimeXer | blocked | 0/? |  |
 | dish-tuned--ETTm1--TimeFilter | blocked | 0/? |  |
 | dish-tuned--ETTm2--DLinear | done | 4/4 |  |
 | dish-tuned--ETTm2--iTransformer | claimed | 0/4 | itm20-gpu1-a4000 |
 | dish-tuned--ETTm2--TimeXer | blocked | 0/? |  |
 | dish-tuned--ETTm2--TimeFilter | blocked | 0/? |  |
-| dish-tuned--Weather--DLinear | ready | 0/4 |  |
+| dish-tuned--Weather--DLinear | claimed | 0/4 | itm21-a4000 |
 | dish-tuned--Weather--iTransformer | ready | 0/4 |  |
 | dish-tuned--Weather--TimeXer | blocked | 0/? |  |
 | dish-tuned--Weather--TimeFilter | blocked | 0/? |  |
