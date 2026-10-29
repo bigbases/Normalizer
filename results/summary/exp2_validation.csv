@@ -543,7 +543,7 @@ Weather,DLinear,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": "
 Weather,DLinear,ddn,e082b1250cbb,{},0.381683,0.592649,0.379364,0.598240,0.487166,0.487984,False,False
 Weather,DLinear,ddn,f841fa3c59bc,{},0.381365,0.615486,,,0.498426,,False,False
 Weather,DLinear,dishts,32dd4f2f88ea,"{""dish_init"": ""uniform"", ""station_lr"": 0.0005}",0.402522,0.617735,,,0.510128,,False,False
-Weather,DLinear,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.395065,0.616777,,,0.505921,,True,False
+Weather,DLinear,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.395065,0.616777,,0.616067,0.505921,,True,False
 Weather,DLinear,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.395775,0.616859,,,0.506317,,True,False
 Weather,DLinear,dishts,ad8813500c6f,"{""dish_init"": ""avg"", ""station_lr"": 0.0005}",0.405125,0.615807,,,0.510466,,False,False
 Weather,DLinear,dishts,d06468615702,"{""dish_init"": ""standard"", ""station_lr"": 0.0005}",0.407070,0.615533,,,0.511301,,False,False
@@ -643,7 +643,7 @@ Weather,iTransformer,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station
 Weather,iTransformer,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.413435,0.612202,,,0.512819,,True,False
 Weather,iTransformer,dishts,ad8813500c6f,"{""dish_init"": ""avg"", ""station_lr"": 0.0005}",0.415988,0.713492,,,0.564740,,False,False
 Weather,iTransformer,dishts,d06468615702,"{""dish_init"": ""standard"", ""station_lr"": 0.0005}",0.505874,0.699317,,,0.602595,,False,False
-Weather,iTransformer,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.420723,,,,,,False,False
+Weather,iTransformer,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.420723,0.621438,,,0.521080,,False,False
 Weather,iTransformer,fan,2cdea59375aa,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0005}",0.403867,0.608499,,,0.506183,,False,False
 Weather,iTransformer,fan,5980e8f9fd1d,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 0.0005}",0.388445,0.597597,,,0.493021,,False,False
 Weather,iTransformer,fan,b9173a97d7b8,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 0.0001}",0.390936,0.584302,0.386460,0.583787,0.487619,0.486371,True,False
