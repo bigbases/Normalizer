@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T11:17:17+00:00 from 8626 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T11:24:06+00:00 from 8635 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -18,8 +18,8 @@ Generated 2026-10-29T11:17:17+00:00 from 8626 packaged cells. Regenerate with `p
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
 | dish-search | 19 | 1 | 8 | 0 | 0 |
-| dish-confirm | 17 | 1 | 1 | 9 | 0 |
-| dish-tuned | 15 | 1 | 1 | 11 | 0 |
+| dish-confirm | 17 | 2 | 0 | 9 | 0 |
+| dish-tuned | 16 | 1 | 0 | 11 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 17 | 11 | 0 |
@@ -209,7 +209,7 @@ Generated 2026-10-29T11:17:17+00:00 from 8626 packaged cells. Regenerate with `p
 | dish-search--ETTm2--TimeFilter | done | 12/12 |  |
 | dish-search--Weather--DLinear | done | 12/12 |  |
 | dish-search--Weather--iTransformer | done | 12/12 |  |
-| dish-search--Weather--TimeXer | claimed | 1/12 | itm20-gpu1-a4000 |
+| dish-search--Weather--TimeXer | claimed | 3/12 | itm20-gpu1-a4000 |
 | dish-search--Weather--TimeFilter | done | 12/12 |  |
 | dish-search--Electricity--DLinear | ready | 0/12 |  |
 | dish-search--Electricity--iTransformer | ready | 0/12 |  |
@@ -229,7 +229,7 @@ Generated 2026-10-29T11:17:17+00:00 from 8626 packaged cells. Regenerate with `p
 | dish-confirm--ETTh2--TimeFilter | done | 4/4 |  |
 | dish-confirm--ETTm1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTm1--iTransformer | done | 4/4 |  |
-| dish-confirm--ETTm1--TimeXer | claimed | 0/4 | itm21-a4000 |
+| dish-confirm--ETTm1--TimeXer | claimed | 3/4 | itm21-a4000 |
 | dish-confirm--ETTm1--TimeFilter | done | 4/4 |  |
 | dish-confirm--ETTm2--DLinear | done | 4/4 |  |
 | dish-confirm--ETTm2--iTransformer | done | 4/4 |  |
@@ -238,7 +238,7 @@ Generated 2026-10-29T11:17:17+00:00 from 8626 packaged cells. Regenerate with `p
 | dish-confirm--Weather--DLinear | done | 4/4 |  |
 | dish-confirm--Weather--iTransformer | done | 4/4 |  |
 | dish-confirm--Weather--TimeXer | blocked | 0/? |  |
-| dish-confirm--Weather--TimeFilter | ready | 0/4 |  |
+| dish-confirm--Weather--TimeFilter | claimed | 0/4 | itm20-gpu0-a4000 |
 | dish-confirm--Electricity--DLinear | blocked | 0/? |  |
 | dish-confirm--Electricity--iTransformer | blocked | 0/? |  |
 | dish-confirm--Electricity--TimeXer | blocked | 0/? |  |
@@ -258,10 +258,10 @@ Generated 2026-10-29T11:17:17+00:00 from 8626 packaged cells. Regenerate with `p
 | dish-tuned--ETTm1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTm1--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTm1--TimeXer | blocked | 0/? |  |
-| dish-tuned--ETTm1--TimeFilter | ready | 0/4 |  |
+| dish-tuned--ETTm1--TimeFilter | claimed | 0/4 | itm21-a4000 |
 | dish-tuned--ETTm2--DLinear | done | 4/4 |  |
 | dish-tuned--ETTm2--iTransformer | done | 4/4 |  |
-| dish-tuned--ETTm2--TimeXer | claimed | 0/4 | itm20-gpu0-a4000 |
+| dish-tuned--ETTm2--TimeXer | done | 4/4 |  |
 | dish-tuned--ETTm2--TimeFilter | done | 4/4 |  |
 | dish-tuned--Weather--DLinear | done | 4/4 |  |
 | dish-tuned--Weather--iTransformer | done | 4/4 |  |
