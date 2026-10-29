@@ -375,6 +375,10 @@
       "twice_epoch": 0,
       "wavelet": "coif3"
     },
+    "ETTm2|iTransformer|dishts": {
+      "dish_init": "avg",
+      "station_lr": 0.0001
+    },
     "ETTm2|iTransformer|revin": {
       "affine": 0,
       "station_lr": 0.0001

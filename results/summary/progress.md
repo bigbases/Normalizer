@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T10:03:32+00:00 from 8522 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T10:11:14+00:00 from 8531 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,8 +17,8 @@ Generated 2026-10-29T10:03:32+00:00 from 8522 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 13 | 2 | 13 | 0 | 0 |
-| dish-confirm | 10 | 1 | 2 | 15 | 0 |
+| dish-search | 14 | 2 | 12 | 0 | 0 |
+| dish-confirm | 10 | 3 | 1 | 14 | 0 |
 | dish-tuned | 10 | 0 | 0 | 18 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -205,10 +205,10 @@ Generated 2026-10-29T10:03:32+00:00 from 8522 packaged cells. Regenerate with `p
 | dish-search--ETTm1--TimeFilter | ready | 0/12 |  |
 | dish-search--ETTm2--DLinear | done | 12/12 |  |
 | dish-search--ETTm2--iTransformer | done | 12/12 |  |
-| dish-search--ETTm2--TimeXer | ready | 0/12 |  |
-| dish-search--ETTm2--TimeFilter | claimed | 8/12 | itm20-gpu1-a4000 |
+| dish-search--ETTm2--TimeXer | claimed | 0/12 | itm20-gpu0-a4000 |
+| dish-search--ETTm2--TimeFilter | done | 12/12 |  |
 | dish-search--Weather--DLinear | done | 12/12 |  |
-| dish-search--Weather--iTransformer | claimed | 9/12 | itm21-a4000 |
+| dish-search--Weather--iTransformer | claimed | 11/12 | itm21-a4000 |
 | dish-search--Weather--TimeXer | ready | 0/12 |  |
 | dish-search--Weather--TimeFilter | ready | 0/12 |  |
 | dish-search--Electricity--DLinear | ready | 0/12 |  |
@@ -228,14 +228,14 @@ Generated 2026-10-29T10:03:32+00:00 from 8522 packaged cells. Regenerate with `p
 | dish-confirm--ETTh2--TimeXer | done | 4/4 |  |
 | dish-confirm--ETTh2--TimeFilter | done | 4/4 |  |
 | dish-confirm--ETTm1--DLinear | done | 4/4 |  |
-| dish-confirm--ETTm1--iTransformer | ready | 0/4 |  |
+| dish-confirm--ETTm1--iTransformer | claimed | 0/4 | itm20-gpu1-a4000 |
 | dish-confirm--ETTm1--TimeXer | blocked | 0/? |  |
 | dish-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
 | dish-confirm--ETTm2--DLinear | done | 4/4 |  |
-| dish-confirm--ETTm2--iTransformer | claimed | 0/4 | itm20-gpu0-a4000 |
+| dish-confirm--ETTm2--iTransformer | claimed | 3/4 | itm20-gpu0-a4000 |
 | dish-confirm--ETTm2--TimeXer | blocked | 0/? |  |
-| dish-confirm--ETTm2--TimeFilter | blocked | 0/? |  |
-| dish-confirm--Weather--DLinear | ready | 0/4 |  |
+| dish-confirm--ETTm2--TimeFilter | ready | 0/4 |  |
+| dish-confirm--Weather--DLinear | claimed | 0/4 | itm21-a4000 |
 | dish-confirm--Weather--iTransformer | blocked | 0/? |  |
 | dish-confirm--Weather--TimeXer | blocked | 0/? |  |
 | dish-confirm--Weather--TimeFilter | blocked | 0/? |  |

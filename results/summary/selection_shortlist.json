@@ -1393,22 +1393,22 @@
     ],
     "ETTm2|TimeFilter|dishts": [
       {
-        "candidate_id": "112f7a5e174c",
+        "candidate_id": "9db6b0bec9f5",
         "n_cells": 2,
         "params": {
-          "dish_init": "avg",
+          "dish_init": "uniform",
           "station_lr": 5e-05
         },
-        "screen_mean_val_mse": 0.2941334937828566
+        "screen_mean_val_mse": 0.2878517655715375
       },
       {
-        "candidate_id": "4b3fc1cfcf90",
+        "candidate_id": "4ff89483b844",
         "n_cells": 2,
         "params": {
-          "dish_init": "standard",
-          "station_lr": 5e-05
+          "dish_init": "uniform",
+          "station_lr": 0.0001
         },
-        "screen_mean_val_mse": 0.33747607941306496
+        "screen_mean_val_mse": 0.288397965109173
       }
     ],
     "ETTm2|TimeFilter|revin": [
