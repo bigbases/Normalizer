@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T07:49:06+00:00 from 8218 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T07:50:15+00:00 from 8222 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,8 +11,8 @@ Generated 2026-10-29T07:49:06+00:00 from 8218 packaged cells. Regenerate with `p
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 3 | 0 | 0 | 1 | 0 |
-| exch-none-s2022 | 0 | 0 | 4 | 0 | 0 |
-| exch-tuned-s2022 | 0 | 1 | 19 | 0 | 0 |
+| exch-none-s2022 | 0 | 1 | 3 | 0 | 0 |
+| exch-tuned-s2022 | 1 | 1 | 18 | 0 | 0 |
 | exch-lt-tuned-s2022 | 0 | 0 | 3 | 1 | 0 |
 | exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
 | exch-tuned-s2023 | 0 | 0 | 20 | 0 | 0 |
@@ -135,15 +135,15 @@ Generated 2026-10-29T07:49:06+00:00 from 8218 packaged cells. Regenerate with `p
 | exch-lt-tuned--Exchange--iTransformer | done | 4/4 |  |
 | exch-lt-tuned--Exchange--TimeXer | done | 4/4 |  |
 | exch-lt-tuned--Exchange--TimeFilter | blocked | 0/? |  |
-| exch-none-s2022--Exchange--DLinear | ready | 0/4 |  |
+| exch-none-s2022--Exchange--DLinear | claimed | 0/4 | itm20-gpu0-a4000 |
 | exch-none-s2022--Exchange--iTransformer | ready | 0/4 |  |
 | exch-none-s2022--Exchange--TimeXer | ready | 0/4 |  |
 | exch-none-s2022--Exchange--TimeFilter | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--DLinear--revin | ready | 0/4 |  |
+| exch-tuned-s2022--Exchange--DLinear--revin | claimed | 0/4 | itm20-gpu1-a4000 |
 | exch-tuned-s2022--Exchange--DLinear--san | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--DLinear--ddn | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--DLinear--fan | ready | 0/4 |  |
-| exch-tuned-s2022--Exchange--DLinear--dishts | claimed | 0/4 | itm20-gpu1-a4000 |
+| exch-tuned-s2022--Exchange--DLinear--dishts | done | 4/4 |  |
 | exch-tuned-s2022--Exchange--iTransformer--revin | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--iTransformer--san | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--iTransformer--ddn | ready | 0/4 |  |
