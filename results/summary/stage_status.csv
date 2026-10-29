@@ -114,7 +114,7 @@ exch-tuned-s2023,Exchange,DLinear,fan,done,4,4,
 exch-tuned-s2023,Exchange,DLinear,dishts,done,4,4,
 exch-tuned-s2023,Exchange,iTransformer,revin,done,4,4,
 exch-tuned-s2023,Exchange,iTransformer,san,done,4,4,
-exch-tuned-s2023,Exchange,iTransformer,ddn,claimed,2,4,itm20-gpu1-a4000
+exch-tuned-s2023,Exchange,iTransformer,ddn,done,4,4,
 exch-tuned-s2023,Exchange,iTransformer,fan,done,4,4,
 exch-tuned-s2023,Exchange,iTransformer,dishts,done,4,4,
 exch-tuned-s2023,Exchange,TimeXer,revin,done,4,4,
