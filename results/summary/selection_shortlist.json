@@ -1541,6 +1541,15 @@
     ],
     "ETTm2|iTransformer|dishts": [
       {
+        "candidate_id": "d2a446c80585",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.24280689019373758
+      },
+      {
         "candidate_id": "991b5cc14619",
         "n_cells": 2,
         "params": {
@@ -1548,15 +1557,6 @@
           "station_lr": 0.0001
         },
         "screen_mean_val_mse": 0.2447264404186189
-      },
-      {
-        "candidate_id": "32dd4f2f88ea",
-        "n_cells": 2,
-        "params": {
-          "dish_init": "uniform",
-          "station_lr": 0.0005
-        },
-        "screen_mean_val_mse": 0.2672237921977508
       }
     ],
     "ETTm2|iTransformer|revin": [
