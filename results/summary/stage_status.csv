@@ -109,7 +109,7 @@ exch-none-s2023,Exchange,TimeXer,none,done,4,4,
 exch-none-s2023,Exchange,TimeFilter,none,ready,0,4,
 exch-tuned-s2023,Exchange,DLinear,revin,done,4,4,
 exch-tuned-s2023,Exchange,DLinear,san,done,4,4,
-exch-tuned-s2023,Exchange,DLinear,ddn,claimed,2,4,itm20-gpu0-a4000
+exch-tuned-s2023,Exchange,DLinear,ddn,done,4,4,
 exch-tuned-s2023,Exchange,DLinear,fan,done,4,4,
 exch-tuned-s2023,Exchange,DLinear,dishts,done,4,4,
 exch-tuned-s2023,Exchange,iTransformer,revin,done,4,4,
