@@ -418,6 +418,10 @@
       "twice_epoch": 0,
       "wavelet": "coif3"
     },
+    "Electricity|DLinear|dishts": {
+      "dish_init": "standard",
+      "station_lr": 0.0001
+    },
     "Electricity|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 3,

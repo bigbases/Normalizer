@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T13:00:42+00:00 from 8682 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T13:17:46+00:00 from 8686 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,12 +17,12 @@ Generated 2026-10-29T13:00:42+00:00 from 8682 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 21 | 2 | 5 | 0 | 0 |
-| dish-confirm | 20 | 1 | 0 | 7 | 0 |
-| dish-tuned | 20 | 0 | 0 | 8 | 0 |
+| dish-search | 21 | 3 | 4 | 0 | 0 |
+| dish-confirm | 21 | 0 | 0 | 7 | 0 |
+| dish-tuned | 20 | 0 | 1 | 7 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2022 | 0 | 0 | 20 | 8 | 0 |
+| dish-tuned-s2022 | 0 | 0 | 21 | 7 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -35,7 +35,7 @@ Generated 2026-10-29T13:00:42+00:00 from 8682 packaged cells. Regenerate with `p
 | t3-rf-search | 24 | 0 | 4 | 0 | 0 |
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
-| dish-tuned-s2023 | 0 | 0 | 20 | 8 | 0 |
+| dish-tuned-s2023 | 0 | 0 | 21 | 7 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -218,7 +218,7 @@ Generated 2026-10-29T13:00:42+00:00 from 8682 packaged cells. Regenerate with `p
 | dish-search--Traffic--DLinear | ready | 0/12 |  |
 | dish-search--Traffic--iTransformer | ready | 0/12 |  |
 | dish-search--Traffic--TimeXer | ready | 0/12 |  |
-| dish-search--Traffic--TimeFilter | ready | 0/12 |  |
+| dish-search--Traffic--TimeFilter | claimed | 0/12 | itm21-a4000 |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
 | dish-confirm--ETTh1--TimeXer | done | 4/4 |  |
@@ -239,7 +239,7 @@ Generated 2026-10-29T13:00:42+00:00 from 8682 packaged cells. Regenerate with `p
 | dish-confirm--Weather--iTransformer | done | 4/4 |  |
 | dish-confirm--Weather--TimeXer | done | 4/4 |  |
 | dish-confirm--Weather--TimeFilter | done | 4/4 |  |
-| dish-confirm--Electricity--DLinear | claimed | 0/4 | itm21-a4000 |
+| dish-confirm--Electricity--DLinear | done | 4/4 |  |
 | dish-confirm--Electricity--iTransformer | blocked | 0/? |  |
 | dish-confirm--Electricity--TimeXer | blocked | 0/? |  |
 | dish-confirm--Electricity--TimeFilter | blocked | 0/? |  |
@@ -267,7 +267,7 @@ Generated 2026-10-29T13:00:42+00:00 from 8682 packaged cells. Regenerate with `p
 | dish-tuned--Weather--iTransformer | done | 4/4 |  |
 | dish-tuned--Weather--TimeXer | done | 4/4 |  |
 | dish-tuned--Weather--TimeFilter | done | 4/4 |  |
-| dish-tuned--Electricity--DLinear | blocked | 0/? |  |
+| dish-tuned--Electricity--DLinear | ready | 0/4 |  |
 | dish-tuned--Electricity--iTransformer | blocked | 0/? |  |
 | dish-tuned--Electricity--TimeXer | blocked | 0/? |  |
 | dish-tuned--Electricity--TimeFilter | blocked | 0/? |  |
@@ -323,7 +323,7 @@ Generated 2026-10-29T13:00:42+00:00 from 8682 packaged cells. Regenerate with `p
 | dish-tuned-s2022--Weather--iTransformer | ready | 0/4 |  |
 | dish-tuned-s2022--Weather--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--Weather--TimeFilter | ready | 0/4 |  |
-| dish-tuned-s2022--Electricity--DLinear | blocked | 0/? |  |
+| dish-tuned-s2022--Electricity--DLinear | ready | 0/4 |  |
 | dish-tuned-s2022--Electricity--iTransformer | blocked | 0/? |  |
 | dish-tuned-s2022--Electricity--TimeXer | blocked | 0/? |  |
 | dish-tuned-s2022--Electricity--TimeFilter | blocked | 0/? |  |
@@ -499,7 +499,7 @@ Generated 2026-10-29T13:00:42+00:00 from 8682 packaged cells. Regenerate with `p
 | dish-tuned-s2023--Weather--iTransformer | ready | 0/4 |  |
 | dish-tuned-s2023--Weather--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2023--Weather--TimeFilter | ready | 0/4 |  |
-| dish-tuned-s2023--Electricity--DLinear | blocked | 0/? |  |
+| dish-tuned-s2023--Electricity--DLinear | ready | 0/4 |  |
 | dish-tuned-s2023--Electricity--iTransformer | blocked | 0/? |  |
 | dish-tuned-s2023--Electricity--TimeXer | blocked | 0/? |  |
 | dish-tuned-s2023--Electricity--TimeFilter | blocked | 0/? |  |

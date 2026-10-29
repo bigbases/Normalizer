@@ -706,8 +706,8 @@ Electricity,DLinear,ddn,e082b1250cbb,{},0.111515,0.166994,,,0.139254,,False,Fals
 Electricity,DLinear,ddn,f841fa3c59bc,{},0.111477,0.166522,0.111648,0.167095,0.138999,0.139185,False,False
 Electricity,DLinear,dishts,2d4a8ad8070c,"{""dish_init"": ""avg"", ""station_lr"": 0.001}",0.118148,0.172767,,,0.145458,,False,False
 Electricity,DLinear,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.117429,0.172780,,,0.145104,,False,False
-Electricity,DLinear,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.117353,0.172096,,,0.144724,,True,False
-Electricity,DLinear,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.117313,0.171592,,,0.144453,,True,False
+Electricity,DLinear,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.117353,0.172096,0.117326,0.172584,0.144724,0.144840,True,False
+Electricity,DLinear,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.117313,0.171592,0.117295,0.171517,0.144453,0.144429,True,True
 Electricity,DLinear,dishts,db2847be3ce4,"{""dish_init"": ""standard"", ""station_lr"": 0.001}",0.118320,0.173832,,,0.146076,,False,False
 Electricity,DLinear,dishts,ffdee7a61d68,"{""dish_init"": ""uniform"", ""station_lr"": 0.001}",0.117893,0.172239,,,0.145066,,False,False
 Electricity,DLinear,fan,2479cac43388,"{""fan_aux_weight"": 1.0, ""freq_topk"": 3, ""station_lr"": 0.0001}",0.127971,0.186420,,,0.157195,,False,False
