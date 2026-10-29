@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T09:49:02+00:00 from 8499 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T09:51:16+00:00 from 8502 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,8 +17,8 @@ Generated 2026-10-29T09:49:02+00:00 from 8499 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 11 | 4 | 13 | 0 | 0 |
-| dish-confirm | 10 | 0 | 1 | 17 | 0 |
+| dish-search | 12 | 3 | 13 | 0 | 0 |
+| dish-confirm | 10 | 0 | 2 | 16 | 0 |
 | dish-tuned | 10 | 0 | 0 | 18 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -204,11 +204,11 @@ Generated 2026-10-29T09:49:02+00:00 from 8499 packaged cells. Regenerate with `p
 | dish-search--ETTm1--TimeXer | ready | 0/12 |  |
 | dish-search--ETTm1--TimeFilter | ready | 0/12 |  |
 | dish-search--ETTm2--DLinear | done | 12/12 |  |
-| dish-search--ETTm2--iTransformer | claimed | 11/12 | itm20-gpu0-a4000 |
+| dish-search--ETTm2--iTransformer | done | 12/12 |  |
 | dish-search--ETTm2--TimeXer | ready | 0/12 |  |
 | dish-search--ETTm2--TimeFilter | claimed | 0/12 | itm20-gpu1-a4000 |
-| dish-search--Weather--DLinear | claimed | 1/12 | itm20-gpu0-a4000 |
-| dish-search--Weather--iTransformer | claimed | 6/12 | itm21-a4000 |
+| dish-search--Weather--DLinear | claimed | 2/12 | itm20-gpu0-a4000 |
+| dish-search--Weather--iTransformer | claimed | 7/12 | itm21-a4000 |
 | dish-search--Weather--TimeXer | ready | 0/12 |  |
 | dish-search--Weather--TimeFilter | ready | 0/12 |  |
 | dish-search--Electricity--DLinear | ready | 0/12 |  |
@@ -232,7 +232,7 @@ Generated 2026-10-29T09:49:02+00:00 from 8499 packaged cells. Regenerate with `p
 | dish-confirm--ETTm1--TimeXer | blocked | 0/? |  |
 | dish-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
 | dish-confirm--ETTm2--DLinear | done | 4/4 |  |
-| dish-confirm--ETTm2--iTransformer | blocked | 0/? |  |
+| dish-confirm--ETTm2--iTransformer | ready | 0/4 |  |
 | dish-confirm--ETTm2--TimeXer | blocked | 0/? |  |
 | dish-confirm--ETTm2--TimeFilter | blocked | 0/? |  |
 | dish-confirm--Weather--DLinear | blocked | 0/? |  |
