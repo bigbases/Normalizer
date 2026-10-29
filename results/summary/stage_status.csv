@@ -154,7 +154,7 @@ dish-search,Weather,TimeFilter,dishts,done,12,12,
 dish-search,Electricity,DLinear,dishts,done,12,12,
 dish-search,Electricity,iTransformer,dishts,ready,0,12,
 dish-search,Electricity,TimeXer,dishts,claimed,6,12,itm20-gpu1-a4000
-dish-search,Electricity,TimeFilter,dishts,claimed,11,12,itm20-gpu0-a4000
+dish-search,Electricity,TimeFilter,dishts,done,12,12,
 dish-search,Traffic,DLinear,dishts,ready,0,12,
 dish-search,Traffic,iTransformer,dishts,ready,0,12,
 dish-search,Traffic,TimeXer,dishts,claimed,0,12,itm20-gpu0-a4000
@@ -182,7 +182,7 @@ dish-confirm,Weather,TimeFilter,dishts,done,4,4,
 dish-confirm,Electricity,DLinear,dishts,done,4,4,
 dish-confirm,Electricity,iTransformer,dishts,blocked,0,,
 dish-confirm,Electricity,TimeXer,dishts,blocked,0,,
-dish-confirm,Electricity,TimeFilter,dishts,blocked,0,,
+dish-confirm,Electricity,TimeFilter,dishts,ready,0,4,
 dish-confirm,Traffic,DLinear,dishts,blocked,0,,
 dish-confirm,Traffic,iTransformer,dishts,blocked,0,,
 dish-confirm,Traffic,TimeXer,dishts,blocked,0,,
