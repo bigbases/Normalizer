@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T09:06:04+00:00 from 8433 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T09:06:23+00:00 from 8434 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -15,7 +15,7 @@ Generated 2026-10-29T09:06:04+00:00 from 8433 packaged cells. Regenerate with `p
 | exch-tuned-s2022 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2022 | 4 | 0 | 0 | 0 | 0 |
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
-| exch-tuned-s2023 | 15 | 4 | 1 | 0 | 0 |
+| exch-tuned-s2023 | 16 | 3 | 1 | 0 | 0 |
 | exch-lt-tuned-s2023 | 3 | 1 | 0 | 0 | 0 |
 | dish-search | 9 | 0 | 19 | 0 | 0 |
 | dish-confirm | 9 | 0 | 0 | 19 | 0 |
@@ -182,7 +182,7 @@ Generated 2026-10-29T09:06:04+00:00 from 8433 packaged cells. Regenerate with `p
 | exch-tuned-s2023--Exchange--TimeXer--ddn | done | 4/4 |  |
 | exch-tuned-s2023--Exchange--TimeXer--fan | done | 4/4 |  |
 | exch-tuned-s2023--Exchange--TimeXer--dishts | done | 4/4 |  |
-| exch-tuned-s2023--Exchange--TimeFilter--revin | claimed | 3/4 | itm20-gpu1-a4000 |
+| exch-tuned-s2023--Exchange--TimeFilter--revin | done | 4/4 |  |
 | exch-tuned-s2023--Exchange--TimeFilter--san | claimed | 0/4 | itm21-a4000 |
 | exch-tuned-s2023--Exchange--TimeFilter--ddn | claimed | 0/4 | itm20-gpu0-a4000 |
 | exch-tuned-s2023--Exchange--TimeFilter--fan | ready | 0/4 |  |

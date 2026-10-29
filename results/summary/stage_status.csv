@@ -122,7 +122,7 @@ exch-tuned-s2023,Exchange,TimeXer,san,done,4,4,
 exch-tuned-s2023,Exchange,TimeXer,ddn,done,4,4,
 exch-tuned-s2023,Exchange,TimeXer,fan,done,4,4,
 exch-tuned-s2023,Exchange,TimeXer,dishts,done,4,4,
-exch-tuned-s2023,Exchange,TimeFilter,revin,claimed,3,4,itm20-gpu1-a4000
+exch-tuned-s2023,Exchange,TimeFilter,revin,done,4,4,
 exch-tuned-s2023,Exchange,TimeFilter,san,claimed,0,4,itm21-a4000
 exch-tuned-s2023,Exchange,TimeFilter,ddn,claimed,0,4,itm20-gpu0-a4000
 exch-tuned-s2023,Exchange,TimeFilter,fan,ready,0,4,
