@@ -1945,6 +1945,26 @@
         "screen_mean_val_mse": 0.16112060863993266
       }
     ],
+    "Electricity|TimeXer|dishts": [
+      {
+        "candidate_id": "112f7a5e174c",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.1570765711941153
+      },
+      {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.15713390658650572
+      }
+    ],
     "Electricity|TimeXer|fan": [
       {
         "candidate_id": "2479cac43388",

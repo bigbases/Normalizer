@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T18:05:54+00:00 from 8710 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T21:59:49+00:00 from 8720 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,8 +17,8 @@ Generated 2026-10-29T18:05:54+00:00 from 8710 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 22 | 3 | 3 | 0 | 0 |
-| dish-confirm | 21 | 0 | 1 | 6 | 0 |
+| dish-search | 23 | 2 | 3 | 0 | 0 |
+| dish-confirm | 21 | 1 | 1 | 5 | 0 |
 | dish-tuned | 21 | 0 | 0 | 7 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -213,12 +213,12 @@ Generated 2026-10-29T18:05:54+00:00 from 8710 packaged cells. Regenerate with `p
 | dish-search--Weather--TimeFilter | done | 12/12 |  |
 | dish-search--Electricity--DLinear | done | 12/12 |  |
 | dish-search--Electricity--iTransformer | ready | 0/12 |  |
-| dish-search--Electricity--TimeXer | claimed | 6/12 | itm20-gpu1-a4000 |
+| dish-search--Electricity--TimeXer | done | 12/12 |  |
 | dish-search--Electricity--TimeFilter | done | 12/12 |  |
 | dish-search--Traffic--DLinear | ready | 0/12 |  |
 | dish-search--Traffic--iTransformer | ready | 0/12 |  |
-| dish-search--Traffic--TimeXer | claimed | 0/12 | itm20-gpu0-a4000 |
-| dish-search--Traffic--TimeFilter | claimed | 3/12 | itm21-a4000 |
+| dish-search--Traffic--TimeXer | claimed | 2/12 | itm20-gpu0-a4000 |
+| dish-search--Traffic--TimeFilter | claimed | 5/12 | itm21-a4000 |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
 | dish-confirm--ETTh1--TimeXer | done | 4/4 |  |
@@ -241,8 +241,8 @@ Generated 2026-10-29T18:05:54+00:00 from 8710 packaged cells. Regenerate with `p
 | dish-confirm--Weather--TimeFilter | done | 4/4 |  |
 | dish-confirm--Electricity--DLinear | done | 4/4 |  |
 | dish-confirm--Electricity--iTransformer | blocked | 0/? |  |
-| dish-confirm--Electricity--TimeXer | blocked | 0/? |  |
-| dish-confirm--Electricity--TimeFilter | ready | 0/4 |  |
+| dish-confirm--Electricity--TimeXer | ready | 0/4 |  |
+| dish-confirm--Electricity--TimeFilter | claimed | 0/4 | itm20-gpu1-a4000 |
 | dish-confirm--Traffic--DLinear | blocked | 0/? |  |
 | dish-confirm--Traffic--iTransformer | blocked | 0/? |  |
 | dish-confirm--Traffic--TimeXer | blocked | 0/? |  |
