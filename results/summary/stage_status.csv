@@ -2,13 +2,13 @@ Phase,Dataset,Backbone,Method,Status,CellsDone,CellsTotal,Worker
 t3-lt-search,ETTh1,TimeXer,lt,done,12,12,
 t3-lt-search,ETTm1,TimeXer,lt,done,12,12,
 t3-lt-search,Weather,TimeXer,lt,done,12,12,
-t3-lt-search,Electricity,TimeXer,lt,claimed,2,12,itm20-gpu1-a4000
-t3-lt-search,Traffic,TimeXer,lt,claimed,2,12,itm20-gpu0-a4000
+t3-lt-search,Electricity,TimeXer,lt,claimed,9,12,itm20-gpu1-a4000
+t3-lt-search,Traffic,TimeXer,lt,claimed,5,12,itm20-gpu0-a4000
 t3-lt-search,ETTh1,TimeFilter,lt,done,12,12,
 t3-lt-search,ETTm1,TimeFilter,lt,done,12,12,
 t3-lt-search,Weather,TimeFilter,lt,done,12,12,
-t3-lt-search,Electricity,TimeFilter,lt,claimed,2,12,itm21-a4000
-t3-lt-search,Traffic,TimeFilter,lt,ready,2,12,
+t3-lt-search,Electricity,TimeFilter,lt,done,12,12,
+t3-lt-search,Traffic,TimeFilter,lt,claimed,2,12,itm21-a4000
 t3-lt-search,ETTh2,TimeXer,lt,done,12,12,
 t3-lt-search,ETTm2,TimeXer,lt,done,12,12,
 t3-lt-search,ETTh2,TimeFilter,lt,done,12,12,
@@ -21,7 +21,7 @@ t3-lt-confirm,Traffic,TimeXer,lt,blocked,0,,
 t3-lt-confirm,ETTh1,TimeFilter,lt,ready,2,4,
 t3-lt-confirm,ETTm1,TimeFilter,lt,ready,2,4,
 t3-lt-confirm,Weather,TimeFilter,lt,ready,0,4,
-t3-lt-confirm,Electricity,TimeFilter,lt,blocked,0,,
+t3-lt-confirm,Electricity,TimeFilter,lt,ready,0,4,
 t3-lt-confirm,Traffic,TimeFilter,lt,blocked,0,,
 t3-lt-confirm,ETTh2,TimeXer,lt,ready,2,4,
 t3-lt-confirm,ETTm2,TimeXer,lt,ready,0,4,
@@ -149,7 +149,7 @@ dish-search,ETTh2,DLinear,dishts,done,12,12,
 dish-search,ETTh2,iTransformer,dishts,done,12,12,
 dish-search,ETTh2,TimeXer,dishts,done,12,12,
 dish-search,ETTh2,TimeFilter,dishts,done,12,12,
-dish-search,ETTm1,DLinear,dishts,claimed,10,12,itm20-gpu0-a4000
+dish-search,ETTm1,DLinear,dishts,ready,10,12,
 dish-search,ETTm1,iTransformer,dishts,ready,0,12,
 dish-search,ETTm1,TimeXer,dishts,ready,0,12,
 dish-search,ETTm1,TimeFilter,dishts,ready,0,12,
@@ -157,7 +157,7 @@ dish-search,ETTm2,DLinear,dishts,done,12,12,
 dish-search,ETTm2,iTransformer,dishts,ready,0,12,
 dish-search,ETTm2,TimeXer,dishts,ready,0,12,
 dish-search,ETTm2,TimeFilter,dishts,ready,0,12,
-dish-search,Weather,DLinear,dishts,claimed,1,12,itm21-a4000
+dish-search,Weather,DLinear,dishts,ready,1,12,
 dish-search,Weather,iTransformer,dishts,ready,0,12,
 dish-search,Weather,TimeXer,dishts,ready,0,12,
 dish-search,Weather,TimeFilter,dishts,ready,0,12,
@@ -257,7 +257,7 @@ dish-tuned,ETTm1,DLinear,dishts,blocked,0,,
 dish-tuned,ETTm1,iTransformer,dishts,blocked,0,,
 dish-tuned,ETTm1,TimeXer,dishts,blocked,0,,
 dish-tuned,ETTm1,TimeFilter,dishts,blocked,0,,
-dish-tuned,ETTm2,DLinear,dishts,claimed,0,4,itm20-gpu1-a4000
+dish-tuned,ETTm2,DLinear,dishts,ready,0,4,
 dish-tuned,ETTm2,iTransformer,dishts,blocked,0,,
 dish-tuned,ETTm2,TimeXer,dishts,blocked,0,,
 dish-tuned,ETTm2,TimeFilter,dishts,blocked,0,,
