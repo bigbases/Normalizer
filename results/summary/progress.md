@@ -1,11 +1,11 @@
 # Experiment progress
 
-Generated 2026-10-28T23:47:00+00:00 from 8110 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T00:03:32+00:00 from 8126 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
-| t3-lt-search | 6 | 3 | 5 | 0 | 0 |
-| t3-lt-confirm | 0 | 0 | 6 | 8 | 0 |
+| t3-lt-search | 7 | 3 | 4 | 0 | 0 |
+| t3-lt-confirm | 0 | 0 | 7 | 7 | 0 |
 | t3-lt-tuned | 0 | 0 | 0 | 14 | 0 |
 | t3-lt-tuned-s2022 | 0 | 0 | 0 | 14 | 0 |
 | t3-lt-tuned-s2023 | 0 | 0 | 0 | 14 | 0 |
@@ -61,25 +61,25 @@ Generated 2026-10-28T23:47:00+00:00 from 8110 packaged cells. Regenerate with `p
 |---|---|---|---|
 | t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeXer | done | 12/12 |  |
-| t3-lt-search--Weather--TimeXer | claimed | 3/12 | itm21-a4000 |
+| t3-lt-search--Weather--TimeXer | claimed | 7/12 | itm21-a4000 |
 | t3-lt-search--Electricity--TimeXer | ready | 2/12 |  |
 | t3-lt-search--Traffic--TimeXer | ready | 2/12 |  |
 | t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
-| t3-lt-search--ETTm1--TimeFilter | claimed | 6/12 | itm20-gpu0-a4000 |
-| t3-lt-search--Weather--TimeFilter | ready | 2/12 |  |
+| t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
+| t3-lt-search--Weather--TimeFilter | claimed | 2/12 | itm20-gpu0-a4000 |
 | t3-lt-search--Electricity--TimeFilter | ready | 2/12 |  |
 | t3-lt-search--Traffic--TimeFilter | ready | 2/12 |  |
 | t3-lt-search--ETTh2--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTm2--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTh2--TimeFilter | done | 12/12 |  |
-| t3-lt-search--ETTm2--TimeFilter | claimed | 2/12 | itm20-gpu1-a4000 |
+| t3-lt-search--ETTm2--TimeFilter | claimed | 8/12 | itm20-gpu1-a4000 |
 | t3-lt-confirm--ETTh1--TimeXer | ready | 0/4 |  |
 | t3-lt-confirm--ETTm1--TimeXer | ready | 2/4 |  |
 | t3-lt-confirm--Weather--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--ETTh1--TimeFilter | ready | 2/4 |  |
-| t3-lt-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
+| t3-lt-confirm--ETTm1--TimeFilter | ready | 2/4 |  |
 | t3-lt-confirm--Weather--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--Traffic--TimeFilter | blocked | 0/? |  |
