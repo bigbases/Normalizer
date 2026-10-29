@@ -989,6 +989,26 @@
         "screen_mean_val_mse": 0.6287977421719486
       }
     ],
+    "ETTm1|TimeFilter|dishts": [
+      {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.6547335928756328
+      },
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.6604382610482662
+      }
+    ],
     "ETTm1|TimeFilter|fan": [
       {
         "candidate_id": "e0d362626473",
@@ -1083,6 +1103,26 @@
           "wavelet": "coif3"
         },
         "screen_mean_val_mse": 0.6216632170112373
+      }
+    ],
+    "ETTm1|TimeXer|dishts": [
+      {
+        "candidate_id": "4b3fc1cfcf90",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.6346155918408918
+      },
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.6355905378425964
       }
     ],
     "ETTm1|TimeXer|fan": [

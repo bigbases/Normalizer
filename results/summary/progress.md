@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T10:40:19+00:00 from 8579 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T11:04:20+00:00 from 8607 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,9 +17,9 @@ Generated 2026-10-29T10:40:19+00:00 from 8579 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 16 | 3 | 9 | 0 | 0 |
-| dish-confirm | 15 | 0 | 1 | 12 | 0 |
-| dish-tuned | 14 | 0 | 1 | 13 | 0 |
+| dish-search | 17 | 2 | 9 | 0 | 0 |
+| dish-confirm | 15 | 1 | 1 | 11 | 0 |
+| dish-tuned | 14 | 1 | 0 | 13 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 15 | 13 | 0 |
@@ -45,7 +45,7 @@ Generated 2026-10-29T10:40:19+00:00 from 8579 packaged cells. Regenerate with `p
 | exp2-confirm | 52 | 0 | 0 | 4 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | exp3-tuned | 52 | 0 | 0 | 4 | 0 |
-| t3-lt-search | 11 | 1 | 2 | 0 | 0 |
+| t3-lt-search | 11 | 0 | 3 | 0 | 0 |
 | t3-lt-confirm | 0 | 0 | 11 | 3 | 0 |
 | t3-lt-tuned | 0 | 0 | 0 | 14 | 0 |
 | t3-lt-tuned-s2022 | 0 | 0 | 0 | 14 | 0 |
@@ -201,8 +201,8 @@ Generated 2026-10-29T10:40:19+00:00 from 8579 packaged cells. Regenerate with `p
 | dish-search--ETTh2--TimeFilter | done | 12/12 |  |
 | dish-search--ETTm1--DLinear | done | 12/12 |  |
 | dish-search--ETTm1--iTransformer | done | 12/12 |  |
-| dish-search--ETTm1--TimeXer | claimed | 0/12 | itm20-gpu1-a4000 |
-| dish-search--ETTm1--TimeFilter | claimed | 2/12 | itm20-gpu0-a4000 |
+| dish-search--ETTm1--TimeXer | claimed | 10/12 | itm20-gpu1-a4000 |
+| dish-search--ETTm1--TimeFilter | done | 12/12 |  |
 | dish-search--ETTm2--DLinear | done | 12/12 |  |
 | dish-search--ETTm2--iTransformer | done | 12/12 |  |
 | dish-search--ETTm2--TimeXer | done | 12/12 |  |
@@ -210,7 +210,7 @@ Generated 2026-10-29T10:40:19+00:00 from 8579 packaged cells. Regenerate with `p
 | dish-search--Weather--DLinear | done | 12/12 |  |
 | dish-search--Weather--iTransformer | done | 12/12 |  |
 | dish-search--Weather--TimeXer | ready | 0/12 |  |
-| dish-search--Weather--TimeFilter | claimed | 0/12 | itm21-a4000 |
+| dish-search--Weather--TimeFilter | claimed | 7/12 | itm21-a4000 |
 | dish-search--Electricity--DLinear | ready | 0/12 |  |
 | dish-search--Electricity--iTransformer | ready | 0/12 |  |
 | dish-search--Electricity--TimeXer | ready | 0/12 |  |
@@ -230,10 +230,10 @@ Generated 2026-10-29T10:40:19+00:00 from 8579 packaged cells. Regenerate with `p
 | dish-confirm--ETTm1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTm1--iTransformer | done | 4/4 |  |
 | dish-confirm--ETTm1--TimeXer | blocked | 0/? |  |
-| dish-confirm--ETTm1--TimeFilter | blocked | 0/? |  |
+| dish-confirm--ETTm1--TimeFilter | ready | 0/4 |  |
 | dish-confirm--ETTm2--DLinear | done | 4/4 |  |
 | dish-confirm--ETTm2--iTransformer | done | 4/4 |  |
-| dish-confirm--ETTm2--TimeXer | ready | 0/4 |  |
+| dish-confirm--ETTm2--TimeXer | claimed | 1/4 | itm20-gpu0-a4000 |
 | dish-confirm--ETTm2--TimeFilter | done | 4/4 |  |
 | dish-confirm--Weather--DLinear | done | 4/4 |  |
 | dish-confirm--Weather--iTransformer | done | 4/4 |  |
@@ -262,7 +262,7 @@ Generated 2026-10-29T10:40:19+00:00 from 8579 packaged cells. Regenerate with `p
 | dish-tuned--ETTm2--DLinear | done | 4/4 |  |
 | dish-tuned--ETTm2--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTm2--TimeXer | blocked | 0/? |  |
-| dish-tuned--ETTm2--TimeFilter | ready | 0/4 |  |
+| dish-tuned--ETTm2--TimeFilter | claimed | 0/4 | itm20-gpu1-a4000 |
 | dish-tuned--Weather--DLinear | done | 4/4 |  |
 | dish-tuned--Weather--iTransformer | done | 4/4 |  |
 | dish-tuned--Weather--TimeXer | blocked | 0/? |  |
@@ -804,7 +804,7 @@ Generated 2026-10-29T10:40:19+00:00 from 8579 packaged cells. Regenerate with `p
 | t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-search--Weather--TimeXer | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeXer | claimed | 11/12 | itm20-gpu1-a4000 |
+| t3-lt-search--Electricity--TimeXer | ready | 11/12 |  |
 | t3-lt-search--Traffic--TimeXer | ready | 6/12 |  |
 | t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
