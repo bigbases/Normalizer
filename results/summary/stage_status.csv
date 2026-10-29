@@ -123,14 +123,14 @@ exch-tuned-s2023,Exchange,TimeXer,ddn,done,4,4,
 exch-tuned-s2023,Exchange,TimeXer,fan,done,4,4,
 exch-tuned-s2023,Exchange,TimeXer,dishts,done,4,4,
 exch-tuned-s2023,Exchange,TimeFilter,revin,done,4,4,
-exch-tuned-s2023,Exchange,TimeFilter,san,claimed,0,4,itm21-a4000
-exch-tuned-s2023,Exchange,TimeFilter,ddn,claimed,0,4,itm20-gpu0-a4000
-exch-tuned-s2023,Exchange,TimeFilter,fan,ready,0,4,
+exch-tuned-s2023,Exchange,TimeFilter,san,claimed,2,4,itm21-a4000
+exch-tuned-s2023,Exchange,TimeFilter,ddn,claimed,2,4,itm20-gpu0-a4000
+exch-tuned-s2023,Exchange,TimeFilter,fan,claimed,0,4,itm20-gpu0-a4000
 exch-tuned-s2023,Exchange,TimeFilter,dishts,done,4,4,
 exch-lt-tuned-s2023,Exchange,DLinear,lt,done,4,4,
 exch-lt-tuned-s2023,Exchange,iTransformer,lt,done,4,4,
 exch-lt-tuned-s2023,Exchange,TimeXer,lt,done,4,4,
-exch-lt-tuned-s2023,Exchange,TimeFilter,lt,claimed,0,4,itm20-gpu1-a4000
+exch-lt-tuned-s2023,Exchange,TimeFilter,lt,done,4,4,
 dish-search,ETTh1,DLinear,dishts,done,12,12,
 dish-search,ETTh1,iTransformer,dishts,done,12,12,
 dish-search,ETTh1,TimeXer,dishts,done,12,12,
@@ -139,7 +139,7 @@ dish-search,ETTh2,DLinear,dishts,done,12,12,
 dish-search,ETTh2,iTransformer,dishts,done,12,12,
 dish-search,ETTh2,TimeXer,dishts,done,12,12,
 dish-search,ETTh2,TimeFilter,dishts,done,12,12,
-dish-search,ETTm1,DLinear,dishts,ready,10,12,
+dish-search,ETTm1,DLinear,dishts,claimed,10,12,itm20-gpu1-a4000
 dish-search,ETTm1,iTransformer,dishts,ready,0,12,
 dish-search,ETTm1,TimeXer,dishts,ready,0,12,
 dish-search,ETTm1,TimeFilter,dishts,ready,0,12,
