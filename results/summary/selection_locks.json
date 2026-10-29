@@ -380,7 +380,7 @@
       "wavelet": "coif3"
     },
     "ETTm2|iTransformer|dishts": {
-      "dish_init": "avg",
+      "dish_init": "standard",
       "station_lr": 0.0001
     },
     "ETTm2|iTransformer|revin": {
@@ -705,6 +705,10 @@
       "station_type": "adaptive",
       "twice_epoch": 1,
       "wavelet": "coif3"
+    },
+    "Weather|DLinear|dishts": {
+      "dish_init": "uniform",
+      "station_lr": 0.0001
     },
     "Weather|DLinear|fan": {
       "fan_aux_weight": 1.0,
