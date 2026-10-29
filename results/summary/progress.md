@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T07:54:00+00:00 from 8236 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T07:54:54+00:00 from 8240 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -11,9 +11,9 @@ Generated 2026-10-29T07:54:00+00:00 from 8236 packaged cells. Regenerate with `p
 | exch-none | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned | 3 | 0 | 0 | 1 | 0 |
-| exch-none-s2022 | 0 | 1 | 3 | 0 | 0 |
+| exch-none-s2022 | 1 | 0 | 3 | 0 | 0 |
 | exch-tuned-s2022 | 4 | 0 | 16 | 0 | 0 |
-| exch-lt-tuned-s2022 | 0 | 0 | 3 | 1 | 0 |
+| exch-lt-tuned-s2022 | 0 | 1 | 2 | 1 | 0 |
 | exch-none-s2023 | 0 | 0 | 4 | 0 | 0 |
 | exch-tuned-s2023 | 0 | 0 | 20 | 0 | 0 |
 | exch-lt-tuned-s2023 | 0 | 0 | 3 | 1 | 0 |
@@ -135,7 +135,7 @@ Generated 2026-10-29T07:54:00+00:00 from 8236 packaged cells. Regenerate with `p
 | exch-lt-tuned--Exchange--iTransformer | done | 4/4 |  |
 | exch-lt-tuned--Exchange--TimeXer | done | 4/4 |  |
 | exch-lt-tuned--Exchange--TimeFilter | blocked | 0/? |  |
-| exch-none-s2022--Exchange--DLinear | claimed | 0/4 | itm20-gpu0-a4000 |
+| exch-none-s2022--Exchange--DLinear | done | 4/4 |  |
 | exch-none-s2022--Exchange--iTransformer | ready | 0/4 |  |
 | exch-none-s2022--Exchange--TimeXer | ready | 0/4 |  |
 | exch-none-s2022--Exchange--TimeFilter | ready | 0/4 |  |
@@ -159,7 +159,7 @@ Generated 2026-10-29T07:54:00+00:00 from 8236 packaged cells. Regenerate with `p
 | exch-tuned-s2022--Exchange--TimeFilter--ddn | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeFilter--fan | ready | 0/4 |  |
 | exch-tuned-s2022--Exchange--TimeFilter--dishts | ready | 0/4 |  |
-| exch-lt-tuned-s2022--Exchange--DLinear | ready | 0/4 |  |
+| exch-lt-tuned-s2022--Exchange--DLinear | claimed | 0/4 | itm20-gpu0-a4000 |
 | exch-lt-tuned-s2022--Exchange--iTransformer | ready | 0/4 |  |
 | exch-lt-tuned-s2022--Exchange--TimeXer | ready | 0/4 |  |
 | exch-lt-tuned-s2022--Exchange--TimeFilter | blocked | 0/? |  |
