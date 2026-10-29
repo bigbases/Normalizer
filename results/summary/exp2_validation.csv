@@ -601,7 +601,7 @@ Weather,TimeFilter,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_l
 Weather,TimeFilter,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.375105,0.644611,,,0.509858,,False,False
 Weather,TimeFilter,dishts,ad8813500c6f,"{""dish_init"": ""avg"", ""station_lr"": 0.0005}",0.377910,0.634510,,,0.506210,,False,False
 Weather,TimeFilter,dishts,d06468615702,"{""dish_init"": ""standard"", ""station_lr"": 0.0005}",0.377526,0.638448,,,0.507987,,False,False
-Weather,TimeFilter,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.374149,,,,,,False,False
+Weather,TimeFilter,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.374149,0.634548,,,0.504349,,False,False
 Weather,TimeFilter,fan,2cdea59375aa,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0005}",0.399657,0.622889,0.401556,0.618919,0.511273,0.510755,True,False
 Weather,TimeFilter,fan,5980e8f9fd1d,"{""fan_aux_weight"": 1.0, ""freq_topk"": 2, ""station_lr"": 0.0005}",0.405103,0.624068,,,0.514585,,False,False
 Weather,TimeFilter,fan,b9173a97d7b8,"{""fan_aux_weight"": 1.0, ""freq_topk"": 4, ""station_lr"": 0.0001}",0.418758,0.632389,,,0.525574,,False,False

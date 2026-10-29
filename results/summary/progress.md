@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-29T11:15:00+00:00 from 8623 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-29T11:14:04+00:00 from 8624 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,8 +17,8 @@ Generated 2026-10-29T11:15:00+00:00 from 8623 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 18 | 2 | 8 | 0 | 0 |
-| dish-confirm | 16 | 2 | 0 | 10 | 0 |
+| dish-search | 19 | 1 | 8 | 0 | 0 |
+| dish-confirm | 16 | 2 | 1 | 9 | 0 |
 | dish-tuned | 15 | 1 | 0 | 12 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -210,7 +210,7 @@ Generated 2026-10-29T11:15:00+00:00 from 8623 packaged cells. Regenerate with `p
 | dish-search--Weather--DLinear | done | 12/12 |  |
 | dish-search--Weather--iTransformer | done | 12/12 |  |
 | dish-search--Weather--TimeXer | claimed | 1/12 | itm20-gpu1-a4000 |
-| dish-search--Weather--TimeFilter | claimed | 11/12 | itm21-a4000 |
+| dish-search--Weather--TimeFilter | done | 12/12 |  |
 | dish-search--Electricity--DLinear | ready | 0/12 |  |
 | dish-search--Electricity--iTransformer | ready | 0/12 |  |
 | dish-search--Electricity--TimeXer | ready | 0/12 |  |
@@ -238,7 +238,7 @@ Generated 2026-10-29T11:15:00+00:00 from 8623 packaged cells. Regenerate with `p
 | dish-confirm--Weather--DLinear | done | 4/4 |  |
 | dish-confirm--Weather--iTransformer | done | 4/4 |  |
 | dish-confirm--Weather--TimeXer | blocked | 0/? |  |
-| dish-confirm--Weather--TimeFilter | blocked | 0/? |  |
+| dish-confirm--Weather--TimeFilter | ready | 0/4 |  |
 | dish-confirm--Electricity--DLinear | blocked | 0/? |  |
 | dish-confirm--Electricity--iTransformer | blocked | 0/? |  |
 | dish-confirm--Electricity--TimeXer | blocked | 0/? |  |
