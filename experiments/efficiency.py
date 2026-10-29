@@ -340,12 +340,15 @@ def bench_case(protocol, bases, dataset, backbone, horizon, methods, opts, devic
         except KeyError as exc:  # e.g. FAN has no settings for TimeXer/TimeFilter (not run there)
             log(f"{dataset}/{backbone}/H{horizon}: {method} skipped, no settings ({exc})")
             todo = [m for m in todo if m != method]
-    # one maximum batch for every method of the case, so throughput is compared at equal batch size
-    sizes = []
-    for args, _ in specs.values():
-        sizes.append(max_batch(new_exp(args), args, device, opts.max_batch))
-        release()
-    common = min(sizes)
+    # one maximum batch for every method of the case, so throughput is compared at equal batch size;
+    # --batch-from reuses the batch of an earlier measurement so added methods match its rows
+    common = opts.batch_from.get((dataset, backbone, str(horizon)))
+    if common is None:
+        sizes = []
+        for args, _ in specs.values():
+            sizes.append(max_batch(new_exp(args), args, device, opts.max_batch))
+            release()
+        common = min(sizes)
     rows = None
     while rows is None:
         log(f"{dataset}/{backbone}/H{horizon}: common max batch {common}")
@@ -478,6 +481,9 @@ def main():
     p.add_argument("--idle-tries", type=int, default=10, help="minutes to wait for a busy GPU before measuring anyway")
     p.add_argument("--lt-settings", choices=("supplied", "locked"), default="supplied",
                    help="LightNorm setting per case: the supplied launcher setting or the locked one of Exp7")
+    p.add_argument("--batch-from", default="",
+                   help="comma-separated earlier measurement CSVs whose MaxBatch per (dataset, backbone, horizon) "
+                        "replaces the probe, so methods added later are timed at the same batch")
     p.add_argument("--quick", action="store_true", help="few iterations (smoke test)")
     p.add_argument("--allow-busy", action="store_true", help="run although experiment processes are running")
     p.add_argument("--summary", action="store_true", help="only print the overhead table of --out")
@@ -504,6 +510,11 @@ def main():
     opts.gpu = physical  # nvidia-smi index for the idle checks
     protocol, bases = load_json(PROTOCOL_PATH), load_json(BASE_CONFIGS_PATH)
     opts.lt_locks = load_lt_locks() if opts.lt_settings == "locked" else None
+    opts.batch_from = {}
+    for path in filter(None, opts.batch_from.split(",") if isinstance(opts.batch_from, str) else []):
+        with Path(path).open(newline="") as handle:
+            for r in csv.DictReader(handle):
+                opts.batch_from[(r["Dataset"], r["Backbone"], r["Horizon"])] = int(r["MaxBatch"])
     env = environment(0)
     out = Path(opts.out)
     scaling_out = out.with_name(out.stem + "_scaling.csv")
