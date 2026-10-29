@@ -1485,6 +1485,26 @@
         "screen_mean_val_mse": 0.2079269460618458
       }
     ],
+    "ETTm2|TimeXer|dishts": [
+      {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.3636000740405817
+      },
+      {
+        "candidate_id": "112f7a5e174c",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 5e-05
+        },
+        "screen_mean_val_mse": 0.36365859618090657
+      }
+    ],
     "ETTm2|TimeXer|revin": [
       {
         "candidate_id": "a22b7bdd93cb",
