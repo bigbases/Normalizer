@@ -366,7 +366,7 @@
     },
     "ETTm2|TimeXer|dishts": {
       "dish_init": "avg",
-      "station_lr": 5e-05
+      "station_lr": 0.0001
     },
     "ETTm2|TimeXer|revin": {
       "affine": 1,
