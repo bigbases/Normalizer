@@ -727,7 +727,7 @@
       "wavelet": "coif3"
     },
     "Traffic|iTransformer|dishts": {
-      "dish_init": "uniform",
+      "dish_init": "standard",
       "station_lr": 0.0001
     },
     "Traffic|iTransformer|fan": {

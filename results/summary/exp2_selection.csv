@@ -127,7 +127,7 @@ Traffic,TimeXer,fan,73d0bad9d492,"{""fan_aux_weight"": 1.0, ""freq_topk"": 45, "
 Traffic,TimeXer,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.401451
 Traffic,TimeXer,san,8e67e1087c15,"{""period_len"": 12, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.414277
 Traffic,iTransformer,ddn,2c842a20e419,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 12, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 1, ""wavelet"": ""coif3""}",0.353389
-Traffic,iTransformer,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.368195
+Traffic,iTransformer,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.368079
 Traffic,iTransformer,fan,73d0bad9d492,"{""fan_aux_weight"": 1.0, ""freq_topk"": 45, ""station_lr"": 0.001}",0.359242
 Traffic,iTransformer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.353314
 Traffic,iTransformer,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.365708
