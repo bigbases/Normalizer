@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-30T05:32:37+00:00 from 8757 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-30T05:36:01+00:00 from 8758 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -17,8 +17,8 @@ Generated 2026-10-30T05:32:37+00:00 from 8757 packaged cells. Regenerate with `p
 | exch-none-s2023 | 4 | 0 | 0 | 0 | 0 |
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
-| dish-search | 24 | 3 | 1 | 0 | 0 |
-| dish-confirm | 23 | 0 | 1 | 4 | 0 |
+| dish-search | 25 | 2 | 1 | 0 | 0 |
+| dish-confirm | 23 | 0 | 2 | 3 | 0 |
 | dish-tuned | 22 | 1 | 0 | 5 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
@@ -218,7 +218,7 @@ Generated 2026-10-30T05:32:37+00:00 from 8757 packaged cells. Regenerate with `p
 | dish-search--Traffic--DLinear | done | 12/12 |  |
 | dish-search--Traffic--iTransformer | ready | 0/12 |  |
 | dish-search--Traffic--TimeXer | claimed | 8/12 | itm20-gpu0-a4000 |
-| dish-search--Traffic--TimeFilter | claimed | 11/12 | itm21-a4000 |
+| dish-search--Traffic--TimeFilter | done | 12/12 |  |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
 | dish-confirm--ETTh1--TimeXer | done | 4/4 |  |
@@ -246,7 +246,7 @@ Generated 2026-10-30T05:32:37+00:00 from 8757 packaged cells. Regenerate with `p
 | dish-confirm--Traffic--DLinear | ready | 0/4 |  |
 | dish-confirm--Traffic--iTransformer | blocked | 0/? |  |
 | dish-confirm--Traffic--TimeXer | blocked | 0/? |  |
-| dish-confirm--Traffic--TimeFilter | blocked | 0/? |  |
+| dish-confirm--Traffic--TimeFilter | ready | 0/4 |  |
 | dish-tuned--ETTh1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTh1--TimeXer | done | 4/4 |  |
