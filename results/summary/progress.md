@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-30T12:31:12+00:00 from 8837 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-30T12:37:57+00:00 from 8839 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -19,10 +19,10 @@ Generated 2026-10-30T12:31:12+00:00 from 8837 packaged cells. Regenerate with `p
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
 | dish-search | 27 | 1 | 0 | 0 | 0 |
 | dish-confirm | 26 | 1 | 0 | 1 | 0 |
-| dish-tuned | 25 | 0 | 1 | 2 | 0 |
+| dish-tuned | 25 | 1 | 0 | 2 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2022 | 8 | 1 | 17 | 2 | 0 |
+| dish-tuned-s2022 | 9 | 0 | 17 | 2 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -274,7 +274,7 @@ Generated 2026-10-30T12:31:12+00:00 from 8837 packaged cells. Regenerate with `p
 | dish-tuned--Traffic--DLinear | done | 4/4 |  |
 | dish-tuned--Traffic--iTransformer | blocked | 0/? |  |
 | dish-tuned--Traffic--TimeXer | blocked | 0/? |  |
-| dish-tuned--Traffic--TimeFilter | ready | 0/4 |  |
+| dish-tuned--Traffic--TimeFilter | claimed | 0/4 | itm20-gpu1-a4000 |
 | lt-ksens--ETTh1--DLinear | done | 18/18 |  |
 | lt-ksens--ETTh1--iTransformer | done | 18/18 |  |
 | lt-ksens--ETTh2--DLinear | done | 18/18 |  |
@@ -316,7 +316,7 @@ Generated 2026-10-30T12:31:12+00:00 from 8837 packaged cells. Regenerate with `p
 | dish-tuned-s2022--ETTm1--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--ETTm1--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2022--ETTm2--DLinear | ready | 0/4 |  |
-| dish-tuned-s2022--ETTm2--iTransformer | claimed | 2/4 | itm20-gpu1-a4000 |
+| dish-tuned-s2022--ETTm2--iTransformer | done | 4/4 |  |
 | dish-tuned-s2022--ETTm2--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--ETTm2--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2022--Weather--DLinear | ready | 0/4 |  |
