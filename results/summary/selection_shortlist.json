@@ -2621,6 +2621,26 @@
         "screen_mean_val_mse": 0.36318756385092
       }
     ],
+    "Traffic|DLinear|dishts": [
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.3755101340330078
+      },
+      {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.37631003284232045
+      }
+    ],
     "Traffic|DLinear|fan": [
       {
         "candidate_id": "e92c5afd9424",
@@ -2831,6 +2851,26 @@
           "wavelet": "coif3"
         },
         "screen_mean_val_mse": 0.40127601629266374
+      }
+    ],
+    "Traffic|TimeXer|dishts": [
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.40525229505908034
+      },
+      {
+        "candidate_id": "2d4a8ad8070c",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.001
+        },
+        "screen_mean_val_mse": 0.4218731061483805
       }
     ],
     "Traffic|TimeXer|fan": [
