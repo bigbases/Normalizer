@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-30T10:14:57+00:00 from 8795 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-30T11:11:56+00:00 from 8802 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Generated 2026-10-30T10:14:57+00:00 from 8795 packaged cells. Regenerate with `p
 | dish-tuned | 25 | 0 | 0 | 3 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2022 | 0 | 0 | 25 | 3 | 0 |
+| dish-tuned-s2022 | 1 | 1 | 23 | 3 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -216,7 +216,7 @@ Generated 2026-10-30T10:14:57+00:00 from 8795 packaged cells. Regenerate with `p
 | dish-search--Electricity--TimeXer | done | 12/12 |  |
 | dish-search--Electricity--TimeFilter | done | 12/12 |  |
 | dish-search--Traffic--DLinear | done | 12/12 |  |
-| dish-search--Traffic--iTransformer | claimed | 0/12 | itm20-gpu0-a4000 |
+| dish-search--Traffic--iTransformer | claimed | 2/12 | itm20-gpu0-a4000 |
 | dish-search--Traffic--TimeXer | done | 12/12 |  |
 | dish-search--Traffic--TimeFilter | done | 12/12 |  |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
@@ -246,7 +246,7 @@ Generated 2026-10-30T10:14:57+00:00 from 8795 packaged cells. Regenerate with `p
 | dish-confirm--Traffic--DLinear | done | 4/4 |  |
 | dish-confirm--Traffic--iTransformer | blocked | 0/? |  |
 | dish-confirm--Traffic--TimeXer | claimed | 0/4 | itm21-a4000 |
-| dish-confirm--Traffic--TimeFilter | claimed | 2/4 | itm20-gpu1-a4000 |
+| dish-confirm--Traffic--TimeFilter | claimed | 3/4 | itm20-gpu1-a4000 |
 | dish-tuned--ETTh1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTh1--TimeXer | done | 4/4 |  |
@@ -303,11 +303,11 @@ Generated 2026-10-30T10:14:57+00:00 from 8795 packaged cells. Regenerate with `p
 | lt-rsens--Electricity--iTransformer | done | 18/18 |  |
 | lt-rsens--Traffic--DLinear | done | 18/18 |  |
 | lt-rsens--Traffic--iTransformer | done | 18/18 |  |
-| dish-tuned-s2022--ETTh1--DLinear | ready | 0/4 |  |
+| dish-tuned-s2022--ETTh1--DLinear | claimed | 0/4 | itm20-gpu1-a4000 |
 | dish-tuned-s2022--ETTh1--iTransformer | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh1--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh1--TimeFilter | ready | 0/4 |  |
-| dish-tuned-s2022--ETTh2--DLinear | ready | 0/4 |  |
+| dish-tuned-s2022--ETTh2--DLinear | done | 4/4 |  |
 | dish-tuned-s2022--ETTh2--iTransformer | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh2--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh2--TimeFilter | ready | 0/4 |  |
