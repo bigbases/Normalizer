@@ -2989,6 +2989,26 @@
         "screen_mean_val_mse": 0.3565382597967982
       }
     ],
+    "Traffic|iTransformer|dishts": [
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.3664705849324281
+      },
+      {
+        "candidate_id": "d2a446c80585",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.3673604323600347
+      }
+    ],
     "Traffic|iTransformer|fan": [
       {
         "candidate_id": "73d0bad9d492",
