@@ -2061,6 +2061,26 @@
         "screen_mean_val_mse": 0.13436623816173407
       }
     ],
+    "Electricity|iTransformer|dishts": [
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.1368461798173639
+      },
+      {
+        "candidate_id": "d2a446c80585",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "standard",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.13708435169673006
+      }
+    ],
     "Electricity|iTransformer|fan": [
       {
         "candidate_id": "13915eef97cf",
@@ -2855,6 +2875,15 @@
     ],
     "Traffic|TimeXer|dishts": [
       {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.4037407083293566
+      },
+      {
         "candidate_id": "4ff89483b844",
         "n_cells": 2,
         "params": {
@@ -2862,15 +2891,6 @@
           "station_lr": 0.0001
         },
         "screen_mean_val_mse": 0.40525229505908034
-      },
-      {
-        "candidate_id": "2d4a8ad8070c",
-        "n_cells": 2,
-        "params": {
-          "dish_init": "avg",
-          "station_lr": 0.001
-        },
-        "screen_mean_val_mse": 0.4218731061483805
       }
     ],
     "Traffic|TimeXer|fan": [
