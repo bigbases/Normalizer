@@ -184,7 +184,7 @@ dish-confirm,Electricity,iTransformer,dishts,done,4,4,
 dish-confirm,Electricity,TimeXer,dishts,done,4,4,
 dish-confirm,Electricity,TimeFilter,dishts,done,4,4,
 dish-confirm,Traffic,DLinear,dishts,done,4,4,
-dish-confirm,Traffic,iTransformer,dishts,claimed,2,4,itm20-gpu0-a4000
+dish-confirm,Traffic,iTransformer,dishts,claimed,3,4,itm20-gpu0-a4000
 dish-confirm,Traffic,TimeXer,dishts,claimed,3,4,itm21-a4000
 dish-confirm,Traffic,TimeFilter,dishts,done,4,4,
 dish-tuned,ETTh1,DLinear,dishts,done,4,4,
@@ -258,9 +258,9 @@ dish-tuned-s2022,ETTm1,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2022,ETTm2,DLinear,dishts,claimed,0,4,itm21-a4000
 dish-tuned-s2022,ETTm2,iTransformer,dishts,done,4,4,
 dish-tuned-s2022,ETTm2,TimeXer,dishts,ready,0,4,
-dish-tuned-s2022,ETTm2,TimeFilter,dishts,ready,0,4,
-dish-tuned-s2022,Weather,DLinear,dishts,claimed,0,4,itm20-gpu1-a4000
-dish-tuned-s2022,Weather,iTransformer,dishts,ready,0,4,
+dish-tuned-s2022,ETTm2,TimeFilter,dishts,claimed,0,4,itm20-gpu1-a4000
+dish-tuned-s2022,Weather,DLinear,dishts,done,4,4,
+dish-tuned-s2022,Weather,iTransformer,dishts,claimed,2,4,itm20-gpu0-a4000
 dish-tuned-s2022,Weather,TimeXer,dishts,ready,0,4,
 dish-tuned-s2022,Weather,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2022,Electricity,DLinear,dishts,ready,0,4,
