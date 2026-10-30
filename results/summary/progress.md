@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-30T07:13:51+00:00 from 8771 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-30T08:18:32+00:00 from 8776 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -18,8 +18,8 @@ Generated 2026-10-30T07:13:51+00:00 from 8771 packaged cells. Regenerate with `p
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
 | dish-search | 26 | 1 | 1 | 0 | 0 |
-| dish-confirm | 23 | 1 | 2 | 2 | 0 |
-| dish-tuned | 22 | 1 | 0 | 5 | 0 |
+| dish-confirm | 23 | 2 | 1 | 2 | 0 |
+| dish-tuned | 23 | 0 | 0 | 5 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 23 | 5 | 0 |
@@ -217,7 +217,7 @@ Generated 2026-10-30T07:13:51+00:00 from 8771 packaged cells. Regenerate with `p
 | dish-search--Electricity--TimeFilter | done | 12/12 |  |
 | dish-search--Traffic--DLinear | done | 12/12 |  |
 | dish-search--Traffic--iTransformer | ready | 0/12 |  |
-| dish-search--Traffic--TimeXer | claimed | 9/12 | itm20-gpu0-a4000 |
+| dish-search--Traffic--TimeXer | claimed | 10/12 | itm20-gpu0-a4000 |
 | dish-search--Traffic--TimeFilter | done | 12/12 |  |
 | dish-confirm--ETTh1--DLinear | done | 4/4 |  |
 | dish-confirm--ETTh1--iTransformer | done | 4/4 |  |
@@ -243,7 +243,7 @@ Generated 2026-10-30T07:13:51+00:00 from 8771 packaged cells. Regenerate with `p
 | dish-confirm--Electricity--iTransformer | ready | 0/4 |  |
 | dish-confirm--Electricity--TimeXer | done | 4/4 |  |
 | dish-confirm--Electricity--TimeFilter | done | 4/4 |  |
-| dish-confirm--Traffic--DLinear | ready | 0/4 |  |
+| dish-confirm--Traffic--DLinear | claimed | 1/4 | itm21-a4000 |
 | dish-confirm--Traffic--iTransformer | blocked | 0/? |  |
 | dish-confirm--Traffic--TimeXer | blocked | 0/? |  |
 | dish-confirm--Traffic--TimeFilter | claimed | 0/4 | itm20-gpu1-a4000 |
@@ -269,7 +269,7 @@ Generated 2026-10-30T07:13:51+00:00 from 8771 packaged cells. Regenerate with `p
 | dish-tuned--Weather--TimeFilter | done | 4/4 |  |
 | dish-tuned--Electricity--DLinear | done | 4/4 |  |
 | dish-tuned--Electricity--iTransformer | blocked | 0/? |  |
-| dish-tuned--Electricity--TimeXer | claimed | 1/4 | itm21-a4000 |
+| dish-tuned--Electricity--TimeXer | done | 4/4 |  |
 | dish-tuned--Electricity--TimeFilter | done | 4/4 |  |
 | dish-tuned--Traffic--DLinear | blocked | 0/? |  |
 | dish-tuned--Traffic--iTransformer | blocked | 0/? |  |
