@@ -208,10 +208,10 @@ dish-tuned,Weather,iTransformer,dishts,done,4,4,
 dish-tuned,Weather,TimeXer,dishts,done,4,4,
 dish-tuned,Weather,TimeFilter,dishts,done,4,4,
 dish-tuned,Electricity,DLinear,dishts,done,4,4,
-dish-tuned,Electricity,iTransformer,dishts,ready,0,4,
+dish-tuned,Electricity,iTransformer,dishts,claimed,0,4,itm21-a4000
 dish-tuned,Electricity,TimeXer,dishts,done,4,4,
 dish-tuned,Electricity,TimeFilter,dishts,done,4,4,
-dish-tuned,Traffic,DLinear,dishts,claimed,0,4,itm21-a4000
+dish-tuned,Traffic,DLinear,dishts,done,4,4,
 dish-tuned,Traffic,iTransformer,dishts,blocked,0,,
 dish-tuned,Traffic,TimeXer,dishts,blocked,0,,
 dish-tuned,Traffic,TimeFilter,dishts,blocked,0,,

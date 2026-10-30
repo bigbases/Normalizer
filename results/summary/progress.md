@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-30T09:11:25+00:00 from 8785 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-30T09:41:35+00:00 from 8789 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -19,7 +19,7 @@ Generated 2026-10-30T09:11:25+00:00 from 8785 packaged cells. Regenerate with `p
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
 | dish-search | 26 | 2 | 0 | 0 | 0 |
 | dish-confirm | 25 | 1 | 0 | 2 | 0 |
-| dish-tuned | 23 | 1 | 1 | 3 | 0 |
+| dish-tuned | 24 | 1 | 0 | 3 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 25 | 3 | 0 |
@@ -268,10 +268,10 @@ Generated 2026-10-30T09:11:25+00:00 from 8785 packaged cells. Regenerate with `p
 | dish-tuned--Weather--TimeXer | done | 4/4 |  |
 | dish-tuned--Weather--TimeFilter | done | 4/4 |  |
 | dish-tuned--Electricity--DLinear | done | 4/4 |  |
-| dish-tuned--Electricity--iTransformer | ready | 0/4 |  |
+| dish-tuned--Electricity--iTransformer | claimed | 0/4 | itm21-a4000 |
 | dish-tuned--Electricity--TimeXer | done | 4/4 |  |
 | dish-tuned--Electricity--TimeFilter | done | 4/4 |  |
-| dish-tuned--Traffic--DLinear | claimed | 0/4 | itm21-a4000 |
+| dish-tuned--Traffic--DLinear | done | 4/4 |  |
 | dish-tuned--Traffic--iTransformer | blocked | 0/? |  |
 | dish-tuned--Traffic--TimeXer | blocked | 0/? |  |
 | dish-tuned--Traffic--TimeFilter | blocked | 0/? |  |
