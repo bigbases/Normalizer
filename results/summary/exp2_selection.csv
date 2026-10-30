@@ -111,6 +111,7 @@ Electricity,iTransformer,fan,13915eef97cf,"{""fan_aux_weight"": 1.0, ""freq_topk
 Electricity,iTransformer,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.139219
 Electricity,iTransformer,san,8f8916a4a95c,"{""period_len"": 24, ""station_lr"": 0.0005, ""station_type"": ""adaptive""}",0.136609
 Traffic,DLinear,ddn,947a01bef6cf,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": ""backbone"", ""kernel_len"": 7, ""station_lr"": 0.0001, ""station_type"": ""adaptive"", ""twice_epoch"": 0, ""wavelet"": ""coif3""}",0.361998
+Traffic,DLinear,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.375439
 Traffic,DLinear,fan,e92c5afd9424,"{""fan_aux_weight"": 1.0, ""freq_topk"": 45, ""station_lr"": 0.0005}",0.384766
 Traffic,DLinear,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.368716
 Traffic,DLinear,san,00687476a233,"{""period_len"": 24, ""station_lr"": 5e-05, ""station_type"": ""adaptive""}",0.378857

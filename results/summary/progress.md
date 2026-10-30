@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-30T08:18:32+00:00 from 8776 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-30T08:38:00+00:00 from 8780 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -18,11 +18,11 @@ Generated 2026-10-30T08:18:32+00:00 from 8776 packaged cells. Regenerate with `p
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
 | dish-search | 26 | 1 | 1 | 0 | 0 |
-| dish-confirm | 23 | 2 | 1 | 2 | 0 |
-| dish-tuned | 23 | 0 | 0 | 5 | 0 |
+| dish-confirm | 24 | 2 | 0 | 2 | 0 |
+| dish-tuned | 23 | 0 | 1 | 4 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2022 | 0 | 0 | 23 | 5 | 0 |
+| dish-tuned-s2022 | 0 | 0 | 24 | 4 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -35,7 +35,7 @@ Generated 2026-10-30T08:18:32+00:00 from 8776 packaged cells. Regenerate with `p
 | t3-rf-search | 24 | 0 | 4 | 0 | 0 |
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
-| dish-tuned-s2023 | 0 | 0 | 23 | 5 | 0 |
+| dish-tuned-s2023 | 0 | 0 | 24 | 4 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -240,13 +240,13 @@ Generated 2026-10-30T08:18:32+00:00 from 8776 packaged cells. Regenerate with `p
 | dish-confirm--Weather--TimeXer | done | 4/4 |  |
 | dish-confirm--Weather--TimeFilter | done | 4/4 |  |
 | dish-confirm--Electricity--DLinear | done | 4/4 |  |
-| dish-confirm--Electricity--iTransformer | ready | 0/4 |  |
+| dish-confirm--Electricity--iTransformer | claimed | 0/4 | itm21-a4000 |
 | dish-confirm--Electricity--TimeXer | done | 4/4 |  |
 | dish-confirm--Electricity--TimeFilter | done | 4/4 |  |
-| dish-confirm--Traffic--DLinear | claimed | 1/4 | itm21-a4000 |
+| dish-confirm--Traffic--DLinear | done | 4/4 |  |
 | dish-confirm--Traffic--iTransformer | blocked | 0/? |  |
 | dish-confirm--Traffic--TimeXer | blocked | 0/? |  |
-| dish-confirm--Traffic--TimeFilter | claimed | 0/4 | itm20-gpu1-a4000 |
+| dish-confirm--Traffic--TimeFilter | claimed | 1/4 | itm20-gpu1-a4000 |
 | dish-tuned--ETTh1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTh1--TimeXer | done | 4/4 |  |
@@ -271,7 +271,7 @@ Generated 2026-10-30T08:18:32+00:00 from 8776 packaged cells. Regenerate with `p
 | dish-tuned--Electricity--iTransformer | blocked | 0/? |  |
 | dish-tuned--Electricity--TimeXer | done | 4/4 |  |
 | dish-tuned--Electricity--TimeFilter | done | 4/4 |  |
-| dish-tuned--Traffic--DLinear | blocked | 0/? |  |
+| dish-tuned--Traffic--DLinear | ready | 0/4 |  |
 | dish-tuned--Traffic--iTransformer | blocked | 0/? |  |
 | dish-tuned--Traffic--TimeXer | blocked | 0/? |  |
 | dish-tuned--Traffic--TimeFilter | blocked | 0/? |  |
@@ -327,7 +327,7 @@ Generated 2026-10-30T08:18:32+00:00 from 8776 packaged cells. Regenerate with `p
 | dish-tuned-s2022--Electricity--iTransformer | blocked | 0/? |  |
 | dish-tuned-s2022--Electricity--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--Electricity--TimeFilter | ready | 0/4 |  |
-| dish-tuned-s2022--Traffic--DLinear | blocked | 0/? |  |
+| dish-tuned-s2022--Traffic--DLinear | ready | 0/4 |  |
 | dish-tuned-s2022--Traffic--iTransformer | blocked | 0/? |  |
 | dish-tuned-s2022--Traffic--TimeXer | blocked | 0/? |  |
 | dish-tuned-s2022--Traffic--TimeFilter | blocked | 0/? |  |
@@ -503,7 +503,7 @@ Generated 2026-10-30T08:18:32+00:00 from 8776 packaged cells. Regenerate with `p
 | dish-tuned-s2023--Electricity--iTransformer | blocked | 0/? |  |
 | dish-tuned-s2023--Electricity--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2023--Electricity--TimeFilter | ready | 0/4 |  |
-| dish-tuned-s2023--Traffic--DLinear | blocked | 0/? |  |
+| dish-tuned-s2023--Traffic--DLinear | ready | 0/4 |  |
 | dish-tuned-s2023--Traffic--iTransformer | blocked | 0/? |  |
 | dish-tuned-s2023--Traffic--TimeXer | blocked | 0/? |  |
 | dish-tuned-s2023--Traffic--TimeFilter | blocked | 0/? |  |

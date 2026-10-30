@@ -849,8 +849,8 @@ Traffic,DLinear,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr"": "
 Traffic,DLinear,ddn,e082b1250cbb,{},0.330239,0.405627,,,0.367933,,False,False
 Traffic,DLinear,ddn,f841fa3c59bc,{},0.330611,0.403417,,,0.367014,,False,False
 Traffic,DLinear,dishts,32dd4f2f88ea,"{""dish_init"": ""uniform"", ""station_lr"": 0.0005}",0.343621,0.415795,,,0.379708,,False,False
-Traffic,DLinear,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.340648,0.410373,0.340666,,0.375510,,True,False
-Traffic,DLinear,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.341242,0.411378,,,0.376310,,True,False
+Traffic,DLinear,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.340648,0.410373,0.340666,0.410071,0.375510,0.375439,True,True
+Traffic,DLinear,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.341242,0.411378,0.341270,0.411426,0.376310,0.376329,True,False
 Traffic,DLinear,dishts,ad8813500c6f,"{""dish_init"": ""avg"", ""station_lr"": 0.0005}",0.343385,0.415651,,,0.379518,,False,False
 Traffic,DLinear,dishts,d06468615702,"{""dish_init"": ""standard"", ""station_lr"": 0.0005}",0.343303,0.414777,,,0.379040,,False,False
 Traffic,DLinear,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.342601,0.412855,,,0.377728,,False,False
@@ -885,7 +885,7 @@ Traffic,TimeFilter,ddn,bbeb523655cd,"{""hkernel_len"": 5, ""j"": 1, ""joint_lr""
 Traffic,TimeFilter,ddn,e082b1250cbb,{},0.350115,0.430628,,,0.390372,,False,False
 Traffic,TimeFilter,ddn,f841fa3c59bc,{},0.353474,0.425147,0.356116,0.425819,0.389311,0.390139,False,False
 Traffic,TimeFilter,dishts,2d4a8ad8070c,"{""dish_init"": ""avg"", ""station_lr"": 0.001}",0.339579,0.429055,,,0.384317,,False,False
-Traffic,TimeFilter,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.335480,0.426237,,,0.380859,,True,False
+Traffic,TimeFilter,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"": 0.0001}",0.335480,0.426237,0.335702,,0.380859,,True,False
 Traffic,TimeFilter,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.334051,0.427170,,,0.380610,,True,False
 Traffic,TimeFilter,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.335389,0.430002,,,0.382696,,False,False
 Traffic,TimeFilter,dishts,db2847be3ce4,"{""dish_init"": ""standard"", ""station_lr"": 0.001}",0.340502,0.434208,,,0.387355,,False,False

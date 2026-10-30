@@ -638,6 +638,10 @@
       "twice_epoch": 0,
       "wavelet": "coif3"
     },
+    "Traffic|DLinear|dishts": {
+      "dish_init": "uniform",
+      "station_lr": 0.0001
+    },
     "Traffic|DLinear|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 45,
