@@ -671,7 +671,7 @@
       "wavelet": "coif3"
     },
     "Traffic|TimeFilter|dishts": {
-      "dish_init": "uniform",
+      "dish_init": "avg",
       "station_lr": 0.0001
     },
     "Traffic|TimeFilter|fan": {
