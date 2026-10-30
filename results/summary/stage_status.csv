@@ -245,11 +245,11 @@ lt-rsens,Traffic,DLinear,lt,done,18,18,
 lt-rsens,Traffic,iTransformer,lt,done,18,18,
 dish-tuned-s2022,ETTh1,DLinear,dishts,done,4,4,
 dish-tuned-s2022,ETTh1,iTransformer,dishts,done,4,4,
-dish-tuned-s2022,ETTh1,TimeXer,dishts,claimed,1,4,itm20-gpu1-a4000
+dish-tuned-s2022,ETTh1,TimeXer,dishts,done,4,4,
 dish-tuned-s2022,ETTh1,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2022,ETTh2,DLinear,dishts,done,4,4,
 dish-tuned-s2022,ETTh2,iTransformer,dishts,done,4,4,
-dish-tuned-s2022,ETTh2,TimeXer,dishts,ready,0,4,
+dish-tuned-s2022,ETTh2,TimeXer,dishts,claimed,0,4,itm20-gpu1-a4000
 dish-tuned-s2022,ETTh2,TimeFilter,dishts,done,4,4,
 dish-tuned-s2022,ETTm1,DLinear,dishts,ready,0,4,
 dish-tuned-s2022,ETTm1,iTransformer,dishts,ready,0,4,
