@@ -474,6 +474,10 @@
       "twice_epoch": 0,
       "wavelet": "coif3"
     },
+    "Electricity|TimeXer|dishts": {
+      "dish_init": "avg",
+      "station_lr": 5e-05
+    },
     "Electricity|TimeXer|fan": {
       "fan_aux_weight": 1.0,
       "freq_topk": 3,

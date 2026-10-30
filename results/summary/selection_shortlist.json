@@ -2717,6 +2717,26 @@
         "screen_mean_val_mse": 0.41063382549641225
       }
     ],
+    "Traffic|TimeFilter|dishts": [
+      {
+        "candidate_id": "991b5cc14619",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "avg",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.380610267072916
+      },
+      {
+        "candidate_id": "4ff89483b844",
+        "n_cells": 2,
+        "params": {
+          "dish_init": "uniform",
+          "station_lr": 0.0001
+        },
+        "screen_mean_val_mse": 0.3808586407739383
+      }
+    ],
     "Traffic|TimeFilter|fan": [
       {
         "candidate_id": "fabe889b9905",
