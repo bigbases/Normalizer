@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-30T09:57:53+00:00 from 8791 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-30T10:14:57+00:00 from 8795 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -18,8 +18,8 @@ Generated 2026-10-30T09:57:53+00:00 from 8791 packaged cells. Regenerate with `p
 | exch-tuned-s2023 | 20 | 0 | 0 | 0 | 0 |
 | exch-lt-tuned-s2023 | 4 | 0 | 0 | 0 | 0 |
 | dish-search | 27 | 1 | 0 | 0 | 0 |
-| dish-confirm | 25 | 1 | 1 | 1 | 0 |
-| dish-tuned | 24 | 1 | 0 | 3 | 0 |
+| dish-confirm | 25 | 2 | 0 | 1 | 0 |
+| dish-tuned | 25 | 0 | 0 | 3 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
 | dish-tuned-s2022 | 0 | 0 | 25 | 3 | 0 |
@@ -245,8 +245,8 @@ Generated 2026-10-30T09:57:53+00:00 from 8791 packaged cells. Regenerate with `p
 | dish-confirm--Electricity--TimeFilter | done | 4/4 |  |
 | dish-confirm--Traffic--DLinear | done | 4/4 |  |
 | dish-confirm--Traffic--iTransformer | blocked | 0/? |  |
-| dish-confirm--Traffic--TimeXer | ready | 0/4 |  |
-| dish-confirm--Traffic--TimeFilter | claimed | 1/4 | itm20-gpu1-a4000 |
+| dish-confirm--Traffic--TimeXer | claimed | 0/4 | itm21-a4000 |
+| dish-confirm--Traffic--TimeFilter | claimed | 2/4 | itm20-gpu1-a4000 |
 | dish-tuned--ETTh1--DLinear | done | 4/4 |  |
 | dish-tuned--ETTh1--iTransformer | done | 4/4 |  |
 | dish-tuned--ETTh1--TimeXer | done | 4/4 |  |
@@ -268,7 +268,7 @@ Generated 2026-10-30T09:57:53+00:00 from 8791 packaged cells. Regenerate with `p
 | dish-tuned--Weather--TimeXer | done | 4/4 |  |
 | dish-tuned--Weather--TimeFilter | done | 4/4 |  |
 | dish-tuned--Electricity--DLinear | done | 4/4 |  |
-| dish-tuned--Electricity--iTransformer | claimed | 1/4 | itm21-a4000 |
+| dish-tuned--Electricity--iTransformer | done | 4/4 |  |
 | dish-tuned--Electricity--TimeXer | done | 4/4 |  |
 | dish-tuned--Electricity--TimeFilter | done | 4/4 |  |
 | dish-tuned--Traffic--DLinear | done | 4/4 |  |
