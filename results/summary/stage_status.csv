@@ -243,8 +243,8 @@ lt-rsens,Electricity,DLinear,lt,done,18,18,
 lt-rsens,Electricity,iTransformer,lt,done,18,18,
 lt-rsens,Traffic,DLinear,lt,done,18,18,
 lt-rsens,Traffic,iTransformer,lt,done,18,18,
-dish-tuned-s2022,ETTh1,DLinear,dishts,claimed,0,4,itm20-gpu1-a4000
-dish-tuned-s2022,ETTh1,iTransformer,dishts,ready,0,4,
+dish-tuned-s2022,ETTh1,DLinear,dishts,done,4,4,
+dish-tuned-s2022,ETTh1,iTransformer,dishts,claimed,1,4,itm20-gpu1-a4000
 dish-tuned-s2022,ETTh1,TimeXer,dishts,ready,0,4,
 dish-tuned-s2022,ETTh1,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2022,ETTh2,DLinear,dishts,done,4,4,

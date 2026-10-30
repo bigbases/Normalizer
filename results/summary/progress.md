@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-30T11:11:56+00:00 from 8802 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-30T11:24:58+00:00 from 8807 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Generated 2026-10-30T11:11:56+00:00 from 8802 packaged cells. Regenerate with `p
 | dish-tuned | 25 | 0 | 0 | 3 | 0 |
 | lt-ksens | 14 | 0 | 0 | 0 | 0 |
 | lt-rsens | 14 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2022 | 1 | 1 | 23 | 3 | 0 |
+| dish-tuned-s2022 | 2 | 1 | 22 | 3 | 0 |
 | lt-pilot | 3 | 0 | 0 | 0 | 0 |
 | lt-explore | 3 | 0 | 0 | 0 | 0 |
 | lt-search | 14 | 0 | 0 | 0 | 0 |
@@ -303,8 +303,8 @@ Generated 2026-10-30T11:11:56+00:00 from 8802 packaged cells. Regenerate with `p
 | lt-rsens--Electricity--iTransformer | done | 18/18 |  |
 | lt-rsens--Traffic--DLinear | done | 18/18 |  |
 | lt-rsens--Traffic--iTransformer | done | 18/18 |  |
-| dish-tuned-s2022--ETTh1--DLinear | claimed | 0/4 | itm20-gpu1-a4000 |
-| dish-tuned-s2022--ETTh1--iTransformer | ready | 0/4 |  |
+| dish-tuned-s2022--ETTh1--DLinear | done | 4/4 |  |
+| dish-tuned-s2022--ETTh1--iTransformer | claimed | 1/4 | itm20-gpu1-a4000 |
 | dish-tuned-s2022--ETTh1--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh1--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2022--ETTh2--DLinear | done | 4/4 |  |
