@@ -419,8 +419,8 @@ t3-rf-tuned,ETTh2,TimeFilter,revin,done,12,12,
 t3-rf-tuned,ETTh2,TimeFilter,fan,blocked,0,,
 t3-rf-tuned,ETTm2,TimeFilter,revin,done,12,12,
 t3-rf-tuned,ETTm2,TimeFilter,fan,blocked,0,,
-dish-tuned-s2023,ETTh1,DLinear,dishts,claimed,0,4,itm20-gpu1-a4000
-dish-tuned-s2023,ETTh1,iTransformer,dishts,ready,0,4,
+dish-tuned-s2023,ETTh1,DLinear,dishts,done,4,4,
+dish-tuned-s2023,ETTh1,iTransformer,dishts,claimed,0,4,itm20-gpu1-a4000
 dish-tuned-s2023,ETTh1,TimeXer,dishts,ready,0,4,
 dish-tuned-s2023,ETTh1,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2023,ETTh2,DLinear,dishts,done,4,4,
