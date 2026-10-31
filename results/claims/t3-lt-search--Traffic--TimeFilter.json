@@ -7,7 +7,7 @@
  "gpus": [
   0
  ],
- "heartbeat": "2026-10-31T15:01:06+00:00",
+ "heartbeat": "2026-10-31T15:21:13+00:00",
  "host": "itm20-gpu0-a4000",
  "took_over_from": "itm21-a4000",
  "worker": "itm20-gpu0-a4000"
