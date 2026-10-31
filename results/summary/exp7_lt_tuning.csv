@@ -30,10 +30,10 @@ ETTh2,DLinear,3faa7e5257ed,grid,25,0.001,1,0,False,0.204103,0.599199,0.401651,0.
 ETTh2,DLinear,420371036e53,grid,49,0.0001,1,0,False,0.203979,0.595774,0.399877,0.204326,0.603010,True,False
 ETTh2,DLinear,ca0422c8191d,grid,49,0.001,1,0,False,0.205431,0.619620,0.412526,0.206043,,False,False
 ETTh2,TimeFilter,4e5b34a628d0,grid,13,0.0001,1,0,False,0.211646,0.618153,0.414899,,,False,False
-ETTh2,TimeFilter,ac8e765c1f38,grid,13,0.001,1,0,False,0.206977,0.604475,0.405726,0.207078,,True,False
+ETTh2,TimeFilter,ac8e765c1f38,grid,13,0.001,1,0,False,0.206977,0.604475,0.405726,0.207078,0.605999,True,False
 ETTh2,TimeFilter,5871f175ed70,grid,25,0.0001,1,0,True,0.210285,0.605291,0.407788,,,False,False
 ETTh2,TimeFilter,2214cc331066,grid,25,0.001,1,0,False,0.208711,0.606195,0.407453,,,False,False
-ETTh2,TimeFilter,6538d62e5a7a,grid,49,0.0001,1,0,False,0.210739,0.598062,0.404401,0.212230,,True,False
+ETTh2,TimeFilter,6538d62e5a7a,grid,49,0.0001,1,0,False,0.210739,0.598062,0.404401,0.212230,0.583758,True,True
 ETTh2,TimeFilter,0a7ae0db7542,grid,49,0.001,1,0,False,0.210344,0.610947,0.410646,,,False,False
 ETTh2,TimeXer,4e5b34a628d0,grid,13,0.0001,1,0,False,0.222290,0.632147,0.427219,,,False,False
 ETTh2,TimeXer,ac8e765c1f38,grid,13,0.001,1,0,False,0.211305,0.608284,0.409794,,,False,False
@@ -158,7 +158,7 @@ Traffic,TimeFilter,0a7ae0db7542,grid,49,0.001,1,0,False,0.348907,,,,,False,False
 Traffic,TimeXer,4e5b34a628d0,grid,13,0.0001,1,0,False,0.374330,,,,,False,False
 Traffic,TimeXer,ac8e765c1f38,grid,13,0.001,1,0,False,0.368690,0.424415,0.396552,0.364728,0.419611,False,False
 Traffic,TimeXer,5871f175ed70,grid,25,0.0001,1,0,True,0.373193,,,,,False,False
-Traffic,TimeXer,2214cc331066,grid,25,0.001,1,0,False,0.366676,,,,,False,False
+Traffic,TimeXer,2214cc331066,grid,25,0.001,1,0,False,0.366676,0.421415,0.394046,,,False,False
 Traffic,TimeXer,6538d62e5a7a,grid,49,0.0001,1,0,False,0.374998,,,,,False,False
 Traffic,TimeXer,0a7ae0db7542,grid,49,0.001,1,0,False,0.366677,0.413832,0.390255,,,False,False
 Traffic,iTransformer,36b61b191ff5,grid,13,0.0001,1,1,False,0.316166,0.387210,0.351688,0.315800,0.386899,True,True
