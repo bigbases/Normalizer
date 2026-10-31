@@ -428,11 +428,11 @@ dish-tuned-s2023,ETTh2,iTransformer,dishts,done,4,4,
 dish-tuned-s2023,ETTh2,TimeXer,dishts,done,4,4,
 dish-tuned-s2023,ETTh2,TimeFilter,dishts,done,4,4,
 dish-tuned-s2023,ETTm1,DLinear,dishts,ready,0,4,
-dish-tuned-s2023,ETTm1,iTransformer,dishts,ready,0,4,
+dish-tuned-s2023,ETTm1,iTransformer,dishts,claimed,0,4,itm20-gpu1-a4000
 dish-tuned-s2023,ETTm1,TimeXer,dishts,ready,0,4,
 dish-tuned-s2023,ETTm1,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2023,ETTm2,DLinear,dishts,ready,0,4,
-dish-tuned-s2023,ETTm2,iTransformer,dishts,claimed,0,4,itm20-gpu1-a4000
+dish-tuned-s2023,ETTm2,iTransformer,dishts,done,4,4,
 dish-tuned-s2023,ETTm2,TimeXer,dishts,ready,0,4,
 dish-tuned-s2023,ETTm2,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2023,Weather,DLinear,dishts,ready,0,4,
