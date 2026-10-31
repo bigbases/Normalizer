@@ -436,7 +436,7 @@ dish-tuned-s2023,ETTm2,iTransformer,dishts,done,4,4,
 dish-tuned-s2023,ETTm2,TimeXer,dishts,claimed,0,4,itm20-gpu1-a4000
 dish-tuned-s2023,ETTm2,TimeFilter,dishts,claimed,0,4,itm21-a4000
 dish-tuned-s2023,Weather,DLinear,dishts,done,4,4,
-dish-tuned-s2023,Weather,iTransformer,dishts,claimed,2,4,itm20-gpu1-a4000
+dish-tuned-s2023,Weather,iTransformer,dishts,done,4,4,
 dish-tuned-s2023,Weather,TimeXer,dishts,ready,0,4,
 dish-tuned-s2023,Weather,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2023,Electricity,DLinear,dishts,ready,0,4,
