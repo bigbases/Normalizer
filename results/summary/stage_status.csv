@@ -360,7 +360,7 @@ dish-tuned-s2023,Electricity,iTransformer,dishts,done,4,4,
 dish-tuned-s2023,Electricity,TimeXer,dishts,done,4,4,
 dish-tuned-s2023,Electricity,TimeFilter,dishts,done,4,4,
 dish-tuned-s2023,Traffic,DLinear,dishts,done,4,4,
-dish-tuned-s2023,Traffic,iTransformer,dishts,claimed,3,4,itm20-gpu1-a4000
+dish-tuned-s2023,Traffic,iTransformer,dishts,done,4,4,
 dish-tuned-s2023,Traffic,TimeXer,dishts,claimed,0,4,itm21-a4000
 dish-tuned-s2023,Traffic,TimeFilter,dishts,claimed,1,4,itm20-gpu0-a4000
 exp1-lt,ETTh1,DLinear,lt,done,12,12,

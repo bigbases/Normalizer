@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-31T05:36:26+00:00 from 9053 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-31T06:18:40+00:00 from 9054 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -32,7 +32,7 @@ Generated 2026-10-31T05:36:26+00:00 from 9053 packaged cells. Regenerate with `p
 | shift-none | 2 | 0 | 0 | 0 | 0 |
 | shift-tuned | 8 | 0 | 0 | 0 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2023 | 25 | 3 | 0 | 0 | 0 |
+| dish-tuned-s2023 | 26 | 2 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -420,7 +420,7 @@ Generated 2026-10-31T05:36:26+00:00 from 9053 packaged cells. Regenerate with `p
 | dish-tuned-s2023--Electricity--TimeXer | done | 4/4 |  |
 | dish-tuned-s2023--Electricity--TimeFilter | done | 4/4 |  |
 | dish-tuned-s2023--Traffic--DLinear | done | 4/4 |  |
-| dish-tuned-s2023--Traffic--iTransformer | claimed | 3/4 | itm20-gpu1-a4000 |
+| dish-tuned-s2023--Traffic--iTransformer | done | 4/4 |  |
 | dish-tuned-s2023--Traffic--TimeXer | claimed | 0/4 | itm21-a4000 |
 | dish-tuned-s2023--Traffic--TimeFilter | claimed | 1/4 | itm20-gpu0-a4000 |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
