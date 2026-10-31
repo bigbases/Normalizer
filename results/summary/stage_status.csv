@@ -421,11 +421,11 @@ t3-rf-tuned,ETTm2,TimeFilter,revin,done,12,12,
 t3-rf-tuned,ETTm2,TimeFilter,fan,blocked,0,,
 dish-tuned-s2023,ETTh1,DLinear,dishts,done,4,4,
 dish-tuned-s2023,ETTh1,iTransformer,dishts,done,4,4,
-dish-tuned-s2023,ETTh1,TimeXer,dishts,claimed,0,4,itm20-gpu1-a4000
+dish-tuned-s2023,ETTh1,TimeXer,dishts,done,4,4,
 dish-tuned-s2023,ETTh1,TimeFilter,dishts,ready,0,4,
 dish-tuned-s2023,ETTh2,DLinear,dishts,done,4,4,
 dish-tuned-s2023,ETTh2,iTransformer,dishts,done,4,4,
-dish-tuned-s2023,ETTh2,TimeXer,dishts,ready,0,4,
+dish-tuned-s2023,ETTh2,TimeXer,dishts,claimed,1,4,itm20-gpu1-a4000
 dish-tuned-s2023,ETTh2,TimeFilter,dishts,done,4,4,
 dish-tuned-s2023,ETTm1,DLinear,dishts,ready,0,4,
 dish-tuned-s2023,ETTm1,iTransformer,dishts,ready,0,4,
