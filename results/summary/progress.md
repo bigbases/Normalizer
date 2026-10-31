@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-31T04:21:38+00:00 from 9048 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-31T05:36:26+00:00 from 9053 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -32,11 +32,11 @@ Generated 2026-10-31T04:21:38+00:00 from 9048 packaged cells. Regenerate with `p
 | shift-none | 2 | 0 | 0 | 0 | 0 |
 | shift-tuned | 8 | 0 | 0 | 0 | 0 |
 | shift-lt | 2 | 0 | 0 | 0 | 0 |
-| dish-tuned-s2023 | 24 | 4 | 0 | 0 | 0 |
+| dish-tuned-s2023 | 25 | 3 | 0 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
-| t3-lt-search | 11 | 0 | 3 | 0 | 0 |
+| t3-lt-search | 11 | 2 | 1 | 0 | 0 |
 | t3-none | 14 | 0 | 0 | 0 | 0 |
 | t3-tuned | 28 | 0 | 0 | 0 | 0 |
 | t3-lt-confirm | 0 | 0 | 11 | 3 | 0 |
@@ -417,12 +417,12 @@ Generated 2026-10-31T04:21:38+00:00 from 9048 packaged cells. Regenerate with `p
 | dish-tuned-s2023--Weather--TimeFilter | done | 4/4 |  |
 | dish-tuned-s2023--Electricity--DLinear | done | 4/4 |  |
 | dish-tuned-s2023--Electricity--iTransformer | done | 4/4 |  |
-| dish-tuned-s2023--Electricity--TimeXer | claimed | 2/4 | itm21-a4000 |
+| dish-tuned-s2023--Electricity--TimeXer | done | 4/4 |  |
 | dish-tuned-s2023--Electricity--TimeFilter | done | 4/4 |  |
 | dish-tuned-s2023--Traffic--DLinear | done | 4/4 |  |
-| dish-tuned-s2023--Traffic--iTransformer | claimed | 1/4 | itm20-gpu1-a4000 |
+| dish-tuned-s2023--Traffic--iTransformer | claimed | 3/4 | itm20-gpu1-a4000 |
 | dish-tuned-s2023--Traffic--TimeXer | claimed | 0/4 | itm21-a4000 |
-| dish-tuned-s2023--Traffic--TimeFilter | claimed | 0/4 | itm20-gpu0-a4000 |
+| dish-tuned-s2023--Traffic--TimeFilter | claimed | 1/4 | itm20-gpu0-a4000 |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
@@ -496,8 +496,8 @@ Generated 2026-10-31T04:21:38+00:00 from 9048 packaged cells. Regenerate with `p
 | t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-search--Weather--TimeXer | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeXer | ready | 11/12 |  |
-| t3-lt-search--Traffic--TimeXer | ready | 6/12 |  |
+| t3-lt-search--Electricity--TimeXer | claimed | 11/12 | itm20-gpu1-a4000 |
+| t3-lt-search--Traffic--TimeXer | claimed | 6/12 | itm20-gpu1-a4000 |
 | t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--Weather--TimeFilter | done | 12/12 |  |
