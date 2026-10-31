@@ -430,7 +430,7 @@ dish-tuned-s2023,ETTh2,TimeFilter,dishts,done,4,4,
 dish-tuned-s2023,ETTm1,DLinear,dishts,done,4,4,
 dish-tuned-s2023,ETTm1,iTransformer,dishts,done,4,4,
 dish-tuned-s2023,ETTm1,TimeXer,dishts,done,4,4,
-dish-tuned-s2023,ETTm1,TimeFilter,dishts,claimed,3,4,itm21-a4000
+dish-tuned-s2023,ETTm1,TimeFilter,dishts,done,4,4,
 dish-tuned-s2023,ETTm2,DLinear,dishts,done,4,4,
 dish-tuned-s2023,ETTm2,iTransformer,dishts,done,4,4,
 dish-tuned-s2023,ETTm2,TimeXer,dishts,done,4,4,
