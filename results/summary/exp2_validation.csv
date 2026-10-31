@@ -203,11 +203,17 @@ ETTh2,TimeFilter,dishts,4ff89483b844,"{""dish_init"": ""uniform"", ""station_lr"
 ETTh2,TimeFilter,dishts,991b5cc14619,"{""dish_init"": ""avg"", ""station_lr"": 0.0001}",0.302228,0.766232,0.295873,0.754473,0.534230,0.529702,True,False
 ETTh2,TimeFilter,dishts,9db6b0bec9f5,"{""dish_init"": ""uniform"", ""station_lr"": 5e-05}",0.303781,0.779268,,,0.541525,,False,False
 ETTh2,TimeFilter,dishts,d2a446c80585,"{""dish_init"": ""standard"", ""station_lr"": 0.0001}",0.336285,0.845257,,,0.590771,,False,False
+ETTh2,TimeFilter,fan,1bd42266a640,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 5e-05}",0.250421,0.692694,,,0.471558,,False,False
+ETTh2,TimeFilter,fan,2479cac43388,"{""fan_aux_weight"": 1.0, ""freq_topk"": 3, ""station_lr"": 0.0001}",0.234071,,,,,,False,False
+ETTh2,TimeFilter,fan,5843cea72f0c,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 5e-05}",0.239605,,,,,,False,False
 ETTh2,TimeFilter,fan,6c1ea609882f,{},0.249925,0.693694,,,0.471809,,False,False
 ETTh2,TimeFilter,fan,6e55c0ad8f58,{},0.250003,0.687834,,,0.468919,,False,False
 ETTh2,TimeFilter,fan,96e68ab8643c,{},0.237687,0.682021,,,0.459854,,False,False
+ETTh2,TimeFilter,fan,9d16227c5d05,"{""fan_aux_weight"": 1.0, ""freq_topk"": 6, ""station_lr"": 0.0001}",0.236633,,,,,,False,False
+ETTh2,TimeFilter,fan,a7dcec4a87d0,"{""fan_aux_weight"": 1.0, ""freq_topk"": 3, ""station_lr"": 5e-05}",0.249839,,,,,,False,False
 ETTh2,TimeFilter,fan,b9173a97d7b8,{},0.234831,0.681650,0.231863,0.679835,0.458240,0.457045,False,False
 ETTh2,TimeFilter,fan,d6bb3e7cf2af,{},0.251095,0.693341,,,0.472218,,False,False
+ETTh2,TimeFilter,fan,e4468eada22b,"{""fan_aux_weight"": 1.0, ""freq_topk"": 1, ""station_lr"": 0.0001}",0.230016,,,,,,False,False
 ETTh2,TimeFilter,fan,ebd8ee347b05,{},0.234219,0.683634,0.231225,0.684462,0.458926,0.458385,False,False
 ETTh2,TimeFilter,revin,1a73b9921247,"{""affine"": 0, ""station_lr"": 0.0001}",0.213103,0.614670,0.211114,0.623510,0.413886,0.415599,True,False
 ETTh2,TimeFilter,revin,a22b7bdd93cb,"{""affine"": 1, ""station_lr"": 0.0001}",0.213086,0.615129,0.211072,0.622940,0.414108,0.415557,True,True
