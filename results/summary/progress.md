@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-31T11:57:01+00:00 from 9082 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-31T12:03:45+00:00 from 9086 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -39,11 +39,11 @@ Generated 2026-10-31T11:57:01+00:00 from 9082 packaged cells. Regenerate with `p
 | t3-lt-search | 12 | 2 | 0 | 0 | 0 |
 | t3-none | 14 | 0 | 0 | 0 | 0 |
 | t3-tuned | 28 | 0 | 0 | 0 | 0 |
-| t3-lt-confirm | 6 | 1 | 5 | 2 | 0 |
-| t3-lt-tuned | 1 | 0 | 5 | 8 | 0 |
+| t3-lt-confirm | 7 | 1 | 4 | 2 | 0 |
+| t3-lt-tuned | 1 | 0 | 6 | 7 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
-| t3-lt-tuned-s2022 | 1 | 0 | 5 | 8 | 0 |
-| t3-lt-tuned-s2023 | 1 | 0 | 5 | 8 | 0 |
+| t3-lt-tuned-s2022 | 1 | 0 | 6 | 7 | 0 |
+| t3-lt-tuned-s2023 | 1 | 0 | 6 | 7 | 0 |
 | t3-length | 18 | 0 | 4 | 2 | 0 |
 | t3-length-s2022 | 18 | 0 | 4 | 2 | 0 |
 | t3-length-s2023 | 18 | 0 | 4 | 2 | 0 |
@@ -560,9 +560,9 @@ Generated 2026-10-31T11:57:01+00:00 from 9082 packaged cells. Regenerate with `p
 | t3-lt-confirm--Electricity--TimeFilter | ready | 0/4 |  |
 | t3-lt-confirm--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-confirm--ETTh2--TimeXer | done | 4/4 |  |
-| t3-lt-confirm--ETTm2--TimeXer | claimed | 0/4 | itm21-a4000 |
+| t3-lt-confirm--ETTm2--TimeXer | done | 4/4 |  |
 | t3-lt-confirm--ETTh2--TimeFilter | done | 4/4 |  |
-| t3-lt-confirm--ETTm2--TimeFilter | ready | 0/4 |  |
+| t3-lt-confirm--ETTm2--TimeFilter | claimed | 0/4 | itm21-a4000 |
 | t3-lt-tuned--ETTh1--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned--ETTm1--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned--Weather--TimeXer | blocked | 0/? |  |
@@ -574,7 +574,7 @@ Generated 2026-10-31T11:57:01+00:00 from 9082 packaged cells. Regenerate with `p
 | t3-lt-tuned--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned--ETTh2--TimeXer | ready | 0/4 |  |
-| t3-lt-tuned--ETTm2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned--ETTm2--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned--ETTh2--TimeFilter | ready | 0/4 |  |
 | t3-lt-tuned--ETTm2--TimeFilter | blocked | 0/? |  |
 | exp3-none--ETTh1--DLinear | done | 12/12 |  |
@@ -602,7 +602,7 @@ Generated 2026-10-31T11:57:01+00:00 from 9082 packaged cells. Regenerate with `p
 | t3-lt-tuned-s2022--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned-s2022--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned-s2022--ETTh2--TimeXer | ready | 0/4 |  |
-| t3-lt-tuned-s2022--ETTm2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2022--ETTm2--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned-s2022--ETTh2--TimeFilter | ready | 0/4 |  |
 | t3-lt-tuned-s2022--ETTm2--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned-s2023--ETTh1--TimeXer | ready | 0/4 |  |
@@ -616,7 +616,7 @@ Generated 2026-10-31T11:57:01+00:00 from 9082 packaged cells. Regenerate with `p
 | t3-lt-tuned-s2023--Electricity--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned-s2023--Traffic--TimeFilter | blocked | 0/? |  |
 | t3-lt-tuned-s2023--ETTh2--TimeXer | ready | 0/4 |  |
-| t3-lt-tuned-s2023--ETTm2--TimeXer | blocked | 0/? |  |
+| t3-lt-tuned-s2023--ETTm2--TimeXer | ready | 0/4 |  |
 | t3-lt-tuned-s2023--ETTh2--TimeFilter | ready | 0/4 |  |
 | t3-lt-tuned-s2023--ETTm2--TimeFilter | blocked | 0/? |  |
 | t3-length--ETTh2--TimeXer--revin | done | 6/6 |  |
