@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-31T00:34:39+00:00 from 8946 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-31T00:44:13+00:00 from 8952 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -35,7 +35,7 @@ Generated 2026-10-31T00:34:39+00:00 from 8946 packaged cells. Regenerate with `p
 | t3-rf-search | 24 | 0 | 4 | 0 | 0 |
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
-| dish-tuned-s2023 | 3 | 1 | 24 | 0 | 0 |
+| dish-tuned-s2023 | 4 | 1 | 23 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -328,7 +328,7 @@ Generated 2026-10-31T00:34:39+00:00 from 8946 packaged cells. Regenerate with `p
 | dish-tuned-s2022--Electricity--TimeXer | done | 4/4 |  |
 | dish-tuned-s2022--Electricity--TimeFilter | done | 4/4 |  |
 | dish-tuned-s2022--Traffic--DLinear | done | 4/4 |  |
-| dish-tuned-s2022--Traffic--iTransformer | claimed | 1/4 | itm21-a4000 |
+| dish-tuned-s2022--Traffic--iTransformer | claimed | 2/4 | itm21-a4000 |
 | dish-tuned-s2022--Traffic--TimeXer | claimed | 1/4 | itm20-gpu0-a4000 |
 | dish-tuned-s2022--Traffic--TimeFilter | claimed | 3/4 | itm20-gpu1-a4000 |
 | lt-pilot--ETTm1--iTransformer | done | 20/20 |  |
@@ -484,9 +484,9 @@ Generated 2026-10-31T00:34:39+00:00 from 8946 packaged cells. Regenerate with `p
 | dish-tuned-s2023--ETTh1--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2023--ETTh1--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2023--ETTh2--DLinear | done | 4/4 |  |
-| dish-tuned-s2023--ETTh2--iTransformer | claimed | 0/4 | itm20-gpu1-a4000 |
+| dish-tuned-s2023--ETTh2--iTransformer | done | 4/4 |  |
 | dish-tuned-s2023--ETTh2--TimeXer | ready | 0/4 |  |
-| dish-tuned-s2023--ETTh2--TimeFilter | ready | 0/4 |  |
+| dish-tuned-s2023--ETTh2--TimeFilter | claimed | 1/4 | itm20-gpu1-a4000 |
 | dish-tuned-s2023--ETTm1--DLinear | ready | 0/4 |  |
 | dish-tuned-s2023--ETTm1--iTransformer | ready | 0/4 |  |
 | dish-tuned-s2023--ETTm1--TimeXer | ready | 0/4 |  |
