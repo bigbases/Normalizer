@@ -268,7 +268,7 @@ dish-tuned-s2022,Electricity,iTransformer,dishts,done,4,4,
 dish-tuned-s2022,Electricity,TimeXer,dishts,done,4,4,
 dish-tuned-s2022,Electricity,TimeFilter,dishts,done,4,4,
 dish-tuned-s2022,Traffic,DLinear,dishts,done,4,4,
-dish-tuned-s2022,Traffic,iTransformer,dishts,claimed,3,4,itm21-a4000
+dish-tuned-s2022,Traffic,iTransformer,dishts,done,4,4,
 dish-tuned-s2022,Traffic,TimeXer,dishts,claimed,2,4,itm20-gpu0-a4000
 dish-tuned-s2022,Traffic,TimeFilter,dishts,done,4,4,
 lt-pilot,ETTm1,iTransformer,lt,done,20,20,
