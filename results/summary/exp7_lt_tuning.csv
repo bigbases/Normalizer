@@ -131,8 +131,8 @@ Electricity,TimeFilter,5871f175ed70,grid,25,0.0001,1,0,True,0.118365,0.195561,0.
 Electricity,TimeFilter,2214cc331066,grid,25,0.001,1,0,False,0.118855,0.201707,0.160281,,,False,False
 Electricity,TimeFilter,6538d62e5a7a,grid,49,0.0001,1,0,False,0.120471,0.192526,0.156498,,,False,False
 Electricity,TimeFilter,0a7ae0db7542,grid,49,0.001,1,0,False,0.115177,0.183123,0.149150,,,True,False
-Electricity,TimeXer,4e5b34a628d0,grid,13,0.0001,1,0,False,0.128834,0.202194,0.165514,,,False,False
-Electricity,TimeXer,ac8e765c1f38,grid,13,0.001,1,0,False,,0.198246,,,,False,False
+Electricity,TimeXer,4e5b34a628d0,grid,13,0.0001,1,0,False,0.128834,0.202194,0.165514,,,True,False
+Electricity,TimeXer,ac8e765c1f38,grid,13,0.001,1,0,False,0.127082,0.198246,0.162664,,,True,False
 Electricity,TimeXer,5871f175ed70,grid,25,0.0001,1,0,True,0.131390,0.203129,0.167259,,,False,False
 Electricity,TimeXer,2214cc331066,grid,25,0.001,1,0,False,0.129638,0.203032,0.166335,,,False,False
 Electricity,TimeXer,6538d62e5a7a,grid,49,0.0001,1,0,False,0.129832,0.202902,0.166367,,,False,False

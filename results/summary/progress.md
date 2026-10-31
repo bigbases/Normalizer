@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-31T06:18:40+00:00 from 9054 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-31T06:43:23+00:00 from 9056 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -36,10 +36,10 @@ Generated 2026-10-31T06:18:40+00:00 from 9054 packaged cells. Regenerate with `p
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
-| t3-lt-search | 11 | 2 | 1 | 0 | 0 |
+| t3-lt-search | 12 | 1 | 1 | 0 | 0 |
 | t3-none | 14 | 0 | 0 | 0 | 0 |
 | t3-tuned | 28 | 0 | 0 | 0 | 0 |
-| t3-lt-confirm | 0 | 0 | 11 | 3 | 0 |
+| t3-lt-confirm | 0 | 0 | 12 | 2 | 0 |
 | t3-lt-tuned | 0 | 0 | 0 | 14 | 0 |
 | exp3-none | 14 | 0 | 0 | 0 | 0 |
 | t3-lt-tuned-s2022 | 0 | 0 | 0 | 14 | 0 |
@@ -48,7 +48,7 @@ Generated 2026-10-31T06:18:40+00:00 from 9054 packaged cells. Regenerate with `p
 | t3-length-s2022 | 18 | 0 | 0 | 6 | 0 |
 | t3-length-s2023 | 18 | 0 | 0 | 6 | 0 |
 | exp2-search | 52 | 0 | 4 | 0 | 0 |
-| t3-rf-search | 24 | 1 | 3 | 0 | 0 |
+| t3-rf-search | 24 | 0 | 4 | 0 | 0 |
 | exp2-confirm | 52 | 0 | 0 | 4 | 0 |
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
 | exp3-tuned | 52 | 0 | 0 | 4 | 0 |
@@ -422,7 +422,7 @@ Generated 2026-10-31T06:18:40+00:00 from 9054 packaged cells. Regenerate with `p
 | dish-tuned-s2023--Traffic--DLinear | done | 4/4 |  |
 | dish-tuned-s2023--Traffic--iTransformer | done | 4/4 |  |
 | dish-tuned-s2023--Traffic--TimeXer | claimed | 0/4 | itm21-a4000 |
-| dish-tuned-s2023--Traffic--TimeFilter | claimed | 1/4 | itm20-gpu0-a4000 |
+| dish-tuned-s2023--Traffic--TimeFilter | claimed | 2/4 | itm20-gpu0-a4000 |
 | exp1-lt--ETTh1--DLinear | done | 12/12 |  |
 | exp1-lt--ETTh1--iTransformer | done | 12/12 |  |
 | exp1-lt--ETTh2--DLinear | done | 12/12 |  |
@@ -496,7 +496,7 @@ Generated 2026-10-31T06:18:40+00:00 from 9054 packaged cells. Regenerate with `p
 | t3-lt-search--ETTh1--TimeXer | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeXer | done | 12/12 |  |
 | t3-lt-search--Weather--TimeXer | done | 12/12 |  |
-| t3-lt-search--Electricity--TimeXer | claimed | 11/12 | itm20-gpu1-a4000 |
+| t3-lt-search--Electricity--TimeXer | done | 12/12 |  |
 | t3-lt-search--Traffic--TimeXer | claimed | 6/12 | itm20-gpu1-a4000 |
 | t3-lt-search--ETTh1--TimeFilter | done | 12/12 |  |
 | t3-lt-search--ETTm1--TimeFilter | done | 12/12 |  |
@@ -552,7 +552,7 @@ Generated 2026-10-31T06:18:40+00:00 from 9054 packaged cells. Regenerate with `p
 | t3-lt-confirm--ETTh1--TimeXer | ready | 0/4 |  |
 | t3-lt-confirm--ETTm1--TimeXer | ready | 2/4 |  |
 | t3-lt-confirm--Weather--TimeXer | ready | 0/4 |  |
-| t3-lt-confirm--Electricity--TimeXer | blocked | 0/? |  |
+| t3-lt-confirm--Electricity--TimeXer | ready | 0/4 |  |
 | t3-lt-confirm--Traffic--TimeXer | blocked | 0/? |  |
 | t3-lt-confirm--ETTh1--TimeFilter | ready | 2/4 |  |
 | t3-lt-confirm--ETTm1--TimeFilter | ready | 2/4 |  |
@@ -772,7 +772,7 @@ Generated 2026-10-31T06:18:40+00:00 from 9054 packaged cells. Regenerate with `p
 | t3-rf-search--ETTm2--TimeXer--revin | done | 4/4 |  |
 | t3-rf-search--ETTm2--TimeXer--fan | ready | 0/12 |  |
 | t3-rf-search--ETTh2--TimeFilter--revin | done | 4/4 |  |
-| t3-rf-search--ETTh2--TimeFilter--fan | claimed | 8/12 | itm20-gpu1-a4000 |
+| t3-rf-search--ETTh2--TimeFilter--fan | ready | 8/12 |  |
 | t3-rf-search--ETTm2--TimeFilter--revin | done | 4/4 |  |
 | t3-rf-search--ETTm2--TimeFilter--fan | ready | 0/12 |  |
 | exp2-confirm--ETTh1--DLinear--revin | done | 4/4 |  |
