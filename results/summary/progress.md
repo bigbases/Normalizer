@@ -1,6 +1,6 @@
 # Experiment progress
 
-Generated 2026-10-31T01:20:49+00:00 from 8979 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
+Generated 2026-10-31T01:27:21+00:00 from 8985 packaged cells. Regenerate with `python experiments/results_pack.py summary`.
 
 | phase | done | running (claimed) | ready | blocked | failed |
 |---|---|---|---|---|---|
@@ -35,7 +35,7 @@ Generated 2026-10-31T01:20:49+00:00 from 8979 packaged cells. Regenerate with `p
 | t3-rf-search | 24 | 0 | 4 | 0 | 0 |
 | t3-rf-confirm | 24 | 0 | 0 | 4 | 0 |
 | t3-rf-tuned | 24 | 0 | 0 | 4 | 0 |
-| dish-tuned-s2023 | 10 | 2 | 16 | 0 | 0 |
+| dish-tuned-s2023 | 11 | 3 | 14 | 0 | 0 |
 | exp1-lt | 14 | 0 | 0 | 0 | 0 |
 | t3-search | 28 | 0 | 0 | 0 | 0 |
 | t3-confirm | 28 | 0 | 0 | 0 | 0 |
@@ -487,16 +487,16 @@ Generated 2026-10-31T01:20:49+00:00 from 8979 packaged cells. Regenerate with `p
 | dish-tuned-s2023--ETTh2--iTransformer | done | 4/4 |  |
 | dish-tuned-s2023--ETTh2--TimeXer | done | 4/4 |  |
 | dish-tuned-s2023--ETTh2--TimeFilter | done | 4/4 |  |
-| dish-tuned-s2023--ETTm1--DLinear | claimed | 1/4 | itm20-gpu1-a4000 |
+| dish-tuned-s2023--ETTm1--DLinear | done | 4/4 |  |
 | dish-tuned-s2023--ETTm1--iTransformer | done | 4/4 |  |
 | dish-tuned-s2023--ETTm1--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2023--ETTm1--TimeFilter | ready | 0/4 |  |
-| dish-tuned-s2023--ETTm2--DLinear | claimed | 0/4 | itm21-a4000 |
+| dish-tuned-s2023--ETTm2--DLinear | claimed | 1/4 | itm21-a4000 |
 | dish-tuned-s2023--ETTm2--iTransformer | done | 4/4 |  |
 | dish-tuned-s2023--ETTm2--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2023--ETTm2--TimeFilter | ready | 0/4 |  |
-| dish-tuned-s2023--Weather--DLinear | ready | 0/4 |  |
-| dish-tuned-s2023--Weather--iTransformer | ready | 0/4 |  |
+| dish-tuned-s2023--Weather--DLinear | claimed | 2/4 | itm20-gpu1-a4000 |
+| dish-tuned-s2023--Weather--iTransformer | claimed | 0/4 | itm20-gpu1-a4000 |
 | dish-tuned-s2023--Weather--TimeXer | ready | 0/4 |  |
 | dish-tuned-s2023--Weather--TimeFilter | ready | 0/4 |  |
 | dish-tuned-s2023--Electricity--DLinear | ready | 0/4 |  |
