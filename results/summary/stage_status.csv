@@ -361,7 +361,7 @@ dish-tuned-s2023,Electricity,TimeXer,dishts,done,4,4,
 dish-tuned-s2023,Electricity,TimeFilter,dishts,done,4,4,
 dish-tuned-s2023,Traffic,DLinear,dishts,done,4,4,
 dish-tuned-s2023,Traffic,iTransformer,dishts,done,4,4,
-dish-tuned-s2023,Traffic,TimeXer,dishts,claimed,2,4,itm21-a4000
+dish-tuned-s2023,Traffic,TimeXer,dishts,done,4,4,
 dish-tuned-s2023,Traffic,TimeFilter,dishts,done,4,4,
 exp1-lt,ETTh1,DLinear,lt,done,12,12,
 exp1-lt,ETTh1,iTransformer,lt,done,12,12,
@@ -437,12 +437,12 @@ t3-lt-search,ETTh1,TimeXer,lt,done,12,12,
 t3-lt-search,ETTm1,TimeXer,lt,done,12,12,
 t3-lt-search,Weather,TimeXer,lt,done,12,12,
 t3-lt-search,Electricity,TimeXer,lt,done,12,12,
-t3-lt-search,Traffic,TimeXer,lt,claimed,7,12,itm20-gpu1-a4000
+t3-lt-search,Traffic,TimeXer,lt,claimed,8,12,itm20-gpu1-a4000
 t3-lt-search,ETTh1,TimeFilter,lt,done,12,12,
 t3-lt-search,ETTm1,TimeFilter,lt,done,12,12,
 t3-lt-search,Weather,TimeFilter,lt,done,12,12,
 t3-lt-search,Electricity,TimeFilter,lt,done,12,12,
-t3-lt-search,Traffic,TimeFilter,lt,claimed,2,12,itm20-gpu0-a4000
+t3-lt-search,Traffic,TimeFilter,lt,claimed,3,12,itm20-gpu0-a4000
 t3-lt-search,ETTh2,TimeXer,lt,done,12,12,
 t3-lt-search,ETTm2,TimeXer,lt,done,12,12,
 t3-lt-search,ETTh2,TimeFilter,lt,done,12,12,
@@ -499,7 +499,7 @@ t3-lt-confirm,ETTm1,TimeFilter,lt,ready,2,4,
 t3-lt-confirm,Weather,TimeFilter,lt,ready,0,4,
 t3-lt-confirm,Electricity,TimeFilter,lt,ready,0,4,
 t3-lt-confirm,Traffic,TimeFilter,lt,blocked,0,,
-t3-lt-confirm,ETTh2,TimeXer,lt,ready,2,4,
+t3-lt-confirm,ETTh2,TimeXer,lt,claimed,2,4,itm21-a4000
 t3-lt-confirm,ETTm2,TimeXer,lt,ready,0,4,
 t3-lt-confirm,ETTh2,TimeFilter,lt,ready,0,4,
 t3-lt-confirm,ETTm2,TimeFilter,lt,ready,0,4,
